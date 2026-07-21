@@ -1,0 +1,34 @@
+{
+  "inputHash": "be7180dff9f984acbdf5b178565e01a4f2d55ac26de4a959b481460c5613a453",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1205",
+    "summary": "Adds a CGM sensor lifetime indicator to the home-screen glucose bobble and supporting plumbing. The indicator consists of an outer arc driven by cgmLifecycleProgress and a small status/remaining-time tag under the bobble; it represents six sensor states (normal, expiring soon, warmup, calibration required, expired, sensor failed). HomeStateModel.sensorExpiresAt was extended to resolve expiration by (1) direct manager read (with a G7 fallback to sensorEndsAt during the grace window), (2) reverse-derivation from activatedAt + percentComplete, and (3) a percent-label fallback when neither is available. The simulator was extended with a “Sensor Lifecycle Scenario” picker that emits cgmStatusHighlight and cgmLifecycleProgress and simulates non-active scenarios by stopping fresh readings and dropping recent GlucoseStored rows so the bobble flips immediately. UI and layout work was added so the tag overlays the bobble and the bobble scales/compacts correctly; non-warmup error states surface a compact imageName fallback and warmup + failure mute the glucose number.",
+    "userFacingImpact": "Users will see a new visual lifetime indicator on the home glucose bobble: an outer progress arc showing sensor life and a concise tag showing time remaining or a status word (e.g., “warming up”, “22h left”, “sensor expired”) and visual handling for warmup/failed states (arc hidden; glucose muted). The simulator UI exposes all six lifecycle scenarios for testing. NOTE: this feature as implemented expects updated CGMBLEKit support (forked/pointed branch) and xDrip4iOS lifecycle-like data is not yet shipped; integration/compatibility with the upstream submodule or other transmitters may require follow-up work and review.",
+    "category": "new-features",
+    "sourceIds": [
+      "pr:gordolio/Trio#1205",
+      "pr:nightscout/Trio#1205",
+      "commit:1a966cce6fdd",
+      "commit:f39e9f4994fc",
+      "commit:599955c42bb9",
+      "commit:426c500515d5",
+      "commit:cfc83eb33a5c",
+      "commit:1b6a75e414c7",
+      "commit:1d72f67557e4",
+      "commit:b3ffb547bee1",
+      "file:c7b731e23bc8",
+      "file:b651c20e6aec",
+      "file:7966a08f3626",
+      "file:18c0a08f6b39",
+      "file:bcbb43bd1a1c",
+      "file:8aeb356779a9",
+      "file:c237caec36e5"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": true
+  }
+}
