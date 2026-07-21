@@ -1,0 +1,30 @@
+{
+  "inputHash": "8d073162647b79b70aeea1ed4b998ce885ab18f942e23b09483abeaaecf879e7",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1290",
+    "summary": "Replaces the previous per-pipeline Combine subject + throttle machinery with a new NightscoutUploadSerializer actor that coalesces and serializes upload runs per NightscoutUploadPipeline (new file added) [file:070046c0e8d5][diff:2a07f1b01b28]. The serializer guarantees at most one in-flight run per pipeline and at most one queued follow-up run while further requests coalesce into that follow-up, preventing overlapping runs that previously could fetch and POST the same rows twice [pr:gordolio/Trio#1290][commit:977e9b6af576]. BaseNightscoutManager was updated to use the serializer: public upload entry points now call into the serializer, and internal upload implementations were renamed to performUpload*() and invoked from the serializer-run context [file:e3127c4bcf24][diff:2a07f1b01b28]. The previously configured fixed 2s per-pipeline throttle and Combine subjects were removed in favor of the serializer behavior [file:e3127c4bcf24][diff:2a07f1b01b28]. Unit tests exercising serializer concurrency, queuing, coalescing, reentrancy, and pipeline independence were added [file:6e3a5d6648c1][diff:2a07f1b01b28].",
+    "userFacingImpact": "Fixes duplicate Nightscout treatment uploads caused by concurrent runs fetching items still marked as not-yet-uploaded by ensuring no two runs of the same pipeline overlap (addresses the duplicate Exercise entries observed) [pr:nightscout/Trio#1290][commit:977e9b6af576]. Uploads will start immediately (the fixed 2-second throttle delay is removed) and requests are not silently dropped by the old throttle logic (queued follow-up runs replace the previous throttle’s latest:false drop behavior) [pr:gordolio/Trio#1290][commit:977e9b6af576]. App Intents/remote-control upload semantics are preserved: awaitable upload entry points still complete after the upload attempt finishes, but they now go through the serializer to avoid double-uploads [pr:nightscout/Trio#1290][diff:2a07f1b01b28]. Tests covering the new behavior were added; please run the test suite as part of review to verify integration with the rest of the app [file:6e3a5d6648c1][file:070046c0e8d5].",
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#1290",
+      "pr:nightscout/Trio#1290",
+      "commit:977e9b6af576",
+      "commit:7abe6b3f408d",
+      "commit:9569c3aa607d",
+      "commit:4bc16ca78dea",
+      "file:628cc12e4210",
+      "file:953f1c543867",
+      "file:e3127c4bcf24",
+      "file:f4bb88f065a8",
+      "file:070046c0e8d5",
+      "file:6e3a5d6648c1",
+      "diff:2a07f1b01b28"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
