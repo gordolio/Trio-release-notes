@@ -1,21 +1,24 @@
 {
-  "inputHash": "983e0ea87c9f230e6b9efeff5741c896437cc8a27d3cfa8a3b96504ecff4ac65",
-  "promptVersion": "2",
+  "inputHash": "74f40652343b4588856ea8f2e9c79e5b6d9e1935910eddfa4a84d4711f267250",
+  "promptVersion": "3",
   "schemaVersion": "1",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1212",
-    "summary": "Bumps APP_DEV_VERSION in Config.xcconfig from 0.8.1.7 to 0.8.1.8 (see commit 51279404cc68da1bc7db20537b7847c8a085fa29 and diff).",
-    "userFacingImpact": "This appears to be an internal development version number bump in Config.xcconfig and does not indicate any code or behavior changes in the product. The available evidence is the Config.xcconfig diff and commit message only; if additional runtime or packaging changes are expected, human review is required.",
+    "summary": "This change prepares and tags a v0.8.2 release and updates a bundled submodule. Specifically:\n- OmnipodKit submodule pointer was advanced to commit 80069aa0d... (submodule commit change shown in the diff) (commit:78e28ba5c8ba, diff:6b407ea4d5cc).\n- Config.xcconfig version fields were updated: APP_VERSION from 0.8.1 to 0.8.2 and APP_DEV_VERSION from 0.8.1.8 to 0.8.2 (diff:6b407ea4d5cc, file:5692afcf1358).\n- A release-prep commit and a merge commit were added (Prepare release: Bump Trio to v0.8.2 and Merge pull request #1212) (commit:884a9e4353bc, commit:86e4f4cced7d).\nThe PR description lists a set of user-facing fixes and enhancements attributed to the 0.8.2 release (Omnipod driver consolidation, Live Activity fixes/enhancements, watch connectivity fix, Stats Meals fix) (pr:nightscout/Trio#1212, pr:gordolio/Trio#1212).",
+    "userFacingImpact": "The concrete code changes in this patch are the OmnipodKit submodule update and the app version bump (see commit:78e28ba5c8ba, diff:6b407ea4d5cc, file:5692afcf1358). The PR’s release notes claim additional user-visible fixes and enhancements (Omnipod driver consolidation; Live Activity rendering and widget label fixes; watch back-sync improvements; Stats Meals macro fixes), but those higher-level changes are described in the release notes rather than explicitly shown in the diff provided here (pr:nightscout/Trio#1212, pr:gordolio/Trio#1212). Evidence in the supplied diffs supports the submodule and version updates; it is insufficient by itself to confirm that every item listed in the release notes was implemented in these commits—please perform a human review of the merged commits and associated code changes to verify the full set of user-facing changes (commit:78e28ba5c8ba, commit:884a9e4353bc, commit:86e4f4cced7d, diff:6b407ea4d5cc).",
     "category": "internal-and-build-system",
     "sourceIds": [
+      "pr:gordolio/Trio#1212",
       "pr:nightscout/Trio#1212",
-      "commit:51279404cc68da1bc7db20537b7847c8a085fa29",
+      "commit:78e28ba5c8ba",
+      "commit:884a9e4353bc",
+      "commit:86e4f4cced7d",
       "file:5692afcf1358",
       "diff:6b407ea4d5cc"
     ],
     "confidence": "high",
-    "humanReviewRequired": false
+    "humanReviewRequired": true
   }
 }
