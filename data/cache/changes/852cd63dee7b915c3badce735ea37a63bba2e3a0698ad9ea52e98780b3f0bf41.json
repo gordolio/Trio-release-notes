@@ -1,0 +1,20 @@
+{
+  "inputHash": "935f7b5a0db09d0d7bbe2496dfeaec088605ce748cb82dfcdffa46984a45cc2a",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:3f36530db767b92516cc490b54b58c0855b752ef",
+    "summary": "Update in Config.xcconfig: APP_DEV_VERSION was incremented from 0.8.4.6 to 0.8.4.7 (diff:852cd63dee7b, file:85815ffdef47). Commit message indicates this is a CI/dev version bump (commit:3f36530db767).",
+    "userFacingImpact": "No functional or runtime behavior changes are shown in the diff; the change only updates a development version string in Config.xcconfig and is therefore expected to affect build/CI metadata rather than end-user functionality (diff:852cd63dee7b, file:85815ffdef47). The commit message labels this as a CI/dev version bump (commit:3f36530db767).",
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:3f36530db767",
+      "file:85815ffdef47",
+      "diff:852cd63dee7b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
