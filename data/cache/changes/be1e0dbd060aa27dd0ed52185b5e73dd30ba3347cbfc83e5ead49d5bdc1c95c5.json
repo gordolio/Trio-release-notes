@@ -1,0 +1,23 @@
+{
+  "inputHash": "9fa3a443dde370618fd547fafb0566373295af32e716a105e2ce7b2dfcc9aa4a",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1225",
+    "summary": "This change set makes localized thread-safety and reliability edits in APSManager.swift: it removes an unused viewContext (diff:be1e0dbd060a, commit:e274ed1d9c3d), moves tir() out of an inner privateContext.perform closure to a plain synchronous helper (diff:be1e0dbd060a), adds [weak self] to multiple Combine .sink closures and to privateContext.perform closures to avoid strong self captures (diff:be1e0dbd060a, commit:e274ed1d9c3d), changes several Combine publishers that previously .receive(on: processQueue) to .receive(on: DispatchQueue.main) for properties that are also read from the main thread (scheduledBasal, suspended, manualTempBasal) (diff:be1e0dbd060a, commit:e274ed1d9c3d), replaces force-unwrapped Date usages by capturing Date() into a local endDate variable before assigning and computing durations (diff:be1e0dbd060a), and adds early-guard / weak-self checks inside privateContext.perform blocks (diff:be1e0dbd060a). The merge commit records this as \"APSManager thread safety fixes (Part 1)\" (commit:0bc038ccdbaa).",
+    "userFacingImpact": "These are internal thread-safety and null-safety changes. They are intended to reduce race conditions between background processing and main-thread UI reads (by receiving certain Combine publishers on DispatchQueue.main) and to avoid crashes from strong self captures and force-unwrapped values. There is no explicit evidence in the supplied diff that dosing logic or algorithm outputs were intentionally changed; a human review is required to confirm there are no behavioral changes to loop/dosing logic.",
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#1225",
+      "pr:nightscout/Trio#1225",
+      "commit:e274ed1d9c3d",
+      "commit:0bc038ccdbaa",
+      "file:1c1d4384b009",
+      "diff:be1e0dbd060a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": true
+  }
+}
