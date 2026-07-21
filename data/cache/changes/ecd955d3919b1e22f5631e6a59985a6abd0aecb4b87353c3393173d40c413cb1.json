@@ -1,0 +1,38 @@
+{
+  "inputHash": "690d40eea22f58b8da5d48cfd872fc060d070b1ecaa4b0e38357dc2fe31c93bd",
+  "promptVersion": "2",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1173",
+    "summary": "This patch release (0.8.1) bundles three main changes: 1) Adds the OmnipodKit driver as a new submodule and wires it into the Add Pump flow as a unified “All Omnipod Types” pump manager; pod type (Eros vs DASH) is selected at pod activation and the new driver is opt-in (existing OmniKit/OmniBLE users are unchanged) (pr:gordolio/Trio#1173, pr:nightscout/Trio#1173, commit:c83e346658cedabdc8dacacc7720a0bb6806ad98). 2) Bumps fastlane and related gems (fastlane → 2.235.0, jwt → 3.2.0) in CI/release tooling to address a security dependency concern (pr:gordolio/Trio#1173, commit:c7aa49776c7e0fb46ba63b416d0efa5663aa2893, file:8dcbfddee395, file:8e799715872b). 3) Fixes telemetry daily-send cadence: adds a foreground/overdue check and adjusts startup scheduling so telemetry pings are properly throttled to ~once per day (commit:512b4d46d83fe50a346e35d4f4c5c9ad15757c37, commit:35499ad5ecf102343d44df2f235356ec218f05bc, file:017617df533e, diff:ecd955d3919b). Additional small localization and version-bump housekeeping changes are included (commit:ae8d80c3d5781b3bb62cfa107564f2866f0d4501, file:4654355400ef).",
+    "userFacingImpact": "OmnipodKit: A new \"All Omnipod Types\" pump manager option is available in Add Pump; users must opt in and select pod type at activation — existing OmniKit/OmniBLE setups will continue to behave the same unless the user explicitly switches to the new driver (pr:nightscout/Trio#1173, commit:c83e346658cedabdc8dacacc7720a0bb6806ad98). Telemetry: background telemetry send behavior has been changed so sends are gated and re-checked on cold launch and on each foreground transition, which should prevent continuous/more-than-daily pings (commit:512b4d46d83fe50a346e35d4f4c5c9ad15757c37, diff:ecd955d3919b, file:017617df533e). fastlane/gem bump: dependency changes are CI/release-tooling only and do not change shipped app code; the bump allows jwt 3.2.0+ to be resolved (pr:gordolio/Trio#1173, commit:c7aa49776c7e0fb46ba63b416d0efa5663aa2893, file:8dcbfddee395).",
+    "category": "highlights",
+    "sourceIds": [
+      "pr:gordolio/Trio#1173",
+      "pr:nightscout/Trio#1173",
+      "commit:2544894369ba4aeeb5633e07c7a50d403e58b80f",
+      "commit:fb2923c08b782d8946e838bef75b655768592984",
+      "commit:1d24050d06e259f70734f2f5cbc95be8db44dae9",
+      "commit:c7aa49776c7e0fb46ba63b416d0efa5663aa2893",
+      "commit:0182bd90a316f24a1fede346ae9bafea7d66e8c4",
+      "commit:c83e346658cedabdc8dacacc7720a0bb6806ad98",
+      "commit:ae8d80c3d5781b3bb62cfa107564f2866f0d4501",
+      "commit:512b4d46d83fe50a346e35d4f4c5c9ad15757c37",
+      "commit:acb7cdd3ea4cb6eb1d4dac0b1af0cefe1b76d609",
+      "commit:c5ebabf751b493b572ebb85838a3ec2281ab84f1",
+      "commit:35499ad5ecf102343d44df2f235356ec218f05bc",
+      "file:4654355400ef",
+      "file:8dcbfddee395",
+      "file:8e799715872b",
+      "file:52d76001511b",
+      "file:71ab1cac9be1",
+      "file:feff2f799fe4",
+      "file:017617df533e",
+      "diff:ecd955d3919b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

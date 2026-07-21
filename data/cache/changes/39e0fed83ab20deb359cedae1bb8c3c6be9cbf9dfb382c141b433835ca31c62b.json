@@ -1,0 +1,33 @@
+{
+  "inputHash": "8b65d0451fb2e700621dd0d6a933527974705e01cb47c036020eceb480412fda",
+  "promptVersion": "2",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1157",
+    "summary": "Adds OmnipodKit as a git submodule and integrates Omnipod pump support into Trio. The change updates .gitmodules and adds the OmnipodKit submodule (file:b1b3f1335a91, file:8958082c3e68, diff:39e0fed83ab2). Xcode project and workspace files were modified to reference and embed OmnipodKit.framework (file:af1e76749982, file:f6b172e0fbfe, diff:39e0fed83ab2). Source changes import OmnipodKit and add OmniPumpManager to the static pump manager lists and lookup (file:3c16defa6446, diff:39e0fed83ab2). DeviceDataManager was extended to read and persist Omnipod pod state: reservoir value, manual temp basal state, pod expiration (expiresAt), and pod activation time (activatedAt) and to notify observers (file:3c16defa6446, diff:39e0fed83ab2). UI and configuration changes add a new pump type case (.omni), add UI selection entries labeled \"All Omnipod Types\" in pump selection and pump config views, and wire a setup view controller path for the .omni option that uses OmniPumpManager.setupViewController (file:52433b2f9fac, file:429325831f78, file:007c25167149, file:95f5b6ea5b47, diff:39e0fed83ab2). The swiftformat script was updated to include OmnipodKit (file:33d0c7107c55, diff:39e0fed83ab2).",
+    "userFacingImpact": "The app adds support files and UI entries for Omnipod-type pumps (an \"All Omnipod Types\" selection appears in pump selection and pump configuration) and integrates OmniPumpManager behavior into device state handling (reservoir updates, manual temp basal signaling, pod expiration and activation times). The change appears intended to enable Omnipod pump support, but functional verification and testing are recommended before assuming full runtime behavior for end users (files and diffs listed).",
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:gordolio/Trio#1157",
+      "pr:nightscout/Trio#1157",
+      "commit:98c4421ccb3af1f459f7df3831a3961d402c62f1",
+      "commit:4acb9b03afb0c5a0ae6547787e3e71439938a394",
+      "file:b1b3f1335a91",
+      "file:8958082c3e68",
+      "file:af1e76749982",
+      "file:f6b172e0fbfe",
+      "file:3c16defa6446",
+      "file:95f5b6ea5b47",
+      "file:da4ccdd320de",
+      "file:52433b2f9fac",
+      "file:429325831f78",
+      "file:007c25167149",
+      "file:33d0c7107c55",
+      "diff:39e0fed83ab2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
