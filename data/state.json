@@ -2,6 +2,29 @@
   "version": 1,
   "promptVersion": "2",
   "schemaVersion": "1",
-  "processedRuns": {},
-  "successfulBuilds": []
+  "processedRuns": {
+    "26323684147": {
+      "fullSha": "0bb688841620824a10f203cc90ce09ca3dcec824",
+      "reportPath": "public/builds/0bb6888.json",
+      "processedAt": "2026-07-21T05:06:52.773Z"
+    }
+  },
+  "successfulBuilds": [
+    {
+      "runId": 26173747072,
+      "branch": "dev",
+      "fullSha": "fd9ca10fd06cf8af9e2a6a0e10ba7708c15a3da6",
+      "shortSha": "fd9ca10",
+      "builtAt": "2026-05-20T15:49:05Z",
+      "reportPath": null
+    },
+    {
+      "runId": 26323684147,
+      "branch": "dev",
+      "fullSha": "0bb688841620824a10f203cc90ce09ca3dcec824",
+      "shortSha": "0bb6888",
+      "builtAt": "2026-05-23T04:40:01Z",
+      "reportPath": "public/builds/0bb6888.json"
+    }
+  ]
 }
