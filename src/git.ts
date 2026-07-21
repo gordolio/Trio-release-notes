@@ -1,4 +1,4 @@
-import { execFile } from "node:child_process";
+import { execFile, spawn } from "node:child_process";
 import { promisify } from "node:util";
 import { config } from "./config.js";
 import type { ChangedFile, CommitRecord } from "./types.js";
@@ -12,6 +12,41 @@ async function git(args: string[], maxBuffer = 50 * 1024 * 1024): Promise<string
     encoding: "utf8"
   });
   return stdout;
+}
+
+async function gitBounded(args: string[], limit: number): Promise<{ output: string; truncated: boolean }> {
+  return new Promise((resolve, reject) => {
+    const child = spawn("git", args, { cwd: config.sourceCheckout, stdio: ["ignore", "pipe", "pipe"] });
+    let output = "";
+    let stderr = "";
+    let truncated = false;
+
+    child.stdout.setEncoding("utf8");
+    child.stdout.on("data", (chunk: string) => {
+      const remaining = limit - output.length;
+      if (remaining > 0) {
+        output += chunk.slice(0, remaining);
+      }
+      if (chunk.length > remaining) {
+        truncated = true;
+        child.kill();
+      }
+    });
+    child.stderr.setEncoding("utf8");
+    child.stderr.on("data", (chunk: string) => {
+      if (stderr.length < 1024 * 1024) {
+        stderr += chunk.slice(0, 1024 * 1024 - stderr.length);
+      }
+    });
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0 || truncated) {
+        resolve({ output, truncated });
+      } else {
+        reject(new Error(`git ${args[0] ?? "command"} failed: ${stderr.trim()}`));
+      }
+    });
+  });
 }
 
 export async function resolveCommit(abbreviatedSha: string): Promise<string> {
@@ -91,18 +126,18 @@ export async function patchForCommits(commits: string[], limit: number): Promise
   if (commits.length === 0) {
     return { patch: "", truncated: false };
   }
-  const output = await git([
+  const { output, truncated } = await gitBounded([
     "show",
     "--format=commit %H%nSubject: %s%n",
     "--no-ext-diff",
     "--unified=3",
     "--no-renames",
     ...commits
-  ]);
-  if (output.length <= limit) {
-    return { patch: output, truncated: false };
-  }
-  return { patch: `${output.slice(0, limit)}\n[diff truncated by generator]`, truncated: true };
+  ], limit);
+  return {
+    patch: truncated ? `${output}\n[diff truncated by generator]` : output,
+    truncated
+  };
 }
 
 export function maintenanceHotspots(commits: CommitRecord[]): string[] {

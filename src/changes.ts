@@ -20,9 +20,18 @@ const INTERNAL_PATH_PREFIXES = [
   "Package.resolved"
 ];
 const MAX_FILE_SOURCES = 200;
+const MAX_COMMIT_SOURCES = 200;
 
 function compactSourceId(type: string, value: string): string {
   return `${type}:${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
+}
+
+function boundedSample<T>(values: T[], limit: number): T[] {
+  if (values.length <= limit) {
+    return values;
+  }
+  const firstCount = Math.ceil(limit / 2);
+  return [...values.slice(0, firstCount), ...values.slice(-(limit - firstCount))];
 }
 
 function isInternalOnly(files: string[]): boolean {
@@ -58,7 +67,7 @@ function pullSource(pull: PullRequestRecord): SourceEvidence {
 
 function commitSource(commit: CommitRecord): SourceEvidence {
   return {
-    id: `commit:${commit.sha}`,
+    id: `commit:${commit.sha.slice(0, 12)}`,
     type: "commit",
     title: commit.subject,
     text: [`Commit: ${commit.sha}`, `Author: ${commit.author}`, `Subject: ${commit.subject}`, commit.body].filter(Boolean).join("\n"),
@@ -108,7 +117,7 @@ export async function normalizeChanges(
     );
     const sources: SourceEvidence[] = [
       ...group.pulls.map(pullSource),
-      ...group.commits.map(commitSource),
+      ...boundedSample(group.commits, MAX_COMMIT_SOURCES).map(commitSource),
       ...files.slice(0, MAX_FILE_SOURCES).map((file) => ({
         id: compactSourceId("file", `${id}\0${file}`),
         type: "file" as const,
@@ -133,7 +142,7 @@ export async function normalizeChanges(
       pullRequests: group.pulls,
       files,
       sources,
-      patchTruncated: truncated || files.length > MAX_FILE_SOURCES
+      patchTruncated: truncated || files.length > MAX_FILE_SOURCES || group.commits.length > MAX_COMMIT_SOURCES
     });
   }
   return changes;
