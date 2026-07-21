@@ -31,6 +31,5 @@ export const CATEGORY_TITLES: Record<(typeof CATEGORY_VALUES)[number], string> =
 export const SOURCE_REPOSITORY = "gordolio/Trio";
 export const UPSTREAM_REPOSITORY = "nightscout/Trio";
 export const SOURCE_WORKFLOW_FILE = "build_trio.yml";
-export const SOURCE_WORKFLOW_NAME = "4. Build Trio";
 export const SOURCE_BUILD_JOB_NAME = "Build";
 export const SOURCE_ARTIFACT_NAME = "build-artifacts";

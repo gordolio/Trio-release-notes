@@ -32,8 +32,8 @@ export class GitHubClient {
   }
 
   async assertSuccessfulBuild(run: WorkflowRunInfo): Promise<void> {
-    if (run.name !== config.workflowName || !run.path.endsWith(`/${config.workflowFile}`)) {
-      throw new IneligibleBuildError(`Run ${run.id} is not the ${config.workflowName} workflow`);
+    if (!run.path.endsWith(`/${config.workflowFile}`)) {
+      throw new IneligibleBuildError(`Run ${run.id} is not the ${config.workflowFile} workflow`);
     }
     const jobs = await this.octokit.paginate(this.octokit.rest.actions.listJobsForWorkflowRun, {
       ...config.sourceRepository,

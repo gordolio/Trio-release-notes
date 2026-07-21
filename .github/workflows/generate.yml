@@ -20,8 +20,6 @@ concurrency:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   generate:
@@ -48,9 +46,9 @@ jobs:
           git fetch upstream '+refs/heads/*:refs/remotes/upstream/*'
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - name: Install, build, and test
@@ -63,7 +61,7 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
-          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://gordolio.github.io/Trio-release-notes' }}
+          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
@@ -75,7 +73,7 @@ jobs:
           BACKFILL_MONTHS: ${{ inputs.backfill_months }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
-          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://gordolio.github.io/Trio-release-notes' }}
+          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
         run: node dist/src/cli.js backfill --months "$BACKFILL_MONTHS"
@@ -85,7 +83,7 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
-          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://gordolio.github.io/Trio-release-notes' }}
+          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
         run: node dist/src/cli.js reconcile --days 30
@@ -105,23 +103,3 @@ jobs:
             git commit -m "Generate Trio build release notes"
             git push
           fi
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: public
-
-  deploy:
-    name: Deploy GitHub Pages
-    needs: generate
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
