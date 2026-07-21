@@ -1,0 +1,134 @@
+import { config } from "./config.js";
+import { patchForCommits } from "./git.js";
+import type { GitHubClient } from "./github.js";
+import type {
+  CommitRecord,
+  NormalizedChange,
+  Provenance,
+  PullRequestRecord,
+  SourceEvidence
+} from "./types.js";
+
+const INTERNAL_PATH_PREFIXES = [
+  ".github/",
+  "fastlane/",
+  "scripts/",
+  "docs/",
+  "README",
+  "Gemfile",
+  "Package.resolved"
+];
+
+function isInternalOnly(files: string[]): boolean {
+  return files.length > 0 && files.every((file) => INTERNAL_PATH_PREFIXES.some((prefix) => file.startsWith(prefix)));
+}
+
+function preferredPullRequest(commit: CommitRecord, origin: PullRequestRecord[], upstream: PullRequestRecord[]): PullRequestRecord | null {
+  const candidates = commit.isUpstream ? upstream : origin;
+  return candidates.find((pull) => pull.mergedAt !== null) ?? null;
+}
+
+function changeProvenance(commits: CommitRecord[], files: string[], hotspots: Set<string>): Provenance {
+  if (isInternalOnly(files)) {
+    return "internal";
+  }
+  const hasUpstream = commits.some((commit) => commit.isUpstream);
+  const hasOrigin = commits.some((commit) => !commit.isUpstream);
+  if ((hasUpstream && hasOrigin) || (hasOrigin && files.some((file) => hotspots.has(file)))) {
+    return "mixed";
+  }
+  return hasUpstream ? "upstream" : "origin";
+}
+
+function pullSource(pull: PullRequestRecord): SourceEvidence {
+  return {
+    id: `pr:${pull.repository}#${pull.number}`,
+    type: "pull-request",
+    title: `${pull.repository}#${pull.number}: ${pull.title}`,
+    text: [`Title: ${pull.title}`, `Labels: ${pull.labels.join(", ") || "none"}`, "Description:", pull.body || "(none)"].join("\n"),
+    url: pull.url
+  };
+}
+
+function commitSource(commit: CommitRecord): SourceEvidence {
+  return {
+    id: `commit:${commit.sha}`,
+    type: "commit",
+    title: commit.subject,
+    text: [`Commit: ${commit.sha}`, `Author: ${commit.author}`, `Subject: ${commit.subject}`, commit.body].filter(Boolean).join("\n"),
+    url: `https://github.com/${config.sourceRepository.owner}/${config.sourceRepository.repo}/commit/${commit.sha}`
+  };
+}
+
+export async function normalizeChanges(
+  commits: CommitRecord[],
+  hotspots: string[],
+  rangeFiles: string[],
+  github: GitHubClient
+): Promise<NormalizedChange[]> {
+  const groups = new Map<string, { commits: CommitRecord[]; pulls: PullRequestRecord[] }>();
+
+  for (const commit of commits.filter((candidate) => !candidate.isUpstreamSyncMerge)) {
+    const [originPulls, upstreamPulls] = await Promise.all([
+      github.associatedPullRequests(config.sourceRepository, commit.sha),
+      github.associatedPullRequests(config.upstreamRepository, commit.sha)
+    ]);
+    const pull = preferredPullRequest(commit, originPulls, upstreamPulls);
+    const key = pull ? `pr:${pull.repository}#${pull.number}` : `commit:${commit.sha}`;
+    const group = groups.get(key) ?? { commits: [], pulls: [] };
+    group.commits.push(commit);
+    const relatedPulls = [
+      originPulls.find((candidate) => candidate.mergedAt !== null),
+      upstreamPulls.find((candidate) => candidate.mergedAt !== null)
+    ].filter((candidate) => candidate !== undefined);
+    for (const candidate of relatedPulls) {
+      if (!group.pulls.some((existing) => existing.repository === candidate.repository && existing.number === candidate.number)) {
+        group.pulls.push(candidate);
+      }
+    }
+    groups.set(key, group);
+  }
+
+  const hotspotSet = new Set(hotspots);
+  const rangeFileSet = new Set(rangeFiles);
+  const changes: NormalizedChange[] = [];
+  for (const [id, group] of groups) {
+    const files = [...new Set(group.commits.filter((commit) => commit.parents.length <= 1).flatMap((commit) => commit.files))]
+      .filter((file) => rangeFileSet.has(file))
+      .sort();
+    const { patch, truncated } = await patchForCommits(
+      group.commits.filter((commit) => commit.parents.length <= 1).map((commit) => commit.sha),
+      config.maxPatchCharacters
+    );
+    const sources: SourceEvidence[] = [
+      ...group.pulls.map(pullSource),
+      ...group.commits.map(commitSource),
+      ...files.map((file) => ({
+        id: `file:${group.commits.at(-1)?.sha ?? "unknown"}:${file}`,
+        type: "file" as const,
+        title: file,
+        text: `Changed file: ${file}`,
+        url: `https://github.com/${config.sourceRepository.owner}/${config.sourceRepository.repo}/commit/${group.commits.at(-1)?.sha ?? "HEAD"}`
+      }))
+    ];
+    if (patch) {
+      sources.push({
+        id: `diff:${id}`,
+        type: "diff",
+        title: `Diff for ${id}`,
+        text: patch,
+        url: `https://github.com/${config.sourceRepository.owner}/${config.sourceRepository.repo}/compare/${group.commits[0]?.parents[0] ?? group.commits[0]?.sha}...${group.commits.at(-1)?.sha}`
+      });
+    }
+    changes.push({
+      id,
+      provenance: changeProvenance(group.commits, files, hotspotSet),
+      commits: group.commits,
+      pullRequests: group.pulls,
+      files,
+      sources,
+      patchTruncated: truncated
+    });
+  }
+  return changes;
+}

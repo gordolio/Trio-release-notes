@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1",
+  "metadata": {
+    "sourceWorkflowRunId": 123,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/123",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "1111111111111111111111111111111111111111",
+    "currentBuiltSha": "2222222222222222222222222222222222222222",
+    "shortSha": "2222222",
+    "buildDate": "2026-07-20T14:42:00.000Z",
+    "generationDate": "2026-07-20T15:00:00.000Z",
+    "generatorVersion": "0.1.0",
+    "promptVersion": "1",
+    "model": "test/model"
+  },
+  "highlights": [],
+  "categories": [
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": [
+        {
+          "changeIds": ["commit:2222222"],
+          "summary": "Fixes a test behavior.",
+          "userFacingImpact": "The behavior is more reliable.",
+          "category": "fixes",
+          "sourceIds": ["commit:2222222"],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "highlight": false,
+          "provenance": "origin",
+          "sources": [
+            {
+              "id": "commit:2222222",
+              "type": "commit",
+              "title": "Test commit",
+              "url": "https://github.com/gordolio/Trio/commit/2222222"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [],
+  "includedFiles": []
+}

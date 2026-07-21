@@ -1,0 +1,127 @@
+name: Generate release notes
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful gordolio/Trio workflow run ID
+        required: false
+        type: string
+      backfill_months:
+        description: Rolling months of successful builds to import
+        required: false
+        type: string
+  schedule:
+    - cron: "23 9 * * *"
+
+concurrency:
+  group: release-notes-publisher
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate:
+    name: Generate and publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out release-note generator
+        uses: actions/checkout@v5
+
+      - name: Check out Trio history
+        uses: actions/checkout@v5
+        with:
+          repository: gordolio/Trio
+          ref: dev
+          path: .source/Trio
+          fetch-depth: 0
+          token: ${{ secrets.TRIO_GITHUB_TOKEN }}
+
+      - name: Fetch fork and upstream branches
+        working-directory: .source/Trio
+        run: |
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+          git remote add upstream https://github.com/nightscout/Trio.git
+          git fetch upstream '+refs/heads/*:refs/remotes/upstream/*'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install, build, and test
+        run: |
+          npm ci
+          npm run check
+
+      - name: Generate dispatched build
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id != '' }}
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
+          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://gordolio.github.io/Trio-release-notes' }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          TRIO_CHECKOUT_PATH: .source/Trio
+          TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
+        run: node dist/src/cli.js generate --run-id "$SOURCE_RUN_ID"
+
+      - name: Backfill successful builds
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id == '' && inputs.backfill_months != '' }}
+        env:
+          BACKFILL_MONTHS: ${{ inputs.backfill_months }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
+          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://gordolio.github.io/Trio-release-notes' }}
+          TRIO_CHECKOUT_PATH: .source/Trio
+          TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
+        run: node dist/src/cli.js backfill --months "$BACKFILL_MONTHS"
+
+      - name: Reconcile recent builds
+        if: ${{ github.event_name == 'schedule' }}
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
+          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://gordolio.github.io/Trio-release-notes' }}
+          TRIO_CHECKOUT_PATH: .source/Trio
+          TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
+        run: node dist/src/cli.js reconcile --days 30
+
+      - name: Reject an empty manual request
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id == '' && inputs.backfill_months == '' }}
+        run: |
+          echo "Set source_run_id or backfill_months when dispatching this workflow." >&2
+          exit 1
+
+      - name: Commit generated reports and state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data public
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate Trio build release notes"
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  deploy:
+    name: Deploy GitHub Pages
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

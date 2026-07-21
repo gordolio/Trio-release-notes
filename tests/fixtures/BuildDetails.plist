@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>com-trio-build-date</key>
+  <string>Mon Jul 20 14:42:00 UTC 2026</string>
+  <key>com-trio-commit-sha</key>
+  <string>24e4245</string>
+</dict>
+</plist>
