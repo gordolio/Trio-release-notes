@@ -1,0 +1,20 @@
+{
+  "inputHash": "fad696cefcf26cb036de4c60f98f10e7ddd466c643295caefc31e41e633c0688",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:275c4e064d7de62db1c44e286c31aafe553ebc5f",
+    "summary": "Bumps APP_DEV_VERSION in Config.xcconfig from 0.8.4.3 to 0.8.4.4 (CI-only version/config change). (source: commit:275c4e064d7d, diff:c752ad495d4c, file:dbba7755f5c1)",
+    "userFacingImpact": "The commit modifies only the APP_DEV_VERSION setting in Config.xcconfig and does not change other files in this commit (source: diff:c752ad495d4c, file:dbba7755f5c1). From the provided change alone, user-facing functional impact cannot be determined; it appears to be a build/version metadata bump (source: commit:275c4e064d7d, diff:c752ad495d4c). Human review is recommended if confirmation of user impact is required.",
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:275c4e064d7d",
+      "file:dbba7755f5c1",
+      "diff:c752ad495d4c"
+    ],
+    "confidence": "medium",
+    "humanReviewRequired": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "inputHash": "adfa4ab3d538188aa5ab4149e9716f5c9216d583a3d6d0e332c6be80e01c0e89",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1263",
+    "summary": "Update of localization resource Trio/Sources/Localizations/Main/Localizable.xcstrings from Crowdin (2026-07-03). The patch (commit 94bb9c312786, merged in b0370ba66eff) makes many translation updates: numerous Norwegian (nb-NO) strings replace the term “blodsukker” with “glukose” (multiple occurrences) and adjust other wording; several new localization keys and localized entries are added (examples in the diff include keys for the symbols “– –” and “·”, \"%@ Device Alerts\", and relative time strings \"%dh ago\", \"%dm ago\", \"%ds ago\"); some localization entries change state from \"new\" to \"translated\" for various languages; at least one block present previously for \"(Snoozed)\" and several snooze-duration entries (e.g., \"1 hour\", \"3 hours\", \"20 min\") are removed in the shown diff; a small comment change (removed the word \"units\" from \"%@\" comment) is present. All changes are in the Localizable.xcstrings file according to the provided diff and file record.",
+    "userFacingImpact": "These are localization/string-table changes only (file: Trio/Sources/Localizations/Main/Localizable.xcstrings). Users will see updated text in the UI (notably Norwegian wording changing from “blodsukker” to “glukose”) and new localized labels/phrases (device-alert label, punctuation keys, and relative time strings). Because some altered strings appear in warnings and alarm-related text, a human review of the updated safety-critical phrasing is recommended to confirm no unintended change to meaning or clinical guidance.",
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#1263",
+      "pr:nightscout/Trio#1263",
+      "commit:94bb9c312786",
+      "commit:b0370ba66eff",
+      "file:a6a4f278044f",
+      "diff:b29a76d945d2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": true
+  }
+}
