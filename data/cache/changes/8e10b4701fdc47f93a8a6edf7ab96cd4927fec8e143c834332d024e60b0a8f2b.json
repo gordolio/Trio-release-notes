@@ -1,0 +1,20 @@
+{
+  "inputHash": "34a3a3896cc6d93da6a13bede0adfc71074429a4e4bf99822dda68038821348c",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:90dd1b0e509c73b0b62d21a40e7bedd8377a8ead",
+    "summary": "Updated the Xcode project file Trio.xcodeproj/project.pbxproj to reorganize project entries (commit:90dd1b0e509c). The PBXBuildFile section was modified: many source-file build entries were added and existing entries were reordered or relocated within the section (file:82ae38a95a23, diff:8e10b4701fdc). The PBXFileReference section was also updated with many added Swift source file references and reorganization of existing references (diff:8e10b4701fdc). The commit subject is \"reorganize project\" (commit:90dd1b0e509c).",
+    "userFacingImpact": "No direct user-visible behavior changes are shown in the project diff; the changes are to the Xcode project file and file references and therefore primarily affect project organization and build configuration (diff:8e10b4701fdc, file:82ae38a95a23). Human review is recommended to confirm build/CI integration and to ensure no files were unintentionally removed or mis-referenced (diff:8e10b4701fdc).",
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:90dd1b0e509c",
+      "file:82ae38a95a23",
+      "diff:8e10b4701fdc"
+    ],
+    "confidence": "medium",
+    "humanReviewRequired": true
+  }
+}
