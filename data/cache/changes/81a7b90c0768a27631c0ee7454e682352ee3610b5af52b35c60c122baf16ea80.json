@@ -1,0 +1,28 @@
+{
+  "inputHash": "c5468d2ace886b696a25f7c3bbe44e2a1e5ded019a56416a9dbd09cc4dc8c29c",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1293",
+    "summary": "Modifies SnoozeAlertsSheetView.swift to provide an in-list way to end a currently active snooze by replacing an explicit \"End Snooze\" button with a swipe action and associated destructive action. The change series initially added a centered \"Undo Snooze\" button that called undoSnooze/applySnooze(for: 0) (commit:6d1744d116c8, diff:81a7b90c0768). That button was renamed/simplified to \"End Snooze\" and the implementation was switched to endSnooze (commit:b8eed9dd7371, diff:81a7b90c0768). The explicit button was then replaced by swipeActions (both edges originally, then restricted to trailing edge) using a reusable endSnoozeAction view (commit:785dcbd32cd9, commit:d0cb803f6449, diff:81a7b90c0768). Finally, the UI footer and swipe action gained a symbol and the footer text was adjusted to indicate the swipe gesture; the destructive action label/system image was updated (commit:59bce547ac2b, file:f9749fdebc6e, diff:81a7b90c0768). The PR was merged (commit:502709a5434f, pr:nightscout/Trio#1293).",
+    "userFacingImpact": "When a snooze is active, the snooze row now exposes a destructive \"End Snooze\" swipe action (left/leading-to-trailing behavior was finalized as trailing/left swipe in the commits) instead of a centered button; the footer displays an icon and text instructing the user to swipe to end snooze (commit:785dcbd32cd9, commit:d0cb803f6449, commit:59bce547ac2b, file:f9749fdebc6e). The action invokes the existing applySnooze(for: 0) call to end the snooze (commit:6d1744d116c8, commit:b8eed9dd7371, diff:81a7b90c0768). Evidence in the supplied changes shows only UI/interaction and label/icon updates; no other behavioral changes outside ending the snooze were shown in the provided diffs (file:f9749fdebc6e, diff:81a7b90c0768).",
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#1293",
+      "pr:nightscout/Trio#1293",
+      "commit:6d1744d116c8",
+      "commit:b8eed9dd7371",
+      "commit:785dcbd32cd9",
+      "commit:d0cb803f6449",
+      "commit:59bce547ac2b",
+      "commit:daf7541daddd",
+      "commit:502709a5434f",
+      "file:f9749fdebc6e",
+      "diff:81a7b90c0768"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
