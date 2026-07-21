@@ -1,23 +1,23 @@
 {
-  "inputHash": "1c037e0c0fa62d826a7ffc82c498d0650ee9a19c3c62b1186000510fecee9106",
+  "inputHash": "0009d5ea89e70e050161266be94a1302e6bb44f8ef2f35fe9af5f42ebbbc88b7",
   "promptVersion": "2",
   "schemaVersion": "1",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1167",
-    "summary": "Release preparation for v0.8.0 (release PR text included) with an internal build metadata change: Config.xcconfig's APP_DEV_VERSION was incremented across four CI commits from 0.7.0.20 to 0.7.0.24. The change touches the file Config.xcconfig and the diff shows only APP_DEV_VERSION value updates. The PR metadata includes the v0.8.0 release notes and list of contained PRs.",
-    "userFacingImpact": "No functional user-facing behavior is shown in the supplied diffs; the edits are limited to APP_DEV_VERSION in Config.xcconfig (build/dev version metadata). If broader release contents need verification for user impact, a human review of the full PR contents is recommended.",
-    "category": "internal-and-build-system",
+    "summary": "Prepare and publish Trio v0.8.0. This release updates the app version (APP_VERSION/APP_DEV_VERSION set to 0.8.0), adds multiple user-facing features and fixes (anonymous opt-out telemetry backed by Apple App Attest; therapy settings upload to Tidepool; propagation of deleted glucose entries to Nightscout; optional override/adjustment confirmation dialogs; show and cancel in-progress bolus from Treatments view; context menus for swipeable history items; settings search scroll-to and highlight; unified bolus safety checks for APNS and Shortcut boluses; fixes to Nightscout site change events; glucose smoothing now uses the newest 350 values), includes submodule syncs and various PRs listed for the v0.8.0 release, and updates some Ruby/Gem dependencies in the project Gemfile.lock.",
+    "userFacingImpact": "Users will see new features and bugfixes described in the v0.8.0 release notes: telemetry (opt-out) is added, therapy settings are uploaded to Tidepool, deletions of glucose entries in the app propagate to Nightscout, confirmation dialogs can be enabled for overrides/temporary targets, active bolus progress is shown (and can be cancelled) from the Treatments screen, context menus are available as an alternative to swipe actions in history lists, settings search now scrolls-to and highlights results, bolus safety validation has been unified across APNS and Shortcut-driven boluses, Nightscout site-change false positives were fixed, and glucose smoothing now uses the newest 350 readings. The release also includes dependency updates and a version bump. These impacts are taken directly from the v0.8.0 release description and included diffs/commits; no additional behavioral assumptions are made. Human review is not required based on the provided change artifacts.",
+    "category": "highlights",
     "sourceIds": [
-      "pr:nightscout/Trio#1167",
       "pr:gordolio/Trio#1167",
-      "diff:3b42356d64e6",
+      "pr:nightscout/Trio#1167",
+      "commit:27faf1af5b99baf726976a891a82aac216f10e7f",
+      "commit:3ae38a30d7f992fc0f934760f2be7ef24cfb3644",
+      "commit:c8a3f080fd6185bf42571d931be24ea07d049fa0",
       "file:436fdb26a6b0",
-      "commit:c62dc16b5d92003625af45581fa7ad4da0a3fef6",
-      "commit:0e517968ed361783df37a631a60a4c2e17415d49",
-      "commit:4dc85fc6c4bea62c2f8d643a99f064f17140a90f",
-      "commit:a211e672cbea66d1cd5843b60a3a68458f002fe6"
+      "file:33c03e554875",
+      "diff:3b42356d64e6"
     ],
     "confidence": "high",
     "humanReviewRequired": false
