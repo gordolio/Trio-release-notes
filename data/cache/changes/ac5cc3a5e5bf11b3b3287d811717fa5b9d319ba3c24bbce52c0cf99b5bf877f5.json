@@ -1,0 +1,37 @@
+{
+  "inputHash": "3a3b750f14f34130f7b26bc75fcd35de91aa30c1aff7228773ea1021bf252694",
+  "promptVersion": "2",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1165",
+    "summary": "Adds a settings-search scroll-and-highlight feature: a new view modifier SettingsSearchHighlight (exposed as .settingsHighlightScroll(…)) that pairs a settings row with a search target, scrolls to the matched control when navigating into a settings sub-screen, and animates a brief transient highlight (pr:gordolio/Trio#1165, pr:nightscout/Trio#1165, diff:ac5cc3a5e5bf). The modifier was applied across the searchable settings surfaces and SettingItem gained scrollTargetLabels mapping entries so matches that are not themselves visible rows can route to a visible parent row (examples in the PR description) (pr:gordolio/Trio#1165, file:bd6abb72a508, diff:ac5cc3a5e5bf). Unit tests were added to cover mapping resolution (SettingsSearchTests.swift) (pr:gordolio/Trio#1165). The change is delivered as part of a merge commit that also includes multiple project, build, and resource updates (including additions to the Xcode project and Config.xcconfig entries) (commit:588483b8a5736d7d7e4367dcb81d6faeed1db88e, commit:ca73ca60493accd2dc0975af3b569ed8430ef4ac, file:108405f67777, file:f074d545f111, diff:ac5cc3a5e5bf). The same merge also adds telemetry-related source files and privacy/telemetry documentation text (e.g., TelemetryClient additions and expanded PRIVACY_POLICY.md text describing anonymous usage telemetry) (file:ac4d3c53e0ac, diff:ac5cc3a5e5bf).",
+    "userFacingImpact": "Search results within Settings will now navigate directly to the matched control and briefly highlight it, reducing the need for manual scanning after tapping a search result (pr:gordolio/Trio#1165, diff:ac5cc3a5e5bf). The merge also introduces telemetry-related UI/code and privacy-policy text describing an \"Anonymous Usage Telemetry\" opt-in flow (file:ac4d3c53e0ac, diff:ac5cc3a5e5bf); because telemetry and privacy changes can have broader user-impact and deployment implications, a human review is recommended to confirm defaults, opt-in behavior, and any backend dependencies before release (diff:ac5cc3a5e5bf).",
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#1165",
+      "pr:nightscout/Trio#1165",
+      "commit:f40885f173eb776bd4c7913b9187a85cfde2b2ff",
+      "commit:52be2717df30717bb7bf31ecd2d57b3092703183",
+      "commit:ca73ca60493accd2dc0975af3b569ed8430ef4ac",
+      "commit:389322b8a74ec9bdf4b30286fb1c145730eabc8b",
+      "commit:d85873e5e0cabd3ac825cfecdf6dfc673a82b267",
+      "commit:5e0f2fe1698c9bf7546a4aee8f2854bc7c3e4fc1",
+      "commit:588483b8a5736d7d7e4367dcb81d6faeed1db88e",
+      "file:f074d545f111",
+      "file:108405f67777",
+      "file:b70ba8bbe061",
+      "file:3ddcab449d07",
+      "file:760d87db34df",
+      "file:3ace697bec72",
+      "file:bb8891368bbe",
+      "file:bd6abb72a508",
+      "file:030a7127b2ad",
+      "file:ac4d3c53e0ac",
+      "diff:ac5cc3a5e5bf"
+    ],
+    "confidence": "medium",
+    "humanReviewRequired": true
+  }
+}
