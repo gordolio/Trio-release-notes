@@ -1,0 +1,20 @@
+{
+  "inputHash": "bafc3497a9826fa4be69faa6d1f74807c0369027e9ae92f9af06868fcc9b3062",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:145107726be7f3765ab117c274032300022b3026",
+    "summary": "Bumped APP_DEV_VERSION in Config.xcconfig from 0.8.4.21 to 0.8.4.22. The change is shown in the commit diff and file update (diff:ce34f0f08af7, file:3ea3d356c0a8, commit:145107726be7).",
+    "userFacingImpact": "No evidence in the provided change indicates any functional or runtime behavior change; this appears to be a development/version metadata bump in CI/config (file:3ea3d356c0a8, diff:ce34f0f08af7).",
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:145107726be7",
+      "file:3ea3d356c0a8",
+      "diff:ce34f0f08af7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
