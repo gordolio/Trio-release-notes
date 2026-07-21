@@ -1,19 +1,19 @@
 {
-  "inputHash": "cc6a1216a18ee78076865fa6f5bab7a24584ae98f8fffa3a75c2dc4c8f77c443",
+  "inputHash": "7d8ffb6f00413d2ae7e11f1f1154c9f45e0a09a917bc3c04a92ee41bb9d01be9",
   "promptVersion": "2",
   "schemaVersion": "1",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1212",
-    "summary": "Release patch (Trio v0.8.2) that: makes OmnipodKit the only Omnipod driver by removing OmniBLE and OmniKit submodules and consolidating onboarding/Add Pump to a single \"All Omnipod Types\" entry; adds Live Activity visual and localization fixes (renders active temp targets as a green band with a named badge, fixes indefinite override rendering so it no longer collapses the chart rule to the current moment, and corrects/ localizes COB and widget item labels); fixes watch app back-sync/stale-data processing to improve watch responsiveness; fixes Stats → Meals so today's carbs, fat, and protein macros display correctly; and includes CI config bumps to APP_DEV_VERSION in Config.xcconfig (updated to 0.8.1.2 and then 0.8.1.3 in successive commits).",
-    "userFacingImpact": "Users should see: only OmnipodKit available when adding/onboarding Omnipod pumps (OmniBLE/OmniKit submodules removed) (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); Live Activity lock-screen widget/chart will show active temp targets as a green band with a named badge, indefinite overrides will render correctly, and widget labels/COB text are localized/corrected (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); Apple Watch users should observe improved responsiveness and faster recovery from stale data (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); and the Meals stats chart will include today's macros (carbs, fat, protein) correctly (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212). The CI/app dev version was incremented in Config.xcconfig (commit:8efab96c8c5dc4a5cfaa89928ebf871ea71ef55c, commit:ebebe817e3f74aee3ed407884a3dda0ff9f0430c, diff:6b407ea4d5cc, file:5692afcf1358).",
+    "summary": "Trio v0.8.2 patch release containing multiple user-facing fixes and a CI/dev version bump. Release notes list: OmnipodKit becomes the sole Omnipod driver and legacy OmniBLE/OmniKit submodules removed (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); Live Activity improvements including rendering active temp targets as a green band with a named badge, a fix for indefinite overrides that previously collapsed the chart rule to the current moment, and COB/widget localization fixes (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); a watch connectivity/back-sync performance fix to reduce stale data hangups (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); and a fix so today's carbs/fat/protein macros appear correctly in the Meals chart (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212). In the repository CI/config, Config.xcconfig APP_DEV_VERSION was incremented from 0.8.1.3 to 0.8.1.4 and then to 0.8.1.5 across two commits (commit:a0399fd229e03c3a59570d40a3562c81a2fcaccc, commit:b04d0e6465a8e2ed965ffada93e9271beaf23c59; diff:6b407ea4d5cc; file:5692afcf1358).",
+    "userFacingImpact": "Conservative summary of user impact based on release notes and config changes: users may see the Omnipod selection simplified to a single \"All Omnipod Types\"/OmnipodKit entry in add-pump/onboarding flows (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); Live Activity lock-screen/chart will display active temp targets as a green band with a named badge, and indefinite overrides should render correctly instead of collapsing to the current moment (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); watch app/back-sync should recover from long staleness faster and avoid getting stuck during processing (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212); the Meals statistics view will show today's macros correctly (pr:gordolio/Trio#1212, pr:nightscout/Trio#1212). The APP_DEV_VERSION bumps are CI/dev configuration changes (commit:a0399fd229e03c3a59570d40a3562c81a2fcaccc, commit:b04d0e6465a8e2ed965ffada93e9271beaf23c59, diff:6b407ea4d5cc, file:5692afcf1358). If additional code-level verification or runtime testing is required to confirm behavior in every edge case, human review is recommended.",
     "category": "highlights",
     "sourceIds": [
       "pr:gordolio/Trio#1212",
       "pr:nightscout/Trio#1212",
-      "commit:8efab96c8c5dc4a5cfaa89928ebf871ea71ef55c",
-      "commit:ebebe817e3f74aee3ed407884a3dda0ff9f0430c",
+      "commit:a0399fd229e03c3a59570d40a3562c81a2fcaccc",
+      "commit:b04d0e6465a8e2ed965ffada93e9271beaf23c59",
       "file:5692afcf1358",
       "diff:6b407ea4d5cc"
     ],
