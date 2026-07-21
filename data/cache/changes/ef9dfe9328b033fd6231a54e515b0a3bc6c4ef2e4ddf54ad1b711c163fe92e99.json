@@ -1,0 +1,25 @@
+{
+  "inputHash": "de3876cfc39858955f5075727f24d2c41a30963d2fda3330a60c6bb68bb26012",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1226",
+    "summary": "Adds a private LoopGuard actor to serialize loop execution and prevent a race that could start the loop twice; moves background-task handling into the loop() async scope (removing the shared backgroundTaskID property and the previous expiration-Task); consolidates loop lifecycle functions (canStartNewLoop, setupLoop, loopCompleted) into loop()/finalizeLoop(); makes calculateLoopInterval accept loopStartDate rather than reading lastLoopStartDate; and reorders executeLoop so it records end/duration/status and only calls enactDetermination when settings.closedLoop is true.",
+    "userFacingImpact": "This change aims to prevent concurrent loop executions by performing the check-and-mark operation inside a LoopGuard actor (addresses the check-then-act race) and changes background-task behavior so the loop's async scope owns beginning and ending the background task. The removal of the previous expiration handler/Task is deliberate; if iOS expires the background task before the loop finishes, the coroutine now completes on a best-effort basis rather than relying on the former handler (the author notes the previous handler also did not guarantee completion). These behavioral changes are described in the change and may affect how loops complete when the app is backgrounded; a human review is recommended to assess runtime and safety impacts in production environments.",
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#1226",
+      "pr:nightscout/Trio#1226",
+      "commit:4492f6cbd2a4",
+      "commit:22cf1bb2e678",
+      "commit:b64aa7362803",
+      "commit:86a329273e19",
+      "file:86175d7f2a5f",
+      "diff:ef9dfe9328b0"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": true
+  }
+}
