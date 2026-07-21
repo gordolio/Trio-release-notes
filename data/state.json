@@ -32,6 +32,11 @@
       "fullSha": "47081512d5bf9a0f7553bcd3a53a6ee0d892e172",
       "reportPath": "public/builds/4708151.json",
       "processedAt": "2026-07-21T05:17:46.464Z"
+    },
+    "26697960913": {
+      "fullSha": "2f97cd5fb3b91eaaf6c122afb3d323763d489ab6",
+      "reportPath": "public/builds/2f97cd5.json",
+      "processedAt": "2026-07-21T05:18:47.653Z"
     }
   },
   "successfulBuilds": [
@@ -90,6 +95,14 @@
       "shortSha": "4708151",
       "builtAt": "2026-05-29T17:23:32Z",
       "reportPath": "public/builds/4708151.json"
+    },
+    {
+      "runId": 26697960913,
+      "branch": "dev",
+      "fullSha": "2f97cd5fb3b91eaaf6c122afb3d323763d489ab6",
+      "shortSha": "2f97cd5",
+      "builtAt": "2026-05-30T23:38:00Z",
+      "reportPath": "public/builds/2f97cd5.json"
     }
   ]
 }

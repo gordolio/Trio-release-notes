@@ -1,0 +1,23 @@
+{
+  "inputHash": "77bb3e4f44dacb86a56397a6fea011279a92db501579fd7da345ede9423da254",
+  "promptVersion": "2",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1182",
+    "summary": "Updates the repository .github/CODEOWNERS file to add two GitHub handles, @kingst and @marionbarker, to the existing CODEOWNERS line. The change is recorded in PRs and commits: pr:gordolio/Trio#1182, pr:nightscout/Trio#1182, commit:04d24cfee9ae768800e965e869bb237f8bcbcde1, and commit:62956be6cace2713aef5b2f0d8011ff4fe254f4c; the file change is shown in file:ab525829a37e and diff:da3c5d8df259.",
+    "userFacingImpact": "No runtime or functional behavior changes are indicated by the provided sources. The change modifies repository ownership metadata (the CODEOWNERS file) by adding @kingst and @marionbarker, which affects code review/ownership assignment in the repository rather than application behavior (see file:ab525829a37e and diff:da3c5d8df259).",
+    "category": "origin-only-customizations",
+    "sourceIds": [
+      "pr:gordolio/Trio#1182",
+      "pr:nightscout/Trio#1182",
+      "commit:04d24cfee9ae768800e965e869bb237f8bcbcde1",
+      "commit:62956be6cace2713aef5b2f0d8011ff4fe254f4c",
+      "file:ab525829a37e",
+      "diff:da3c5d8df259"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
