@@ -1,0 +1,20 @@
+{
+  "inputHash": "8cb5b818251560f13f8aa7f4c59fc768f04d0804c92b8db43faf33bce47b0850",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:c9590db445dc36a8ee6526036dc1a162fb2b3528",
+    "summary": "Update Config.xcconfig: APP_DEV_VERSION changed from 0.8.2.1 to 0.8.2.2. (See diff:38ba7c4ede8e and file:6809a700a5e2; commit metadata commit:c9590db445dc.)",
+    "userFacingImpact": "The patch modifies only a development/build version constant (APP_DEV_VERSION) in Config.xcconfig and the provided diff shows no source-code or behavioral changes, so there is no direct evidence in the supplied files of a user-facing behavioral change. (See file:6809a700a5e2, diff:38ba7c4ede8e, commit:c9590db445dc.) However, the supplied sources are limited to this config change and do not prove the absence of any indirect effects; human review is recommended to confirm there are no user-impacting consequences.",
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:c9590db445dc",
+      "file:6809a700a5e2",
+      "diff:38ba7c4ede8e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": true
+  }
+}

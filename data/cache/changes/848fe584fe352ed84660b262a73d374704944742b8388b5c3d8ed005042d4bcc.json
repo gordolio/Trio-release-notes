@@ -1,0 +1,32 @@
+{
+  "inputHash": "43dae6bcdf0d1ad8a3434abd575faa3dcf1ab3586cda04a1a5f4fb24e18aa47b",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1219",
+    "summary": "Adds an explicit sync of pump delivery limits from the user's PumpSettings during pump manager initialization: DeviceDataManager now builds a DeliveryLimits instance using the current pumpSettings.maxBasal and maxBolus (using HKQuantity) and calls pumpManager.syncDeliveryLimits asynchronously, logging failures (commit:bac19bc234c4; diff:848fe584fe35; file:aae13bcd9cb0). Adds DeliveryLimitsSyncTests that verify the maxBasal → maximumBasalRate and maxBolus → maximumBolus mappings and assert user-configured values are preserved (commit:fdcdbc723520; file:e01448936b0f; diff:848fe584fe35). Also bumps the app version to 0.8.3 (commit:ebedcdca96b6; file:355e8efdeed2), updates the OmnipodKit submodule (commit:597774abe907; file:86f289894ab7), blacklists additional older versions (commit:42b6fe606c32; file:c946b13d5f3a), removes an outdated Medtronic note from UI text (commit:a180bd9dfb51; file:1cecd9ffa0b9), and merges the hotfix PR (commit:7b8db13acaac; pr:gordolio/Trio#1219; pr:nightscout/Trio#1219).",
+    "userFacingImpact": "According to the PR description this hotfix \"should solve the `.invalidSetting` failures we've been seeing\" (pr:gordolio/Trio#1219; pr:nightscout/Trio#1219). The code change forces the pump manager to receive DeliveryLimits constructed from the user's current PumpSettings at init, which is intended to prevent a stale or default delivery-limits value from causing the pump manager to silently reject temp basals (commit:bac19bc234c4; diff:848fe584fe35). DeliveryLimitsSyncTests were added to guard the mapping and prevent regressions (commit:fdcdbc723520; file:e01448936b0f).",
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:gordolio/Trio#1219",
+      "pr:nightscout/Trio#1219",
+      "commit:bac19bc234c4",
+      "commit:fdcdbc723520",
+      "commit:597774abe907",
+      "commit:ebedcdca96b6",
+      "commit:42b6fe606c32",
+      "commit:7b8db13acaac",
+      "file:aae13bcd9cb0",
+      "file:e01448936b0f",
+      "file:c946b13d5f3a",
+      "file:86f289894ab7",
+      "file:355e8efdeed2",
+      "file:1cecd9ffa0b9",
+      "diff:848fe584fe35"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
