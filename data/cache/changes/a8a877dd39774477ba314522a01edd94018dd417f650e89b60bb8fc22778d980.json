@@ -1,0 +1,38 @@
+{
+  "inputHash": "3b80048b7450cfad8af63312dd4317c657f5c07bd959ac7c2cd091e96fb79431",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1211",
+    "summary": "Adds an explicit \"initiating\" bolus state and updates UI and models to show when a bolus is initiating. The change introduces a BolusStatus model (file:ea8335ef1db5 / commit:aaf921a5fe3a) and adds an initiating state to the TreatmentView (commit:5a26db0ab814). The PR description explains the purpose: the Tandem Mobi can take ~5s between accepting a bolus command and actual progress, so the bolus progress view should reflect the initiating phase (pr:gordolio/Trio#1211). Supporting changes wire the new status through Treatments and Home state/views and device/APS managers (files:243583eb346b, 68d95205f2b4, 41aada787118, 3e0ec8bf55e7, fd972cd0e61b, ff1c6c26999d), and localizations were updated (file:aa1fdb7da2f4). Project file entries were also modified to include the new/updated sources (file:a4004047d405, diff:a8a877dd3977). (commit:aaf921a5fe3a; commit:3db59429401c; commit:5a26db0ab814; commit:c898d2ddeffa; commit:a963c3d9ae92; commit:ef15212c882b; commit:5792ad7ade3a; commit:44d119561cf9; commit:4333da70b008)",
+    "userFacingImpact": "The bolus progress UI will show an \"initiating\" state when a bolus has been accepted but not yet begun progressing, intended to represent short delays (noted ~5s for Tandem Mobi) between command acceptance and progress (pr:gordolio/Trio#1211; commit:5a26db0ab814). This is an interface change only in the provided diffs; there is no explicit evidence in the supplied sources that dosing logic or safety behavior was altered beyond adding the new display state (file:ea8335ef1db5; diff:a8a877dd3977).",
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#1211",
+      "pr:nightscout/Trio#1211",
+      "commit:aaf921a5fe3a",
+      "commit:3db59429401c",
+      "commit:5a26db0ab814",
+      "commit:c898d2ddeffa",
+      "commit:a963c3d9ae92",
+      "commit:ef15212c882b",
+      "commit:5792ad7ade3a",
+      "commit:44d119561cf9",
+      "commit:4333da70b008",
+      "file:a4004047d405",
+      "file:fd972cd0e61b",
+      "file:ff1c6c26999d",
+      "file:aa1fdb7da2f4",
+      "file:ea8335ef1db5",
+      "file:3e0ec8bf55e7",
+      "file:68d95205f2b4",
+      "file:243583eb346b",
+      "file:41aada787118",
+      "diff:a8a877dd3977"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

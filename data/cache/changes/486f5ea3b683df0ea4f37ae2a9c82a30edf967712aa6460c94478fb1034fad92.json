@@ -1,0 +1,39 @@
+{
+  "inputHash": "ae309c6ffbe9604d71ea95e9d6bf640ef4c0a5f9b4af57358b4835e4421ef8c8",
+  "promptVersion": "3",
+  "schemaVersion": "1",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1194",
+    "summary": "Adds optional glucose forecast display to the Live Activity (lock screen) widget and the supporting data/path plumbing. Changes include new Live Activity content state fields (minForecast, maxForecast, forecastLines, forecastDisplayType), DataManager logic to prefetch and compute forecast arrays and cone bounds, DeterminationData/attributes updates to carry forecasts, chart rendering in LiveActivityChartView to draw either a cone (AreaMark) or per-type lines (LineMark), and a new user setting to toggle sending/displaying forecasts from Settings > Notifications > Live Activity. Several follow-up commits adjust payload size and safety (mutually exclusive cone vs lines, cap at 24 points), color and visibility fixes (inline RGB for widget bundle, hide iob when cob/uam present), clamp forecast Y-axis to chart thresholds, and localization strings.",
+    "userFacingImpact": "A new setting \"Display Glucose Forecasts\" (default OFF) appears under Settings > Notifications > Live Activity; when enabled the Live Activity lock screen chart can show Oref forecasts either as a cone or as lines (display mode follows the existing Forecast Display Type setting). Forecast data is gated by the new setting and the payload was made payload-safe by sending only cone bounds or line arrays per update and capping forecast length (24 points). The PR author requests more testers and a code review before broad deployment.",
+    "category": "new-features",
+    "sourceIds": [
+      "pr:gordolio/Trio#1194",
+      "pr:nightscout/Trio#1194",
+      "commit:32ae9799f787",
+      "commit:b97e1dea03e3",
+      "commit:c9113df4d62a",
+      "commit:9325a24e946e",
+      "commit:b1b5a5f28107",
+      "commit:6d8be44f2e6a",
+      "commit:5cf740f2dff1",
+      "commit:05f45510a798",
+      "file:b8e9440acd75",
+      "file:047cabde933a",
+      "file:07c5d9550567",
+      "file:e3de1806b678",
+      "file:ea01696a0eaf",
+      "file:9f2ebbd56217",
+      "file:9a72766dc609",
+      "file:a6286edbbf32",
+      "file:a1ac89c43b84",
+      "file:144e4a3dfe53",
+      "file:193dfcdfbdb1",
+      "diff:486f5ea3b683"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": true
+  }
+}
