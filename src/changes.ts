@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { config } from "./config.js";
 import { patchForCommits } from "./git.js";
 import type { GitHubClient } from "./github.js";
@@ -18,6 +19,11 @@ const INTERNAL_PATH_PREFIXES = [
   "Gemfile",
   "Package.resolved"
 ];
+const MAX_FILE_SOURCES = 200;
+
+function compactSourceId(type: string, value: string): string {
+  return `${type}:${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
+}
 
 function isInternalOnly(files: string[]): boolean {
   return files.length > 0 && files.every((file) => INTERNAL_PATH_PREFIXES.some((prefix) => file.startsWith(prefix)));
@@ -103,8 +109,8 @@ export async function normalizeChanges(
     const sources: SourceEvidence[] = [
       ...group.pulls.map(pullSource),
       ...group.commits.map(commitSource),
-      ...files.map((file) => ({
-        id: `file:${group.commits.at(-1)?.sha ?? "unknown"}:${file}`,
+      ...files.slice(0, MAX_FILE_SOURCES).map((file) => ({
+        id: compactSourceId("file", `${id}\0${file}`),
         type: "file" as const,
         title: file,
         text: `Changed file: ${file}`,
@@ -113,7 +119,7 @@ export async function normalizeChanges(
     ];
     if (patch) {
       sources.push({
-        id: `diff:${id}`,
+        id: compactSourceId("diff", id),
         type: "diff",
         title: `Diff for ${id}`,
         text: patch,
@@ -127,7 +133,7 @@ export async function normalizeChanges(
       pullRequests: group.pulls,
       files,
       sources,
-      patchTruncated: truncated
+      patchTruncated: truncated || files.length > MAX_FILE_SOURCES
     });
   }
   return changes;

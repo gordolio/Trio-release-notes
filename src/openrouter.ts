@@ -14,6 +14,7 @@ import {
 
 const categorySchema = { type: "string", enum: CATEGORY_VALUES } as const;
 const confidenceSchema = { type: "string", enum: ["high", "medium", "low"] } as const;
+const VALIDATION_ATTEMPTS = 2;
 
 const changeJsonSchema = {
   type: "object",
@@ -64,6 +65,52 @@ const aggregateJsonSchema = {
     }
   }
 };
+
+export function changeSchema(change: NormalizedChange): object {
+  return {
+    ...changeJsonSchema,
+    properties: {
+      ...changeJsonSchema.properties,
+      changeId: { type: "string", enum: [change.id] },
+      sourceIds: {
+        type: "array",
+        minItems: 1,
+        items: { type: "string", enum: change.sources.map((source) => source.id) }
+      }
+    }
+  };
+}
+
+export function aggregateSchema(changes: NormalizedChange[], summaries: ChangeSummary[]): object {
+  return {
+    ...aggregateJsonSchema,
+    properties: {
+      items: {
+        ...aggregateJsonSchema.properties.items,
+        items: {
+          ...aggregateJsonSchema.properties.items.items,
+          properties: {
+            ...aggregateJsonSchema.properties.items.items.properties,
+            changeIds: {
+              type: "array",
+              minItems: 1,
+              items: { type: "string", enum: changes.map((change) => change.id) }
+            },
+            sourceIds: {
+              type: "array",
+              minItems: 1,
+              items: { type: "string", enum: [...new Set(summaries.flatMap((summary) => summary.sourceIds))] }
+            }
+          }
+        }
+      }
+    }
+  };
+}
+
+function errorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
 
 interface CacheRecord {
   inputHash: string;
@@ -151,39 +198,62 @@ export class OpenRouterSummarizer {
       }
     }
 
-    const response = await this.client.chat.completions.create({
-      model: config.openRouterModel,
-      messages: [
-        {
-          role: "system",
-          content: [
-            "Summarize only the supplied logical code change.",
-            "Use no outside knowledge and make no unsupported claims.",
-            "Every factual statement must be supported by at least one supplied source ID.",
-            "Preserve the exact changeId. Do not create URLs or source IDs.",
-            "Describe user impact conservatively. If evidence is insufficient, say so and require human review.",
-            "Internal-only changes belong in internal-and-build-system. Origin provenance may use origin-only-customizations.",
-            "Return only JSON matching the schema."
-          ].join("\n")
+    let summary: ChangeSummary | undefined;
+    let responseModel = config.openRouterModel;
+    let correction = "";
+    for (let attempt = 0; attempt < VALIDATION_ATTEMPTS; attempt += 1) {
+      const response = await this.client.chat.completions.create({
+        model: config.openRouterModel,
+        messages: [
+          {
+            role: "system",
+            content: [
+              "Summarize only the supplied logical code change.",
+              "Use no outside knowledge and make no unsupported claims.",
+              "Every factual statement must be supported by at least one supplied source ID.",
+              "Copy changeId and sourceIds exactly from the supplied input. Do not shorten or rewrite them.",
+              "Describe user impact conservatively. If evidence is insufficient, say so and require human review.",
+              "Internal-only changes belong in internal-and-build-system. Origin provenance may use origin-only-customizations.",
+              "Return only JSON matching the schema.",
+              correction
+            ].filter(Boolean).join("\n")
+          },
+          { role: "user", content: JSON.stringify(input) }
+        ],
+        response_format: {
+          type: "json_schema",
+          json_schema: { name: "trio_change_summary", strict: true, schema: changeSchema(change) }
         },
-        { role: "user", content: JSON.stringify(input) }
-      ],
-      response_format: {
-        type: "json_schema",
-        json_schema: { name: "trio_change_summary", strict: true, schema: changeJsonSchema }
-      },
-      provider: { require_parameters: true }
-    } as OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming);
-    this.responseModel = response.model;
-    const summary = changeSummarySchema.parse(parseContent(response.choices[0]?.message.content ?? null));
-    this.validateChangeSummary(summary, change);
+        provider: { require_parameters: true }
+      } as OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming);
+      responseModel = response.model;
+      this.responseModel = response.model;
+      try {
+        const candidate = changeSummarySchema.parse(parseContent(response.choices[0]?.message.content ?? null));
+        this.validateChangeSummary(candidate, change);
+        summary = candidate;
+        break;
+      } catch (error) {
+        if (attempt === VALIDATION_ATTEMPTS - 1) {
+          throw error;
+        }
+        correction = [
+          `The previous response failed validation: ${errorMessage(error)}`,
+          `Allowed sourceIds: ${change.sources.map((source) => source.id).join(", ")}`,
+          "Return a corrected response using only exact allowed identifiers."
+        ].join("\n");
+      }
+    }
+    if (!summary) {
+      throw new Error(`OpenRouter did not return a valid summary for ${change.id}`);
+    }
     await mkdir(config.cacheDir, { recursive: true });
     const cache: CacheRecord = {
       inputHash: hash,
       promptVersion: PROMPT_VERSION,
       schemaVersion: SCHEMA_VERSION,
       requestedModel: config.openRouterModel,
-      responseModel: response.model,
+      responseModel,
       summary
     };
     await writeFile(cachePath, `${JSON.stringify(cache, null, 2)}\n`);
@@ -198,33 +268,50 @@ export class OpenRouterSummarizer {
       ...summary,
       provenance: changes.find((change) => change.id === summary.changeId)?.provenance
     }));
-    const response = await this.client.chat.completions.create({
-      model: config.openRouterModel,
-      messages: [
-        {
-          role: "system",
-          content: [
-            "Organize validated change summaries into concise build release-note items.",
-            "Use each supplied changeId exactly once. Combine only closely related changes.",
-            "Use only supplied sourceIds and preserve their factual meaning.",
-            "Do not add uncited facts, risks, or known concerns.",
-            "Mark only the most user-significant items as highlights.",
-            "If combined evidence is uncertain, require human review.",
-            "Return only JSON matching the schema."
-          ].join("\n")
+    let correction = "";
+    for (let attempt = 0; attempt < VALIDATION_ATTEMPTS; attempt += 1) {
+      const response = await this.client.chat.completions.create({
+        model: config.openRouterModel,
+        messages: [
+          {
+            role: "system",
+            content: [
+              "Organize validated change summaries into concise build release-note items.",
+              "Use each supplied changeId exactly once. Combine only closely related changes.",
+              "Copy changeIds and sourceIds exactly from the supplied input. Do not shorten or rewrite them.",
+              "Do not add uncited facts, risks, or known concerns.",
+              "Mark only the most user-significant items as highlights.",
+              "If combined evidence is uncertain, require human review.",
+              "Return only JSON matching the schema.",
+              correction
+            ].filter(Boolean).join("\n")
+          },
+          { role: "user", content: JSON.stringify(input) }
+        ],
+        response_format: {
+          type: "json_schema",
+          json_schema: { name: "trio_build_summary", strict: true, schema: aggregateSchema(changes, summaries) }
         },
-        { role: "user", content: JSON.stringify(input) }
-      ],
-      response_format: {
-        type: "json_schema",
-        json_schema: { name: "trio_build_summary", strict: true, schema: aggregateJsonSchema }
-      },
-      provider: { require_parameters: true }
-    } as OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming);
-    this.responseModel = response.model;
-    const result = aggregateOutputSchema.parse(parseContent(response.choices[0]?.message.content ?? null));
-    this.validateAggregate(result.items, changes, summaries);
-    return result.items;
+        provider: { require_parameters: true }
+      } as OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming);
+      this.responseModel = response.model;
+      try {
+        const result = aggregateOutputSchema.parse(parseContent(response.choices[0]?.message.content ?? null));
+        this.validateAggregate(result.items, changes, summaries);
+        return result.items;
+      } catch (error) {
+        if (attempt === VALIDATION_ATTEMPTS - 1) {
+          throw error;
+        }
+        correction = [
+          `The previous response failed validation: ${errorMessage(error)}`,
+          `Allowed changeIds: ${changes.map((change) => change.id).join(", ")}`,
+          `Allowed sourceIds: ${[...new Set(summaries.flatMap((summary) => summary.sourceIds))].join(", ")}`,
+          "Return a corrected response using every change exactly once and only exact allowed identifiers."
+        ].join("\n");
+      }
+    }
+    throw new Error("OpenRouter did not return a valid aggregate summary");
   }
 
   private validateChangeSummary(summary: ChangeSummary, change: NormalizedChange): void {

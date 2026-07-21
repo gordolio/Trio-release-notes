@@ -31,6 +31,8 @@ Reconcile recent builds missed by cross-repository dispatch:
 node dist/src/cli.js reconcile --days 30
 ```
 
+Pass `--checkpoint` in CI to commit and push state, caches, and reports after each successful build. This lets a failed long-running backfill resume without repeating completed AI work.
+
 Backfill includes the nearest successful build before the requested window as its initial comparison baseline. It publishes only builds inside the requested window. Failed workflows, skipped `Build` jobs, and failed `Build` jobs never advance the baseline.
 
 ## Configuration

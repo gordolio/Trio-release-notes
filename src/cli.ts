@@ -2,10 +2,24 @@
 import { access } from "node:fs/promises";
 import { config, requireRuntimeConfiguration } from "./config.js";
 import { generateForRun, processRunsSince } from "./generator.js";
+import { checkpointGeneratedOutputs } from "./publisher.js";
 
 function option(name: string): string | null {
   const index = process.argv.indexOf(name);
   return index >= 0 ? process.argv[index + 1] ?? null : null;
+}
+
+function flag(name: string): boolean {
+  return process.argv.includes(name);
+}
+
+function checkpoint(): ((runId: number) => Promise<void>) | undefined {
+  if (!flag("--checkpoint")) {
+    return undefined;
+  }
+  return async (runId) => {
+    await checkpointGeneratedOutputs(runId);
+  };
 }
 
 function positiveInteger(value: string | null, label: string): number {
@@ -39,14 +53,16 @@ async function main(): Promise<void> {
     return;
   }
   if (command === "backfill") {
-    await processRunsSince(monthsAgo(positiveInteger(option("--months"), "--months")));
+    await processRunsSince(monthsAgo(positiveInteger(option("--months"), "--months")), checkpoint());
     return;
   }
   if (command === "reconcile") {
-    await processRunsSince(daysAgo(positiveInteger(option("--days") ?? "30", "--days")));
+    await processRunsSince(daysAgo(positiveInteger(option("--days") ?? "30", "--days")), checkpoint());
     return;
   }
-  throw new Error("Usage: generate --run-id <id> | backfill --months <months> | reconcile [--days <days>]");
+  throw new Error(
+    "Usage: generate --run-id <id> | backfill --months <months> [--checkpoint] | reconcile [--days <days>] [--checkpoint]"
+  );
 }
 
 main().catch((error: unknown) => {

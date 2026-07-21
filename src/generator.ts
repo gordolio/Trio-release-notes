@@ -207,16 +207,20 @@ export async function generateForRun(runId: number): Promise<void> {
   await saveState(state);
 }
 
-export async function processRunsSince(cutoff: Date): Promise<void> {
+export async function processRunsSince(cutoff: Date, afterEach?: (runId: number) => Promise<void>): Promise<void> {
   const github = new GitHubClient();
   const runs = (await github.listRunsSince(cutoff)).sort((left, right) => left.createdAt.localeCompare(right.createdAt));
-  let eligible = 0;
+  const eligibleRuns = [];
   for (const run of runs) {
-    if (!(await github.isSuccessfulBuild(run))) {
-      continue;
+    if (await github.isSuccessfulBuild(run)) {
+      eligibleRuns.push(run);
     }
-    eligible += 1;
-    await generateForRun(run.id);
   }
-  console.log(`Checked ${runs.length} completed workflow runs and found ${eligible} successful builds`);
+  console.log(`Found ${eligibleRuns.length} successful builds among ${runs.length} completed workflow runs`);
+  for (const [index, run] of eligibleRuns.entries()) {
+    console.log(`Processing build ${index + 1}/${eligibleRuns.length}: workflow run ${run.id}`);
+    await generateForRun(run.id);
+    await afterEach?.(run.id);
+  }
+  console.log(`Processed ${eligibleRuns.length} successful builds`);
 }

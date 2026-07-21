@@ -56,6 +56,11 @@ jobs:
           npm ci
           npm run check
 
+      - name: Configure generated-output commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Generate dispatched build
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id != '' }}
         env:
@@ -76,7 +81,7 @@ jobs:
           RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
-        run: node dist/src/cli.js backfill --months "$BACKFILL_MONTHS"
+        run: node dist/src/cli.js backfill --months "$BACKFILL_MONTHS" --checkpoint
 
       - name: Reconcile recent builds
         if: ${{ github.event_name == 'schedule' }}
@@ -86,7 +91,7 @@ jobs:
           RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
-        run: node dist/src/cli.js reconcile --days 30
+        run: node dist/src/cli.js reconcile --days 30 --checkpoint
 
       - name: Reject an empty manual request
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id == '' && inputs.backfill_months == '' }}
@@ -96,8 +101,6 @@ jobs:
 
       - name: Commit generated reports and state
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data public
           if ! git diff --cached --quiet; then
             git commit -m "Generate Trio build release notes"
