@@ -1,0 +1,24 @@
+{
+  "inputHash": "66f8a7a9d5e17349703c554e917623c2f4afdd512d1aadc2d4d7a6be8ad45ced",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:d9586c161d1984bfeb81890944ac2472b14ae54c",
+    "title": "What's New now shows build list with detail pages",
+    "changes": [
+      "What's New shows builds as a compact list with short summary lines.",
+      "Tapping a build opens a full detail page with the complete release notes.",
+      "Build rows display tags like \"This Build\" and \"New\" and include formatted build dates.",
+      "If a build has no user-facing changes, the row shows \"No user-facing changes\"."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:d9586c161d19",
+      "diff:dc5ecad94dcd"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
