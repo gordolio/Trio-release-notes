@@ -8,7 +8,7 @@
     "currentBuiltSha": "24e424583ee0419886484dc4d15b94990f09e2f0",
     "shortSha": "24e4245",
     "buildDate": "2026-07-20T14:49:17.000Z",
-    "generationDate": "2026-07-22T01:49:19.616Z",
+    "generationDate": "2026-07-22T18:34:31.871Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "6",
     "model": "openai/gpt-5-mini"
@@ -179,13 +179,13 @@
       "sha": "048b5e760162d7c7b8c9edda9ba7630e6f248620",
       "subject": "Merge pull request #1307 from nightscout/alerting-fixes",
       "author": "marv-out",
-      "authoredAt": "2026-07-19T20:53:11+00:00"
+      "authoredAt": "2026-07-19T20:53:11Z"
     },
     {
       "sha": "73cc5617c63241d202b02fb72fd40000c025b0da",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.24 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-19T20:53:21+00:00"
+      "authoredAt": "2026-07-19T20:53:21Z"
     },
     {
       "sha": "24e424583ee0419886484dc4d15b94990f09e2f0",
