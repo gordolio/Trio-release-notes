@@ -1,0 +1,23 @@
+{
+  "inputHash": "6ece8c6c56d0f9613d0d5fb16426825285c24ce0224405b75587e5f18702056c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1184",
+    "title": "Localize Live Activity labels and fix COB",
+    "changes": [
+      "Live Activity widget item labels are now localizable.",
+      "The Carbs on Board label was corrected to show 'COB' instead of 'IOB'.",
+      "Several Live Activity labels (glucose, insulin, last updated, total daily dose) now use localized text."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1184",
+      "diff:ea61f54b9c0b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

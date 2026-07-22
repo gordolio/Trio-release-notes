@@ -1,0 +1,22 @@
+{
+  "inputHash": "2b0a9b6b07794a6a25cbf3bce11d3ff4e1d1945a2879bf4336e5340ebae41f90",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1182",
+    "title": "Add two users to CODEOWNERS",
+    "changes": [
+      "The .github/CODEOWNERS file was updated to include @marionbarker and @kingst.",
+      "This change updates repository metadata only and does not alter app behavior."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1182",
+      "diff:da3c5d8df259"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
