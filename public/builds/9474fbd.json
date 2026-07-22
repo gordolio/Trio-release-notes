@@ -1,0 +1,309 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 28384422420,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/28384422420",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "a62fba08d239db8a6ca6991726e794458bc05972",
+    "currentBuiltSha": "9474fbd4f69dbe5408c39a94509c57d684f05f9b",
+    "shortSha": "9474fbd",
+    "buildDate": "2026-06-29T16:02:02.000Z",
+    "generationDate": "2026-07-22T18:27:03.787Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1205",
+      "title": "Sensor lifetime indicator on glucose bobble",
+      "changes": [
+        "A colored arc around the glucose bobble drains clockwise to show the sensor's remaining life.",
+        "A short tag below the bobble shows time left or a status word like \"warming up\" or \"sensor expired\".",
+        "Warmup and sensor-failed states hide the arc and show the glucose as a muted \"– –\".",
+        "G7 sensors now count down through the grace period so the bobble's time tag matches the arc.",
+        "The glucose simulator adds a Sensor Lifecycle picker so you can preview these sensor states without hardware."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1205",
+        "diff:49437d9fd3fc"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1205"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1205",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1205: Add CGMStatusHighlight Handling: CGM sensor lifetime indicator (arc + tag) – Prepare Libre 3/3+ Integration [2/3]",
+          "url": "https://github.com/nightscout/Trio/pull/1205"
+        },
+        {
+          "id": "diff:49437d9fd3fc",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1205",
+          "url": "https://github.com/gordolio/Trio/compare/51279404cc68da1bc7db20537b7847c8a085fa29...9ff64e1c586328892f52809edcfb590445db65e0"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1205,
+      "title": "Add CGMStatusHighlight Handling: CGM sensor lifetime indicator (arc + tag) – Prepare Libre 3/3+ Integration [2/3]",
+      "body": "## Summary\n\nAdds a sensor lifetime indicator to the home-screen glucose bobble:\n- **Outer arc** — drains clockwise from 12 o'clock over the sensor's life, sourced from `cgmLifecycleProgress`. Green → orange → red based on `progressState`.\n- **Tag below the bobble** — short label showing time remaining (`5d 14h`, `22h left`) or a status word (`warming up`, `calibrate`, `sensor expired`, `sensor error`).\n- Six sensor states: normal / expiring soon / warmup / calibration required / expired / sensor failed. Warmup + failure hide the arc and mute the glucose number to `– –`.\n- **G7 grace period** — bobble countdown falls back to `sensorEndsAt` once `sensorExpiresAt` passes (was collapsing to `<1m` while the arc still showed ~12h).\n\n‼️ **CAVEAT**\nThis does for users using CGMBLEKit (Dexcom G5/G6/One) through a fork and an addition to CGMBLEKit, not via the current version of the submodule as found in `dev` and `main`.\nLibreTransmitter has not been tested, should work though.\nxDrip4iOS will get an update providing us with CGM lifecycle and status highlight _like_ data, but that has not been shipped or checked in to xDrip4iOS yet (thanks to @paulplant for the collab on this)\n\nSome Follow-up PRs like needed.\n\n---\n\n## How sensor lifetime is resolved\n\n`HomeStateModel.sensorExpiresAt(for:lifecycle:)` resolves the expiration date in this order:\n1. **Direct read** when the manager exposes it (e.g., `sensorExpiresAt`). For G7, falls back to `sensorEndsAt` once the primary lifetime has passed so the grace window is counted down instead of clamped to zero.\n2. **Reverse-derive** from `activatedAt + percentComplete`: `totalLifetime = elapsed / percentComplete`, `expiresAt = activatedAt + totalLifetime`. Picks up `activatedAt` via the same type-check pattern already used in `PluginSource.readCGMResult`\n3. **Fallback** — `XX%` label when neither is available.\n\n## Extended CGM Simulator: Scenario picker\n\nThe glucose simulator exposes `cgmStatusHighlight` + `cgmLifecycleProgress` so the indicator is exercisable without real CGM hardware. CGM Settings → Glucose Simulator → \"Sensor Lifecycle Scenario\" picker flips between all six states.\n\nTo match the data shape a real CGM would deliver in each state:\n- Non-active scenarios (warmup / calibration / expired / failed) **stop emitting fresh readings**, so the bobble's stale path fires and the highlight's `imageName` surfaces.\n- Picker change also **drops `GlucoseStored` rows inside the 12 min freshness window**, so the bobble flips immediately instead of waiting 12 minutes for organic aging.\n- `HomeStateModel`'s 30 s refresh timer reads `cgmLifecycleProgress` / `cgmStatusHighlight` from the simulator source when no live `CGMManager` is set, so the same code path serves both real and simulated sensors.\n\n## Screenshots\n\n| Nominal | Expiring soon | Expired |\n|--------|--------|--------|\n| <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d1061542-9867-42db-beb4-4270a5309c0a\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/80c7ce79-3aa4-4872-9df2-57bf526933e4\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f4850f51-1a52-465d-8139-26f02ebed029\" /> |\n\n| Warmup | Calibration | Error |\n|--------|--------|--------|\n| <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/33ef0ade-9147-4496-bedf-36107d607fd1\" />> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b025d77d-0d61-40e7-9850-9ef8f7eb21b2\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/809bd985-dc17-4dd6-be33-fde7c072c9f7\" /> |\n\nAddresses #304 , picks up where #981 left off (thanks for the previous work @bastiaanv ).",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1205",
+      "mergedAt": "2026-06-28T13:59:38Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1205,
+      "title": "Add CGMStatusHighlight Handling: CGM sensor lifetime indicator (arc + tag) – Prepare Libre 3/3+ Integration [2/3]",
+      "body": "## Summary\n\nAdds a sensor lifetime indicator to the home-screen glucose bobble:\n- **Outer arc** — drains clockwise from 12 o'clock over the sensor's life, sourced from `cgmLifecycleProgress`. Green → orange → red based on `progressState`.\n- **Tag below the bobble** — short label showing time remaining (`5d 14h`, `22h left`) or a status word (`warming up`, `calibrate`, `sensor expired`, `sensor error`).\n- Six sensor states: normal / expiring soon / warmup / calibration required / expired / sensor failed. Warmup + failure hide the arc and mute the glucose number to `– –`.\n- **G7 grace period** — bobble countdown falls back to `sensorEndsAt` once `sensorExpiresAt` passes (was collapsing to `<1m` while the arc still showed ~12h).\n\n‼️ **CAVEAT**\nThis does for users using CGMBLEKit (Dexcom G5/G6/One) through a fork and an addition to CGMBLEKit, not via the current version of the submodule as found in `dev` and `main`.\nLibreTransmitter has not been tested, should work though.\nxDrip4iOS will get an update providing us with CGM lifecycle and status highlight _like_ data, but that has not been shipped or checked in to xDrip4iOS yet (thanks to @paulplant for the collab on this)\n\nSome Follow-up PRs like needed.\n\n---\n\n## How sensor lifetime is resolved\n\n`HomeStateModel.sensorExpiresAt(for:lifecycle:)` resolves the expiration date in this order:\n1. **Direct read** when the manager exposes it (e.g., `sensorExpiresAt`). For G7, falls back to `sensorEndsAt` once the primary lifetime has passed so the grace window is counted down instead of clamped to zero.\n2. **Reverse-derive** from `activatedAt + percentComplete`: `totalLifetime = elapsed / percentComplete`, `expiresAt = activatedAt + totalLifetime`. Picks up `activatedAt` via the same type-check pattern already used in `PluginSource.readCGMResult`\n3. **Fallback** — `XX%` label when neither is available.\n\n## Extended CGM Simulator: Scenario picker\n\nThe glucose simulator exposes `cgmStatusHighlight` + `cgmLifecycleProgress` so the indicator is exercisable without real CGM hardware. CGM Settings → Glucose Simulator → \"Sensor Lifecycle Scenario\" picker flips between all six states.\n\nTo match the data shape a real CGM would deliver in each state:\n- Non-active scenarios (warmup / calibration / expired / failed) **stop emitting fresh readings**, so the bobble's stale path fires and the highlight's `imageName` surfaces.\n- Picker change also **drops `GlucoseStored` rows inside the 12 min freshness window**, so the bobble flips immediately instead of waiting 12 minutes for organic aging.\n- `HomeStateModel`'s 30 s refresh timer reads `cgmLifecycleProgress` / `cgmStatusHighlight` from the simulator source when no live `CGMManager` is set, so the same code path serves both real and simulated sensors.\n\n## Screenshots\n\n| Nominal | Expiring soon | Expired |\n|--------|--------|--------|\n| <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d1061542-9867-42db-beb4-4270a5309c0a\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/80c7ce79-3aa4-4872-9df2-57bf526933e4\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f4850f51-1a52-465d-8139-26f02ebed029\" /> |\n\n| Warmup | Calibration | Error |\n|--------|--------|--------|\n| <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/33ef0ade-9147-4496-bedf-36107d607fd1\" />> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b025d77d-0d61-40e7-9850-9ef8f7eb21b2\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/809bd985-dc17-4dd6-be33-fde7c072c9f7\" /> |\n\nAddresses #304 , picks up where #981 left off (thanks for the previous work @bastiaanv ).",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1205",
+      "mergedAt": "2026-06-28T13:59:38Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "1a966cce6fdd4d028946ade1894909663e6093e3",
+      "subject": "Home: CGM sensor lifetime indicator (arc + tag) on glucose bobble",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-14T04:40:34+02:00"
+    },
+    {
+      "sha": "567dc0bb6ccffec128e86690fdc5dafb93584360",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into feat/cgm-lifetime-indicator",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-16T02:18:23+02:00"
+    },
+    {
+      "sha": "f39e9f4994fcc2de1b20b2a49bf4940b04962800",
+      "subject": "Fix G5/G6 sensor-expiry math and home tag layout",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-16T03:58:53+02:00"
+    },
+    {
+      "sha": "0b315cbe5ebe5f10a0bda145fa0a3f8673254ca5",
+      "subject": "WIP: xDrip extended app-group dict parsing",
+      "author": "trioneer",
+      "authoredAt": "2026-06-19T22:39:17+02:00"
+    },
+    {
+      "sha": "599955c42bb98dcf459077374e49f0e7bf063545",
+      "subject": "Surface CGM lifecycle on the bobble: 48h arc/tag gate, warmup countdown, timer-driven status refresh",
+      "author": "trioneer",
+      "authoredAt": "2026-06-19T22:52:01+02:00"
+    },
+    {
+      "sha": "98eda7658f4e9742aa966e823dc7efee0c7e5a83",
+      "subject": "Bump CGMBLEKit pointer to G5/G6 lifecycle + Anubis detection branch",
+      "author": "trioneer",
+      "authoredAt": "2026-06-19T22:52:09+02:00"
+    },
+    {
+      "sha": "aef2a5a20e9d6950d6acd8efee282e036daff328",
+      "subject": "Gate the remaining-time tag on the same 48h window as the arc",
+      "author": "trioneer",
+      "authoredAt": "2026-06-19T23:28:38+02:00"
+    },
+    {
+      "sha": "b3ffb547bee166ef6e2c8e029d68ec00ebeeeadc",
+      "subject": "Surface CGM status imageName as compact bobble fallback for non-warmup error states",
+      "author": "trioneer",
+      "authoredAt": "2026-06-20T01:29:06+02:00"
+    },
+    {
+      "sha": "cb52e8da3bb42b2adef4b2cfbf8c2c4cb112d258",
+      "subject": "Scale bobble to 0.9 only on bobble path; compact + empty states render at 1.0",
+      "author": "trioneer",
+      "authoredAt": "2026-06-20T01:42:17+02:00"
+    },
+    {
+      "sha": "26aa7249c487233fa142ea84c1ef7cb240c851c5",
+      "subject": "Merge branch 'dev' into feat/cgm-lifetime-indicator",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-21T01:20:27+02:00"
+    },
+    {
+      "sha": "426c500515d536954509474ee7f03d74e605208c",
+      "subject": "Fall back to G7 sensorEndsAt during grace period so bobble matches arc",
+      "author": "trioneer",
+      "authoredAt": "2026-06-24T18:38:15+02:00"
+    },
+    {
+      "sha": "cfc83eb33a5c5ad36f2db310e6e6f6e227ed55ce",
+      "subject": "Read simulator lifecycle/highlight in home timer tick",
+      "author": "trioneer",
+      "authoredAt": "2026-06-25T00:30:37+02:00"
+    },
+    {
+      "sha": "1b6a75e414c7f87e40c70c2048de4edc32fde47a",
+      "subject": "Stop simulator fetch when scenario isn't active",
+      "author": "trioneer",
+      "authoredAt": "2026-06-25T00:30:39+02:00"
+    },
+    {
+      "sha": "1d72f67557e48cba22f40b6e265bb04171ae89cd",
+      "subject": "Age out simulator readings when picking a non-active scenario",
+      "author": "trioneer",
+      "authoredAt": "2026-06-25T00:35:35+02:00"
+    },
+    {
+      "sha": "9ff64e1c586328892f52809edcfb590445db65e0",
+      "subject": "Merge pull request #1205 from dnzxy/feat/cgm-lifetime-indicator",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-28T15:59:38+02:00"
+    },
+    {
+      "sha": "f14089581db6af40e003b22e3d6bd33dc0794c98",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.10 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-28T13:59:47Z"
+    },
+    {
+      "sha": "9474fbd4f69dbe5408c39a94509c57d684f05f9b",
+      "subject": "merge from upstream",
+      "author": "Gordon Child",
+      "authoredAt": "2026-06-29T10:43:46-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "CGMBLEKit"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcworkspace/xcshareddata/swiftpm/Package.resolved"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/CGM/AppGroupSource.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/CGM/GlucoseSimulatorSource.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/CGM/GlucoseSource.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/CGM/PluginSource.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/FetchGlucoseManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CGMSettings/CGMSettingsDataFlow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CGMSettings/View/CustomCGMOptionsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/CurrentGlucoseView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Home/View/Header/SensorLifecycle/CGMSensorDisplayState.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Home/View/Header/SensorLifecycle/SensorLifecycleArcView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Home/View/Header/SensorLifecycle/SensorStatusTagView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
+    }
+  ]
+}

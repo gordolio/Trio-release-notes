@@ -1,0 +1,25 @@
+{
+  "inputHash": "df8536d57759c9a5f9897796eef6ca00e0155b1c94b248364a87dfc998e63c8d",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1205",
+    "title": "Sensor lifetime indicator on glucose bobble",
+    "changes": [
+      "A colored arc around the glucose bobble drains clockwise to show the sensor's remaining life.",
+      "A short tag below the bobble shows time left or a status word like \"warming up\" or \"sensor expired\".",
+      "Warmup and sensor-failed states hide the arc and show the glucose as a muted \"– –\".",
+      "G7 sensors now count down through the grace period so the bobble's time tag matches the arc.",
+      "The glucose simulator adds a Sensor Lifecycle picker so you can preview these sensor states without hardware."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1205",
+      "diff:49437d9fd3fc"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
