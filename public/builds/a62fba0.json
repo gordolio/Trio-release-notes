@@ -1,0 +1,309 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 28315793999,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/28315793999",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "cdb2b482b0815244288958ddd4169c921ebbeb43",
+    "currentBuiltSha": "a62fba08d239db8a6ca6991726e794458bc05972",
+    "shortSha": "a62fba0",
+    "buildDate": "2026-06-28T08:13:39.000Z",
+    "generationDate": "2026-07-22T18:26:30.134Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1227",
+      "title": "More reliable bolus progress reporting",
+      "changes": [
+        "Bolus progress updates are now handled on a single internal queue to avoid race conditions.",
+        "Creating and clearing the bolus progress reporter are serialized so rapid start/stop transitions don't overwrite each -.",
+        "The app now more reliably reports bolus progress and clears the progress display when a bolus finishes."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1227",
+        "commit:3b064ecf6916"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1227"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1227",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1227: APSManager thread safety fixes (Part 3)",
+          "url": "https://github.com/nightscout/Trio/pull/1227"
+        },
+        {
+          "id": "commit:3b064ecf6916",
+          "type": "commit",
+          "title": "Implement PR feedback",
+          "url": "https://github.com/gordolio/Trio/commit/3b064ecf69169c18aeebc284fe25fe023cc6d5c7"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1247",
+      "title": "Recover from expired Core Data history token",
+      "changes": [
+        "Trio now detects when the Core Data persistent history token has expired.",
+        "Trio clears the stale token and attempts to replay recent database changes.",
+        "If replay fails, Trio refreshes all stored data and switches to the current token so updates continue."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:nightscout/Trio#1247",
+        "diff:52b94a8f56a6"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1247"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1247",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1247: Refresh stale persistent history token for CoreData",
+          "url": "https://github.com/nightscout/Trio/pull/1247"
+        },
+        {
+          "id": "diff:52b94a8f56a6",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1247",
+          "url": "https://github.com/gordolio/Trio/compare/4c54147dba787b2712ee5b2099bb57a18133a8e3...6e3b30beafffb94480ab40e51bb498e5997a2335"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "commit:90dd1b0e509c73b0b62d21a40e7bedd8377a8ead",
+          "title": "Reorganize Xcode project file",
+          "changes": [
+            "The Xcode project configuration (project.pbxproj) was reorganized.",
+            "Many source file references were added, removed, or reordered in the project settings.",
+            "This change only updates build and file references used by developers.",
+            "There are no user-facing feature or behavior changes in the app."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "commit:90dd1b0e509c",
+            "diff:8e10b4701fdc"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "commit:90dd1b0e509c73b0b62d21a40e7bedd8377a8ead"
+          ],
+          "highlight": false,
+          "provenance": "origin",
+          "sources": [
+            {
+              "id": "commit:90dd1b0e509c",
+              "type": "commit",
+              "title": "reorganize project",
+              "url": "https://github.com/gordolio/Trio/commit/90dd1b0e509c73b0b62d21a40e7bedd8377a8ead"
+            },
+            {
+              "id": "diff:8e10b4701fdc",
+              "type": "diff",
+              "title": "Diff for commit:90dd1b0e509c73b0b62d21a40e7bedd8377a8ead",
+              "url": "https://github.com/gordolio/Trio/compare/cdb2b482b0815244288958ddd4169c921ebbeb43...90dd1b0e509c73b0b62d21a40e7bedd8377a8ead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1227,
+      "title": "APSManager thread safety fixes (Part 3)",
+      "body": "Closes the remaining mutable-state race in APSManager around bolus\r\nprogress reporting. Final piece split out of the original https://github.com/nightscout/Trio/pull/1145 to have its own architectural discussion.\r\n\r\n**BolusProgressState**\r\n\r\n  The old `bolusReporter` property was a plain mutable `DoseProgressReporter?`\r\n  mutated from a Combine sink on processQueue (bolusTrigger transitions)\r\n  and concurrently from `cancelBolus` (async context). No isolation.\r\n\r\n  Replaced with a private `BolusProgressState` actor that owns the\r\n  reporter and serializes add/remove-observer calls.\r\n\r\n**Reorder race in the bolusTrigger sink**\r\n\r\n  Pre-change, the sink called `createBolusReporter()` or `clearBolusReporter()`\r\n  directly, both of which were sync. Making them async opens a window\r\n  where two unstructured Tasks (one per emission) could reorder against\r\n  each other at the actor — unstructured Tasks enter an actor in\r\n  scheduler order, not the order they were spawned. A fast bolus\r\n  end-then-start transition (real in practice) could land setReporter\r\n  before its matching clear and wipe the fresh reporter.\r\n\r\n  Both transitions are now funneled through a single Task per sink\r\n  emission, awaiting in-order at the actor.\r\n\r\n**doseProgressReporterDidUpdate**\r\n\r\n  The `DoseProgressObserver` protocol method is sync, so the call to\r\n  `clearBolusReporter()` (now async) is wrapped in a Task. The race that\r\n  would normally make this dangerous is exactly what the generation\r\n  token in BolusProgressState protects against.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1227",
+      "mergedAt": "2026-06-26T19:33:43Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1227,
+      "title": "APSManager thread safety fixes (Part 3)",
+      "body": "Closes the remaining mutable-state race in APSManager around bolus\r\nprogress reporting. Final piece split out of the original https://github.com/nightscout/Trio/pull/1145 to have its own architectural discussion.\r\n\r\n**BolusProgressState**\r\n\r\n  The old `bolusReporter` property was a plain mutable `DoseProgressReporter?`\r\n  mutated from a Combine sink on processQueue (bolusTrigger transitions)\r\n  and concurrently from `cancelBolus` (async context). No isolation.\r\n\r\n  Replaced with a private `BolusProgressState` actor that owns the\r\n  reporter and serializes add/remove-observer calls.\r\n\r\n**Reorder race in the bolusTrigger sink**\r\n\r\n  Pre-change, the sink called `createBolusReporter()` or `clearBolusReporter()`\r\n  directly, both of which were sync. Making them async opens a window\r\n  where two unstructured Tasks (one per emission) could reorder against\r\n  each other at the actor — unstructured Tasks enter an actor in\r\n  scheduler order, not the order they were spawned. A fast bolus\r\n  end-then-start transition (real in practice) could land setReporter\r\n  before its matching clear and wipe the fresh reporter.\r\n\r\n  Both transitions are now funneled through a single Task per sink\r\n  emission, awaiting in-order at the actor.\r\n\r\n**doseProgressReporterDidUpdate**\r\n\r\n  The `DoseProgressObserver` protocol method is sync, so the call to\r\n  `clearBolusReporter()` (now async) is wrapped in a Task. The race that\r\n  would normally make this dangerous is exactly what the generation\r\n  token in BolusProgressState protects against.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1227",
+      "mergedAt": "2026-06-26T19:33:43Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1247,
+      "title": "Refresh stale persistent history token for CoreData",
+      "body": "When Trio calls `fetchPersistentHistory` it logs errors. One type of\nerror, the `NSPersistentHistoryTokenExpiredError` error will cause\nTrio to stop refreshing data. This error can happen for a few reasons,\nlike not using Trio of a while or updating the database.\n\nThe fix is to refresh all objects manually and reset the persistent\nhistory token, i.e., `lastHistoryToken` stored in UserDefaults.\n\nThis error is extremely hard to test, but I had a device stuck in this\nstate and confirmed the fix.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1247",
+      "mergedAt": "2026-06-27T20:03:22Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1247,
+      "title": "Refresh stale persistent history token for CoreData",
+      "body": "When Trio calls `fetchPersistentHistory` it logs errors. One type of\nerror, the `NSPersistentHistoryTokenExpiredError` error will cause\nTrio to stop refreshing data. This error can happen for a few reasons,\nlike not using Trio of a while or updating the database.\n\nThe fix is to refresh all objects manually and reset the persistent\nhistory token, i.e., `lastHistoryToken` stored in UserDefaults.\n\nThis error is extremely hard to test, but I had a device stuck in this\nstate and confirmed the fix.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1247",
+      "mergedAt": "2026-06-27T20:03:22Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "aa39571ab9e3b937f82bad23ab657cac9edcaab7",
+      "subject": "APSManager thread safety fixes Part 3: BolusProgressState actor",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-21T14:37:31+02:00"
+    },
+    {
+      "sha": "664faceff7a8ce07706e93567781b97e5841c08e",
+      "subject": "Merge branch 'dev' into apsManager-part3",
+      "author": "Sam King",
+      "authoredAt": "2026-06-22T16:42:51-07:00"
+    },
+    {
+      "sha": "d8fb6e14a2e87e90cff6b5615bd5309d6a9173ec",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into apsManager-part3",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-24T20:21:23+02:00"
+    },
+    {
+      "sha": "3b064ecf69169c18aeebc284fe25fe023cc6d5c7",
+      "subject": "Implement PR feedback",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-24T20:32:38+02:00"
+    },
+    {
+      "sha": "c7b4007c2bbdf97ea3203a49fe3153d7b0916cc2",
+      "subject": "Merge branch 'apsManager-part3' of github.com:nightscout/Trio into apsManager-part3",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-24T20:34:24+02:00"
+    },
+    {
+      "sha": "90dd1b0e509c73b0b62d21a40e7bedd8377a8ead",
+      "subject": "reorganize project",
+      "author": "Gordon Child",
+      "authoredAt": "2026-06-25T07:14:45-05:00"
+    },
+    {
+      "sha": "b787a4b6905133325c724501862dfa25a2e4e0fe",
+      "subject": "Merge branch 'dev' into apsManager-part3",
+      "author": "Sam King",
+      "authoredAt": "2026-06-26T12:33:32-07:00"
+    },
+    {
+      "sha": "5ee0f432d5a197954de0346fe50481d270832dcc",
+      "subject": "Merge pull request #1227 from nightscout/apsManager-part3",
+      "author": "Sam King",
+      "authoredAt": "2026-06-26T12:33:42-07:00"
+    },
+    {
+      "sha": "4c54147dba787b2712ee5b2099bb57a18133a8e3",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.8 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-26T19:33:51Z"
+    },
+    {
+      "sha": "3c99ae4cfdd15654d852ae4e0b31fd2d483a7324",
+      "subject": "Refresh stale persistent history token for CoreData",
+      "author": "Sam King",
+      "authoredAt": "2026-06-27T12:41:54-07:00"
+    },
+    {
+      "sha": "6e3b30beafffb94480ab40e51bb498e5997a2335",
+      "subject": "Merge pull request #1247 from nightscout/update-lastHistoryToken-on-error",
+      "author": "Sam King",
+      "authoredAt": "2026-06-27T13:03:22-07:00"
+    },
+    {
+      "sha": "b66cb43c18fc3771555b0ddfece4c76d9867623a",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.9 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-27T20:03:30Z"
+    },
+    {
+      "sha": "a62fba08d239db8a6ca6991726e794458bc05972",
+      "subject": "Merge branch 'dev' of https://github.com/nightscout/Trio into dev",
+      "author": "GH Action - Upstream Sync",
+      "authoredAt": "2026-06-28T07:57:54Z"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Model/CoreDataStack.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    }
+  ]
+}

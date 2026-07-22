@@ -1,0 +1,23 @@
+{
+  "inputHash": "0270b78de73d09758508f154f8559667e180a8bc63dc0db5464a8357113b96de",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1247",
+    "title": "Recover from expired Core Data history token",
+    "changes": [
+      "Trio now detects when the Core Data persistent history token has expired.",
+      "Trio clears the stale token and attempts to replay recent database changes.",
+      "If replay fails, Trio refreshes all stored data and switches to the current token so updates continue."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1247",
+      "diff:52b94a8f56a6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

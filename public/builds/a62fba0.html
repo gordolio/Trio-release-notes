@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build a62fba0</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build a62fba0</h1>
+    <p>Built 2026-06-28T08:13:39.000Z from <code>cdb2b48..a62fba0</code>.</p>
+    <section><h2>Highlights</h2><article><h3>More reliable bolus progress reporting</h3><ul><li>Bolus progress updates are now handled on a single internal queue to avoid race conditions.</li><li>Creating and clearing the bolus progress reporter are serialized so rapid start/stop transitions don&#39;t overwrite each -.</li><li>The app now more reliably reports bolus progress and clears the progress display when a bolus finishes.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1227" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Recover from expired Core Data history token</h3><ul><li>Trio now detects when the Core Data persistent history token has expired.</li><li>Trio clears the stale token and attempts to replay recent database changes.</li><li>If replay fails, Trio refreshes all stored data and switches to the current token so updates continue.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1247" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Reorganize Xcode project file</h3><ul><li>The Xcode project configuration (project.pbxproj) was reorganized.</li><li>Many source file references were added, removed, or reordered in the project settings.</li><li>This change only updates build and file references used by developers.</li><li>There are no user-facing feature or behavior changes in the app.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/90dd1b0e509c73b0b62d21a40e7bedd8377a8ead" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/28315793999">Source workflow 28315793999</a></p>
+  </footer>
+</body>
+</html>

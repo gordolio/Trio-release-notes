@@ -1,0 +1,23 @@
+{
+  "inputHash": "6dbd41c1ffa2e8c4daf0e9d800a2d638c906b31419623b6aeb2ed420b97f546d",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1227",
+    "title": "More reliable bolus progress reporting",
+    "changes": [
+      "Bolus progress updates are now handled on a single internal queue to avoid race conditions.",
+      "Creating and clearing the bolus progress reporter are serialized so rapid start/stop transitions don't overwrite each -.",
+      "The app now more reliably reports bolus progress and clears the progress display when a bolus finishes."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1227",
+      "commit:3b064ecf6916"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
