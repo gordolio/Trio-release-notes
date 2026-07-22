@@ -1,0 +1,418 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 28589883099,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/28589883099",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "9474fbd4f69dbe5408c39a94509c57d684f05f9b",
+    "currentBuiltSha": "b94f405e2a635732f83630bc64fdb8e616927f36",
+    "shortSha": "b94f405",
+    "buildDate": "2026-07-02T12:43:48.000Z",
+    "generationDate": "2026-07-22T18:27:53.944Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1242",
+      "title": "Animated bolus progress bar",
+      "changes": [
+        "The bolus progress bar now animates smoothly when progress changes.",
+        "The animation uses a short ease-in-out effect lasting about 0.25 seconds."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1242",
+        "diff:c7a8eefcca85"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1242"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1242",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1242: adds a subtle animation to the bolus progress bar",
+          "url": "https://github.com/nightscout/Trio/pull/1242"
+        },
+        {
+          "id": "diff:c7a8eefcca85",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1242",
+          "url": "https://github.com/gordolio/Trio/compare/179c86398d86a50ec13a78493c733fbf8270319c...033d55bc66e43258ecfc23898414609251cd4df3"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1254",
+      "title": "Remove hard limits on data fetches",
+      "changes": [
+        "Pump history now includes all events in the last 24 hours without being cut off by a fixed record cap.",
+        "Glucose history fetches are no longer capped by a fixed record limit, so extra or manual readings aren't dropped.",
+        "Live Activity and Apple Watch data fetches may return more recent records than before.",
+        "Background data retrieval no longer uses arbitrary fetch caps, improving completeness of fetched records."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:nightscout/Trio#1254",
+        "diff:b0c3b5b5e2a8"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1254"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1254",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1254: Remove core data fetch limits (already time predicate limited)",
+          "url": "https://github.com/nightscout/Trio/pull/1254"
+        },
+        {
+          "id": "diff:b0c3b5b5e2a8",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1254",
+          "url": "https://github.com/gordolio/Trio/compare/8606d41aba154df746d0369cc7a9b229e7a55afe...edfea8c6c1989e3e2818a700230f7cf54191d2f1"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1255",
+      "title": "Shorten Omnipod label in Onboarding",
+      "changes": [
+        "The Omnipod option in Onboarding now reads \"Omnipod\" instead of \"All Omnipod Types\".",
+        "The shorter label prevents UI breakage on the Onboarding screen."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1255",
+        "diff:fc634e17e917"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1255"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1255",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1255: Shorten Omnipod selection string in Onboarding to avoid break",
+          "url": "https://github.com/nightscout/Trio/pull/1255"
+        },
+        {
+          "id": "diff:fc634e17e917",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1255",
+          "url": "https://github.com/gordolio/Trio/compare/8606d41aba154df746d0369cc7a9b229e7a55afe...b40ab40b1e37ffcfc9efaf29a70af8a67106137a"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1256",
+          "title": "OmnipodKit updated",
+          "changes": [
+            "Trio now uses a newer OmnipodKit commit.",
+            "The pull request states it fixes issue #1236.",
+            "Only the OmnipodKit submodule pointer was changed in this update."
+          ],
+          "category": "pump-and-cgm",
+          "sourceIds": [
+            "pr:nightscout/Trio#1256",
+            "diff:1de6c425e367"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1256"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1256",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1256: Bump OmnipodKit, fixes #1236",
+              "url": "https://github.com/nightscout/Trio/pull/1256"
+            },
+            {
+              "id": "diff:1de6c425e367",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1256",
+              "url": "https://github.com/gordolio/Trio/compare/8606d41aba154df746d0369cc7a9b229e7a55afe...aee3c5d85ecfbba331a1f7d8b5213241d05a615e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1242,
+      "title": "adds a subtle animation to the bolus progress bar",
+      "body": "\r\nhttps://github.com/user-attachments/assets/b6d73a2a-90c2-4f59-9cd2-556d1c0a178e\r\nonly animated progress bar is in this pr ignore other change viewable at the screen recording",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1242",
+      "mergedAt": "2026-06-30T22:25:05Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1242,
+      "title": "adds a subtle animation to the bolus progress bar",
+      "body": "\r\nhttps://github.com/user-attachments/assets/b6d73a2a-90c2-4f59-9cd2-556d1c0a178e\r\nonly animated progress bar is in this pr ignore other change viewable at the screen recording",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1242",
+      "mergedAt": "2026-06-30T22:25:05Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1254,
+      "title": "Remove core data fetch limits (already time predicate limited)",
+      "body": "We had a few fetch limits in place that were potentially leading to fetch results, especially for pump history.\r\n\r\nE.g. `getPumpHistory()` uses `pumpHistoryLast24h` but `fetchLimit: 288`.  With TBRs every 5-15 min (96-288/day) plus SMBs and manual user-initiated boluses, there are well over 288 events per day. This could potentially lead to the most‑recent 288 fetch result truncating pump eventing, covering less than 24h.\r\n\r\nSimilar for fetching glucose, where the predicate did not exclude potential manual glucose entries, leading to a false assumption of one reading per 5 minutes (288(day). ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1254",
+      "mergedAt": "2026-07-01T23:30:54Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1254,
+      "title": "Remove core data fetch limits (already time predicate limited)",
+      "body": "We had a few fetch limits in place that were potentially leading to fetch results, especially for pump history.\r\n\r\nE.g. `getPumpHistory()` uses `pumpHistoryLast24h` but `fetchLimit: 288`.  With TBRs every 5-15 min (96-288/day) plus SMBs and manual user-initiated boluses, there are well over 288 events per day. This could potentially lead to the most‑recent 288 fetch result truncating pump eventing, covering less than 24h.\r\n\r\nSimilar for fetching glucose, where the predicate did not exclude potential manual glucose entries, leading to a false assumption of one reading per 5 minutes (288(day). ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1254",
+      "mergedAt": "2026-07-01T23:30:54Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1255,
+      "title": "Shorten Omnipod selection string in Onboarding to avoid break",
+      "body": "Change `All Omnipod Types` to `Omnipod` for the Onboarding selection to avoid UI breakage.\r\nWe don't specifically list the Medtrum and different RS models for Dana, or the different reservoir-size models for Medtrum.\r\n\r\n<img width=\"790\" height=\"700\" alt=\"image\" src=\"https://github.com/user-attachments/assets/3c15d768-ad0a-42c5-b38e-83dc6f71bb1e\" />\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1255",
+      "mergedAt": "2026-07-01T23:32:10Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1255,
+      "title": "Shorten Omnipod selection string in Onboarding to avoid break",
+      "body": "Change `All Omnipod Types` to `Omnipod` for the Onboarding selection to avoid UI breakage.\r\nWe don't specifically list the Medtrum and different RS models for Dana, or the different reservoir-size models for Medtrum.\r\n\r\n<img width=\"790\" height=\"700\" alt=\"image\" src=\"https://github.com/user-attachments/assets/3c15d768-ad0a-42c5-b38e-83dc6f71bb1e\" />\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1255",
+      "mergedAt": "2026-07-01T23:32:10Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1256,
+      "title": "Bump OmnipodKit, fixes #1236",
+      "body": "",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1256",
+      "mergedAt": "2026-07-02T07:08:59Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1256,
+      "title": "Bump OmnipodKit, fixes #1236",
+      "body": "",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1256",
+      "mergedAt": "2026-07-02T07:08:59Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "9a1e15bf804ff6bef91884ed932c4a395b4149cb",
+      "subject": "adds animation to the bolus progress bar",
+      "author": "ejm0",
+      "authoredAt": "2026-06-26T16:38:33+02:00"
+    },
+    {
+      "sha": "659733622e5a0b1a6c2130c08bd88f91526b8947",
+      "subject": "Merge branch 'dev' into feat/animated-bolus-progess",
+      "author": "Elias",
+      "authoredAt": "2026-06-30T20:14:49+02:00"
+    },
+    {
+      "sha": "033d55bc66e43258ecfc23898414609251cd4df3",
+      "subject": "Merge pull request #1242 from EJM0/feat/animated-bolus-progess",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-01T00:25:04+02:00"
+    },
+    {
+      "sha": "8606d41aba154df746d0369cc7a9b229e7a55afe",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.11 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-30T22:25:15Z"
+    },
+    {
+      "sha": "8fc5e86269974ad8bbf2c7cf8ec14851de043fe5",
+      "subject": "Remove core data fetch limits (already time predicate limited)",
+      "author": "dnzxy",
+      "authoredAt": "2026-07-01T23:38:49+02:00"
+    },
+    {
+      "sha": "71c5e87d966f9221cc20808fcaf72ed83acede7e",
+      "subject": "Shorten Omnipod selection string in Onboarding to avoid break",
+      "author": "dnzxy",
+      "authoredAt": "2026-07-02T01:03:17+02:00"
+    },
+    {
+      "sha": "edfea8c6c1989e3e2818a700230f7cf54191d2f1",
+      "subject": "Merge pull request #1254 from nightscout/fix-applied-fetch-limits",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-02T01:30:54+02:00"
+    },
+    {
+      "sha": "218c621737489e7c1c54298124f5395c4ad748f7",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.12 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-01T23:31:04Z"
+    },
+    {
+      "sha": "b40ab40b1e37ffcfc9efaf29a70af8a67106137a",
+      "subject": "Merge pull request #1255 from nightscout/fix-onboarding-string",
+      "author": "Sam King",
+      "authoredAt": "2026-07-01T16:32:09-07:00"
+    },
+    {
+      "sha": "47e456317a953cb731bd5d9682ff47d2cf8a9b6f",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.13 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-01T23:32:19Z"
+    },
+    {
+      "sha": "ada0e1c4e34f1caf6e3b93210811c1328488f782",
+      "subject": "Bump OmnipodKit, fixes #1236",
+      "author": "dnzxy",
+      "authoredAt": "2026-07-02T01:54:14+02:00"
+    },
+    {
+      "sha": "aad21223661aa6b4fcee6c90aec9b0d7fcedc3f6",
+      "subject": "Merge branch 'dev' into fix-omnipod-dose-reporting",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-02T01:55:17+02:00"
+    },
+    {
+      "sha": "aee3c5d85ecfbba331a1f7d8b5213241d05a615e",
+      "subject": "Merge pull request #1256 from nightscout/fix-omnipod-dose-reporting",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-02T09:08:59+02:00"
+    },
+    {
+      "sha": "88ef102db1ae9f321402d488bcf442923a300117",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.14 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-02T07:09:08Z"
+    },
+    {
+      "sha": "b94f405e2a635732f83630bc64fdb8e616927f36",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-02T07:21:06-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "OmnipodKit"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/PumpHistoryStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingView+Util.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/BolusCalculator/BolusCalculationManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/Data/DataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Views/BolusProgressBar.swift"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "inputHash": "db4c1e3bac99a2107f329261f5757b82330b2c99e3af2736d857c99a5035c44a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1256",
+    "title": "OmnipodKit updated",
+    "changes": [
+      "Trio now uses a newer OmnipodKit commit.",
+      "The pull request states it fixes issue #1236.",
+      "Only the OmnipodKit submodule pointer was changed in this update."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1256",
+      "diff:1de6c425e367"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

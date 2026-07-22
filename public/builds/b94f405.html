@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build b94f405</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build b94f405</h1>
+    <p>Built 2026-07-02T12:43:48.000Z from <code>9474fbd..b94f405</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Animated bolus progress bar</h3><ul><li>The bolus progress bar now animates smoothly when progress changes.</li><li>The animation uses a short ease-in-out effect lasting about 0.25 seconds.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1242" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Remove hard limits on data fetches</h3><ul><li>Pump history now includes all events in the last 24 hours without being cut off by a fixed record cap.</li><li>Glucose history fetches are no longer capped by a fixed record limit, so extra or manual readings aren&#39;t dropped.</li><li>Live Activity and Apple Watch data fetches may return more recent records than before.</li><li>Background data retrieval no longer uses arbitrary fetch caps, improving completeness of fetched records.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1254" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Shorten Omnipod label in Onboarding</h3><ul><li>The Omnipod option in Onboarding now reads &quot;Omnipod&quot; instead of &quot;All Omnipod Types&quot;.</li><li>The shorter label prevents UI breakage on the Onboarding screen.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1255" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Pump and CGM Changes</h2><article><h3>OmnipodKit updated</h3><ul><li>Trio now uses a newer OmnipodKit commit.</li><li>The pull request states it fixes issue #1236.</li><li>Only the OmnipodKit submodule pointer was changed in this update.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1256" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/28589883099">Source workflow 28589883099</a></p>
+  </footer>
+</body>
+</html>

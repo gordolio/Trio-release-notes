@@ -1,0 +1,22 @@
+{
+  "inputHash": "2c2f4896cca7ba5fc31ff2acf1801a61c026db8d2122715a58a5ee76f9e7255e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1242",
+    "title": "Animated bolus progress bar",
+    "changes": [
+      "The bolus progress bar now animates smoothly when progress changes.",
+      "The animation uses a short ease-in-out effect lasting about 0.25 seconds."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1242",
+      "diff:c7a8eefcca85"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

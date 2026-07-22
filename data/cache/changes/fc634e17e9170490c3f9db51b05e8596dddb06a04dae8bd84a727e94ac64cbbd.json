@@ -1,0 +1,22 @@
+{
+  "inputHash": "8b15cd754c7f5acd16ecf6087e43ebc2e43587ba8600cd13958226711f36b451",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1255",
+    "title": "Shorten Omnipod label in Onboarding",
+    "changes": [
+      "The Omnipod option in Onboarding now reads \"Omnipod\" instead of \"All Omnipod Types\".",
+      "The shorter label prevents UI breakage on the Onboarding screen."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1255",
+      "diff:fc634e17e917"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
