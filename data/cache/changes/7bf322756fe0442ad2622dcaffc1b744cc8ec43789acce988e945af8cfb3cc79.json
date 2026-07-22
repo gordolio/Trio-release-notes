@@ -1,0 +1,22 @@
+{
+  "inputHash": "50a9a48358fa46b7233ac06e537d7bc2f9f06de1f40ec84b272ee663a31aaa4d",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1192",
+    "title": "Show indefinite override in Live Activity chart",
+    "changes": [
+      "Indefinite overrides now appear as a visible bar in the Live Activity chart.",
+      "Indefinite overrides are drawn to extend about 2 hours forward so they fit the chart view."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1192",
+      "commit:a956be22ebe4"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

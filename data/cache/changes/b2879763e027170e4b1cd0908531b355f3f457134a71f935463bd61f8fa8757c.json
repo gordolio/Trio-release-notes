@@ -1,0 +1,23 @@
+{
+  "inputHash": "4e707e6016a186efcd41786d8dac5bc1f3fe0bb5eb3f5b8561ec3f258bb53c70",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1188",
+    "title": "Fix Meals macros showing zero for today",
+    "changes": [
+      "Today's meal macros (carbs, fat, protein) now appear correctly in the Stats Meals view.",
+      "The Meals chart no longer shows zeros for the current day caused by a midnight-boundary filter bug.",
+      "Week, month, and total ranges continue to behave the same as before."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1188",
+      "diff:b2879763e027"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
