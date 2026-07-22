@@ -1,0 +1,320 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 27075240379,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/27075240379",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "2f97cd5fb3b91eaaf6c122afb3d323763d489ab6",
+    "currentBuiltSha": "deea36247ce6fb2080ee8d475fe2a98debb946d2",
+    "shortSha": "deea362",
+    "buildDate": "2026-06-06T22:24:15.000Z",
+    "generationDate": "2026-07-22T18:16:27.172Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1180",
+      "title": "Show temp target on live activity lock screen",
+      "changes": [
+        "A badge showing an active temp target name now appears on the live activity lock screen widget.",
+        "The temp target badge stacks with the existing override badge when both are active.",
+        "Badges are moved to the left side of the chart overlay instead of the right.",
+        "The chart no longer extends into the future when an override or temp target is active.",
+        "The active temp target period is drawn on the chart as a colored band."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1180",
+        "commit:f22bb763fa16"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1180"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1180",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1180: Add temp target display to live activity lock screen widget",
+          "url": "https://github.com/nightscout/Trio/pull/1180"
+        },
+        {
+          "id": "commit:f22bb763fa16",
+          "type": "commit",
+          "title": "Add temp target display to live activity lock screen widget",
+          "url": "https://github.com/gordolio/Trio/commit/f22bb763fa16fb8c39aa17a1cdeb97e4eac605cb"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1190",
+      "title": "Fix watch app back-sync after long staleness",
+      "changes": [
+        "The watch ignores incoming state messages older than 15 minutes to avoid replaying a backlog.",
+        "Duplicate or older watch-state updates are skipped so the watch avoids repeated UI updates.",
+        "Phone sends now stamp state with the current time so watch-requested re-pushes are not silenced.",
+        "Acknowledgment and recommended-bolus messages are still processed and do not show the syncing animation."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:nightscout/Trio#1190",
+        "diff:655ae912961c",
+        "commit:a965e056bc18"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1190"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1190",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1190: Fix watch app back-sync after long staleness",
+          "url": "https://github.com/nightscout/Trio/pull/1190"
+        },
+        {
+          "id": "diff:655ae912961c",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1190",
+          "url": "https://github.com/gordolio/Trio/compare/ebebe817e3f74aee3ed407884a3dda0ff9f0430c...4d0cc58862eda2a010fbaa26cb03a27431071775"
+        },
+        {
+          "id": "commit:a965e056bc18",
+          "type": "commit",
+          "title": "Fix watch app back-sync after long staleness * Unify didReceiveMessage + didReceiveUserInfo through one handleIncomingWatchStatePayload * Add guard on wall-clock staleness, then perform monotonicity dedupe * Add state.date with Date() at send time, not build time * Drop lastSent < state.date guard * Watch-requested re-pushes no longer get silenced when no CGM tick has bumped the build-time date Potentially addresses #1162",
+          "url": "https://github.com/gordolio/Trio/commit/a965e056bc18d52735a06fe5d29a5e62febcfaff"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1180,
+      "title": "Add temp target display to live activity lock screen widget",
+      "body": "When a temp target is active, an orange badge showing the temp target name appears in the top right corner of the widget. Both badges stack vertically if an override and a temp target are active at the same time. I have tried to mirror the existing Override code pattern.\r\n\r\nPS: screen shots contain an issue that has been fixed already, where the TT badge does not make the graph shift to the left.\r\n\r\n| Screenshots | Screenshots |\r\n|--------|--------|\r\n| <img width=\"603\" height=\"1311\" alt=\"1\" src=\"https://github.com/user-attachments/assets/56dced1d-decc-47a1-8983-8667be6848f3\" /> | <img width=\"603\" height=\"1311\" alt=\"2\" src=\"https://github.com/user-attachments/assets/df40c24b-d765-4eac-9dab-aba95e52ab2c\" /> |\r\n| <img width=\"603\" height=\"1311\" alt=\"3\" src=\"https://github.com/user-attachments/assets/a0752d1c-8700-4678-9261-54e5cfcfea57\" /> | <img width=\"603\" height=\"1311\" alt=\"4\" src=\"https://github.com/user-attachments/assets/61634737-c7e5-4cf9-aa07-ad1471b54606\" /> | ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1180",
+      "mergedAt": "2026-06-04T05:33:40Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1180,
+      "title": "Add temp target display to live activity lock screen widget",
+      "body": "When a temp target is active, an orange badge showing the temp target name appears in the top right corner of the widget. Both badges stack vertically if an override and a temp target are active at the same time. I have tried to mirror the existing Override code pattern.\r\n\r\nPS: screen shots contain an issue that has been fixed already, where the TT badge does not make the graph shift to the left.\r\n\r\n| Screenshots | Screenshots |\r\n|--------|--------|\r\n| <img width=\"603\" height=\"1311\" alt=\"1\" src=\"https://github.com/user-attachments/assets/56dced1d-decc-47a1-8983-8667be6848f3\" /> | <img width=\"603\" height=\"1311\" alt=\"2\" src=\"https://github.com/user-attachments/assets/df40c24b-d765-4eac-9dab-aba95e52ab2c\" /> |\r\n| <img width=\"603\" height=\"1311\" alt=\"3\" src=\"https://github.com/user-attachments/assets/a0752d1c-8700-4678-9261-54e5cfcfea57\" /> | <img width=\"603\" height=\"1311\" alt=\"4\" src=\"https://github.com/user-attachments/assets/61634737-c7e5-4cf9-aa07-ad1471b54606\" /> | ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1180",
+      "mergedAt": "2026-06-04T05:33:40Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1190,
+      "title": "Fix watch app back-sync after long staleness",
+      "body": "* Unify didReceiveMessage + didReceiveUserInfo through one handleIncomingWatchStatePayload\r\n* Add guard on wall-clock staleness, then perform monotonicity dedupe\r\n* Add state.date with Date() at send time, not build time\r\n* Drop lastSent < state.date guard\r\n* Watch-requested re-pushes no longer get silenced when no CGM tick has bumped the build-time date Potentially addresses #1162",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1190",
+      "mergedAt": "2026-06-04T05:29:07Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1190,
+      "title": "Fix watch app back-sync after long staleness",
+      "body": "* Unify didReceiveMessage + didReceiveUserInfo through one handleIncomingWatchStatePayload\r\n* Add guard on wall-clock staleness, then perform monotonicity dedupe\r\n* Add state.date with Date() at send time, not build time\r\n* Drop lastSent < state.date guard\r\n* Watch-requested re-pushes no longer get silenced when no CGM tick has bumped the build-time date Potentially addresses #1162",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1190",
+      "mergedAt": "2026-06-04T05:29:07Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "f22bb763fa16fb8c39aa17a1cdeb97e4eac605cb",
+      "subject": "Add temp target display to live activity lock screen widget",
+      "author": "t1dude",
+      "authoredAt": "2026-05-14T21:54:53+02:00"
+    },
+    {
+      "sha": "a4db7f52565346e3eb60f50089826f09d91a58d7",
+      "subject": "Move override/temp target badges to left side of chart; remove graph compression",
+      "author": "t1dude",
+      "authoredAt": "2026-05-30T21:26:15+02:00"
+    },
+    {
+      "sha": "fad4705c2ef0e91a97a436a2ac7e83172e1dd580",
+      "subject": "Merge branch 'nightscout:main' into feat/live-activity-temp-target-2",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-05-30T22:26:28+02:00"
+    },
+    {
+      "sha": "9ed9798c8e9049cd2e0113375e81b5b0ef1d0f4e",
+      "subject": "Refactor fetchAndMapTempTarget/Override into generic fetchAndMapLatest helper",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-06-01T13:40:59+02:00"
+    },
+    {
+      "sha": "35d7dff00ebd3f61cf122de1f534c47e670890ce",
+      "subject": "Add missing CoreData import to LiveActivity DataManager",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-06-01T14:53:21+02:00"
+    },
+    {
+      "sha": "a965e056bc18d52735a06fe5d29a5e62febcfaff",
+      "subject": "Fix watch app back-sync after long staleness * Unify didReceiveMessage + didReceiveUserInfo through one handleIncomingWatchStatePayload * Add guard on wall-clock staleness, then perform monotonicity dedupe * Add state.date with Date() at send time, not build time * Drop lastSent < state.date guard * Watch-requested re-pushes no longer get silenced when no CGM tick has bumped the build-time date Potentially addresses #1162",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-01T21:40:31+02:00"
+    },
+    {
+      "sha": "6e91e54833e775115e69c7aeb049a13ffa31a392",
+      "subject": "Change variable name for clarity, add time unit ('inMinutes')",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-01T22:30:35+02:00"
+    },
+    {
+      "sha": "4d0cc58862eda2a010fbaa26cb03a27431071775",
+      "subject": "Merge pull request #1190 from nightscout/fix/watch-state-sync",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-04T07:29:07+02:00"
+    },
+    {
+      "sha": "a0399fd229e03c3a59570d40a3562c81a2fcaccc",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.1.4 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-04T05:29:16Z"
+    },
+    {
+      "sha": "a0c180d28e837ee58dab90d547e605e119c401c2",
+      "subject": "Merge pull request #1180 from t1dude/feat/live-activity-temp-target-2",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-04T07:33:39+02:00"
+    },
+    {
+      "sha": "b04d0e6465a8e2ed965ffada93e9271beaf23c59",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.1.5 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-04T05:33:49Z"
+    },
+    {
+      "sha": "deea36247ce6fb2080ee8d475fe2a98debb946d2",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-06-06T17:09:08-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "A",
+      "path": "LiveActivity/Assets.xcassets/LoopGreen.colorset/Contents.json"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/LiveActivity.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/LiveActivityChartView.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/LiveActivityView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/WatchState.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/WatchStateSnapshot.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/WatchStateSnapshot.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/Data/DataManager.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Services/LiveActivity/Data/TempTargetData.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActitiyAttributes.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActivityAttributes+Helper.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActivityManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
+    }
+  ]
+}

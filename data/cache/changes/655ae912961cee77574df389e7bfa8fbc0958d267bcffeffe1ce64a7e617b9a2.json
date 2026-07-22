@@ -1,0 +1,25 @@
+{
+  "inputHash": "299e0d607a0b7050a27e565e519cdb4d2f7d1a465adc3c97aafab2916e3e3bf3",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1190",
+    "title": "Fix watch app back-sync after long staleness",
+    "changes": [
+      "The watch ignores incoming state messages older than 15 minutes to avoid replaying a backlog.",
+      "Duplicate or older watch-state updates are skipped so the watch avoids repeated UI updates.",
+      "Phone sends now stamp state with the current time so watch-requested re-pushes are not silenced.",
+      "Acknowledgment and recommended-bolus messages are still processed and do not show the syncing animation."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1190",
+      "diff:655ae912961c",
+      "commit:a965e056bc18"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build deea362</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build deea362</h1>
+    <p>Built 2026-06-06T22:24:15.000Z from <code>2f97cd5..deea362</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Show temp target on live activity lock screen</h3><ul><li>A badge showing an active temp target name now appears on the live activity lock screen widget.</li><li>The temp target badge stacks with the existing override badge when both are active.</li><li>Badges are moved to the left side of the chart overlay instead of the right.</li><li>The chart no longer extends into the future when an override or temp target is active.</li><li>The active temp target period is drawn on the chart as a colored band.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1180" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix watch app back-sync after long staleness</h3><ul><li>The watch ignores incoming state messages older than 15 minutes to avoid replaying a backlog.</li><li>Duplicate or older watch-state updates are skipped so the watch avoids repeated UI updates.</li><li>Phone sends now stamp state with the current time so watch-requested re-pushes are not silenced.</li><li>Acknowledgment and recommended-bolus messages are still processed and do not show the syncing animation.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1190" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/27075240379">Source workflow 27075240379</a></p>
+  </footer>
+</body>
+</html>

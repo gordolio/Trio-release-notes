@@ -1,0 +1,25 @@
+{
+  "inputHash": "86f424ce87abfa31d49504f74da6c4f77ad3f47bfafa8d7dc68a2742b5c7169e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1180",
+    "title": "Show temp target on live activity lock screen",
+    "changes": [
+      "A badge showing an active temp target name now appears on the live activity lock screen widget.",
+      "The temp target badge stacks with the existing override badge when both are active.",
+      "Badges are moved to the left side of the chart overlay instead of the right.",
+      "The chart no longer extends into the future when an override or temp target is active.",
+      "The active temp target period is drawn on the chart as a colored band."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1180",
+      "commit:f22bb763fa16"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
