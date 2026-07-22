@@ -1,0 +1,282 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 27492779675,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/27492779675",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "368540b6659d25a23b3318ebdbdde546907b69ac",
+    "currentBuiltSha": "c18f4ecdb95f18c858ba32f347ee573c61378e82",
+    "shortSha": "c18f4ec",
+    "buildDate": "2026-06-14T08:19:15.000Z",
+    "generationDate": "2026-07-22T18:18:06.515Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1200",
+      "title": "Consolidate Omnipod options into OmnipodKit",
+      "changes": [
+        "Pump picker now shows a single \"All Omnipod Types\" option instead of separate Eros and DASH entries.",
+        "Onboarding and pump setup use one Omnipod choice instead of separate Eros/DASH options.",
+        "Omnipod onboarding basal-rate picker allows 0 U/hr (DASH minimum), which may not enforce Eros's 0.05 U/hr minimum.",
+        "Privacy and telemetry texts now reference OmnipodKit instead of the removed OmniKit/OmniBLE."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1200",
+        "diff:e8826da257ca"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1200"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1200",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1200: Remove Legacy Omnipod Submodules (OmniKit, OmniBLE)",
+          "url": "https://github.com/nightscout/Trio/pull/1200"
+        },
+        {
+          "id": "diff:e8826da257ca",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1200",
+          "url": "https://github.com/gordolio/Trio/compare/512b4d46d83fe50a346e35d4f4c5c9ad15757c37...2501936e41a2699ef86d3011f26ea1ad781e00aa"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1200,
+      "title": "Remove Legacy Omnipod Submodules (OmniKit, OmniBLE)",
+      "body": "## Summary\r\nRemoves the legacy `OmniBLE` (DASH) and `OmniKit` (Eros) submodules and all their platform-specific code paths, consolidating both Omnipod variants under the new `OmnipodKit` submodule (`OmniPumpManager`), added and shipped with Trio `v0.8.1`.\r\n\r\n**Changes:**\r\n- Deletes `OmniBLE` and `OmniKit` git submodules and their `.gitmodules` entries\r\n- Bumps `OmnipodKit` to `d68699c`\r\n- Removes `OmniBLEPumpManager` and `OmnipodPumpManager` from `staticPumpManagers`, `DeviceDataManager`, `PumpSetupView`, and all pump-type enums — replaced by `OmniPumpManager`\r\n- Collapses the separate \"Omnipod Eros\" / \"Omnipod DASH\" pump-selection buttons into a single \"All Omnipod Types\" entry in `HomeRootView` and `PumpConfigRootView`\r\n- Merges `omnipodEros` / `omnipodDash` onboarding enum cases into a single `.omni` case; adds a `FIXME` noting that Eros min-basal-rate differentiation is not yet handled\r\n- Removes OmniBLE/OmniKit build targets, framework references, and test schemes from `project.pbxproj` and `Trio.xcscheme`\r\n- Drops OmniBLE/OmniKit Crowdin localisation sources and swiftformat exclusions\r\n- Updates telemetry comment and `PRIVACY_POLICY.md` to reference OmnipodKit instead of OmniBLE\r\n\r\n**Note:** The `.omni` onboarding basal-rate picker currently uses the DASH minimum (0 U/hr). Eros requires a minimum of 0.05 U/hr but the two variants can no longer be distinguished at that step — tracked in the inline `FIXME`.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1200",
+      "mergedAt": "2026-06-13T01:55:44Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1200,
+      "title": "Remove Legacy Omnipod Submodules (OmniKit, OmniBLE)",
+      "body": "## Summary\r\nRemoves the legacy `OmniBLE` (DASH) and `OmniKit` (Eros) submodules and all their platform-specific code paths, consolidating both Omnipod variants under the new `OmnipodKit` submodule (`OmniPumpManager`), added and shipped with Trio `v0.8.1`.\r\n\r\n**Changes:**\r\n- Deletes `OmniBLE` and `OmniKit` git submodules and their `.gitmodules` entries\r\n- Bumps `OmnipodKit` to `d68699c`\r\n- Removes `OmniBLEPumpManager` and `OmnipodPumpManager` from `staticPumpManagers`, `DeviceDataManager`, `PumpSetupView`, and all pump-type enums — replaced by `OmniPumpManager`\r\n- Collapses the separate \"Omnipod Eros\" / \"Omnipod DASH\" pump-selection buttons into a single \"All Omnipod Types\" entry in `HomeRootView` and `PumpConfigRootView`\r\n- Merges `omnipodEros` / `omnipodDash` onboarding enum cases into a single `.omni` case; adds a `FIXME` noting that Eros min-basal-rate differentiation is not yet handled\r\n- Removes OmniBLE/OmniKit build targets, framework references, and test schemes from `project.pbxproj` and `Trio.xcscheme`\r\n- Drops OmniBLE/OmniKit Crowdin localisation sources and swiftformat exclusions\r\n- Updates telemetry comment and `PRIVACY_POLICY.md` to reference OmnipodKit instead of OmniBLE\r\n\r\n**Note:** The `.omni` onboarding basal-rate picker currently uses the DASH minimum (0 U/hr). Eros requires a minimum of 0.05 U/hr but the two variants can no longer be distinguished at that step — tracked in the inline `FIXME`.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1200",
+      "mergedAt": "2026-06-13T01:55:44Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "068d8e59ef6d9e3ae25c4badac40ff42e181320e",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into patch/0.8.1-with-dev-removed-old-omni-submodules",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-28T23:25:17+02:00"
+    },
+    {
+      "sha": "d8ade0cea4932a7555d348da213fbcac7abaf8cd",
+      "subject": "Remove OmniKit and OmniBLE from Trio (based on dev)",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T00:04:54+02:00"
+    },
+    {
+      "sha": "3f444cc3aeecee6ca292c18a8ab5478fc17e3878",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into patch/0.8.1-with-dev-removed-old-omni-submodules",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T00:12:32+02:00"
+    },
+    {
+      "sha": "ddd7a6556b30ae23eb3ed41858647a02731b0fab",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into patch/0.8.1-with-dev-removed-old-omni-submodules",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-12T02:42:24+02:00"
+    },
+    {
+      "sha": "cf0209a1c793adb215764f087c7bc5e6df147643",
+      "subject": "Bump OmnipodKit, sync w/ latest main",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-12T02:46:01+02:00"
+    },
+    {
+      "sha": "a0c45820fd114aa4bfb86c0e9a074865920aa45a",
+      "subject": "Fresh build to sync Localizations; adjust button labels",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-12T02:48:45+02:00"
+    },
+    {
+      "sha": "5ef26c3de79006f1ffdd60d70df1df53fb5c18a9",
+      "subject": "Rename enum case 'omnipod' to 'omni' to conform to OmnipodKit",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-13T02:56:54+02:00"
+    },
+    {
+      "sha": "2501936e41a2699ef86d3011f26ea1ad781e00aa",
+      "subject": "Merge pull request #1200 from nightscout/feat/remove-legacy-pod-submodules",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-13T03:55:44+02:00"
+    },
+    {
+      "sha": "51279404cc68da1bc7db20537b7847c8a085fa29",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.1.8 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-13T01:55:56Z"
+    },
+    {
+      "sha": "c18f4ecdb95f18c858ba32f347ee573c61378e82",
+      "subject": "Merge branch 'dev' of https://github.com/nightscout/Trio into dev",
+      "author": "GH Action - Upstream Sync",
+      "authoredAt": "2026-06-14T08:07:29Z"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": ".gitmodules"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "D",
+      "path": "OmniBLE"
+    },
+    {
+      "status": "D",
+      "path": "OmniKit"
+    },
+    {
+      "status": "M",
+      "path": "OmnipodKit"
+    },
+    {
+      "status": "M",
+      "path": "PRIVACY_POLICY.md"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/xcshareddata/xcschemes/Trio.xcscheme"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/InfoPlist.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/OnboardingStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/AlgorithmSettings/AlgorithmSettingsSubstepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingView+Util.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/PumpConfig/PumpConfigDataFlow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/PumpConfig/View/PumpConfigRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/PumpConfig/View/PumpSetupView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Telemetry/TelemetryClient.swift"
+    },
+    {
+      "status": "M",
+      "path": "crowdin.yml"
+    },
+    {
+      "status": "M",
+      "path": "scripts/define_common_trio.sh"
+    },
+    {
+      "status": "M",
+      "path": "scripts/swiftformat.sh"
+    }
+  ]
+}

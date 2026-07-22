@@ -1,0 +1,24 @@
+{
+  "inputHash": "5a0981d07f3dcea32ea6053fc3371abbe7f5efe98548817093caa057284227f9",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1200",
+    "title": "Consolidate Omnipod options into OmnipodKit",
+    "changes": [
+      "Pump picker now shows a single \"All Omnipod Types\" option instead of separate Eros and DASH entries.",
+      "Onboarding and pump setup use one Omnipod choice instead of separate Eros/DASH options.",
+      "Omnipod onboarding basal-rate picker allows 0 U/hr (DASH minimum), which may not enforce Eros's 0.05 U/hr minimum.",
+      "Privacy and telemetry texts now reference OmnipodKit instead of the removed OmniKit/OmniBLE."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1200",
+      "diff:e8826da257ca"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
