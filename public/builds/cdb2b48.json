@@ -1,0 +1,315 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 28168835213,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/28168835213",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "995ac80da721e92b9e8e6d8deee303cf72b55ce2",
+    "currentBuiltSha": "cdb2b482b0815244288958ddd4169c921ebbeb43",
+    "shortSha": "cdb2b48",
+    "buildDate": "2026-06-25T12:22:07.000Z",
+    "generationDate": "2026-07-22T18:25:47.649Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1218",
+      "title": "Check manual temp basals for all pump models",
+      "changes": [
+        "Manual temporary basal checks now run for any pump model instead of only OmnipodKit.",
+        "This change prepares Trio for broader pump support in future updates."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1218",
+        "commit:713f9912dfa4"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1218"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1218",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1218: fix: Always check manual temp basal with any PM",
+          "url": "https://github.com/nightscout/Trio/pull/1218"
+        },
+        {
+          "id": "commit:713f9912dfa4",
+          "type": "commit",
+          "title": "fix: Always check manual temp basal with any PM",
+          "url": "https://github.com/gordolio/Trio/commit/713f9912dfa44313fafcc3bb9a52bbdcd87b1792"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1233",
+      "title": "Prevent autosens crash on oref-swift startup",
+      "changes": [
+        "Trio now creates the user profile before running the autosens step during startup.",
+        "This prevents a startup exception when Trio is configured to use oref-swift.",
+        "Devices set up with oref-swift from first run should now start and run the algorithm normally."
+      ],
+      "category": "algorithm-and-dosing",
+      "sourceIds": [
+        "pr:nightscout/Trio#1233",
+        "diff:9425eaf6d7c3"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1233"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1233",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1233: Make sure that autosens has a profile to work with",
+          "url": "https://github.com/nightscout/Trio/pull/1233"
+        },
+        {
+          "id": "diff:9425eaf6d7c3",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1233",
+          "url": "https://github.com/gordolio/Trio/compare/8311bf1e72a2f473ec6b9e1e87d7e79510030731...0dfd6c9a5ecce579ceabf3c6ad7b842fcc050afa"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1234",
+      "title": "Update MedtrumKit: alerts, safety, and fixes",
+      "changes": [
+        "Trio adds LoopKit alerts for pump-related notifications.",
+        "Trio prevents a patch from being deactivated while a bolus is active.",
+        "Navigation titles display correctly in the app.",
+        "Bluetooth communication with devices is more stable."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1234",
+        "commit:8c83c0afd057"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1234"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1234",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1234: chore: update MedtrumKit",
+          "url": "https://github.com/nightscout/Trio/pull/1234"
+        },
+        {
+          "id": "commit:8c83c0afd057",
+          "type": "commit",
+          "title": "chore: update MedtrumKit",
+          "url": "https://github.com/gordolio/Trio/commit/8c83c0afd057237c1379ae97457993050afd437d"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1218,
+      "title": "fix: Always check manual temp basal with any PM",
+      "body": "Currently, only manual temp basals will be checked with OmnipodKit. This PR changes this to any PM in preparation of issue: https://github.com/jbr7rr/MedtrumKit/issues/135\r\n\r\nNot sure why XCode made this many changes to the project file",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1218",
+      "mergedAt": "2026-06-24T20:25:04Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1218,
+      "title": "fix: Always check manual temp basal with any PM",
+      "body": "Currently, only manual temp basals will be checked with OmnipodKit. This PR changes this to any PM in preparation of issue: https://github.com/jbr7rr/MedtrumKit/issues/135\r\n\r\nNot sure why XCode made this many changes to the project file",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1218",
+      "mergedAt": "2026-06-24T20:25:04Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1233,
+      "title": "Make sure that autosens has a profile to work with",
+      "body": "The Swift version of autosens expects to have a profile object, so if\r\nyou start with oref-swift from the start the current version will\r\nthrow an exception on autosens since there is no profile, and the\r\nalgorithm will never make progress.\r\n\r\nThis change swaps the order of autosens and profile creation. Profile\r\ncreation doesn't depend on autosens, so this change is safe and\r\nenables systems set up as oref-swift from the start run.\r\n\r\nNote: There was a tiny amount of parallelism in the previous version,\r\nbut not enough to justify so I removed it to make the code more\r\nstraightforward.\r\n\r\nThanks to @mountrcg for reporting this originally. \r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1233",
+      "mergedAt": "2026-06-23T17:20:45Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1233,
+      "title": "Make sure that autosens has a profile to work with",
+      "body": "The Swift version of autosens expects to have a profile object, so if\r\nyou start with oref-swift from the start the current version will\r\nthrow an exception on autosens since there is no profile, and the\r\nalgorithm will never make progress.\r\n\r\nThis change swaps the order of autosens and profile creation. Profile\r\ncreation doesn't depend on autosens, so this change is safe and\r\nenables systems set up as oref-swift from the start run.\r\n\r\nNote: There was a tiny amount of parallelism in the previous version,\r\nbut not enough to justify so I removed it to make the code more\r\nstraightforward.\r\n\r\nThanks to @mountrcg for reporting this originally. \r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1233",
+      "mergedAt": "2026-06-23T17:20:45Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1234,
+      "title": "chore: update MedtrumKit",
+      "body": "Changelog MedtrumKit:\r\n- navigation title fix by @MikePlante1: https://github.com/jbr7rr/MedtrumKit/pull/148\r\n- introduction of LoopKit alerts: https://github.com/jbr7rr/MedtrumKit/pull/147\r\n- prevent patch deactivation during bolus: https://github.com/jbr7rr/MedtrumKit/pull/151\r\n- ble threading fixes: https://github.com/jbr7rr/MedtrumKit/pull/138",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1234",
+      "mergedAt": "2026-06-24T22:43:11Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1234,
+      "title": "chore: update MedtrumKit",
+      "body": "Changelog MedtrumKit:\r\n- navigation title fix by @MikePlante1: https://github.com/jbr7rr/MedtrumKit/pull/148\r\n- introduction of LoopKit alerts: https://github.com/jbr7rr/MedtrumKit/pull/147\r\n- prevent patch deactivation during bolus: https://github.com/jbr7rr/MedtrumKit/pull/151\r\n- ble threading fixes: https://github.com/jbr7rr/MedtrumKit/pull/138",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1234",
+      "mergedAt": "2026-06-24T22:43:11Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "713f9912dfa44313fafcc3bb9a52bbdcd87b1792",
+      "subject": "fix: Always check manual temp basal with any PM",
+      "author": "bastiaanv",
+      "authoredAt": "2026-06-18T22:00:29+02:00"
+    },
+    {
+      "sha": "134a9eebe4a9349a4305b123fa990c5caf792207",
+      "subject": "Make sure that autosens has a profile to work with",
+      "author": "Sam King",
+      "authoredAt": "2026-06-23T07:50:27-07:00"
+    },
+    {
+      "sha": "0dfd6c9a5ecce579ceabf3c6ad7b842fcc050afa",
+      "subject": "Merge pull request #1233 from nightscout/oref-swift-cold-start-fix",
+      "author": "Sam King",
+      "authoredAt": "2026-06-23T10:20:44-07:00"
+    },
+    {
+      "sha": "ed949dc15636090da343cd0d3fb9bd7452bbe3a4",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.5 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-23T17:20:58Z"
+    },
+    {
+      "sha": "8c83c0afd057237c1379ae97457993050afd437d",
+      "subject": "chore: update MedtrumKit",
+      "author": "bastiaanv",
+      "authoredAt": "2026-06-24T19:50:33+02:00"
+    },
+    {
+      "sha": "82bd6236cf7f0116f0ea00514c0ba51aadcd80c6",
+      "subject": "Merge pull request #1218 from bastiaanv/fix/manual-temp-basal-medtrumkit",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-24T22:25:03+02:00"
+    },
+    {
+      "sha": "b5e07cee1a80d0d64864a9d0025249ace4c64ce8",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.6 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-24T20:25:15Z"
+    },
+    {
+      "sha": "034b150200f573142bc0b52b27ae3626e428ed1c",
+      "subject": "Merge pull request #1234 from bastiaanv/chore/update-medtrumkit",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-25T00:43:10+02:00"
+    },
+    {
+      "sha": "179c86398d86a50ec13a78493c733fbf8270319c",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.7 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-24T22:43:21Z"
+    },
+    {
+      "sha": "cdb2b482b0815244288958ddd4169c921ebbeb43",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-06-25T07:05:12-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "MedtrumKit"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Helpers/BasalDeliveryState+Extension.swift"
+    }
+  ]
+}

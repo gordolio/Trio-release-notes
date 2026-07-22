@@ -1,0 +1,23 @@
+{
+  "inputHash": "704777dcab287d5627ade2a0d6e9b3b66e1f1484673d3c63bd144d369040a31e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1233",
+    "title": "Prevent autosens crash on oref-swift startup",
+    "changes": [
+      "Trio now creates the user profile before running the autosens step during startup.",
+      "This prevents a startup exception when Trio is configured to use oref-swift.",
+      "Devices set up with oref-swift from first run should now start and run the algorithm normally."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1233",
+      "diff:9425eaf6d7c3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

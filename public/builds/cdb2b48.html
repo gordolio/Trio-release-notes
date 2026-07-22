@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build cdb2b48</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build cdb2b48</h1>
+    <p>Built 2026-06-25T12:22:07.000Z from <code>995ac80..cdb2b48</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Check manual temp basals for all pump models</h3><ul><li>Manual temporary basal checks now run for any pump model instead of only OmnipodKit.</li><li>This change prepares Trio for broader pump support in future updates.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1218" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Prevent autosens crash on oref-swift startup</h3><ul><li>Trio now creates the user profile before running the autosens step during startup.</li><li>This prevents a startup exception when Trio is configured to use oref-swift.</li><li>Devices set up with oref-swift from first run should now start and run the algorithm normally.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1233" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Update MedtrumKit: alerts, safety, and fixes</h3><ul><li>Trio adds LoopKit alerts for pump-related notifications.</li><li>Trio prevents a patch from being deactivated while a bolus is active.</li><li>Navigation titles display correctly in the app.</li><li>Bluetooth communication with devices is more stable.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1234" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/28168835213">Source workflow 28168835213</a></p>
+  </footer>
+</body>
+</html>

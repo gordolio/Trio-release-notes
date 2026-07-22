@@ -1,0 +1,22 @@
+{
+  "inputHash": "046d054e8578e52eaacd979b9c2c10f1ecfec784cb1dff5abf65e61b36e74bb1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1218",
+    "title": "Check manual temp basals for all pump models",
+    "changes": [
+      "Manual temporary basal checks now run for any pump model instead of only OmnipodKit.",
+      "This change prepares Trio for broader pump support in future updates."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1218",
+      "commit:713f9912dfa4"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
