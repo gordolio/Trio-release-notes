@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 26368360846,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/26368360846",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "c64c38597907a08d27f4cb64bd5ceed3b317eeda",
+    "currentBuiltSha": "1c07ff00e06fafc2668cd0593e24007cb50a33db",
+    "shortSha": "1c07ff0",
+    "buildDate": "2026-05-24T17:57:37.000Z",
+    "generationDate": "2026-07-22T18:13:16.488Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:1c07ff00e06fafc2668cd0593e24007cb50a33db",
+      "title": "Auto-scroll to focused treatment fields",
+      "changes": [
+        "The Treatments form now auto-scrolls to the field you focus when entering values.",
+        "Carbs, the fat+protein group, and bolus fields are each scrolled into view automatically.",
+        "Scrolling is animated and delayed slightly to let the keyboard settle before moving the list."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:1c07ff00e06f",
+        "diff:73c30818aa39"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:1c07ff00e06fafc2668cd0593e24007cb50a33db"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:1c07ff00e06f",
+          "type": "commit",
+          "title": "auto-scroll when entering values",
+          "url": "https://github.com/gordolio/Trio/commit/1c07ff00e06fafc2668cd0593e24007cb50a33db"
+        },
+        {
+          "id": "diff:73c30818aa39",
+          "type": "diff",
+          "title": "Diff for commit:1c07ff00e06fafc2668cd0593e24007cb50a33db",
+          "url": "https://github.com/gordolio/Trio/compare/c64c38597907a08d27f4cb64bd5ceed3b317eeda...1c07ff00e06fafc2668cd0593e24007cb50a33db"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "1c07ff00e06fafc2668cd0593e24007cb50a33db",
+      "subject": "auto-scroll when entering values",
+      "author": "Gordon Child",
+      "authoredAt": "2026-05-24T12:41:56-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift"
+    }
+  ]
+}
