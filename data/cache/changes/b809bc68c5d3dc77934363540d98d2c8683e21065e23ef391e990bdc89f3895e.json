@@ -1,0 +1,24 @@
+{
+  "inputHash": "f8b866e3940395777e1f81ca9a84679d6f981283bb0b8c8ef46ef42758f84f80",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1171",
+    "title": "Glucose fetch follows meal absorption time",
+    "changes": [
+      "Glucose readings used for meal/COB now cover your Max Meal Absorption Time plus 30 minutes.",
+      "The previous hard 6-hour cap on glucose history is removed so longer MMAT settings are respected.",
+      "Meal/COB should no longer spike above entered carbs or cliff-drop when MMAT exceeds 6 hours.",
+      "This behavior is applied consistently for both JS-based and native oref implementations."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1171",
+      "diff:b809bc68c5d3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

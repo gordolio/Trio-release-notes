@@ -1,0 +1,24 @@
+{
+  "inputHash": "42b2e39362a17c3d00643885312aa110f7022855b081c4cb387e29c44fb89af5",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1212",
+    "title": "Omnipod driver and Live Activity fixes",
+    "changes": [
+      "Legacy OmniKit and OmniBLE drivers were removed; OmnipodKit is now the only Omnipod option.",
+      "Live Activity now shows active temp targets as a green band and fixes indefinite overrides and widget labels.",
+      "Watch app recovers from long staleness and refreshes quickly instead of getting stuck.",
+      "Today's Meals stats now show carbs, fat, and protein correctly instead of zeros."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1212",
+      "diff:6b407ea4d5cc"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "inputHash": "cf2c174a00abb914a245b6a11c97d4076b481ca633597ef8a3beca85670bc3f2",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1159",
+    "title": "Clamp very-low CGM readings to 39 mg/dL",
+    "changes": [
+      "CGM readings below 39 mg/dL are raised to 39 before storage or use.",
+      "Backfilled CGM data is clamped the same way.",
+      "The original raw low reading and timestamp are kept in debug logs for diagnostics.",
+      "User-entered fingerstick (manual) glucose values are not altered."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1159",
+      "diff:0fa6abdab965"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputHash": "4518a54393e7bd7d5f3602e55d880ffc576bc2fc3aa6fc429742f2ca457cdbf1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1141",
+    "title": "Opt-in Swift oref0 algorithm",
+    "changes": [
+      "Adds an opt-in native Swift port of Trio's oref0 dosing algorithm (IOB, Meal, Autosens, DetermineBasal).",
+      "Adds a Settings toggle at Algorithm → Additionals → Use Swift Oref to enable the feature.",
+      "When enabled, Trio uses the Swift implementation for dosing instead of the bundled JavaScript runtime.",
+      "A green 'Swift Oref' badge is shown in the Loop Status view while the Swift path is active.",
+      "The JavaScript path remains the default and is unchanged unless you opt in."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1141",
+      "diff:0f66b03ad0ef"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

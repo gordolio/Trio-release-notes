@@ -1,0 +1,22 @@
+{
+  "inputHash": "1af6a25b7a7c0545deeaccfb176554fe7730ff77177ce3ddb5f05170ebcf5969",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1189",
+    "title": "dynISF disabled only for high temporary targets",
+    "changes": [
+      "Dynamic sensitivity adjustments (dynISF) will now activate for users whose profile target is above 118.",
+      "dynISF is only turned off when a temporary target is set at or above the half-basal exercise target (default 160)."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1189",
+      "diff:2897e28d9c97"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
