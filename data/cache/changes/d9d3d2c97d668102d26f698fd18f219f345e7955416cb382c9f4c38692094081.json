@@ -1,0 +1,25 @@
+{
+  "inputHash": "b748fa72427112c88df63391c7a59b4596f36376d6f6dd3e15ae6cb2157fd13d",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1174",
+    "title": "OmnipodKit support plus telemetry and security fixes",
+    "changes": [
+      "A new \"All Omnipod Types\" option is available when adding a pump to support Omnipod pods.",
+      "Pod model (Eros vs. DASH) is selected when you activate a pod, not when adding the pump.",
+      "Existing OmniKit and OmniBLE users see no change unless they explicitly switch to the new driver.",
+      "Background telemetry pings are now correctly limited to once per day to stop repeated sends.",
+      "Build/release tooling dependencies were updated for security; this does not change shipped app behavior."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1174",
+      "commit:194c9b9e720c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build 4708151</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build 4708151</h1>
+    <p>Built 2026-05-29T17:36:47.000Z from <code>9177716..4708151</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Add Omnipod (Omni) pump support</h3><ul><li>Trio adds the OmnipodKit submodule so Omnipod (Omni) pump support is included.</li><li>A new &quot;All Omnipod Types&quot; option appears in pump selection and setup screens.</li><li>Trio records Omnipod pod details such as expiration time and reservoir level for monitoring.</li><li>The pump setup flow now includes an Omni setup option to start pairing and configuring Omnipod pumps.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1157" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>OmnipodKit support and telemetry fixes</h3><ul><li>A new &quot;All Omnipod Types&quot; pump option is available in the Add Pump flow.</li><li>If you choose the new option, the pod type (Eros vs DASH) is selected during pod activation.</li><li>Existing OmniKit and OmniBLE users see no change unless they opt in to the new driver.</li><li>Telemetry background sends are now correctly limited to once per day, and privacy/diagnostics text has been clarified.</li><li>A rare spurious &quot;Bolus Failed&quot; notification after a manual bolus has been fixed.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1173" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Stop false &#39;Bolus failed&#39; alerts after manual bolus</h3><ul><li>Manual boluses that the pump delivered won&#39;t trigger a false &quot;Bolus failed&quot; alert when the algorithm update fails.</li><li>Algorithm refresh errors after a manual bolus are logged as warnings instead of raising a pump error notification.</li><li>You still receive the normal bolus success confirmation when a manual bolus completes.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1151" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>OmnipodKit updated with translations</h3><ul><li>The app now includes an updated OmnipodKit component.</li><li>Some OmnipodKit interface strings were translated.</li><li>New issue templates were added to the OmnipodKit repository.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1160" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Pump and CGM Changes</h2><article><h3>OmnipodKit support plus telemetry and security fixes</h3><ul><li>A new &quot;All Omnipod Types&quot; option is available when adding a pump to support Omnipod pods.</li><li>Pod model (Eros vs. DASH) is selected when you activate a pod, not when adding the pump.</li><li>Existing OmniKit and OmniBLE users see no change unless they explicitly switch to the new driver.</li><li>Background telemetry pings are now correctly limited to once per day to stop repeated sends.</li><li>Build/release tooling dependencies were updated for security; this does not change shipped app behavior.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1174" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Telemetry: standardized buildDate and added locale/timeZone</h3><ul><li>Telemetry now records the device system locale and time zone.</li><li>Telemetry&#39;s buildDate is now emitted as YYYY-MM-DD in UTC instead of a localized text string.</li><li>Telemetry now includes an appName field set to Trio to help distinguish forks.</li><li>The privacy policy was updated to document the added locale and time zone fields and the policy date.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1172" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix Telemetry app name reporting</h3><ul><li>Telemetry now includes the correct app name when sending data.</li><li>Telemetry reporting is more reliable after this fix.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1176" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/26651834571">Source workflow 26651834571</a></p>
+  </footer>
+</body>
+</html>

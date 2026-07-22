@@ -1,0 +1,22 @@
+{
+  "inputHash": "353503ce9ab20ac5c12a9dc4befd5ebb9436f5601db79ef9d2e2f88f20ba5b7e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1176",
+    "title": "Fix Telemetry app name reporting",
+    "changes": [
+      "Telemetry now includes the correct app name when sending data.",
+      "Telemetry reporting is more reliable after this fix."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1176",
+      "commit:30a195b2715f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

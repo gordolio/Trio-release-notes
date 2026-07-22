@@ -1,0 +1,23 @@
+{
+  "inputHash": "f202aa0810e89cc06eb1f2c387efaf7b695e33be72f6d5d4bef3c2afc1353d8e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1160",
+    "title": "OmnipodKit updated with translations",
+    "changes": [
+      "The app now includes an updated OmnipodKit component.",
+      "Some OmnipodKit interface strings were translated.",
+      "New issue templates were added to the OmnipodKit repository."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1160",
+      "commit:c34a1c6925db"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "inputHash": "2c26d421e566771c0ee1ef5a2fa0368677a34964c65ab6da06cb1916925aef7f",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1172",
+    "title": "Telemetry: standardized buildDate and added locale/timeZone",
+    "changes": [
+      "Telemetry now records the device system locale and time zone.",
+      "Telemetry's buildDate is now emitted as YYYY-MM-DD in UTC instead of a localized text string.",
+      "Telemetry now includes an appName field set to Trio to help distinguish forks.",
+      "The privacy policy was updated to document the added locale and time zone fields and the policy date."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1172",
+      "diff:7106ee2c0b71"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

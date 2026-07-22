@@ -1,0 +1,23 @@
+{
+  "inputHash": "af173ab1f74fc1abca219231f6e20969c79d4e58c3f951eb846d163a24849288",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1151",
+    "title": "Stop false 'Bolus failed' alerts after manual bolus",
+    "changes": [
+      "Manual boluses that the pump delivered won't trigger a false \"Bolus failed\" alert when the algorithm update fails.",
+      "Algorithm refresh errors after a manual bolus are logged as warnings instead of raising a pump error notification.",
+      "You still receive the normal bolus success confirmation when a manual bolus completes."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1151",
+      "commit:e51fc67ee045"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputHash": "1fba77478af588df4a2ebf1c3c4ef7fbb4df0f3f8094cc474613b0de33b67257",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1173",
+    "title": "OmnipodKit support and telemetry fixes",
+    "changes": [
+      "A new \"All Omnipod Types\" pump option is available in the Add Pump flow.",
+      "If you choose the new option, the pod type (Eros vs DASH) is selected during pod activation.",
+      "Existing OmniKit and OmniBLE users see no change unless they opt in to the new driver.",
+      "Telemetry background sends are now correctly limited to once per day, and privacy/diagnostics text has been clarified.",
+      "A rare spurious \"Bolus Failed\" notification after a manual bolus has been fixed."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1173",
+      "commit:c83e346658ce",
+      "commit:512b4d46d83f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

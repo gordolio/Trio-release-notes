@@ -1,0 +1,731 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 26651834571,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/26651834571",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "9177716097365613679d0cc4c9ea531f7c3c36cc",
+    "currentBuiltSha": "47081512d5bf9a0f7553bcd3a53a6ee0d892e172",
+    "shortSha": "4708151",
+    "buildDate": "2026-05-29T17:36:47.000Z",
+    "generationDate": "2026-07-22T18:15:22.885Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1157",
+      "title": "Add Omnipod (Omni) pump support",
+      "changes": [
+        "Trio adds the OmnipodKit submodule so Omnipod (Omni) pump support is included.",
+        "A new \"All Omnipod Types\" option appears in pump selection and setup screens.",
+        "Trio records Omnipod pod details such as expiration time and reservoir level for monitoring.",
+        "The pump setup flow now includes an Omni setup option to start pairing and configuring Omnipod pumps."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1157",
+        "diff:39e0fed83ab2"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1157"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1157",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1157: add submodule OmnipodKit",
+          "url": "https://github.com/nightscout/Trio/pull/1157"
+        },
+        {
+          "id": "diff:39e0fed83ab2",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1157",
+          "url": "https://github.com/gordolio/Trio/compare/ccefa45ac509453833289a6b4930b5662d6a51a0...4acb9b03afb0c5a0ae6547787e3e71439938a394"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1173",
+      "title": "OmnipodKit support and telemetry fixes",
+      "changes": [
+        "A new \"All Omnipod Types\" pump option is available in the Add Pump flow.",
+        "If you choose the new option, the pod type (Eros vs DASH) is selected during pod activation.",
+        "Existing OmniKit and OmniBLE users see no change unless they opt in to the new driver.",
+        "Telemetry background sends are now correctly limited to once per day, and privacy/diagnostics text has been clarified.",
+        "A rare spurious \"Bolus Failed\" notification after a manual bolus has been fixed."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1173",
+        "commit:c83e346658ce",
+        "commit:512b4d46d83f"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1173"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1173",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1173: Trio v0.8.1 patch release",
+          "url": "https://github.com/nightscout/Trio/pull/1173"
+        },
+        {
+          "id": "commit:c83e346658ce",
+          "type": "commit",
+          "title": "Add OmnipodKit submodule, support use of OmnipodKit as PM",
+          "url": "https://github.com/gordolio/Trio/commit/c83e346658cedabdc8dacacc7720a0bb6806ad98"
+        },
+        {
+          "id": "commit:512b4d46d83f",
+          "type": "commit",
+          "title": "Fix Telemetry daily send for continous pings",
+          "url": "https://github.com/gordolio/Trio/commit/512b4d46d83fe50a346e35d4f4c5c9ad15757c37"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1151",
+      "title": "Stop false 'Bolus failed' alerts after manual bolus",
+      "changes": [
+        "Manual boluses that the pump delivered won't trigger a false \"Bolus failed\" alert when the algorithm update fails.",
+        "Algorithm refresh errors after a manual bolus are logged as warnings instead of raising a pump error notification.",
+        "You still receive the normal bolus success confirmation when a manual bolus completes."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1151",
+        "commit:e51fc67ee045"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1151"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1151",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1151: Fix spurious 'Bolus failed' notification after manual bolus",
+          "url": "https://github.com/nightscout/Trio/pull/1151"
+        },
+        {
+          "id": "commit:e51fc67ee045",
+          "type": "commit",
+          "title": "Fix spurious 'Bolus failed' notification after manual bolus",
+          "url": "https://github.com/gordolio/Trio/commit/e51fc67ee0455aa6bb5120e96e053fb53bcb92c7"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1160",
+      "title": "OmnipodKit updated with translations",
+      "changes": [
+        "The app now includes an updated OmnipodKit component.",
+        "Some OmnipodKit interface strings were translated.",
+        "New issue templates were added to the OmnipodKit repository."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1160",
+        "commit:c34a1c6925db"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1160"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1160",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1160: Chore/update omnipodkit 20260518",
+          "url": "https://github.com/nightscout/Trio/pull/1160"
+        },
+        {
+          "id": "commit:c34a1c6925db",
+          "type": "commit",
+          "title": "update OmnipodKit:  translate strings, add Issue Templates",
+          "url": "https://github.com/gordolio/Trio/commit/c34a1c6925dbe7706d28624307b96c2b8b3349f6"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1174",
+          "title": "OmnipodKit support plus telemetry and security fixes",
+          "changes": [
+            "A new \"All Omnipod Types\" option is available when adding a pump to support Omnipod pods.",
+            "Pod model (Eros vs. DASH) is selected when you activate a pod, not when adding the pump.",
+            "Existing OmniKit and OmniBLE users see no change unless they explicitly switch to the new driver.",
+            "Background telemetry pings are now correctly limited to once per day to stop repeated sends.",
+            "Build/release tooling dependencies were updated for security; this does not change shipped app behavior."
+          ],
+          "category": "pump-and-cgm",
+          "sourceIds": [
+            "pr:nightscout/Trio#1174",
+            "commit:194c9b9e720c"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1174"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1174",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1174: Trio v0.8.1 patch release – sync to dev",
+              "url": "https://github.com/nightscout/Trio/pull/1174"
+            },
+            {
+              "id": "commit:194c9b9e720c",
+              "type": "commit",
+              "title": "Merge pull request #1174 from nightscout/patch/0.8.1",
+              "url": "https://github.com/gordolio/Trio/commit/194c9b9e720cdb1987b1a8e687d0264b1162efdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1172",
+          "title": "Telemetry: standardized buildDate and added locale/timeZone",
+          "changes": [
+            "Telemetry now records the device system locale and time zone.",
+            "Telemetry's buildDate is now emitted as YYYY-MM-DD in UTC instead of a localized text string.",
+            "Telemetry now includes an appName field set to Trio to help distinguish forks.",
+            "The privacy policy was updated to document the added locale and time zone fields and the policy date."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1172",
+            "diff:7106ee2c0b71"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1172"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1172",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1172: Update telemetry payload: fix buildDate format, add locale/TZ/appName",
+              "url": "https://github.com/nightscout/Trio/pull/1172"
+            },
+            {
+              "id": "diff:7106ee2c0b71",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1172",
+              "url": "https://github.com/gordolio/Trio/compare/02648dc31713ee7342f725da78ffd6a5d853cc33...00dd3138c987fe96927d5a00a8b28662ecff3747"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1176",
+          "title": "Fix Telemetry app name reporting",
+          "changes": [
+            "Telemetry now includes the correct app name when sending data.",
+            "Telemetry reporting is more reliable after this fix."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1176",
+            "commit:30a195b2715f"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1176"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1176",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1176: Fix Telemetry appName reference",
+              "url": "https://github.com/nightscout/Trio/pull/1176"
+            },
+            {
+              "id": "commit:30a195b2715f",
+              "type": "commit",
+              "title": "Fix Telemetry appName reference",
+              "url": "https://github.com/gordolio/Trio/commit/30a195b2715f7da078676a87fa63be7ae8ad620e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1151,
+      "title": "Fix spurious 'Bolus failed' notification after manual bolus",
+      "body": "fixes #1150 \r\nThe post-bolus determineBasalSync() call was inside the bolus do/catch, so any algorithm error (e.g. 'Not enough glucose data' during CGM warm-up) was misreported as a bolus failure even though the pump had already delivered the bolus successfully. Wrap the algorithm refresh in its own do/catch so it cannot trigger bolusDidFail or a pumpError notification.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1151",
+      "mergedAt": "2026-05-28T20:00:48Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1151,
+      "title": "Fix spurious 'Bolus failed' notification after manual bolus",
+      "body": "fixes #1150 \r\nThe post-bolus determineBasalSync() call was inside the bolus do/catch, so any algorithm error (e.g. 'Not enough glucose data' during CGM warm-up) was misreported as a bolus failure even though the pump had already delivered the bolus successfully. Wrap the algorithm refresh in its own do/catch so it cannot trigger bolusDidFail or a pumpError notification.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1151",
+      "mergedAt": "2026-05-28T20:00:48Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1157,
+      "title": "add submodule OmnipodKit",
+      "body": "Bring in the new OmnipodKit pump manager as an addition to Trio dev 0.7.0.15.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1157",
+      "mergedAt": "2026-05-16T19:49:58Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1157,
+      "title": "add submodule OmnipodKit",
+      "body": "Bring in the new OmnipodKit pump manager as an addition to Trio dev 0.7.0.15.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1157",
+      "mergedAt": "2026-05-16T19:49:58Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1160,
+      "title": "Chore/update omnipodkit 20260518",
+      "body": "Update OmnipodKit:\r\n* add translations\r\n* add Issue templates\r\n\r\nMerge dev into branch to bring up to version 0.7.0.17.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1160",
+      "mergedAt": "2026-05-18T19:04:46Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1160,
+      "title": "Chore/update omnipodkit 20260518",
+      "body": "Update OmnipodKit:\r\n* add translations\r\n* add Issue templates\r\n\r\nMerge dev into branch to bring up to version 0.7.0.17.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1160",
+      "mergedAt": "2026-05-18T19:04:46Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1173,
+      "title": "Trio v0.8.1 patch release",
+      "body": "## Summary\r\nRolls three recently-landed tracks into a patch release: the new OmnipodKit pump manager and a security-driven dependency bump.\r\n\r\n## What's Included\r\n\r\n  1. OmnipodKit pump manager (Eros + DASH unified) — adds loopandlearn/OmnipodKit as a new submodule plus the wiring to surface it in the Add Pump flow as \"All Omnipod Types\". Pod type (Eros vs. DASH) is selected at activation rather than at the pump-manager level. OmniKit and OmniBLE remain in place unchanged — existing users on those drivers see no behavior change; the new driver is purely opt-in until a user explicitly selects it on next pod start.\r\n\r\n  2. Security: fastlane 2.235.0 / jwt 3.2.0 — bumps fastlane 2.233.1 → 2.235.0, which relaxes its transitive jwt < 3 cap and lets the resolver land jwt 3.2.0+. Closes Dependabot alert #14 (ruby-jwt empty-key HMAC bypass, sibling of CVE-2026-44351).\r\n  CI/release tooling only, no shipped-app code surface change. \r\n\r\n  3. Fix Telemetry Daily Sends — continuous background pings were not being correctly throttled to once per day. The daily send logic is now enforced properly. \r\n\r\nIt also includes small fixes added recently to dev:\r\n* Fix Spurious \"Bolus Failed\" Notification After Manual Bolus (https://github.com/nightscout/Trio/pull/1151)\r\n* Telemetry Payload Improvements (#1172)",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1173",
+      "mergedAt": "2026-05-29T15:27:57Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1173,
+      "title": "Trio v0.8.1 patch release",
+      "body": "## Summary\r\nRolls three recently-landed tracks into a patch release: the new OmnipodKit pump manager and a security-driven dependency bump.\r\n\r\n## What's Included\r\n\r\n  1. OmnipodKit pump manager (Eros + DASH unified) — adds loopandlearn/OmnipodKit as a new submodule plus the wiring to surface it in the Add Pump flow as \"All Omnipod Types\". Pod type (Eros vs. DASH) is selected at activation rather than at the pump-manager level. OmniKit and OmniBLE remain in place unchanged — existing users on those drivers see no behavior change; the new driver is purely opt-in until a user explicitly selects it on next pod start.\r\n\r\n  2. Security: fastlane 2.235.0 / jwt 3.2.0 — bumps fastlane 2.233.1 → 2.235.0, which relaxes its transitive jwt < 3 cap and lets the resolver land jwt 3.2.0+. Closes Dependabot alert #14 (ruby-jwt empty-key HMAC bypass, sibling of CVE-2026-44351).\r\n  CI/release tooling only, no shipped-app code surface change. \r\n\r\n  3. Fix Telemetry Daily Sends — continuous background pings were not being correctly throttled to once per day. The daily send logic is now enforced properly. \r\n\r\nIt also includes small fixes added recently to dev:\r\n* Fix Spurious \"Bolus Failed\" Notification After Manual Bolus (https://github.com/nightscout/Trio/pull/1151)\r\n* Telemetry Payload Improvements (#1172)",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1173",
+      "mergedAt": "2026-05-29T15:27:57Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1172,
+      "title": "Update telemetry payload: fix buildDate format, add locale/TZ/appName",
+      "body": "Fixes a few issues identified with the Trio telemetry payloads:\r\n\r\n* On non-English locales, the buildDate was improperly formatted. e.g., a builder on a French language-default OS would emit `lun. mai 2`. Fix: force capture-build-details to POSIX default locale (english).\r\n* Parse the timestamp and emit as YYYY-MM-DD instead of “Tue May 26” format\r\n* Add iOS system locale + timezone to telemetry, with the above bug as motivation for why we should track this. Plus, this will be beneficial for users when managing translations.\r\n* Add appName to telemetry -- hardcoded as \"Trio\", but can be overridden for forks",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1172",
+      "mergedAt": "2026-05-28T22:06:38Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1172,
+      "title": "Update telemetry payload: fix buildDate format, add locale/TZ/appName",
+      "body": "Fixes a few issues identified with the Trio telemetry payloads:\r\n\r\n* On non-English locales, the buildDate was improperly formatted. e.g., a builder on a French language-default OS would emit `lun. mai 2`. Fix: force capture-build-details to POSIX default locale (english).\r\n* Parse the timestamp and emit as YYYY-MM-DD instead of “Tue May 26” format\r\n* Add iOS system locale + timezone to telemetry, with the above bug as motivation for why we should track this. Plus, this will be beneficial for users when managing translations.\r\n* Add appName to telemetry -- hardcoded as \"Trio\", but can be overridden for forks",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1172",
+      "mergedAt": "2026-05-28T22:06:38Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1176,
+      "title": "Fix Telemetry appName reference",
+      "body": "Solves issue introduced with #1172 that was missed.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1176",
+      "mergedAt": "2026-05-28T22:26:58Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1176,
+      "title": "Fix Telemetry appName reference",
+      "body": "Solves issue introduced with #1172 that was missed.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1176",
+      "mergedAt": "2026-05-28T22:26:58Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1174,
+      "title": "Trio v0.8.1 patch release – sync to dev",
+      "body": "## Summary\r\nRolls three recently-landed tracks into a patch release: the new OmnipodKit pump manager and a security-driven dependency bump.\r\n\r\n## What's Included\r\n\r\n  1. OmnipodKit pump manager (Eros + DASH unified) — adds loopandlearn/OmnipodKit as a new submodule plus the wiring to surface it in the Add Pump flow as \"All Omnipod Types\". Pod type (Eros vs. DASH) is selected at activation rather than at the pump-manager level. OmniKit and OmniBLE remain in place unchanged — existing users on those drivers see no behavior change; the new driver is purely opt-in until a user explicitly selects it on next pod start.\r\n\r\n  2. Security: fastlane 2.235.0 / jwt 3.2.0 — bumps fastlane 2.233.1 → 2.235.0, which relaxes its transitive jwt < 3 cap and lets the resolver land jwt 3.2.0+. Closes Dependabot alert #14 (ruby-jwt empty-key HMAC bypass, sibling of CVE-2026-44351).\r\n  CI/release tooling only, no shipped-app code surface change. \r\n\r\n  3. Fix Telemetry Daily Sends — continuous background pings were not being correctly throttled to once per day. The daily send logic is now enforced properly. \r\n\r\nIt also includes small fixes added recently to dev:\r\n* Fix Spurious \"Bolus Failed\" Notification After Manual Bolus (https://github.com/nightscout/Trio/pull/1151)\r\n* Telemetry Payload Improvements (#1172)",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1174",
+      "mergedAt": "2026-05-29T16:51:24Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1174,
+      "title": "Trio v0.8.1 patch release – sync to dev",
+      "body": "## Summary\r\nRolls three recently-landed tracks into a patch release: the new OmnipodKit pump manager and a security-driven dependency bump.\r\n\r\n## What's Included\r\n\r\n  1. OmnipodKit pump manager (Eros + DASH unified) — adds loopandlearn/OmnipodKit as a new submodule plus the wiring to surface it in the Add Pump flow as \"All Omnipod Types\". Pod type (Eros vs. DASH) is selected at activation rather than at the pump-manager level. OmniKit and OmniBLE remain in place unchanged — existing users on those drivers see no behavior change; the new driver is purely opt-in until a user explicitly selects it on next pod start.\r\n\r\n  2. Security: fastlane 2.235.0 / jwt 3.2.0 — bumps fastlane 2.233.1 → 2.235.0, which relaxes its transitive jwt < 3 cap and lets the resolver land jwt 3.2.0+. Closes Dependabot alert #14 (ruby-jwt empty-key HMAC bypass, sibling of CVE-2026-44351).\r\n  CI/release tooling only, no shipped-app code surface change. \r\n\r\n  3. Fix Telemetry Daily Sends — continuous background pings were not being correctly throttled to once per day. The daily send logic is now enforced properly. \r\n\r\nIt also includes small fixes added recently to dev:\r\n* Fix Spurious \"Bolus Failed\" Notification After Manual Bolus (https://github.com/nightscout/Trio/pull/1151)\r\n* Telemetry Payload Improvements (#1172)",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1174",
+      "mergedAt": "2026-05-29T16:51:24Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "e51fc67ee0455aa6bb5120e96e053fb53bcb92c7",
+      "subject": "Fix spurious 'Bolus failed' notification after manual bolus",
+      "author": "Robert",
+      "authoredAt": "2026-05-13T07:38:03+02:00"
+    },
+    {
+      "sha": "98c4421ccb3af1f459f7df3831a3961d402c62f1",
+      "subject": "add submodule OmnipodKit",
+      "author": "marionbarker",
+      "authoredAt": "2026-05-15T17:37:27-07:00"
+    },
+    {
+      "sha": "4acb9b03afb0c5a0ae6547787e3e71439938a394",
+      "subject": "Merge pull request #1157 from loopandlearn/add_omnipodkit_to_Trio",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-16T21:49:57+02:00"
+    },
+    {
+      "sha": "c34a1c6925dbe7706d28624307b96c2b8b3349f6",
+      "subject": "update OmnipodKit:  translate strings, add Issue Templates",
+      "author": "marionbarker",
+      "authoredAt": "2026-05-18T10:46:43-07:00"
+    },
+    {
+      "sha": "348ffff7f211993b8af766bd4a9f1f5c37493786",
+      "subject": "Merge branch 'dev' into chore/update-omnipodkit",
+      "author": "marionbarker",
+      "authoredAt": "2026-05-18T10:47:02-07:00"
+    },
+    {
+      "sha": "8b2a6ae5717291ab9515c89b0ba994d21fa1a6bc",
+      "subject": "Merge pull request #1160 from loopandlearn/chore/update-omnipodkit-20260518",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-18T21:04:45+02:00"
+    },
+    {
+      "sha": "2544894369ba4aeeb5633e07c7a50d403e58b80f",
+      "subject": "Merge branch 'dev' into feat/dev-omnipodkit",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-24T23:56:59+02:00"
+    },
+    {
+      "sha": "fb2923c08b782d8946e838bef75b655768592984",
+      "subject": "Merge branch 'dev' into feat/dev-omnipodkit",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-25T00:55:12+02:00"
+    },
+    {
+      "sha": "7fdc48c66fb364f3b61e40b96da2a17dbe3cea37",
+      "subject": "Merge branch 'dev' into fixManualBolusNotification",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-27T23:07:09+02:00"
+    },
+    {
+      "sha": "4b2f1741e9968be94f0eceaaae4ba71b6bb44f32",
+      "subject": "capture-build-details: force English date format on build date",
+      "author": "James Woglom",
+      "authoredAt": "2026-05-27T22:38:53-04:00"
+    },
+    {
+      "sha": "1f0dcbedc48db8f80323cc7a233d6f65b5985c19",
+      "subject": "Use YYYY-MM-DD buildDate format in telemetry",
+      "author": "James Woglom",
+      "authoredAt": "2026-05-27T22:39:37-04:00"
+    },
+    {
+      "sha": "c17f7bfabd4e7e6460606c8388903c5320567195",
+      "subject": "add locale / timeZone",
+      "author": "James Woglom",
+      "authoredAt": "2026-05-27T22:41:07-04:00"
+    },
+    {
+      "sha": "925cb817654c2f6f2335d1d3a9416314e9d9a12b",
+      "subject": "add appdisplayname",
+      "author": "James Woglom",
+      "authoredAt": "2026-05-27T22:56:29-04:00"
+    },
+    {
+      "sha": "cfc04e469d36434df563834114bb587260ca906c",
+      "subject": "Merge pull request #1151 from mountrcg/fixManualBolusNotification",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-28T22:00:47+02:00"
+    },
+    {
+      "sha": "1d24050d06e259f70734f2f5cbc95be8db44dae9",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.0.1 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-05-28T20:01:00Z"
+    },
+    {
+      "sha": "c7aa49776c7e0fb46ba63b416d0efa5663aa2893",
+      "subject": "Bump fastlane to 2.235.0, update dependent gems",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-28T22:17:27+02:00"
+    },
+    {
+      "sha": "0182bd90a316f24a1fede346ae9bafea7d66e8c4",
+      "subject": "Merge branch 'feat/dev-omnipodkit' of github.com:nightscout/Trio into patch/0.8.1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-28T22:24:14+02:00"
+    },
+    {
+      "sha": "c83e346658cedabdc8dacacc7720a0bb6806ad98",
+      "subject": "Add OmnipodKit submodule, support use of OmnipodKit as PM",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-28T22:30:40+02:00"
+    },
+    {
+      "sha": "ae8d80c3d5781b3bb62cfa107564f2866f0d4501",
+      "subject": "Prepare patch release: bump Trio to 0.8.1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-28T22:36:55+02:00"
+    },
+    {
+      "sha": "512b4d46d83fe50a346e35d4f4c5c9ad15757c37",
+      "subject": "Fix Telemetry daily send for continous pings",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-28T23:19:16+02:00"
+    },
+    {
+      "sha": "61e5ea46197f16823f8b3fa4ce2ddaf5abf65101",
+      "subject": "hardcode telemetryAppName to Trio",
+      "author": "James Woglom",
+      "authoredAt": "2026-05-28T17:56:12-04:00"
+    },
+    {
+      "sha": "cea7db10a97787cc595fcee7a9d83dad6d8df2b4",
+      "subject": "update privacy policy",
+      "author": "James Woglom",
+      "authoredAt": "2026-05-28T18:00:08-04:00"
+    },
+    {
+      "sha": "00dd3138c987fe96927d5a00a8b28662ecff3747",
+      "subject": "Merge pull request #1172 from jwoglom/telemetry-args",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T00:06:38+02:00"
+    },
+    {
+      "sha": "acb7cdd3ea4cb6eb1d4dac0b1af0cefe1b76d609",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.0.2 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-05-28T22:06:50Z"
+    },
+    {
+      "sha": "c5ebabf751b493b572ebb85838a3ec2281ab84f1",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into patch/0.8.1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T00:09:05+02:00"
+    },
+    {
+      "sha": "35499ad5ecf102343d44df2f235356ec218f05bc",
+      "subject": "Fix Telemetry appName reference",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T00:13:42+02:00"
+    },
+    {
+      "sha": "30a195b2715f7da078676a87fa63be7ae8ad620e",
+      "subject": "Fix Telemetry appName reference",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T00:15:13+02:00"
+    },
+    {
+      "sha": "ea5fd27d76c5fe2349afd877529d3af6c99c6889",
+      "subject": "Merge pull request #1176 from nightscout/fix/telemetry-variable",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T00:26:57+02:00"
+    },
+    {
+      "sha": "03dc8e86d84e2207f6eda4abb18976166475ca91",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.0.3 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-05-28T22:30:10Z"
+    },
+    {
+      "sha": "176e61d335060d434c2d4089882d3987f28c03f3",
+      "subject": "Merge branch 'dev' into patch/0.8.1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-29T18:31:48+02:00"
+    },
+    {
+      "sha": "194c9b9e720cdb1987b1a8e687d0264b1162efdf",
+      "subject": "Merge pull request #1174 from nightscout/patch/0.8.1",
+      "author": "Mike Plante",
+      "authoredAt": "2026-05-29T12:51:23-04:00"
+    },
+    {
+      "sha": "e2bc1cd2d4be32f8d86af1bf686860a273325691",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.1.1 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-05-29T16:51:37Z"
+    },
+    {
+      "sha": "47081512d5bf9a0f7553bcd3a53a6ee0d892e172",
+      "subject": "merge from upstream",
+      "author": "Gordon Child",
+      "authoredAt": "2026-05-29T12:22:04-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": ".gitmodules"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Gemfile"
+    },
+    {
+      "status": "M",
+      "path": "Gemfile.lock"
+    },
+    {
+      "status": "A",
+      "path": "OmnipodKit"
+    },
+    {
+      "status": "M",
+      "path": "PRIVACY_POLICY.md"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/AppDelegate.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/PumpConfig/PumpConfigDataFlow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/PumpConfig/View/PumpConfigRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/PumpConfig/View/PumpSetupView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Telemetry/TelemetryClient.swift"
+    },
+    {
+      "status": "M",
+      "path": "scripts/capture-build-details.sh"
+    },
+    {
+      "status": "M",
+      "path": "scripts/swiftformat.sh"
+    }
+  ]
+}

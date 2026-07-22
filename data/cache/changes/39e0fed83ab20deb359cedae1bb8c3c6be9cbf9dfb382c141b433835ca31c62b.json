@@ -1,0 +1,24 @@
+{
+  "inputHash": "3b7edf85ad8e0611c89d519b558b3f6d80ac49733aa4dde606f43ced8e25017a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1157",
+    "title": "Add Omnipod (Omni) pump support",
+    "changes": [
+      "Trio adds the OmnipodKit submodule so Omnipod (Omni) pump support is included.",
+      "A new \"All Omnipod Types\" option appears in pump selection and setup screens.",
+      "Trio records Omnipod pod details such as expiration time and reservoir level for monitoring.",
+      "The pump setup flow now includes an Omni setup option to start pairing and configuring Omnipod pumps."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1157",
+      "diff:39e0fed83ab2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
