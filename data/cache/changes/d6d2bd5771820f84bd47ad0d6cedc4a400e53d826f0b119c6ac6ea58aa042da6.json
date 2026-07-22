@@ -1,0 +1,22 @@
+{
+  "inputHash": "ddbf06e93b019f7f9251c5994f01a318c6b818d237f95fb6d987a455e2ac0c6c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1258",
+    "title": "Sync v0.8.4 patch back to development",
+    "changes": [
+      "The v0.8.4 patch branch was merged back into the development branch.",
+      "No specific user-facing changes are documented in this merge."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1258",
+      "commit:98c2f0afea1c"
+    ],
+    "confidence": "low",
+    "humanReviewRequired": true
+  }
+}

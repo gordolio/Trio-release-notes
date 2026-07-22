@@ -1,0 +1,23 @@
+{
+  "inputHash": "d12f407cc64b366ecfa41ef8a01c9ab9f231d10f7e8ed10ad63f72f81fe3c931",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1257",
+    "title": "Update for Omnipod, Medtrum, and G7 sensor",
+    "changes": [
+      "App version was updated to 0.8.4.",
+      "Trio now includes updated Omnipod and Medtrum components.",
+      "G7 sensor support was updated to show the sensor lifecycle."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1257",
+      "diff:d6262f18b840"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

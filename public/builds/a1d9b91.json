@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 28602764134,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/28602764134",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "b94f405e2a635732f83630bc64fdb8e616927f36",
+    "currentBuiltSha": "a1d9b91c2390b39a41e6ff95c6b6f2effb50f057",
+    "shortSha": "a1d9b91",
+    "buildDate": "2026-07-02T16:00:41.000Z",
+    "generationDate": "2026-07-22T18:28:31.459Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1257",
+      "title": "Update for Omnipod, Medtrum, and G7 sensor",
+      "changes": [
+        "App version was updated to 0.8.4.",
+        "Trio now includes updated Omnipod and Medtrum components.",
+        "G7 sensor support was updated to show the sensor lifecycle."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1257",
+        "diff:d6262f18b840"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1257"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1257",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1257: Patch Release v0.8.4 — Bump Submodules MedtrumKit, OmnipodKit, G7SensorKit",
+          "url": "https://github.com/nightscout/Trio/pull/1257"
+        },
+        {
+          "id": "diff:d6262f18b840",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1257",
+          "url": "https://github.com/gordolio/Trio/compare/7b8db13acaac49fe0c30542ffa41d9e8757cddf0...29350e31a9f8b25dcea719f52fa1abb676e34af8"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1258",
+          "title": "Sync v0.8.4 patch back to development",
+          "changes": [
+            "The v0.8.4 patch branch was merged back into the development branch.",
+            "No specific user-facing changes are documented in this merge."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1258",
+            "commit:98c2f0afea1c"
+          ],
+          "confidence": "low",
+          "humanReviewRequired": true,
+          "changeIds": [
+            "pr:nightscout/Trio#1258"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1258",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1258: Patch Release v0.8.4 — Sync back to Dev",
+              "url": "https://github.com/nightscout/Trio/pull/1258"
+            },
+            {
+              "id": "commit:98c2f0afea1c",
+              "type": "commit",
+              "title": "Merge pull request #1258 from nightscout/release/v0.8.4",
+              "url": "https://github.com/gordolio/Trio/commit/98c2f0afea1c1ace8f8f3addbb7cd40bfd79ec1e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1257,
+      "title": "Patch Release v0.8.4 — Bump Submodules MedtrumKit, OmnipodKit, G7SensorKit",
+      "body": "Bump MedtrumKit\r\n* https://github.com/jbr7rr/MedtrumKit/pull/124\r\n* https://github.com/jbr7rr/MedtrumKit/pull/129\r\n* https://github.com/jbr7rr/MedtrumKit/pull/131\r\n* https://github.com/jbr7rr/MedtrumKit/pull/134\r\n* https://github.com/jbr7rr/MedtrumKit/pull/138\r\n* https://github.com/jbr7rr/MedtrumKit/pull/147\r\n* https://github.com/jbr7rr/MedtrumKit/pull/148\r\n* https://github.com/jbr7rr/MedtrumKit/pull/151\r\n* https://github.com/jbr7rr/MedtrumKit/pull/157\r\n\r\nBump OmnipodKit\r\n* https://github.com/loopandlearn/OmnipodKit/pull/93\r\n* https://github.com/loopandlearn/OmnipodKit/pull/95\r\n* https://github.com/loopandlearn/OmnipodKit/pull/99 (fixes #1236)\r\n\r\nBump G7SensorKit\r\n* Update G7SensorKit to show the lifecycle https://github.com/LoopKit/G7SensorKit/pull/58",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1257",
+      "mergedAt": "2026-07-02T10:47:01Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1257,
+      "title": "Patch Release v0.8.4 — Bump Submodules MedtrumKit, OmnipodKit, G7SensorKit",
+      "body": "Bump MedtrumKit\r\n* https://github.com/jbr7rr/MedtrumKit/pull/124\r\n* https://github.com/jbr7rr/MedtrumKit/pull/129\r\n* https://github.com/jbr7rr/MedtrumKit/pull/131\r\n* https://github.com/jbr7rr/MedtrumKit/pull/134\r\n* https://github.com/jbr7rr/MedtrumKit/pull/138\r\n* https://github.com/jbr7rr/MedtrumKit/pull/147\r\n* https://github.com/jbr7rr/MedtrumKit/pull/148\r\n* https://github.com/jbr7rr/MedtrumKit/pull/151\r\n* https://github.com/jbr7rr/MedtrumKit/pull/157\r\n\r\nBump OmnipodKit\r\n* https://github.com/loopandlearn/OmnipodKit/pull/93\r\n* https://github.com/loopandlearn/OmnipodKit/pull/95\r\n* https://github.com/loopandlearn/OmnipodKit/pull/99 (fixes #1236)\r\n\r\nBump G7SensorKit\r\n* Update G7SensorKit to show the lifecycle https://github.com/LoopKit/G7SensorKit/pull/58",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1257",
+      "mergedAt": "2026-07-02T10:47:01Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1258,
+      "title": "Patch Release v0.8.4 — Sync back to Dev",
+      "body": "See #1257 for details. \r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1258",
+      "mergedAt": "2026-07-02T15:21:08Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1258,
+      "title": "Patch Release v0.8.4 — Sync back to Dev",
+      "body": "See #1257 for details. \r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1258",
+      "mergedAt": "2026-07-02T15:21:08Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "f3478131198b763df77c9b364dc15db059b289de",
+      "subject": "Bump OmnipodKit, MedtrumKit, G7SensorKit",
+      "author": "dnzxy",
+      "authoredAt": "2026-07-02T02:09:52+02:00"
+    },
+    {
+      "sha": "000943e2e7b4d7ab9c1d192228fbd4f2fff0d6ff",
+      "subject": "Prepare patch release: bump version to 0.8.4",
+      "author": "dnzxy",
+      "authoredAt": "2026-07-02T02:10:39+02:00"
+    },
+    {
+      "sha": "29350e31a9f8b25dcea719f52fa1abb676e34af8",
+      "subject": "Merge pull request #1257 from nightscout/release/v0.8.4",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-02T12:47:01+02:00"
+    },
+    {
+      "sha": "a7eb9365ccd11b4510b0e3707baf9939770e0a78",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into release/v0.8.4",
+      "author": "dnzxy",
+      "authoredAt": "2026-07-02T12:49:14+02:00"
+    },
+    {
+      "sha": "98c2f0afea1c1ace8f8f3addbb7cd40bfd79ec1e",
+      "subject": "Merge pull request #1258 from nightscout/release/v0.8.4",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-02T17:21:07+02:00"
+    },
+    {
+      "sha": "fc4e69d9124f878ee53721bdf8b97aee89d7401c",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.1 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-02T15:21:17Z"
+    },
+    {
+      "sha": "a1d9b91c2390b39a41e6ff95c6b6f2effb50f057",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-02T10:42:15-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "G7SensorKit"
+    },
+    {
+      "status": "M",
+      "path": "MedtrumKit"
+    }
+  ]
+}
