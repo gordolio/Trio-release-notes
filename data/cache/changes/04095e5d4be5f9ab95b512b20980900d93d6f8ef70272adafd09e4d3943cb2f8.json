@@ -1,0 +1,22 @@
+{
+  "inputHash": "7e35cfc280e7de975a6430297ceb42116901dd6f01fe318343deab56e631730e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1283",
+    "title": "Allow carb ratios down to 1",
+    "changes": [
+      "Trio now accepts carb ratio settings as low as 1 in the OpenAPS Swift profile.",
+      "Carb ratio values below 1 or above 150 are still rejected with a warning."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1283",
+      "diff:04095e5d4be5"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "inputHash": "9b17bca58a9e19e43a6e9e4b63d10e4deb0d0260735c9c28dd47f0f3d19f971e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1279",
+    "title": "Restore alert files and fix signing",
+    "changes": [
+      "Project signing was reverted to the original developer team to fix build signing.",
+      "Alert and alarm source files and alert sounds were re-added to the app build.",
+      "Several alert-related test files were restored to the project.",
+      "Treatments settings and snooze-alert UI files were re-included in the build."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1279",
+      "diff:6cd29775621e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
