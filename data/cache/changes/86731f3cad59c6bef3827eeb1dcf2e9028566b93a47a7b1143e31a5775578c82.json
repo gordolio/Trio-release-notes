@@ -1,0 +1,23 @@
+{
+  "inputHash": "2f7b7b5ca6360bb8ef2685975478761de24e8dbcfb086d83e7bad68c1b23c810",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:c5ee1cf99971b80fa041ceee5c066fe93a41cadb",
+    "title": "Single-feed release notes and This Build label",
+    "changes": [
+      "Release notes are now loaded from a single JSONL feed that can contain multiple builds.",
+      "The build that matches the installed app is labeled \"This Build\" in the release notes list.",
+      "Larger release-note files are accepted so more builds can be displayed."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:c5ee1cf99971",
+      "diff:86731f3cad59"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

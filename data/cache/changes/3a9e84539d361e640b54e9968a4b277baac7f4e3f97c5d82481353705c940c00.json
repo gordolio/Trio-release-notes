@@ -1,0 +1,25 @@
+{
+  "inputHash": "925889f7595f8bdead5db1063a38c9eb255c5b06d64bd653fccd8d1f8a641f33",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:a77a799a4ce1ddb01b6977b30722de031a7c14ca",
+    "title": "Show release note history in Settings",
+    "changes": [
+      "Settings now has a \"What's New\" link that opens build release notes.",
+      "The release notes view shows a history of recent builds instead of a single build entry.",
+      "A red badge on the Settings link displays how many builds you haven't seen yet.",
+      "Opening the release notes can mark the newest builds as seen so they stop appearing as new.",
+      "If no release notes are available, a friendly message explains that none are present."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:a77a799a4ce1",
+      "diff:3a9e84539d36"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
