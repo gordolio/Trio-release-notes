@@ -8,7 +8,7 @@
     "currentBuiltSha": "bec792178804d8ca597de52a749a8a2aa8035d4c",
     "shortSha": "bec7921",
     "buildDate": "2026-07-16T00:26:42.000Z",
-    "generationDate": "2026-07-22T01:46:59.301Z",
+    "generationDate": "2026-07-22T18:33:37.306Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "6",
     "model": "openai/gpt-5-mini"
@@ -51,42 +51,6 @@
       ]
     },
     {
-      "changeId": "pr:nightscout/Trio#1313",
-      "title": "Manual Temp Basal and pump reliability fixes",
-      "changes": [
-        "You can start a Manual Temporary Basal from Trio.",
-        "Trio gains a backup flow to handle pump error code 7.",
-        "Duplicate callback events that could run twice are prevented.",
-        "Sync collisions between app and pump are reduced to improve reliability."
-      ],
-      "category": "pump-and-cgm",
-      "sourceIds": [
-        "pr:nightscout/Trio#1313",
-        "commit:cfd1b04ad740"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1313"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1313",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1313: Update MedtrumKit",
-          "url": "https://github.com/nightscout/Trio/pull/1313"
-        },
-        {
-          "id": "commit:cfd1b04ad740",
-          "type": "commit",
-          "title": "chore: update MedtrumKit",
-          "url": "https://github.com/gordolio/Trio/commit/cfd1b04ad740ac014c129bf2aa7fa697e4d75e2a"
-        }
-      ]
-    },
-    {
       "changeId": "pr:nightscout/Trio#1311",
       "title": "Process pump history natively, avoid JSON round-trip",
       "changes": [
@@ -119,6 +83,42 @@
           "type": "diff",
           "title": "Diff for pr:nightscout/Trio#1311",
           "url": "https://github.com/gordolio/Trio/compare/35914e7a50668b6440c84332100e8ff0d2459d66...95b1c0179f621c7625cefac98272923584432f6a"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1313",
+      "title": "Manual Temp Basal and pump reliability fixes",
+      "changes": [
+        "You can start a Manual Temporary Basal from Trio.",
+        "Trio gains a backup flow to handle pump error code 7.",
+        "Duplicate callback events that could run twice are prevented.",
+        "Sync collisions between app and pump are reduced to improve reliability."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1313",
+        "commit:cfd1b04ad740"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1313"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1313",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1313: Update MedtrumKit",
+          "url": "https://github.com/nightscout/Trio/pull/1313"
+        },
+        {
+          "id": "commit:cfd1b04ad740",
+          "type": "commit",
+          "title": "chore: update MedtrumKit",
+          "url": "https://github.com/gordolio/Trio/commit/cfd1b04ad740ac014c129bf2aa7fa697e4d75e2a"
         }
       ]
     },
@@ -604,7 +604,7 @@
       "sha": "729382dc230f4546d206e9043c9a259d213d3ffa",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.17 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-14T19:55:15+00:00"
+      "authoredAt": "2026-07-14T19:55:15Z"
     },
     {
       "sha": "7764a422afb71787b48f581b80b10d7ce1eda2a1",
@@ -646,7 +646,7 @@
       "sha": "1373165c23142a49ef4a9a3080f2a0cafc79dc91",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.18 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T19:45:50+00:00"
+      "authoredAt": "2026-07-15T19:45:50Z"
     },
     {
       "sha": "aceb300ac3a321413c845bddec6ed92a3fb0164b",
@@ -658,7 +658,7 @@
       "sha": "0472483eb367642d803d12e8730780283fff677c",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.19 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T20:12:18+00:00"
+      "authoredAt": "2026-07-15T20:12:18Z"
     },
     {
       "sha": "db46e1516ba4d63f40f8843e14c55bea5a5d6096",
@@ -670,7 +670,7 @@
       "sha": "70741cd30caf20db8f40b26c86bbb8913f91adfb",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.20 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T20:19:05+00:00"
+      "authoredAt": "2026-07-15T20:19:05Z"
     },
     {
       "sha": "9569c3aa607da65fb5fef2f4e84e07ead17b8477",
@@ -688,7 +688,7 @@
       "sha": "e02113b5b885ecc59a764ac391db5e2fc1e0244b",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.21 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T21:29:52+00:00"
+      "authoredAt": "2026-07-15T21:29:52Z"
     },
     {
       "sha": "bec792178804d8ca597de52a749a8a2aa8035d4c",
