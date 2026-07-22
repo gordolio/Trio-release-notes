@@ -1,0 +1,25 @@
+{
+  "inputHash": "9d3b8e49e23d75ea2a4e1648aadd33cd985ebab9748c8f6d71f01e42fd8ba38d",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1167",
+    "title": "Telemetry, Tidepool uploads, and Nightscout deletes",
+    "changes": [
+      "Trio can collect anonymous usage telemetry and you can opt out of it.",
+      "Trio now uploads therapy settings (basal, carb ratio, ISF, and targets) to Tidepool.",
+      "Deleting a glucose entry in Trio now removes that entry from Nightscout as well.",
+      "You can enable optional confirmation dialogs before activating an override or temporary target.",
+      "Active boluses are shown on the Treatments screen and can be canceled without leaving it."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1167",
+      "diff:3b42356d64e6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
