@@ -1,0 +1,24 @@
+{
+  "inputHash": "6d259e82c63c6eb1213482820871eb75ca65611968738922f8318c6c376b4abe",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1225",
+    "title": "APSManager thread-safety and UI update fixes",
+    "changes": [
+      "Reduced chance of crashes by removing unsafe force unwraps and using weaker references in closures.",
+      "Pump and basal state updates now run on the main thread to avoid UI race conditions and glitches.",
+      "Manual temporary basal changes now reliably trigger a loop run when they finish or are cancelled.",
+      "Time‑in‑Range statistics are computed directly to avoid redundant background context calls."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1225",
+      "diff:be1e0dbd060a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

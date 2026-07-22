@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build 9685744</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build 9685744</h1>
+    <p>Built 2026-06-22T19:13:35.000Z from <code>9a34fe8..9685744</code>.</p>
+    <section><h2>Highlights</h2><article><h3>APSManager thread-safety and UI update fixes</h3><ul><li>Reduced chance of crashes by removing unsafe force unwraps and using weaker references in closures.</li><li>Pump and basal state updates now run on the main thread to avoid UI race conditions and glitches.</li><li>Manual temporary basal changes now reliably trigger a loop run when they finish or are cancelled.</li><li>Time‑in‑Range statistics are computed directly to avoid redundant background context calls.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1225" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/27976452494">Source workflow 27976452494</a></p>
+  </footer>
+</body>
+</html>

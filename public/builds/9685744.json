@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 27976452494,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/27976452494",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "9a34fe8f23b1e82f4345722a53feeac4fb9f4d3a",
+    "currentBuiltSha": "968574463bb01fc975d4db8b07d3b4e862db14f9",
+    "shortSha": "9685744",
+    "buildDate": "2026-06-22T19:13:35.000Z",
+    "generationDate": "2026-07-22T18:24:34.421Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1225",
+      "title": "APSManager thread-safety and UI update fixes",
+      "changes": [
+        "Reduced chance of crashes by removing unsafe force unwraps and using weaker references in closures.",
+        "Pump and basal state updates now run on the main thread to avoid UI race conditions and glitches.",
+        "Manual temporary basal changes now reliably trigger a loop run when they finish or are cancelled.",
+        "Time‑in‑Range statistics are computed directly to avoid redundant background context calls."
+      ],
+      "category": "algorithm-and-dosing",
+      "sourceIds": [
+        "pr:nightscout/Trio#1225",
+        "diff:be1e0dbd060a"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1225"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1225",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1225: APSManager thread safety fixes (Part 1)",
+          "url": "https://github.com/nightscout/Trio/pull/1225"
+        },
+        {
+          "id": "diff:be1e0dbd060a",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1225",
+          "url": "https://github.com/gordolio/Trio/compare/432e404b01d7edd5bcc71d4dddb4e48a788cdccd...0bc038ccdbaaa3f88ea44ccd796aa167f5fc9e33"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1225,
+      "title": "APSManager thread safety fixes (Part 1)",
+      "body": "This will be the first of at least 3 Pull requests targeted at optimizing the thread safety of the APSManager. As suggested by @kingst in PR #1145 I splitted my initial PR in several smaller PRs to be able to better review the changes made.\r\n\r\nChanges made in this PR:\r\n\r\n- remove unused `viewContext`\r\n- move `tir()` out of a nested perform closure\r\n- add `[weak self]` to combine sinks and `privateContext` perform closures\r\n- move combine operations to receive on the main thread to avoid race conditions\r\n- remove force unwraps",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1225",
+      "mergedAt": "2026-06-21T21:23:07Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1225,
+      "title": "APSManager thread safety fixes (Part 1)",
+      "body": "This will be the first of at least 3 Pull requests targeted at optimizing the thread safety of the APSManager. As suggested by @kingst in PR #1145 I splitted my initial PR in several smaller PRs to be able to better review the changes made.\r\n\r\nChanges made in this PR:\r\n\r\n- remove unused `viewContext`\r\n- move `tir()` out of a nested perform closure\r\n- add `[weak self]` to combine sinks and `privateContext` perform closures\r\n- move combine operations to receive on the main thread to avoid race conditions\r\n- remove force unwraps",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1225",
+      "mergedAt": "2026-06-21T21:23:07Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "e274ed1d9c3d53b4025e53aec7d65b8b4dfcb9be",
+      "subject": "APSManager Thread Safety Fixes Part 1",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-21T14:03:51+02:00"
+    },
+    {
+      "sha": "0bc038ccdbaaa3f88ea44ccd796aa167f5fc9e33",
+      "subject": "Merge pull request #1225 from nightscout/apsManager-part1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-06-21T23:23:07+02:00"
+    },
+    {
+      "sha": "dbc10266177efad49913509c7fe896a9c87df22a",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.3 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-21T21:23:16Z"
+    },
+    {
+      "sha": "968574463bb01fc975d4db8b07d3b4e862db14f9",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-06-22T13:53:58-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    }
+  ]
+}
