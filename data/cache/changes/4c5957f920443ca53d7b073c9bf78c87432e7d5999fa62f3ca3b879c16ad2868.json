@@ -1,0 +1,24 @@
+{
+  "inputHash": "ab3522004c3713a024d36a6336052ce7e536744cf5217c61c3b639d650e38699",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1149",
+    "title": "Add anonymous telemetry with consent options",
+    "changes": [
+      "Trio now sends optional anonymous usage telemetry with a default opt-out (Full Sharing) choice.",
+      "App Diagnostics and Onboarding show three options: Full Sharing (crashes + telemetry), Crash Reports Only, and Disabled.",
+      "Existing users see a one-time migration sheet on first launch to choose their telemetry preference.",
+      "Settings includes a \"What's sent\" preview so you can inspect the exact telemetry JSON before consenting."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1149",
+      "diff:4c5957f92044"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

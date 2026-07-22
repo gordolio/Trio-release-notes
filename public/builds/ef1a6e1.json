@@ -1,0 +1,388 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 26350423062,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/26350423062",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "0bb688841620824a10f203cc90ce09ca3dcec824",
+    "currentBuiltSha": "ef1a6e1b1436b82a1c969d5ddf0c2a9ed4f44cc2",
+    "shortSha": "ef1a6e1",
+    "buildDate": "2026-05-24T03:19:28.000Z",
+    "generationDate": "2026-07-22T18:00:13.004Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1161",
+      "title": "Show small basal rates with more precision",
+      "changes": [
+        "Basal rates (units/hour) in the therapy settings editor now show two to three decimal places for small steps.",
+        "This increased precision appears during onboarding when editing basal settings.",
+        "Displays for other unit types remain unchanged."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1161",
+        "diff:371b3beb828d"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1161"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1161",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1161: fix: basal rounding for small basal steps",
+          "url": "https://github.com/nightscout/Trio/pull/1161"
+        },
+        {
+          "id": "diff:371b3beb828d",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1161",
+          "url": "https://github.com/gordolio/Trio/compare/e15e96df94b3958daf0cdf7a0aa3ac9a0a67e146...76900fe2f75fef7b6c7e3a7c018b2519ac68e3f6"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1149",
+      "title": "Add anonymous telemetry with consent options",
+      "changes": [
+        "Trio now sends optional anonymous usage telemetry with a default opt-out (Full Sharing) choice.",
+        "App Diagnostics and Onboarding show three options: Full Sharing (crashes + telemetry), Crash Reports Only, and Disabled.",
+        "Existing users see a one-time migration sheet on first launch to choose their telemetry preference.",
+        "Settings includes a \"What's sent\" preview so you can inspect the exact telemetry JSON before consenting."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1149",
+        "diff:4c5957f92044"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1149"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1149",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1149: Add Anonymous Telemetry",
+          "url": "https://github.com/nightscout/Trio/pull/1149"
+        },
+        {
+          "id": "diff:4c5957f92044",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1149",
+          "url": "https://github.com/gordolio/Trio/compare/e15e96df94b3958daf0cdf7a0aa3ac9a0a67e146...49b2034464ff845c2b8f7165780163b731bcd187"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "commit:ef1a6e1b1436b82a1c969d5ddf0c2a9ed4f44cc2",
+          "title": "Merge of development branch; no visible changes",
+          "changes": [
+            "This commit merges the development branch into dev.",
+            "No user-visible changes are described in the commit message.",
+            "Further review is required to identify any functional or UI impacts."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "commit:ef1a6e1b1436"
+          ],
+          "confidence": "low",
+          "humanReviewRequired": true,
+          "changeIds": [
+            "commit:ef1a6e1b1436b82a1c969d5ddf0c2a9ed4f44cc2"
+          ],
+          "highlight": false,
+          "provenance": "origin",
+          "sources": [
+            {
+              "id": "commit:ef1a6e1b1436",
+              "type": "commit",
+              "title": "Merge remote-tracking branch 'origin/dev' into dev",
+              "url": "https://github.com/gordolio/Trio/commit/ef1a6e1b1436b82a1c969d5ddf0c2a9ed4f44cc2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1161,
+      "title": "fix: basal rounding for small basal steps",
+      "body": "Re-open from https://github.com/nightscout/Trio/pull/1140 because I deleted the old branch\r\n\r\nTagging @MikePlante1 @dnzxy ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1161",
+      "mergedAt": "2026-05-23T22:38:59Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1161,
+      "title": "fix: basal rounding for small basal steps",
+      "body": "Re-open from https://github.com/nightscout/Trio/pull/1140 because I deleted the old branch\r\n\r\nTagging @MikePlante1 @dnzxy ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1161",
+      "mergedAt": "2026-05-23T22:38:59Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1149,
+      "title": "Add Anonymous Telemetry",
+      "body": "## Overview\r\n\r\n* Adds an opt-out anonymous usage check-in modeled on LoopFollow#626\r\n* Diagnostics consent now has three states: Full Sharing (crashes + telemetry), Crash Reports Only, and Disabled. Default is Full Sharing (opt-out)\r\n* Existing Crashlytics wiring is unchanged\r\n* Add new  flag\r\n* Onboarding and Settings → App Diagnostics show the new selection option\r\n* Existing users get a one-time migration sheet on first foreground.\r\n* New TelemetryClient lives under Services/Telemetry\r\n   - `TelemetryAttestor` owns `DCAppAttestService` key generation (Secure Enclave-backed), Keychain-persisted registration, and per-ping assertion building.\r\n   - `TelemetryClient.send()` skips on `DCAppAttestService.isSupported == false` (simulator), short-circuits on a sticky \"forbidden\" flag set by a 403 from `/api/attest/register`, and posts to `/checkin` with the three `X-AppAttest-*` headers. Assertion is built over `SHA256(payload || challenge)` per the server spec.\r\n   - `app_id` (`TEAMID.bundle.id`) is read from the embedded `embedded.mobileprovision` file. The `SecTask*` APIs aren't Swift-exposed on iOS; this is the standard workaround. Trio always ships with an embedded mobileprovision (sideload / TestFlight), so this path is reliable.\r\n   - Added the `com.apple.developer.devicecheck.appattest-environment = development` entitlement (matching the existing `aps-environment`).\r\n\r\n* Extended PRIVACY_POLICY.md with Telemetry section\r\n\r\nThis PR is still draft until the server side is reviewed in tandem.\r\n\r\n## Screenshots\r\n\r\n| Onboarding | Migration Popup | Settings |\r\n|--------|--------|--------|\r\n| <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0cbdbd02-998d-43cc-9ba4-ff697870da41\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/de4d20c4-1be1-4d3f-980e-6ac2f69453f8\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/ee0a6a78-bca0-4423-9230-f4e026081d07\" /> | \r\n\r\n## TODOs\r\n\r\n- [x] Update endpoint once telemetry backend is set up\r\n- [x] Test check-in pings and upload end-to-end",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1149",
+      "mergedAt": "2026-05-23T19:34:38Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1149,
+      "title": "Add Anonymous Telemetry",
+      "body": "## Overview\r\n\r\n* Adds an opt-out anonymous usage check-in modeled on LoopFollow#626\r\n* Diagnostics consent now has three states: Full Sharing (crashes + telemetry), Crash Reports Only, and Disabled. Default is Full Sharing (opt-out)\r\n* Existing Crashlytics wiring is unchanged\r\n* Add new  flag\r\n* Onboarding and Settings → App Diagnostics show the new selection option\r\n* Existing users get a one-time migration sheet on first foreground.\r\n* New TelemetryClient lives under Services/Telemetry\r\n   - `TelemetryAttestor` owns `DCAppAttestService` key generation (Secure Enclave-backed), Keychain-persisted registration, and per-ping assertion building.\r\n   - `TelemetryClient.send()` skips on `DCAppAttestService.isSupported == false` (simulator), short-circuits on a sticky \"forbidden\" flag set by a 403 from `/api/attest/register`, and posts to `/checkin` with the three `X-AppAttest-*` headers. Assertion is built over `SHA256(payload || challenge)` per the server spec.\r\n   - `app_id` (`TEAMID.bundle.id`) is read from the embedded `embedded.mobileprovision` file. The `SecTask*` APIs aren't Swift-exposed on iOS; this is the standard workaround. Trio always ships with an embedded mobileprovision (sideload / TestFlight), so this path is reliable.\r\n   - Added the `com.apple.developer.devicecheck.appattest-environment = development` entitlement (matching the existing `aps-environment`).\r\n\r\n* Extended PRIVACY_POLICY.md with Telemetry section\r\n\r\nThis PR is still draft until the server side is reviewed in tandem.\r\n\r\n## Screenshots\r\n\r\n| Onboarding | Migration Popup | Settings |\r\n|--------|--------|--------|\r\n| <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0cbdbd02-998d-43cc-9ba4-ff697870da41\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/de4d20c4-1be1-4d3f-980e-6ac2f69453f8\" /> | <img width=\"1206\" height=\"2622\" alt=\"image\" src=\"https://github.com/user-attachments/assets/ee0a6a78-bca0-4423-9230-f4e026081d07\" /> | \r\n\r\n## TODOs\r\n\r\n- [x] Update endpoint once telemetry backend is set up\r\n- [x] Test check-in pings and upload end-to-end",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1149",
+      "mergedAt": "2026-05-23T19:34:38Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "c4caa3cd1525247c288dc628f60ccaed26bed9e6",
+      "subject": "fix: basal rounding for small basal steps",
+      "author": "bastiaanv",
+      "authoredAt": "2026-05-18T20:26:59+02:00"
+    },
+    {
+      "sha": "d86aa1bb2f4e3ed6e87741f2b963628de97f171d",
+      "subject": "Add Anonymous Telemetry * Adds an opt-out anonymous usage check-in modeled on LoopFollow#626 * Diagnostics consent now has three states: Full Sharing (crashes + telemetry), Crash Reports Only, and Disabled. Default is Full Sharing (opt-out) * Existing Crashlytics wiring is unchanged * Add new  flag * Onboarding and Settings → App Diagnostics show the new selection option * Existing users get a one-time migration sheet on first foreground. * New TelemetryClient lives under Services/Telemetry * Extended PRIVACY_POLICY.md with Telemetry section",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-12T23:11:00+02:00"
+    },
+    {
+      "sha": "f76d2ce21b01c3024d86826db639c6ad5cb2ddd1",
+      "subject": "Add Apple App Attest auth to telemetry uploader",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-13T00:56:46+02:00"
+    },
+    {
+      "sha": "30f66ab42af91daf25e399c7ea8aaa8d86b05feb",
+      "subject": "Add Trio Telemetry URL, adjust docstring",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-14T17:52:51+02:00"
+    },
+    {
+      "sha": "5cb06b046ff6c03a709d9e506e756e3dbc917902",
+      "subject": "Fix localizations; fix telemetry baseURL",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-14T18:40:24+02:00"
+    },
+    {
+      "sha": "e8f5b17738212824160782235a07a06bb20e6144",
+      "subject": "Fix registry by now decoing the mobileprovision blob via .isoLatin1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-18T19:19:38+02:00"
+    },
+    {
+      "sha": "e3b03f67372ee7f5a38e233c15a40b28b70a0769",
+      "subject": "Handle stale attest and registry keys by dropping them client-sided",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-18T20:30:53+02:00"
+    },
+    {
+      "sha": "d28d9b51756802d2f08318a8016395b4d71abecc",
+      "subject": "Add reset button, invalidInput self-heal, and diagnostic logging for app attest",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-19T00:00:50+02:00"
+    },
+    {
+      "sha": "49b2034464ff845c2b8f7165780163b731bcd187",
+      "subject": "Merge pull request #1149 from nightscout/feat/telemetry",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-23T21:34:38+02:00"
+    },
+    {
+      "sha": "f0a0eadedf938dac6e32e217620fd12bc2091858",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.7.0.19 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-05-23T19:34:47Z"
+    },
+    {
+      "sha": "76900fe2f75fef7b6c7e3a7c018b2519ac68e3f6",
+      "subject": "Merge pull request #1161 from bastiaanv/fix/basal-rounding",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-05-24T00:38:59+02:00"
+    },
+    {
+      "sha": "fd474b3478f49c440ade3ba022c1748b1bcb9f0e",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.7.0.20 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-05-23T22:39:10Z"
+    },
+    {
+      "sha": "0a1f25ac1aa56b217a7f4e2bc9a5427f51a780b6",
+      "subject": "merge from upstream/dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-05-23T22:07:12-05:00"
+    },
+    {
+      "sha": "ef1a6e1b1436b82a1c969d5ddf0c2a9ed4f44cc2",
+      "subject": "Merge remote-tracking branch 'origin/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-05-23T22:07:45-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "PRIVACY_POLICY.md"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/AppDelegate.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/TrioApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/PropertyPersistentFlags.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/PropertyWrappers/PersistedProperty.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Logger/Logger.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AppDiagnostics/AppDiagnosticsStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AppDiagnostics/View/AppDiagnosticsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/OnboardingStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/DiagnosticsStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingView+Util.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/TherapySettingEditorView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Telemetry/TelemetryDataFlow.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Telemetry/TelemetryProvider.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Telemetry/TelemetryStateModel.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Telemetry/View/TelemetryMigrationSheetView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Telemetry/View/TelemetryPreviewView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Telemetry/View/TelemetryPrivacyView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Services/Telemetry/TelemetryAttestor.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Services/Telemetry/TelemetryClient.swift"
+    }
+  ]
+}

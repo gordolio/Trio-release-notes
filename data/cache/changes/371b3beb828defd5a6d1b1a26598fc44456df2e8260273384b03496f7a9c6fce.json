@@ -1,0 +1,23 @@
+{
+  "inputHash": "b2d1b83ea82c50039761cab2c3063240834afcd2d4827b867b6b26941e142ef0",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1161",
+    "title": "Show small basal rates with more precision",
+    "changes": [
+      "Basal rates (units/hour) in the therapy settings editor now show two to three decimal places for small steps.",
+      "This increased precision appears during onboarding when editing basal settings.",
+      "Displays for other unit types remain unchanged."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1161",
+      "diff:371b3beb828d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
