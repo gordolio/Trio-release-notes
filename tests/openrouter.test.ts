@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { changeSchema, highlightSchema, validateChangeSummary, validateProse } from "../src/openrouter.js";
+import { changeSchema, highlightSchema, normalizeChangeSummary, validateChangeSummary, validateProse } from "../src/openrouter.js";
 import type { NormalizedChange } from "../src/types.js";
 
 function change(id: string, sourceIds: string[]): NormalizedChange {
@@ -70,5 +70,23 @@ describe("OpenRouter response schemas", () => {
       validateChangeSummary({ ...summary, changes: ['A quoted message: "Swipe left to end snooze."'] }, item)
     ).not.toThrow();
     expect(() => validateChangeSummary({ ...summary, changes: ["A bullet cut off mid-wo"] }, item)).toThrow(/punctuation/);
+  });
+
+  it("repairs missing sentence-ending punctuation without changing meaning", () => {
+    const summary = {
+      changeId: "change-1",
+      title: "Title",
+      changes: ["Adds Eversense CGM support", "Already punctuated.", 'Ends with a quote."'],
+      category: "fixes" as const,
+      sourceIds: ["source-1"],
+      confidence: "high" as const,
+      humanReviewRequired: false
+    };
+    const normalized = normalizeChangeSummary(summary);
+    expect(normalized.changes[0]).toBe("Adds Eversense CGM support.");
+    expect(normalized.changes[1]).toBe("Already punctuated.");
+    expect(normalized.changes[2]).toBe('Ends with a quote."');
+    // A normalized summary passes validation that the raw one would have failed.
+    expect(() => validateChangeSummary(normalized, change("change-1", ["source-1"]))).not.toThrow();
   });
 });

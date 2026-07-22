@@ -125,6 +125,22 @@ function parseContent(content: string | null): unknown {
   return JSON.parse(content) as unknown;
 }
 
+/// Deterministically repairs cosmetic issues that should not abort generation:
+/// a bullet that is otherwise valid but lacks sentence-ending punctuation gets a
+/// trailing period. Meaning is preserved; only presentation is normalized.
+export function normalizeChangeSummary(summary: ChangeSummary): ChangeSummary {
+  return {
+    ...summary,
+    changes: summary.changes.map((bullet) => {
+      const trimmed = bullet.trimEnd();
+      if (trimmed.length === 0 || /[.!?)\]]["']?$/.test(trimmed)) {
+        return trimmed;
+      }
+      return `${trimmed}.`;
+    })
+  };
+}
+
 export function validateChangeSummary(summary: ChangeSummary, change: NormalizedChange): void {
   if (summary.changeId !== change.id) {
     throw new Error(`OpenRouter changed change ID ${change.id} to ${summary.changeId}`);
@@ -183,7 +199,7 @@ export class OpenRouterSummarizer {
         cached.requestedModel === config.openRouterModel
       ) {
         this.responseModel = cached.responseModel;
-        const summary = changeSummarySchema.parse(cached.summary);
+        const summary = normalizeChangeSummary(changeSummarySchema.parse(cached.summary));
         validateChangeSummary(summary, change);
         return summary;
       }
@@ -232,7 +248,7 @@ export class OpenRouterSummarizer {
       responseModel = response.model;
       this.responseModel = response.model;
       try {
-        const candidate = changeSummarySchema.parse(parseContent(response.choices[0]?.message.content ?? null));
+        const candidate = normalizeChangeSummary(changeSummarySchema.parse(parseContent(response.choices[0]?.message.content ?? null)));
         validateChangeSummary(candidate, change);
         summary = candidate;
         break;
