@@ -1,0 +1,24 @@
+{
+  "inputHash": "fbc883f0ffd3860a2f86e16c2085e2ff4dbc961991787fa5f01084c531b63620",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:9477cc7ed6c3a8891ffea18de9b9def16b945ea9",
+    "title": "Group builds by month and simplify rows",
+    "changes": [
+      "Builds in the \"What's New\" list are grouped into calendar-month sections, newest month first.",
+      "Each build row now shows the build date and the short commit SHA.",
+      "Unseen-build tracking now uses exact build SHAs and preserves that state when the view loads.",
+      "Build summaries show up to three items and display a \"+N more\" indicator when there are extra titles."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:9477cc7ed6c3",
+      "diff:a0e07e780ff6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
