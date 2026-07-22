@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { CATEGORY_TITLES, CATEGORY_VALUES } from "./constants.js";
 import { config } from "./config.js";
@@ -171,6 +171,25 @@ export async function updateLatest(report: BuildReport): Promise<void> {
       `<!doctype html>\n<meta charset="utf-8">\n<meta http-equiv="refresh" content="0; url=latest.html">\n<title>Trio Release Notes</title>\n<a href="latest.html">Latest Trio release notes</a>\n`
     )
   ]);
+}
+
+export function buildReleaseNotesFeed(reports: BuildReport[]): BuildReport[] {
+  return [...reports].sort(
+    (left, right) =>
+      right.metadata.buildDate.localeCompare(left.metadata.buildDate) ||
+      right.metadata.shortSha.localeCompare(left.metadata.shortSha)
+  );
+}
+
+export async function updateReleaseNotesFeed(): Promise<void> {
+  const buildsDirectory = path.join(config.publicDir, "builds");
+  await mkdir(buildsDirectory, { recursive: true });
+  const reportFiles = (await readdir(buildsDirectory)).filter((file) => file.endsWith(".json"));
+  const reports = await Promise.all(
+    reportFiles.map(async (file) => JSON.parse(await readFile(path.join(buildsDirectory, file), "utf8")) as BuildReport)
+  );
+  const lines = buildReleaseNotesFeed(reports).map((report) => JSON.stringify(report));
+  await writeFile(path.join(config.publicDir, "builds.jsonl"), lines.length > 0 ? `${lines.join("\n")}\n` : "");
 }
 
 export async function readExistingReport(shortSha: string): Promise<BuildReport | null> {

@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { renderHtml, renderMaintenanceMarkdown, renderMarkdown } from "../src/render.js";
+import { buildReleaseNotesFeed, renderHtml, renderMaintenanceMarkdown, renderMarkdown } from "../src/render.js";
 import type { BuildReport } from "../src/types.js";
 
 async function reportFixture(): Promise<BuildReport> {
@@ -45,5 +45,25 @@ describe("deterministic Markdown rendering", () => {
     expect(html).toContain("<!doctype html>");
     expect(html).toContain("Trio Build 2222222");
     expect(html).toContain("https://github.com/gordolio/Trio/commit/2222222");
+  });
+});
+
+describe("release notes feed", () => {
+  it("sorts all reports newest-first deterministically", async () => {
+    const older = await reportFixture();
+    older.metadata.shortSha = "1111111";
+    older.metadata.buildDate = "2026-01-01T00:00:00.000Z";
+    const newer = structuredClone(older);
+    newer.metadata.shortSha = "3333333";
+    newer.metadata.buildDate = "2026-03-01T00:00:00.000Z";
+    const middle = structuredClone(older);
+    middle.metadata.shortSha = "2222222";
+    middle.metadata.buildDate = "2026-02-01T00:00:00.000Z";
+
+    expect(buildReleaseNotesFeed([middle, older, newer]).map((report) => report.metadata.shortSha)).toEqual([
+      "3333333",
+      "2222222",
+      "1111111"
+    ]);
   });
 });

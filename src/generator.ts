@@ -7,7 +7,13 @@ import { GENERATOR_VERSION, PROMPT_VERSION, SCHEMA_VERSION, SUMMARY_CONCURRENCY 
 import { assertDescendant, changedFiles, commitsBetween, maintenanceHotspots, resolveCommit } from "./git.js";
 import { GitHubClient } from "./github.js";
 import { OpenRouterSummarizer } from "./openrouter.js";
-import { buildCategories, readExistingReport, updateLatest, writeReport } from "./render.js";
+import {
+  buildCategories,
+  readExistingReport,
+  updateLatest,
+  updateReleaseNotesFeed,
+  writeReport
+} from "./render.js";
 import { loadState, saveState } from "./state.js";
 import type {
   BuildIdentity,
@@ -112,6 +118,7 @@ export async function generateForRun(runId: number, force = false): Promise<void
   const state = await loadState();
   if (state.processedRuns[String(runId)] && !force) {
     console.log(`Workflow run ${runId} is already processed`);
+    await updateReleaseNotesFeed();
     return;
   }
 
@@ -218,6 +225,7 @@ export async function generateForRun(runId: number, force = false): Promise<void
   state.promptVersion = PROMPT_VERSION;
   state.schemaVersion = SCHEMA_VERSION;
   await saveState(state);
+  await updateReleaseNotesFeed();
 }
 
 export async function processRunsSince(

@@ -73,6 +73,7 @@ OpenRouter is not given tools or repository access. It receives only bounded sou
 
 ## Outputs
 
+- `public/builds.jsonl` (all published builds, newest first, one JSON report per line)
 - `public/builds/<short-sha>.json`
 - `public/builds/<short-sha>.md`
 - `public/builds/<short-sha>.html`
