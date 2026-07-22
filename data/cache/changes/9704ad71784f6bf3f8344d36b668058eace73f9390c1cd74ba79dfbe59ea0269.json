@@ -1,0 +1,24 @@
+{
+  "inputHash": "b01c468d64433a968a1d45941a4c0fbe61f79d4515557a0f7775c61e006c7d94",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1051",
+    "title": "Scroll-to and highlight for settings search",
+    "changes": [
+      "Tapping a settings search result now scrolls directly to the matching setting.",
+      "The matched setting briefly flashes to highlight it after navigation.",
+      "This initial update enables the behavior for Dynamic Settings; more screens will be opted in later.",
+      "Search terms that differ from on-screen labels can map to the exact setting so the app scrolls to the correct item."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1051",
+      "diff:9704ad71784f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

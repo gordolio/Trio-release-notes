@@ -1,0 +1,22 @@
+{
+  "inputHash": "bf7f65017c913d7f3a00b178314ad156382fd35c443d61c87a6e39056b047e60",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:c64c38597907a08d27f4cb64bd5ceed3b317eeda",
+    "title": "Fix build configuration",
+    "changes": [
+      "A project build setting was corrected to resolve a build error.",
+      "This change does not affect app features or user-visible behavior."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:c64c38597907",
+      "diff:774004941fd7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "870c5afbf5a9f34bd023b5aa09e9fa4b7c7511972cf962cbea2abf56edb09b56",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1166",
+    "title": "Code formatting cleanup",
+    "changes": [
+      "Only code whitespace and formatting were changed.",
+      "There is no change to app behavior or user experience."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1166",
+      "diff:4f858666dda6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

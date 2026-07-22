@@ -1,0 +1,24 @@
+{
+  "inputHash": "c14b9d7d1e6a1f12fbbcb378b41fdb0ebcc09e033345fa039ddebbc262b28b01",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1096",
+    "title": "Settings search: scroll-to and highlight matches",
+    "changes": [
+      "Search results now scroll to the matching setting and briefly highlight it.",
+      "Common or abbreviated search terms map to the exact on-screen labels so results land on the right row.",
+      "Many settings screens were updated so search can navigate to and highlight their sections.",
+      "Search index labels were corrected for Bolus Calculator and User Interface entries to match on-screen labels."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1096",
+      "diff:a5d0be93d223"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

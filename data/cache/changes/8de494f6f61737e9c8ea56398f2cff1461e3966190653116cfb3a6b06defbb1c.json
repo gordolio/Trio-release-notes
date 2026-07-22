@@ -1,0 +1,21 @@
+{
+  "inputHash": "0d3f5fd609b65fb7f32951767f808dafdb138e14f2c736d4f9f4bad117f854da",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1094",
+    "title": "Settings search scrolls and highlights matches",
+    "changes": [
+      "Selecting a setting from search now scrolls to and highlights the matching option in affected settings screens."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1094",
+      "diff:8de494f6f617"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

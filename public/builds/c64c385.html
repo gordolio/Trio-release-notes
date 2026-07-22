@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build c64c385</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build c64c385</h1>
+    <p>Built 2026-05-24T17:16:01.000Z from <code>ef1a6e1..c64c385</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Shared bolus safety checks for Shortcuts &amp; APNS</h3><ul><li>Boluses started via Shortcuts are now checked for max dose, max IOB, and recent-bolus limits and can be blocked.</li><li>Remote (APNS) bolus commands keep their previous behavior but now run the same shared safety checks.</li><li>If current IOB is unavailable, bolus commands are rejected with a logged message instead of causing an error.</li><li>Shortcut bolus rejection messages are localized and now explain why the bolus was blocked.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1108" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Settings search jumps to and highlights matches</h3><ul><li>Search results now open the correct settings screen and jump to the exact matching control.</li><li>The matching control is briefly highlighted so you can spot it quickly.</li><li>If a match is inside a conditional or hidden field, search routes you to the visible parent control.</li><li>This scroll-and-highlight behavior is enabled across multiple settings sub-screens.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1165" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Scroll-to and highlight for settings search</h3><ul><li>Tapping a settings search result now scrolls directly to the matching setting.</li><li>The matched setting briefly flashes to highlight it after navigation.</li><li>This initial update enables the behavior for Dynamic Settings; more screens will be opted in later.</li><li>Search terms that differ from on-screen labels can map to the exact setting so the app scrolls to the correct item.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1051" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Settings search: scroll-to and highlight matches</h3><ul><li>Search results now scroll to the matching setting and briefly highlight it.</li><li>Common or abbreviated search terms map to the exact on-screen labels so results land on the right row.</li><li>Many settings screens were updated so search can navigate to and highlight their sections.</li><li>Search index labels were corrected for Bolus Calculator and User Interface entries to match on-screen labels.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1096" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Apple Health flag now reflects per-type permissions</h3><ul><li>Trio will report Apple Health as enabled as soon as any write permission is granted.</li><li>Telemetry now includes per-type write permission statuses for glucose, insulin, carbs, fat, and protein.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1164" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Interface Improvements</h2><article><h3>Settings search scrolls and highlights matches</h3><ul><li>Selecting a setting from search now scrolls to and highlights the matching option in affected settings screens.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1094" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Code formatting cleanup</h3><ul><li>Only code whitespace and formatting were changed.</li><li>There is no change to app behavior or user experience.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1166" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix build configuration</h3><ul><li>A project build setting was corrected to resolve a build error.</li><li>This change does not affect app features or user-visible behavior.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/c64c38597907a08d27f4cb64bd5ceed3b317eeda" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/26367313972">Source workflow 26367313972</a></p>
+  </footer>
+</body>
+</html>

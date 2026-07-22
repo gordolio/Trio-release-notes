@@ -1,0 +1,22 @@
+{
+  "inputHash": "095748ca5a91e1a0d78cf9902b8e13ae9da61ac56749baca1b50609f18baa9bd",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1164",
+    "title": "Apple Health flag now reflects per-type permissions",
+    "changes": [
+      "Trio will report Apple Health as enabled as soon as any write permission is granted.",
+      "Telemetry now includes per-type write permission statuses for glucose, insulin, carbs, fat, and protein."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1164",
+      "diff:3a63be747e4f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

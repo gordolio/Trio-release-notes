@@ -1,0 +1,24 @@
+{
+  "inputHash": "ed73db53e8e90fc9313d7b06e21d88c8fe04a77a9b93249fdcd12c16858f1774",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1165",
+    "title": "Settings search jumps to and highlights matches",
+    "changes": [
+      "Search results now open the correct settings screen and jump to the exact matching control.",
+      "The matching control is briefly highlighted so you can spot it quickly.",
+      "If a match is inside a conditional or hidden field, search routes you to the visible parent control.",
+      "This scroll-and-highlight behavior is enabled across multiple settings sub-screens."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1165",
+      "diff:ac5cc3a5e5bf"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
