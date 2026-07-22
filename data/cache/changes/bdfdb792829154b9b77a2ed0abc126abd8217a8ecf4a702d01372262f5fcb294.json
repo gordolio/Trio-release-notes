@@ -1,0 +1,22 @@
+{
+  "inputHash": "19b034133c63e402701743e961cf3efc69d4bf4ff4655a4dfccfbb2828b8e46c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:2cbba7db7fd7e1f35d9b4a495809ff960d83d9d2",
+    "title": "Build updates app capabilities and errors on failure",
+    "changes": [
+      "The build/deploy script now updates existing app capabilities instead of creating new ones.",
+      "Deployment will stop with an error if required capabilities are still missing after the update."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:2cbba7db7fd7",
+      "diff:bdfdb7928291"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

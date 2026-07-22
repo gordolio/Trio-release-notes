@@ -1,0 +1,25 @@
+{
+  "inputHash": "9975a92022398b5e9910eb3da4d4aaa1727caed1bea470d8a6b2c7a385b26c00",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1248",
+    "title": "Quick‑Pick Boluses via long‑press +",
+    "changes": [
+      "Long‑press the + button on the home screen to open a Quick‑Pick Boluses sheet.",
+      "The app suggests up to five usual bolus amounts learned from your past 90 days and time‑of‑day patterns.",
+      "Tap a suggestion, then confirm and authorize (Face/Touch ID) to enact the bolus.",
+      "A new Treatments setting lets you enable or disable the Quick‑Pick Boluses feature.",
+      "If no suitable bolus history exists, the app shows a clear message explaining why no suggestions are available."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1248",
+      "commit:464cea0f9fdd"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

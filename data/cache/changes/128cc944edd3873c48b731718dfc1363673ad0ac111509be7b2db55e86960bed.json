@@ -1,0 +1,24 @@
+{
+  "inputHash": "d2960f7e6c33ff01823bb3cfa407c4514f108e20403e6df942ed24c508479b41",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1273",
+    "title": "Default to Swift Oref; add 'Use JavaScript Oref' toggle",
+    "changes": [
+      "Trio now uses the Swift Oref algorithm by default.",
+      "The advanced setting was renamed to \"Use JavaScript Oref\" and is off by default.",
+      "Turning on that setting switches Trio back to the legacy JavaScript algorithm.",
+      "Settings text and loop-status labels were updated to reflect Swift as the default."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1273",
+      "diff:128cc944edd3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

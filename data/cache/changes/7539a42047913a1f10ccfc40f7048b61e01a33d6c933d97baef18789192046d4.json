@@ -1,0 +1,25 @@
+{
+  "inputHash": "4f3b3e6d5d148dbd91869f77808089599ebc628072b0af07c5bf81fb63e1c9b6",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1243",
+    "title": "Move Snooze All to Settings and unify alerts",
+    "changes": [
+      "Snooze All is now a button in Settings → Notifications instead of a hidden long-press on the glucose bobble.",
+      "Tapping Snooze All opens a sheet offering 15 min, 1 hr, 3 hrs, and 6 hrs snooze durations.",
+      "All in-app alerts now route through a single TrioAlertManager so alerts use a unified presentation.",
+      "Specific warnings (Garmin Connect missing, CGM open failures, stale calibration) now appear via the unified alert UI.",
+      "Info-level logger messages no longer surface as in-app banners and are log-only."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1243",
+      "diff:7539a4204791"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

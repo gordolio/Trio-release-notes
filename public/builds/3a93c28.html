@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build 3a93c28</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build 3a93c28</h1>
+    <p>Built 2026-07-07T21:06:20.000Z from <code>a1d9b91..3a93c28</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Unified alert system with customizable glucose alarms</h3><ul><li>New customizable glucose alarms include urgent‑low, low, high, forecasted low, and Carbs Required.</li><li>Each alarm can use its own threshold, schedule, sound, and snooze settings.</li><li>A shared Day/Night window controls when alarms are active and the Add‑Alarm picker prevents overlaps.</li><li>Trio shows an in‑app banner when foregrounded and sends iOS notifications when backgrounded, with unified snooze.</li><li>Alerts are organized by severity and Trio hides duplicates when a CGM app already provides the same alert.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1203" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Move Snooze All to Settings and unify alerts</h3><ul><li>Snooze All is now a button in Settings → Notifications instead of a hidden long-press on the glucose bobble.</li><li>Tapping Snooze All opens a sheet offering 15 min, 1 hr, 3 hrs, and 6 hrs snooze durations.</li><li>All in-app alerts now route through a single TrioAlertManager so alerts use a unified presentation.</li><li>Specific warnings (Garmin Connect missing, CGM open failures, stale calibration) now appear via the unified alert UI.</li><li>Info-level logger messages no longer surface as in-app banners and are log-only.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1243" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix snooze long-press behavior</h3><ul><li>Long-pressing the CGM area now reliably opens the Snooze sheet.</li><li>Tapping the CGM area still opens CGM selection or the setup sheet as before.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1269" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Quick‑Pick Boluses via long‑press +</h3><ul><li>Long‑press the + button on the home screen to open a Quick‑Pick Boluses sheet.</li><li>The app suggests up to five usual bolus amounts learned from your past 90 days and time‑of‑day patterns.</li><li>Tap a suggestion, then confirm and authorize (Face/Touch ID) to enact the bolus.</li><li>A new Treatments setting lets you enable or disable the Quick‑Pick Boluses feature.</li><li>If no suitable bolus history exists, the app shows a clear message explaining why no suggestions are available.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1248" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Default to Swift Oref; add &#39;Use JavaScript Oref&#39; toggle</h3><ul><li>Trio now uses the Swift Oref algorithm by default.</li><li>The advanced setting was renamed to &quot;Use JavaScript Oref&quot; and is off by default.</li><li>Turning on that setting switches Trio back to the legacy JavaScript algorithm.</li><li>Settings text and loop-status labels were updated to reflect Swift as the default.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1273" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Interface Improvements</h2><article><h3>Updated translations from Crowdin</h3><ul><li>Updated translations throughout the app from Crowdin.</li><li>Norwegian (nb-NO) wording changed in many places from &quot;blodsukker&quot; to &quot;glukose&quot;.</li><li>Added or updated localized UI labels such as the Device Alerts help label and some punctuation symbols.</li><li>Added localized relative time strings for hours, minutes, and seconds (e.g. &quot;X hours ago&quot;).</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1263" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Simpler markers for glucose points</h3><ul><li>Glucose readings now use the chart&#39;s built-in circle symbol.</li><li>Manual glucose readings still display as a red drop marker.</li><li>Colored glucose points still follow the app&#39;s dynamic color scheme.</li><li>Users will not see any visual changes to the chart.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1274" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Add Time-Sensitive Notifications capability</h3><ul><li>The app build configuration now includes the Time-Sensitive Notifications capability.</li><li>Provisioning/bundle ID setup will include permission for time-sensitive user notifications.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/1fe78c02d2914fe712af29b8d3ba3710ed3288f9" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Build updates app capabilities and errors on failure</h3><ul><li>The build/deploy script now updates existing app capabilities instead of creating new ones.</li><li>Deployment will stop with an error if required capabilities are still missing after the update.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/2cbba7db7fd7e1f35d9b4a495809ff960d83d9d2" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Set provisioning team only when needed</h3><ul><li>The build script now sets the App Store team only when new app capabilities must be added.</li><li>The team-selection step is skipped when no capability changes are required.</li><li>This change affects only the app build/release automation and not app behavior for users.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/96647e3425707fda55dd3b6776c075dc5f3e952d" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Simplify capability setup in build script</h3><ul><li>Deployment script now creates missing app capabilities instead of updating them.</li><li>The script no longer performs extra checks or error handling after adding capabilities.</li><li>The bundle ID configuration no longer includes the USERNOTIFICATIONS_TIMESENSITIVE capability.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/3a93c28b5eff258004eaaa9dddc48ec4face149d" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/28897706384">Source workflow 28897706384</a></p>
+  </footer>
+</body>
+</html>

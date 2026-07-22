@@ -1,0 +1,23 @@
+{
+  "inputHash": "d67c2776587f65a1927435d3b35ed4ef2897ce5598aa994a0fca43fdb53deba0",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:3a93c28b5eff258004eaaa9dddc48ec4face149d",
+    "title": "Simplify capability setup in build script",
+    "changes": [
+      "Deployment script now creates missing app capabilities instead of updating them.",
+      "The script no longer performs extra checks or error handling after adding capabilities.",
+      "The bundle ID configuration no longer includes the USERNOTIFICATIONS_TIMESENSITIVE capability."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:3a93c28b5eff",
+      "diff:9f312a9c315b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "inputHash": "fdeb04135ada638ec13ee6bb6a87a14d6d5c5a8c919dfe455d9633fa3d2f7c90",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1263",
+    "title": "Updated translations from Crowdin",
+    "changes": [
+      "Updated translations throughout the app from Crowdin.",
+      "Norwegian (nb-NO) wording changed in many places from \"blodsukker\" to \"glukose\".",
+      "Added or updated localized UI labels such as the Device Alerts help label and some punctuation symbols.",
+      "Added localized relative time strings for hours, minutes, and seconds (e.g. \"X hours ago\")."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1263",
+      "diff:b29a76d945d2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

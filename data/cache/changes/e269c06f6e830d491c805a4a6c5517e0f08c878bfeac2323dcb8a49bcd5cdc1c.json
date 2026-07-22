@@ -1,0 +1,24 @@
+{
+  "inputHash": "8e13aafa5b83c3af98ac918134951db6f32c8bcca446cead9be285cf7883c463",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1274",
+    "title": "Simpler markers for glucose points",
+    "changes": [
+      "Glucose readings now use the chart's built-in circle symbol.",
+      "Manual glucose readings still display as a red drop marker.",
+      "Colored glucose points still follow the app's dynamic color scheme.",
+      "Users will not see any visual changes to the chart."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1274",
+      "diff:e269c06f6e83"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

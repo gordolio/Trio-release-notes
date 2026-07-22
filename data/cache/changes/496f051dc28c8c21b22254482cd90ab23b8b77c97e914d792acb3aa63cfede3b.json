@@ -1,0 +1,25 @@
+{
+  "inputHash": "3f70b223e051ddcd41fe9986a0451393e5f4deb18e5f271a92fe1efb5cd1fe68",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1203",
+    "title": "Unified alert system with customizable glucose alarms",
+    "changes": [
+      "New customizable glucose alarms include urgent‑low, low, high, forecasted low, and Carbs Required.",
+      "Each alarm can use its own threshold, schedule, sound, and snooze settings.",
+      "A shared Day/Night window controls when alarms are active and the Add‑Alarm picker prevents overlaps.",
+      "Trio shows an in‑app banner when foregrounded and sends iOS notifications when backgrounded, with unified snooze.",
+      "Alerts are organized by severity and Trio hides duplicates when a CGM app already provides the same alert."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1203",
+      "commit:ec30ee2dae40"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

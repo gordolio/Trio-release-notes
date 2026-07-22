@@ -1,0 +1,23 @@
+{
+  "inputHash": "f971ff40af1b42765f6d7bb4b6981536f0c1cf4b833614d15d0ad6418b9deb61",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1269",
+    "title": "Fix snooze long-press behavior",
+    "changes": [
+      "Long-pressing the CGM area now reliably opens the Snooze sheet.",
+      "Tapping the CGM area still opens CGM selection or the setup sheet as before."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1269",
+      "commit:ef209230a4b9",
+      "diff:819d27179f52"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
