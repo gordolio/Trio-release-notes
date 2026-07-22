@@ -1,0 +1,23 @@
+{
+  "inputHash": "80b837a6e5a555595e920a6947830f9e0bacd308eed9bb8919cb310ff9112a0c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:4c67040fcd94c085e011f54ef25f5c37d6785ac0",
+    "title": "Fix build error in release notes view",
+    "changes": [
+      "Fixes a build error in the Settings release notes screen.",
+      "There is no intended change to app appearance or user functionality."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:4c67040fcd94",
+      "file:d4092cedba9c",
+      "diff:7fd758003f6f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
