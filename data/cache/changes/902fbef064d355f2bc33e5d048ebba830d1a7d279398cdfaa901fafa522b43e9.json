@@ -1,0 +1,22 @@
+{
+  "inputHash": "7d31d4a5c377f8b2f53155a87577f991792a7ab9052c20225ddf0a6deb40faf2",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1224",
+    "title": "Fix for pump delivery-limit regression",
+    "changes": [
+      "Fixes a regression that could incorrectly apply delivery limits during silent pump state migrations.",
+      "The v0.8.3 hotfix was merged back into development so dev builds include this fix."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:gordolio/Trio#1224",
+      "commit:f3463551d23c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

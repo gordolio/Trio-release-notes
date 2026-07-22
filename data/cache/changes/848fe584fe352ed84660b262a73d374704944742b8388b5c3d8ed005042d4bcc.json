@@ -1,0 +1,23 @@
+{
+  "inputHash": "7e4009f09ae2ebeb5c9ecda36fe26658951462ef39a3a5b8a09fdd44b66c6c16",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1219",
+    "title": "Ensure pump limits match user settings on startup",
+    "changes": [
+      "Trio updates the pump manager's maximum basal and bolus limits to match your app settings when it starts.",
+      "This prevents temporary basal deliveries from being silently rejected due to stale limits.",
+      "The app version is bumped to 0.8.3."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1219",
+      "commit:bac19bc234c4"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

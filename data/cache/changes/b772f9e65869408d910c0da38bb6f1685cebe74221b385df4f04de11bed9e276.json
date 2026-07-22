@@ -1,0 +1,24 @@
+{
+  "inputHash": "507f20dc0effaea229e66a251ae5da2b9f99fab52533e4119ab7e49a48f7aeb1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1223",
+    "title": "Remove unused glucose conversion function",
+    "changes": [
+      "The internal, unused glucose conversion function was removed from the dosing logic.",
+      "Reason strings now show rounded glucose numbers directly instead of calling the converter.",
+      "Glucose units and how glucose values are handled remain unchanged.",
+      "This is an internal cleanup and should not affect dosing decisions or app behavior."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1223",
+      "diff:b772f9e65869"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
