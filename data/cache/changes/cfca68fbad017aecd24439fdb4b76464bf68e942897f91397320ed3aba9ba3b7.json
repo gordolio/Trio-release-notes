@@ -1,22 +1,20 @@
 {
-  "inputHash": "17d228e31b1e760905b2c5cce72ed50b422544c994567d51880a12bee26fb3f6",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "84826fbe63901c7ca129bc469477ecaa0b06f93629b9bc9d23829bd8fc867932",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1325",
-    "summary": "Exclude temp target presets from the main chart and re-filter fetched results with a fresh \"now\". The NSPredicate.tempTargetsForMainChart predicate was changed to require isPreset == false for scheduled items (Model/Helper/TempTargetStored+Helper.swift). A new TempTargetStored.isVisibleInChart computed property was added to represent which temp targets should be drawn (running or non-preset future scheduled items). Home.StateModel.updateTempTargetsFromController now filters the controller's fetchedObjects with .isVisibleInChart before assigning to the chart model. Tests were added to verify the predicate behavior and chart visibility rules.",
-    "userFacingImpact": "Users should no longer see newly saved temp-target presets (never activated) appear in the main chart. Cancelled/expired temp targets that previously remained drawn until the app was backgrounded should also stop being shown because the fetched results are re-filtered with a fresh date before reaching the chart. The change is limited to chart visibility logic for temp targets and adds tests to cover the behavior.",
+    "title": "Hide inactive temp-target presets from main chart",
+    "changes": [
+      "New temp-target presets no longer appear on the main chart unless you activate them.",
+      "Cancelled temp targets no longer remain visible until the app is backgrounded.",
+      "The chart refreshes with the current time so recent temp-target changes are reflected immediately."
+    ],
     "category": "fixes",
     "sourceIds": [
-      "pr:gordolio/Trio#1325",
       "pr:nightscout/Trio#1325",
-      "commit:e91000c377c5",
-      "commit:8f871665a3ea",
-      "file:740de59a436e",
-      "file:cb75267de0a0",
-      "file:684e8016aaf6",
       "diff:cfca68fbad01"
     ],
     "confidence": "high",

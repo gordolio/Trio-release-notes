@@ -3,11 +3,10 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import OpenAI from "openai";
 import { config } from "./config.js";
-import { CATEGORY_VALUES, PROMPT_VERSION, SCHEMA_VERSION } from "./constants.js";
+import { CATEGORY_VALUES, MAX_HIGHLIGHTS, PROMPT_VERSION, SCHEMA_VERSION } from "./constants.js";
 import {
-  aggregateOutputSchema,
   changeSummarySchema,
-  type AggregateItem,
+  highlightOutputSchema,
   type ChangeSummary,
   type NormalizedChange
 } from "./types.js";
@@ -19,49 +18,27 @@ const VALIDATION_ATTEMPTS = 2;
 const changeJsonSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["changeId", "summary", "userFacingImpact", "category", "sourceIds", "confidence", "humanReviewRequired"],
+  required: ["changeId", "title", "changes", "category", "sourceIds", "confidence", "humanReviewRequired"],
   properties: {
     changeId: { type: "string" },
-    summary: { type: "string", minLength: 1 },
-    userFacingImpact: { type: "string", minLength: 1 },
+    title: { type: "string", minLength: 1, maxLength: 60 },
+    changes: { type: "array", minItems: 1, maxItems: 5, items: { type: "string", minLength: 1, maxLength: 120 } },
     category: categorySchema,
-    sourceIds: { type: "array", minItems: 1, items: { type: "string" } },
+    sourceIds: { type: "array", minItems: 1, maxItems: 4, items: { type: "string" } },
     confidence: confidenceSchema,
     humanReviewRequired: { type: "boolean" }
   }
 };
 
-const aggregateJsonSchema = {
+const highlightJsonSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["items"],
+  required: ["highlightChangeIds"],
   properties: {
-    items: {
+    highlightChangeIds: {
       type: "array",
-      items: {
-        type: "object",
-        additionalProperties: false,
-        required: [
-          "changeIds",
-          "summary",
-          "userFacingImpact",
-          "category",
-          "sourceIds",
-          "confidence",
-          "humanReviewRequired",
-          "highlight"
-        ],
-        properties: {
-          changeIds: { type: "array", minItems: 1, items: { type: "string" } },
-          summary: { type: "string", minLength: 1 },
-          userFacingImpact: { type: "string", minLength: 1 },
-          category: categorySchema,
-          sourceIds: { type: "array", minItems: 1, items: { type: "string" } },
-          confidence: confidenceSchema,
-          humanReviewRequired: { type: "boolean" },
-          highlight: { type: "boolean" }
-        }
-      }
+      maxItems: MAX_HIGHLIGHTS,
+      items: { type: "string" }
     }
   }
 };
@@ -75,34 +52,21 @@ export function changeSchema(change: NormalizedChange): object {
       sourceIds: {
         type: "array",
         minItems: 1,
+        maxItems: 4,
         items: { type: "string", enum: change.sources.map((source) => source.id) }
       }
     }
   };
 }
 
-export function aggregateSchema(changes: NormalizedChange[], summaries: ChangeSummary[]): object {
+export function highlightSchema(changes: NormalizedChange[]): object {
   return {
-    ...aggregateJsonSchema,
+    ...highlightJsonSchema,
     properties: {
-      items: {
-        ...aggregateJsonSchema.properties.items,
-        items: {
-          ...aggregateJsonSchema.properties.items.items,
-          properties: {
-            ...aggregateJsonSchema.properties.items.items.properties,
-            changeIds: {
-              type: "array",
-              minItems: 1,
-              items: { type: "string", enum: changes.map((change) => change.id) }
-            },
-            sourceIds: {
-              type: "array",
-              minItems: 1,
-              items: { type: "string", enum: [...new Set(summaries.flatMap((summary) => summary.sourceIds))] }
-            }
-          }
-        }
+      highlightChangeIds: {
+        type: "array",
+        maxItems: MAX_HIGHLIGHTS,
+        items: { type: "string", enum: changes.map((change) => change.id) }
       }
     }
   };
@@ -110,6 +74,18 @@ export function aggregateSchema(changes: NormalizedChange[], summaries: ChangeSu
 
 function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
+}
+
+export function validateProse(value: string, label: string, maxLength: number): void {
+  if (value.length > maxLength) {
+    throw new Error(`${label} exceeds ${maxLength} characters`);
+  }
+  if (/\b(?:commit|file|diff|pr):[^\s,;)]+/i.test(value) || /https?:\/\//i.test(value)) {
+    throw new Error(`${label} contains a citation or URL; citations belong only in sourceIds`);
+  }
+  if (/[\r\n]/.test(value)) {
+    throw new Error(`${label} must be a single paragraph`);
+  }
 }
 
 interface CacheRecord {
@@ -147,6 +123,25 @@ function parseContent(content: string | null): unknown {
     throw new Error("OpenRouter returned an empty response");
   }
   return JSON.parse(content) as unknown;
+}
+
+export function validateChangeSummary(summary: ChangeSummary, change: NormalizedChange): void {
+  if (summary.changeId !== change.id) {
+    throw new Error(`OpenRouter changed change ID ${change.id} to ${summary.changeId}`);
+  }
+  const allowedSources = new Set(change.sources.map((source) => source.id));
+  for (const sourceId of summary.sourceIds) {
+    if (!allowedSources.has(sourceId)) {
+      throw new Error(`OpenRouter cited unknown source ${sourceId} for ${change.id}`);
+    }
+  }
+  validateProse(summary.title, "title", 60);
+  for (const [index, bullet] of summary.changes.entries()) {
+    validateProse(bullet, `changes[${index}]`, 120);
+      if (!/[.!?)\]]["']?$/.test(bullet)) {
+        throw new Error(`changes[${index}] must end with sentence-ending punctuation`);
+      }
+  }
 }
 
 export class OpenRouterSummarizer {
@@ -189,12 +184,12 @@ export class OpenRouterSummarizer {
       ) {
         this.responseModel = cached.responseModel;
         const summary = changeSummarySchema.parse(cached.summary);
-        this.validateChangeSummary(summary, change);
+        validateChangeSummary(summary, change);
         return summary;
       }
     } catch (error) {
       if (!(typeof error === "object" && error !== null && "code" in error && error.code === "ENOENT")) {
-        throw error;
+        console.warn(`Ignoring invalid cached summary for ${change.id}: ${errorMessage(error)}`);
       }
     }
 
@@ -208,12 +203,20 @@ export class OpenRouterSummarizer {
           {
             role: "system",
             content: [
-              "Summarize only the supplied logical code change.",
+              "Summarize only the supplied logical code change for non-technical users of the Trio app.",
               "Use no outside knowledge and make no unsupported claims.",
-              "Every factual statement must be supported by at least one supplied source ID.",
-              "Copy changeId and sourceIds exactly from the supplied input. Do not shorten or rewrite them.",
-              "Describe user impact conservatively. If evidence is insufficient, say so and require human review.",
+              "Write title as a short plain-language name for the change, at most 60 characters.",
+              "Write changes as 1-5 very brief bullet points, each a complete short sentence ending with punctuation.",
+              "Keep bullets well under 120 characters so they never get cut off mid-word.",
+              "Each bullet states one thing that changed from the user's perspective, as a complete short sentence.",
+              "Do not enumerate commits, files, tests, or subchanges. Synthesize the user-visible effect.",
+              "Never put source IDs, citations, URLs, Markdown, or code-reference lists in title or changes.",
+              "Put 1-4 exact supporting IDs only in sourceIds, preferring a PR and the most direct diff or commit.",
+              "Copy changeId exactly. Select sourceIds only from supplied sources and copy those IDs without changes.",
+              "Describe changes conservatively. Use humanReviewRequired when evidence is insufficient.",
               "Internal-only changes belong in internal-and-build-system. Origin provenance may use origin-only-customizations.",
+              "Example of the desired output structure:",
+              '{"changeId":"<exact changeId from input>","title":"Alert improvements","changes":["Unacknowledged alerts reappear after restarting Trio.","Old not-looping notifications are cleared.","Alarm sounds are easier to select and preview."],"category":"alerting-and-safety","sourceIds":["<exact source IDs from input>"],"confidence":"high","humanReviewRequired":false}',
               "Return only JSON matching the schema.",
               correction
             ].filter(Boolean).join("\n")
@@ -230,7 +233,7 @@ export class OpenRouterSummarizer {
       this.responseModel = response.model;
       try {
         const candidate = changeSummarySchema.parse(parseContent(response.choices[0]?.message.content ?? null));
-        this.validateChangeSummary(candidate, change);
+        validateChangeSummary(candidate, change);
         summary = candidate;
         break;
       } catch (error) {
@@ -260,12 +263,16 @@ export class OpenRouterSummarizer {
     return summary;
   }
 
-  async aggregate(changes: NormalizedChange[], summaries: ChangeSummary[]): Promise<AggregateItem[]> {
+  async selectHighlights(changes: NormalizedChange[], summaries: ChangeSummary[]): Promise<string[]> {
     if (summaries.length === 0) {
       return [];
     }
     const input = summaries.map((summary) => ({
-      ...summary,
+      changeId: summary.changeId,
+      title: summary.title,
+      changes: summary.changes,
+      category: summary.category,
+      humanReviewRequired: summary.humanReviewRequired,
       provenance: changes.find((change) => change.id === summary.changeId)?.provenance
     }));
     let correction = "";
@@ -276,12 +283,9 @@ export class OpenRouterSummarizer {
           {
             role: "system",
             content: [
-              "Organize validated change summaries into concise build release-note items.",
-              "Use each supplied changeId exactly once. Combine only closely related changes.",
-              "Copy changeIds and sourceIds exactly from the supplied input. Do not shorten or rewrite them.",
-              "Do not add uncited facts, risks, or known concerns.",
-              "Mark only the most user-significant items as highlights.",
-              "If combined evidence is uncertain, require human review.",
+              "Select up to five user-significant changes as build highlights.",
+              "Return only exact supplied change IDs. Do not rewrite any prose.",
+              "Do not select version bumps, tests, documentation, or internal build work unless no user-facing changes exist.",
               "Return only JSON matching the schema.",
               correction
             ].filter(Boolean).join("\n")
@@ -290,15 +294,15 @@ export class OpenRouterSummarizer {
         ],
         response_format: {
           type: "json_schema",
-          json_schema: { name: "trio_build_summary", strict: true, schema: aggregateSchema(changes, summaries) }
+          json_schema: { name: "trio_build_highlights", strict: true, schema: highlightSchema(changes) }
         },
         provider: { require_parameters: true }
       } as OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming);
       this.responseModel = response.model;
       try {
-        const result = aggregateOutputSchema.parse(parseContent(response.choices[0]?.message.content ?? null));
-        this.validateAggregate(result.items, changes, summaries);
-        return result.items;
+        const result = highlightOutputSchema.parse(parseContent(response.choices[0]?.message.content ?? null));
+        this.validateHighlights(result.highlightChangeIds, changes);
+        return result.highlightChangeIds;
       } catch (error) {
         if (attempt === VALIDATION_ATTEMPTS - 1) {
           throw error;
@@ -306,59 +310,22 @@ export class OpenRouterSummarizer {
         correction = [
           `The previous response failed validation: ${errorMessage(error)}`,
           `Allowed changeIds: ${changes.map((change) => change.id).join(", ")}`,
-          `Allowed sourceIds: ${[...new Set(summaries.flatMap((summary) => summary.sourceIds))].join(", ")}`,
-          "Return a corrected response using every change exactly once and only exact allowed identifiers."
+          "Return up to five unique exact identifiers."
         ].join("\n");
       }
     }
-    throw new Error("OpenRouter did not return a valid aggregate summary");
+    throw new Error("OpenRouter did not return valid build highlights");
   }
 
-  private validateChangeSummary(summary: ChangeSummary, change: NormalizedChange): void {
-    if (summary.changeId !== change.id) {
-      throw new Error(`OpenRouter changed change ID ${change.id} to ${summary.changeId}`);
+  private validateHighlights(highlightChangeIds: string[], changes: NormalizedChange[]): void {
+    const allowed = new Set(changes.map((change) => change.id));
+    if (new Set(highlightChangeIds).size !== highlightChangeIds.length) {
+      throw new Error("OpenRouter returned duplicate highlight IDs");
     }
-    const allowedSources = new Set(change.sources.map((source) => source.id));
-    for (const sourceId of summary.sourceIds) {
-      if (!allowedSources.has(sourceId)) {
-        throw new Error(`OpenRouter cited unknown source ${sourceId} for ${change.id}`);
+    for (const changeId of highlightChangeIds) {
+      if (!allowed.has(changeId)) {
+        throw new Error(`OpenRouter returned unknown highlight ID: ${changeId}`);
       }
-    }
-  }
-
-  private validateAggregate(items: AggregateItem[], changes: NormalizedChange[], summaries: ChangeSummary[]): void {
-    const expectedChanges = new Set(changes.map((change) => change.id));
-    const seenChanges = new Set<string>();
-    const summaryByChange = new Map(summaries.map((summary) => [summary.changeId, summary]));
-    for (const item of items) {
-      const allowedSources = new Set<string>();
-      for (const changeId of item.changeIds) {
-        if (!expectedChanges.has(changeId) || seenChanges.has(changeId)) {
-          throw new Error(`OpenRouter returned an unknown or duplicate change ID: ${changeId}`);
-        }
-        seenChanges.add(changeId);
-        for (const sourceId of summaryByChange.get(changeId)?.sourceIds ?? []) {
-          allowedSources.add(sourceId);
-        }
-      }
-      for (const sourceId of item.sourceIds) {
-        if (!allowedSources.has(sourceId)) {
-          throw new Error(`Aggregated item cited out-of-scope source ${sourceId}`);
-        }
-      }
-      for (const changeId of item.changeIds) {
-        const changeSources = new Set(summaryByChange.get(changeId)?.sourceIds ?? []);
-        if (!item.sourceIds.some((sourceId) => changeSources.has(sourceId))) {
-          throw new Error(`Aggregated item does not cite change ${changeId}`);
-        }
-      }
-      if (item.category === "highlights" && !item.highlight) {
-        throw new Error("An item categorized as highlights must be marked as a highlight");
-      }
-    }
-    if (seenChanges.size !== expectedChanges.size) {
-      const missing = [...expectedChanges].filter((changeId) => !seenChanges.has(changeId));
-      throw new Error(`OpenRouter omitted changes: ${missing.join(", ")}`);
     }
   }
 }

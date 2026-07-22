@@ -1,23 +1,22 @@
 {
-  "inputHash": "aa7d2fd505761ef92926e96783571a8cd62b695a1668eccb487de6f57fc2fe45",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "92e7c0b76b24f5803817a6dd5de2d9a3cc0e68bd11b67b7ca58b48dd613aaf07",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1305",
-    "summary": "The DeviceDataManager protocol's bolusTrigger property was changed from PassthroughSubject<BolusStatus, Never> to CurrentValueSubject<BolusStatus, Never>, and BaseDeviceDataManager's implementation was changed from a PassthroughSubject to a CurrentValueSubject initialized with .noBolus (diff:b5239e390f2a, file:360227b79652, commit:191743b81a65). The change is part of PR pr:nightscout/Trio#1305 (pr:gordolio/Trio#1305, commit:891edfc9a8b6).",
-    "userFacingImpact": "The patch changes the type and initialization of bolusTrigger in the codebase (diff:b5239e390f2a, file:360227b79652, commit:191743b81a65). The provided sources do not state the intended runtime or UI effects of this change; a human review is required to determine behavioral or user-facing impact.",
-    "category": "fixes",
+    "title": "Bolus status now initialized and retained.",
+    "changes": [
+      "Bolus status is now initialized to 'no bolus' by default.",
+      "The app keeps the current bolus state so other parts see the latest bolus status when they start."
+    ],
+    "category": "internal-and-build-system",
     "sourceIds": [
-      "pr:gordolio/Trio#1305",
       "pr:nightscout/Trio#1305",
-      "commit:191743b81a65",
-      "commit:891edfc9a8b6",
-      "file:360227b79652",
-      "diff:b5239e390f2a"
+      "commit:191743b81a65"
     ],
     "confidence": "high",
-    "humanReviewRequired": true
+    "humanReviewRequired": false
   }
 }

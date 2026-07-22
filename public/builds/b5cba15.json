@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
     "sourceWorkflowRunId": 29210281377,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29210281377",
@@ -8,54 +8,105 @@
     "currentBuiltSha": "b5cba1534785e5240cf78894f15d21a26e9e3b5b",
     "shortSha": "b5cba15",
     "buildDate": "2026-07-12T22:09:16.000Z",
-    "generationDate": "2026-07-21T10:13:00.417Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "3",
+    "generationDate": "2026-07-22T01:44:37.448Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1194"
+      "changeId": "pr:nightscout/Trio#1211",
+      "title": "Show 'Initiating' when a bolus starts",
+      "changes": [
+        "Trio now shows an 'initiating' state on the bolus progress view when a bolus is started.",
+        "The bolus progress indicator displays the initiating state until insulin delivery begins.",
+        "The initiating state text is included in the app localizations."
       ],
-      "summary": "Adds optional glucose forecast display to the Live Activity (lock screen) widget and the supporting data/path plumbing, plus a new setting to toggle sending/displaying forecasts.",
-      "userFacingImpact": "A new \"Display Glucose Forecasts\" setting (default OFF) appears under Settings > Notifications > Live Activity. When enabled, the Live Activity chart can show Oref forecasts as either a cone or per-type lines (mode follows Forecast Display Type). Forecast payloads were adjusted to be payload-safe (mutually exclusive cone vs lines, capped length). The PR requests more testers and code review before wide deployment.",
-      "category": "new-features",
+      "category": "interface-improvements",
       "sourceIds": [
-        "pr:gordolio/Trio#1194",
-        "pr:nightscout/Trio#1194",
-        "commit:32ae9799f787",
-        "commit:b97e1dea03e3",
-        "commit:c9113df4d62a",
-        "commit:9325a24e946e",
-        "commit:b1b5a5f28107",
-        "commit:6d8be44f2e6a",
-        "commit:5cf740f2dff1",
-        "commit:05f45510a798",
-        "file:b8e9440acd75",
-        "file:047cabde933a",
-        "file:07c5d9550567",
-        "file:e3de1806b678",
-        "file:ea01696a0eaf",
-        "file:9f2ebbd56217",
-        "file:9a72766dc609",
-        "file:a6286edbbf32",
-        "file:a1ac89c43b84",
-        "file:144e4a3dfe53",
-        "file:193dfcdfbdb1",
-        "diff:486f5ea3b683"
+        "pr:nightscout/Trio#1211",
+        "diff:a8a877dd3977"
       ],
       "confidence": "high",
-      "humanReviewRequired": true,
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1211"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:gordolio/Trio#1194",
+          "id": "pr:nightscout/Trio#1211",
           "type": "pull-request",
-          "title": "gordolio/Trio#1194: Live Activity: Adding glucose forecast",
-          "url": "https://github.com/nightscout/Trio/pull/1194"
+          "title": "nightscout/Trio#1211: Feat: Bolus initiating",
+          "url": "https://github.com/nightscout/Trio/pull/1211"
         },
+        {
+          "id": "diff:a8a877dd3977",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1211",
+          "url": "https://github.com/gordolio/Trio/compare/51279404cc68da1bc7db20537b7847c8a085fa29...4333da70b00875e639f027b86af25fdc1dcb7b8e"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1214",
+      "title": "Copy SHA and version info from Settings",
+      "changes": [
+        "You can select and copy the SHA and submodule names in the Settings view.",
+        "A copy button is added to the version header to copy full app version, branch, and SHA to the clipboard.",
+        "Copying now shows a brief \"Copied\" confirmation toast and provides haptic feedback.",
+        "Version copy was changed from a long-press gesture to a normal button for easier use."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1214",
+        "diff:68fb2de97fe0"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1214"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1214",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1214: Enable text selection to copy SHA",
+          "url": "https://github.com/nightscout/Trio/pull/1214"
+        },
+        {
+          "id": "diff:68fb2de97fe0",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1214",
+          "url": "https://github.com/gordolio/Trio/compare/51279404cc68da1bc7db20537b7847c8a085fa29...9e5aeabccd2d7cf2b620e91549f47b698edc4b8b"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1194",
+      "title": "Live Activity glucose forecast on lock screen",
+      "changes": [
+        "Adds a new Display Glucose Forecasts toggle under Settings → Notifications → Live Activity, defaulting to off.",
+        "When enabled, the Live Activity lock-screen chart shows Oref glucose forecasts as either a cone or lines.",
+        "The forecast display type follows the existing Forecast Display Type setting in the main app.",
+        "Chart scaling and rendering were adjusted so forecast values fit the small lock-screen chart and remain readable."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1194",
+        "commit:b1b5a5f28107"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1194"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
         {
           "id": "pr:nightscout/Trio#1194",
           "type": "pull-request",
@@ -63,158 +114,36 @@
           "url": "https://github.com/nightscout/Trio/pull/1194"
         },
         {
-          "id": "commit:32ae9799f787",
-          "type": "commit",
-          "title": "feat: Add glucose predictions to lock screen live activity chart",
-          "url": "https://github.com/gordolio/Trio/commit/32ae9799f7871538b6fe225a0639069dcd599b34"
-        },
-        {
-          "id": "commit:b97e1dea03e3",
-          "type": "commit",
-          "title": "refactor: Remove forecast lines option from Live Activity, keep cone only",
-          "url": "https://github.com/gordolio/Trio/commit/b97e1dea03e35fad04eb201ff32f827bfd494570"
-        },
-        {
-          "id": "commit:c9113df4d62a",
-          "type": "commit",
-          "title": "feat: Re-add forecast lines mode with payload-safe mutually exclusive data",
-          "url": "https://github.com/gordolio/Trio/commit/c9113df4d62ae53f30b572ff7fee1365fefc59da"
-        },
-        {
-          "id": "commit:9325a24e946e",
-          "type": "commit",
-          "title": "refactor: Use named asset colors for forecast lines, clean up ForEach",
-          "url": "https://github.com/gordolio/Trio/commit/9325a24e946e5a1a7afb260c69a9c949a472dc75"
-        },
-        {
           "id": "commit:b1b5a5f28107",
           "type": "commit",
           "title": "feat: Add Display Glucose Forecasts toggle to Live Activity settings",
           "url": "https://github.com/gordolio/Trio/commit/b1b5a5f281077603cc4f405e5843ba178bdfcac1"
-        },
-        {
-          "id": "commit:6d8be44f2e6a",
-          "type": "commit",
-          "title": "fix: Correct forecast line colors and visibility in Live Activity widget",
-          "url": "https://github.com/gordolio/Trio/commit/6d8be44f2e6ac065b0fa7743ff7cfecb8fbd8978"
-        },
-        {
-          "id": "commit:5cf740f2dff1",
-          "type": "commit",
-          "title": "fix: Clamp forecast Y-axis max to chart threshold in Live Activity widget",
-          "url": "https://github.com/gordolio/Trio/commit/5cf740f2dff16f015f9ebc3b18b716b5d0d9befc"
-        },
-        {
-          "id": "commit:05f45510a798",
-          "type": "commit",
-          "title": "Merge pull request #1194 from t1dude/feat/live-activity-prediction",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:b8e9440acd75",
-          "type": "file",
-          "title": "LiveActivity/Views/LiveActivityChartView.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:047cabde933a",
-          "type": "file",
-          "title": "Trio/Sources/Services/LiveActivity/Data/DataManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:07c5d9550567",
-          "type": "file",
-          "title": "Trio/Sources/Services/LiveActivity/Data/DeterminationData.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:e3de1806b678",
-          "type": "file",
-          "title": "Trio/Sources/Services/LiveActivity/LiveActitiyAttributes.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:ea01696a0eaf",
-          "type": "file",
-          "title": "Trio/Sources/Services/LiveActivity/LiveActivityAttributes+Helper.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:9f2ebbd56217",
-          "type": "file",
-          "title": "Trio/Sources/Services/LiveActivity/LiveActivityManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:9a72766dc609",
-          "type": "file",
-          "title": "Trio/Sources/Models/TrioSettings.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:a6286edbbf32",
-          "type": "file",
-          "title": "Trio/Sources/Modules/LiveActivitySettings/LiveActivitySettingsStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:a1ac89c43b84",
-          "type": "file",
-          "title": "Trio/Sources/Modules/LiveActivitySettings/View/LiveActivitySettingsRootView.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:144e4a3dfe53",
-          "type": "file",
-          "title": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "file:193dfcdfbdb1",
-          "type": "file",
-          "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-          "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-        },
-        {
-          "id": "diff:486f5ea3b683",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1194",
-          "url": "https://github.com/gordolio/Trio/compare/aa1b6905790867a743f8c37f95101c77213a0b59...05f45510a798e329dd5b0b66945ba794f1a923d1"
         }
       ]
     },
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1131"
+      "changeId": "pr:nightscout/Trio#1131",
+      "title": "Add Eversense CGM support",
+      "changes": [
+        "Eversense is added as a selectable CGM option in the app.",
+        "Trio now includes support for Eversense CGM devices (E3 and 365).",
+        "The app embeds the EversenseKit framework so it can connect to Eversense sensors.",
+        "Optional upload to the Eversense DMS, including debug data, is available and can be opted out."
       ],
-      "summary": "Adds EversenseKit as a Git submodule and integrates Eversense CGM support (driver registration, UI option, and framework embedding) into the app.",
-      "userFacingImpact": "Users will see a new \"Eversense\" CGM option and the app will include the EversenseKit framework to support Eversense sensors. The PR notes the driver supports various Eversense sensor models and mentions optional debug-data upload; the change is in Draft and a few crashes are being investigated, so review and testing are advised before release.",
       "category": "new-features",
       "sourceIds": [
-        "pr:gordolio/Trio#1131",
         "pr:nightscout/Trio#1131",
         "commit:9b81be8e5f33",
-        "file:5f6038a86aa9",
-        "file:2f9949877f60",
-        "file:f6c04d0f762f",
-        "file:10acfff17e6d",
-        "file:7f7537478b95",
-        "file:1ce3bbfab72e",
-        "file:93b1add73892",
         "diff:5b2a20a8d7bb"
       ],
       "confidence": "high",
-      "humanReviewRequired": true,
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1131"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
-        {
-          "id": "pr:gordolio/Trio#1131",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1131: Feature: EversenseKit",
-          "url": "https://github.com/nightscout/Trio/pull/1131"
-        },
         {
           "id": "pr:nightscout/Trio#1131",
           "type": "pull-request",
@@ -228,48 +157,6 @@
           "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
         },
         {
-          "id": "file:5f6038a86aa9",
-          "type": "file",
-          "title": ".gitmodules",
-          "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-        },
-        {
-          "id": "file:2f9949877f60",
-          "type": "file",
-          "title": "EversenseKit",
-          "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-        },
-        {
-          "id": "file:f6c04d0f762f",
-          "type": "file",
-          "title": "Trio.xcodeproj/project.pbxproj",
-          "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-        },
-        {
-          "id": "file:10acfff17e6d",
-          "type": "file",
-          "title": "Trio.xcworkspace/contents.xcworkspacedata",
-          "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-        },
-        {
-          "id": "file:7f7537478b95",
-          "type": "file",
-          "title": "Trio/Sources/APS/PluginManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-        },
-        {
-          "id": "file:1ce3bbfab72e",
-          "type": "file",
-          "title": "Trio/Sources/Helpers/CGMOptions.swift",
-          "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-        },
-        {
-          "id": "file:93b1add73892",
-          "type": "file",
-          "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-          "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-        },
-        {
           "id": "diff:5b2a20a8d7bb",
           "type": "diff",
           "title": "Diff for pr:nightscout/Trio#1131",
@@ -280,278 +167,9 @@
   ],
   "categories": [
     {
-      "category": "highlights",
-      "title": "Highlights",
-      "items": []
-    },
-    {
       "category": "new-features",
       "title": "New Features",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1194"
-          ],
-          "summary": "Adds optional glucose forecast display to the Live Activity (lock screen) widget and the supporting data/path plumbing, plus a new setting to toggle sending/displaying forecasts.",
-          "userFacingImpact": "A new \"Display Glucose Forecasts\" setting (default OFF) appears under Settings > Notifications > Live Activity. When enabled, the Live Activity chart can show Oref forecasts as either a cone or per-type lines (mode follows Forecast Display Type). Forecast payloads were adjusted to be payload-safe (mutually exclusive cone vs lines, capped length). The PR requests more testers and code review before wide deployment.",
-          "category": "new-features",
-          "sourceIds": [
-            "pr:gordolio/Trio#1194",
-            "pr:nightscout/Trio#1194",
-            "commit:32ae9799f787",
-            "commit:b97e1dea03e3",
-            "commit:c9113df4d62a",
-            "commit:9325a24e946e",
-            "commit:b1b5a5f28107",
-            "commit:6d8be44f2e6a",
-            "commit:5cf740f2dff1",
-            "commit:05f45510a798",
-            "file:b8e9440acd75",
-            "file:047cabde933a",
-            "file:07c5d9550567",
-            "file:e3de1806b678",
-            "file:ea01696a0eaf",
-            "file:9f2ebbd56217",
-            "file:9a72766dc609",
-            "file:a6286edbbf32",
-            "file:a1ac89c43b84",
-            "file:144e4a3dfe53",
-            "file:193dfcdfbdb1",
-            "diff:486f5ea3b683"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1194",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1194: Live Activity: Adding glucose forecast",
-              "url": "https://github.com/nightscout/Trio/pull/1194"
-            },
-            {
-              "id": "pr:nightscout/Trio#1194",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1194: Live Activity: Adding glucose forecast",
-              "url": "https://github.com/nightscout/Trio/pull/1194"
-            },
-            {
-              "id": "commit:32ae9799f787",
-              "type": "commit",
-              "title": "feat: Add glucose predictions to lock screen live activity chart",
-              "url": "https://github.com/gordolio/Trio/commit/32ae9799f7871538b6fe225a0639069dcd599b34"
-            },
-            {
-              "id": "commit:b97e1dea03e3",
-              "type": "commit",
-              "title": "refactor: Remove forecast lines option from Live Activity, keep cone only",
-              "url": "https://github.com/gordolio/Trio/commit/b97e1dea03e35fad04eb201ff32f827bfd494570"
-            },
-            {
-              "id": "commit:c9113df4d62a",
-              "type": "commit",
-              "title": "feat: Re-add forecast lines mode with payload-safe mutually exclusive data",
-              "url": "https://github.com/gordolio/Trio/commit/c9113df4d62ae53f30b572ff7fee1365fefc59da"
-            },
-            {
-              "id": "commit:9325a24e946e",
-              "type": "commit",
-              "title": "refactor: Use named asset colors for forecast lines, clean up ForEach",
-              "url": "https://github.com/gordolio/Trio/commit/9325a24e946e5a1a7afb260c69a9c949a472dc75"
-            },
-            {
-              "id": "commit:b1b5a5f28107",
-              "type": "commit",
-              "title": "feat: Add Display Glucose Forecasts toggle to Live Activity settings",
-              "url": "https://github.com/gordolio/Trio/commit/b1b5a5f281077603cc4f405e5843ba178bdfcac1"
-            },
-            {
-              "id": "commit:6d8be44f2e6a",
-              "type": "commit",
-              "title": "fix: Correct forecast line colors and visibility in Live Activity widget",
-              "url": "https://github.com/gordolio/Trio/commit/6d8be44f2e6ac065b0fa7743ff7cfecb8fbd8978"
-            },
-            {
-              "id": "commit:5cf740f2dff1",
-              "type": "commit",
-              "title": "fix: Clamp forecast Y-axis max to chart threshold in Live Activity widget",
-              "url": "https://github.com/gordolio/Trio/commit/5cf740f2dff16f015f9ebc3b18b716b5d0d9befc"
-            },
-            {
-              "id": "commit:05f45510a798",
-              "type": "commit",
-              "title": "Merge pull request #1194 from t1dude/feat/live-activity-prediction",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:b8e9440acd75",
-              "type": "file",
-              "title": "LiveActivity/Views/LiveActivityChartView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:047cabde933a",
-              "type": "file",
-              "title": "Trio/Sources/Services/LiveActivity/Data/DataManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:07c5d9550567",
-              "type": "file",
-              "title": "Trio/Sources/Services/LiveActivity/Data/DeterminationData.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:e3de1806b678",
-              "type": "file",
-              "title": "Trio/Sources/Services/LiveActivity/LiveActitiyAttributes.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:ea01696a0eaf",
-              "type": "file",
-              "title": "Trio/Sources/Services/LiveActivity/LiveActivityAttributes+Helper.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:9f2ebbd56217",
-              "type": "file",
-              "title": "Trio/Sources/Services/LiveActivity/LiveActivityManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:9a72766dc609",
-              "type": "file",
-              "title": "Trio/Sources/Models/TrioSettings.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:a6286edbbf32",
-              "type": "file",
-              "title": "Trio/Sources/Modules/LiveActivitySettings/LiveActivitySettingsStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:a1ac89c43b84",
-              "type": "file",
-              "title": "Trio/Sources/Modules/LiveActivitySettings/View/LiveActivitySettingsRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:144e4a3dfe53",
-              "type": "file",
-              "title": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "file:193dfcdfbdb1",
-              "type": "file",
-              "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-              "url": "https://github.com/gordolio/Trio/commit/05f45510a798e329dd5b0b66945ba794f1a923d1"
-            },
-            {
-              "id": "diff:486f5ea3b683",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1194",
-              "url": "https://github.com/gordolio/Trio/compare/aa1b6905790867a743f8c37f95101c77213a0b59...05f45510a798e329dd5b0b66945ba794f1a923d1"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1131"
-          ],
-          "summary": "Adds EversenseKit as a Git submodule and integrates Eversense CGM support (driver registration, UI option, and framework embedding) into the app.",
-          "userFacingImpact": "Users will see a new \"Eversense\" CGM option and the app will include the EversenseKit framework to support Eversense sensors. The PR notes the driver supports various Eversense sensor models and mentions optional debug-data upload; the change is in Draft and a few crashes are being investigated, so review and testing are advised before release.",
-          "category": "new-features",
-          "sourceIds": [
-            "pr:gordolio/Trio#1131",
-            "pr:nightscout/Trio#1131",
-            "commit:9b81be8e5f33",
-            "file:5f6038a86aa9",
-            "file:2f9949877f60",
-            "file:f6c04d0f762f",
-            "file:10acfff17e6d",
-            "file:7f7537478b95",
-            "file:1ce3bbfab72e",
-            "file:93b1add73892",
-            "diff:5b2a20a8d7bb"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1131",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1131: Feature: EversenseKit",
-              "url": "https://github.com/nightscout/Trio/pull/1131"
-            },
-            {
-              "id": "pr:nightscout/Trio#1131",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1131: Feature: EversenseKit",
-              "url": "https://github.com/nightscout/Trio/pull/1131"
-            },
-            {
-              "id": "commit:9b81be8e5f33",
-              "type": "commit",
-              "title": "Feature: EversenseKit (#1131)",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "file:5f6038a86aa9",
-              "type": "file",
-              "title": ".gitmodules",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "file:2f9949877f60",
-              "type": "file",
-              "title": "EversenseKit",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "file:f6c04d0f762f",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "file:10acfff17e6d",
-              "type": "file",
-              "title": "Trio.xcworkspace/contents.xcworkspacedata",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "file:7f7537478b95",
-              "type": "file",
-              "title": "Trio/Sources/APS/PluginManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "file:1ce3bbfab72e",
-              "type": "file",
-              "title": "Trio/Sources/Helpers/CGMOptions.swift",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "file:93b1add73892",
-              "type": "file",
-              "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-              "url": "https://github.com/gordolio/Trio/commit/9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            },
-            {
-              "id": "diff:5b2a20a8d7bb",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1131",
-              "url": "https://github.com/gordolio/Trio/compare/e5a175ad27ab03c62ad19dfda5756bee12e91497...9b81be8e5f33aca2576f708c51f816f6a2c50395"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "fixes",
@@ -576,264 +194,7 @@
     {
       "category": "interface-improvements",
       "title": "Interface Improvements",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1211"
-          ],
-          "summary": "Adds an explicit \"initiating\" bolus state and wires it through models and views so the bolus progress UI can show an initiating phase between command acceptance and progress.",
-          "userFacingImpact": "The bolus progress UI will show an \"initiating\" state when a bolus has been accepted but not yet begun progressing, representing short device delays (noted ~5s for Tandem Mobi). The supplied changes are interface-only in the diffs; no dosing logic changes are evident.",
-          "category": "interface-improvements",
-          "sourceIds": [
-            "pr:gordolio/Trio#1211",
-            "pr:nightscout/Trio#1211",
-            "commit:aaf921a5fe3a",
-            "commit:3db59429401c",
-            "commit:5a26db0ab814",
-            "commit:c898d2ddeffa",
-            "commit:a963c3d9ae92",
-            "commit:ef15212c882b",
-            "commit:5792ad7ade3a",
-            "commit:44d119561cf9",
-            "commit:4333da70b008",
-            "file:a4004047d405",
-            "file:fd972cd0e61b",
-            "file:ff1c6c26999d",
-            "file:aa1fdb7da2f4",
-            "file:ea8335ef1db5",
-            "file:3e0ec8bf55e7",
-            "file:68d95205f2b4",
-            "file:243583eb346b",
-            "file:41aada787118",
-            "diff:a8a877dd3977"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1211",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1211: Feat: Bolus initiating",
-              "url": "https://github.com/nightscout/Trio/pull/1211"
-            },
-            {
-              "id": "pr:nightscout/Trio#1211",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1211: Feat: Bolus initiating",
-              "url": "https://github.com/nightscout/Trio/pull/1211"
-            },
-            {
-              "id": "commit:aaf921a5fe3a",
-              "type": "commit",
-              "title": "feat: show bolus initiating",
-              "url": "https://github.com/gordolio/Trio/commit/aaf921a5fe3ad302311807e94da1c1f49e611883"
-            },
-            {
-              "id": "commit:3db59429401c",
-              "type": "commit",
-              "title": "feat: show bolus initiating",
-              "url": "https://github.com/gordolio/Trio/commit/3db59429401c9b8521936824a9dcf7d84334db18"
-            },
-            {
-              "id": "commit:5a26db0ab814",
-              "type": "commit",
-              "title": "feat: add initiating state to TreatmentView",
-              "url": "https://github.com/gordolio/Trio/commit/5a26db0ab814fe0cb09b3398343d6e2a124e6dbc"
-            },
-            {
-              "id": "commit:c898d2ddeffa",
-              "type": "commit",
-              "title": "Merge branch 'dev' into feat/bolus-initiating",
-              "url": "https://github.com/gordolio/Trio/commit/c898d2ddeffa202d0a3e37e2963eb8a845a035e8"
-            },
-            {
-              "id": "commit:a963c3d9ae92",
-              "type": "commit",
-              "title": "fix: process feedback",
-              "url": "https://github.com/gordolio/Trio/commit/a963c3d9ae924357aa1c7e0bd23e681cd00f39b4"
-            },
-            {
-              "id": "commit:ef15212c882b",
-              "type": "commit",
-              "title": "Merge branch 'dev' into feat/bolus-initiating",
-              "url": "https://github.com/gordolio/Trio/commit/ef15212c882b92ece1eb263548587ac3173de324"
-            },
-            {
-              "id": "commit:5792ad7ade3a",
-              "type": "commit",
-              "title": "Merge branch 'dev' into feat/bolus-initiating",
-              "url": "https://github.com/gordolio/Trio/commit/5792ad7ade3a63b1b70e6a05e457b287d3653d8f"
-            },
-            {
-              "id": "commit:44d119561cf9",
-              "type": "commit",
-              "title": "Merge branch 'dev' into feat/bolus-initiating",
-              "url": "https://github.com/gordolio/Trio/commit/44d119561cf9896c3301ce6119b8f0a5e01786e7"
-            },
-            {
-              "id": "commit:4333da70b008",
-              "type": "commit",
-              "title": "Merge pull request #1211 from bastiaanv/feat/bolus-initiating",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:a4004047d405",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:fd972cd0e61b",
-              "type": "file",
-              "title": "Trio/Sources/APS/APSManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:ff1c6c26999d",
-              "type": "file",
-              "title": "Trio/Sources/APS/DeviceDataManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:aa1fdb7da2f4",
-              "type": "file",
-              "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:ea8335ef1db5",
-              "type": "file",
-              "title": "Trio/Sources/Models/BolusStatus.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:3e0ec8bf55e7",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:68d95205f2b4",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/View/HomeRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:243583eb346b",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Treatments/TreatmentsStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "file:41aada787118",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            },
-            {
-              "id": "diff:a8a877dd3977",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1211",
-              "url": "https://github.com/gordolio/Trio/compare/51279404cc68da1bc7db20537b7847c8a085fa29...4333da70b00875e639f027b86af25fdc1dcb7b8e"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1214"
-          ],
-          "summary": "Enable text selection for submodule keys/values and add a copy-to-clipboard control for app version/build/branch+SHA with a brief toast and haptic feedback.",
-          "userFacingImpact": "Users can select and copy submodule names and SHAs. A new copy control copies the full app version/build/branch+SHA to the clipboard and shows a temporary \"copied\" toast plus haptic feedback. Changes are limited to the settings UI.",
-          "category": "interface-improvements",
-          "sourceIds": [
-            "pr:gordolio/Trio#1214",
-            "pr:nightscout/Trio#1214",
-            "commit:87ffec437259",
-            "commit:90d2a7e7a62c",
-            "commit:e87265efd077",
-            "commit:752a81b1759a",
-            "commit:0b83acc8cf62",
-            "commit:9e5aeabccd2d",
-            "file:ba4ae3c45618",
-            "file:a88e84ba845d",
-            "diff:68fb2de97fe0"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1214",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1214: Enable text selection to copy SHA",
-              "url": "https://github.com/nightscout/Trio/pull/1214"
-            },
-            {
-              "id": "pr:nightscout/Trio#1214",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1214: Enable text selection to copy SHA",
-              "url": "https://github.com/nightscout/Trio/pull/1214"
-            },
-            {
-              "id": "commit:87ffec437259",
-              "type": "commit",
-              "title": "Enable text selection to copy SHA",
-              "url": "https://github.com/gordolio/Trio/commit/87ffec437259ea1ea90ec5dd8dd9a461c826f0a5"
-            },
-            {
-              "id": "commit:90d2a7e7a62c",
-              "type": "commit",
-              "title": "Enable text selection for submodule names",
-              "url": "https://github.com/gordolio/Trio/commit/90d2a7e7a62c8bfdfe8157b9a9d967c2cd4fcdd0"
-            },
-            {
-              "id": "commit:e87265efd077",
-              "type": "commit",
-              "title": "Add copy-to-clipboard for version info",
-              "url": "https://github.com/gordolio/Trio/commit/e87265efd077f136d820f8cf76696da0bcc7f5e7"
-            },
-            {
-              "id": "commit:752a81b1759a",
-              "type": "commit",
-              "title": "Merge branch 'dev' into feat/sha-copy",
-              "url": "https://github.com/gordolio/Trio/commit/752a81b1759a4de2538a2dc3ffca1a23bb3c85e9"
-            },
-            {
-              "id": "commit:0b83acc8cf62",
-              "type": "commit",
-              "title": "Change copy from a long-press to a normal button",
-              "url": "https://github.com/gordolio/Trio/commit/0b83acc8cf62005729eaf3843897bde20aa11545"
-            },
-            {
-              "id": "commit:9e5aeabccd2d",
-              "type": "commit",
-              "title": "Merge pull request #1214 from MikePlante1/feat/sha-copy",
-              "url": "https://github.com/gordolio/Trio/commit/9e5aeabccd2d7cf2b620e91549f47b698edc4b8b"
-            },
-            {
-              "id": "file:ba4ae3c45618",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Settings/View/SettingsRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/9e5aeabccd2d7cf2b620e91549f47b698edc4b8b"
-            },
-            {
-              "id": "file:a88e84ba845d",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Settings/View/Subviews/SubmodulesView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/9e5aeabccd2d7cf2b620e91549f47b698edc4b8b"
-            },
-            {
-              "id": "diff:68fb2de97fe0",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1214",
-              "url": "https://github.com/gordolio/Trio/compare/51279404cc68da1bc7db20537b7847c8a085fa29...9e5aeabccd2d7cf2b620e91549f47b698edc4b8b"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "origin-only-customizations",
@@ -843,111 +204,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeIds": [
-            "commit:7b85e712bfcf6c09f4129492f2819ad64792fc91",
-            "commit:8bac7333c19472883a3cc7287c9a5ea3c599601e",
-            "commit:6ab115cc7f0c577069d7465566a2ad2de3ec15c2",
-            "commit:e9c000814d93c469c2d8dc3dc89f2b3edba70258"
-          ],
-          "summary": "Series of CI/dev commits that increment the internal APP_DEV_VERSION development constant in Config.xcconfig across multiple bumps.",
-          "userFacingImpact": "These commits only update the internal APP_DEV_VERSION development identifier in build configuration files and do not show functional or runtime behavior changes in the supplied diffs. Human review is recommended to confirm there are no downstream effects.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:7b85e712bfcf",
-            "file:26d452518827",
-            "diff:60f545e375c4",
-            "commit:8bac7333c194",
-            "file:10bb1fff9ebd",
-            "diff:76c5a7d6b62c",
-            "commit:6ab115cc7f0c",
-            "file:de3d83635461",
-            "diff:9b418a124332",
-            "commit:e9c000814d93",
-            "file:169714b78f81",
-            "diff:97469a535394"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:7b85e712bfcf",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.9 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/7b85e712bfcf6c09f4129492f2819ad64792fc91"
-            },
-            {
-              "id": "file:26d452518827",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/7b85e712bfcf6c09f4129492f2819ad64792fc91"
-            },
-            {
-              "id": "diff:60f545e375c4",
-              "type": "diff",
-              "title": "Diff for commit:7b85e712bfcf6c09f4129492f2819ad64792fc91",
-              "url": "https://github.com/gordolio/Trio/compare/9b81be8e5f33aca2576f708c51f816f6a2c50395...7b85e712bfcf6c09f4129492f2819ad64792fc91"
-            },
-            {
-              "id": "commit:8bac7333c194",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.10 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/8bac7333c19472883a3cc7287c9a5ea3c599601e"
-            },
-            {
-              "id": "file:10bb1fff9ebd",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/8bac7333c19472883a3cc7287c9a5ea3c599601e"
-            },
-            {
-              "id": "diff:76c5a7d6b62c",
-              "type": "diff",
-              "title": "Diff for commit:8bac7333c19472883a3cc7287c9a5ea3c599601e",
-              "url": "https://github.com/gordolio/Trio/compare/05f45510a798e329dd5b0b66945ba794f1a923d1...8bac7333c19472883a3cc7287c9a5ea3c599601e"
-            },
-            {
-              "id": "commit:6ab115cc7f0c",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.11 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/6ab115cc7f0c577069d7465566a2ad2de3ec15c2"
-            },
-            {
-              "id": "file:de3d83635461",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/6ab115cc7f0c577069d7465566a2ad2de3ec15c2"
-            },
-            {
-              "id": "diff:9b418a124332",
-              "type": "diff",
-              "title": "Diff for commit:6ab115cc7f0c577069d7465566a2ad2de3ec15c2",
-              "url": "https://github.com/gordolio/Trio/compare/9e5aeabccd2d7cf2b620e91549f47b698edc4b8b...6ab115cc7f0c577069d7465566a2ad2de3ec15c2"
-            },
-            {
-              "id": "commit:e9c000814d93",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.12 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/e9c000814d93c469c2d8dc3dc89f2b3edba70258"
-            },
-            {
-              "id": "file:169714b78f81",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/e9c000814d93c469c2d8dc3dc89f2b3edba70258"
-            },
-            {
-              "id": "diff:97469a535394",
-              "type": "diff",
-              "title": "Diff for commit:e9c000814d93c469c2d8dc3dc89f2b3edba70258",
-              "url": "https://github.com/gordolio/Trio/compare/4333da70b00875e639f027b86af25fdc1dcb7b8e...e9c000814d93c469c2d8dc3dc89f2b3edba70258"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -1161,7 +418,7 @@
       "sha": "7b85e712bfcf6c09f4129492f2819ad64792fc91",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.9 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-12T17:11:50Z"
+      "authoredAt": "2026-07-12T17:11:50+00:00"
     },
     {
       "sha": "05f45510a798e329dd5b0b66945ba794f1a923d1",
@@ -1173,7 +430,7 @@
       "sha": "8bac7333c19472883a3cc7287c9a5ea3c599601e",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.10 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-12T17:17:09Z"
+      "authoredAt": "2026-07-12T17:17:09+00:00"
     },
     {
       "sha": "9e5aeabccd2d7cf2b620e91549f47b698edc4b8b",
@@ -1185,7 +442,7 @@
       "sha": "6ab115cc7f0c577069d7465566a2ad2de3ec15c2",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.11 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-12T17:19:44Z"
+      "authoredAt": "2026-07-12T17:19:44+00:00"
     },
     {
       "sha": "44d119561cf9896c3301ce6119b8f0a5e01786e7",
@@ -1203,7 +460,7 @@
       "sha": "e9c000814d93c469c2d8dc3dc89f2b3edba70258",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.12 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-12T17:44:29Z"
+      "authoredAt": "2026-07-12T17:44:29+00:00"
     },
     {
       "sha": "b5cba1534785e5240cf78894f15d21a26e9e3b5b",

@@ -49,19 +49,23 @@ async function main(): Promise<void> {
   await access(config.sourceCheckout);
   const command = process.argv[2];
   if (command === "generate") {
-    await generateForRun(positiveInteger(option("--run-id"), "--run-id"));
+    await generateForRun(positiveInteger(option("--run-id"), "--run-id"), flag("--force"));
     return;
   }
   if (command === "backfill") {
-    await processRunsSince(monthsAgo(positiveInteger(option("--months"), "--months")), checkpoint());
+    await processRunsSince(monthsAgo(positiveInteger(option("--months"), "--months")), checkpoint(), flag("--force"));
     return;
   }
   if (command === "reconcile") {
-    await processRunsSince(daysAgo(positiveInteger(option("--days") ?? "30", "--days")), checkpoint());
+    await processRunsSince(
+      daysAgo(positiveInteger(option("--days") ?? "30", "--days")),
+      checkpoint(),
+      flag("--force")
+    );
     return;
   }
   throw new Error(
-    "Usage: generate --run-id <id> | backfill --months <months> [--checkpoint] | reconcile [--days <days>] [--checkpoint]"
+    "Usage: generate --run-id <id> [--force] | backfill --months <months> [--checkpoint] [--force] | reconcile [--days <days>] [--checkpoint] [--force]"
   );
 }
 

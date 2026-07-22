@@ -1,91 +1,20 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 29105785667,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29105785667",
+    "sourceWorkflowRunId": 29184422783,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29184422783",
     "sourceBranch": "dev",
-    "previousBuiltSha": "3a93c28b5eff258004eaaa9dddc48ec4face149d",
+    "previousBuiltSha": "16691d214075c881255083e627c0b52cfdeb741c",
     "currentBuiltSha": "16691d214075c881255083e627c0b52cfdeb741c",
     "shortSha": "16691d2",
-    "buildDate": "2026-07-10T16:19:28.000Z",
-    "generationDate": "2026-07-21T10:09:25.131Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "3",
+    "buildDate": "2026-07-12T07:47:03.000Z",
+    "generationDate": "2026-07-22T01:51:18.543Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
-  "highlights": [
-    {
-      "changeIds": [
-        "pr:nightscout/Trio#1283"
-      ],
-      "summary": "Lower minimum carbRatio validation in oref-swift Profile from 3 to 1 and add/adjust unit tests to allow ratio == 1.",
-      "userFacingImpact": "Profiles with carbRatio values between 1 and 3 that were previously rejected by oref-swift validation will now be accepted. The change is limited to the Profile carbRatio bounds check and its tests as shown in the diff.",
-      "category": "algorithm-and-dosing",
-      "sourceIds": [
-        "pr:gordolio/Trio#1283",
-        "pr:nightscout/Trio#1283",
-        "commit:b17426d68c22",
-        "commit:7bd8dfa8b936",
-        "file:157e90dcfb96",
-        "file:fae2bdf4ad01",
-        "diff:04095e5d4be5"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:gordolio/Trio#1283",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1283: Update minimum carb ratio in oref-swift to 1",
-          "url": "https://github.com/nightscout/Trio/pull/1283"
-        },
-        {
-          "id": "pr:nightscout/Trio#1283",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1283: Update minimum carb ratio in oref-swift to 1",
-          "url": "https://github.com/nightscout/Trio/pull/1283"
-        },
-        {
-          "id": "commit:b17426d68c22",
-          "type": "commit",
-          "title": "Update minimum carb ratio in oref-swift to 1",
-          "url": "https://github.com/gordolio/Trio/commit/b17426d68c223ac7f00975f94860ebcfa877d664"
-        },
-        {
-          "id": "commit:7bd8dfa8b936",
-          "type": "commit",
-          "title": "Merge pull request #1283 from nightscout/oref-swift-fix-carb-ratio",
-          "url": "https://github.com/gordolio/Trio/commit/7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-        },
-        {
-          "id": "file:157e90dcfb96",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/Profile/Carbs.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-        },
-        {
-          "id": "file:fae2bdf4ad01",
-          "type": "file",
-          "title": "TrioTests/OpenAPSSwiftTests/ProfileCarbsTests.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-        },
-        {
-          "id": "diff:04095e5d4be5",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1283",
-          "url": "https://github.com/gordolio/Trio/compare/3f36530db767b92516cc490b54b58c0855b752ef...7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-        }
-      ]
-    }
-  ],
+  "highlights": [],
   "categories": [
-    {
-      "category": "highlights",
-      "title": "Highlights",
-      "items": []
-    },
     {
       "category": "new-features",
       "title": "New Features",
@@ -99,73 +28,7 @@
     {
       "category": "algorithm-and-dosing",
       "title": "Algorithm and Dosing Changes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1283"
-          ],
-          "summary": "Lower minimum carbRatio validation in oref-swift Profile from 3 to 1 and add/adjust unit tests to allow ratio == 1.",
-          "userFacingImpact": "Profiles with carbRatio values between 1 and 3 that were previously rejected by oref-swift validation will now be accepted. The change is limited to the Profile carbRatio bounds check and its tests as shown in the diff.",
-          "category": "algorithm-and-dosing",
-          "sourceIds": [
-            "pr:gordolio/Trio#1283",
-            "pr:nightscout/Trio#1283",
-            "commit:b17426d68c22",
-            "commit:7bd8dfa8b936",
-            "file:157e90dcfb96",
-            "file:fae2bdf4ad01",
-            "diff:04095e5d4be5"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1283",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1283: Update minimum carb ratio in oref-swift to 1",
-              "url": "https://github.com/nightscout/Trio/pull/1283"
-            },
-            {
-              "id": "pr:nightscout/Trio#1283",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1283: Update minimum carb ratio in oref-swift to 1",
-              "url": "https://github.com/nightscout/Trio/pull/1283"
-            },
-            {
-              "id": "commit:b17426d68c22",
-              "type": "commit",
-              "title": "Update minimum carb ratio in oref-swift to 1",
-              "url": "https://github.com/gordolio/Trio/commit/b17426d68c223ac7f00975f94860ebcfa877d664"
-            },
-            {
-              "id": "commit:7bd8dfa8b936",
-              "type": "commit",
-              "title": "Merge pull request #1283 from nightscout/oref-swift-fix-carb-ratio",
-              "url": "https://github.com/gordolio/Trio/commit/7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-            },
-            {
-              "id": "file:157e90dcfb96",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/Profile/Carbs.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-            },
-            {
-              "id": "file:fae2bdf4ad01",
-              "type": "file",
-              "title": "TrioTests/OpenAPSSwiftTests/ProfileCarbsTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-            },
-            {
-              "id": "diff:04095e5d4be5",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1283",
-              "url": "https://github.com/gordolio/Trio/compare/3f36530db767b92516cc490b54b58c0855b752ef...7bd8dfa8b936d071c955be67b3ac82aea1d85724"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "pump-and-cgm",
@@ -190,125 +53,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1279"
-          ],
-          "summary": "Revert Xcode signing to $(DEVELOPER_TEAM) and update Trio.xcodeproj/project.pbxproj entries, re-adding/reordering alert-related sources, tests, and moving/adding files (e.g., TreatmentsSettingsView.swift, TimeInterval+Convenience.swift).",
-          "userFacingImpact": "This PR reverts project signing to $(DEVELOPER_TEAM) and updates the Xcode project file. It may affect which source files and tests are included in builds and test targets; a human reviewer should verify that the signing change and the project file edits produce the intended build and test results.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "pr:gordolio/Trio#1279",
-            "pr:nightscout/Trio#1279",
-            "commit:6b0a4773632e",
-            "commit:d694a9fdda36",
-            "file:c749f82c47d0",
-            "diff:6cd29775621e"
-          ],
-          "confidence": "medium",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1279",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1279: Fix signing, revert back to $(DEVELOPER_TEAM)",
-              "url": "https://github.com/nightscout/Trio/pull/1279"
-            },
-            {
-              "id": "pr:nightscout/Trio#1279",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1279: Fix signing, revert back to $(DEVELOPER_TEAM)",
-              "url": "https://github.com/nightscout/Trio/pull/1279"
-            },
-            {
-              "id": "commit:6b0a4773632e",
-              "type": "commit",
-              "title": "Fix signing, revert back to",
-              "url": "https://github.com/gordolio/Trio/commit/6b0a4773632e562e0f1a4617341c983a72cba0ca"
-            },
-            {
-              "id": "commit:d694a9fdda36",
-              "type": "commit",
-              "title": "Merge pull request #1279 from nightscout/fix-signing",
-              "url": "https://github.com/gordolio/Trio/commit/d694a9fdda366bfc82be956893b777e05588511c"
-            },
-            {
-              "id": "file:c749f82c47d0",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/d694a9fdda366bfc82be956893b777e05588511c"
-            },
-            {
-              "id": "diff:6cd29775621e",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1279",
-              "url": "https://github.com/gordolio/Trio/compare/aa1b6905790867a743f8c37f95101c77213a0b59...d694a9fdda366bfc82be956893b777e05588511c"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "commit:3f36530db767b92516cc490b54b58c0855b752ef",
-            "commit:e5a175ad27ab03c62ad19dfda5756bee12e91497"
-          ],
-          "summary": "Development version metadata bumps in Config.xcconfig: APP_DEV_VERSION incremented (0.8.4.6 -> 0.8.4.7, then 0.8.4.7 -> 0.8.4.8).",
-          "userFacingImpact": "These commits update APP_DEV_VERSION (development/CI metadata) in Config.xcconfig. No functional or runtime behavior changes are evident in the provided diffs, but human review is recommended to confirm there are no unintended side effects.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:3f36530db767",
-            "file:85815ffdef47",
-            "diff:852cd63dee7b",
-            "commit:e5a175ad27ab",
-            "file:fa0c5365167c",
-            "diff:0bbb338d0e51"
-          ],
-          "confidence": "medium",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:3f36530db767",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.7 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/3f36530db767b92516cc490b54b58c0855b752ef"
-            },
-            {
-              "id": "file:85815ffdef47",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/3f36530db767b92516cc490b54b58c0855b752ef"
-            },
-            {
-              "id": "diff:852cd63dee7b",
-              "type": "diff",
-              "title": "Diff for commit:3f36530db767b92516cc490b54b58c0855b752ef",
-              "url": "https://github.com/gordolio/Trio/compare/d694a9fdda366bfc82be956893b777e05588511c...3f36530db767b92516cc490b54b58c0855b752ef"
-            },
-            {
-              "id": "commit:e5a175ad27ab",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.8 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/e5a175ad27ab03c62ad19dfda5756bee12e91497"
-            },
-            {
-              "id": "file:fa0c5365167c",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/e5a175ad27ab03c62ad19dfda5756bee12e91497"
-            },
-            {
-              "id": "diff:0bbb338d0e51",
-              "type": "diff",
-              "title": "Diff for commit:e5a175ad27ab03c62ad19dfda5756bee12e91497",
-              "url": "https://github.com/gordolio/Trio/compare/7bd8dfa8b936d071c955be67b3ac82aea1d85724...e5a175ad27ab03c62ad19dfda5756bee12e91497"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -317,110 +62,7 @@
     }
   ],
   "maintenanceHotspots": [],
-  "includedPullRequests": [
-    {
-      "repository": "gordolio/Trio",
-      "number": 1279,
-      "title": "Fix signing, revert back to $(DEVELOPER_TEAM)",
-      "body": "Fixes #1276 .",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1279",
-      "mergedAt": "2026-07-08T22:55:11Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1279,
-      "title": "Fix signing, revert back to $(DEVELOPER_TEAM)",
-      "body": "Fixes #1276 .",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1279",
-      "mergedAt": "2026-07-08T22:55:11Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1283,
-      "title": "Update minimum carb ratio in oref-swift to 1",
-      "body": "The oref-swift implementation for Profile still used the old logic for\r\nminimum carb ratios of 3, this commit updates that value to 1 to be\r\nconsistent with the JS implementation.\r\n\r\nAdded a unit test for this case and tested it in the simulator to confirm the same behavior and the fix after I implemented it.\r\n\r\nThanks to @MikePlante1 for finding the root cause and oddst for reporting it.\r\n\r\nFixes: https://github.com/nightscout/Trio/issues/1282 \r\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1283",
-      "mergedAt": "2026-07-10T02:50:56Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1283,
-      "title": "Update minimum carb ratio in oref-swift to 1",
-      "body": "The oref-swift implementation for Profile still used the old logic for\r\nminimum carb ratios of 3, this commit updates that value to 1 to be\r\nconsistent with the JS implementation.\r\n\r\nAdded a unit test for this case and tested it in the simulator to confirm the same behavior and the fix after I implemented it.\r\n\r\nThanks to @MikePlante1 for finding the root cause and oddst for reporting it.\r\n\r\nFixes: https://github.com/nightscout/Trio/issues/1282 \r\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1283",
-      "mergedAt": "2026-07-10T02:50:56Z"
-    }
-  ],
-  "includedCommits": [
-    {
-      "sha": "6b0a4773632e562e0f1a4617341c983a72cba0ca",
-      "subject": "Fix signing, revert back to",
-      "author": "dnzxy",
-      "authoredAt": "2026-07-09T00:19:19+02:00"
-    },
-    {
-      "sha": "d694a9fdda366bfc82be956893b777e05588511c",
-      "subject": "Merge pull request #1279 from nightscout/fix-signing",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-07-09T00:55:11+02:00"
-    },
-    {
-      "sha": "3f36530db767b92516cc490b54b58c0855b752ef",
-      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.7 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-07-08T22:55:20Z"
-    },
-    {
-      "sha": "b55905a74258675235dda4e0a1637ee6fb197d67",
-      "subject": "Merge branch 'nightscout:dev' into dev",
-      "author": "Gordon Child",
-      "authoredAt": "2026-07-09T07:00:41-05:00"
-    },
-    {
-      "sha": "b17426d68c223ac7f00975f94860ebcfa877d664",
-      "subject": "Update minimum carb ratio in oref-swift to 1",
-      "author": "Sam King",
-      "authoredAt": "2026-07-09T17:59:07-07:00"
-    },
-    {
-      "sha": "7bd8dfa8b936d071c955be67b3ac82aea1d85724",
-      "subject": "Merge pull request #1283 from nightscout/oref-swift-fix-carb-ratio",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-07-10T04:50:55+02:00"
-    },
-    {
-      "sha": "e5a175ad27ab03c62ad19dfda5756bee12e91497",
-      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.8 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-07-10T02:51:06Z"
-    },
-    {
-      "sha": "16691d214075c881255083e627c0b52cfdeb741c",
-      "subject": "Merge branch 'nightscout:dev' into dev",
-      "author": "Gordon Child",
-      "authoredAt": "2026-07-10T10:59:54-05:00"
-    }
-  ],
-  "includedFiles": [
-    {
-      "status": "M",
-      "path": "Config.xcconfig"
-    },
-    {
-      "status": "M",
-      "path": "Trio.xcodeproj/project.pbxproj"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/APS/OpenAPSSwift/Profile/Carbs.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/OpenAPSSwiftTests/ProfileCarbsTests.swift"
-    }
-  ]
+  "includedPullRequests": [],
+  "includedCommits": [],
+  "includedFiles": []
 }

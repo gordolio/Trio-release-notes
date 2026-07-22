@@ -22,6 +22,9 @@ const INTERNAL_PATH_PREFIXES = [
 const MAX_FILE_SOURCES = 200;
 const MAX_COMMIT_SOURCES = 200;
 
+// Automated CI housekeeping commits that never belong in user-facing release notes.
+const SKIPPED_COMMIT_SUBJECTS = /^CI: Bump APP_DEV_VERSION\b/;
+
 function compactSourceId(type: string, value: string): string {
   return `${type}:${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
 }
@@ -83,7 +86,9 @@ export async function normalizeChanges(
 ): Promise<NormalizedChange[]> {
   const groups = new Map<string, { commits: CommitRecord[]; pulls: PullRequestRecord[] }>();
 
-  for (const commit of commits.filter((candidate) => !candidate.isUpstreamSyncMerge)) {
+  for (const commit of commits.filter(
+    (candidate) => !candidate.isUpstreamSyncMerge && !SKIPPED_COMMIT_SUBJECTS.test(candidate.subject)
+  )) {
     const [originPulls, upstreamPulls] = await Promise.all([
       github.associatedPullRequests(config.sourceRepository, commit.sha),
       github.associatedPullRequests(config.upstreamRepository, commit.sha)

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
     "sourceWorkflowRunId": 29619506586,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29619506586",
@@ -8,75 +8,38 @@
     "currentBuiltSha": "94020d890ae2b51751f2639366fcf01ac07fb7a7",
     "shortSha": "94020d8",
     "buildDate": "2026-07-17T23:12:38.000Z",
-    "generationDate": "2026-07-21T10:24:05.402Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "3",
+    "generationDate": "2026-07-22T01:48:39.954Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1325"
+      "changeId": "pr:nightscout/Trio#1325",
+      "title": "Hide inactive temp-target presets from main chart",
+      "changes": [
+        "New temp-target presets no longer appear on the main chart unless you activate them.",
+        "Cancelled temp targets no longer remain visible until the app is backgrounded.",
+        "The chart refreshes with the current time so recent temp-target changes are reflected immediately."
       ],
-      "summary": "Exclude temp target presets from the main chart and re-filter fetched results with a fresh \"now\". The NSPredicate.tempTargetsForMainChart predicate was changed to require isPreset == false for scheduled items (Model/Helper/TempTargetStored+Helper.swift). A new TempTargetStored.isVisibleInChart computed property was added to represent which temp targets should be drawn (running or non-preset future scheduled items). Home.StateModel.updateTempTargetsFromController now filters the controller's fetchedObjects with .isVisibleInChart before assigning to the chart model. Tests were added to verify the predicate behavior and chart visibility rules.",
-      "userFacingImpact": "Users should no longer see newly saved temp-target presets (never activated) appear in the main chart. Cancelled/expired temp targets that previously remained drawn until the app was backgrounded should also stop being shown because the fetched results are re-filtered with a fresh date before reaching the chart. The change is limited to chart visibility logic for temp targets and adds tests to cover the behavior.",
       "category": "fixes",
       "sourceIds": [
-        "pr:gordolio/Trio#1325",
         "pr:nightscout/Trio#1325",
-        "commit:e91000c377c5",
-        "commit:8f871665a3ea",
-        "file:740de59a436e",
-        "file:cb75267de0a0",
-        "file:684e8016aaf6",
         "diff:cfca68fbad01"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1325"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
-        {
-          "id": "pr:gordolio/Trio#1325",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1325: Fix temp target presets showing up in the main chart",
-          "url": "https://github.com/nightscout/Trio/pull/1325"
-        },
         {
           "id": "pr:nightscout/Trio#1325",
           "type": "pull-request",
           "title": "nightscout/Trio#1325: Fix temp target presets showing up in the main chart",
           "url": "https://github.com/nightscout/Trio/pull/1325"
-        },
-        {
-          "id": "commit:e91000c377c5",
-          "type": "commit",
-          "title": "Fix temp target presets showing up in the main chart",
-          "url": "https://github.com/gordolio/Trio/commit/e91000c377c5545316ec82db586b613b011fdc62"
-        },
-        {
-          "id": "commit:8f871665a3ea",
-          "type": "commit",
-          "title": "Merge pull request #1325 from bjorkert/fix/1324-preset-shown-in-chart",
-          "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
-        },
-        {
-          "id": "file:740de59a436e",
-          "type": "file",
-          "title": "Model/Helper/TempTargetStored+Helper.swift",
-          "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
-        },
-        {
-          "id": "file:cb75267de0a0",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/TempTargetSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
-        },
-        {
-          "id": "file:684e8016aaf6",
-          "type": "file",
-          "title": "TrioTests/CoreDataTests/TempTargetStorageTests.swift",
-          "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
         },
         {
           "id": "diff:cfca68fbad01",
@@ -89,11 +52,6 @@
   ],
   "categories": [
     {
-      "category": "highlights",
-      "title": "Highlights",
-      "items": []
-    },
-    {
       "category": "new-features",
       "title": "New Features",
       "items": []
@@ -101,80 +59,7 @@
     {
       "category": "fixes",
       "title": "Fixes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1325"
-          ],
-          "summary": "Exclude temp target presets from the main chart and re-filter fetched results with a fresh \"now\". The NSPredicate.tempTargetsForMainChart predicate was changed to require isPreset == false for scheduled items (Model/Helper/TempTargetStored+Helper.swift). A new TempTargetStored.isVisibleInChart computed property was added to represent which temp targets should be drawn (running or non-preset future scheduled items). Home.StateModel.updateTempTargetsFromController now filters the controller's fetchedObjects with .isVisibleInChart before assigning to the chart model. Tests were added to verify the predicate behavior and chart visibility rules.",
-          "userFacingImpact": "Users should no longer see newly saved temp-target presets (never activated) appear in the main chart. Cancelled/expired temp targets that previously remained drawn until the app was backgrounded should also stop being shown because the fetched results are re-filtered with a fresh date before reaching the chart. The change is limited to chart visibility logic for temp targets and adds tests to cover the behavior.",
-          "category": "fixes",
-          "sourceIds": [
-            "pr:gordolio/Trio#1325",
-            "pr:nightscout/Trio#1325",
-            "commit:e91000c377c5",
-            "commit:8f871665a3ea",
-            "file:740de59a436e",
-            "file:cb75267de0a0",
-            "file:684e8016aaf6",
-            "diff:cfca68fbad01"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1325",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1325: Fix temp target presets showing up in the main chart",
-              "url": "https://github.com/nightscout/Trio/pull/1325"
-            },
-            {
-              "id": "pr:nightscout/Trio#1325",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1325: Fix temp target presets showing up in the main chart",
-              "url": "https://github.com/nightscout/Trio/pull/1325"
-            },
-            {
-              "id": "commit:e91000c377c5",
-              "type": "commit",
-              "title": "Fix temp target presets showing up in the main chart",
-              "url": "https://github.com/gordolio/Trio/commit/e91000c377c5545316ec82db586b613b011fdc62"
-            },
-            {
-              "id": "commit:8f871665a3ea",
-              "type": "commit",
-              "title": "Merge pull request #1325 from bjorkert/fix/1324-preset-shown-in-chart",
-              "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
-            },
-            {
-              "id": "file:740de59a436e",
-              "type": "file",
-              "title": "Model/Helper/TempTargetStored+Helper.swift",
-              "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
-            },
-            {
-              "id": "file:cb75267de0a0",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/TempTargetSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
-            },
-            {
-              "id": "file:684e8016aaf6",
-              "type": "file",
-              "title": "TrioTests/CoreDataTests/TempTargetStorageTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/8f871665a3ea011ee0b39278d098ca3916d7976c"
-            },
-            {
-              "id": "diff:cfca68fbad01",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1325",
-              "url": "https://github.com/gordolio/Trio/compare/145107726be7f3765ab117c274032300022b3026...8f871665a3ea011ee0b39278d098ca3916d7976c"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "algorithm-and-dosing",
@@ -204,45 +89,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeIds": [
-            "commit:384a0dca53f55a02617cb92dad29974835637551"
-          ],
-          "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.22 to 0.8.4.23 (diff shows the line change) (diff:0433b9eabea7, file:1ac055b51224, commit:384a0dca53f5).",
-          "userFacingImpact": "No functional or user-facing behavior change is evident in this commit; it updates a developer/build version constant (APP_DEV_VERSION) in Config.xcconfig (diff:0433b9eabea7, file:1ac055b51224) and the commit message indicates a CI/dev-version bump (commit:384a0dca53f5). If a deeper impact analysis is required (e.g., how this version string is surfaced in releases or CI flows), human review is recommended.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:384a0dca53f5",
-            "file:1ac055b51224",
-            "diff:0433b9eabea7"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:384a0dca53f5",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.23 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/384a0dca53f55a02617cb92dad29974835637551"
-            },
-            {
-              "id": "file:1ac055b51224",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/384a0dca53f55a02617cb92dad29974835637551"
-            },
-            {
-              "id": "diff:0433b9eabea7",
-              "type": "diff",
-              "title": "Diff for commit:384a0dca53f55a02617cb92dad29974835637551",
-              "url": "https://github.com/gordolio/Trio/compare/8f871665a3ea011ee0b39278d098ca3916d7976c...384a0dca53f55a02617cb92dad29974835637551"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -288,7 +135,7 @@
       "sha": "384a0dca53f55a02617cb92dad29974835637551",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.23 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-17T21:18:57Z"
+      "authoredAt": "2026-07-17T21:18:57+00:00"
     },
     {
       "sha": "94020d890ae2b51751f2639366fcf01ac07fb7a7",

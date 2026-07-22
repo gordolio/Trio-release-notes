@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
     "sourceWorkflowRunId": 29460490623,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29460490623",
@@ -8,45 +8,34 @@
     "currentBuiltSha": "bec792178804d8ca597de52a749a8a2aa8035d4c",
     "shortSha": "bec7921",
     "buildDate": "2026-07-16T00:26:42.000Z",
-    "generationDate": "2026-07-21T10:22:36.452Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "3",
+    "generationDate": "2026-07-22T01:46:59.301Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1290"
+      "changeId": "pr:nightscout/Trio#1290",
+      "title": "Prevent duplicate Nightscout uploads",
+      "changes": [
+        "Duplicate Nightscout treatments are no longer created.",
+        "Uploads start immediately instead of waiting a fixed 2-second delay.",
+        "Rapid or simultaneous triggers are coalesced so uploads are not lost or duplicated.",
+        "App Intents and remote commands still wait until their upload finishes before completing."
       ],
-      "summary": "Introduce NightscoutUploadSerializer to serialize, coalesce, and run Nightscout upload runs per NightscoutUploadPipeline (ensures at most one in-flight run per pipeline and one queued follow-up). BaseNightscoutManager upload entry points now call into the serializer; internal upload implementations were renamed to performUpload*() and are executed in the serializer-run context. Removed the prior per-pipeline 2s throttle/Combine machinery. Unit tests for serializer concurrency, queuing, coalescing, reentrancy, and pipeline independence were added.",
-      "userFacingImpact": "Fixes duplicate Nightscout treatment uploads caused by overlapping upload runs by ensuring no two runs of the same pipeline overlap. Uploads now start immediately (removed fixed 2s throttle) and queued follow-up requests are coalesced rather than silently dropped. App Intent/awaitable upload semantics are preserved but routed through the serializer. Tests covering the new behavior were added; run the test suite during review.",
       "category": "fixes",
       "sourceIds": [
-        "pr:gordolio/Trio#1290",
         "pr:nightscout/Trio#1290",
-        "commit:977e9b6af576",
-        "commit:7abe6b3f408d",
-        "commit:9569c3aa607d",
-        "commit:4bc16ca78dea",
-        "file:628cc12e4210",
-        "file:953f1c543867",
-        "file:e3127c4bcf24",
-        "file:f4bb88f065a8",
-        "file:070046c0e8d5",
-        "file:6e3a5d6648c1",
-        "diff:2a07f1b01b28"
+        "commit:977e9b6af576"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1290"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
-        {
-          "id": "pr:gordolio/Trio#1290",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1290: Fix duplicate Nightscout treatment uploads by serializing per-pipeline runs",
-          "url": "https://github.com/nightscout/Trio/pull/1290"
-        },
         {
           "id": "pr:nightscout/Trio#1290",
           "type": "pull-request",
@@ -58,462 +47,103 @@
           "type": "commit",
           "title": "Fix duplicate Nightscout treatment uploads by serializing per-pipeline runs",
           "url": "https://github.com/gordolio/Trio/commit/977e9b6af57609efa287221109da1ce9f64bd5d4"
-        },
-        {
-          "id": "commit:7abe6b3f408d",
-          "type": "commit",
-          "title": "Merge remote-tracking branch 'upstream/dev' into fix-nightscout-duplicate-uploads",
-          "url": "https://github.com/gordolio/Trio/commit/7abe6b3f408d3308f5d6e9bd9ad2c123c2f2df12"
-        },
-        {
-          "id": "commit:9569c3aa607d",
-          "type": "commit",
-          "title": "Adjustments based on code review",
-          "url": "https://github.com/gordolio/Trio/commit/9569c3aa607da65fb5fef2f4e84e07ead17b8477"
-        },
-        {
-          "id": "commit:4bc16ca78dea",
-          "type": "commit",
-          "title": "Merge pull request #1290 from bjorkert/fix-nightscout-duplicate-uploads",
-          "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-        },
-        {
-          "id": "file:628cc12e4210",
-          "type": "file",
-          "title": "Trio.xcodeproj/project.pbxproj",
-          "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-        },
-        {
-          "id": "file:953f1c543867",
-          "type": "file",
-          "title": "Trio/Sources/Services/Network/Nightscout/BaseNightscoutManager+Subscribers.swift",
-          "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-        },
-        {
-          "id": "file:e3127c4bcf24",
-          "type": "file",
-          "title": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-        },
-        {
-          "id": "file:f4bb88f065a8",
-          "type": "file",
-          "title": "Trio/Sources/Services/Network/Nightscout/NightscoutUploadPipeline.swift",
-          "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-        },
-        {
-          "id": "file:070046c0e8d5",
-          "type": "file",
-          "title": "Trio/Sources/Services/Network/Nightscout/NightscoutUploadSerializer.swift",
-          "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-        },
-        {
-          "id": "file:6e3a5d6648c1",
-          "type": "file",
-          "title": "TrioTests/NightscoutUploadSerializerTests.swift",
-          "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-        },
-        {
-          "id": "diff:2a07f1b01b28",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1290",
-          "url": "https://github.com/gordolio/Trio/compare/e5a175ad27ab03c62ad19dfda5756bee12e91497...4bc16ca78deaf684efe08b21eab37da2cff467d7"
         }
       ]
     },
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1317"
+      "changeId": "pr:nightscout/Trio#1313",
+      "title": "Manual Temp Basal and pump reliability fixes",
+      "changes": [
+        "You can start a Manual Temporary Basal from Trio.",
+        "Trio gains a backup flow to handle pump error code 7.",
+        "Duplicate callback events that could run twice are prevented.",
+        "Sync collisions between app and pump are reduced to improve reliability."
       ],
-      "summary": "Remove the Javascript oref implementation and related JS resources/build references; convert algorithm code to use native Swift types instead of JSON-encoded intermediates (beginning removal of JSON marshalling).",
-      "userFacingImpact": "The Javascript oref implementation and its JS bundles/resources were removed; the app now relies on the Swift oref implementation. Algorithm inputs/outputs are being refactored to use native Swift types (e.g., makeProfile and glucose conversion). If you relied on the removed Javascript worker, script files, or the removed useJavascriptOref setting, those runtime/code-path references are no longer present.",
-      "category": "algorithm-and-dosing",
+      "category": "pump-and-cgm",
       "sourceIds": [
-        "pr:gordolio/Trio#1317",
-        "pr:nightscout/Trio#1317",
-        "commit:1183424b8c32",
-        "commit:47e3eaaa32b6",
-        "commit:6f99e1e6b2dc",
-        "commit:910f761415c7",
-        "commit:4d7a004d2b6a",
-        "commit:cc189865c046",
-        "commit:c18e7a980e77",
-        "commit:31a88b0dc0dc",
-        "commit:aceb300ac3a3",
-        "file:fe1179f4086b",
-        "file:1f82a47a65e6",
-        "file:f48354b6b328",
-        "file:76983a73acc2",
-        "file:b9f2195efda0",
-        "file:80353e57a710",
-        "file:ae1acb3ae86a",
-        "file:10ef3850deac",
-        "file:d81ad7dc1711",
-        "file:172c40f5cf78",
-        "file:9cace7e8d91b",
-        "file:a8d92c1b953f",
-        "file:2c615c6a2684",
-        "file:a69550706488",
-        "file:37f0c9ac1314",
-        "file:9105e0fd4a33",
-        "file:2f741901af18",
-        "file:310a210332aa",
-        "file:c14d26a2bbcc",
-        "file:0c2d1b34543f",
-        "file:a4839e498bb9",
-        "file:d3c3abe7991d",
-        "file:5630950dea5c",
-        "file:2b350031775e",
-        "file:391277a52d90",
-        "file:4b1e584393ca",
-        "file:d33bf6891456",
-        "file:70d676f10139",
-        "file:6038a4a5d541",
-        "file:2f995ef001c2",
-        "file:7143ee02f923",
-        "file:2c3dca8ce08e",
-        "file:bf22030ec564",
-        "file:38651a63451a",
-        "file:d0572899f46e",
-        "file:9c730d3b0906",
-        "file:bb585d517eeb",
-        "diff:e16225287c06"
+        "pr:nightscout/Trio#1313",
+        "commit:cfd1b04ad740"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1313"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:gordolio/Trio#1317",
+          "id": "pr:nightscout/Trio#1313",
           "type": "pull-request",
-          "title": "gordolio/Trio#1317: Remove the Javascript algorithm and JSON marshaling from Trio",
-          "url": "https://github.com/nightscout/Trio/pull/1317"
+          "title": "nightscout/Trio#1313: Update MedtrumKit",
+          "url": "https://github.com/nightscout/Trio/pull/1313"
         },
         {
-          "id": "pr:nightscout/Trio#1317",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1317: Remove the Javascript algorithm and JSON marshaling from Trio",
-          "url": "https://github.com/nightscout/Trio/pull/1317"
-        },
-        {
-          "id": "commit:1183424b8c32",
+          "id": "commit:cfd1b04ad740",
           "type": "commit",
-          "title": "Remove the Javascript oref implementation",
-          "url": "https://github.com/gordolio/Trio/commit/1183424b8c32acb4c587427e2fa5552581e41d0b"
-        },
-        {
-          "id": "commit:47e3eaaa32b6",
-          "type": "commit",
-          "title": "Remove JSON marshalling for makeProfile",
-          "url": "https://github.com/gordolio/Trio/commit/47e3eaaa32b6897149629946070042e351cd1edb"
-        },
-        {
-          "id": "commit:6f99e1e6b2dc",
-          "type": "commit",
-          "title": "Update variable names",
-          "url": "https://github.com/gordolio/Trio/commit/6f99e1e6b2dc159a04fd81de0c1ff9c21b40b580"
-        },
-        {
-          "id": "commit:910f761415c7",
-          "type": "commit",
-          "title": "[Part 3 of 6] Remove JSON encoding for glucose",
-          "url": "https://github.com/gordolio/Trio/commit/910f761415c7b51299873408225dd71e44d764b8"
-        },
-        {
-          "id": "commit:4d7a004d2b6a",
-          "type": "commit",
-          "title": "Refactor to move logic with GlucoseStorage",
-          "url": "https://github.com/gordolio/Trio/commit/4d7a004d2b6a0f9a190516d4652a7ed412a80445"
-        },
-        {
-          "id": "commit:cc189865c046",
-          "type": "commit",
-          "title": "Remove unneeded helper function",
-          "url": "https://github.com/gordolio/Trio/commit/cc189865c04692fcc25b45bc102f8fe549686903"
-        },
-        {
-          "id": "commit:c18e7a980e77",
-          "type": "commit",
-          "title": "Merge dev into feat/remove-js-oref",
-          "url": "https://github.com/gordolio/Trio/commit/c18e7a980e776cc4902fcb6cc1361cb1d4d1bb6b"
-        },
-        {
-          "id": "commit:31a88b0dc0dc",
-          "type": "commit",
-          "title": "Merge branch 'dev' into feat/remove-js-oref",
-          "url": "https://github.com/gordolio/Trio/commit/31a88b0dc0dc203ebb683bcc7797b3b11701f737"
-        },
-        {
-          "id": "commit:aceb300ac3a3",
-          "type": "commit",
-          "title": "Merge pull request #1317 from nightscout/feat/remove-js-oref",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:fe1179f4086b",
-          "type": "file",
-          "title": "Trio.xcodeproj/project.pbxproj",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:1f82a47a65e6",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/autosens.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:f48354b6b328",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/autotune-core.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:76983a73acc2",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/autotune-prep.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:b9f2195efda0",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/basal-set-temp.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:80353e57a710",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/determine-basal.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:ae1acb3ae86a",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/glucose-get-last.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:10ef3850deac",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/iob.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:d81ad7dc1711",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/meal.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:172c40f5cf78",
-          "type": "file",
-          "title": "Trio/Resources/javascript/bundle/profile.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:9cace7e8d91b",
-          "type": "file",
-          "title": "Trio/Resources/javascript/middleware/determine_basal.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:a8d92c1b953f",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/autosens.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:2c615c6a2684",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/autotune-core.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:a69550706488",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/autotune-prep.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:37f0c9ac1314",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/determine-basal.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:9105e0fd4a33",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/iob.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:2f741901af18",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/log.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:310a210332aa",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/meal.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:c14d26a2bbcc",
-          "type": "file",
-          "title": "Trio/Resources/javascript/prepare/profile.js",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:0c2d1b34543f",
-          "type": "file",
-          "title": "Trio/Sources/APS/APSManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:a4839e498bb9",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPS/Constants.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:d3c3abe7991d",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPS/JavaScriptWorker.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:5630950dea5c",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:2b350031775e",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPS/Script.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:391277a52d90",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/JSONBridge.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:4b1e584393ca",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/Models/Profile.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:d33bf6891456",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/OpenAPSSwift.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:70d676f10139",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/GlucoseStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:6038a4a5d541",
-          "type": "file",
-          "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:2f995ef001c2",
-          "type": "file",
-          "title": "Trio/Sources/Models/AlgorithmGlucose.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:7143ee02f923",
-          "type": "file",
-          "title": "Trio/Sources/Models/BloodGlucose.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:2c3dca8ce08e",
-          "type": "file",
-          "title": "Trio/Sources/Models/TrioSettings.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:bf22030ec564",
-          "type": "file",
-          "title": "Trio/Sources/Modules/AlgorithmAdvancedSettings/AlgorithmAdvancedSettingsStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:38651a63451a",
-          "type": "file",
-          "title": "Trio/Sources/Modules/AlgorithmAdvancedSettings/View/AlgorithmAdvancedSettingsRootView.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:d0572899f46e",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/View/Header/LoopStatusView.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:9c730d3b0906",
-          "type": "file",
-          "title": "TrioTests/GlucoseNativeConversionTests.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "file:bb585d517eeb",
-          "type": "file",
-          "title": "TrioTests/GlucoseSmoothingTests.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-        },
-        {
-          "id": "diff:e16225287c06",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1317",
-          "url": "https://github.com/gordolio/Trio/compare/e9c000814d93c469c2d8dc3dc89f2b3edba70258...aceb300ac3a321413c845bddec6ed92a3fb0164b"
+          "title": "chore: update MedtrumKit",
+          "url": "https://github.com/gordolio/Trio/commit/cfd1b04ad740ac014c129bf2aa7fa697e4d75e2a"
         }
       ]
     },
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1316"
+      "changeId": "pr:nightscout/Trio#1311",
+      "title": "Process pump history natively, avoid JSON round-trip",
+      "changes": [
+        "Trio now reads pump history directly from storage instead of converting it to JSON first.",
+        "Unknown temp-basal subtypes are ignored (set to null) instead of causing a crash.",
+        "Fractional carb, fat, and protein values now preserve their expected decimal values.",
+        "The simulated bolus used for bolus-preview is still added, now represented as a native pump event."
       ],
-      "summary": "Remove the OpenAPSSwift bridging layer and refactor OpenAPS to call algorithm generators with native typed arguments instead of JSON strings. Deleted OpenAPSSwift.swift and OrefFunctionResult.swift; simplified JSONBridge decoders and replaced multiple generator functions with direct generator types (IobGenerator, MealGenerator, AutosensGenerator, DeterminationGenerator). Simplified Determination model code.",
-      "userFacingImpact": "DeterminationError messages are now exposed raw instead of being converted into a generic APSError; determination-related error messages may become directly visible where previously a generic message was shown. Passing native typed inputs into generators may affect dosing logic; a human review is required to confirm no unintended dosing or safety implications.",
-      "category": "algorithm-and-dosing",
+      "category": "pump-and-cgm",
       "sourceIds": [
-        "pr:gordolio/Trio#1316",
-        "pr:nightscout/Trio#1316",
-        "commit:991dff1b1546",
-        "commit:51c667c08c3d",
-        "commit:7ffbc498d6e3",
-        "file:5ff2fdbcd272",
-        "file:3e06375120cd",
-        "file:04858d32fabd",
-        "file:9603a162015e",
-        "file:bcb21baa6740",
-        "file:4f49dceb5ac9",
-        "file:9ea1682db304",
-        "file:aba574567ead",
-        "diff:9937ceb6a579"
+        "pr:nightscout/Trio#1311",
+        "diff:7459767b8260"
       ],
       "confidence": "high",
-      "humanReviewRequired": true,
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1311"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:gordolio/Trio#1316",
+          "id": "pr:nightscout/Trio#1311",
           "type": "pull-request",
-          "title": "gordolio/Trio#1316: [Part 6 of 6] Remove OpenAPSSwift.swift and use native arguments",
-          "url": "https://github.com/nightscout/Trio/pull/1316"
+          "title": "nightscout/Trio#1311: [Part 5 of 6] Remove JSON encoding for pump events",
+          "url": "https://github.com/nightscout/Trio/pull/1311"
         },
+        {
+          "id": "diff:7459767b8260",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1311",
+          "url": "https://github.com/gordolio/Trio/compare/35914e7a50668b6440c84332100e8ff0d2459d66...95b1c0179f621c7625cefac98272923584432f6a"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1316",
+      "title": "Run algorithm natively and expose real errors",
+      "changes": [
+        "The app now calls the insulin-dosing algorithm directly instead of converting inputs to JSON first.",
+        "The JSON bridge and its helper layer for the oref algorithm were removed from the call path.",
+        "Basal determination failures now show the underlying determination error message instead of a generic one.",
+        "Autosens results are now timestamped and saved immediately after calculation."
+      ],
+      "category": "algorithm-and-dosing",
+      "sourceIds": [
+        "pr:nightscout/Trio#1316",
+        "commit:991dff1b1546"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1316"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
         {
           "id": "pr:nightscout/Trio#1316",
           "type": "pull-request",
@@ -525,82 +155,46 @@
           "type": "commit",
           "title": "[Part 6 of 6] Remove OpenAPSSwift.swift and use native arguments",
           "url": "https://github.com/gordolio/Trio/commit/991dff1b1546b5f1484cf640f7cd6707f8a89473"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1309",
+      "title": "Restore default constrained-network behavior",
+      "changes": [
+        "Nightscout uploads no longer override the system's constrained-network setting.",
+        "Trio now relies on iOS to decide if uploads may use constrained networks.",
+        "The change restores the default URLRequest behavior for Nightscout uploads."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:nightscout/Trio#1309",
+        "diff:f2c6dbfcae37"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1309"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1309",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1309: Remove explicit allowsConstrainedNetworkAccess setting for Nightscout uploads",
+          "url": "https://github.com/nightscout/Trio/pull/1309"
         },
         {
-          "id": "commit:51c667c08c3d",
-          "type": "commit",
-          "title": "Update a comment",
-          "url": "https://github.com/gordolio/Trio/commit/51c667c08c3d0362e6ade375473a142027f34034"
-        },
-        {
-          "id": "commit:7ffbc498d6e3",
-          "type": "commit",
-          "title": "Merge pull request #1316 from nightscout/remove-openapsswift",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:5ff2fdbcd272",
-          "type": "file",
-          "title": "Trio.xcodeproj/project.pbxproj",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:3e06375120cd",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:04858d32fabd",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/JSONBridge.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:9603a162015e",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/Models/IobResult.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:bcb21baa6740",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/OpenAPSSwift.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:4f49dceb5ac9",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPSSwift/OrefFunctionResult.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:9ea1682db304",
-          "type": "file",
-          "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "file:aba574567ead",
-          "type": "file",
-          "title": "Trio/Sources/Models/Determination.swift",
-          "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-        },
-        {
-          "id": "diff:9937ceb6a579",
+          "id": "diff:f2c6dbfcae37",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1316",
-          "url": "https://github.com/gordolio/Trio/compare/c18e7a980e776cc4902fcb6cc1361cb1d4d1bb6b...7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
+          "title": "Diff for pr:nightscout/Trio#1309",
+          "url": "https://github.com/gordolio/Trio/compare/729382dc230f4546d206e9043c9a259d213d3ffa...cd00ea5bdd737bb9341a2846e590b7b07a1768ec"
         }
       ]
     }
   ],
   "categories": [
-    {
-      "category": "highlights",
-      "title": "Highlights",
-      "items": []
-    },
     {
       "category": "new-features",
       "title": "New Features",
@@ -611,140 +205,26 @@
       "title": "Fixes",
       "items": [
         {
-          "changeIds": [
-            "pr:nightscout/Trio#1290"
+          "changeId": "pr:nightscout/Trio#1315",
+          "title": "Fix swipe-delete confirmation for presets",
+          "changes": [
+            "Swipe-to-delete now reliably shows a confirmation before deleting Temporary Target presets.",
+            "Swipe-to-delete now reliably shows a confirmation before deleting Override presets.",
+            "If a preset is currently running, the confirmation offers to stop it and then delete it."
           ],
-          "summary": "Introduce NightscoutUploadSerializer to serialize, coalesce, and run Nightscout upload runs per NightscoutUploadPipeline (ensures at most one in-flight run per pipeline and one queued follow-up). BaseNightscoutManager upload entry points now call into the serializer; internal upload implementations were renamed to performUpload*() and are executed in the serializer-run context. Removed the prior per-pipeline 2s throttle/Combine machinery. Unit tests for serializer concurrency, queuing, coalescing, reentrancy, and pipeline independence were added.",
-          "userFacingImpact": "Fixes duplicate Nightscout treatment uploads caused by overlapping upload runs by ensuring no two runs of the same pipeline overlap. Uploads now start immediately (removed fixed 2s throttle) and queued follow-up requests are coalesced rather than silently dropped. App Intent/awaitable upload semantics are preserved but routed through the serializer. Tests covering the new behavior were added; run the test suite during review.",
           "category": "fixes",
           "sourceIds": [
-            "pr:gordolio/Trio#1290",
-            "pr:nightscout/Trio#1290",
-            "commit:977e9b6af576",
-            "commit:7abe6b3f408d",
-            "commit:9569c3aa607d",
-            "commit:4bc16ca78dea",
-            "file:628cc12e4210",
-            "file:953f1c543867",
-            "file:e3127c4bcf24",
-            "file:f4bb88f065a8",
-            "file:070046c0e8d5",
-            "file:6e3a5d6648c1",
-            "diff:2a07f1b01b28"
+            "pr:nightscout/Trio#1315",
+            "commit:7764a422afb7"
           ],
           "confidence": "high",
           "humanReviewRequired": false,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1290",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1290: Fix duplicate Nightscout treatment uploads by serializing per-pipeline runs",
-              "url": "https://github.com/nightscout/Trio/pull/1290"
-            },
-            {
-              "id": "pr:nightscout/Trio#1290",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1290: Fix duplicate Nightscout treatment uploads by serializing per-pipeline runs",
-              "url": "https://github.com/nightscout/Trio/pull/1290"
-            },
-            {
-              "id": "commit:977e9b6af576",
-              "type": "commit",
-              "title": "Fix duplicate Nightscout treatment uploads by serializing per-pipeline runs",
-              "url": "https://github.com/gordolio/Trio/commit/977e9b6af57609efa287221109da1ce9f64bd5d4"
-            },
-            {
-              "id": "commit:7abe6b3f408d",
-              "type": "commit",
-              "title": "Merge remote-tracking branch 'upstream/dev' into fix-nightscout-duplicate-uploads",
-              "url": "https://github.com/gordolio/Trio/commit/7abe6b3f408d3308f5d6e9bd9ad2c123c2f2df12"
-            },
-            {
-              "id": "commit:9569c3aa607d",
-              "type": "commit",
-              "title": "Adjustments based on code review",
-              "url": "https://github.com/gordolio/Trio/commit/9569c3aa607da65fb5fef2f4e84e07ead17b8477"
-            },
-            {
-              "id": "commit:4bc16ca78dea",
-              "type": "commit",
-              "title": "Merge pull request #1290 from bjorkert/fix-nightscout-duplicate-uploads",
-              "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            },
-            {
-              "id": "file:628cc12e4210",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            },
-            {
-              "id": "file:953f1c543867",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/Nightscout/BaseNightscoutManager+Subscribers.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            },
-            {
-              "id": "file:e3127c4bcf24",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            },
-            {
-              "id": "file:f4bb88f065a8",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/Nightscout/NightscoutUploadPipeline.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            },
-            {
-              "id": "file:070046c0e8d5",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/Nightscout/NightscoutUploadSerializer.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            },
-            {
-              "id": "file:6e3a5d6648c1",
-              "type": "file",
-              "title": "TrioTests/NightscoutUploadSerializerTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            },
-            {
-              "id": "diff:2a07f1b01b28",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1290",
-              "url": "https://github.com/gordolio/Trio/compare/e5a175ad27ab03c62ad19dfda5756bee12e91497...4bc16ca78deaf684efe08b21eab37da2cff467d7"
-            }
-          ]
-        },
-        {
           "changeIds": [
             "pr:nightscout/Trio#1315"
           ],
-          "summary": "Fix delete confirmation dialogs for Override and Temp Target presets so they no longer auto-dismiss. Replaced two-state-variable dialog driving inside ForEach with single optional delete targets and a confirmationDialog attached once to the view. Adjusted action button helpers.",
-          "userFacingImpact": "Fixes unreliable deletion when swiping Override or Temp Target presets: the confirmation dialog no longer auto-dismisses immediately, allowing users to confirm deletions successfully.",
-          "category": "fixes",
-          "sourceIds": [
-            "pr:gordolio/Trio#1315",
-            "pr:nightscout/Trio#1315",
-            "commit:7764a422afb7",
-            "commit:db46e1516ba4",
-            "file:e9bac34335bd",
-            "file:1d0f8ead58d5",
-            "file:edcd38e1d7ca",
-            "diff:5e7cd1fe7e79"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
           "highlight": false,
           "provenance": "upstream",
           "sources": [
-            {
-              "id": "pr:gordolio/Trio#1315",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1315: Fix Temp Target and Override delete confirmation auto-dismissing",
-              "url": "https://github.com/nightscout/Trio/pull/1315"
-            },
             {
               "id": "pr:nightscout/Trio#1315",
               "type": "pull-request",
@@ -756,87 +236,6 @@
               "type": "commit",
               "title": "Fix Temp Target and Override delete confirmation auto-dismissing",
               "url": "https://github.com/gordolio/Trio/commit/7764a422afb71787b48f581b80b10d7ce1eda2a1"
-            },
-            {
-              "id": "commit:db46e1516ba4",
-              "type": "commit",
-              "title": "Merge pull request #1315 from bjorkert/fix/adjustments-delete-confirmation",
-              "url": "https://github.com/gordolio/Trio/commit/db46e1516ba4d63f40f8843e14c55bea5a5d6096"
-            },
-            {
-              "id": "file:e9bac34335bd",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Adjustments/View/AdjustmentsRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/db46e1516ba4d63f40f8843e14c55bea5a5d6096"
-            },
-            {
-              "id": "file:1d0f8ead58d5",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Adjustments/View/Overrides/AdjustmentsRootView+Overrides.swift",
-              "url": "https://github.com/gordolio/Trio/commit/db46e1516ba4d63f40f8843e14c55bea5a5d6096"
-            },
-            {
-              "id": "file:edcd38e1d7ca",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Adjustments/View/TempTargets/AdjustmentsRootView+TempTargets.swift",
-              "url": "https://github.com/gordolio/Trio/commit/db46e1516ba4d63f40f8843e14c55bea5a5d6096"
-            },
-            {
-              "id": "diff:5e7cd1fe7e79",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1315",
-              "url": "https://github.com/gordolio/Trio/compare/40d45894db5c53ca6b9e67237b2c6d57ea31670c...db46e1516ba4d63f40f8843e14c55bea5a5d6096"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1309"
-          ],
-          "summary": "Remove explicit allowsConstrainedNetworkAccess = false from all Nightscout upload URLRequest constructions, restoring default URLRequest behavior.",
-          "userFacingImpact": "iOS will again decide how to handle constrained network access per system settings rather than the app forcing disallow; this addresses observed \"Constrained path prohibited\" upload errors. The patch removes the explicit flag but does not include test telemetry proving improved reliability, so human review and testing are recommended.",
-          "category": "fixes",
-          "sourceIds": [
-            "pr:gordolio/Trio#1309",
-            "pr:nightscout/Trio#1309",
-            "commit:cd00ea5bdd73",
-            "file:d9d6cc91cab4",
-            "diff:f2c6dbfcae37"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1309",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1309: Remove explicit allowsConstrainedNetworkAccess setting for Nightscout uploads",
-              "url": "https://github.com/nightscout/Trio/pull/1309"
-            },
-            {
-              "id": "pr:nightscout/Trio#1309",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1309: Remove explicit allowsConstrainedNetworkAccess setting for Nightscout uploads",
-              "url": "https://github.com/nightscout/Trio/pull/1309"
-            },
-            {
-              "id": "commit:cd00ea5bdd73",
-              "type": "commit",
-              "title": "Remove explicit allowsConstrainedNetworkAccess setting for Nightscout uploads (#1309)",
-              "url": "https://github.com/gordolio/Trio/commit/cd00ea5bdd737bb9341a2846e590b7b07a1768ec"
-            },
-            {
-              "id": "file:d9d6cc91cab4",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/Nightscout/NightscoutAPI.swift",
-              "url": "https://github.com/gordolio/Trio/commit/cd00ea5bdd737bb9341a2846e590b7b07a1768ec"
-            },
-            {
-              "id": "diff:f2c6dbfcae37",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1309",
-              "url": "https://github.com/gordolio/Trio/compare/729382dc230f4546d206e9043c9a259d213d3ffa...cd00ea5bdd737bb9341a2846e590b7b07a1768ec"
             }
           ]
         }
@@ -847,74 +246,27 @@
       "title": "Algorithm and Dosing Changes",
       "items": [
         {
-          "changeIds": [
-            "pr:nightscout/Trio#1317"
+          "changeId": "pr:nightscout/Trio#1317",
+          "title": "Remove JavaScript oref algorithm",
+          "changes": [
+            "Trio now uses only the Swift oref algorithm.",
+            "The app setting to run the JavaScript oref was removed.",
+            "JavaScript algorithm files and related resources were removed from the app bundle.",
+            "Internal data handling for the algorithm was simplified by removing extra JSON conversion steps."
           ],
-          "summary": "Remove the Javascript oref implementation and related JS resources/build references; convert algorithm code to use native Swift types instead of JSON-encoded intermediates (beginning removal of JSON marshalling).",
-          "userFacingImpact": "The Javascript oref implementation and its JS bundles/resources were removed; the app now relies on the Swift oref implementation. Algorithm inputs/outputs are being refactored to use native Swift types (e.g., makeProfile and glucose conversion). If you relied on the removed Javascript worker, script files, or the removed useJavascriptOref setting, those runtime/code-path references are no longer present.",
           "category": "algorithm-and-dosing",
           "sourceIds": [
-            "pr:gordolio/Trio#1317",
             "pr:nightscout/Trio#1317",
-            "commit:1183424b8c32",
-            "commit:47e3eaaa32b6",
-            "commit:6f99e1e6b2dc",
-            "commit:910f761415c7",
-            "commit:4d7a004d2b6a",
-            "commit:cc189865c046",
-            "commit:c18e7a980e77",
-            "commit:31a88b0dc0dc",
-            "commit:aceb300ac3a3",
-            "file:fe1179f4086b",
-            "file:1f82a47a65e6",
-            "file:f48354b6b328",
-            "file:76983a73acc2",
-            "file:b9f2195efda0",
-            "file:80353e57a710",
-            "file:ae1acb3ae86a",
-            "file:10ef3850deac",
-            "file:d81ad7dc1711",
-            "file:172c40f5cf78",
-            "file:9cace7e8d91b",
-            "file:a8d92c1b953f",
-            "file:2c615c6a2684",
-            "file:a69550706488",
-            "file:37f0c9ac1314",
-            "file:9105e0fd4a33",
-            "file:2f741901af18",
-            "file:310a210332aa",
-            "file:c14d26a2bbcc",
-            "file:0c2d1b34543f",
-            "file:a4839e498bb9",
-            "file:d3c3abe7991d",
-            "file:5630950dea5c",
-            "file:2b350031775e",
-            "file:391277a52d90",
-            "file:4b1e584393ca",
-            "file:d33bf6891456",
-            "file:70d676f10139",
-            "file:6038a4a5d541",
-            "file:2f995ef001c2",
-            "file:7143ee02f923",
-            "file:2c3dca8ce08e",
-            "file:bf22030ec564",
-            "file:38651a63451a",
-            "file:d0572899f46e",
-            "file:9c730d3b0906",
-            "file:bb585d517eeb",
-            "diff:e16225287c06"
+            "commit:1183424b8c32"
           ],
           "confidence": "high",
           "humanReviewRequired": false,
-          "highlight": true,
+          "changeIds": [
+            "pr:nightscout/Trio#1317"
+          ],
+          "highlight": false,
           "provenance": "upstream",
           "sources": [
-            {
-              "id": "pr:gordolio/Trio#1317",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1317: Remove the Javascript algorithm and JSON marshaling from Trio",
-              "url": "https://github.com/nightscout/Trio/pull/1317"
-            },
             {
               "id": "pr:nightscout/Trio#1317",
               "type": "pull-request",
@@ -926,319 +278,31 @@
               "type": "commit",
               "title": "Remove the Javascript oref implementation",
               "url": "https://github.com/gordolio/Trio/commit/1183424b8c32acb4c587427e2fa5552581e41d0b"
-            },
-            {
-              "id": "commit:47e3eaaa32b6",
-              "type": "commit",
-              "title": "Remove JSON marshalling for makeProfile",
-              "url": "https://github.com/gordolio/Trio/commit/47e3eaaa32b6897149629946070042e351cd1edb"
-            },
-            {
-              "id": "commit:6f99e1e6b2dc",
-              "type": "commit",
-              "title": "Update variable names",
-              "url": "https://github.com/gordolio/Trio/commit/6f99e1e6b2dc159a04fd81de0c1ff9c21b40b580"
-            },
-            {
-              "id": "commit:910f761415c7",
-              "type": "commit",
-              "title": "[Part 3 of 6] Remove JSON encoding for glucose",
-              "url": "https://github.com/gordolio/Trio/commit/910f761415c7b51299873408225dd71e44d764b8"
-            },
-            {
-              "id": "commit:4d7a004d2b6a",
-              "type": "commit",
-              "title": "Refactor to move logic with GlucoseStorage",
-              "url": "https://github.com/gordolio/Trio/commit/4d7a004d2b6a0f9a190516d4652a7ed412a80445"
-            },
-            {
-              "id": "commit:cc189865c046",
-              "type": "commit",
-              "title": "Remove unneeded helper function",
-              "url": "https://github.com/gordolio/Trio/commit/cc189865c04692fcc25b45bc102f8fe549686903"
-            },
-            {
-              "id": "commit:c18e7a980e77",
-              "type": "commit",
-              "title": "Merge dev into feat/remove-js-oref",
-              "url": "https://github.com/gordolio/Trio/commit/c18e7a980e776cc4902fcb6cc1361cb1d4d1bb6b"
-            },
-            {
-              "id": "commit:31a88b0dc0dc",
-              "type": "commit",
-              "title": "Merge branch 'dev' into feat/remove-js-oref",
-              "url": "https://github.com/gordolio/Trio/commit/31a88b0dc0dc203ebb683bcc7797b3b11701f737"
-            },
-            {
-              "id": "commit:aceb300ac3a3",
-              "type": "commit",
-              "title": "Merge pull request #1317 from nightscout/feat/remove-js-oref",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:fe1179f4086b",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:1f82a47a65e6",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/autosens.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:f48354b6b328",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/autotune-core.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:76983a73acc2",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/autotune-prep.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:b9f2195efda0",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/basal-set-temp.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:80353e57a710",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/determine-basal.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:ae1acb3ae86a",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/glucose-get-last.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:10ef3850deac",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/iob.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:d81ad7dc1711",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/meal.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:172c40f5cf78",
-              "type": "file",
-              "title": "Trio/Resources/javascript/bundle/profile.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:9cace7e8d91b",
-              "type": "file",
-              "title": "Trio/Resources/javascript/middleware/determine_basal.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:a8d92c1b953f",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/autosens.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:2c615c6a2684",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/autotune-core.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:a69550706488",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/autotune-prep.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:37f0c9ac1314",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/determine-basal.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:9105e0fd4a33",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/iob.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:2f741901af18",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/log.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:310a210332aa",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/meal.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:c14d26a2bbcc",
-              "type": "file",
-              "title": "Trio/Resources/javascript/prepare/profile.js",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:0c2d1b34543f",
-              "type": "file",
-              "title": "Trio/Sources/APS/APSManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:a4839e498bb9",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/Constants.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:d3c3abe7991d",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/JavaScriptWorker.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:5630950dea5c",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:2b350031775e",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/Script.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:391277a52d90",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/JSONBridge.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:4b1e584393ca",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/Models/Profile.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:d33bf6891456",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/OpenAPSSwift.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:70d676f10139",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/GlucoseStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:6038a4a5d541",
-              "type": "file",
-              "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:2f995ef001c2",
-              "type": "file",
-              "title": "Trio/Sources/Models/AlgorithmGlucose.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:7143ee02f923",
-              "type": "file",
-              "title": "Trio/Sources/Models/BloodGlucose.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:2c3dca8ce08e",
-              "type": "file",
-              "title": "Trio/Sources/Models/TrioSettings.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:bf22030ec564",
-              "type": "file",
-              "title": "Trio/Sources/Modules/AlgorithmAdvancedSettings/AlgorithmAdvancedSettingsStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:38651a63451a",
-              "type": "file",
-              "title": "Trio/Sources/Modules/AlgorithmAdvancedSettings/View/AlgorithmAdvancedSettingsRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:d0572899f46e",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/View/Header/LoopStatusView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:9c730d3b0906",
-              "type": "file",
-              "title": "TrioTests/GlucoseNativeConversionTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "file:bb585d517eeb",
-              "type": "file",
-              "title": "TrioTests/GlucoseSmoothingTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aceb300ac3a321413c845bddec6ed92a3fb0164b"
-            },
-            {
-              "id": "diff:e16225287c06",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1317",
-              "url": "https://github.com/gordolio/Trio/compare/e9c000814d93c469c2d8dc3dc89f2b3edba70258...aceb300ac3a321413c845bddec6ed92a3fb0164b"
             }
           ]
         },
         {
+          "changeId": "pr:nightscout/Trio#1294",
+          "title": "Use native carb entries instead of JSON",
+          "changes": [
+            "Carb data is passed to the algorithm as structured CarbsEntry objects instead of encoded JSON strings.",
+            "Carb entries read from storage now retain their stored IDs instead of being dropped by the old JSON round-trip.",
+            "Carb timestamps keep full precision (no ISO string encode/decode), improving internal date fidelity.",
+            "The synthetic \"additional carbs\" entry used for bolus simulation now includes an id and is produced as a CarbsEntry."
+          ],
+          "category": "algorithm-and-dosing",
+          "sourceIds": [
+            "pr:nightscout/Trio#1294",
+            "commit:3fea34f0f65c"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
           "changeIds": [
             "pr:nightscout/Trio#1294"
           ],
-          "summary": "Replace CoreData -> JSON string -> [CarbsEntry] pipeline with direct CoreData -> [CarbsEntry] mapping. Added CarbsStorage.getCarbsForAlgorithm(additionalCarbs:carbsDate:) and mapping helpers; removed the CarbEntryStored JSON encoder. Added tests (CarbsNativeConversionTests) validating parity with prior JSON round-trip except for documented id/date differences.",
-          "userFacingImpact": "Intended to preserve algorithm inputs via native mapping; golden tests assert field-for-field equivalence for covered cases except ids and millisecond date precision. Because this changes how carb entries are constructed and delivered to the dosing algorithm, potential behavioral differences are possible; a human review and regression test in staging is recommended before release.",
-          "category": "algorithm-and-dosing",
-          "sourceIds": [
-            "pr:gordolio/Trio#1294",
-            "pr:nightscout/Trio#1294",
-            "commit:3fea34f0f65c",
-            "commit:054df969972f",
-            "commit:35914e7a5066",
-            "file:665b319e6340",
-            "file:a96c20924cce",
-            "file:6142de97fdb2",
-            "file:2ccb33745ec4",
-            "file:cec2a648c7fe",
-            "file:8e278bc2bb06",
-            "file:6a2d27240b74",
-            "file:c5449df501df",
-            "diff:149115e44762"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
           "highlight": false,
           "provenance": "upstream",
           "sources": [
-            {
-              "id": "pr:gordolio/Trio#1294",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1294: [Part 4 of 6] Remove JSON encoding for carbs",
-              "url": "https://github.com/nightscout/Trio/pull/1294"
-            },
             {
               "id": "pr:nightscout/Trio#1294",
               "type": "pull-request",
@@ -1250,314 +314,6 @@
               "type": "commit",
               "title": "[Part 4 of 6] Remove JSON encoding for carbs",
               "url": "https://github.com/gordolio/Trio/commit/3fea34f0f65c8448747d946fc47f94366dfda6f9"
-            },
-            {
-              "id": "commit:054df969972f",
-              "type": "commit",
-              "title": "Address reviewer comments by reducing comments",
-              "url": "https://github.com/gordolio/Trio/commit/054df969972f6b3b24c306355eb8c510c2a20b3c"
-            },
-            {
-              "id": "commit:35914e7a5066",
-              "type": "commit",
-              "title": "Merge pull request #1294 from nightscout/remove-carbs-json",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:665b319e6340",
-              "type": "file",
-              "title": "Model/Helper/CarbEntryStored+helper.swift",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:a96c20924cce",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:6142de97fdb2",
-              "type": "file",
-              "title": "Trio/Sources/APS/APSManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:2ccb33745ec4",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:cec2a648c7fe",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/JSONBridge.swift",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:8e278bc2bb06",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/OpenAPSSwift.swift",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:6a2d27240b74",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/CarbsStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "file:c5449df501df",
-              "type": "file",
-              "title": "TrioTests/CarbsNativeConversionTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/35914e7a50668b6440c84332100e8ff0d2459d66"
-            },
-            {
-              "id": "diff:149115e44762",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1294",
-              "url": "https://github.com/gordolio/Trio/compare/cc189865c04692fcc25b45bc102f8fe549686903...35914e7a50668b6440c84332100e8ff0d2459d66"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1311"
-          ],
-          "summary": "Replace CoreData -> DTOs -> JSON string -> [PumpHistoryEvent] pipeline with direct CoreData -> [PumpHistoryEvent] mapping. Added PumpEventStored mapping helpers and adjusted OpenAPS.parsePumpHistory and call sites to accept native [PumpHistoryEvent]. Removed JSON-based pumpHistory parsing helper and added tests. Temp-basal subtype handling now nullifies temp when tempType is unrecognized or nil (instead of failing decode).",
-          "userFacingImpact": "Intended to be functionally identical for recorded pump events while removing an intermediate JSON round-trip. The deliberate change to temp basal subtype handling makes parsing more robust (unrecognized/nil tempType becomes nullified rather than causing decode failure). Because this modifies algorithm inputs, a human reviewer should confirm equivalence for dosing safety.",
-          "category": "algorithm-and-dosing",
-          "sourceIds": [
-            "pr:gordolio/Trio#1311",
-            "pr:nightscout/Trio#1311",
-            "commit:183376164e70",
-            "commit:80252e2524b4",
-            "commit:95b1c0179f62",
-            "file:b5f2c8b8ede6",
-            "file:723a39f73d28",
-            "file:8d8db369154b",
-            "file:c48ae5e4c426",
-            "file:a9fe4a974280",
-            "file:1eee7e4310df",
-            "file:204e2adb1601",
-            "file:bc4149b74f40",
-            "file:54720c4676a6",
-            "file:5533d7217200",
-            "diff:7459767b8260"
-          ],
-          "confidence": "medium",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1311",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1311: [Part 5 of 6] Remove JSON encoding for pump events",
-              "url": "https://github.com/nightscout/Trio/pull/1311"
-            },
-            {
-              "id": "pr:nightscout/Trio#1311",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1311: [Part 5 of 6] Remove JSON encoding for pump events",
-              "url": "https://github.com/nightscout/Trio/pull/1311"
-            },
-            {
-              "id": "commit:183376164e70",
-              "type": "commit",
-              "title": "[Part 5 of 6] Remove JSON encoding for pump events",
-              "url": "https://github.com/gordolio/Trio/commit/183376164e7080c482f3c9274ab4cd6ab1eca601"
-            },
-            {
-              "id": "commit:80252e2524b4",
-              "type": "commit",
-              "title": "Remove temp variable + running unit test script",
-              "url": "https://github.com/gordolio/Trio/commit/80252e2524b449af8a0949c84dc063b7e55530c1"
-            },
-            {
-              "id": "commit:95b1c0179f62",
-              "type": "commit",
-              "title": "Merge pull request #1311 from nightscout/remove-pump-event-json",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:b5f2c8b8ede6",
-              "type": "file",
-              "title": "Model/Helper/PumpEvent+helper.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:723a39f73d28",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:8d8db369154b",
-              "type": "file",
-              "title": "Trio/Sources/APS/Extensions/DecimalExtensions.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:c48ae5e4c426",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:a9fe4a974280",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/JSONBridge.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:1eee7e4310df",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/OpenAPSSwift.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:204e2adb1601",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/CarbsStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:bc4149b74f40",
-              "type": "file",
-              "title": "TrioTests/CarbsNativeConversionTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:54720c4676a6",
-              "type": "file",
-              "title": "TrioTests/JSONImporterTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "file:5533d7217200",
-              "type": "file",
-              "title": "TrioTests/PumpHistoryNativeConversionTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/95b1c0179f621c7625cefac98272923584432f6a"
-            },
-            {
-              "id": "diff:7459767b8260",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1311",
-              "url": "https://github.com/gordolio/Trio/compare/35914e7a50668b6440c84332100e8ff0d2459d66...95b1c0179f621c7625cefac98272923584432f6a"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1316"
-          ],
-          "summary": "Remove the OpenAPSSwift bridging layer and refactor OpenAPS to call algorithm generators with native typed arguments instead of JSON strings. Deleted OpenAPSSwift.swift and OrefFunctionResult.swift; simplified JSONBridge decoders and replaced multiple generator functions with direct generator types (IobGenerator, MealGenerator, AutosensGenerator, DeterminationGenerator). Simplified Determination model code.",
-          "userFacingImpact": "DeterminationError messages are now exposed raw instead of being converted into a generic APSError; determination-related error messages may become directly visible where previously a generic message was shown. Passing native typed inputs into generators may affect dosing logic; a human review is required to confirm no unintended dosing or safety implications.",
-          "category": "algorithm-and-dosing",
-          "sourceIds": [
-            "pr:gordolio/Trio#1316",
-            "pr:nightscout/Trio#1316",
-            "commit:991dff1b1546",
-            "commit:51c667c08c3d",
-            "commit:7ffbc498d6e3",
-            "file:5ff2fdbcd272",
-            "file:3e06375120cd",
-            "file:04858d32fabd",
-            "file:9603a162015e",
-            "file:bcb21baa6740",
-            "file:4f49dceb5ac9",
-            "file:9ea1682db304",
-            "file:aba574567ead",
-            "diff:9937ceb6a579"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1316",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1316: [Part 6 of 6] Remove OpenAPSSwift.swift and use native arguments",
-              "url": "https://github.com/nightscout/Trio/pull/1316"
-            },
-            {
-              "id": "pr:nightscout/Trio#1316",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1316: [Part 6 of 6] Remove OpenAPSSwift.swift and use native arguments",
-              "url": "https://github.com/nightscout/Trio/pull/1316"
-            },
-            {
-              "id": "commit:991dff1b1546",
-              "type": "commit",
-              "title": "[Part 6 of 6] Remove OpenAPSSwift.swift and use native arguments",
-              "url": "https://github.com/gordolio/Trio/commit/991dff1b1546b5f1484cf640f7cd6707f8a89473"
-            },
-            {
-              "id": "commit:51c667c08c3d",
-              "type": "commit",
-              "title": "Update a comment",
-              "url": "https://github.com/gordolio/Trio/commit/51c667c08c3d0362e6ade375473a142027f34034"
-            },
-            {
-              "id": "commit:7ffbc498d6e3",
-              "type": "commit",
-              "title": "Merge pull request #1316 from nightscout/remove-openapsswift",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:5ff2fdbcd272",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:3e06375120cd",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:04858d32fabd",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/JSONBridge.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:9603a162015e",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/Models/IobResult.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:bcb21baa6740",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/OpenAPSSwift.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:4f49dceb5ac9",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPSSwift/OrefFunctionResult.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:9ea1682db304",
-              "type": "file",
-              "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "file:aba574567ead",
-              "type": "file",
-              "title": "Trio/Sources/Models/Determination.swift",
-              "url": "https://github.com/gordolio/Trio/commit/7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
-            },
-            {
-              "id": "diff:9937ceb6a579",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1316",
-              "url": "https://github.com/gordolio/Trio/compare/c18e7a980e776cc4902fcb6cc1361cb1d4d1bb6b...7ffbc498d6e3a846a239b845c3f13a1f735ccc17"
             }
           ]
         }
@@ -1586,251 +342,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1313"
-          ],
-          "summary": "Update MedtrumKit submodule to a newer commit (submodule update). Upstream changelog references: add Manual Temp Basal; fixes for backup flow (error code 7), double callback prevention, and sync collision.",
-          "userFacingImpact": "Brings upstream MedtrumKit changes (Manual Temp Basal feature and several bug fixes). The supplied Trio artifacts do not show how these upstream changes affect Trio's UI or flows; a human review is recommended to verify user-visible behavior.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "pr:gordolio/Trio#1313",
-            "pr:nightscout/Trio#1313",
-            "commit:cfd1b04ad740",
-            "commit:a934620c0987",
-            "file:51ece0dd8c80",
-            "diff:6f7da4d5f00c"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1313",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1313: Update MedtrumKit",
-              "url": "https://github.com/nightscout/Trio/pull/1313"
-            },
-            {
-              "id": "pr:nightscout/Trio#1313",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1313: Update MedtrumKit",
-              "url": "https://github.com/nightscout/Trio/pull/1313"
-            },
-            {
-              "id": "commit:cfd1b04ad740",
-              "type": "commit",
-              "title": "chore: update MedtrumKit",
-              "url": "https://github.com/gordolio/Trio/commit/cfd1b04ad740ac014c129bf2aa7fa697e4d75e2a"
-            },
-            {
-              "id": "commit:a934620c0987",
-              "type": "commit",
-              "title": "Merge pull request #1313 from bastiaanv/chore/update-medtrumkit",
-              "url": "https://github.com/gordolio/Trio/commit/a934620c098737706a45c616d97891491df25fe5"
-            },
-            {
-              "id": "file:51ece0dd8c80",
-              "type": "file",
-              "title": "MedtrumKit",
-              "url": "https://github.com/gordolio/Trio/commit/a934620c098737706a45c616d97891491df25fe5"
-            },
-            {
-              "id": "diff:6f7da4d5f00c",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1313",
-              "url": "https://github.com/gordolio/Trio/compare/40d45894db5c53ca6b9e67237b2c6d57ea31670c...a934620c098737706a45c616d97891491df25fe5"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "commit:729382dc230f4546d206e9043c9a259d213d3ffa"
-          ],
-          "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.16 to 0.8.4.17 (CI/dev metadata change).",
-          "userFacingImpact": "Only a development/build metadata change to APP_DEV_VERSION is present in the diff; no runtime or behavioral changes are evident in the supplied artifacts.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:729382dc230f",
-            "file:bae09ef23f23",
-            "diff:3860b47dceef"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:729382dc230f",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.17 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/729382dc230f4546d206e9043c9a259d213d3ffa"
-            },
-            {
-              "id": "file:bae09ef23f23",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/729382dc230f4546d206e9043c9a259d213d3ffa"
-            },
-            {
-              "id": "diff:3860b47dceef",
-              "type": "diff",
-              "title": "Diff for commit:729382dc230f4546d206e9043c9a259d213d3ffa",
-              "url": "https://github.com/gordolio/Trio/compare/a934620c098737706a45c616d97891491df25fe5...729382dc230f4546d206e9043c9a259d213d3ffa"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "commit:1373165c23142a49ef4a9a3080f2a0cafc79dc91"
-          ],
-          "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.17 to 0.8.4.18 (CI/dev metadata change).",
-          "userFacingImpact": "Only a development/version constant change in a configuration file is present; no runtime or behavioral changes are evident in the supplied diff.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:1373165c2314",
-            "file:8aad2853cca1",
-            "diff:570009875c18"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:1373165c2314",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.18 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/1373165c23142a49ef4a9a3080f2a0cafc79dc91"
-            },
-            {
-              "id": "file:8aad2853cca1",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/1373165c23142a49ef4a9a3080f2a0cafc79dc91"
-            },
-            {
-              "id": "diff:570009875c18",
-              "type": "diff",
-              "title": "Diff for commit:1373165c23142a49ef4a9a3080f2a0cafc79dc91",
-              "url": "https://github.com/gordolio/Trio/compare/cd00ea5bdd737bb9341a2846e590b7b07a1768ec...1373165c23142a49ef4a9a3080f2a0cafc79dc91"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "commit:0472483eb367642d803d12e8730780283fff677c"
-          ],
-          "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.18 to 0.8.4.19 (CI/dev metadata change).",
-          "userFacingImpact": "Only a development version string in the build configuration was incremented; no functional or runtime code changes are present in the supplied diff.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:0472483eb367",
-            "file:ddb701940a87",
-            "diff:624cf7033a78"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:0472483eb367",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.19 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/0472483eb367642d803d12e8730780283fff677c"
-            },
-            {
-              "id": "file:ddb701940a87",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/0472483eb367642d803d12e8730780283fff677c"
-            },
-            {
-              "id": "diff:624cf7033a78",
-              "type": "diff",
-              "title": "Diff for commit:0472483eb367642d803d12e8730780283fff677c",
-              "url": "https://github.com/gordolio/Trio/compare/aceb300ac3a321413c845bddec6ed92a3fb0164b...0472483eb367642d803d12e8730780283fff677c"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "commit:70741cd30caf20db8f40b26c86bbb8913f91adfb"
-          ],
-          "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.19 to 0.8.4.20 (CI/dev metadata change).",
-          "userFacingImpact": "Only an APP_DEV_VERSION metadata change in Config.xcconfig; no functional code or behavior changes are present in the provided diff.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:70741cd30caf",
-            "file:64ee1de3f23d",
-            "diff:9672bdb844d6"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:70741cd30caf",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.20 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/70741cd30caf20db8f40b26c86bbb8913f91adfb"
-            },
-            {
-              "id": "file:64ee1de3f23d",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/70741cd30caf20db8f40b26c86bbb8913f91adfb"
-            },
-            {
-              "id": "diff:9672bdb844d6",
-              "type": "diff",
-              "title": "Diff for commit:70741cd30caf20db8f40b26c86bbb8913f91adfb",
-              "url": "https://github.com/gordolio/Trio/compare/db46e1516ba4d63f40f8843e14c55bea5a5d6096...70741cd30caf20db8f40b26c86bbb8913f91adfb"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "commit:e02113b5b885ecc59a764ac391db5e2fc1e0244b"
-          ],
-          "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.20 to 0.8.4.21 (CI/dev metadata change).",
-          "userFacingImpact": "No direct user-facing behavior change is evident in the patch; it only updates the APP_DEV_VERSION value in Config.xcconfig. Human review is recommended to determine any downstream effects on visible version strings or release metadata.",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:e02113b5b885",
-            "file:5bf1a39afcfb",
-            "diff:ce3e1038ab2e"
-          ],
-          "confidence": "medium",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:e02113b5b885",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.21 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/e02113b5b885ecc59a764ac391db5e2fc1e0244b"
-            },
-            {
-              "id": "file:5bf1a39afcfb",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/e02113b5b885ecc59a764ac391db5e2fc1e0244b"
-            },
-            {
-              "id": "diff:ce3e1038ab2e",
-              "type": "diff",
-              "title": "Diff for commit:e02113b5b885ecc59a764ac391db5e2fc1e0244b",
-              "url": "https://github.com/gordolio/Trio/compare/4bc16ca78deaf684efe08b21eab37da2cff467d7...e02113b5b885ecc59a764ac391db5e2fc1e0244b"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -2092,7 +604,7 @@
       "sha": "729382dc230f4546d206e9043c9a259d213d3ffa",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.17 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-14T19:55:15Z"
+      "authoredAt": "2026-07-14T19:55:15+00:00"
     },
     {
       "sha": "7764a422afb71787b48f581b80b10d7ce1eda2a1",
@@ -2134,7 +646,7 @@
       "sha": "1373165c23142a49ef4a9a3080f2a0cafc79dc91",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.18 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T19:45:50Z"
+      "authoredAt": "2026-07-15T19:45:50+00:00"
     },
     {
       "sha": "aceb300ac3a321413c845bddec6ed92a3fb0164b",
@@ -2146,7 +658,7 @@
       "sha": "0472483eb367642d803d12e8730780283fff677c",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.19 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T20:12:18Z"
+      "authoredAt": "2026-07-15T20:12:18+00:00"
     },
     {
       "sha": "db46e1516ba4d63f40f8843e14c55bea5a5d6096",
@@ -2158,7 +670,7 @@
       "sha": "70741cd30caf20db8f40b26c86bbb8913f91adfb",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.20 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T20:19:05Z"
+      "authoredAt": "2026-07-15T20:19:05+00:00"
     },
     {
       "sha": "9569c3aa607da65fb5fef2f4e84e07ead17b8477",
@@ -2176,7 +688,7 @@
       "sha": "e02113b5b885ecc59a764ac391db5e2fc1e0244b",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.21 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-15T21:29:52Z"
+      "authoredAt": "2026-07-15T21:29:52+00:00"
     },
     {
       "sha": "bec792178804d8ca597de52a749a8a2aa8035d4c",

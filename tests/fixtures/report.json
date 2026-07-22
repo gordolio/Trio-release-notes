@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
     "sourceWorkflowRunId": 123,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/123",
@@ -9,8 +9,8 @@
     "shortSha": "2222222",
     "buildDate": "2026-07-20T14:42:00.000Z",
     "generationDate": "2026-07-20T15:00:00.000Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "1",
+    "generatorVersion": "0.3.0",
+    "promptVersion": "6",
     "model": "test/model"
   },
   "highlights": [],
@@ -20,13 +20,16 @@
       "title": "Fixes",
       "items": [
         {
-          "changeIds": ["commit:2222222"],
-          "summary": "Fixes a test behavior.",
-          "userFacingImpact": "The behavior is more reliable.",
+          "changeId": "commit:2222222",
+          "title": "Test behavior fix",
+          "changes": [
+            "A test behavior is more reliable."
+          ],
           "category": "fixes",
           "sourceIds": ["commit:2222222"],
           "confidence": "high",
           "humanReviewRequired": false,
+          "changeIds": ["commit:2222222"],
           "highlight": false,
           "provenance": "origin",
           "sources": [

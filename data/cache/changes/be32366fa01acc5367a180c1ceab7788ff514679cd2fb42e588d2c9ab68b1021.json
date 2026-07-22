@@ -1,20 +1,22 @@
 {
-  "inputHash": "a9396dd116d9fe69854517af987395e883b1bcbb4c8db6dc3a1cb49508ce1a9e",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "2035eebab7ed40246e212184a05ea9d727f86ea85b13d14afdb484bedb8d9c01",
+  "promptVersion": "5",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:04950baff4cbe2dacc40d62cdd388abf29872aa2",
-    "summary": "Update in Config.xcconfig: APP_DEV_VERSION incremented from 0.8.4.12 to 0.8.4.13 (source: diff:be32366fa01a; file:49a64013d49f). Commit message notes CI bump of APP_DEV_VERSION (source: commit:04950baff4cb).",
-    "userFacingImpact": "This change updates a development-version identifier in the build configuration (APP_DEV_VERSION) and does not show any code or behavior changes in the diff provided (source: diff:be32366fa01a; file:49a64013d49f). Evidence is insufficient to conclude any user-visible behavioral or functional impact; human review recommended to confirm there are no downstream effects (source: commit:04950baff4cb).",
+    "title": "Development build version increment",
+    "changes": [
+      "The development build version was updated to 0.8.4.13.",
+      "There are no changes to app features or user-facing behavior."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:04950baff4cb",
-      "file:49a64013d49f",
       "diff:be32366fa01a"
     ],
     "confidence": "high",
-    "humanReviewRequired": true
+    "humanReviewRequired": false
   }
 }

@@ -1,31 +1,24 @@
 {
-  "inputHash": "2920d1b9b38b620dd6a63bab938dbb92a6b175cad6c09f443076e45b58f2761c",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "6ee493175e3793698683b10e59c6646d363f4560262f0352c74c246eb7a14e32",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1294",
-    "summary": "Replaces the previous CoreData -> JSON string -> [CarbsEntry] pipeline with a direct CoreData -> [CarbsEntry] mapping (no JSON round-trip) [pr:nightscout/Trio#1294][commit:3fea34f0f65c][diff:149115e44762]. The change adds a new CarbsStorage method getCarbsForAlgorithm(additionalCarbs:carbsDate:) and implements mapping helpers (mapToCarbsEntry, algorithmDecimal, additionalCarbsEntry) to produce [CarbsEntry] directly from CarbEntryStored rows [file:6a2d27240b74][diff:149115e44762]. OpenAPS is updated to receive a carbsStorage dependency, to call getCarbsForAlgorithm, and to pass a [CarbsEntry] into the oref algorithm (signatures and call sites updated) [file:2ccb33745ec4][file:8e278bc2bb06][diff:149115e44762]. The old CarbEntryStored JSON encoder/Encodable extension was removed (no more encoding to JSON strings) [file:665b319e6340][diff:149115e44762]. A test suite (CarbsNativeConversionTests) was added to assert the native mapping reproduces the old JSON round-trip behavior with one deliberate, documented difference (id population) and to check millisecond date handling and decimal formatting [file:c5449df501df][diff:149115e44762]. The Xcode project was updated to include the new test file [file:a96c20924cce][diff:149115e44762].",
-    "userFacingImpact": "Intended: algorithm inputs should be preserved by the native mapping; the included golden tests assert field-for-field equivalence with the previous JSON round-trip except that ids are now carried from Core Data and dates are kept at full precision/millisecond resolution (these behaviors are documented and asserted in the new tests) [file:c5449df501df][commit:3fea34f0f65c][diff:149115e44762]. Conservative note: because this change alters how carb entries are constructed and delivered to the dosing algorithm (moving from a JSON string path to direct structs), there is potential for behavioral differences in downstream algorithm results; the test coverage asserts equivalence for covered cases but a human review and regression test in a staging environment is recommended before release to users [file:c5449df501df][file:6a2d27240b74][diff:149115e44762].",
+    "title": "Use native carb entries instead of JSON",
+    "changes": [
+      "Carb data is passed to the algorithm as structured CarbsEntry objects instead of encoded JSON strings.",
+      "Carb entries read from storage now retain their stored IDs instead of being dropped by the old JSON round-trip.",
+      "Carb timestamps keep full precision (no ISO string encode/decode), improving internal date fidelity.",
+      "The synthetic \"additional carbs\" entry used for bolus simulation now includes an id and is produced as a CarbsEntry."
+    ],
     "category": "algorithm-and-dosing",
     "sourceIds": [
-      "pr:gordolio/Trio#1294",
       "pr:nightscout/Trio#1294",
-      "commit:3fea34f0f65c",
-      "commit:054df969972f",
-      "commit:35914e7a5066",
-      "file:665b319e6340",
-      "file:a96c20924cce",
-      "file:6142de97fdb2",
-      "file:2ccb33745ec4",
-      "file:cec2a648c7fe",
-      "file:8e278bc2bb06",
-      "file:6a2d27240b74",
-      "file:c5449df501df",
-      "diff:149115e44762"
+      "commit:3fea34f0f65c"
     ],
     "confidence": "high",
-    "humanReviewRequired": true
+    "humanReviewRequired": false
   }
 }

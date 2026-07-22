@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
     "sourceWorkflowRunId": 29588746099,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29588746099",
@@ -8,39 +8,33 @@
     "currentBuiltSha": "0818e25cd7c76654136d425f54c17fd90b8244bc",
     "shortSha": "0818e25",
     "buildDate": "2026-07-17T15:03:52.000Z",
-    "generationDate": "2026-07-21T10:23:23.808Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "3",
+    "generationDate": "2026-07-22T01:47:48.949Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1320"
+      "changeId": "pr:nightscout/Trio#1320",
+      "title": "Fix stuck bolus-in-progress card",
+      "changes": [
+        "The bolus-in-progress card in the Treatments view no longer gets stuck at 0% and block actions.",
+        "You can dismiss a bolus card and start new boluses without restarting the app.",
+        "Bolus progress is now detected more reliably and no longer depends on carb/fat/protein fields for visibility."
       ],
-      "summary": "Replaces the Treatments view gating for the bolus-in-progress card to rely on the local bolus progress signal instead of the pump-mirrored bolusStatus. The change introduces a bolusInProgressForEntry computed property that checks (state.bolusProgress != nil || state.bolusStatus == .initiating) and uses it for both displaying the bolus progress UI and disabling the task button; the previous carb/fat/protein dependency was removed from the gate (commit:3010265b28f8, diff:aa5ad5630445, commit:f6c21a412803). The PR and commit messages explain this addresses cases where a bolusing card could get stuck at 0% and block further boluses until app restart (pr:gordolio/Trio#1320, commit:3010265b28f8).",
-      "userFacingImpact": "Fixes an issue where a bolus-in-progress card in the Treatments view could remain stuck at 0%, block further boluses, and require an app restart to clear; the UI now gates on the reliably-cleared local bolusProgress signal and still preserves the initiating pre-delivery state so the pre-delivery view continues to show (pr:gordolio/Trio#1320, commit:3010265b28f8, diff:aa5ad5630445).",
       "category": "fixes",
       "sourceIds": [
-        "pr:gordolio/Trio#1320",
         "pr:nightscout/Trio#1320",
-        "commit:3010265b28f8",
-        "commit:f6c21a412803",
-        "commit:aabe6268e85e",
-        "file:7cb1b64f35ab",
-        "diff:aa5ad5630445"
+        "commit:3010265b28f8"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1320"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
-        {
-          "id": "pr:gordolio/Trio#1320",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1320: Make bolus-in-progress card in Treatments view more reliable",
-          "url": "https://github.com/nightscout/Trio/pull/1320"
-        },
         {
           "id": "pr:nightscout/Trio#1320",
           "type": "pull-request",
@@ -52,40 +46,11 @@
           "type": "commit",
           "title": "Make bolus-in-progress card in Treatments view more reliable",
           "url": "https://github.com/gordolio/Trio/commit/3010265b28f89e22c1748b97ce767ba93571f848"
-        },
-        {
-          "id": "commit:f6c21a412803",
-          "type": "commit",
-          "title": "Added comment about .initiating and removed the carb/fat/protein dependency",
-          "url": "https://github.com/gordolio/Trio/commit/f6c21a412803c8955e503068cf866964c22c3e26"
-        },
-        {
-          "id": "commit:aabe6268e85e",
-          "type": "commit",
-          "title": "Merge pull request #1320 from bjorkert/fix/1308-bolus-in-progress-card",
-          "url": "https://github.com/gordolio/Trio/commit/aabe6268e85efdd67421f77104434ab7ad038327"
-        },
-        {
-          "id": "file:7cb1b64f35ab",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift",
-          "url": "https://github.com/gordolio/Trio/commit/aabe6268e85efdd67421f77104434ab7ad038327"
-        },
-        {
-          "id": "diff:aa5ad5630445",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1320",
-          "url": "https://github.com/gordolio/Trio/compare/e02113b5b885ecc59a764ac391db5e2fc1e0244b...aabe6268e85efdd67421f77104434ab7ad038327"
         }
       ]
     }
   ],
   "categories": [
-    {
-      "category": "highlights",
-      "title": "Highlights",
-      "items": []
-    },
     {
       "category": "new-features",
       "title": "New Features",
@@ -94,73 +59,7 @@
     {
       "category": "fixes",
       "title": "Fixes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1320"
-          ],
-          "summary": "Replaces the Treatments view gating for the bolus-in-progress card to rely on the local bolus progress signal instead of the pump-mirrored bolusStatus. The change introduces a bolusInProgressForEntry computed property that checks (state.bolusProgress != nil || state.bolusStatus == .initiating) and uses it for both displaying the bolus progress UI and disabling the task button; the previous carb/fat/protein dependency was removed from the gate (commit:3010265b28f8, diff:aa5ad5630445, commit:f6c21a412803). The PR and commit messages explain this addresses cases where a bolusing card could get stuck at 0% and block further boluses until app restart (pr:gordolio/Trio#1320, commit:3010265b28f8).",
-          "userFacingImpact": "Fixes an issue where a bolus-in-progress card in the Treatments view could remain stuck at 0%, block further boluses, and require an app restart to clear; the UI now gates on the reliably-cleared local bolusProgress signal and still preserves the initiating pre-delivery state so the pre-delivery view continues to show (pr:gordolio/Trio#1320, commit:3010265b28f8, diff:aa5ad5630445).",
-          "category": "fixes",
-          "sourceIds": [
-            "pr:gordolio/Trio#1320",
-            "pr:nightscout/Trio#1320",
-            "commit:3010265b28f8",
-            "commit:f6c21a412803",
-            "commit:aabe6268e85e",
-            "file:7cb1b64f35ab",
-            "diff:aa5ad5630445"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1320",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1320: Make bolus-in-progress card in Treatments view more reliable",
-              "url": "https://github.com/nightscout/Trio/pull/1320"
-            },
-            {
-              "id": "pr:nightscout/Trio#1320",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1320: Make bolus-in-progress card in Treatments view more reliable",
-              "url": "https://github.com/nightscout/Trio/pull/1320"
-            },
-            {
-              "id": "commit:3010265b28f8",
-              "type": "commit",
-              "title": "Make bolus-in-progress card in Treatments view more reliable",
-              "url": "https://github.com/gordolio/Trio/commit/3010265b28f89e22c1748b97ce767ba93571f848"
-            },
-            {
-              "id": "commit:f6c21a412803",
-              "type": "commit",
-              "title": "Added comment about .initiating and removed the carb/fat/protein dependency",
-              "url": "https://github.com/gordolio/Trio/commit/f6c21a412803c8955e503068cf866964c22c3e26"
-            },
-            {
-              "id": "commit:aabe6268e85e",
-              "type": "commit",
-              "title": "Merge pull request #1320 from bjorkert/fix/1308-bolus-in-progress-card",
-              "url": "https://github.com/gordolio/Trio/commit/aabe6268e85efdd67421f77104434ab7ad038327"
-            },
-            {
-              "id": "file:7cb1b64f35ab",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/aabe6268e85efdd67421f77104434ab7ad038327"
-            },
-            {
-              "id": "diff:aa5ad5630445",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1320",
-              "url": "https://github.com/gordolio/Trio/compare/e02113b5b885ecc59a764ac391db5e2fc1e0244b...aabe6268e85efdd67421f77104434ab7ad038327"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "algorithm-and-dosing",
@@ -190,45 +89,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeIds": [
-            "commit:145107726be7f3765ab117c274032300022b3026"
-          ],
-          "summary": "Bumped APP_DEV_VERSION in Config.xcconfig from 0.8.4.21 to 0.8.4.22. The change is shown in the commit diff and file update (diff:ce34f0f08af7, file:3ea3d356c0a8, commit:145107726be7).",
-          "userFacingImpact": "No evidence in the provided change indicates any functional or runtime behavior change; this appears to be a development/version metadata bump in CI/config (file:3ea3d356c0a8, diff:ce34f0f08af7).",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:145107726be7",
-            "file:3ea3d356c0a8",
-            "diff:ce34f0f08af7"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:145107726be7",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.22 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/145107726be7f3765ab117c274032300022b3026"
-            },
-            {
-              "id": "file:3ea3d356c0a8",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/145107726be7f3765ab117c274032300022b3026"
-            },
-            {
-              "id": "diff:ce34f0f08af7",
-              "type": "diff",
-              "title": "Diff for commit:145107726be7f3765ab117c274032300022b3026",
-              "url": "https://github.com/gordolio/Trio/compare/aabe6268e85efdd67421f77104434ab7ad038327...145107726be7f3765ab117c274032300022b3026"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -280,7 +141,7 @@
       "sha": "145107726be7f3765ab117c274032300022b3026",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.22 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-16T16:58:34Z"
+      "authoredAt": "2026-07-16T16:58:34+00:00"
     },
     {
       "sha": "0818e25cd7c76654136d425f54c17fd90b8244bc",

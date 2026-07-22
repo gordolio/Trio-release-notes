@@ -1,17 +1,19 @@
 {
-  "inputHash": "bafc3497a9826fa4be69faa6d1f74807c0369027e9ae92f9af06868fcc9b3062",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "7cbb75d2636db8dabd10805976ffc0486c73ea21e4e0329648c72be5d1c8b078",
+  "promptVersion": "5",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:145107726be7f3765ab117c274032300022b3026",
-    "summary": "Bumped APP_DEV_VERSION in Config.xcconfig from 0.8.4.21 to 0.8.4.22. The change is shown in the commit diff and file update (diff:ce34f0f08af7, file:3ea3d356c0a8, commit:145107726be7).",
-    "userFacingImpact": "No evidence in the provided change indicates any functional or runtime behavior change; this appears to be a development/version metadata bump in CI/config (file:3ea3d356c0a8, diff:ce34f0f08af7).",
+    "title": "Developer build version bumped to 0.8.4.22",
+    "changes": [
+      "The developer build version number was updated to 0.8.4.22.",
+      "This change only updates the internal developer version identifier and does not change app features."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:145107726be7",
-      "file:3ea3d356c0a8",
       "diff:ce34f0f08af7"
     ],
     "confidence": "high",

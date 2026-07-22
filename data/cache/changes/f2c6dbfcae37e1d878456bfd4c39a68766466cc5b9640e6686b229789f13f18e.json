@@ -1,22 +1,23 @@
 {
-  "inputHash": "b863eee9987d7e5f9ef4863010aeb2febb5c654f05c41313e0778246555dd57b",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "9c50fe31fbe4a05dcb49ab8df3c364613fb79c0f6a53ba068f0f647fd25904bb",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1309",
-    "summary": "Removes explicit allowsConstrainedNetworkAccess = false assignments from all Nightscout upload URLRequest constructions in Trio/Sources/Services/Network/Nightscout/NightscoutAPI.swift (diff:f2c6dbfcae37, file:d9d6cc91cab4, commit:cd00ea5bdd73). The change is described in the PR text (pr:nightscout/Trio#1309, pr:gordolio/Trio#1309).",
-    "userFacingImpact": "The change restores the default URLRequest behavior so iOS decides how to handle constrained network access according to the user’s system settings (pr:gordolio/Trio#1309, pr:nightscout/Trio#1309). The PR was motivated by observed intermittent Nightscout upload errors containing the message “Constrained path prohibited” (pr:gordolio/Trio#1309, pr:nightscout/Trio#1309). The patch itself only removes the explicit flag; it does not include testing or runtime telemetry demonstrating improved reliability, so human review and testing are recommended to validate upload behavior under constrained networks (diff:f2c6dbfcae37, commit:cd00ea5bdd73).",
+    "title": "Restore default constrained-network behavior",
+    "changes": [
+      "Nightscout uploads no longer override the system's constrained-network setting.",
+      "Trio now relies on iOS to decide if uploads may use constrained networks.",
+      "The change restores the default URLRequest behavior for Nightscout uploads."
+    ],
     "category": "fixes",
     "sourceIds": [
-      "pr:gordolio/Trio#1309",
       "pr:nightscout/Trio#1309",
-      "commit:cd00ea5bdd73",
-      "file:d9d6cc91cab4",
       "diff:f2c6dbfcae37"
     ],
     "confidence": "high",
-    "humanReviewRequired": true
+    "humanReviewRequired": false
   }
 }

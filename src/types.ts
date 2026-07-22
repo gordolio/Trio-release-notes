@@ -73,32 +73,19 @@ export interface NormalizedChange {
 
 export const changeSummarySchema = z.object({
   changeId: z.string(),
-  summary: z.string().min(1),
-  userFacingImpact: z.string().min(1),
+  title: z.string().min(1).max(60),
+  changes: z.array(z.string().min(1).max(120)).min(1).max(5),
   category: z.enum(CATEGORY_VALUES),
-  sourceIds: z.array(z.string()).min(1),
+  sourceIds: z.array(z.string()).min(1).max(4),
   confidence: z.enum(["high", "medium", "low"]),
   humanReviewRequired: z.boolean()
 });
 
 export type ChangeSummary = z.infer<typeof changeSummarySchema>;
 
-export const aggregateItemSchema = z.object({
-  changeIds: z.array(z.string()).min(1),
-  summary: z.string().min(1),
-  userFacingImpact: z.string().min(1),
-  category: z.enum(CATEGORY_VALUES),
-  sourceIds: z.array(z.string()).min(1),
-  confidence: z.enum(["high", "medium", "low"]),
-  humanReviewRequired: z.boolean(),
-  highlight: z.boolean()
+export const highlightOutputSchema = z.object({
+  highlightChangeIds: z.array(z.string()).max(5)
 });
-
-export const aggregateOutputSchema = z.object({
-  items: z.array(aggregateItemSchema)
-});
-
-export type AggregateItem = z.infer<typeof aggregateItemSchema>;
 
 export interface ReportSource {
   id: string;
@@ -107,7 +94,9 @@ export interface ReportSource {
   url: string;
 }
 
-export interface ReportItem extends AggregateItem {
+export interface ReportItem extends ChangeSummary {
+  changeIds: string[];
+  highlight: boolean;
   provenance: Provenance;
   sources: ReportSource[];
 }

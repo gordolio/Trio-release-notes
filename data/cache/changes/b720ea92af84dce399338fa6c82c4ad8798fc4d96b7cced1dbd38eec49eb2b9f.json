@@ -1,25 +1,22 @@
 {
-  "inputHash": "14902602c0661acaa6d06d1c33414094c32f8703b77df71377d6f74f6403f8ac",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "ca5d43b17d0421d92abb87ef6f97aeb85047c54c4b1f6f6675fb616d874f86d6",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1285",
-    "summary": "Adds an acknowledgeOnDevice(identifier:) helper and calls it from requestSnooze so that dismissing an in-app banner / swiping away a user notification also forwards an acknowledgement to the issuing device manager (AlertResponder) by invoking acknowledgeAlert. The change is implemented in Trio/Sources/Services/Alerts/TrioAlertManager.swift (see diff and commit) and replaces the previous path that only snoozed without forwarding an ack. (See pr:gordolio/Trio#1285; file:8be3f6914cc4; diff:b720ea92af84; commit:e66bc689e004.)",
-    "userFacingImpact": "Behavior for users: the dismiss/snooze UX is unchanged (swipe/tap still auto-snoozes and dismisses presentations), but pump-issued alerts are now also acknowledged at the pump manager/device level so device-side alerts (e.g., pod beeps on repeat reminders) are cleared when the user dismisses the in-app/banner notification. The PR notes Trio-internal alerts (certain CGM/glucose alerts) are unaffected and pump managers that implement no-op ack behavior (Medtrum, Dana, Minimed) see no change. (See pr:nightscout/Trio#1285; pr:gordolio/Trio#1285; commit:e66bc689e004.)",
+    "title": "Acknowledge pump alerts when dismissed",
+    "changes": [
+      "Dismissing the in-app alert banner or swiping away a notification also acknowledges pump alerts at the device.",
+      "This stops pod or pump beeps when you dismiss their alerts.",
+      "Tapping or swiping still snoozes alerts for 15 minutes and removes on-screen presentations.",
+      "Alerts from Trio internals (CGM/algorithm) are not affected by this change."
+    ],
     "category": "alerting-and-safety",
     "sourceIds": [
-      "pr:gordolio/Trio#1285",
       "pr:nightscout/Trio#1285",
-      "commit:2156ef6193f8",
-      "commit:e074fa78bc46",
-      "commit:e66bc689e004",
-      "commit:7b6ba22cd833",
-      "commit:d456d69b5ca7",
-      "commit:79a8eccdf44e",
-      "file:8be3f6914cc4",
-      "diff:b720ea92af84"
+      "commit:e66bc689e004"
     ],
     "confidence": "high",
     "humanReviewRequired": false

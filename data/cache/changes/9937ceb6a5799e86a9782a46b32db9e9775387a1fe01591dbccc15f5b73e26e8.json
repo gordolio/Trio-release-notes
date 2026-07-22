@@ -1,31 +1,24 @@
 {
-  "inputHash": "e470e5b7dde27452d7d5a934d03585df245cf653ad8d9eb8bfcc28f2e43e94f4",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "66dfc9a9a92d433908333ac779d62d50106ea1d575144f7322fdc28dc76ee0d9",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1316",
-    "summary": "Removes the OpenAPSSwift bridging layer and refactors OpenAPS to call algorithm generators with native typed arguments instead of passing JSON strings. OpenAPSSwift.swift and OrefFunctionResult.swift were deleted and references to them were removed from the Xcode project (project.pbxproj). JSONBridge was simplified (decoders retained/adjusted) and many OpenAPS call sites now decode JSON-at-rest into native models at the call boundary. IobResult’s type was changed and multiple generator functions (IOB, meal, autosense, determination) were replaced by direct calls to new generators (IobGenerator, MealGenerator, AutosensGenerator, DeterminationGenerator). Determination model code was simplified (removal of DeterminationErrorResponse).",
-    "userFacingImpact": "The PR explicitly states that DeterminationError messages are now exposed raw instead of being caught and converted into a generic APSError message; therefore Determination-related error messages may become directly visible to users where previously they would have seen a generic \"No determination data.\" message. Other behavioral impacts on dosing logic are possible because the code now passes native typed inputs into generators rather than serialized JSON, but the provided changes do not include a full verification of parity; human review is required to confirm there are no unintended dosing or safety implications.",
+    "title": "Run algorithm natively and expose real errors",
+    "changes": [
+      "The app now calls the insulin-dosing algorithm directly instead of converting inputs to JSON first.",
+      "The JSON bridge and its helper layer for the oref algorithm were removed from the call path.",
+      "Basal determination failures now show the underlying determination error message instead of a generic one.",
+      "Autosens results are now timestamped and saved immediately after calculation."
+    ],
     "category": "algorithm-and-dosing",
     "sourceIds": [
-      "pr:gordolio/Trio#1316",
       "pr:nightscout/Trio#1316",
-      "commit:991dff1b1546",
-      "commit:51c667c08c3d",
-      "commit:7ffbc498d6e3",
-      "file:5ff2fdbcd272",
-      "file:3e06375120cd",
-      "file:04858d32fabd",
-      "file:9603a162015e",
-      "file:bcb21baa6740",
-      "file:4f49dceb5ac9",
-      "file:9ea1682db304",
-      "file:aba574567ead",
-      "diff:9937ceb6a579"
+      "commit:991dff1b1546"
     ],
     "confidence": "high",
-    "humanReviewRequired": true
+    "humanReviewRequired": false
   }
 }

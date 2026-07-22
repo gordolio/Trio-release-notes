@@ -1,17 +1,19 @@
 {
-  "inputHash": "08f16a6c92ed1eea9236635e605df939e8fcd8a4b56bb662d61e71bd3bc6900e",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "d6d345ed664601500d5b6dc224d3fb1847d85dea97802d048116dd1e277aecf7",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:70741cd30caf20db8f40b26c86bbb8913f91adfb",
-    "summary": "Update Config.xcconfig to bump APP_DEV_VERSION from 0.8.4.19 to 0.8.4.20 (see diff:9672bdb844d6, file:64ee1de3f23d, commit:70741cd30caf).",
-    "userFacingImpact": "This change only updates a development version metadata field (APP_DEV_VERSION) in Config.xcconfig; no functional code or behavior changes are present in the provided diff (see diff:9672bdb844d6, file:64ee1de3f23d).",
+    "title": "Development version number bumped",
+    "changes": [
+      "The app development version number was updated from 0.8.4.19 to 0.8.4.20.",
+      "This is an internal build/config change and does not alter app features."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:70741cd30caf",
-      "file:64ee1de3f23d",
       "diff:9672bdb844d6"
     ],
     "confidence": "high",

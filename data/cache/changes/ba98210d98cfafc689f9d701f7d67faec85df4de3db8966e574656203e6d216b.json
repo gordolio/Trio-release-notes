@@ -1,17 +1,18 @@
 {
-  "inputHash": "fce21a5f6c06703f02e94a1e2e33db8c11e19d8a4fbde44f7ca0f2a68d754462",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "61f2f4bb99c98fdbed25a5fcc21a084925ede5c3a792d79541ca4269e274091c",
+  "promptVersion": "5",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:a874fa088d3345a19e02046b9adb573c642af30c",
-    "summary": "Update Config.xcconfig to bump APP_DEV_VERSION from 0.8.4.14 to 0.8.4.15. The diff and file show only the APP_DEV_VERSION line changed (diff:ba98210d98cf, file:4ed423be6cdf), and the commit message records this CI/version bump (commit:a874fa088d33).",
-    "userFacingImpact": "Likely no change to runtime behavior; this is a build/developer version metadata increment in Config.xcconfig (file:4ed423be6cdf, diff:ba98210d98cf). If there are concerns about release/versioning processes, review CI/release tooling separately.",
+    "title": "Bump internal development version",
+    "changes": [
+      "Only the app's internal development version number was incremented; users see no behavioral change."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:a874fa088d33",
-      "file:4ed423be6cdf",
       "diff:ba98210d98cf"
     ],
     "confidence": "high",

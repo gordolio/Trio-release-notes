@@ -1,17 +1,19 @@
 {
-  "inputHash": "71236e40f353c3b98c50d9429768613e70be853e6d84fa0dbf3f96043bf955ce",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "73f96c0b01991cf13bae883616d65cfc0bc93f2cde630961c9e193ed7c54129b",
+  "promptVersion": "5",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:384a0dca53f55a02617cb92dad29974835637551",
-    "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.22 to 0.8.4.23 (diff shows the line change) (diff:0433b9eabea7, file:1ac055b51224, commit:384a0dca53f5).",
-    "userFacingImpact": "No functional or user-facing behavior change is evident in this commit; it updates a developer/build version constant (APP_DEV_VERSION) in Config.xcconfig (diff:0433b9eabea7, file:1ac055b51224) and the commit message indicates a CI/dev-version bump (commit:384a0dca53f5). If a deeper impact analysis is required (e.g., how this version string is surfaced in releases or CI flows), human review is recommended.",
+    "title": "App development version bumped to 0.8.4.23",
+    "changes": [
+      "The app development version number was incremented to 0.8.4.23.",
+      "This is an internal build/configuration change and does not alter app behavior for users."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:384a0dca53f5",
-      "file:1ac055b51224",
       "diff:0433b9eabea7"
     ],
     "confidence": "high",

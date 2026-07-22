@@ -1,17 +1,19 @@
 {
-  "inputHash": "7547309215437ead416fa389ed1cf3f4ff8ccbeeed3054630422fd9a860e00a1",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "de9ca4588b2338674ec22e0482a404bc7572e4fd29f3955b1fe681483bbd83d9",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:e9c000814d93c469c2d8dc3dc89f2b3edba70258",
-    "summary": "Update Config.xcconfig to bump APP_DEV_VERSION from 0.8.4.11 to 0.8.4.12 (diff:97469a535394, file:169714b78f81). The commit message indicates this is a CI/dev version bump (commit:e9c000814d93).",
-    "userFacingImpact": "No functional change to app behavior is indicated by the patch; it only updates an internal development version identifier in the build configuration (file:169714b78f81, diff:97469a535394).",
+    "title": "Developer version number bumped",
+    "changes": [
+      "Developer version number was changed from 0.8.4.11 to 0.8.4.12.",
+      "No user-facing features or UI changes were made in this update."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:e9c000814d93",
-      "file:169714b78f81",
       "diff:97469a535394"
     ],
     "confidence": "high",

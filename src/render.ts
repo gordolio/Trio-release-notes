@@ -4,13 +4,16 @@ import { CATEGORY_TITLES, CATEGORY_VALUES } from "./constants.js";
 import { config } from "./config.js";
 import type { BuildReport, ReportItem } from "./types.js";
 
-function sourceLinks(item: ReportItem): string {
-  return item.sources.map((source) => `[${source.title}](${source.url})`).join(", ");
+function escapeMarkdown(value: string): string {
+  return value.replace(/([\\`*_[\]{}<>#|])/g, "\\$1");
 }
 
 function renderItem(item: ReportItem): string {
-  const review = item.humanReviewRequired ? " Human review recommended." : "";
-  return `- **${item.summary}** ${item.userFacingImpact}${review} Sources: ${sourceLinks(item)}`;
+  const review = item.humanReviewRequired ? "\n  - Human review recommended." : "";
+  const source = item.sources[0];
+  const sourceLink = source ? `\n  - [View source](${source.url})` : "";
+  const bullets = item.changes.map((change) => `  - ${escapeMarkdown(change)}`).join("\n");
+  return `- **${escapeMarkdown(item.title)}**\n${bullets}${review}${sourceLink}`;
 }
 
 function escapeHtml(value: string): string {
@@ -23,11 +26,17 @@ function escapeHtml(value: string): string {
 }
 
 function renderHtmlItem(item: ReportItem): string {
-  const sources = item.sources
-    .map((source) => `<a href="${escapeHtml(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>`)
-    .join(", ");
+  const source = item.sources[0];
+  const sourceLink = source
+    ? `<p class="sources"><a href="${escapeHtml(source.url)}" rel="noreferrer">View source on GitHub</a></p>`
+    : "";
   const review = item.humanReviewRequired ? "<p><strong>Human review recommended.</strong></p>" : "";
-  return `<article><h3>${escapeHtml(item.summary)}</h3><p>${escapeHtml(item.userFacingImpact)}</p>${review}<p class="sources">Sources: ${sources}</p></article>`;
+  const bullets = `<ul>${item.changes.map((change) => `<li>${escapeHtml(change)}</li>`).join("")}</ul>`;
+  return `<article><h3>${escapeHtml(item.title)}</h3>${bullets}${review}${sourceLink}</article>`;
+}
+
+function categoryItems(category: BuildReport["categories"][number]): ReportItem[] {
+  return category.items.filter((item) => !item.highlight);
 }
 
 export function renderHtml(report: BuildReport): string {
@@ -36,11 +45,12 @@ export function renderHtml(report: BuildReport): string {
     sections.push(`<section><h2>Highlights</h2>${report.highlights.map(renderHtmlItem).join("\n")}</section>`);
   }
   for (const category of report.categories) {
-    if (category.category === "highlights" || category.items.length === 0) {
+    const items = categoryItems(category);
+    if (items.length === 0) {
       continue;
     }
     sections.push(
-      `<section><h2>${escapeHtml(category.title)}</h2>${category.items.map(renderHtmlItem).join("\n")}</section>`
+      `<section><h2>${escapeHtml(category.title)}</h2>${items.map(renderHtmlItem).join("\n")}</section>`
     );
   }
   if (sections.length === 0) {
@@ -87,12 +97,13 @@ export function renderMarkdown(report: BuildReport): string {
     lines.push("## Highlights", "", ...report.highlights.map(renderItem), "");
   }
   for (const category of report.categories) {
-    if (category.items.length === 0 || category.category === "highlights") {
+    const items = categoryItems(category);
+    if (items.length === 0) {
       continue;
     }
-    lines.push(`## ${category.title}`, "", ...category.items.map(renderItem), "");
+    lines.push(`## ${category.title}`, "", ...items.map(renderItem), "");
   }
-  if (report.categories.every((category) => category.items.length === 0)) {
+  if (report.highlights.length === 0 && report.categories.every((category) => categoryItems(category).length === 0)) {
     lines.push("No source changes were found between the two successful builds.", "");
   }
   lines.push(

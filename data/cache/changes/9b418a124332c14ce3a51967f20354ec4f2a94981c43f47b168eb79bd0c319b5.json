@@ -1,17 +1,19 @@
 {
-  "inputHash": "b0930fe8ca9165d10c2df754617c47bcf2f57458b280a940127ecb5f9b98b71f",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "8c115f17e5af2f1c179f781a15332377eb7180ab7d01170d2aecf43978956534",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:6ab115cc7f0c577069d7465566a2ad2de3ec15c2",
-    "summary": "Update Config.xcconfig to increment APP_DEV_VERSION from 0.8.4.10 to 0.8.4.11.",
-    "userFacingImpact": "No direct user-visible behavior changes are present in this diff; the change updates a development/version metadata value (APP_DEV_VERSION) only.",
+    "title": "Development build version bumped",
+    "changes": [
+      "The app's development build version number was increased by one.",
+      "This update only changes internal build metadata and does not alter app behavior."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:6ab115cc7f0c",
-      "file:de3d83635461",
       "diff:9b418a124332"
     ],
     "confidence": "high",

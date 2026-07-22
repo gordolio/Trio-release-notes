@@ -1,25 +1,21 @@
 {
-  "inputHash": "ea350933461754337590b10644d0a96171aeb409d5251f321dcf0b88902f4c28",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "9409e24c088c2690631623dafd29f2f713defeb6af4e3850085390f1656988b7",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1214",
-    "summary": "Enables text selection in SubmodulesView for both key and value Text elements so users can select/copy submodule names and SHA (diff:68fb2de97fe0; commit:87ffec437259; commit:90d2a7e7a62c; file:a88e84ba845d). Adds copy-to-clipboard support for app version/build/branch+SHA: imports UIKit, uses UIPasteboard, adds a showCopiedToast @State flag, a temporary toast overlay, and haptic feedback (diff:68fb2de97fe0; commit:e87265efd077; file:ba4ae3c45618). The copy interaction was changed from a long-press gesture to an explicit button and a copyVersionInfo helper was added (diff:68fb2de97fe0; commit:0b83acc8cf62). The changes were submitted via PR (pr:gordolio/Trio#1214; pr:nightscout/Trio#1214) and merged (commit:9e5aeabccd2d).",
-    "userFacingImpact": "Users can select text for submodule keys and values to copy SHAs (diff:68fb2de97fe0; commit:87ffec437259; commit:90d2a7e7a62c). Users can copy the full app version/build/branch+SHA to the clipboard via a new copy control; doing so triggers a brief toast confirmation and haptic feedback (diff:68fb2de97fe0; commit:e87265efd077; commit:0b83acc8cf62). Evidence in the provided changes documents the UI additions and behavior; no claims about effects outside the settings UI are made here and human review is not required based on the supplied sources (pr:gordolio/Trio#1214; pr:nightscout/Trio#1214).",
+    "title": "Copy SHA and version info from Settings",
+    "changes": [
+      "You can select and copy the SHA and submodule names in the Settings view.",
+      "A copy button is added to the version header to copy full app version, branch, and SHA to the clipboard.",
+      "Copying now shows a brief \"Copied\" confirmation toast and provides haptic feedback.",
+      "Version copy was changed from a long-press gesture to a normal button for easier use."
+    ],
     "category": "interface-improvements",
     "sourceIds": [
-      "pr:gordolio/Trio#1214",
       "pr:nightscout/Trio#1214",
-      "commit:87ffec437259",
-      "commit:90d2a7e7a62c",
-      "commit:e87265efd077",
-      "commit:752a81b1759a",
-      "commit:0b83acc8cf62",
-      "commit:9e5aeabccd2d",
-      "file:ba4ae3c45618",
-      "file:a88e84ba845d",
       "diff:68fb2de97fe0"
     ],
     "confidence": "high",

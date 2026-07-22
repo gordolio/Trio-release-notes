@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "processedRuns": {
     "26323684147": {
       "fullSha": "0bb688841620824a10f203cc90ce09ca3dcec824",
@@ -111,37 +111,37 @@
     "29184422783": {
       "fullSha": "16691d214075c881255083e627c0b52cfdeb741c",
       "reportPath": "public/builds/16691d2.json",
-      "processedAt": "2026-07-21T10:09:36.734Z"
+      "processedAt": "2026-07-22T01:51:18.554Z"
     },
     "29210281377": {
       "fullSha": "b5cba1534785e5240cf78894f15d21a26e9e3b5b",
       "reportPath": "public/builds/b5cba15.json",
-      "processedAt": "2026-07-21T10:13:00.420Z"
+      "processedAt": "2026-07-22T01:44:37.451Z"
     },
     "29355222605": {
       "fullSha": "94a062231847aaf1828acd543345e69074023b6e",
       "reportPath": "public/builds/94a0622.json",
-      "processedAt": "2026-07-21T10:17:31.796Z"
+      "processedAt": "2026-07-22T01:46:10.508Z"
     },
     "29460490623": {
       "fullSha": "bec792178804d8ca597de52a749a8a2aa8035d4c",
       "reportPath": "public/builds/bec7921.json",
-      "processedAt": "2026-07-21T10:22:36.457Z"
+      "processedAt": "2026-07-22T01:46:59.307Z"
     },
     "29588746099": {
       "fullSha": "0818e25cd7c76654136d425f54c17fd90b8244bc",
       "reportPath": "public/builds/0818e25.json",
-      "processedAt": "2026-07-21T10:23:23.812Z"
+      "processedAt": "2026-07-22T01:47:48.955Z"
     },
     "29619506586": {
       "fullSha": "94020d890ae2b51751f2639366fcf01ac07fb7a7",
       "reportPath": "public/builds/94020d8.json",
-      "processedAt": "2026-07-21T10:24:05.404Z"
+      "processedAt": "2026-07-22T01:48:39.958Z"
     },
     "29749441420": {
       "fullSha": "24e424583ee0419886484dc4d15b94990f09e2f0",
       "reportPath": "public/builds/24e4245.json",
-      "processedAt": "2026-07-21T10:25:14.688Z"
+      "processedAt": "2026-07-22T01:49:19.634Z"
     }
   },
   "successfulBuilds": [

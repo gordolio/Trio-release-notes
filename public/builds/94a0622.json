@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
     "sourceWorkflowRunId": 29355222605,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29355222605",
@@ -8,775 +8,40 @@
     "currentBuiltSha": "94a062231847aaf1828acd543345e69074023b6e",
     "shortSha": "94a0622",
     "buildDate": "2026-07-14T18:01:05.000Z",
-    "generationDate": "2026-07-21T10:17:31.781Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "3",
+    "generationDate": "2026-07-22T01:46:10.504Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1107"
+      "changeId": "pr:nightscout/Trio#1107",
+      "title": "Core Data performance and stability fixes",
+      "changes": [
+        "Background data operations now use fresh Core Data contexts to avoid stale data and reduce races.",
+        "Database fetches are batched or prefetched to reduce repeated lookups and improve performance.",
+        "TDD (total daily dose) average calculations run faster due to aggregate queries.",
+        "Pump-event deduplication now uses timestamp plus type so a bolus and a temp basal at the same time are both kept.",
+        "Core Data now uses a history-based change feed and FRCs for more consistent background updates."
       ],
-      "summary": "Large Core Data refactor to reduce N+1 queries and contention: replaced long‑lived shared NSManagedObjectContext usage with per‑operation task contexts (CoreDataStack.shared.newTaskContext()), migrated many storage classes to a contextProvider/makeContext pattern, switched to history-sourced entityChangePublisher and NSFetchedResultsController in multiple places, added relationship prefetching for PumpEventStored and OrefDetermination, optimized TDD weighted-average to use SQL aggregates, adjusted pump-event dedup to (timestamp,type)+batched find-or-create with uniqueness backstop, and included various pipeline teardown/debounce/stale-run protections and an APSManager crash fix related to incorrect context use.",
-      "userFacingImpact": "Intended to reduce Core Data contention and stale-object races, lower CPU/I/O on hot paths, speed up TDD aggregate calculations, and improve cross-process/batch change detection. An APSManager crash caused by incorrect context usage was explicitly fixed. The author reports ~2 months of personal testing but flags that broad testing is recommended because incorrect NSManagedObjectContext access could trigger ConcurrencyDebug crashes if any remaining wrong access exists.",
       "category": "fixes",
       "sourceIds": [
-        "pr:gordolio/Trio#1107",
         "pr:nightscout/Trio#1107",
-        "commit:c753e7173cc1",
-        "commit:70861a45f35d",
-        "commit:6c1fc587939b",
-        "commit:af6c1711a96f",
-        "commit:8523d8f76ce5",
-        "commit:3612b655e600",
-        "commit:8afda2d15060",
-        "commit:a19b5f45a19b",
-        "commit:370c5e269bf5",
-        "commit:0c700442b363",
-        "commit:9534b96713fc",
-        "commit:e929893aa2a7",
-        "commit:e68bf090106d",
-        "commit:356941192e3a",
-        "commit:6ce76424d033",
-        "commit:bccdabd3c7cf",
-        "commit:5827384a2c59",
-        "commit:8928f62fdc0b",
-        "commit:2ad1dc643b27",
-        "commit:960c8adb20e4",
-        "commit:5bee8701444b",
-        "commit:8b60b6887388",
-        "commit:f848bbf50a8c",
-        "commit:b54d2cadd799",
-        "commit:e37167ee7d6b",
-        "commit:ada268b97f9c",
-        "commit:7ab520cc3ab9",
-        "commit:bf16111a65a4",
-        "commit:264148c39761",
-        "commit:7d8d2c4d2ebf",
-        "commit:6b8b59a1f83c",
-        "commit:f980f67bea73",
-        "commit:bb959485e67d",
-        "commit:8ac5b26a7d79",
-        "commit:eb5a2e9887e2",
-        "commit:33e25513314c",
-        "commit:1785b9adb036",
-        "commit:f10480f21d18",
-        "commit:48cfdc1f676a",
-        "file:38237317aaae",
-        "file:5b5208f3e767",
-        "file:bfbfa7230344",
-        "file:a14ed553892a",
-        "file:c5f95d4e0477",
-        "file:b32817dd8023",
-        "file:b56f792571fd",
-        "file:1424f20cbc55",
-        "file:b67a66fc95cd",
-        "file:175b1c90af80",
-        "file:894dfd11506c",
-        "file:b8f7dfa29b73",
-        "file:1a11795c1bbd",
-        "file:8743174665b5",
-        "file:1e7838fdfc5f",
-        "file:a253aec6c441",
-        "file:e735b0e31f75",
-        "file:ca932dd3bec4",
-        "file:1d8080e21300",
-        "file:be7688ab8fc7",
-        "file:7876bbe19a5e",
-        "file:f1afa7af1022",
-        "file:680005fff891",
-        "file:f0e5513ddaa2",
-        "file:a53f7640d6f9",
-        "file:ee314ee722e7",
-        "file:976e2725c246",
-        "file:465b88568b20",
-        "file:7bc72564705d",
-        "file:082a68ffe536",
-        "file:6af823deda4c",
-        "file:07c63b78e634",
-        "file:27e012135fe1",
-        "file:a4442e0a9cbd",
-        "file:8ea76a885a46",
-        "file:c2ac540cf025",
-        "file:3ec5e164efc0",
-        "file:58f5e0d2250b",
-        "file:f87dc0450a79",
-        "file:51386745a295",
-        "file:75f2a9839019",
-        "file:b908990c262c",
-        "file:57b3102a7908",
-        "file:1aea74d4d563",
-        "file:b8a6e28feaf5",
-        "file:4538b1194ca8",
-        "file:22260c1afae4",
-        "file:6badc1aae743",
-        "file:dafe0b15af87",
-        "file:35cba395d1f1",
-        "file:80e173b2c956",
-        "file:4d913f54186c",
-        "file:49172c03a8e2",
-        "file:0906b08e2c4d",
-        "file:09bbd75de64d",
-        "file:9ee25daf0ef9",
-        "file:5e9201ef2a1b",
-        "file:87e06498f6b5",
-        "file:842f78b427b6",
-        "file:031628b3f654",
-        "file:510fac81e78e",
-        "file:2207f0a9eec5",
-        "file:8b776797c59d",
-        "file:b2967929758a",
-        "file:65feac3a2e50",
-        "file:87e06498f6b5",
         "diff:86ef919d3522"
       ],
       "confidence": "high",
-      "humanReviewRequired": true,
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1107"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
-        {
-          "id": "pr:gordolio/Trio#1107",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1107: Core Data Performance Improvements, Fixes and Adjustments",
-          "url": "https://github.com/nightscout/Trio/pull/1107"
-        },
         {
           "id": "pr:nightscout/Trio#1107",
           "type": "pull-request",
           "title": "nightscout/Trio#1107: Core Data Performance Improvements, Fixes and Adjustments",
           "url": "https://github.com/nightscout/Trio/pull/1107"
-        },
-        {
-          "id": "commit:c753e7173cc1",
-          "type": "commit",
-          "title": "Remove automaticallyMergesChangesFromParent from background context method",
-          "url": "https://github.com/gordolio/Trio/commit/c753e7173cc11b3dae67e83092a7bc0d18dba3ea"
-        },
-        {
-          "id": "commit:70861a45f35d",
-          "type": "commit",
-          "title": "Change context use in PumpHistoryStorage to create a new context every time for every data operation instead of having a long living context",
-          "url": "https://github.com/gordolio/Trio/commit/70861a45f35d4dfd12c24e3abb4f0e9c9f2047f2"
-        },
-        {
-          "id": "commit:6c1fc587939b",
-          "type": "commit",
-          "title": "Clean up CoreDataStack",
-          "url": "https://github.com/gordolio/Trio/commit/6c1fc587939be94ffd144cbaa8a293b6c005c753"
-        },
-        {
-          "id": "commit:af6c1711a96f",
-          "type": "commit",
-          "title": "Adapt the remaining storages to the new pattern",
-          "url": "https://github.com/gordolio/Trio/commit/af6c1711a96f86141c5d788c929ce64b3c01e4bd"
-        },
-        {
-          "id": "commit:8523d8f76ce5",
-          "type": "commit",
-          "title": "Adapt the remaining classes to the new pattern",
-          "url": "https://github.com/gordolio/Trio/commit/8523d8f76ce5e5312de163a0725cda8dc5455228"
-        },
-        {
-          "id": "commit:3612b655e600",
-          "type": "commit",
-          "title": "Adapt the state models  to the new pattern",
-          "url": "https://github.com/gordolio/Trio/commit/3612b655e6007b45c4a9cec5c952c200ff78a549"
-        },
-        {
-          "id": "commit:8afda2d15060",
-          "type": "commit",
-          "title": "Fix crash in APSManager due to wrong context usage",
-          "url": "https://github.com/gordolio/Trio/commit/8afda2d15060702b1f7836eaa2ddbffdb48e56af"
-        },
-        {
-          "id": "commit:a19b5f45a19b",
-          "type": "commit",
-          "title": "Prefetch forecast values to eliminate N+1 queries",
-          "url": "https://github.com/gordolio/Trio/commit/a19b5f45a19bc1d8207447a2e544dd2c50edb414"
-        },
-        {
-          "id": "commit:370c5e269bf5",
-          "type": "commit",
-          "title": "Prefetch pump event relationships to eliminate N+1 queries",
-          "url": "https://github.com/gordolio/Trio/commit/370c5e269bf518c1aaea4e53be16ccabcdbc79ad"
-        },
-        {
-          "id": "commit:0c700442b363",
-          "type": "commit",
-          "title": "Aggregate TDD weighted average and prefetch carb entries",
-          "url": "https://github.com/gordolio/Trio/commit/0c700442b363b315477b64bb23db4d393a16c6e0"
-        },
-        {
-          "id": "commit:9534b96713fc",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/9534b96713fcc000e93349799d59b800aa1f5629"
-        },
-        {
-          "id": "commit:e929893aa2a7",
-          "type": "commit",
-          "title": "Dedupe pump events via batched find-or-create + constraint backstop",
-          "url": "https://github.com/gordolio/Trio/commit/e929893aa2a744c440bfdff23c5e37f0a62d7ac7"
-        },
-        {
-          "id": "commit:e68bf090106d",
-          "type": "commit",
-          "title": "Replace our custom Core Data publisher with a NSFetchedResultsController in HomeStateModel",
-          "url": "https://github.com/gordolio/Trio/commit/e68bf090106db9d1b1cbfe5beb95761e3eada0ed"
-        },
-        {
-          "id": "commit:356941192e3a",
-          "type": "commit",
-          "title": "Replace Core Data publisher also in TreatmentsStateModel",
-          "url": "https://github.com/gordolio/Trio/commit/356941192e3a35c21ef5d59f8c5a11a2eed20953"
-        },
-        {
-          "id": "commit:6ce76424d033",
-          "type": "commit",
-          "title": "Replace Core Data publisher in our Services (TP, NS, Health)",
-          "url": "https://github.com/gordolio/Trio/commit/6ce76424d033d8ab2ee1fa649ee1a02f228d7ad1"
-        },
-        {
-          "id": "commit:bccdabd3c7cf",
-          "type": "commit",
-          "title": "Replace custom Core Data publisher with history-sourced publisher",
-          "url": "https://github.com/gordolio/Trio/commit/bccdabd3c7cf61fd83fbed6116223689f5498eec"
-        },
-        {
-          "id": "commit:5827384a2c59",
-          "type": "commit",
-          "title": "Merge branch 'dev' into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/5827384a2c592174408a5f9ca4fcec09497aafcf"
-        },
-        {
-          "id": "commit:8928f62fdc0b",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/8928f62fdc0b2475f78d11dd5af97d5197d1197f"
-        },
-        {
-          "id": "commit:2ad1dc643b27",
-          "type": "commit",
-          "title": "Merge branch 'core-data-fixes' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/2ad1dc643b278712f13ffb5b71360e5cb15d59c7"
-        },
-        {
-          "id": "commit:960c8adb20e4",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/960c8adb20e4acd388c072184851fb3703cd7040"
-        },
-        {
-          "id": "commit:5bee8701444b",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/5bee8701444bc81295228ca4aaf53b50889c4f6d"
-        },
-        {
-          "id": "commit:8b60b6887388",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/8b60b6887388134124b93a25ae2c696b418dab26"
-        },
-        {
-          "id": "commit:f848bbf50a8c",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/f848bbf50a8c489e634a5faaa4637739528f4c7f"
-        },
-        {
-          "id": "commit:b54d2cadd799",
-          "type": "commit",
-          "title": "Move send to perform block to avoid potential race",
-          "url": "https://github.com/gordolio/Trio/commit/b54d2cadd79915cd00a30427333a35d663b12c7f"
-        },
-        {
-          "id": "commit:e37167ee7d6b",
-          "type": "commit",
-          "title": "Remove forced unwraps in Core Data Stack",
-          "url": "https://github.com/gordolio/Trio/commit/e37167ee7d6b51b231048981e737c0a899f60a13"
-        },
-        {
-          "id": "commit:ada268b97f9c",
-          "type": "commit",
-          "title": "Remove constraint on PumpEvents",
-          "url": "https://github.com/gordolio/Trio/commit/ada268b97f9c1a1fdce7480e873add8322a95a2a"
-        },
-        {
-          "id": "commit:7ab520cc3ab9",
-          "type": "commit",
-          "title": "Use the events own timestamp to dedup in PumpHistoryStorage",
-          "url": "https://github.com/gordolio/Trio/commit/7ab520cc3ab94ce0f55668087657d70fd46d167e"
-        },
-        {
-          "id": "commit:bf16111a65a4",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/bf16111a65a4c10be5d0ec7c9e8e5d830e0f99b2"
-        },
-        {
-          "id": "commit:264148c39761",
-          "type": "commit",
-          "title": "Re-anchor Home FRC fetch windows when entering foreground",
-          "url": "https://github.com/gordolio/Trio/commit/264148c39761b12dbce28b3c4e25fd87bd66fede"
-        },
-        {
-          "id": "commit:7d8d2c4d2ebf",
-          "type": "commit",
-          "title": "Debounce Core Data remote-change merges and forecast recomputes",
-          "url": "https://github.com/gordolio/Trio/commit/7d8d2c4d2ebf012f93e13fc52395f3489c6b1975"
-        },
-        {
-          "id": "commit:6b8b59a1f83c",
-          "type": "commit",
-          "title": "Prevent stale forecast runs from overwriting fresher results",
-          "url": "https://github.com/gordolio/Trio/commit/6b8b59a1f83cdf3251bf38623f3b372e904d65cd"
-        },
-        {
-          "id": "commit:f980f67bea73",
-          "type": "commit",
-          "title": "Compute temp basal bars in one main-actor pass",
-          "url": "https://github.com/gordolio/Trio/commit/f980f67bea73f01d09b654e36abbd66c01360226"
-        },
-        {
-          "id": "commit:bb959485e67d",
-          "type": "commit",
-          "title": "Tear down Treatments FRC pipelines and in-flight work on dismissal",
-          "url": "https://github.com/gordolio/Trio/commit/bb959485e67d6f80669e6d9ed8222dd311e1a531"
-        },
-        {
-          "id": "commit:8ac5b26a7d79",
-          "type": "commit",
-          "title": "Reap dead observer boxes when registering with the broadcaster",
-          "url": "https://github.com/gordolio/Trio/commit/8ac5b26a7d794fe03ce75dc81852bcc8f989a121"
-        },
-        {
-          "id": "commit:eb5a2e9887e2",
-          "type": "commit",
-          "title": "Guard recompute pipelines against stale runs and teardown races",
-          "url": "https://github.com/gordolio/Trio/commit/eb5a2e9887e24db878a97ce68c463d84800ddde6"
-        },
-        {
-          "id": "commit:33e25513314c",
-          "type": "commit",
-          "title": "Re-add observers in TidepoolManager",
-          "url": "https://github.com/gordolio/Trio/commit/33e25513314c6a60491019f926e45d598dabc038"
-        },
-        {
-          "id": "commit:1785b9adb036",
-          "type": "commit",
-          "title": "Replace remaining long-lived task contexts with per-call contexts",
-          "url": "https://github.com/gordolio/Trio/commit/1785b9adb036cc8ad54bbcaaf73d9fad8368cd0f"
-        },
-        {
-          "id": "commit:f10480f21d18",
-          "type": "commit",
-          "title": "Sync DanaKit, G7SensorKit, and MedtrumKit submodules with dev",
-          "url": "https://github.com/gordolio/Trio/commit/f10480f21d18670e3dcd2c8ec4b25bb058f41783"
-        },
-        {
-          "id": "commit:48cfdc1f676a",
-          "type": "commit",
-          "title": "Merge pull request #1107 from nightscout/core-data-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:38237317aaae",
-          "type": "file",
-          "title": "Model/CoreDataObserver.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:5b5208f3e767",
-          "type": "file",
-          "title": "Model/CoreDataStack.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:bfbfa7230344",
-          "type": "file",
-          "title": "Model/Helper/NSPredicates.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:a14ed553892a",
-          "type": "file",
-          "title": "Model/NSFetchedResultsControllerDelegate.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:c5f95d4e0477",
-          "type": "file",
-          "title": "Model/TrioCoreDataPersistentContainer.xcdatamodeld/TrioCoreDataPersistentContainer.xcdatamodel/contents",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:b32817dd8023",
-          "type": "file",
-          "title": "Trio.xcodeproj/project.pbxproj",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:b56f792571fd",
-          "type": "file",
-          "title": "Trio/Sources/APS/APSManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:1424f20cbc55",
-          "type": "file",
-          "title": "Trio/Sources/APS/DeviceDataManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:b67a66fc95cd",
-          "type": "file",
-          "title": "Trio/Sources/APS/FetchGlucoseManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:175b1c90af80",
-          "type": "file",
-          "title": "Trio/Sources/APS/FetchTreatmentsManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:894dfd11506c",
-          "type": "file",
-          "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:b8f7dfa29b73",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/CarbsStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:1a11795c1bbd",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/ContactImageStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:8743174665b5",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/DeterminationStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:1e7838fdfc5f",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/GlucoseStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:a253aec6c441",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/OverrideStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:e735b0e31f75",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/PumpHistoryStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:ca932dd3bec4",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/TDDStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:1d8080e21300",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/TempTargetsStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:be7688ab8fc7",
-          "type": "file",
-          "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:7876bbe19a5e",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Adjustments/AdjustmentsStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:f1afa7af1022",
-          "type": "file",
-          "title": "Trio/Sources/Modules/DynamicSettings/DynamicSettingsStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:680005fff891",
-          "type": "file",
-          "title": "Trio/Sources/Modules/History/HistoryStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:f0e5513ddaa2",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/BatterySetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:a53f7640d6f9",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/CarbSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:ee314ee722e7",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/ChartAxisSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:976e2725c246",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/CurrentTDDSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:465b88568b20",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/DeterminationSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:7bc72564705d",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/ForecastSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:082a68ffe536",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/GlucoseSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:6af823deda4c",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/OverrideSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:07c63b78e634",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/PumpHistorySetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:27e012135fe1",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/TempTargetSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:a4442e0a9cbd",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/HomeStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:8ea76a885a46",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/View/Chart/ChartElements/BasalChart.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:c2ac540cf025",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Home/View/Chart/MainChartView.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:3ec5e164efc0",
-          "type": "file",
-          "title": "Trio/Sources/Modules/ISFEditor/ISFEditorStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:58f5e0d2250b",
-          "type": "file",
-          "title": "Trio/Sources/Modules/NightscoutConfig/NightscoutConfigStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:f87dc0450a79",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/BolusStatsSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:51386745a295",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/LoopChartSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:75f2a9839019",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/MealStatsSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:b908990c262c",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/TDDSetup.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:57b3102a7908",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Stat/StatStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:1aea74d4d563",
-          "type": "file",
-          "title": "Trio/Sources/Modules/Treatments/TreatmentsStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:b8a6e28feaf5",
-          "type": "file",
-          "title": "Trio/Sources/Services/Alerts/GlucoseAlertCoordinator.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:4538b1194ca8",
-          "type": "file",
-          "title": "Trio/Sources/Services/BolusCalculator/BolusCalculationManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:22260c1afae4",
-          "type": "file",
-          "title": "Trio/Sources/Services/BolusSafety/BolusSafetyValidator.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:6badc1aae743",
-          "type": "file",
-          "title": "Trio/Sources/Services/Calendar/CalendarManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:dafe0b15af87",
-          "type": "file",
-          "title": "Trio/Sources/Services/ContactImage/ContactImageManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:35cba395d1f1",
-          "type": "file",
-          "title": "Trio/Sources/Services/HealthKit/HealthKitManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:80e173b2c956",
-          "type": "file",
-          "title": "Trio/Sources/Services/IOB/IOBService.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:4d913f54186c",
-          "type": "file",
-          "title": "Trio/Sources/Services/LiveActivity/Data/DataManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:49172c03a8e2",
-          "type": "file",
-          "title": "Trio/Sources/Services/LiveActivity/LiveActivityManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:0906b08e2c4d",
-          "type": "file",
-          "title": "Trio/Sources/Services/Network/Nightscout/BaseNightscoutManager+Subscribers.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:09bbd75de64d",
-          "type": "file",
-          "title": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:9ee25daf0ef9",
-          "type": "file",
-          "title": "Trio/Sources/Services/Network/TidepoolManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:5e9201ef2a1b",
-          "type": "file",
-          "title": "Trio/Sources/Services/Notifications/SwiftNotificationCenter/WeakObjectSet.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:87e06498f6b5",
-          "type": "file",
-          "title": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:842f78b427b6",
-          "type": "file",
-          "title": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:031628b3f654",
-          "type": "file",
-          "title": "Trio/Sources/Services/WatchManager/GarminManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:510fac81e78e",
-          "type": "file",
-          "title": "Trio/Sources/Shortcuts/BaseIntentsRequest.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:2207f0a9eec5",
-          "type": "file",
-          "title": "Trio/Sources/Shortcuts/Override/OverridePresetsIntentRequest.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:8b776797c59d",
-          "type": "file",
-          "title": "Trio/Sources/Shortcuts/State/StateIntentRequest.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:b2967929758a",
-          "type": "file",
-          "title": "Trio/Sources/Shortcuts/TempPresets/TempPresetsIntentRequest.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:65feac3a2e50",
-          "type": "file",
-          "title": "TrioTests/CoreDataTests/TestAssembly.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-        },
-        {
-          "id": "file:87e06498f6b5",
-          "type": "file",
-          "title": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
         },
         {
           "id": "diff:86ef919d3522",
@@ -787,35 +52,27 @@
       ]
     },
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1285"
+      "changeId": "pr:nightscout/Trio#1285",
+      "title": "Acknowledge pump alerts when dismissed",
+      "changes": [
+        "Dismissing the in-app alert banner or swiping away a notification also acknowledges pump alerts at the device.",
+        "This stops pod or pump beeps when you dismiss their alerts.",
+        "Tapping or swiping still snoozes alerts for 15 minutes and removes on-screen presentations.",
+        "Alerts from Trio internals (CGM/algorithm) are not affected by this change."
       ],
-      "summary": "Adds acknowledgeOnDevice(identifier:) and invokes it from requestSnooze so dismissing an in-app banner or swiping away a user notification also forwards an acknowledgement to the issuing device manager (AlertResponder) by calling acknowledgeAlert.",
-      "userFacingImpact": "Dismiss/snooze UX remains the same, but pump-issued alerts are now also acknowledged at the pump manager/device level when the user dismisses the in-app/banner notification, which should clear device-side alerts (e.g., repeating pod beeps). Trio-internal alerts and pump managers implementing no-op ack behavior are unaffected.",
       "category": "alerting-and-safety",
       "sourceIds": [
-        "pr:gordolio/Trio#1285",
         "pr:nightscout/Trio#1285",
-        "commit:2156ef6193f8",
-        "commit:e074fa78bc46",
-        "commit:e66bc689e004",
-        "commit:7b6ba22cd833",
-        "commit:d456d69b5ca7",
-        "commit:79a8eccdf44e",
-        "file:8be3f6914cc4",
-        "diff:b720ea92af84"
+        "commit:e66bc689e004"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1285"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
-        {
-          "id": "pr:gordolio/Trio#1285",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1285: Fix Spurious Pump Alerts",
-          "url": "https://github.com/nightscout/Trio/pull/1285"
-        },
         {
           "id": "pr:nightscout/Trio#1285",
           "type": "pull-request",
@@ -823,62 +80,51 @@
           "url": "https://github.com/nightscout/Trio/pull/1285"
         },
         {
-          "id": "commit:2156ef6193f8",
-          "type": "commit",
-          "title": "Bump OmnipodKit",
-          "url": "https://github.com/gordolio/Trio/commit/2156ef6193f831c2e355a0cf59abc679f56d540f"
-        },
-        {
-          "id": "commit:e074fa78bc46",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into feat/o5",
-          "url": "https://github.com/gordolio/Trio/commit/e074fa78bc465e8730c420fc8b11b8e3ad5a44fc"
-        },
-        {
           "id": "commit:e66bc689e004",
           "type": "commit",
           "title": "Ack alerts when dismissing in-app banner (fixes #1135)",
           "url": "https://github.com/gordolio/Trio/commit/e66bc689e0048cc672c01b9bf845f62f9062fef7"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1293",
+      "title": "Swipe to end snooze",
+      "changes": [
+        "End an active snooze by swiping the snooze row to the left.",
+        "A red \"End Snooze\" swipe action appears and a full swipe completes it.",
+        "The snooze sheet footer shows a hand symbol and text instructing to swipe left.",
+        "The previous Undo Snooze button has been replaced by the swipe action."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1293",
+        "diff:81a7b90c0768"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1293"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1293",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1293: add swipe action to undo snooze",
+          "url": "https://github.com/nightscout/Trio/pull/1293"
         },
         {
-          "id": "commit:7b6ba22cd833",
-          "type": "commit",
-          "title": "Move OmnipodKit to correct SHA",
-          "url": "https://github.com/gordolio/Trio/commit/7b6ba22cd833de8d5e9264e995dd2c05969e2998"
-        },
-        {
-          "id": "commit:d456d69b5ca7",
-          "type": "commit",
-          "title": "Merge branch 'dev' into fix-spurious-pump-alerts",
-          "url": "https://github.com/gordolio/Trio/commit/d456d69b5ca7181c8f6c964866400351cb540410"
-        },
-        {
-          "id": "commit:79a8eccdf44e",
-          "type": "commit",
-          "title": "Merge pull request #1285 from nightscout/fix-spurious-pump-alerts",
-          "url": "https://github.com/gordolio/Trio/commit/79a8eccdf44e52022b5478f75a83b9756c84e331"
-        },
-        {
-          "id": "file:8be3f6914cc4",
-          "type": "file",
-          "title": "Trio/Sources/Services/Alerts/TrioAlertManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/79a8eccdf44e52022b5478f75a83b9756c84e331"
-        },
-        {
-          "id": "diff:b720ea92af84",
+          "id": "diff:81a7b90c0768",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1285",
-          "url": "https://github.com/gordolio/Trio/compare/ef209230a4b95f9822cc4bf92fb93b5f1735266f...79a8eccdf44e52022b5478f75a83b9756c84e331"
+          "title": "Diff for pr:nightscout/Trio#1293",
+          "url": "https://github.com/gordolio/Trio/compare/6ab115cc7f0c577069d7465566a2ad2de3ec15c2...502709a5434fcdf6e11225872efde289aa526f05"
         }
       ]
     }
   ],
   "categories": [
-    {
-      "category": "highlights",
-      "title": "Highlights",
-      "items": []
-    },
     {
       "category": "new-features",
       "title": "New Features",
@@ -887,838 +133,7 @@
     {
       "category": "fixes",
       "title": "Fixes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1107"
-          ],
-          "summary": "Large Core Data refactor to reduce N+1 queries and contention: replaced long‑lived shared NSManagedObjectContext usage with per‑operation task contexts (CoreDataStack.shared.newTaskContext()), migrated many storage classes to a contextProvider/makeContext pattern, switched to history-sourced entityChangePublisher and NSFetchedResultsController in multiple places, added relationship prefetching for PumpEventStored and OrefDetermination, optimized TDD weighted-average to use SQL aggregates, adjusted pump-event dedup to (timestamp,type)+batched find-or-create with uniqueness backstop, and included various pipeline teardown/debounce/stale-run protections and an APSManager crash fix related to incorrect context use.",
-          "userFacingImpact": "Intended to reduce Core Data contention and stale-object races, lower CPU/I/O on hot paths, speed up TDD aggregate calculations, and improve cross-process/batch change detection. An APSManager crash caused by incorrect context usage was explicitly fixed. The author reports ~2 months of personal testing but flags that broad testing is recommended because incorrect NSManagedObjectContext access could trigger ConcurrencyDebug crashes if any remaining wrong access exists.",
-          "category": "fixes",
-          "sourceIds": [
-            "pr:gordolio/Trio#1107",
-            "pr:nightscout/Trio#1107",
-            "commit:c753e7173cc1",
-            "commit:70861a45f35d",
-            "commit:6c1fc587939b",
-            "commit:af6c1711a96f",
-            "commit:8523d8f76ce5",
-            "commit:3612b655e600",
-            "commit:8afda2d15060",
-            "commit:a19b5f45a19b",
-            "commit:370c5e269bf5",
-            "commit:0c700442b363",
-            "commit:9534b96713fc",
-            "commit:e929893aa2a7",
-            "commit:e68bf090106d",
-            "commit:356941192e3a",
-            "commit:6ce76424d033",
-            "commit:bccdabd3c7cf",
-            "commit:5827384a2c59",
-            "commit:8928f62fdc0b",
-            "commit:2ad1dc643b27",
-            "commit:960c8adb20e4",
-            "commit:5bee8701444b",
-            "commit:8b60b6887388",
-            "commit:f848bbf50a8c",
-            "commit:b54d2cadd799",
-            "commit:e37167ee7d6b",
-            "commit:ada268b97f9c",
-            "commit:7ab520cc3ab9",
-            "commit:bf16111a65a4",
-            "commit:264148c39761",
-            "commit:7d8d2c4d2ebf",
-            "commit:6b8b59a1f83c",
-            "commit:f980f67bea73",
-            "commit:bb959485e67d",
-            "commit:8ac5b26a7d79",
-            "commit:eb5a2e9887e2",
-            "commit:33e25513314c",
-            "commit:1785b9adb036",
-            "commit:f10480f21d18",
-            "commit:48cfdc1f676a",
-            "file:38237317aaae",
-            "file:5b5208f3e767",
-            "file:bfbfa7230344",
-            "file:a14ed553892a",
-            "file:c5f95d4e0477",
-            "file:b32817dd8023",
-            "file:b56f792571fd",
-            "file:1424f20cbc55",
-            "file:b67a66fc95cd",
-            "file:175b1c90af80",
-            "file:894dfd11506c",
-            "file:b8f7dfa29b73",
-            "file:1a11795c1bbd",
-            "file:8743174665b5",
-            "file:1e7838fdfc5f",
-            "file:a253aec6c441",
-            "file:e735b0e31f75",
-            "file:ca932dd3bec4",
-            "file:1d8080e21300",
-            "file:be7688ab8fc7",
-            "file:7876bbe19a5e",
-            "file:f1afa7af1022",
-            "file:680005fff891",
-            "file:f0e5513ddaa2",
-            "file:a53f7640d6f9",
-            "file:ee314ee722e7",
-            "file:976e2725c246",
-            "file:465b88568b20",
-            "file:7bc72564705d",
-            "file:082a68ffe536",
-            "file:6af823deda4c",
-            "file:07c63b78e634",
-            "file:27e012135fe1",
-            "file:a4442e0a9cbd",
-            "file:8ea76a885a46",
-            "file:c2ac540cf025",
-            "file:3ec5e164efc0",
-            "file:58f5e0d2250b",
-            "file:f87dc0450a79",
-            "file:51386745a295",
-            "file:75f2a9839019",
-            "file:b908990c262c",
-            "file:57b3102a7908",
-            "file:1aea74d4d563",
-            "file:b8a6e28feaf5",
-            "file:4538b1194ca8",
-            "file:22260c1afae4",
-            "file:6badc1aae743",
-            "file:dafe0b15af87",
-            "file:35cba395d1f1",
-            "file:80e173b2c956",
-            "file:4d913f54186c",
-            "file:49172c03a8e2",
-            "file:0906b08e2c4d",
-            "file:09bbd75de64d",
-            "file:9ee25daf0ef9",
-            "file:5e9201ef2a1b",
-            "file:87e06498f6b5",
-            "file:842f78b427b6",
-            "file:031628b3f654",
-            "file:510fac81e78e",
-            "file:2207f0a9eec5",
-            "file:8b776797c59d",
-            "file:b2967929758a",
-            "file:65feac3a2e50",
-            "file:87e06498f6b5",
-            "diff:86ef919d3522"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1107",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1107: Core Data Performance Improvements, Fixes and Adjustments",
-              "url": "https://github.com/nightscout/Trio/pull/1107"
-            },
-            {
-              "id": "pr:nightscout/Trio#1107",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1107: Core Data Performance Improvements, Fixes and Adjustments",
-              "url": "https://github.com/nightscout/Trio/pull/1107"
-            },
-            {
-              "id": "commit:c753e7173cc1",
-              "type": "commit",
-              "title": "Remove automaticallyMergesChangesFromParent from background context method",
-              "url": "https://github.com/gordolio/Trio/commit/c753e7173cc11b3dae67e83092a7bc0d18dba3ea"
-            },
-            {
-              "id": "commit:70861a45f35d",
-              "type": "commit",
-              "title": "Change context use in PumpHistoryStorage to create a new context every time for every data operation instead of having a long living context",
-              "url": "https://github.com/gordolio/Trio/commit/70861a45f35d4dfd12c24e3abb4f0e9c9f2047f2"
-            },
-            {
-              "id": "commit:6c1fc587939b",
-              "type": "commit",
-              "title": "Clean up CoreDataStack",
-              "url": "https://github.com/gordolio/Trio/commit/6c1fc587939be94ffd144cbaa8a293b6c005c753"
-            },
-            {
-              "id": "commit:af6c1711a96f",
-              "type": "commit",
-              "title": "Adapt the remaining storages to the new pattern",
-              "url": "https://github.com/gordolio/Trio/commit/af6c1711a96f86141c5d788c929ce64b3c01e4bd"
-            },
-            {
-              "id": "commit:8523d8f76ce5",
-              "type": "commit",
-              "title": "Adapt the remaining classes to the new pattern",
-              "url": "https://github.com/gordolio/Trio/commit/8523d8f76ce5e5312de163a0725cda8dc5455228"
-            },
-            {
-              "id": "commit:3612b655e600",
-              "type": "commit",
-              "title": "Adapt the state models  to the new pattern",
-              "url": "https://github.com/gordolio/Trio/commit/3612b655e6007b45c4a9cec5c952c200ff78a549"
-            },
-            {
-              "id": "commit:8afda2d15060",
-              "type": "commit",
-              "title": "Fix crash in APSManager due to wrong context usage",
-              "url": "https://github.com/gordolio/Trio/commit/8afda2d15060702b1f7836eaa2ddbffdb48e56af"
-            },
-            {
-              "id": "commit:a19b5f45a19b",
-              "type": "commit",
-              "title": "Prefetch forecast values to eliminate N+1 queries",
-              "url": "https://github.com/gordolio/Trio/commit/a19b5f45a19bc1d8207447a2e544dd2c50edb414"
-            },
-            {
-              "id": "commit:370c5e269bf5",
-              "type": "commit",
-              "title": "Prefetch pump event relationships to eliminate N+1 queries",
-              "url": "https://github.com/gordolio/Trio/commit/370c5e269bf518c1aaea4e53be16ccabcdbc79ad"
-            },
-            {
-              "id": "commit:0c700442b363",
-              "type": "commit",
-              "title": "Aggregate TDD weighted average and prefetch carb entries",
-              "url": "https://github.com/gordolio/Trio/commit/0c700442b363b315477b64bb23db4d393a16c6e0"
-            },
-            {
-              "id": "commit:9534b96713fc",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/9534b96713fcc000e93349799d59b800aa1f5629"
-            },
-            {
-              "id": "commit:e929893aa2a7",
-              "type": "commit",
-              "title": "Dedupe pump events via batched find-or-create + constraint backstop",
-              "url": "https://github.com/gordolio/Trio/commit/e929893aa2a744c440bfdff23c5e37f0a62d7ac7"
-            },
-            {
-              "id": "commit:e68bf090106d",
-              "type": "commit",
-              "title": "Replace our custom Core Data publisher with a NSFetchedResultsController in HomeStateModel",
-              "url": "https://github.com/gordolio/Trio/commit/e68bf090106db9d1b1cbfe5beb95761e3eada0ed"
-            },
-            {
-              "id": "commit:356941192e3a",
-              "type": "commit",
-              "title": "Replace Core Data publisher also in TreatmentsStateModel",
-              "url": "https://github.com/gordolio/Trio/commit/356941192e3a35c21ef5d59f8c5a11a2eed20953"
-            },
-            {
-              "id": "commit:6ce76424d033",
-              "type": "commit",
-              "title": "Replace Core Data publisher in our Services (TP, NS, Health)",
-              "url": "https://github.com/gordolio/Trio/commit/6ce76424d033d8ab2ee1fa649ee1a02f228d7ad1"
-            },
-            {
-              "id": "commit:bccdabd3c7cf",
-              "type": "commit",
-              "title": "Replace custom Core Data publisher with history-sourced publisher",
-              "url": "https://github.com/gordolio/Trio/commit/bccdabd3c7cf61fd83fbed6116223689f5498eec"
-            },
-            {
-              "id": "commit:5827384a2c59",
-              "type": "commit",
-              "title": "Merge branch 'dev' into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/5827384a2c592174408a5f9ca4fcec09497aafcf"
-            },
-            {
-              "id": "commit:8928f62fdc0b",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/8928f62fdc0b2475f78d11dd5af97d5197d1197f"
-            },
-            {
-              "id": "commit:2ad1dc643b27",
-              "type": "commit",
-              "title": "Merge branch 'core-data-fixes' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/2ad1dc643b278712f13ffb5b71360e5cb15d59c7"
-            },
-            {
-              "id": "commit:960c8adb20e4",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/960c8adb20e4acd388c072184851fb3703cd7040"
-            },
-            {
-              "id": "commit:5bee8701444b",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/5bee8701444bc81295228ca4aaf53b50889c4f6d"
-            },
-            {
-              "id": "commit:8b60b6887388",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/8b60b6887388134124b93a25ae2c696b418dab26"
-            },
-            {
-              "id": "commit:f848bbf50a8c",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/f848bbf50a8c489e634a5faaa4637739528f4c7f"
-            },
-            {
-              "id": "commit:b54d2cadd799",
-              "type": "commit",
-              "title": "Move send to perform block to avoid potential race",
-              "url": "https://github.com/gordolio/Trio/commit/b54d2cadd79915cd00a30427333a35d663b12c7f"
-            },
-            {
-              "id": "commit:e37167ee7d6b",
-              "type": "commit",
-              "title": "Remove forced unwraps in Core Data Stack",
-              "url": "https://github.com/gordolio/Trio/commit/e37167ee7d6b51b231048981e737c0a899f60a13"
-            },
-            {
-              "id": "commit:ada268b97f9c",
-              "type": "commit",
-              "title": "Remove constraint on PumpEvents",
-              "url": "https://github.com/gordolio/Trio/commit/ada268b97f9c1a1fdce7480e873add8322a95a2a"
-            },
-            {
-              "id": "commit:7ab520cc3ab9",
-              "type": "commit",
-              "title": "Use the events own timestamp to dedup in PumpHistoryStorage",
-              "url": "https://github.com/gordolio/Trio/commit/7ab520cc3ab94ce0f55668087657d70fd46d167e"
-            },
-            {
-              "id": "commit:bf16111a65a4",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/bf16111a65a4c10be5d0ec7c9e8e5d830e0f99b2"
-            },
-            {
-              "id": "commit:264148c39761",
-              "type": "commit",
-              "title": "Re-anchor Home FRC fetch windows when entering foreground",
-              "url": "https://github.com/gordolio/Trio/commit/264148c39761b12dbce28b3c4e25fd87bd66fede"
-            },
-            {
-              "id": "commit:7d8d2c4d2ebf",
-              "type": "commit",
-              "title": "Debounce Core Data remote-change merges and forecast recomputes",
-              "url": "https://github.com/gordolio/Trio/commit/7d8d2c4d2ebf012f93e13fc52395f3489c6b1975"
-            },
-            {
-              "id": "commit:6b8b59a1f83c",
-              "type": "commit",
-              "title": "Prevent stale forecast runs from overwriting fresher results",
-              "url": "https://github.com/gordolio/Trio/commit/6b8b59a1f83cdf3251bf38623f3b372e904d65cd"
-            },
-            {
-              "id": "commit:f980f67bea73",
-              "type": "commit",
-              "title": "Compute temp basal bars in one main-actor pass",
-              "url": "https://github.com/gordolio/Trio/commit/f980f67bea73f01d09b654e36abbd66c01360226"
-            },
-            {
-              "id": "commit:bb959485e67d",
-              "type": "commit",
-              "title": "Tear down Treatments FRC pipelines and in-flight work on dismissal",
-              "url": "https://github.com/gordolio/Trio/commit/bb959485e67d6f80669e6d9ed8222dd311e1a531"
-            },
-            {
-              "id": "commit:8ac5b26a7d79",
-              "type": "commit",
-              "title": "Reap dead observer boxes when registering with the broadcaster",
-              "url": "https://github.com/gordolio/Trio/commit/8ac5b26a7d794fe03ce75dc81852bcc8f989a121"
-            },
-            {
-              "id": "commit:eb5a2e9887e2",
-              "type": "commit",
-              "title": "Guard recompute pipelines against stale runs and teardown races",
-              "url": "https://github.com/gordolio/Trio/commit/eb5a2e9887e24db878a97ce68c463d84800ddde6"
-            },
-            {
-              "id": "commit:33e25513314c",
-              "type": "commit",
-              "title": "Re-add observers in TidepoolManager",
-              "url": "https://github.com/gordolio/Trio/commit/33e25513314c6a60491019f926e45d598dabc038"
-            },
-            {
-              "id": "commit:1785b9adb036",
-              "type": "commit",
-              "title": "Replace remaining long-lived task contexts with per-call contexts",
-              "url": "https://github.com/gordolio/Trio/commit/1785b9adb036cc8ad54bbcaaf73d9fad8368cd0f"
-            },
-            {
-              "id": "commit:f10480f21d18",
-              "type": "commit",
-              "title": "Sync DanaKit, G7SensorKit, and MedtrumKit submodules with dev",
-              "url": "https://github.com/gordolio/Trio/commit/f10480f21d18670e3dcd2c8ec4b25bb058f41783"
-            },
-            {
-              "id": "commit:48cfdc1f676a",
-              "type": "commit",
-              "title": "Merge pull request #1107 from nightscout/core-data-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:38237317aaae",
-              "type": "file",
-              "title": "Model/CoreDataObserver.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:5b5208f3e767",
-              "type": "file",
-              "title": "Model/CoreDataStack.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:bfbfa7230344",
-              "type": "file",
-              "title": "Model/Helper/NSPredicates.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:a14ed553892a",
-              "type": "file",
-              "title": "Model/NSFetchedResultsControllerDelegate.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:c5f95d4e0477",
-              "type": "file",
-              "title": "Model/TrioCoreDataPersistentContainer.xcdatamodeld/TrioCoreDataPersistentContainer.xcdatamodel/contents",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:b32817dd8023",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:b56f792571fd",
-              "type": "file",
-              "title": "Trio/Sources/APS/APSManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:1424f20cbc55",
-              "type": "file",
-              "title": "Trio/Sources/APS/DeviceDataManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:b67a66fc95cd",
-              "type": "file",
-              "title": "Trio/Sources/APS/FetchGlucoseManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:175b1c90af80",
-              "type": "file",
-              "title": "Trio/Sources/APS/FetchTreatmentsManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:894dfd11506c",
-              "type": "file",
-              "title": "Trio/Sources/APS/OpenAPS/OpenAPS.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:b8f7dfa29b73",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/CarbsStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:1a11795c1bbd",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/ContactImageStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:8743174665b5",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/DeterminationStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:1e7838fdfc5f",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/GlucoseStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:a253aec6c441",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/OverrideStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:e735b0e31f75",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/PumpHistoryStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:ca932dd3bec4",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/TDDStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:1d8080e21300",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/TempTargetsStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:be7688ab8fc7",
-              "type": "file",
-              "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:7876bbe19a5e",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Adjustments/AdjustmentsStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:f1afa7af1022",
-              "type": "file",
-              "title": "Trio/Sources/Modules/DynamicSettings/DynamicSettingsStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:680005fff891",
-              "type": "file",
-              "title": "Trio/Sources/Modules/History/HistoryStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:f0e5513ddaa2",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/BatterySetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:a53f7640d6f9",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/CarbSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:ee314ee722e7",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/ChartAxisSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:976e2725c246",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/CurrentTDDSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:465b88568b20",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/DeterminationSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:7bc72564705d",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/ForecastSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:082a68ffe536",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/GlucoseSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:6af823deda4c",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/OverrideSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:07c63b78e634",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/PumpHistorySetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:27e012135fe1",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel+Setup/TempTargetSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:a4442e0a9cbd",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/HomeStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:8ea76a885a46",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/View/Chart/ChartElements/BasalChart.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:c2ac540cf025",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Home/View/Chart/MainChartView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:3ec5e164efc0",
-              "type": "file",
-              "title": "Trio/Sources/Modules/ISFEditor/ISFEditorStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:58f5e0d2250b",
-              "type": "file",
-              "title": "Trio/Sources/Modules/NightscoutConfig/NightscoutConfigStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:f87dc0450a79",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/BolusStatsSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:51386745a295",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/LoopChartSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:75f2a9839019",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/MealStatsSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:b908990c262c",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Stat/StatStateModel+Setup/TDDSetup.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:57b3102a7908",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Stat/StatStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:1aea74d4d563",
-              "type": "file",
-              "title": "Trio/Sources/Modules/Treatments/TreatmentsStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:b8a6e28feaf5",
-              "type": "file",
-              "title": "Trio/Sources/Services/Alerts/GlucoseAlertCoordinator.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:4538b1194ca8",
-              "type": "file",
-              "title": "Trio/Sources/Services/BolusCalculator/BolusCalculationManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:22260c1afae4",
-              "type": "file",
-              "title": "Trio/Sources/Services/BolusSafety/BolusSafetyValidator.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:6badc1aae743",
-              "type": "file",
-              "title": "Trio/Sources/Services/Calendar/CalendarManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:dafe0b15af87",
-              "type": "file",
-              "title": "Trio/Sources/Services/ContactImage/ContactImageManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:35cba395d1f1",
-              "type": "file",
-              "title": "Trio/Sources/Services/HealthKit/HealthKitManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:80e173b2c956",
-              "type": "file",
-              "title": "Trio/Sources/Services/IOB/IOBService.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:4d913f54186c",
-              "type": "file",
-              "title": "Trio/Sources/Services/LiveActivity/Data/DataManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:49172c03a8e2",
-              "type": "file",
-              "title": "Trio/Sources/Services/LiveActivity/LiveActivityManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:0906b08e2c4d",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/Nightscout/BaseNightscoutManager+Subscribers.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:09bbd75de64d",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:9ee25daf0ef9",
-              "type": "file",
-              "title": "Trio/Sources/Services/Network/TidepoolManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:5e9201ef2a1b",
-              "type": "file",
-              "title": "Trio/Sources/Services/Notifications/SwiftNotificationCenter/WeakObjectSet.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:87e06498f6b5",
-              "type": "file",
-              "title": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:842f78b427b6",
-              "type": "file",
-              "title": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:031628b3f654",
-              "type": "file",
-              "title": "Trio/Sources/Services/WatchManager/GarminManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:510fac81e78e",
-              "type": "file",
-              "title": "Trio/Sources/Shortcuts/BaseIntentsRequest.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:2207f0a9eec5",
-              "type": "file",
-              "title": "Trio/Sources/Shortcuts/Override/OverridePresetsIntentRequest.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:8b776797c59d",
-              "type": "file",
-              "title": "Trio/Sources/Shortcuts/State/StateIntentRequest.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:b2967929758a",
-              "type": "file",
-              "title": "Trio/Sources/Shortcuts/TempPresets/TempPresetsIntentRequest.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:65feac3a2e50",
-              "type": "file",
-              "title": "TrioTests/CoreDataTests/TestAssembly.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "file:87e06498f6b5",
-              "type": "file",
-              "title": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            },
-            {
-              "id": "diff:86ef919d3522",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1107",
-              "url": "https://github.com/gordolio/Trio/compare/26f158de13b9b69f356b9ccff60e66ec65c2b8be...48cfdc1f676a26fff69df70b7481d7f8526266c7"
-            }
-          ]
-        },
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1305"
-          ],
-          "summary": "Changes DeviceDataManager.bolusTrigger from PassthroughSubject<BolusStatus, Never> to CurrentValueSubject<BolusStatus, Never> and updates BaseDeviceDataManager to initialize a CurrentValueSubject with .noBolus.",
-          "userFacingImpact": "The change alters the bolusTrigger subject type and its initialization. Provided sources do not state the intended runtime or UI effects; a human review is required to determine any behavioral impact.",
-          "category": "fixes",
-          "sourceIds": [
-            "pr:gordolio/Trio#1305",
-            "pr:nightscout/Trio#1305",
-            "commit:191743b81a65",
-            "commit:891edfc9a8b6",
-            "file:360227b79652",
-            "diff:b5239e390f2a"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": true,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1305",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1305: set bolusTrigger to PassthroughSubject",
-              "url": "https://github.com/nightscout/Trio/pull/1305"
-            },
-            {
-              "id": "pr:nightscout/Trio#1305",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1305: set bolusTrigger to PassthroughSubject",
-              "url": "https://github.com/nightscout/Trio/pull/1305"
-            },
-            {
-              "id": "commit:191743b81a65",
-              "type": "commit",
-              "title": "set bolusTrigger to PassthroughSubject",
-              "url": "https://github.com/gordolio/Trio/commit/191743b81a651841cc9840c6ae0a7299d13c82b6"
-            },
-            {
-              "id": "commit:891edfc9a8b6",
-              "type": "commit",
-              "title": "Merge pull request #1305 from EJM0/fix/1301",
-              "url": "https://github.com/gordolio/Trio/commit/891edfc9a8b6334fe01508fbc66459a2ef9abc9e"
-            },
-            {
-              "id": "file:360227b79652",
-              "type": "file",
-              "title": "Trio/Sources/APS/DeviceDataManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/891edfc9a8b6334fe01508fbc66459a2ef9abc9e"
-            },
-            {
-              "id": "diff:b5239e390f2a",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1305",
-              "url": "https://github.com/gordolio/Trio/compare/e9c000814d93c469c2d8dc3dc89f2b3edba70258...891edfc9a8b6334fe01508fbc66459a2ef9abc9e"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "algorithm-and-dosing",
@@ -1733,193 +148,12 @@
     {
       "category": "alerting-and-safety",
       "title": "Alerting and Safety Changes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1285"
-          ],
-          "summary": "Adds acknowledgeOnDevice(identifier:) and invokes it from requestSnooze so dismissing an in-app banner or swiping away a user notification also forwards an acknowledgement to the issuing device manager (AlertResponder) by calling acknowledgeAlert.",
-          "userFacingImpact": "Dismiss/snooze UX remains the same, but pump-issued alerts are now also acknowledged at the pump manager/device level when the user dismisses the in-app/banner notification, which should clear device-side alerts (e.g., repeating pod beeps). Trio-internal alerts and pump managers implementing no-op ack behavior are unaffected.",
-          "category": "alerting-and-safety",
-          "sourceIds": [
-            "pr:gordolio/Trio#1285",
-            "pr:nightscout/Trio#1285",
-            "commit:2156ef6193f8",
-            "commit:e074fa78bc46",
-            "commit:e66bc689e004",
-            "commit:7b6ba22cd833",
-            "commit:d456d69b5ca7",
-            "commit:79a8eccdf44e",
-            "file:8be3f6914cc4",
-            "diff:b720ea92af84"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1285",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1285: Fix Spurious Pump Alerts",
-              "url": "https://github.com/nightscout/Trio/pull/1285"
-            },
-            {
-              "id": "pr:nightscout/Trio#1285",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1285: Fix Spurious Pump Alerts",
-              "url": "https://github.com/nightscout/Trio/pull/1285"
-            },
-            {
-              "id": "commit:2156ef6193f8",
-              "type": "commit",
-              "title": "Bump OmnipodKit",
-              "url": "https://github.com/gordolio/Trio/commit/2156ef6193f831c2e355a0cf59abc679f56d540f"
-            },
-            {
-              "id": "commit:e074fa78bc46",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into feat/o5",
-              "url": "https://github.com/gordolio/Trio/commit/e074fa78bc465e8730c420fc8b11b8e3ad5a44fc"
-            },
-            {
-              "id": "commit:e66bc689e004",
-              "type": "commit",
-              "title": "Ack alerts when dismissing in-app banner (fixes #1135)",
-              "url": "https://github.com/gordolio/Trio/commit/e66bc689e0048cc672c01b9bf845f62f9062fef7"
-            },
-            {
-              "id": "commit:7b6ba22cd833",
-              "type": "commit",
-              "title": "Move OmnipodKit to correct SHA",
-              "url": "https://github.com/gordolio/Trio/commit/7b6ba22cd833de8d5e9264e995dd2c05969e2998"
-            },
-            {
-              "id": "commit:d456d69b5ca7",
-              "type": "commit",
-              "title": "Merge branch 'dev' into fix-spurious-pump-alerts",
-              "url": "https://github.com/gordolio/Trio/commit/d456d69b5ca7181c8f6c964866400351cb540410"
-            },
-            {
-              "id": "commit:79a8eccdf44e",
-              "type": "commit",
-              "title": "Merge pull request #1285 from nightscout/fix-spurious-pump-alerts",
-              "url": "https://github.com/gordolio/Trio/commit/79a8eccdf44e52022b5478f75a83b9756c84e331"
-            },
-            {
-              "id": "file:8be3f6914cc4",
-              "type": "file",
-              "title": "Trio/Sources/Services/Alerts/TrioAlertManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/79a8eccdf44e52022b5478f75a83b9756c84e331"
-            },
-            {
-              "id": "diff:b720ea92af84",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1285",
-              "url": "https://github.com/gordolio/Trio/compare/ef209230a4b95f9822cc4bf92fb93b5f1735266f...79a8eccdf44e52022b5478f75a83b9756c84e331"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "interface-improvements",
       "title": "Interface Improvements",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1293"
-          ],
-          "summary": "Replaces the explicit \"End Snooze\" centered button in SnoozeAlertsSheetView with a destructive swipe action on the snooze row and updates footer text/icon to show the swipe gesture; the action calls the existing applySnooze(for: 0)/endSnooze implementation.",
-          "userFacingImpact": "When a snooze is active, users can end it via a destructive \"End Snooze\" swipe action on the row; a footer icon/text now instructs users to swipe to end snooze. No other behavioral changes were shown in the provided diffs.",
-          "category": "interface-improvements",
-          "sourceIds": [
-            "pr:gordolio/Trio#1293",
-            "pr:nightscout/Trio#1293",
-            "commit:6d1744d116c8",
-            "commit:b8eed9dd7371",
-            "commit:785dcbd32cd9",
-            "commit:d0cb803f6449",
-            "commit:59bce547ac2b",
-            "commit:daf7541daddd",
-            "commit:502709a5434f",
-            "file:f9749fdebc6e",
-            "diff:81a7b90c0768"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1293",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1293: add swipe action to undo snooze",
-              "url": "https://github.com/nightscout/Trio/pull/1293"
-            },
-            {
-              "id": "pr:nightscout/Trio#1293",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1293: add swipe action to undo snooze",
-              "url": "https://github.com/nightscout/Trio/pull/1293"
-            },
-            {
-              "id": "commit:6d1744d116c8",
-              "type": "commit",
-              "title": "adds button to undo snooze",
-              "url": "https://github.com/gordolio/Trio/commit/6d1744d116c8ec76f5c43016522a75ea0568ec7c"
-            },
-            {
-              "id": "commit:b8eed9dd7371",
-              "type": "commit",
-              "title": "end snooze instead of undo and simpler button",
-              "url": "https://github.com/gordolio/Trio/commit/b8eed9dd7371fb60efaa92a74c8f79276155d6d6"
-            },
-            {
-              "id": "commit:785dcbd32cd9",
-              "type": "commit",
-              "title": "use swipe action instead of button",
-              "url": "https://github.com/gordolio/Trio/commit/785dcbd32cd9a63d4cb84a5ca7aca47faa3cb7c6"
-            },
-            {
-              "id": "commit:d0cb803f6449",
-              "type": "commit",
-              "title": "only left swipe and add symbol",
-              "url": "https://github.com/gordolio/Trio/commit/d0cb803f64495b63e03120e45f5248b5cf342797"
-            },
-            {
-              "id": "commit:59bce547ac2b",
-              "type": "commit",
-              "title": "add symbol to footer and to leftswipe action",
-              "url": "https://github.com/gordolio/Trio/commit/59bce547ac2b1580a238b271c8670729c8712751"
-            },
-            {
-              "id": "commit:daf7541daddd",
-              "type": "commit",
-              "title": "Merge branch 'dev' into feat/add-undo-snooze",
-              "url": "https://github.com/gordolio/Trio/commit/daf7541daddd870eb245abe3d3bfb794418ffcc8"
-            },
-            {
-              "id": "commit:502709a5434f",
-              "type": "commit",
-              "title": "Merge pull request #1293 from EJM0/feat/add-undo-snooze",
-              "url": "https://github.com/gordolio/Trio/commit/502709a5434fcdf6e11225872efde289aa526f05"
-            },
-            {
-              "id": "file:f9749fdebc6e",
-              "type": "file",
-              "title": "Trio/Sources/Views/SnoozeAlertsSheetView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/502709a5434fcdf6e11225872efde289aa526f05"
-            },
-            {
-              "id": "diff:81a7b90c0768",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1293",
-              "url": "https://github.com/gordolio/Trio/compare/6ab115cc7f0c577069d7465566a2ad2de3ec15c2...502709a5434fcdf6e11225872efde289aa526f05"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "origin-only-customizations",
@@ -1931,122 +165,56 @@
       "title": "Internal and Build-System Changes",
       "items": [
         {
-          "changeIds": [
-            "commit:04950baff4cbe2dacc40d62cdd388abf29872aa2",
-            "commit:362e4e7660dfec63e042a27f19e3bdda6d6734f0",
-            "commit:a874fa088d3345a19e02046b9adb573c642af30c",
-            "commit:40d45894db5c53ca6b9e67237b2c6d57ea31670c"
+          "changeId": "pr:nightscout/Trio#1305",
+          "title": "Bolus status now initialized and retained.",
+          "changes": [
+            "Bolus status is now initialized to 'no bolus' by default.",
+            "The app keeps the current bolus state so other parts see the latest bolus status when they start."
           ],
-          "summary": "CI/build metadata bumps: multiple commits increment APP_DEV_VERSION in Config.xcconfig across successive CI bumps (0.8.4.12 → 0.8.4.13 → 0.8.4.14 → 0.8.4.15 → 0.8.4.16 as shown in the diffs).",
-          "userFacingImpact": "These changes update a development/version identifier in build configuration; the provided diffs show only APP_DEV_VERSION lines changed and no application code or behavior changes. Human review is recommended to confirm no downstream release/versioning impacts.",
           "category": "internal-and-build-system",
           "sourceIds": [
-            "commit:04950baff4cb",
-            "file:49a64013d49f",
-            "diff:be32366fa01a",
-            "commit:362e4e7660df",
-            "file:e6a5c4a62a66",
-            "diff:e6d30f10d8f1",
-            "commit:a874fa088d33",
-            "file:4ed423be6cdf",
-            "diff:ba98210d98cf",
-            "commit:40d45894db5c",
-            "file:2c794ff8b10b",
-            "diff:814cf48d858e"
+            "pr:nightscout/Trio#1305",
+            "commit:191743b81a65"
           ],
           "confidence": "high",
-          "humanReviewRequired": true,
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1305"
+          ],
           "highlight": false,
           "provenance": "upstream",
           "sources": [
             {
-              "id": "commit:04950baff4cb",
+              "id": "pr:nightscout/Trio#1305",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1305: set bolusTrigger to PassthroughSubject",
+              "url": "https://github.com/nightscout/Trio/pull/1305"
+            },
+            {
+              "id": "commit:191743b81a65",
               "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.13 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/04950baff4cbe2dacc40d62cdd388abf29872aa2"
-            },
-            {
-              "id": "file:49a64013d49f",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/04950baff4cbe2dacc40d62cdd388abf29872aa2"
-            },
-            {
-              "id": "diff:be32366fa01a",
-              "type": "diff",
-              "title": "Diff for commit:04950baff4cbe2dacc40d62cdd388abf29872aa2",
-              "url": "https://github.com/gordolio/Trio/compare/891edfc9a8b6334fe01508fbc66459a2ef9abc9e...04950baff4cbe2dacc40d62cdd388abf29872aa2"
-            },
-            {
-              "id": "commit:362e4e7660df",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.14 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/362e4e7660dfec63e042a27f19e3bdda6d6734f0"
-            },
-            {
-              "id": "file:e6a5c4a62a66",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/362e4e7660dfec63e042a27f19e3bdda6d6734f0"
-            },
-            {
-              "id": "diff:e6d30f10d8f1",
-              "type": "diff",
-              "title": "Diff for commit:362e4e7660dfec63e042a27f19e3bdda6d6734f0",
-              "url": "https://github.com/gordolio/Trio/compare/48cfdc1f676a26fff69df70b7481d7f8526266c7...362e4e7660dfec63e042a27f19e3bdda6d6734f0"
-            },
-            {
-              "id": "commit:a874fa088d33",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.15 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/a874fa088d3345a19e02046b9adb573c642af30c"
-            },
-            {
-              "id": "file:4ed423be6cdf",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/a874fa088d3345a19e02046b9adb573c642af30c"
-            },
-            {
-              "id": "diff:ba98210d98cf",
-              "type": "diff",
-              "title": "Diff for commit:a874fa088d3345a19e02046b9adb573c642af30c",
-              "url": "https://github.com/gordolio/Trio/compare/502709a5434fcdf6e11225872efde289aa526f05...a874fa088d3345a19e02046b9adb573c642af30c"
-            },
-            {
-              "id": "commit:40d45894db5c",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.16 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/40d45894db5c53ca6b9e67237b2c6d57ea31670c"
-            },
-            {
-              "id": "file:2c794ff8b10b",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/40d45894db5c53ca6b9e67237b2c6d57ea31670c"
-            },
-            {
-              "id": "diff:814cf48d858e",
-              "type": "diff",
-              "title": "Diff for commit:40d45894db5c53ca6b9e67237b2c6d57ea31670c",
-              "url": "https://github.com/gordolio/Trio/compare/79a8eccdf44e52022b5478f75a83b9756c84e331...40d45894db5c53ca6b9e67237b2c6d57ea31670c"
+              "title": "set bolusTrigger to PassthroughSubject",
+              "url": "https://github.com/gordolio/Trio/commit/191743b81a651841cc9840c6ae0a7299d13c82b6"
             }
           ]
         },
         {
-          "changeIds": [
-            "commit:94a062231847aaf1828acd543345e69074023b6e"
+          "changeId": "commit:94a062231847aaf1828acd543345e69074023b6e",
+          "title": "Centralize internal data update handling",
+          "changes": [
+            "There are no visible changes in app behavior for users.",
+            "Internal data update handling was consolidated to a shared system to simplify maintenance."
           ],
-          "summary": "Refactor in CarbRatioCalibrationStateModel to use CoreDataStack.shared.entityChangePublisher instead of changedObjectsOnManagedObjectContextDidSavePublisher(observing: .inserted), centralizing the Core Data change publisher for the module.",
-          "userFacingImpact": "Intended to improve maintainability and performance of the module's auto-refresh for new determinations (IOB/COB). The supplied diffs do not include runtime tests or comparisons, so subtle timing or refresh differences are possible; human review and testing are recommended.",
           "category": "internal-and-build-system",
           "sourceIds": [
             "commit:94a062231847",
-            "file:2205890d1e0f",
             "diff:7d49e77e3b96"
           ],
           "confidence": "high",
-          "humanReviewRequired": true,
+          "humanReviewRequired": false,
+          "changeIds": [
+            "commit:94a062231847aaf1828acd543345e69074023b6e"
+          ],
           "highlight": false,
           "provenance": "origin",
           "sources": [
@@ -2054,12 +222,6 @@
               "id": "commit:94a062231847",
               "type": "commit",
               "title": "refactor(CarbRatioCalibrationStateModel): Refactor `coreDataPublisher` initialization to use shared publisher",
-              "url": "https://github.com/gordolio/Trio/commit/94a062231847aaf1828acd543345e69074023b6e"
-            },
-            {
-              "id": "file:2205890d1e0f",
-              "type": "file",
-              "title": "Trio/Sources/Modules/CarbRatioCalibration/CarbRatioCalibrationStateModel.swift",
               "url": "https://github.com/gordolio/Trio/commit/94a062231847aaf1828acd543345e69074023b6e"
             },
             {
@@ -2446,7 +608,7 @@
       "sha": "04950baff4cbe2dacc40d62cdd388abf29872aa2",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.13 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-13T18:21:02Z"
+      "authoredAt": "2026-07-13T18:21:02+00:00"
     },
     {
       "sha": "7b6ba22cd833de8d5e9264e995dd2c05969e2998",
@@ -2464,7 +626,7 @@
       "sha": "362e4e7660dfec63e042a27f19e3bdda6d6734f0",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.14 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-13T20:24:31Z"
+      "authoredAt": "2026-07-13T20:24:31+00:00"
     },
     {
       "sha": "daf7541daddd870eb245abe3d3bfb794418ffcc8",
@@ -2482,7 +644,7 @@
       "sha": "a874fa088d3345a19e02046b9adb573c642af30c",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.15 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-13T21:03:58Z"
+      "authoredAt": "2026-07-13T21:03:58+00:00"
     },
     {
       "sha": "d456d69b5ca7181c8f6c964866400351cb540410",
@@ -2500,7 +662,7 @@
       "sha": "40d45894db5c53ca6b9e67237b2c6d57ea31670c",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.16 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-14T05:23:24Z"
+      "authoredAt": "2026-07-14T05:23:24+00:00"
     },
     {
       "sha": "3f2e2385922aae91d6008dbdfe0b62bed7c65c3c",

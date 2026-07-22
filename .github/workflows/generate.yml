@@ -11,6 +11,11 @@ on:
         description: Rolling months of successful builds to import
         required: false
         type: string
+      force_regeneration:
+        description: Regenerate reports from already processed workflow runs
+        required: false
+        default: false
+        type: boolean
   schedule:
     - cron: "23 9 * * *"
 
@@ -68,20 +73,22 @@ jobs:
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
           RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          FORCE_FLAG: ${{ inputs.force_regeneration && '--force' || '' }}
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
-        run: node dist/src/cli.js generate --run-id "$SOURCE_RUN_ID"
+        run: node dist/src/cli.js generate --run-id "$SOURCE_RUN_ID" $FORCE_FLAG
 
       - name: Backfill successful builds
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id == '' && inputs.backfill_months != '' }}
         env:
           BACKFILL_MONTHS: ${{ inputs.backfill_months }}
+          FORCE_FLAG: ${{ inputs.force_regeneration && '--force' || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
           RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
-        run: node dist/src/cli.js backfill --months "$BACKFILL_MONTHS" --checkpoint
+        run: node dist/src/cli.js backfill --months "$BACKFILL_MONTHS" --checkpoint $FORCE_FLAG
 
       - name: Reconcile recent builds
         if: ${{ github.event_name == 'schedule' }}

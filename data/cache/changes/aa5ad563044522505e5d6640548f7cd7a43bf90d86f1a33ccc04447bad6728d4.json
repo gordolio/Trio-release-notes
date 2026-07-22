@@ -1,22 +1,21 @@
 {
-  "inputHash": "572bceeb48572f8d548c69dc42f185eb09fc6e0e684b74513ad81850eedd876d",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "d8e545474252592a37b2d5ba1ecf60050bb262918099e52605c289e434a55770",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1320",
-    "summary": "Replaces the Treatments view gating for the bolus-in-progress card to rely on the local bolus progress signal instead of the pump-mirrored bolusStatus. The change introduces a bolusInProgressForEntry computed property that checks (state.bolusProgress != nil || state.bolusStatus == .initiating) and uses it for both displaying the bolus progress UI and disabling the task button; the previous carb/fat/protein dependency was removed from the gate (commit:3010265b28f8, diff:aa5ad5630445, commit:f6c21a412803). The PR and commit messages explain this addresses cases where a bolusing card could get stuck at 0% and block further boluses until app restart (pr:gordolio/Trio#1320, commit:3010265b28f8).",
-    "userFacingImpact": "Fixes an issue where a bolus-in-progress card in the Treatments view could remain stuck at 0%, block further boluses, and require an app restart to clear; the UI now gates on the reliably-cleared local bolusProgress signal and still preserves the initiating pre-delivery state so the pre-delivery view continues to show (pr:gordolio/Trio#1320, commit:3010265b28f8, diff:aa5ad5630445).",
+    "title": "Fix stuck bolus-in-progress card",
+    "changes": [
+      "The bolus-in-progress card in the Treatments view no longer gets stuck at 0% and block actions.",
+      "You can dismiss a bolus card and start new boluses without restarting the app.",
+      "Bolus progress is now detected more reliably and no longer depends on carb/fat/protein fields for visibility."
+    ],
     "category": "fixes",
     "sourceIds": [
-      "pr:gordolio/Trio#1320",
       "pr:nightscout/Trio#1320",
-      "commit:3010265b28f8",
-      "commit:f6c21a412803",
-      "commit:aabe6268e85e",
-      "file:7cb1b64f35ab",
-      "diff:aa5ad5630445"
+      "commit:3010265b28f8"
     ],
     "confidence": "high",
     "humanReviewRequired": false

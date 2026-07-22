@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "metadata": {
     "sourceWorkflowRunId": 29749441420,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/29749441420",
@@ -8,208 +8,40 @@
     "currentBuiltSha": "24e424583ee0419886484dc4d15b94990f09e2f0",
     "shortSha": "24e4245",
     "buildDate": "2026-07-20T14:49:17.000Z",
-    "generationDate": "2026-07-21T10:25:14.686Z",
-    "generatorVersion": "0.1.0",
-    "promptVersion": "3",
+    "generationDate": "2026-07-22T01:49:19.616Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeIds": [
-        "pr:nightscout/Trio#1307"
+      "changeId": "pr:nightscout/Trio#1307",
+      "title": "Alerting fixes and replay on restart",
+      "changes": [
+        "The \"Acknowledge all alerts\" button is removed from the pump setup screen.",
+        "The alarm tone picker is easier to use with clearer selection marks and larger tap targets.",
+        "Old legacy \"not looping\" notifications are cleared so they won't fire after updating the app.",
+        "On app launch, unacknowledged device alerts are replayed so you can acknowledge them.",
+        "Acknowledging an alert now clears duplicate or related history entries so they do not linger."
       ],
-      "summary": "Alerting fixes and related UI/workflow changes: (1) removes a leftover \"Acknowledge all alerts\" pump‑setup UI and the backing ack path (commit:49460f79d5c8; files: file:f83d4a128bc1, file:83a0b15e0b58, file:2151a0e852b3; diff:fc6c9af9f88f). (2) Improves the alarm tone picker UI by adding a selectable check icon, separating the preview button, and pinning tint to the app color (commit:347d2b964eaf; commit:9aab08ee731d; file:93f974a4c103; diff:fc6c9af9f88f). (3) Clears legacy \"not looping\" notifications on startup by removing pending/delivered requests with identifiers Trio.noLoopFirstNotification and Trio.noLoopSecondNotification (commit:a582dac8b248; file:ee4c8d034d1d; diff:fc6c9af9f88f). (4) Adds a cold‑start replay path that reconstructs or silently acknowledges unacknowledged history entries at launch (new AlertColdStartReplay type, replayUnacknowledgedAlerts on TrioAlertManager, and an invocation from app startup) (commit:13024e417baf; files: file:9ca0afa3b974, file:07b045c7a152, file:44bcce5187fb; diff:fc6c9af9f88f). (5) Adjusts alert history storage and acknowledgement semantics: adds acknowledgeAllEntries(managerIdentifier:alertIdentifier:) and makes removeAlert only delete unacknowledged rows (file:fa46407a7876; diff:fc6c9af9f88f). (6) Reconciles modal/banner state with both delivered and pending UN requests and authorization status when determining stale banners, and updates snooze/dismiss flows to acknowledge (history + device) rather than silently retract entries (file:07b045c7a152; diff:fc6c9af9f88f). (7) Adds tests for cold‑start replay and alert history acknowledgement and wires the new tests into the Xcode project (file:0411f5f07671, file:5e2137bfada6; diff:fc6c9af9f88f).",
-      "userFacingImpact": "Conservative summary of user-visible effects: the \"Acknowledge all alerts\" button has been removed from the pump‑setup screen (commit:49460f79d5c8; file:2151a0e852b3). The alarm sound picker has clearer selection and preview targets and consistent app tinting (commit:347d2b964eaf; commit:9aab08ee731d; file:93f974a4c103). On upgrade, legacy \"Last loop was X min ago\" notifications scheduled by the old path will be cleared so they should not fire after updating (commit:a582dac8b248; file:ee4c8d034d1d). After app restart, previously unacknowledged alerts may be re‑presented in‑app (replay) or be silently acknowledged for glucose‑family alerts per the new cold‑start logic (commit:13024e417baf; file:9ca0afa3b974; file:07b045c7a152). Acknowledgement behavior is changed so acknowledgements apply to all matching history entries (acknowledgeAllEntries) and removal now preserves acknowledged history (file:fa46407a7876; file:0411f5f07671). These user‑facing behaviors and the code paths implementing them are shown in the listed commits/files; if you need verification of behavioral details (timings, snooze semantics, exact identifiers affected) please perform a human review of the referenced diffs and tests (diff:fc6c9af9f88f; file:9ca0afa3b974; file:07b045c7a152).",
       "category": "alerting-and-safety",
       "sourceIds": [
-        "pr:gordolio/Trio#1307",
         "pr:nightscout/Trio#1307",
-        "commit:49460f79d5c8",
-        "commit:347d2b964eaf",
-        "commit:a582dac8b248",
-        "commit:775e8a3ffd04",
-        "commit:3238500f5c26",
-        "commit:13024e417baf",
-        "commit:9aab08ee731d",
-        "commit:74ecf2605ebf",
-        "commit:eb205345d34b",
-        "commit:048b5e760162",
-        "file:5e2137bfada6",
-        "file:fa46407a7876",
-        "file:44bcce5187fb",
-        "file:52bb7463329f",
-        "file:93f974a4c103",
-        "file:f83d4a128bc1",
-        "file:83a0b15e0b58",
-        "file:2151a0e852b3",
-        "file:9ca0afa3b974",
-        "file:86c11c3b64c8",
-        "file:07b045c7a152",
-        "file:ee4c8d034d1d",
-        "file:0411f5f07671",
-        "file:31a96e5c7967",
         "diff:fc6c9af9f88f"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1307"
+      ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
-        {
-          "id": "pr:gordolio/Trio#1307",
-          "type": "pull-request",
-          "title": "gordolio/Trio#1307: Alerting Fixes",
-          "url": "https://github.com/nightscout/Trio/pull/1307"
-        },
         {
           "id": "pr:nightscout/Trio#1307",
           "type": "pull-request",
           "title": "nightscout/Trio#1307: Alerting Fixes",
           "url": "https://github.com/nightscout/Trio/pull/1307"
-        },
-        {
-          "id": "commit:49460f79d5c8",
-          "type": "commit",
-          "title": "Remove leftover ack button from testing",
-          "url": "https://github.com/gordolio/Trio/commit/49460f79d5c815847baf6eda7e967f4e54265a4d"
-        },
-        {
-          "id": "commit:347d2b964eaf",
-          "type": "commit",
-          "title": "Improve selecting sound + click target (addresses #1299)",
-          "url": "https://github.com/gordolio/Trio/commit/347d2b964eaf0bc60379965f930bcc8e42c1cbcc"
-        },
-        {
-          "id": "commit:a582dac8b248",
-          "type": "commit",
-          "title": "Clear legacy 'not looping' notifications (addresses #1296)",
-          "url": "https://github.com/gordolio/Trio/commit/a582dac8b2482c1cad736021548758ee2a59a265"
-        },
-        {
-          "id": "commit:775e8a3ffd04",
-          "type": "commit",
-          "title": "Merge branch 'dev' into alerting-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/775e8a3ffd04ba541877e07bca065f784b32c65b"
-        },
-        {
-          "id": "commit:3238500f5c26",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into alerting-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/3238500f5c265537121180abfd6b9a4393e5da9e"
-        },
-        {
-          "id": "commit:13024e417baf",
-          "type": "commit",
-          "title": "Replay unacknowledged alerts on cold start",
-          "url": "https://github.com/gordolio/Trio/commit/13024e417baf1a9578384658c8ec2c48098fd1e4"
-        },
-        {
-          "id": "commit:9aab08ee731d",
-          "type": "commit",
-          "title": "Fix tone picker tint, drop unused injection",
-          "url": "https://github.com/gordolio/Trio/commit/9aab08ee731dd26455a29607c97c2a04058c1e62"
-        },
-        {
-          "id": "commit:74ecf2605ebf",
-          "type": "commit",
-          "title": "Merge branch 'dev' of github.com:nightscout/Trio into alerting-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/74ecf2605ebf0c728d51be62f503e24cfd48e25e"
-        },
-        {
-          "id": "commit:eb205345d34b",
-          "type": "commit",
-          "title": "Mirror global snooze onto per-alarm glucose snoozes",
-          "url": "https://github.com/gordolio/Trio/commit/eb205345d34b36b2791805c6ee9ffdd17097488c"
-        },
-        {
-          "id": "commit:048b5e760162",
-          "type": "commit",
-          "title": "Merge pull request #1307 from nightscout/alerting-fixes",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:5e2137bfada6",
-          "type": "file",
-          "title": "Trio.xcodeproj/project.pbxproj",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:fa46407a7876",
-          "type": "file",
-          "title": "Trio/Sources/APS/Storage/AlertStorage.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:44bcce5187fb",
-          "type": "file",
-          "title": "Trio/Sources/Application/TrioApp.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:52bb7463329f",
-          "type": "file",
-          "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:93f974a4c103",
-          "type": "file",
-          "title": "Trio/Sources/Modules/GlucoseAlerts/View/Components/AlarmAudioSection.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:f83d4a128bc1",
-          "type": "file",
-          "title": "Trio/Sources/Modules/PumpConfig/PumpConfigProvider.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:83a0b15e0b58",
-          "type": "file",
-          "title": "Trio/Sources/Modules/PumpConfig/PumpConfigStateModel.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:2151a0e852b3",
-          "type": "file",
-          "title": "Trio/Sources/Modules/PumpConfig/View/PumpConfigRootView.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:9ca0afa3b974",
-          "type": "file",
-          "title": "Trio/Sources/Services/Alerts/AlertColdStartReplay.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:86c11c3b64c8",
-          "type": "file",
-          "title": "Trio/Sources/Services/Alerts/GlucoseAlertCoordinator.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:07b045c7a152",
-          "type": "file",
-          "title": "Trio/Sources/Services/Alerts/TrioAlertManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:ee4c8d034d1d",
-          "type": "file",
-          "title": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:0411f5f07671",
-          "type": "file",
-          "title": "TrioTests/AlertColdStartReplayTests.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-        },
-        {
-          "id": "file:31a96e5c7967",
-          "type": "file",
-          "title": "TrioTests/NotLoopingMonitorTests.swift",
-          "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
         },
         {
           "id": "diff:fc6c9af9f88f",
@@ -221,11 +53,6 @@
     }
   ],
   "categories": [
-    {
-      "category": "highlights",
-      "title": "Highlights",
-      "items": []
-    },
     {
       "category": "new-features",
       "title": "New Features",
@@ -249,213 +76,7 @@
     {
       "category": "alerting-and-safety",
       "title": "Alerting and Safety Changes",
-      "items": [
-        {
-          "changeIds": [
-            "pr:nightscout/Trio#1307"
-          ],
-          "summary": "Alerting fixes and related UI/workflow changes: (1) removes a leftover \"Acknowledge all alerts\" pump‑setup UI and the backing ack path (commit:49460f79d5c8; files: file:f83d4a128bc1, file:83a0b15e0b58, file:2151a0e852b3; diff:fc6c9af9f88f). (2) Improves the alarm tone picker UI by adding a selectable check icon, separating the preview button, and pinning tint to the app color (commit:347d2b964eaf; commit:9aab08ee731d; file:93f974a4c103; diff:fc6c9af9f88f). (3) Clears legacy \"not looping\" notifications on startup by removing pending/delivered requests with identifiers Trio.noLoopFirstNotification and Trio.noLoopSecondNotification (commit:a582dac8b248; file:ee4c8d034d1d; diff:fc6c9af9f88f). (4) Adds a cold‑start replay path that reconstructs or silently acknowledges unacknowledged history entries at launch (new AlertColdStartReplay type, replayUnacknowledgedAlerts on TrioAlertManager, and an invocation from app startup) (commit:13024e417baf; files: file:9ca0afa3b974, file:07b045c7a152, file:44bcce5187fb; diff:fc6c9af9f88f). (5) Adjusts alert history storage and acknowledgement semantics: adds acknowledgeAllEntries(managerIdentifier:alertIdentifier:) and makes removeAlert only delete unacknowledged rows (file:fa46407a7876; diff:fc6c9af9f88f). (6) Reconciles modal/banner state with both delivered and pending UN requests and authorization status when determining stale banners, and updates snooze/dismiss flows to acknowledge (history + device) rather than silently retract entries (file:07b045c7a152; diff:fc6c9af9f88f). (7) Adds tests for cold‑start replay and alert history acknowledgement and wires the new tests into the Xcode project (file:0411f5f07671, file:5e2137bfada6; diff:fc6c9af9f88f).",
-          "userFacingImpact": "Conservative summary of user-visible effects: the \"Acknowledge all alerts\" button has been removed from the pump‑setup screen (commit:49460f79d5c8; file:2151a0e852b3). The alarm sound picker has clearer selection and preview targets and consistent app tinting (commit:347d2b964eaf; commit:9aab08ee731d; file:93f974a4c103). On upgrade, legacy \"Last loop was X min ago\" notifications scheduled by the old path will be cleared so they should not fire after updating (commit:a582dac8b248; file:ee4c8d034d1d). After app restart, previously unacknowledged alerts may be re‑presented in‑app (replay) or be silently acknowledged for glucose‑family alerts per the new cold‑start logic (commit:13024e417baf; file:9ca0afa3b974; file:07b045c7a152). Acknowledgement behavior is changed so acknowledgements apply to all matching history entries (acknowledgeAllEntries) and removal now preserves acknowledged history (file:fa46407a7876; file:0411f5f07671). These user‑facing behaviors and the code paths implementing them are shown in the listed commits/files; if you need verification of behavioral details (timings, snooze semantics, exact identifiers affected) please perform a human review of the referenced diffs and tests (diff:fc6c9af9f88f; file:9ca0afa3b974; file:07b045c7a152).",
-          "category": "alerting-and-safety",
-          "sourceIds": [
-            "pr:gordolio/Trio#1307",
-            "pr:nightscout/Trio#1307",
-            "commit:49460f79d5c8",
-            "commit:347d2b964eaf",
-            "commit:a582dac8b248",
-            "commit:775e8a3ffd04",
-            "commit:3238500f5c26",
-            "commit:13024e417baf",
-            "commit:9aab08ee731d",
-            "commit:74ecf2605ebf",
-            "commit:eb205345d34b",
-            "commit:048b5e760162",
-            "file:5e2137bfada6",
-            "file:fa46407a7876",
-            "file:44bcce5187fb",
-            "file:52bb7463329f",
-            "file:93f974a4c103",
-            "file:f83d4a128bc1",
-            "file:83a0b15e0b58",
-            "file:2151a0e852b3",
-            "file:9ca0afa3b974",
-            "file:86c11c3b64c8",
-            "file:07b045c7a152",
-            "file:ee4c8d034d1d",
-            "file:0411f5f07671",
-            "file:31a96e5c7967",
-            "diff:fc6c9af9f88f"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": true,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1307",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1307: Alerting Fixes",
-              "url": "https://github.com/nightscout/Trio/pull/1307"
-            },
-            {
-              "id": "pr:nightscout/Trio#1307",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1307: Alerting Fixes",
-              "url": "https://github.com/nightscout/Trio/pull/1307"
-            },
-            {
-              "id": "commit:49460f79d5c8",
-              "type": "commit",
-              "title": "Remove leftover ack button from testing",
-              "url": "https://github.com/gordolio/Trio/commit/49460f79d5c815847baf6eda7e967f4e54265a4d"
-            },
-            {
-              "id": "commit:347d2b964eaf",
-              "type": "commit",
-              "title": "Improve selecting sound + click target (addresses #1299)",
-              "url": "https://github.com/gordolio/Trio/commit/347d2b964eaf0bc60379965f930bcc8e42c1cbcc"
-            },
-            {
-              "id": "commit:a582dac8b248",
-              "type": "commit",
-              "title": "Clear legacy 'not looping' notifications (addresses #1296)",
-              "url": "https://github.com/gordolio/Trio/commit/a582dac8b2482c1cad736021548758ee2a59a265"
-            },
-            {
-              "id": "commit:775e8a3ffd04",
-              "type": "commit",
-              "title": "Merge branch 'dev' into alerting-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/775e8a3ffd04ba541877e07bca065f784b32c65b"
-            },
-            {
-              "id": "commit:3238500f5c26",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into alerting-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/3238500f5c265537121180abfd6b9a4393e5da9e"
-            },
-            {
-              "id": "commit:13024e417baf",
-              "type": "commit",
-              "title": "Replay unacknowledged alerts on cold start",
-              "url": "https://github.com/gordolio/Trio/commit/13024e417baf1a9578384658c8ec2c48098fd1e4"
-            },
-            {
-              "id": "commit:9aab08ee731d",
-              "type": "commit",
-              "title": "Fix tone picker tint, drop unused injection",
-              "url": "https://github.com/gordolio/Trio/commit/9aab08ee731dd26455a29607c97c2a04058c1e62"
-            },
-            {
-              "id": "commit:74ecf2605ebf",
-              "type": "commit",
-              "title": "Merge branch 'dev' of github.com:nightscout/Trio into alerting-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/74ecf2605ebf0c728d51be62f503e24cfd48e25e"
-            },
-            {
-              "id": "commit:eb205345d34b",
-              "type": "commit",
-              "title": "Mirror global snooze onto per-alarm glucose snoozes",
-              "url": "https://github.com/gordolio/Trio/commit/eb205345d34b36b2791805c6ee9ffdd17097488c"
-            },
-            {
-              "id": "commit:048b5e760162",
-              "type": "commit",
-              "title": "Merge pull request #1307 from nightscout/alerting-fixes",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:5e2137bfada6",
-              "type": "file",
-              "title": "Trio.xcodeproj/project.pbxproj",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:fa46407a7876",
-              "type": "file",
-              "title": "Trio/Sources/APS/Storage/AlertStorage.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:44bcce5187fb",
-              "type": "file",
-              "title": "Trio/Sources/Application/TrioApp.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:52bb7463329f",
-              "type": "file",
-              "title": "Trio/Sources/Localizations/Main/Localizable.xcstrings",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:93f974a4c103",
-              "type": "file",
-              "title": "Trio/Sources/Modules/GlucoseAlerts/View/Components/AlarmAudioSection.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:f83d4a128bc1",
-              "type": "file",
-              "title": "Trio/Sources/Modules/PumpConfig/PumpConfigProvider.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:83a0b15e0b58",
-              "type": "file",
-              "title": "Trio/Sources/Modules/PumpConfig/PumpConfigStateModel.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:2151a0e852b3",
-              "type": "file",
-              "title": "Trio/Sources/Modules/PumpConfig/View/PumpConfigRootView.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:9ca0afa3b974",
-              "type": "file",
-              "title": "Trio/Sources/Services/Alerts/AlertColdStartReplay.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:86c11c3b64c8",
-              "type": "file",
-              "title": "Trio/Sources/Services/Alerts/GlucoseAlertCoordinator.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:07b045c7a152",
-              "type": "file",
-              "title": "Trio/Sources/Services/Alerts/TrioAlertManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:ee4c8d034d1d",
-              "type": "file",
-              "title": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:0411f5f07671",
-              "type": "file",
-              "title": "TrioTests/AlertColdStartReplayTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "file:31a96e5c7967",
-              "type": "file",
-              "title": "TrioTests/NotLoopingMonitorTests.swift",
-              "url": "https://github.com/gordolio/Trio/commit/048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            },
-            {
-              "id": "diff:fc6c9af9f88f",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1307",
-              "url": "https://github.com/gordolio/Trio/compare/362e4e7660dfec63e042a27f19e3bdda6d6734f0...048b5e760162d7c7b8c9edda9ba7630e6f248620"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "interface-improvements",
@@ -470,45 +91,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeIds": [
-            "commit:73cc5617c63241d202b02fb72fd40000c025b0da"
-          ],
-          "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.23 to 0.8.4.24 (see diff:82ec1d771896; file:8f9475def3ac; commit:73cc5617c632).",
-          "userFacingImpact": "This change updates a development/build version identifier (APP_DEV_VERSION) in configuration metadata; there is no evidence in the provided sources that this modifies app behavior or runtime functionality. If confirmation is required about release labeling or CI/release pipeline effects, human review is recommended (see diff:82ec1d771896; commit:73cc5617c632).",
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:73cc5617c632",
-            "file:8f9475def3ac",
-            "diff:82ec1d771896"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "commit:73cc5617c632",
-              "type": "commit",
-              "title": "CI: Bump APP_DEV_VERSION to 0.8.4.24 [skip ci]",
-              "url": "https://github.com/gordolio/Trio/commit/73cc5617c63241d202b02fb72fd40000c025b0da"
-            },
-            {
-              "id": "file:8f9475def3ac",
-              "type": "file",
-              "title": "Config.xcconfig",
-              "url": "https://github.com/gordolio/Trio/commit/73cc5617c63241d202b02fb72fd40000c025b0da"
-            },
-            {
-              "id": "diff:82ec1d771896",
-              "type": "diff",
-              "title": "Diff for commit:73cc5617c63241d202b02fb72fd40000c025b0da",
-              "url": "https://github.com/gordolio/Trio/compare/048b5e760162d7c7b8c9edda9ba7630e6f248620...73cc5617c63241d202b02fb72fd40000c025b0da"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -596,13 +179,13 @@
       "sha": "048b5e760162d7c7b8c9edda9ba7630e6f248620",
       "subject": "Merge pull request #1307 from nightscout/alerting-fixes",
       "author": "marv-out",
-      "authoredAt": "2026-07-19T20:53:11Z"
+      "authoredAt": "2026-07-19T20:53:11+00:00"
     },
     {
       "sha": "73cc5617c63241d202b02fb72fd40000c025b0da",
       "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.24 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-07-19T20:53:21Z"
+      "authoredAt": "2026-07-19T20:53:21+00:00"
     },
     {
       "sha": "24e424583ee0419886484dc4d15b94990f09e2f0",

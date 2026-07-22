@@ -1,17 +1,20 @@
 {
-  "inputHash": "0b3cbdb0c7131b7b7ccca01ba024c252a17e65cffb53cbad50c764f511ede552",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "7294a27157a6f243a01365119695894e071e6d59dadfab4b1f5b335ae85265cb",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:73cc5617c63241d202b02fb72fd40000c025b0da",
-    "summary": "Bump APP_DEV_VERSION in Config.xcconfig from 0.8.4.23 to 0.8.4.24 (see diff:82ec1d771896; file:8f9475def3ac; commit:73cc5617c632).",
-    "userFacingImpact": "This change updates a development/build version identifier (APP_DEV_VERSION) in configuration metadata; there is no evidence in the provided sources that this modifies app behavior or runtime functionality. If confirmation is required about release labeling or CI/release pipeline effects, human review is recommended (see diff:82ec1d771896; commit:73cc5617c632).",
+    "title": "Bump development app version",
+    "changes": [
+      "The development version number was updated to 0.8.4.24.",
+      "The public app version remains 0.8.4.",
+      "The app build number remains 1."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:73cc5617c632",
-      "file:8f9475def3ac",
       "diff:82ec1d771896"
     ],
     "confidence": "high",

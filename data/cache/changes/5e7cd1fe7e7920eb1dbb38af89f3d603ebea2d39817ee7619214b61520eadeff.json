@@ -1,23 +1,21 @@
 {
-  "inputHash": "f1cb3b5824fe3d9b96636026c204b3cf41663dc72ceb2e0f80a5f5979b08ba8c",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "17bf7e6f51a579879bfe408ec60f60525f46c53386f97670f4761fa264f1ed73",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1315",
-    "summary": "Reworked the delete confirmation for Override and Temp Target presets to stop it auto-dismissing. The confirmation dialog was previously attached inside the ForEach in the List and driven by two state variables set simultaneously, causing it to dismiss itself. The change replaces those two-state-variable dialogs with a single optional (overrideToDelete and tempTargetToDelete) that drives a confirmationDialog via presenting:, attached once to the view (functions overrideDeleteConfirmation and tempTargetDeleteConfirmation). Action button helpers (actionButtonsForOverrides and actionButtonsForTempTargets) were adjusted to set the new optional delete targets and accept an optional delete role parameter. Changes applied to both Overrides and Temp Targets.",
-    "userFacingImpact": "Fixes unreliable deletion when swiping Override or Temp Target presets: the delete confirmation no longer auto-dismisses immediately, so users can complete deletions by confirming the dialog. (Behavior described in the PR and commit.)",
+    "title": "Fix swipe-delete confirmation for presets",
+    "changes": [
+      "Swipe-to-delete now reliably shows a confirmation before deleting Temporary Target presets.",
+      "Swipe-to-delete now reliably shows a confirmation before deleting Override presets.",
+      "If a preset is currently running, the confirmation offers to stop it and then delete it."
+    ],
     "category": "fixes",
     "sourceIds": [
-      "pr:gordolio/Trio#1315",
       "pr:nightscout/Trio#1315",
-      "commit:7764a422afb7",
-      "commit:db46e1516ba4",
-      "file:e9bac34335bd",
-      "file:1d0f8ead58d5",
-      "file:edcd38e1d7ca",
-      "diff:5e7cd1fe7e79"
+      "commit:7764a422afb7"
     ],
     "confidence": "high",
     "humanReviewRequired": false

@@ -3,7 +3,7 @@ import path from "node:path";
 import { downloadBuildMetadata } from "./artifact.js";
 import { normalizeChanges } from "./changes.js";
 import { config } from "./config.js";
-import { GENERATOR_VERSION, PROMPT_VERSION, SCHEMA_VERSION } from "./constants.js";
+import { GENERATOR_VERSION, PROMPT_VERSION, SCHEMA_VERSION, SUMMARY_CONCURRENCY } from "./constants.js";
 import { assertDescendant, changedFiles, commitsBetween, maintenanceHotspots, resolveCommit } from "./git.js";
 import { GitHubClient } from "./github.js";
 import { OpenRouterSummarizer } from "./openrouter.js";
@@ -12,9 +12,9 @@ import { loadState, saveState } from "./state.js";
 import type {
   BuildIdentity,
   BuildReport,
+  ChangeSummary,
   GeneratorState,
   NormalizedChange,
-  Provenance,
   ReportItem,
   StoredBuild,
   WorkflowRunInfo
@@ -66,26 +66,25 @@ async function findPreviousBuild(
   };
 }
 
-function combinedProvenance(changes: NormalizedChange[]): Provenance {
-  const values = new Set(changes.map((change) => change.provenance));
-  if (values.size === 1) {
-    return changes[0]?.provenance ?? "internal";
-  }
-  return "mixed";
-}
-
 function reportItems(
-  aggregated: Awaited<ReturnType<OpenRouterSummarizer["aggregate"]>>,
+  summaries: ChangeSummary[],
+  highlightChangeIds: string[],
   changes: NormalizedChange[]
 ): ReportItem[] {
   const changeById = new Map(changes.map((change) => [change.id, change]));
   const sourceById = new Map(changes.flatMap((change) => change.sources).map((source) => [source.id, source]));
-  return aggregated.map((item) => {
-    const itemChanges = item.changeIds.map((changeId) => changeById.get(changeId)).filter((change) => change !== undefined);
+  const highlights = new Set(highlightChangeIds);
+  return summaries.map((summary) => {
+    const change = changeById.get(summary.changeId);
+    if (!change) {
+      throw new Error(`Missing normalized change ${summary.changeId}`);
+    }
     return {
-      ...item,
-      provenance: combinedProvenance(itemChanges),
-      sources: item.sourceIds.map((sourceId) => {
+      ...summary,
+      changeIds: [summary.changeId],
+      highlight: highlights.has(summary.changeId),
+      provenance: change.provenance,
+      sources: summary.sourceIds.map((sourceId) => {
         const source = sourceById.get(sourceId);
         if (!source) {
           throw new Error(`Missing validated report source ${sourceId}`);
@@ -108,10 +107,10 @@ async function latestPublishedDate(): Promise<string | null> {
   }
 }
 
-export async function generateForRun(runId: number): Promise<void> {
+export async function generateForRun(runId: number, force = false): Promise<void> {
   const github = new GitHubClient();
   const state = await loadState();
-  if (state.processedRuns[String(runId)]) {
+  if (state.processedRuns[String(runId)] && !force) {
     console.log(`Workflow run ${runId} is already processed`);
     return;
   }
@@ -123,10 +122,10 @@ export async function generateForRun(runId: number): Promise<void> {
 
   const existingReport = await readExistingReport(current.abbreviatedSha);
   let reportPath: string;
-  if (existingReport) {
-    if (existingReport.metadata.currentBuiltSha !== current.fullSha) {
-      throw new Error(`Short SHA collision for ${current.abbreviatedSha}`);
-    }
+  if (existingReport && existingReport.metadata.currentBuiltSha !== current.fullSha) {
+    throw new Error(`Short SHA collision for ${current.abbreviatedSha}`);
+  }
+  if (existingReport && (!force || previous.fullSha === current.fullSha)) {
     reportPath = `public/builds/${current.abbreviatedSha}.json`;
   } else {
     const commits = await commitsBetween(previous.fullSha, current.fullSha);
@@ -139,11 +138,19 @@ export async function generateForRun(runId: number): Promise<void> {
       github
     );
     const summarizer = new OpenRouterSummarizer();
-    const summaries = [];
-    for (const change of changes) {
-      summaries.push(await summarizer.summarizeChange(change));
-    }
-    const items = reportItems(await summarizer.aggregate(changes, summaries), changes);
+    const summaries: ChangeSummary[] = new Array(changes.length);
+    let nextIndex = 0;
+    await Promise.all(
+      Array.from({ length: Math.min(SUMMARY_CONCURRENCY, changes.length) }, async () => {
+        while (nextIndex < changes.length) {
+          const index = nextIndex;
+          nextIndex += 1;
+          summaries[index] = await summarizer.summarizeChange(changes[index]!);
+        }
+      })
+    );
+    const highlightChangeIds = await summarizer.selectHighlights(changes, summaries);
+    const items = reportItems(summaries, highlightChangeIds, changes);
     const pulls = changes
       .flatMap((change) => change.pullRequests)
       .filter(
@@ -165,8 +172,14 @@ export async function generateForRun(runId: number): Promise<void> {
         promptVersion: PROMPT_VERSION,
         model: summarizer.model
       },
-      highlights: items.filter((item) => item.highlight),
-      categories: buildCategories(items),
+      highlights: highlightChangeIds.map((changeId) => {
+        const item = items.find((candidate) => candidate.changeId === changeId);
+        if (!item) {
+          throw new Error(`Missing selected highlight ${changeId}`);
+        }
+        return item;
+      }),
+      categories: buildCategories(items.filter((item) => !item.highlight)),
       maintenanceHotspots: hotspots,
       includedPullRequests: pulls,
       includedCommits: commits.map(({ sha, subject, author, authoredAt }) => ({ sha, subject, author, authoredAt })),
@@ -207,7 +220,11 @@ export async function generateForRun(runId: number): Promise<void> {
   await saveState(state);
 }
 
-export async function processRunsSince(cutoff: Date, afterEach?: (runId: number) => Promise<void>): Promise<void> {
+export async function processRunsSince(
+  cutoff: Date,
+  afterEach?: (runId: number) => Promise<void>,
+  force = false
+): Promise<void> {
   const github = new GitHubClient();
   const runs = (await github.listRunsSince(cutoff)).sort((left, right) => left.createdAt.localeCompare(right.createdAt));
   const eligibleRuns = [];
@@ -219,7 +236,7 @@ export async function processRunsSince(cutoff: Date, afterEach?: (runId: number)
   console.log(`Found ${eligibleRuns.length} successful builds among ${runs.length} completed workflow runs`);
   for (const [index, run] of eligibleRuns.entries()) {
     console.log(`Processing build ${index + 1}/${eligibleRuns.length}: workflow run ${run.id}`);
-    await generateForRun(run.id);
+    await generateForRun(run.id, force);
     await afterEach?.(run.id);
   }
   console.log(`Processed ${eligibleRuns.length} successful builds`);

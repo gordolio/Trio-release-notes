@@ -1,20 +1,22 @@
 {
-  "inputHash": "286e68b420d95de6c31152a35be08d23712a7730c88681224cedb6ea96cdd3c4",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "630777c7383ec87f6e97e4dd2e02c05afd3e66349a3b949db12f3af018bee74a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:94a062231847aaf1828acd543345e69074023b6e",
-    "summary": "In CarbRatioCalibrationStateModel.swift, the coreDataPublisher initialization was changed to use CoreDataStack.shared.entityChangePublisher instead of changedObjectsOnManagedObjectContextDidSavePublisher(observing: .inserted) (source: diff:7d49e77e3b96, file:2205890d1e0f). The commit message describes this as a refactor to use a centralized publisher for maintainability and performance (source: commit:94a062231847).",
-    "userFacingImpact": "This appears to be a refactor that centralizes the Core Data change publisher and is likely intended to improve maintainability/performance (source: commit:94a062231847). The change replaces the publisher used for the module's \"Auto-refresh when new determinations arrive (updates IOB/COB)\" logic (source: diff:7d49e77e3b96, file:2205890d1e0f). Evidence in the supplied change does not contain runtime tests or behavior comparisons, so it is insufficient to rule out subtle runtime or timing differences that could affect auto-refresh behavior; human review and testing are recommended (source: diff:7d49e77e3b96).",
+    "title": "Centralize internal data update handling",
+    "changes": [
+      "There are no visible changes in app behavior for users.",
+      "Internal data update handling was consolidated to a shared system to simplify maintenance."
+    ],
     "category": "internal-and-build-system",
     "sourceIds": [
       "commit:94a062231847",
-      "file:2205890d1e0f",
       "diff:7d49e77e3b96"
     ],
     "confidence": "high",
-    "humanReviewRequired": true
+    "humanReviewRequired": false
   }
 }

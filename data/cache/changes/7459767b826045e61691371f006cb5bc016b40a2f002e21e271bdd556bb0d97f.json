@@ -1,33 +1,24 @@
 {
-  "inputHash": "9a84ca22adb6b5e7d819d68e7d24f8cae12d0b2db6ae89e48dce5fb3aef332fe",
-  "promptVersion": "3",
-  "schemaVersion": "1",
+  "inputHash": "74d561aad446240fc852356b26208a9e7c7eb7b3c1ec068de1ef5927d235462e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1311",
-    "summary": "Replaces the previous CoreData -> DTOs -> JSON string -> [PumpHistoryEvent] pipeline with a direct CoreData -> [PumpHistoryEvent] mapping. PumpEventStored gained native mapping helpers (toPumpHistoryEvents and per-type helpers) and OpenAPS.parsePumpHistory and downstream OpenAPSSwift entry points were changed to accept [PumpHistoryEvent] instead of JSON. A Decimal initializer Decimal(algorithmValue:) was added and uses JSON-style string conversion. The JSON-based pumpHistory parsing helper was removed from JSONBridge. Unit tests were added/updated (PumpHistoryNativeConversionTests, JSONImporterTests, CarbsNativeConversionTests) and the Xcode project/test targets were updated; a run_unit_tests.sh helper script was added. The new mapping deliberately changes handling of temp basal sub-type: an unrecognized or nil tempType is mapped to temp = nil (nullified) rather than causing a decode failure/crash. (See PR/commit and diffs.)",
-    "userFacingImpact": "Intended to be functionally identical for recorded pump events; the change removes an intermediate JSON round-trip and delivers native PumpHistoryEvent objects to the algorithm (OpenAPS). The only documented behavior change is more robust handling of temp basal subtypes: an unrecognized or nil tempType is nullified instead of causing a decode error (PR/commit notes this as deliberate). Tests were added to cover native mapping and decimal rounding behavior. Because this modifies the algorithm input pipeline, a human reviewer should confirm equivalence for dosing safety in deployed configurations.",
-    "category": "algorithm-and-dosing",
+    "title": "Process pump history natively, avoid JSON round-trip",
+    "changes": [
+      "Trio now reads pump history directly from storage instead of converting it to JSON first.",
+      "Unknown temp-basal subtypes are ignored (set to null) instead of causing a crash.",
+      "Fractional carb, fat, and protein values now preserve their expected decimal values.",
+      "The simulated bolus used for bolus-preview is still added, now represented as a native pump event."
+    ],
+    "category": "pump-and-cgm",
     "sourceIds": [
-      "pr:gordolio/Trio#1311",
       "pr:nightscout/Trio#1311",
-      "commit:183376164e70",
-      "commit:80252e2524b4",
-      "commit:95b1c0179f62",
-      "file:b5f2c8b8ede6",
-      "file:723a39f73d28",
-      "file:8d8db369154b",
-      "file:c48ae5e4c426",
-      "file:a9fe4a974280",
-      "file:1eee7e4310df",
-      "file:204e2adb1601",
-      "file:bc4149b74f40",
-      "file:54720c4676a6",
-      "file:5533d7217200",
       "diff:7459767b8260"
     ],
-    "confidence": "medium",
-    "humanReviewRequired": true
+    "confidence": "high",
+    "humanReviewRequired": false
   }
 }
