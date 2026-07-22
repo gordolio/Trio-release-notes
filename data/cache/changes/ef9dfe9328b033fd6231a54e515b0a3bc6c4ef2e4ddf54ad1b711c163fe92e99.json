@@ -1,0 +1,25 @@
+{
+  "inputHash": "6b7871e251835049c01789b1806025dc4fd92ddb3349d3d3a1f7f79d9d74b90a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1226",
+    "title": "Prevent duplicate loops and tidy background tasks",
+    "changes": [
+      "Trio will no longer start two loop cycles at the same time.",
+      "Loops now enforce the minimum interval between runs to avoid running too soon.",
+      "Background task handling was simplified so each loop uses a local background task instead of a shared one.",
+      "Loop completion and statistics are recorded at a single exit point so outcomes are reported consistently."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1226",
+      "commit:4492f6cbd2a4",
+      "diff:ef9dfe9328b0"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

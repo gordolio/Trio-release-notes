@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 27991141352,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/27991141352",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "968574463bb01fc975d4db8b07d3b4e862db14f9",
+    "currentBuiltSha": "995ac80da721e92b9e8e6d8deee303cf72b55ce2",
+    "shortSha": "995ac80",
+    "buildDate": "2026-06-22T23:49:21.000Z",
+    "generationDate": "2026-07-22T18:25:08.360Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1226",
+      "title": "Prevent duplicate loops and tidy background tasks",
+      "changes": [
+        "Trio will no longer start two loop cycles at the same time.",
+        "Loops now enforce the minimum interval between runs to avoid running too soon.",
+        "Background task handling was simplified so each loop uses a local background task instead of a shared one.",
+        "Loop completion and statistics are recorded at a single exit point so outcomes are reported consistently."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:nightscout/Trio#1226",
+        "commit:4492f6cbd2a4",
+        "diff:ef9dfe9328b0"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1226"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1226",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1226: APSManager thread safety fixes (Part 2)",
+          "url": "https://github.com/nightscout/Trio/pull/1226"
+        },
+        {
+          "id": "commit:4492f6cbd2a4",
+          "type": "commit",
+          "title": "APSManager thread safety fixes Part 2: LoopGuard actor + background-task lifecycle",
+          "url": "https://github.com/gordolio/Trio/commit/4492f6cbd2a4f6dee2da484284454e3fb0ee8853"
+        },
+        {
+          "id": "diff:ef9dfe9328b0",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1226",
+          "url": "https://github.com/gordolio/Trio/compare/e274ed1d9c3d53b4025e53aec7d65b8b4dfcb9be...86a329273e199e83ce6e1da4292b5683f768ebc7"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1226,
+      "title": "APSManager thread safety fixes (Part 2)",
+      "body": "Closes the loop-serialization race and reworks the background-task\r\nlifecycle around the loop's async scope. Sequel to Part 1, split out\r\nof the original https://github.com/nightscout/Trio/pull/1145 to discuss LoopGuard + background-task handling separately from the bolus-progress actor.\r\n\r\n**LoopGuard**\r\n\r\n  The old check-then-act pattern read `isLooping.value`, returned from\r\n  `canStartNewLoop()`, then later (after a suspension point) called\r\n  `isLooping.send(true)`. Two concurrent `recommendsLoop` events could\r\n  both observe `false` before either had sent `true`, so loop() could\r\n  run twice. Replaced by a private `LoopGuard` actor that performs the\r\n  check-and-mark-running step as a single atomic operation. isLooping\r\n  becomes a downstream notification mechanism.\r\n\r\n**Background-task lifecycle**\r\n\r\nRemoved the Task in the expiration handler which didn't provide a guarantee to be executed. Aligned with the example in https://developer.apple.com/documentation/uikit/extending-your-app-s-background-execution-time. Side note: we probably need to refactor this when moving to Swift 6 as the expiration handler closure is Sendable and captures and mutates the var backgroundTaskID which isn't allowed when strict concurrency checking is on.\r\n\r\n**Loop lifecycle consolidation**\r\n\r\n  `canStartNewLoop`, `setupLoop`, `loopCompleted` are folded into\r\n  loop() and a new single-exit-point `finalizeLoop`. `executeLoop` no\r\n  longer calls finalize itself; the caller owns lifecycle. Open and\r\n  closed loop paths in executeLoop now share the stats-recording\r\n  block, with `enactDetermination` gated by `settings.closedLoop` at\r\n  the end.\r\n\r\n  `calculateLoopInterval` now takes `loopStartDate` as a parameter\r\n  instead of reading the instance `lastLoopStartDate` — keeps the\r\n  helper independent of the surrounding mutation order in loop().",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1226",
+      "mergedAt": "2026-06-22T23:23:49Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1226,
+      "title": "APSManager thread safety fixes (Part 2)",
+      "body": "Closes the loop-serialization race and reworks the background-task\r\nlifecycle around the loop's async scope. Sequel to Part 1, split out\r\nof the original https://github.com/nightscout/Trio/pull/1145 to discuss LoopGuard + background-task handling separately from the bolus-progress actor.\r\n\r\n**LoopGuard**\r\n\r\n  The old check-then-act pattern read `isLooping.value`, returned from\r\n  `canStartNewLoop()`, then later (after a suspension point) called\r\n  `isLooping.send(true)`. Two concurrent `recommendsLoop` events could\r\n  both observe `false` before either had sent `true`, so loop() could\r\n  run twice. Replaced by a private `LoopGuard` actor that performs the\r\n  check-and-mark-running step as a single atomic operation. isLooping\r\n  becomes a downstream notification mechanism.\r\n\r\n**Background-task lifecycle**\r\n\r\nRemoved the Task in the expiration handler which didn't provide a guarantee to be executed. Aligned with the example in https://developer.apple.com/documentation/uikit/extending-your-app-s-background-execution-time. Side note: we probably need to refactor this when moving to Swift 6 as the expiration handler closure is Sendable and captures and mutates the var backgroundTaskID which isn't allowed when strict concurrency checking is on.\r\n\r\n**Loop lifecycle consolidation**\r\n\r\n  `canStartNewLoop`, `setupLoop`, `loopCompleted` are folded into\r\n  loop() and a new single-exit-point `finalizeLoop`. `executeLoop` no\r\n  longer calls finalize itself; the caller owns lifecycle. Open and\r\n  closed loop paths in executeLoop now share the stats-recording\r\n  block, with `enactDetermination` gated by `settings.closedLoop` at\r\n  the end.\r\n\r\n  `calculateLoopInterval` now takes `loopStartDate` as a parameter\r\n  instead of reading the instance `lastLoopStartDate` — keeps the\r\n  helper independent of the surrounding mutation order in loop().",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1226",
+      "mergedAt": "2026-06-22T23:23:49Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "4492f6cbd2a4f6dee2da484284454e3fb0ee8853",
+      "subject": "APSManager thread safety fixes Part 2: LoopGuard actor + background-task lifecycle",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-21T14:17:48+02:00"
+    },
+    {
+      "sha": "6f011efad92e2eeb1f1c8ecebabece5de97e8b11",
+      "subject": "Merge branch 'dev' of github.com:nightscout/Trio into apsManager-part2",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-22T15:48:04+02:00"
+    },
+    {
+      "sha": "22cf1bb2e6787e15477cb8fe60fd2ed45ca84b64",
+      "subject": "Swap order in execute loop function to calculate Loop end date after determination",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-22T15:50:18+02:00"
+    },
+    {
+      "sha": "b64aa7362803319388cf49fe51d6ff4122797b58",
+      "subject": "Add expiration handler in beginBackgroundTask method",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-06-22T16:56:03+02:00"
+    },
+    {
+      "sha": "86a329273e199e83ce6e1da4292b5683f768ebc7",
+      "subject": "Merge pull request #1226 from nightscout/apsManager-part2",
+      "author": "Sam King",
+      "authoredAt": "2026-06-22T16:23:49-07:00"
+    },
+    {
+      "sha": "8311bf1e72a2f473ec6b9e1e87d7e79510030731",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.3.4 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-06-22T23:23:59Z"
+    },
+    {
+      "sha": "995ac80da721e92b9e8e6d8deee303cf72b55ce2",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-06-22T18:29:33-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    }
+  ]
+}

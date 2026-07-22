@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build 995ac80</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build 995ac80</h1>
+    <p>Built 2026-06-22T23:49:21.000Z from <code>9685744..995ac80</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Prevent duplicate loops and tidy background tasks</h3><ul><li>Trio will no longer start two loop cycles at the same time.</li><li>Loops now enforce the minimum interval between runs to avoid running too soon.</li><li>Background task handling was simplified so each loop uses a local background task instead of a shared one.</li><li>Loop completion and statistics are recorded at a single exit point so outcomes are reported consistently.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1226" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/27991141352">Source workflow 27991141352</a></p>
+  </footer>
+</body>
+</html>
