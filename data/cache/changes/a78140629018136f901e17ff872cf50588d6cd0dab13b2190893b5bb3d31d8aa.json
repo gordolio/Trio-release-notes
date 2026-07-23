@@ -1,0 +1,22 @@
+{
+  "inputHash": "831c959df90eee528e7a9de11fe236fd52b2897ec2dbc80be7b60e4ef7ec4b96",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:39bea8db43bc0e080ae76de60419bd85348e3294",
+    "title": "Hardware shutter button now works",
+    "changes": [
+      "Using a hardware or shortcut shutter button now takes a photo in the app.",
+      "This behavior is available on devices running iOS 17.2 or later."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "commit:39bea8db43bc",
+      "diff:a78140629018"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
