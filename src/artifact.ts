@@ -34,6 +34,8 @@ export interface ArtifactBuildMetadata {
   buildDate: string | null;
 }
 
+export class BuildMetadataUnavailableError extends Error {}
+
 export function parseBuildDetailsPlist(contents: string): ArtifactBuildMetadata {
   const parsed = plist.parse(contents) as Record<string, unknown>;
   const abbreviatedSha = parsed["com-trio-commit-sha"];
@@ -122,6 +124,9 @@ export async function downloadBuildMetadata(downloadUrl: string, token: string):
 
     // Historical artifacts stored metadata only inside the signed IPA.
     const ipaEntries = artifactEntries.filter((entry) => entry.toLowerCase().endsWith(".ipa"));
+    if (ipaEntries.length === 0) {
+      throw new BuildMetadataUnavailableError("Artifact contains neither BuildDetails.plist nor an IPA");
+    }
     if (ipaEntries.length !== 1 || !ipaEntries[0]) {
       throw new Error(`Expected one IPA in the artifact, found ${ipaEntries.length}`);
     }

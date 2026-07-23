@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/rest";
+import { BuildMetadataUnavailableError } from "./artifact.js";
 import { config } from "./config.js";
 import type { PullRequestRecord, WorkflowRunInfo } from "./types.js";
 
@@ -69,7 +70,7 @@ export class GitHubClient {
     const artifact = artifacts.find((candidate) => candidate.name === config.artifactName && !candidate.expired)
       ?? artifacts.find((candidate) => candidate.name === config.legacyArtifactName && !candidate.expired);
     if (!artifact) {
-      throw new Error(
+      throw new BuildMetadataUnavailableError(
         `Run ${runId} has no unexpired ${config.artifactName} or ${config.legacyArtifactName} artifact`
       );
     }

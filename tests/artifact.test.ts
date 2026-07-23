@@ -1,7 +1,11 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { findDirectBuildDetailsPlist, parseBuildDetailsPlist } from "../src/artifact.js";
+import {
+  BuildMetadataUnavailableError,
+  findDirectBuildDetailsPlist,
+  parseBuildDetailsPlist
+} from "../src/artifact.js";
 
 describe("parseBuildDetailsPlist", () => {
   it("extracts the embedded build SHA and date", async () => {
@@ -38,5 +42,12 @@ describe("findDirectBuildDetailsPlist", () => {
     expect(() => findDirectBuildDetailsPlist(["BuildDetails.plist", "artifacts/BuildDetails.plist"])).toThrow(
       "found 2"
     );
+  });
+});
+
+describe("BuildMetadataUnavailableError", () => {
+  it("is distinguishable from malformed artifact errors", () => {
+    expect(new BuildMetadataUnavailableError("missing")).toBeInstanceOf(BuildMetadataUnavailableError);
+    expect(new BuildMetadataUnavailableError("missing")).toBeInstanceOf(Error);
   });
 });

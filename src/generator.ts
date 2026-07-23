@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { downloadBuildMetadata } from "./artifact.js";
+import { BuildMetadataUnavailableError, downloadBuildMetadata } from "./artifact.js";
 import { normalizeChanges } from "./changes.js";
 import { config } from "./config.js";
 import { GENERATOR_VERSION, PROMPT_VERSION, SCHEMA_VERSION, SUMMARY_CONCURRENCY } from "./constants.js";
@@ -53,23 +53,34 @@ async function findPreviousBuild(
   state: GeneratorState,
   current: WorkflowRunInfo
 ): Promise<StoredBuild> {
-  const previousRun = await github.findPreviousSuccessfulRun(current);
-  if (!previousRun) {
-    throw new Error(`No previous successful build exists for branch ${current.headBranch}`);
+  let cursor = current;
+  while (true) {
+    const previousRun = await github.findPreviousSuccessfulRun(cursor);
+    if (!previousRun) {
+      throw new Error(`No previous successful build with metadata exists for branch ${current.headBranch}`);
+    }
+    const stored = state.successfulBuilds.find((build) => build.runId === previousRun.id);
+    if (stored) {
+      return stored;
+    }
+    try {
+      const previous = await identifyBuild(github, previousRun);
+      return {
+        runId: previous.run.id,
+        branch: previous.run.headBranch,
+        fullSha: previous.fullSha,
+        shortSha: previous.abbreviatedSha,
+        builtAt: previous.run.createdAt,
+        reportPath: null
+      };
+    } catch (error) {
+      if (!(error instanceof BuildMetadataUnavailableError)) {
+        throw error;
+      }
+      console.warn(`Skipping successful run ${previousRun.id} because it has no usable build metadata`);
+      cursor = previousRun;
+    }
   }
-  const stored = state.successfulBuilds.find((build) => build.runId === previousRun.id);
-  if (stored) {
-    return stored;
-  }
-  const previous = await identifyBuild(github, previousRun);
-  return {
-    runId: previous.run.id,
-    branch: previous.run.headBranch,
-    fullSha: previous.fullSha,
-    shortSha: previous.abbreviatedSha,
-    builtAt: previous.run.createdAt,
-    reportPath: null
-  };
 }
 
 function reportItems(
