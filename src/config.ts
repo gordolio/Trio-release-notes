@@ -1,5 +1,6 @@
 import path from "node:path";
 import {
+  LEGACY_SOURCE_ARTIFACT_NAME,
   SOURCE_ARTIFACT_NAME,
   SOURCE_BUILD_JOB_NAME,
   SOURCE_REPOSITORY,
@@ -28,6 +29,7 @@ export const config = {
   workflowFile: process.env.TRIO_WORKFLOW_FILE ?? SOURCE_WORKFLOW_FILE,
   buildJobName: process.env.TRIO_BUILD_JOB_NAME ?? SOURCE_BUILD_JOB_NAME,
   artifactName: process.env.TRIO_ARTIFACT_NAME ?? SOURCE_ARTIFACT_NAME,
+  legacyArtifactName: LEGACY_SOURCE_ARTIFACT_NAME,
   githubToken: process.env.TRIO_GITHUB_TOKEN ?? process.env.GITHUB_TOKEN ?? "",
   openRouterApiKey: process.env.OPENROUTER_API_KEY ?? "",
   openRouterModel: process.env.OPENROUTER_MODEL ?? "openai/gpt-5-mini",

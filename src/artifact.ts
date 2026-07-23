@@ -47,6 +47,14 @@ export function parseBuildDetailsPlist(contents: string): ArtifactBuildMetadata 
   };
 }
 
+export function findDirectBuildDetailsPlist(entries: string[]): string | null {
+  const plistEntries = entries.filter((entry) => /^(?:(?:artifacts|release-notes)\/)?BuildDetails\.plist$/.test(entry));
+  if (plistEntries.length > 1) {
+    throw new Error(`Expected at most one direct BuildDetails.plist in the artifact, found ${plistEntries.length}`);
+  }
+  return plistEntries[0] ?? null;
+}
+
 async function unzipListing(archive: string): Promise<string[]> {
   const { stdout } = await execFileAsync("unzip", ["-Z1", archive], { maxBuffer: 10 * 1024 * 1024 });
   return stdout.split("\n").map((entry) => entry.trim()).filter(Boolean);
@@ -106,7 +114,14 @@ export async function downloadBuildMetadata(downloadUrl: string, token: string):
       createWriteStream(artifactPath, { mode: 0o600 })
     );
 
-    const ipaEntries = (await unzipListing(artifactPath)).filter((entry) => entry.toLowerCase().endsWith(".ipa"));
+    const artifactEntries = await unzipListing(artifactPath);
+    const directPlistEntry = findDirectBuildDetailsPlist(artifactEntries);
+    if (directPlistEntry) {
+      return parseBuildDetailsPlist(await extractEntryText(artifactPath, directPlistEntry));
+    }
+
+    // Historical artifacts stored metadata only inside the signed IPA.
+    const ipaEntries = artifactEntries.filter((entry) => entry.toLowerCase().endsWith(".ipa"));
     if (ipaEntries.length !== 1 || !ipaEntries[0]) {
       throw new Error(`Expected one IPA in the artifact, found ${ipaEntries.length}`);
     }

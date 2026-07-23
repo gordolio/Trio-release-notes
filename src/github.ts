@@ -66,9 +66,12 @@ export class GitHubClient {
       run_id: runId,
       per_page: 100
     });
-    const artifact = artifacts.find((candidate) => candidate.name === config.artifactName && !candidate.expired);
+    const artifact = artifacts.find((candidate) => candidate.name === config.artifactName && !candidate.expired)
+      ?? artifacts.find((candidate) => candidate.name === config.legacyArtifactName && !candidate.expired);
     if (!artifact) {
-      throw new Error(`Run ${runId} has no unexpired ${config.artifactName} artifact`);
+      throw new Error(
+        `Run ${runId} has no unexpired ${config.artifactName} or ${config.legacyArtifactName} artifact`
+      );
     }
     return artifact.archive_download_url;
   }

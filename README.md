@@ -2,7 +2,7 @@
 
 AI-assisted, source-linked release notes for successful [gordolio/Trio](https://github.com/gordolio/Trio) builds.
 
-Reports use the commit SHA embedded in each signed IPA rather than a workflow trigger SHA or release tag. The IPA is downloaded into a temporary directory only long enough to read `Payload/*.app/BuildDetails.plist`; temporary files are always deleted.
+Reports use the commit SHA captured in the built app rather than a workflow trigger SHA or release tag. Trio extracts the values from the signed IPA on its private build runner and creates a new `BuildDetails.plist` containing only the commit SHA and build date. Historical artifacts containing an IPA remain supported as a fallback, and temporary files are always deleted.
 
 ## Commands
 
@@ -61,7 +61,7 @@ Run the `Generate release notes` workflow manually with `backfill_months` set to
 ## Generation Pipeline
 
 1. Confirm the exact `4. Build Trio` workflow and one successful `Build` job.
-2. Download `build-artifacts`, extract the embedded abbreviated SHA, and remove all temporary files.
+2. Download `release-notes-metadata`, read `BuildDetails.plist`, and remove all temporary files. For historical runs, fall back to `build-artifacts` and read the plist from the IPA.
 3. Resolve the SHA in a full Trio checkout and verify ancestry from the preceding successful build.
 4. Collect commits, changed files, merge commits, associated fork and upstream pull requests, provenance, and maintenance hotspots.
 5. Summarize each PR or logical change through OpenRouter as a short title plus very brief user-facing bullet points, using strict JSON output and cached evidence hashes.
