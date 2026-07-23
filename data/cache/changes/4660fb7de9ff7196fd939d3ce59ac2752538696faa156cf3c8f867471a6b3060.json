@@ -1,0 +1,24 @@
+{
+  "inputHash": "8e8d5979be08cc29a6374c767aba1711ac4456fcd3fd6bb7a649e29938cae152",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:dbfeae8894b0b6e8305ae35a63422cc634c10410",
+    "title": "Choose and compare AI providers",
+    "changes": [
+      "You can choose which AI provider (OpenAI or Claude) powers AI-assisted carb entry.",
+      "A new Compare Providers setting shows each provider in its own tab so you can compare results.",
+      "When Compare is enabled, the selected provider runs first and other providers load when you open their tab.",
+      "The app now defaults to OpenAI as the selected AI provider."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:dbfeae8894b0",
+      "diff:4660fb7de9ff"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
