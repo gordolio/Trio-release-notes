@@ -1,0 +1,24 @@
+{
+  "inputHash": "a62368bff8449ab33ae25e7f583ade7cd05abbbe1f93dc15be9e74d2e9ca862a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:fd0adcf5be9528cd81ef7efcbab0331963398cb9",
+    "title": "Localization reformat and AI text updates",
+    "changes": [
+      "Localization string file was reformatted and many entries were reorganized.",
+      "The AI provider setting description now says the chosen model runs first and both use OpenRouter.",
+      "The AI-assisted image analysis description now explains models appear as tabs and that the selected model runs first.",
+      "The missing API-key error message was changed to refer to an OpenRouter API key instead of OpenAI."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:fd0adcf5be95",
+      "diff:2cd57d5e0583"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

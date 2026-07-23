@@ -1,0 +1,24 @@
+{
+  "inputHash": "2e6d259f0878f0d389c19796ce00e83df4783779e15abc65d3552c9062072691",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:cd5affb5ec3249baf1e3700bee276af02493c38d",
+    "title": "Improved food scanner and camera UI",
+    "changes": [
+      "The food scanner now uses a custom full‑screen camera with shutter, cancel, and flip controls.",
+      "Captured photos are automatically cropped to the visible scan frame before analysis.",
+      "The scanner overlay now respects device safe areas so the scan region is positioned correctly.",
+      "The Treatments view received list spacing/background tweaks and a dismissible Fat/Protein order banner."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:cd5affb5ec32",
+      "diff:e46fe79fbe3b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
