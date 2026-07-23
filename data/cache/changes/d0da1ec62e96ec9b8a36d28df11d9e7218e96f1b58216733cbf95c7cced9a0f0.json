@@ -1,0 +1,24 @@
+{
+  "inputHash": "0f6cf3eb7cd939d00a0bd613919476d09007220ffdec936fc46bb91122af0b02",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1339",
+    "title": "Enable Time Sensitive Notifications in TestFlight",
+    "changes": [
+      "The TestFlight setup guide now tells you to enable Time Sensitive Notifications for the Trio identifier.",
+      "You are instructed that this capability can be enabled while adding the Trio App Group.",
+      "A new step-by-step section explains how to enable Time Sensitive Notifications for the Trio identifier.",
+      "The guide clarifies that Time Sensitive Notifications is required only for the Trio identifier and not the others."
+    ],
+    "category": "origin-only-customizations",
+    "sourceIds": [
+      "pr:nightscout/Trio#1339",
+      "diff:d0da1ec62e96"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
