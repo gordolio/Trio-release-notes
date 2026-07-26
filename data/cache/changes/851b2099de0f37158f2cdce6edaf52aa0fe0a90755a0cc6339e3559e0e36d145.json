@@ -1,0 +1,24 @@
+{
+  "inputHash": "bfcbece42230557f66979a3ada87ea9054529fe76d43533f8f7893c2c99c6b06",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1337",
+    "title": "Default glucose color scheme switched to Dynamic",
+    "changes": [
+      "The app now uses the Dynamic color scheme as the default for glucose colors.",
+      "Statistics charts and glucose graphs now use Dynamic gradient colors for bands and legends.",
+      "The Static color scheme's high color was changed to purple to match Dynamic colors.",
+      "A color-gradient preview was added to the Color Scheme settings so users can see how colors map to glucose values."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1337",
+      "diff:851b2099de0f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
