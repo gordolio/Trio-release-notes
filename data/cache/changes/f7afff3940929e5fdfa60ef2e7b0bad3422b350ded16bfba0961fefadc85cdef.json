@@ -1,0 +1,24 @@
+{
+  "inputHash": "ea07a5f47bc33de046d83bf0a26d56547ea92a147fbd73de606035f85e532260",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:85ad8005fe0617c6edc8a1c1679872a979088924",
+    "title": "Switch AI to OpenRouter and stop uploading IPAs",
+    "changes": [
+      "AI-assisted carb estimation and food image analysis now run through OpenRouter.",
+      "AI settings no longer let you pick or compare multiple providers and now show OpenRouter only.",
+      "The app checks for an OpenRouter API key (OpenRouterAPIKey) in the app config to enable AI features.",
+      "CI builds no longer upload IPA artifacts and now only publish build logs and symbol files."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:85ad8005fe06",
+      "diff:f7afff394092"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

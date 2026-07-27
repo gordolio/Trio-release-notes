@@ -1,0 +1,24 @@
+{
+  "inputHash": "924400391b1616143b8791f4f397c86d484c5d49b33c9217555960da559cc6aa",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:d769c589cf8e7de99a4c3296751ceeae39dfe7d6",
+    "title": "Preserve and upload release-note metadata",
+    "changes": [
+      "The build now extracts the app's commit SHA and build date into a small release-notes file.",
+      "Builds will fail if the app does not contain exactly one BuildDetails.plist or has invalid metadata.",
+      "Only the release-notes metadata file is uploaded to CI artifacts instead of full build logs and symbol files.",
+      "Uploaded release-notes metadata is retained as an artifact for 90 days."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:d769c589cf8e",
+      "diff:6ed201941c6c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

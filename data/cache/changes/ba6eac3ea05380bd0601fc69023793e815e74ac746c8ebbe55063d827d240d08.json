@@ -1,0 +1,23 @@
+{
+  "inputHash": "bf2f6206ace382a2fb9c5c852bc8dc7df4de85033dcf32768ccea0964d271f0f",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1343",
+    "title": "Watch app and complication follow ConfigOverride",
+    "changes": [
+      "Watch app and complication now use APP_DISPLAY_NAME from ConfigOverride.xcconfig.",
+      "If ConfigOverride.xcconfig is missing or lacks APP_DISPLAY_NAME, the display name remains \"Trio\".",
+      "Watch targets will match the main app name when an override is set."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1343",
+      "diff:ba6eac3ea053"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

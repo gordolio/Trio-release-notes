@@ -1,0 +1,21 @@
+{
+  "inputHash": "871e5bb90ae90980f16af87ef7b1c56eec58050ea8ca8cc0649f4b9bfe5f1de7",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:e70109bc7b102b8ebaebd6493ec21ade7b422304",
+    "title": "Merge of development branches",
+    "changes": [
+      "Development branches were merged into dev.",
+      "No user-visible changes are identifiable from this commit."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:e70109bc7b10"
+    ],
+    "confidence": "low",
+    "humanReviewRequired": true
+  }
+}

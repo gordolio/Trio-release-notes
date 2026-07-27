@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build dbfeae8</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build dbfeae8</h1>
+    <p>Built 2026-07-23T17:43:18.000Z from <code>9477cc7..dbfeae8</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Switch AI to OpenRouter and stop uploading IPAs</h3><ul><li>AI-assisted carb estimation and food image analysis now run through OpenRouter.</li><li>AI settings no longer let you pick or compare multiple providers and now show OpenRouter only.</li><li>The app checks for an OpenRouter API key (OpenRouterAPIKey) in the app config to enable AI features.</li><li>CI builds no longer upload IPA artifacts and now only publish build logs and symbol files.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/85ad8005fe0617c6edc8a1c1679872a979088924" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Choose and compare AI providers</h3><ul><li>You can choose which AI provider (OpenAI or Claude) powers AI-assisted carb entry.</li><li>A new Compare Providers setting shows each provider in its own tab so you can compare results.</li><li>When Compare is enabled, the selected provider runs first and other providers load when you open their tab.</li><li>The app now defaults to OpenAI as the selected AI provider.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/dbfeae8894b0b6e8305ae35a63422cc634c10410" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Preserve and upload release-note metadata</h3><ul><li>The build now extracts the app&#39;s commit SHA and build date into a small release-notes file.</li><li>Builds will fail if the app does not contain exactly one BuildDetails.plist or has invalid metadata.</li><li>Only the release-notes metadata file is uploaded to CI artifacts instead of full build logs and symbol files.</li><li>Uploaded release-notes metadata is retained as an artifact for 90 days.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/d769c589cf8e7de99a4c3296751ceeae39dfe7d6" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/30029192525">Source workflow 30029192525</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "inputHash": "128e664b7a6d42970478b10c5333898b77ffdc7721eea9862fd9b4fe35985b10",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1280",
+    "title": "Omnipod 5 support added to dev branch",
+    "changes": [
+      "Omnipod 5 support is now included in Trio's dev branch.",
+      "For the first Omnipod 5 pod, deactivate your current pod then choose Switch Pod Type and select Omnipod 5.",
+      "Trio automatically retrieves the required certificate and shows progress screens during setup.",
+      "After tapping Continue you reach the Pair Pod screen and can safely fill and pair the Omnipod 5."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1280",
+      "commit:b3d3b95cb988"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

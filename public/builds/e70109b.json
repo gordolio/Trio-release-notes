@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30046021777,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30046021777",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "35d4d83f88596403fa65cf07af2f919e2b17218e",
+    "currentBuiltSha": "e70109bc7b102b8ebaebd6493ec21ade7b422304",
+    "shortSha": "e70109b",
+    "buildDate": "2026-07-23T21:43:19.000Z",
+    "generationDate": "2026-07-23T22:03:43.926Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:cd5affb5ec3249baf1e3700bee276af02493c38d",
+      "title": "Improved food scanner and camera UI",
+      "changes": [
+        "The food scanner now uses a custom full‑screen camera with shutter, cancel, and flip controls.",
+        "Captured photos are automatically cropped to the visible scan frame before analysis.",
+        "The scanner overlay now respects device safe areas so the scan region is positioned correctly.",
+        "The Treatments view received list spacing/background tweaks and a dismissible Fat/Protein order banner."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:cd5affb5ec32",
+        "diff:e46fe79fbe3b"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:cd5affb5ec3249baf1e3700bee276af02493c38d"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:cd5affb5ec32",
+          "type": "commit",
+          "title": "refactor food scanning",
+          "url": "https://github.com/gordolio/Trio/commit/cd5affb5ec3249baf1e3700bee276af02493c38d"
+        },
+        {
+          "id": "diff:e46fe79fbe3b",
+          "type": "diff",
+          "title": "Diff for commit:cd5affb5ec3249baf1e3700bee276af02493c38d",
+          "url": "https://github.com/gordolio/Trio/compare/dbfeae8894b0b6e8305ae35a63422cc634c10410...cd5affb5ec3249baf1e3700bee276af02493c38d"
+        }
+      ]
+    },
+    {
+      "changeId": "commit:fd0adcf5be9528cd81ef7efcbab0331963398cb9",
+      "title": "Localization reformat and AI text updates",
+      "changes": [
+        "Localization string file was reformatted and many entries were reorganized.",
+        "The AI provider setting description now says the chosen model runs first and both use OpenRouter.",
+        "The AI-assisted image analysis description now explains models appear as tabs and that the selected model runs first.",
+        "The missing API-key error message was changed to refer to an OpenRouter API key instead of OpenAI."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:fd0adcf5be95",
+        "diff:2cd57d5e0583"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:fd0adcf5be9528cd81ef7efcbab0331963398cb9"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:fd0adcf5be95",
+          "type": "commit",
+          "title": "reformat localization strings",
+          "url": "https://github.com/gordolio/Trio/commit/fd0adcf5be9528cd81ef7efcbab0331963398cb9"
+        },
+        {
+          "id": "diff:2cd57d5e0583",
+          "type": "diff",
+          "title": "Diff for commit:fd0adcf5be9528cd81ef7efcbab0331963398cb9",
+          "url": "https://github.com/gordolio/Trio/compare/cd5affb5ec3249baf1e3700bee276af02493c38d...fd0adcf5be9528cd81ef7efcbab0331963398cb9"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "commit:e70109bc7b102b8ebaebd6493ec21ade7b422304",
+          "title": "Merge of development branches",
+          "changes": [
+            "Development branches were merged into dev.",
+            "No user-visible changes are identifiable from this commit."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "commit:e70109bc7b10"
+          ],
+          "confidence": "low",
+          "humanReviewRequired": true,
+          "changeIds": [
+            "commit:e70109bc7b102b8ebaebd6493ec21ade7b422304"
+          ],
+          "highlight": false,
+          "provenance": "origin",
+          "sources": [
+            {
+              "id": "commit:e70109bc7b10",
+              "type": "commit",
+              "title": "Merge remote-tracking branch 'origin/dev' into dev",
+              "url": "https://github.com/gordolio/Trio/commit/e70109bc7b102b8ebaebd6493ec21ade7b422304"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "cd5affb5ec3249baf1e3700bee276af02493c38d",
+      "subject": "refactor food scanning",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T14:21:39-07:00"
+    },
+    {
+      "sha": "fd0adcf5be9528cd81ef7efcbab0331963398cb9",
+      "subject": "reformat localization strings",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T14:21:59-07:00"
+    },
+    {
+      "sha": "f6d4196919678399573f59b0ff4e6e67e85c93a2",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T14:22:22-07:00"
+    },
+    {
+      "sha": "e70109bc7b102b8ebaebd6493ec21ade7b422304",
+      "subject": "Merge remote-tracking branch 'origin/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T14:23:28-07:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/AI/FoodScannerOverlayView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/AI/PhotoPickerWrapper.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AI/OpenRouterResponsesService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/ScanFoodIntent.swift"
+    }
+  ]
+}

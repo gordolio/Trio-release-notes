@@ -1,52 +1,52 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 30258508168,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30258508168",
+    "sourceWorkflowRunId": 30236349288,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30236349288",
     "sourceBranch": "dev",
-    "previousBuiltSha": "4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd",
-    "currentBuiltSha": "3ea5db776180b81ccf4cf2f8de7b7148726eb828",
-    "shortSha": "3ea5db7",
-    "buildDate": "2026-07-27T10:52:48.000Z",
-    "generationDate": "2026-07-27T11:02:40.385Z",
+    "previousBuiltSha": "2d838ea6e0195dc5ccb0d058a89379ca0f21912b",
+    "currentBuiltSha": "4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd",
+    "shortSha": "4f62387",
+    "buildDate": "2026-07-27T04:29:16.000Z",
+    "generationDate": "2026-07-27T04:39:00.759Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "commit:3ea5db776180b81ccf4cf2f8de7b7148726eb828",
-      "title": "Editable AI prompts in Settings",
+      "changeId": "commit:4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd",
+      "title": "Customizable Food Analysis Prompt",
       "changes": [
-        "Settings now show an \"AI Prompts\" section instead of the old Food Analysis entry.",
-        "You can choose from multiple prompt types and edit each prompt's text, then save your changes.",
-        "Each prompt editor shows when the prompt is used, available placeholders, and example messages.",
-        "A Reset to Defaults button is provided and custom prompts remain saved across app updates."
+        "A new Food Analysis prompt editor is available in AI Service settings.",
+        "You can edit, save, and reset the prompt used to analyze food images.",
+        "The app uses your custom prompt for food image analysis, falling back to defaults if none is set.",
+        "Your custom prompt is stored on the device and persists across launches."
       ],
-      "category": "interface-improvements",
+      "category": "new-features",
       "sourceIds": [
-        "commit:3ea5db776180",
-        "diff:13202a5ba047"
+        "commit:4f623878db95",
+        "diff:e09b207d1f4f"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "commit:3ea5db776180b81ccf4cf2f8de7b7148726eb828"
+        "commit:4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd"
       ],
       "highlight": true,
       "provenance": "origin",
       "sources": [
         {
-          "id": "commit:3ea5db776180",
+          "id": "commit:4f623878db95",
           "type": "commit",
-          "title": "updated prompts",
-          "url": "https://github.com/gordolio/Trio/commit/3ea5db776180b81ccf4cf2f8de7b7148726eb828"
+          "title": "move prompts to configurable storage",
+          "url": "https://github.com/gordolio/Trio/commit/4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd"
         },
         {
-          "id": "diff:13202a5ba047",
+          "id": "diff:e09b207d1f4f",
           "type": "diff",
-          "title": "Diff for commit:3ea5db776180b81ccf4cf2f8de7b7148726eb828",
-          "url": "https://github.com/gordolio/Trio/compare/4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd...3ea5db776180b81ccf4cf2f8de7b7148726eb828"
+          "title": "Diff for commit:4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd",
+          "url": "https://github.com/gordolio/Trio/compare/2d838ea6e0195dc5ccb0d058a89379ca0f21912b...4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd"
         }
       ]
     }
@@ -102,20 +102,16 @@
   "includedPullRequests": [],
   "includedCommits": [
     {
-      "sha": "3ea5db776180b81ccf4cf2f8de7b7148726eb828",
-      "subject": "updated prompts",
+      "sha": "4f623878db95e5b49cf16e529b8eb9ecdc3fe0bd",
+      "subject": "move prompts to configurable storage",
       "author": "Gordon Child",
-      "authoredAt": "2026-07-27T05:31:51-05:00"
+      "authoredAt": "2026-07-26T17:00:35-05:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
       "path": "Trio/Sources/Modules/AIServiceSettings/View/AIServiceSettingsRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AI/OpenRouterResponsesService.swift"
     },
     {
       "status": "M",

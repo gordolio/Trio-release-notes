@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30042108514,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30042108514",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "dbfeae8894b0b6e8305ae35a63422cc634c10410",
+    "currentBuiltSha": "35d4d83f88596403fa65cf07af2f919e2b17218e",
+    "shortSha": "35d4d83",
+    "buildDate": "2026-07-23T20:45:12.000Z",
+    "generationDate": "2026-07-23T21:00:51.749Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1339",
+      "title": "Enable Time Sensitive Notifications in TestFlight",
+      "changes": [
+        "The TestFlight setup guide now tells you to enable Time Sensitive Notifications for the Trio identifier.",
+        "You are instructed that this capability can be enabled while adding the Trio App Group.",
+        "A new step-by-step section explains how to enable Time Sensitive Notifications for the Trio identifier.",
+        "The guide clarifies that Time Sensitive Notifications is required only for the Trio identifier and not the others."
+      ],
+      "category": "origin-only-customizations",
+      "sourceIds": [
+        "pr:nightscout/Trio#1339",
+        "diff:d0da1ec62e96"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1339"
+      ],
+      "highlight": true,
+      "provenance": "internal",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1339",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1339: Update testflight.md for enabling Time Sensitive Notifications",
+          "url": "https://github.com/nightscout/Trio/pull/1339"
+        },
+        {
+          "id": "diff:d0da1ec62e96",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1339",
+          "url": "https://github.com/gordolio/Trio/compare/73cc5617c63241d202b02fb72fd40000c025b0da...2739f2cd9f5704ab0cd3575148f8d656ae59adf3"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1339,
+      "title": "Update testflight.md for enabling Time Sensitive Notifications",
+      "body": "Update testflight.md instructions since a new requirement was added in v0.8.4.3 via https://github.com/nightscout/Trio/pull/1269",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1339",
+      "mergedAt": "2026-07-23T18:08:07Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1339,
+      "title": "Update testflight.md for enabling Time Sensitive Notifications",
+      "body": "Update testflight.md instructions since a new requirement was added in v0.8.4.3 via https://github.com/nightscout/Trio/pull/1269",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1339",
+      "mergedAt": "2026-07-23T18:08:07Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "781710400af41a2c2c7bdf7907082b8a3a5733fe",
+      "subject": "Update testflight.md for enabling Time Sensitive Notifications",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-21T11:52:25-04:00"
+    },
+    {
+      "sha": "2739f2cd9f5704ab0cd3575148f8d656ae59adf3",
+      "subject": "Merge pull request #1339 from MikePlante1/fastlane-markdown",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-23T14:08:07-04:00"
+    },
+    {
+      "sha": "9feaa4669ef777170be1d132ed93dbfb4bc9882d",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.25 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-23T18:08:17Z"
+    },
+    {
+      "sha": "35d4d83f88596403fa65cf07af2f919e2b17218e",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T13:26:26-07:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "fastlane/testflight.md"
+    }
+  ]
+}

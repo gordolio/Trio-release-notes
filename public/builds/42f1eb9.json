@@ -1,0 +1,346 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30195640095,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30195640095",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "361f28d284c6fc947aa21c1bdae7174fab4b04cc",
+    "currentBuiltSha": "42f1eb9d2f333e5ac8605f70d738f3ff21d0a27c",
+    "shortSha": "42f1eb9",
+    "buildDate": "2026-07-26T09:14:52.000Z",
+    "generationDate": "2026-07-26T09:26:25.055Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1337",
+      "title": "Default glucose color scheme switched to Dynamic",
+      "changes": [
+        "The app now uses the Dynamic color scheme as the default for glucose colors.",
+        "Statistics charts and glucose graphs now use Dynamic gradient colors for bands and legends.",
+        "The Static color scheme's high color was changed to purple to match Dynamic colors.",
+        "A color-gradient preview was added to the Color Scheme settings so users can see how colors map to glucose values."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1337",
+        "diff:851b2099de0f"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1337"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1337",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1337: Set default Color Scheme to Dynamic and align Stats Charts and Static Scheme to Dynamic Scheme",
+          "url": "https://github.com/nightscout/Trio/pull/1337"
+        },
+        {
+          "id": "diff:851b2099de0f",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1337",
+          "url": "https://github.com/gordolio/Trio/compare/73cc5617c63241d202b02fb72fd40000c025b0da...37f09a11718f0e34cc423ddeb108349bbabdc0a0"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1345",
+      "title": "Eversense: LoopKit alerts and disconnect crash fix",
+      "changes": [
+        "Eversense sensor alerts are now implemented using LoopKit alerts in Trio.",
+        "An app crash that could occur when an Eversense sensor disconnected has been fixed."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1345",
+        "diff:2f1fabe634c9"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1345"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1345",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1345: chore: update EversenseKit",
+          "url": "https://github.com/nightscout/Trio/pull/1345"
+        },
+        {
+          "id": "diff:2f1fabe634c9",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1345",
+          "url": "https://github.com/gordolio/Trio/compare/be1ee5fd7a603b76074982af0b0d6c546523d134...9621d827032f781df44f4a4898b3ab38f93cf518"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1337,
+      "title": "Set default Color Scheme to Dynamic and align Stats Charts and Static Scheme to Dynamic Scheme",
+      "body": "Prompted by discussions on https://github.com/nightscout/Trio/pull/1327#discussion_r3607372024, this PR does the following:\r\n\r\n1) Changes statistics charts to use dynamic colors\r\n2) Changes Static Glucose Color Scheme's high to purple to match Dynamic\r\n3) Changes default Color Scheme to Dynamic\r\n4) Adds a graphic to the verbose hint so the Color Scheme can be visualized/understood better\r\n5) Consolidates a function needed for # 4 that was already in the code in two separate places\r\n\r\n## Screenshots\r\n\r\n| description | screenshot new | screenshot old |\r\n|---|---|---|\r\n| Static, Main Chart | <img src=\"https://github.com/user-attachments/assets/7e9a9bed-f6f1-4e06-8644-b982b912c5fb\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 16\" src=\"https://github.com/user-attachments/assets/6505620c-1048-4930-896d-04ec5cdd1c54\" /> |\r\n| Settings | <img width=\"910\" height=\"1830\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b7e0dc6f-b98a-4784-8902-20bc2ab0df5d\" /> | <img src=\"https://github.com/user-attachments/assets/344ec77d-ba7c-4135-8c55-dff5e8ae75a9\" /> |\r\n| Percentile Chart | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 34 39\" src=\"https://github.com/user-attachments/assets/a1dd2e6a-004b-4c61-88d5-fa971b7b499d\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 22\" src=\"https://github.com/user-attachments/assets/4ca1c3d6-44ce-4d90-b4d4-23a1af9f4a33\" /> |\r\n| Distribution Chart | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 34 48\" src=\"https://github.com/user-attachments/assets/f8783252-cc86-4274-a154-ece3d1fb3cf5\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 27\" src=\"https://github.com/user-attachments/assets/c41e1aab-ee3a-43a9-9527-521751db896c\" /> |\r\n| Percentile Daily | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 34 58\" src=\"https://github.com/user-attachments/assets/6ff2bce5-388b-49d1-b4dd-e5e491c1480e\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 36\" src=\"https://github.com/user-attachments/assets/ec7bb612-1c1f-40d2-b1cb-5c87f5780e41\" /> |\r\n| Distribution Daily | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 35 04\" src=\"https://github.com/user-attachments/assets/cc7f4b52-f541-43df-9789-b4f21095389b\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 42\" src=\"https://github.com/user-attachments/assets/2c32aba6-8178-4548-bbcf-f50308822639\" /> |\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1337",
+      "mergedAt": "2026-07-26T00:57:13Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1337,
+      "title": "Set default Color Scheme to Dynamic and align Stats Charts and Static Scheme to Dynamic Scheme",
+      "body": "Prompted by discussions on https://github.com/nightscout/Trio/pull/1327#discussion_r3607372024, this PR does the following:\r\n\r\n1) Changes statistics charts to use dynamic colors\r\n2) Changes Static Glucose Color Scheme's high to purple to match Dynamic\r\n3) Changes default Color Scheme to Dynamic\r\n4) Adds a graphic to the verbose hint so the Color Scheme can be visualized/understood better\r\n5) Consolidates a function needed for # 4 that was already in the code in two separate places\r\n\r\n## Screenshots\r\n\r\n| description | screenshot new | screenshot old |\r\n|---|---|---|\r\n| Static, Main Chart | <img src=\"https://github.com/user-attachments/assets/7e9a9bed-f6f1-4e06-8644-b982b912c5fb\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 16\" src=\"https://github.com/user-attachments/assets/6505620c-1048-4930-896d-04ec5cdd1c54\" /> |\r\n| Settings | <img width=\"910\" height=\"1830\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b7e0dc6f-b98a-4784-8902-20bc2ab0df5d\" /> | <img src=\"https://github.com/user-attachments/assets/344ec77d-ba7c-4135-8c55-dff5e8ae75a9\" /> |\r\n| Percentile Chart | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 34 39\" src=\"https://github.com/user-attachments/assets/a1dd2e6a-004b-4c61-88d5-fa971b7b499d\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 22\" src=\"https://github.com/user-attachments/assets/4ca1c3d6-44ce-4d90-b4d4-23a1af9f4a33\" /> |\r\n| Distribution Chart | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 34 48\" src=\"https://github.com/user-attachments/assets/f8783252-cc86-4274-a154-ece3d1fb3cf5\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 27\" src=\"https://github.com/user-attachments/assets/c41e1aab-ee3a-43a9-9527-521751db896c\" /> |\r\n| Percentile Daily | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 34 58\" src=\"https://github.com/user-attachments/assets/6ff2bce5-388b-49d1-b4dd-e5e491c1480e\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 36\" src=\"https://github.com/user-attachments/assets/ec7bb612-1c1f-40d2-b1cb-5c87f5780e41\" /> |\r\n| Distribution Daily | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 09 35 04\" src=\"https://github.com/user-attachments/assets/cc7f4b52-f541-43df-9789-b4f21095389b\" /> | <img width=\"455\" height=\"915\" alt=\"Screenshot 2026-07-24 at 10 05 42\" src=\"https://github.com/user-attachments/assets/2c32aba6-8178-4548-bbcf-f50308822639\" /> |\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1337",
+      "mergedAt": "2026-07-26T00:57:13Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1345,
+      "title": "chore: update EversenseKit",
+      "body": "Changelog EversenseKit:\r\n- Implement LoopKit alerts\r\n- fix app crash during disconnect",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1345",
+      "mergedAt": "2026-07-25T23:10:21Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1345,
+      "title": "chore: update EversenseKit",
+      "body": "Changelog EversenseKit:\r\n- Implement LoopKit alerts\r\n- fix app crash during disconnect",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1345",
+      "mergedAt": "2026-07-25T23:10:21Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "850afc45272017a0224c6d64b335f8a73c369f4c",
+      "subject": "Update stats colors to match dynamic glucose color scheme",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-20T15:24:34-04:00"
+    },
+    {
+      "sha": "178469729887c80454dda97205597c8375bafee6",
+      "subject": "Align colors within the same band",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-23T22:56:44-04:00"
+    },
+    {
+      "sha": "311a09ad718185d0c6b042849522fee60b0d6a3b",
+      "subject": "Align high's static and dynamic colors; Apply DRY",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-23T23:02:33-04:00"
+    },
+    {
+      "sha": "85e07f5948ef958ee2f710ddb624e93a013fdcce",
+      "subject": "Change default Glucose Color Scheme to Dynamic",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-23T23:56:12-04:00"
+    },
+    {
+      "sha": "dc418dc3e71368451f0d5979c5e322fc72ae78d5",
+      "subject": "Add glucose color gradient preview to UI settings",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-24T11:03:53-04:00"
+    },
+    {
+      "sha": "f37f23974065fe0ddbf11f122bf4f786f668f16b",
+      "subject": "Apply DRY to getCurrentGlucoseTarget",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-24T14:54:54-04:00"
+    },
+    {
+      "sha": "6cf1a139e997e3852aeec63282d8d7fd579c7d80",
+      "subject": "Merge branch 'dev' into stats-colors",
+      "author": "Mike Plante",
+      "authoredAt": "2026-07-24T17:03:00-04:00"
+    },
+    {
+      "sha": "44ba8dd03bd5aacb3e14bde5e00f9a4d4f261825",
+      "subject": "chore: update EversenseKit",
+      "author": "bastiaanv",
+      "authoredAt": "2026-07-25T16:08:06+02:00"
+    },
+    {
+      "sha": "9f783ddd57416dbdc592881d2e70a0fca50276a0",
+      "subject": "chore: update EversenseKit",
+      "author": "bastiaanv",
+      "authoredAt": "2026-07-25T16:09:10+02:00"
+    },
+    {
+      "sha": "9621d827032f781df44f4a4898b3ab38f93cf518",
+      "subject": "Merge pull request #1345 from bastiaanv/chore/update-eversensekit",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-26T01:10:21+02:00"
+    },
+    {
+      "sha": "6122ca2ee405a42a4ba8cc068a3c130c0dff313b",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.27 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-25T23:10:31Z"
+    },
+    {
+      "sha": "37f09a11718f0e34cc423ddeb108349bbabdc0a0",
+      "subject": "Merge pull request #1337 from MikePlante1/stats-colors",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-26T02:57:12+02:00"
+    },
+    {
+      "sha": "88c6758e352774eb1209f93b62a245797bddcfc5",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.28 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-26T00:57:23Z"
+    },
+    {
+      "sha": "42f1eb9d2f333e5ac8605f70d738f3ff21d0a27c",
+      "subject": "Merge branch 'dev' of https://github.com/nightscout/Trio into dev",
+      "author": "GH Action - Upstream Sync",
+      "authoredAt": "2026-07-26T09:00:34Z"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "EversenseKit"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/LiveActivity+Helper.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/DynamicGlucoseColor.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/BGTargets.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/GlucoseColorScheme.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/TrioSettings.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/AdjustmentsStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ChartsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyDistributionChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyPercentileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDistributionChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucosePercentileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseSectorChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/ForecastChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/UserInterfaceSettingsDataFlow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/UserInterfaceSettingsProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/UserInterfaceSettingsStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift"
+    }
+  ]
+}

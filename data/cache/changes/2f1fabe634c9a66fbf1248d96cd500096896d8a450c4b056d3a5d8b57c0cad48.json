@@ -1,0 +1,22 @@
+{
+  "inputHash": "9900be6a77ac1dae6fe39a44adc4a603a174ce50ea8e888443bc56d26ee2449a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1345",
+    "title": "Eversense: LoopKit alerts and disconnect crash fix",
+    "changes": [
+      "Eversense sensor alerts are now implemented using LoopKit alerts in Trio.",
+      "An app crash that could occur when an Eversense sensor disconnected has been fixed."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1345",
+      "diff:2f1fabe634c9"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

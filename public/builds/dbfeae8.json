@@ -1,0 +1,252 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30029192525,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30029192525",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "9477cc7ed6c3a8891ffea18de9b9def16b945ea9",
+    "currentBuiltSha": "dbfeae8894b0b6e8305ae35a63422cc634c10410",
+    "shortSha": "dbfeae8",
+    "buildDate": "2026-07-23T17:43:18.000Z",
+    "generationDate": "2026-07-23T18:07:02.559Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:85ad8005fe0617c6edc8a1c1679872a979088924",
+      "title": "Switch AI to OpenRouter and stop uploading IPAs",
+      "changes": [
+        "AI-assisted carb estimation and food image analysis now run through OpenRouter.",
+        "AI settings no longer let you pick or compare multiple providers and now show OpenRouter only.",
+        "The app checks for an OpenRouter API key (OpenRouterAPIKey) in the app config to enable AI features.",
+        "CI builds no longer upload IPA artifacts and now only publish build logs and symbol files."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:85ad8005fe06",
+        "diff:f7afff394092"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:85ad8005fe0617c6edc8a1c1679872a979088924"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:85ad8005fe06",
+          "type": "commit",
+          "title": "Switch AI integration to OpenRouter and stop uploading IPA artifacts",
+          "url": "https://github.com/gordolio/Trio/commit/85ad8005fe0617c6edc8a1c1679872a979088924"
+        },
+        {
+          "id": "diff:f7afff394092",
+          "type": "diff",
+          "title": "Diff for commit:85ad8005fe0617c6edc8a1c1679872a979088924",
+          "url": "https://github.com/gordolio/Trio/compare/9477cc7ed6c3a8891ffea18de9b9def16b945ea9...85ad8005fe0617c6edc8a1c1679872a979088924"
+        }
+      ]
+    },
+    {
+      "changeId": "commit:dbfeae8894b0b6e8305ae35a63422cc634c10410",
+      "title": "Choose and compare AI providers",
+      "changes": [
+        "You can choose which AI provider (OpenAI or Claude) powers AI-assisted carb entry.",
+        "A new Compare Providers setting shows each provider in its own tab so you can compare results.",
+        "When Compare is enabled, the selected provider runs first and other providers load when you open their tab.",
+        "The app now defaults to OpenAI as the selected AI provider."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:dbfeae8894b0",
+        "diff:4660fb7de9ff"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:dbfeae8894b0b6e8305ae35a63422cc634c10410"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:dbfeae8894b0",
+          "type": "commit",
+          "title": "Restore model comparison through OpenRouter",
+          "url": "https://github.com/gordolio/Trio/commit/dbfeae8894b0b6e8305ae35a63422cc634c10410"
+        },
+        {
+          "id": "diff:4660fb7de9ff",
+          "type": "diff",
+          "title": "Diff for commit:dbfeae8894b0b6e8305ae35a63422cc634c10410",
+          "url": "https://github.com/gordolio/Trio/compare/d769c589cf8e7de99a4c3296751ceeae39dfe7d6...dbfeae8894b0b6e8305ae35a63422cc634c10410"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "commit:d769c589cf8e7de99a4c3296751ceeae39dfe7d6",
+          "title": "Preserve and upload release-note metadata",
+          "changes": [
+            "The build now extracts the app's commit SHA and build date into a small release-notes file.",
+            "Builds will fail if the app does not contain exactly one BuildDetails.plist or has invalid metadata.",
+            "Only the release-notes metadata file is uploaded to CI artifacts instead of full build logs and symbol files.",
+            "Uploaded release-notes metadata is retained as an artifact for 90 days."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "commit:d769c589cf8e",
+            "diff:6ed201941c6c"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "commit:d769c589cf8e7de99a4c3296751ceeae39dfe7d6"
+          ],
+          "highlight": false,
+          "provenance": "internal",
+          "sources": [
+            {
+              "id": "commit:d769c589cf8e",
+              "type": "commit",
+              "title": "updated wirkflow",
+              "url": "https://github.com/gordolio/Trio/commit/d769c589cf8e7de99a4c3296751ceeae39dfe7d6"
+            },
+            {
+              "id": "diff:6ed201941c6c",
+              "type": "diff",
+              "title": "Diff for commit:d769c589cf8e7de99a4c3296751ceeae39dfe7d6",
+              "url": "https://github.com/gordolio/Trio/compare/85ad8005fe0617c6edc8a1c1679872a979088924...d769c589cf8e7de99a4c3296751ceeae39dfe7d6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "85ad8005fe0617c6edc8a1c1679872a979088924",
+      "subject": "Switch AI integration to OpenRouter and stop uploading IPA artifacts",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T11:00:01-05:00"
+    },
+    {
+      "sha": "d769c589cf8e7de99a4c3296751ceeae39dfe7d6",
+      "subject": "updated wirkflow",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T12:03:04-05:00"
+    },
+    {
+      "sha": "dbfeae8894b0b6e8305ae35a63422cc634c10410",
+      "subject": "Restore model comparison through OpenRouter",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-23T12:20:05-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": ".github/workflows/build_trio.yml"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/Info.plist"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/TrioSettings.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AIServiceSettings/View/AIServiceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/TreatmentsStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AI/AIProviderService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AI/AIProviderType.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Services/AI/ClaudeResponsesService.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Services/AI/ClaudeService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AI/OpenAIStreamingParser.swift"
+    },
+    {
+      "status": "R072",
+      "path": "Trio/Sources/Services/AI/OpenRouterResponsesService.swift",
+      "previousPath": "Trio/Sources/Services/AI/OpenAIResponsesService.swift"
+    },
+    {
+      "status": "R097",
+      "path": "Trio/Sources/Services/AI/OpenRouterService.swift",
+      "previousPath": "Trio/Sources/Services/AI/OpenAIService.swift"
+    }
+  ]
+}

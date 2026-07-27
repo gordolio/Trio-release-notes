@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30162334580,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30162334580",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "39bea8db43bc0e080ae76de60419bd85348e3294",
+    "currentBuiltSha": "361f28d284c6fc947aa21c1bdae7174fab4b04cc",
+    "shortSha": "361f28d",
+    "buildDate": "2026-07-25T15:02:34.000Z",
+    "generationDate": "2026-07-25T15:18:04.347Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1280",
+      "title": "Omnipod 5 support added to dev branch",
+      "changes": [
+        "Omnipod 5 support is now included in Trio's dev branch.",
+        "For the first Omnipod 5 pod, deactivate your current pod then choose Switch Pod Type and select Omnipod 5.",
+        "Trio automatically retrieves the required certificate and shows progress screens during setup.",
+        "After tapping Continue you reach the Pair Pod screen and can safely fill and pair the Omnipod 5."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1280",
+        "commit:b3d3b95cb988"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1280"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1280",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1280: Add Omnipod 5 Support to dev branch",
+          "url": "https://github.com/nightscout/Trio/pull/1280"
+        },
+        {
+          "id": "commit:b3d3b95cb988",
+          "type": "commit",
+          "title": "Merge pull request #1280 from nightscout/feat/o5",
+          "url": "https://github.com/gordolio/Trio/commit/b3d3b95cb988b31aedd8fc3f19ecb5fd41c2343c"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "commit:361f28d284c6fc947aa21c1bdae7174fab4b04cc",
+          "title": "Update OmnipodKit build reference",
+          "changes": [
+            "A build error was fixed by updating the OmnipodKit reference to a newer commit.",
+            "This change is internal to the build setup and does not alter app features or behavior."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "commit:361f28d284c6",
+            "diff:12f395d53685"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "commit:361f28d284c6fc947aa21c1bdae7174fab4b04cc"
+          ],
+          "highlight": false,
+          "provenance": "origin",
+          "sources": [
+            {
+              "id": "commit:361f28d284c6",
+              "type": "commit",
+              "title": "fix build error",
+              "url": "https://github.com/gordolio/Trio/commit/361f28d284c6fc947aa21c1bdae7174fab4b04cc"
+            },
+            {
+              "id": "diff:12f395d53685",
+              "type": "diff",
+              "title": "Diff for commit:361f28d284c6fc947aa21c1bdae7174fab4b04cc",
+              "url": "https://github.com/gordolio/Trio/compare/d4f95ef18ef96c3ce2450323685330b6f7aa89a4...361f28d284c6fc947aa21c1bdae7174fab4b04cc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1280,
+      "title": "Add Omnipod 5 Support to dev branch",
+      "body": "## This PR moves Omnipod 5 support to Trio's `dev` branch.\r\n\r\n> [!IMPORTANT]\r\n> Omnipod 5 is still in an OPEN BETA state.\r\n> Please ensure to follow along Discord and to read the Omnipod 5 Open Beta FAQs: https://nightscout.github.io/omnipod-five/open-beta.html\r\n\r\n### Note for **First Omnipod 5 Pod Only**\r\n\r\nWhen you deactivate a Pod, you can cancel out of the Pair Pod screen, scroll to the bottom and choose to **Switch Pod** Type and choose Omnipod 5. \r\n\r\n<img width=\"394\" height=\"283\" alt=\"image\" src=\"https://github.com/user-attachments/assets/1595164f-7c60-4c20-b17f-1516f49953e8\" />\r\n\r\n\r\nAs soon as you confirm Omnipod 5 as your selection, you are automatically routed to a service that provides you with the certificate you need. You will see several progress screens finishing in this final screen.\r\n\r\n\r\n<img  height=\"800\" alt=\"image\" src=\"https://github.com/user-attachments/assets/accf1daa-34e6-4f34-b968-3f75279974e5\" />\r\n\r\nAt this point, you can tap Continue and will be taken to the Pair Pod screen. It is now safe to fill your Omnipod 5 Pod with insulin and pair it.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1280",
+      "mergedAt": "2026-07-25T10:34:31Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1280,
+      "title": "Add Omnipod 5 Support to dev branch",
+      "body": "## This PR moves Omnipod 5 support to Trio's `dev` branch.\r\n\r\n> [!IMPORTANT]\r\n> Omnipod 5 is still in an OPEN BETA state.\r\n> Please ensure to follow along Discord and to read the Omnipod 5 Open Beta FAQs: https://nightscout.github.io/omnipod-five/open-beta.html\r\n\r\n### Note for **First Omnipod 5 Pod Only**\r\n\r\nWhen you deactivate a Pod, you can cancel out of the Pair Pod screen, scroll to the bottom and choose to **Switch Pod** Type and choose Omnipod 5. \r\n\r\n<img width=\"394\" height=\"283\" alt=\"image\" src=\"https://github.com/user-attachments/assets/1595164f-7c60-4c20-b17f-1516f49953e8\" />\r\n\r\n\r\nAs soon as you confirm Omnipod 5 as your selection, you are automatically routed to a service that provides you with the certificate you need. You will see several progress screens finishing in this final screen.\r\n\r\n\r\n<img  height=\"800\" alt=\"image\" src=\"https://github.com/user-attachments/assets/accf1daa-34e6-4f34-b968-3f75279974e5\" />\r\n\r\nAt this point, you can tap Continue and will be taken to the Pair Pod screen. It is now safe to fill your Omnipod 5 Pod with insulin and pair it.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1280",
+      "mergedAt": "2026-07-25T10:34:31Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "7395aea3ce11a5cde0de477405279f6a40045e8f",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-10T04:51:15+02:00"
+    },
+    {
+      "sha": "ead23763bcf288618a4adc063763073f9a344871",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-13T00:35:09+02:00"
+    },
+    {
+      "sha": "9385d42a80136a976117e41418cd955ccd9cf7d8",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-13T22:25:03+02:00"
+    },
+    {
+      "sha": "ea2a43e842383a38c86d2fb510818e9b4103134d",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-14T15:19:33+02:00"
+    },
+    {
+      "sha": "d2cc6b77bba694c00bf7826caf7f09a886029eee",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-17T01:10:25+02:00"
+    },
+    {
+      "sha": "a4181603f7264a8924704ea9b5abdd19cc7a22ca",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-18T00:36:59+02:00"
+    },
+    {
+      "sha": "1790453b15bec491fc8169c0f5bcb738495c025e",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-21T16:27:05+02:00"
+    },
+    {
+      "sha": "5a0bc6f77fbe8c2e1fcee97c75287afd328af02d",
+      "subject": "Merge branch 'dev' into feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-25T02:32:56+02:00"
+    },
+    {
+      "sha": "b3d3b95cb988b31aedd8fc3f19ecb5fd41c2343c",
+      "subject": "Merge pull request #1280 from nightscout/feat/o5",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-25T12:34:30+02:00"
+    },
+    {
+      "sha": "be1ee5fd7a603b76074982af0b0d6c546523d134",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.26 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-25T10:34:40Z"
+    },
+    {
+      "sha": "d4f95ef18ef96c3ce2450323685330b6f7aa89a4",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-25T08:44:48-05:00"
+    },
+    {
+      "sha": "361f28d284c6fc947aa21c1bdae7174fab4b04cc",
+      "subject": "fix build error",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-25T07:47:20-07:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "OmnipodKit"
+    }
+  ]
+}

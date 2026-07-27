@@ -1,0 +1,239 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30221419278,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30221419278",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "42f1eb9d2f333e5ac8605f70d738f3ff21d0a27c",
+    "currentBuiltSha": "2d838ea6e0195dc5ccb0d058a89379ca0f21912b",
+    "shortSha": "2d838ea",
+    "buildDate": "2026-07-26T21:52:59.000Z",
+    "generationDate": "2026-07-26T22:02:43.510Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1334",
+      "title": "Preserve non-manager CGM state on Home",
+      "changes": [
+        "Home now preserves CGM lifecycle and status published by non-manager glucose sources.",
+        "The sensor lifecycle ring can display when a glucose source publishes progress even without a native manager expiration.",
+        "Native CGM managers and the simulator continue to behave as before.",
+        "Sources that do not publish lifecycle data still will not show a fabricated sensor ring."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1334",
+        "commit:2e0692ade497"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1334"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1334",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1334: Preserve non-manager CGM lifecycle state on Home",
+          "url": "https://github.com/nightscout/Trio/pull/1334"
+        },
+        {
+          "id": "commit:2e0692ade497",
+          "type": "commit",
+          "title": "Preserve source-published CGM lifecycle state on Home",
+          "url": "https://github.com/gordolio/Trio/commit/2e0692ade497d497b248fbea63bb1c550e65b2a3"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1343",
+      "title": "Watch app and complication follow ConfigOverride",
+      "changes": [
+        "Watch app and complication now use APP_DISPLAY_NAME from ConfigOverride.xcconfig.",
+        "If ConfigOverride.xcconfig is missing or lacks APP_DISPLAY_NAME, the display name remains \"Trio\".",
+        "Watch targets will match the main app name when an override is set."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1343",
+        "diff:ba6eac3ea053"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1343"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1343",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1343: Make Watch-app & -complication follow ConfigOverride.xcconfig",
+          "url": "https://github.com/nightscout/Trio/pull/1343"
+        },
+        {
+          "id": "diff:ba6eac3ea053",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1343",
+          "url": "https://github.com/gordolio/Trio/compare/9feaa4669ef777170be1d132ed93dbfb4bc9882d...8bf82ce7e94e3fb33f9217d15c3c12cc899c6ab2"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1334,
+      "title": "Preserve non-manager CGM lifecycle state on Home",
+      "body": "## Summary\n\nPreserve CGM lifecycle and status state published by non-manager `GlucoseSource` implementations on the Home screen.\n\nThis supports non-direct CGM connections such as xDrip4iOS AppGroup, where Trio receives lifecycle information through the glucose source rather than through a native `CGMManager`.\n\n## Why\n\nHome has a periodic refresh that re-reads CGM lifecycle and status information. Before this change, that refresh only used a native `CGMManager`, with a simulator fallback. Non-manager sources can publish lifecycle and status through `GlucoseSource`, but the refresh path cleared those values because no native manager exists.\n\nThe Home view also used `cgmSensorExpiresAt` as part of the sensor ring display gate. Non-manager sources can provide valid lifecycle progress without a manager-derived expiration date, so Home now tracks when progress came from a source publisher and allows that source-origin progress to render.\n\n## Changes\n\n- Preserve source-published lifecycle and status during the Home refresh for non-manager glucose sources.\n- Track whether lifecycle progress came from a non-manager source.\n- Allow source-origin lifecycle progress to show the sensor ring without requiring a native manager expiration date.\n- Keep native `CGMManager` and simulator paths separate.\n\n## Compatibility\n\nThis remains fully backward compatible with xDrip4iOS versions before v7. Legacy AppGroup payloads that only write the top-level readings array continue to publish nil lifecycle and status state, so Trio does not fabricate a sensor ring.\n\nNative CGM managers still refresh directly from `cgmLifecycleProgress` and `cgmStatusHighlight`. Native sources with `cgmSensorExpiresAt` still use the existing 48 hour display gate. Simulator behavior remains special-cased.\n\n## Testing\n\nValidated on-device with xDrip4iOS AppGroup data from the forthcoming xdripswift v7 update:\n- [JohanDegraeve/xdripswift#730](https://github.com/JohanDegraeve/xdripswift/pull/730)\n\nTested cases:\n- lifecycle ring displays from source-published state\n- ring remains visible across Home refresh ticks\n- legacy and no-lifecycle payloads do not fabricate ring state\n- soon-to-expire `maxSensorDays` cases display correctly\n- expired `maxSensorDays` cases display correctly",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1334",
+      "mergedAt": "2026-07-26T16:37:27Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1334,
+      "title": "Preserve non-manager CGM lifecycle state on Home",
+      "body": "## Summary\n\nPreserve CGM lifecycle and status state published by non-manager `GlucoseSource` implementations on the Home screen.\n\nThis supports non-direct CGM connections such as xDrip4iOS AppGroup, where Trio receives lifecycle information through the glucose source rather than through a native `CGMManager`.\n\n## Why\n\nHome has a periodic refresh that re-reads CGM lifecycle and status information. Before this change, that refresh only used a native `CGMManager`, with a simulator fallback. Non-manager sources can publish lifecycle and status through `GlucoseSource`, but the refresh path cleared those values because no native manager exists.\n\nThe Home view also used `cgmSensorExpiresAt` as part of the sensor ring display gate. Non-manager sources can provide valid lifecycle progress without a manager-derived expiration date, so Home now tracks when progress came from a source publisher and allows that source-origin progress to render.\n\n## Changes\n\n- Preserve source-published lifecycle and status during the Home refresh for non-manager glucose sources.\n- Track whether lifecycle progress came from a non-manager source.\n- Allow source-origin lifecycle progress to show the sensor ring without requiring a native manager expiration date.\n- Keep native `CGMManager` and simulator paths separate.\n\n## Compatibility\n\nThis remains fully backward compatible with xDrip4iOS versions before v7. Legacy AppGroup payloads that only write the top-level readings array continue to publish nil lifecycle and status state, so Trio does not fabricate a sensor ring.\n\nNative CGM managers still refresh directly from `cgmLifecycleProgress` and `cgmStatusHighlight`. Native sources with `cgmSensorExpiresAt` still use the existing 48 hour display gate. Simulator behavior remains special-cased.\n\n## Testing\n\nValidated on-device with xDrip4iOS AppGroup data from the forthcoming xdripswift v7 update:\n- [JohanDegraeve/xdripswift#730](https://github.com/JohanDegraeve/xdripswift/pull/730)\n\nTested cases:\n- lifecycle ring displays from source-published state\n- ring remains visible across Home refresh ticks\n- legacy and no-lifecycle payloads do not fabricate ring state\n- soon-to-expire `maxSensorDays` cases display correctly\n- expired `maxSensorDays` cases display correctly",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1334",
+      "mergedAt": "2026-07-26T16:37:27Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1343,
+      "title": "Make Watch-app & -complication follow ConfigOverride.xcconfig",
+      "body": "The main app name can be overriden by either changing it in XCode or, easier for all future use, put an entry in ConfigOverride.xcconfig to overrule it.\r\n\r\nHowever, this currently only affects Trio's main target as the rest is hardcoded to \"Trio\" within this file instead of referencing $(APP_DISPLAY_NAME). So the Watch app and Complication get set to \"Trio\" and ignores the ConfigOverride value.\r\n\r\nThis minor change makes XCode also look at ConfigOverride.xcconfig for the Watch and Watch Complication targets. When the file isn't present or does not contain a line to override APP_DISPLAY_NAME, it defaults back to \"Trio\" as defined in Config.xcconfig (it follows what's in that file when ConfigOverride.xcconfig isn't present or lacks the key). \r\n\r\nSee comments for an additional remark.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1343",
+      "mergedAt": "2026-07-26T15:56:42Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1343,
+      "title": "Make Watch-app & -complication follow ConfigOverride.xcconfig",
+      "body": "The main app name can be overriden by either changing it in XCode or, easier for all future use, put an entry in ConfigOverride.xcconfig to overrule it.\r\n\r\nHowever, this currently only affects Trio's main target as the rest is hardcoded to \"Trio\" within this file instead of referencing $(APP_DISPLAY_NAME). So the Watch app and Complication get set to \"Trio\" and ignores the ConfigOverride value.\r\n\r\nThis minor change makes XCode also look at ConfigOverride.xcconfig for the Watch and Watch Complication targets. When the file isn't present or does not contain a line to override APP_DISPLAY_NAME, it defaults back to \"Trio\" as defined in Config.xcconfig (it follows what's in that file when ConfigOverride.xcconfig isn't present or lacks the key). \r\n\r\nSee comments for an additional remark.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1343",
+      "mergedAt": "2026-07-26T15:56:42Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "2e0692ade497d497b248fbea63bb1c550e65b2a3",
+      "subject": "Preserve source-published CGM lifecycle state on Home",
+      "author": "Paul Plant",
+      "authoredAt": "2026-07-18T10:35:30+02:00"
+    },
+    {
+      "sha": "5ee0b2dc7a110a5a093ed44c3246c08c3b483506",
+      "subject": "Merge branch 'dev' into dev",
+      "author": "Paul Plant",
+      "authoredAt": "2026-07-20T19:20:00+02:00"
+    },
+    {
+      "sha": "8971527efc5ccd468024df316bde5c95735a20e4",
+      "subject": "Make Watch-app & -complication follow ConfigOverride.xcconfig",
+      "author": "Liroy van Hoewijk",
+      "authoredAt": "2026-07-24T23:42:49+02:00"
+    },
+    {
+      "sha": "8bf82ce7e94e3fb33f9217d15c3c12cc899c6ab2",
+      "subject": "Merge pull request #1343 from LiroyvH/patch-1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-26T17:56:41+02:00"
+    },
+    {
+      "sha": "35e43154ff0ef40120744a2c54146d0e13cc5e07",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.29 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-26T15:56:52Z"
+    },
+    {
+      "sha": "898aa0b957421c7fd7ebe63116e612a2a08474f7",
+      "subject": "Merge pull request #1334 from paulplant/dev",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-07-26T18:37:26+02:00"
+    },
+    {
+      "sha": "e8d90749248aeeacc0f026610d4f31d561c77cce",
+      "subject": "CI: Bump APP_DEV_VERSION to 0.8.4.30 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-07-26T16:37:37Z"
+    },
+    {
+      "sha": "2d838ea6e0195dc5ccb0d058a89379ca0f21912b",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-26T14:35:49-07:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    }
+  ]
+}

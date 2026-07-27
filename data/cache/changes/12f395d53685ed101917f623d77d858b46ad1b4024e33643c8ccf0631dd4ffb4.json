@@ -1,0 +1,22 @@
+{
+  "inputHash": "69a2605a9babea27eb29f9ce550da2d4b2309bda029cf536b1dbc67d4ac87011",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:361f28d284c6fc947aa21c1bdae7174fab4b04cc",
+    "title": "Update OmnipodKit build reference",
+    "changes": [
+      "A build error was fixed by updating the OmnipodKit reference to a newer commit.",
+      "This change is internal to the build setup and does not alter app features or behavior."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:361f28d284c6",
+      "diff:12f395d53685"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
