@@ -16,9 +16,6 @@ on:
         required: false
         default: false
         type: boolean
-  schedule:
-    - cron: "23 9 * * *"
-
 concurrency:
   group: release-notes-publisher
   cancel-in-progress: false
@@ -89,16 +86,6 @@ jobs:
           TRIO_CHECKOUT_PATH: .source/Trio
           TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
         run: node dist/src/cli.js backfill --months "$BACKFILL_MONTHS" --checkpoint $FORCE_FLAG
-
-      - name: Reconcile recent builds
-        if: ${{ github.event_name == 'schedule' }}
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openai/gpt-5-mini' }}
-          RELEASE_NOTES_SITE_URL: ${{ vars.RELEASE_NOTES_SITE_URL || 'https://github.com/gordolio/Trio-release-notes' }}
-          TRIO_CHECKOUT_PATH: .source/Trio
-          TRIO_GITHUB_TOKEN: ${{ secrets.TRIO_GITHUB_TOKEN }}
-        run: node dist/src/cli.js reconcile --days 30 --checkpoint
 
       - name: Reject an empty manual request
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id == '' && inputs.backfill_months == '' }}
