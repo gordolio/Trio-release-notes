@@ -1,0 +1,24 @@
+{
+  "inputHash": "5ecfe9e9c09a819eb4950929fe7af795f8098449754721cfba5390f702bdf6c2",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:3ea5db776180b81ccf4cf2f8de7b7148726eb828",
+    "title": "Editable AI prompts in Settings",
+    "changes": [
+      "Settings now show an \"AI Prompts\" section instead of the old Food Analysis entry.",
+      "You can choose from multiple prompt types and edit each prompt's text, then save your changes.",
+      "Each prompt editor shows when the prompt is used, available placeholders, and example messages.",
+      "A Reset to Defaults button is provided and custom prompts remain saved across app updates."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:3ea5db776180",
+      "diff:13202a5ba047"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
