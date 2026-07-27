@@ -253,10 +253,19 @@ export async function processRunsSince(
     }
   }
   console.log(`Found ${eligibleRuns.length} successful builds among ${runs.length} completed workflow runs`);
+  let skippedRuns = 0;
   for (const [index, run] of eligibleRuns.entries()) {
     console.log(`Processing build ${index + 1}/${eligibleRuns.length}: workflow run ${run.id}`);
-    await generateForRun(run.id, force);
-    await afterEach?.(run.id);
+    try {
+      await generateForRun(run.id, force);
+      await afterEach?.(run.id);
+    } catch (error) {
+      if (!(error instanceof BuildMetadataUnavailableError)) {
+        throw error;
+      }
+      skippedRuns += 1;
+      console.warn(`Skipping workflow run ${run.id} because it has no usable build metadata`);
+    }
   }
-  console.log(`Processed ${eligibleRuns.length} successful builds`);
+  console.log(`Processed ${eligibleRuns.length - skippedRuns} successful builds; skipped ${skippedRuns} without metadata`);
 }
