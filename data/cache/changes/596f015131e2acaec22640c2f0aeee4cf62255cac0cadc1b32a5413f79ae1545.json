@@ -1,0 +1,23 @@
+{
+  "inputHash": "f11fbd49f555298b3d8ef489d84006bb833cec26f86c5f79b6685e1f66ba3548",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:fafabf4e1f09ff6ef8542e364467739c6372f829",
+    "title": "AI prompts are now searchable",
+    "changes": [
+      "AI prompts are included in Settings search results.",
+      "Searching for a prompt by name jumps to that prompt in Settings.",
+      "AI Prompts are indexed under Services > AI for easier discovery."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:fafabf4e1f09",
+      "diff:596f015131e2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
