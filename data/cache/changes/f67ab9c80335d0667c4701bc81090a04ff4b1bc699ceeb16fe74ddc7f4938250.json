@@ -1,0 +1,23 @@
+{
+  "inputHash": "68643d6e0ebe01ec1d45380ee75c67c41305fcd379892c6a6c6d0808d334d66a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:f1807b11e8be5e9584046e5953ee7b9403700f22",
+    "title": "Localization and formatting cleanup",
+    "changes": [
+      "Code formatting was updated in the AI prompt service file.",
+      "The localization strings file was reformatted and many placeholder keys and comments were added.",
+      "No user-visible behavior or UI text changes are expected from this commit."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:f1807b11e8be",
+      "diff:f67ab9c80335"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

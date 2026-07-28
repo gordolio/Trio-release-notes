@@ -1,0 +1,25 @@
+{
+  "inputHash": "22e03f7f068345f602826c9f3ef5185a961fd42821930dbd3442be6f3f56d179",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:b0c6307f960ebd21a539893d472ca91138bda0fe",
+    "title": "Immediate AI food analysis and refine option",
+    "changes": [
+      "Trio starts an immediate AI analysis when you take or select a food photo and shows provisional nutrient estimates.",
+      "You can add a description and tap Continue to send a refinement that updates the analysis before confirming.",
+      "Provisional estimates appear below the description and are not applied to treatments until you confirm.",
+      "The description area shows statuses like \"Analyzing image…\" and a preliminary total while streaming updates arrive.",
+      "You can cancel the preview analysis to stop background work without changing the treatment form."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:b0c6307f960e",
+      "diff:aeb550524cc3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
