@@ -1,0 +1,24 @@
+{
+  "inputHash": "839781ac61627166da8c6e7c9fd7815f9d39e3d33e9b89abe5da77d0fcbea8c1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1344",
+    "title": "Enable algorithm (oref) use from command line",
+    "changes": [
+      "This change does not alter any user-facing features or app behavior.",
+      "Developers can now run the oref algorithm and its tests from the command line.",
+      "Project and package files were updated and some model adapters were moved so the algorithm builds standalone.",
+      "A small logging shim and Decimal helper functions were added to support the standalone algorithm package."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1344",
+      "diff:6f0dceb01796"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
