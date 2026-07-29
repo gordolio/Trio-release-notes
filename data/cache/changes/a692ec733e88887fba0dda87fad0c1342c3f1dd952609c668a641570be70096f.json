@@ -1,0 +1,22 @@
+{
+  "inputHash": "ac9dde10381ccffb7eba153d7338d89c1576bd052033679556ce056c37a4e74b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:c69ec1ef65b7b9f19d3a7bff71d029948f0fa7fb",
+    "title": "AI availability check made safe at startup",
+    "changes": [
+      "AI availability is now detected safely even if parts of the app aren’t fully set up yet.",
+      "A test was added to prevent this availability check from causing problems during initialization."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "commit:c69ec1ef65b7",
+      "diff:a692ec733e88"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
