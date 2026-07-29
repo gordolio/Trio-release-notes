@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30270211171,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30270211171",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "fafabf4e1f09ff6ef8542e364467739c6372f829",
+    "currentBuiltSha": "7e9bf97957018c33a7eb653324305bbf0b01ee7c",
+    "shortSha": "7e9bf97",
+    "buildDate": "2026-07-27T13:43:40.000Z",
+    "generationDate": "2026-07-27T13:53:52.638Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:7e9bf97957018c33a7eb653324305bbf0b01ee7c",
+      "title": "Remove old AI analysis paths",
+      "changes": [
+        "App now clears several obsolete AI prompt settings from stored preferences on launch.",
+        "Legacy non-streaming and multi-item AI image-analysis code and prompt options were removed.",
+        "Streaming food-image analysis remains the active AI path and existing active prompts are preserved."
+      ],
+      "category": "internal-and-build-system",
+      "sourceIds": [
+        "commit:7e9bf9795701",
+        "diff:49395b411f95"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:7e9bf97957018c33a7eb653324305bbf0b01ee7c"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:7e9bf9795701",
+          "type": "commit",
+          "title": "Remove unused AI analysis paths",
+          "url": "https://github.com/gordolio/Trio/commit/7e9bf97957018c33a7eb653324305bbf0b01ee7c"
+        },
+        {
+          "id": "diff:49395b411f95",
+          "type": "diff",
+          "title": "Diff for commit:7e9bf97957018c33a7eb653324305bbf0b01ee7c",
+          "url": "https://github.com/gordolio/Trio/compare/fafabf4e1f09ff6ef8542e364467739c6372f829...7e9bf97957018c33a7eb653324305bbf0b01ee7c"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "7e9bf97957018c33a7eb653324305bbf0b01ee7c",
+      "subject": "Remove unused AI analysis paths",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-27T08:23:21-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/TrioApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AI/AIProviderService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AI/OpenRouterService.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/OpenAIStreamingParserTests.swift"
+    }
+  ]
+}

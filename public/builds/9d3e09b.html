@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build 9d3e09b</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build 9d3e09b</h1>
+    <p>Built 2026-07-28T03:33:54.000Z from <code>7e9bf97..9d3e09b</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Don&#39;t give bolus when a remote meal is rejected</h3><ul><li>Rejected remote meal entries no longer cause the meal&#39;s explicit bolus to be delivered.</li><li>If a remote meal includes a requested bolus, insulin is only delivered after the meal is validated and stored.</li><li>Standalone direct bolus commands are unaffected and behave the same.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1347" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Enable algorithm (oref) use from command line</h3><ul><li>This change does not alter any user-facing features or app behavior.</li><li>Developers can now run the oref algorithm and its tests from the command line.</li><li>Project and package files were updated and some model adapters were moved so the algorithm builds standalone.</li><li>A small logging shim and Decimal helper functions were added to support the standalone algorithm package.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1344" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/30325554478">Source workflow 30325554478</a></p>
+  </footer>
+</body>
+</html>

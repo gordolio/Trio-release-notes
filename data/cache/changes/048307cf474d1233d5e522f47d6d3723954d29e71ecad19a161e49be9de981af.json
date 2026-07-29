@@ -1,0 +1,23 @@
+{
+  "inputHash": "87e37ce74f5d4a558364cff24283d644d6f5be559e7a24f4175bb6991496bef3",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1347",
+    "title": "Don't give bolus when a remote meal is rejected",
+    "changes": [
+      "Rejected remote meal entries no longer cause the meal's explicit bolus to be delivered.",
+      "If a remote meal includes a requested bolus, insulin is only delivered after the meal is validated and stored.",
+      "Standalone direct bolus commands are unaffected and behave the same."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1347",
+      "diff:048307cf474d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

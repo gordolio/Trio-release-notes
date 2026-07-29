@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 30266731478,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/30266731478",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "3ea5db776180b81ccf4cf2f8de7b7148726eb828",
+    "currentBuiltSha": "fafabf4e1f09ff6ef8542e364467739c6372f829",
+    "shortSha": "fafabf4",
+    "buildDate": "2026-07-27T12:59:38.000Z",
+    "generationDate": "2026-07-27T13:09:33.367Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:fafabf4e1f09ff6ef8542e364467739c6372f829",
+      "title": "AI prompts are now searchable",
+      "changes": [
+        "AI prompts are included in Settings search results.",
+        "Searching for a prompt by name jumps to that prompt in Settings.",
+        "AI Prompts are indexed under Services > AI for easier discovery."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:fafabf4e1f09",
+        "diff:596f015131e2"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:fafabf4e1f09ff6ef8542e364467739c6372f829"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:fafabf4e1f09",
+          "type": "commit",
+          "title": "make AI prompts searchable",
+          "url": "https://github.com/gordolio/Trio/commit/fafabf4e1f09ff6ef8542e364467739c6372f829"
+        },
+        {
+          "id": "diff:596f015131e2",
+          "type": "diff",
+          "title": "Diff for commit:fafabf4e1f09ff6ef8542e364467739c6372f829",
+          "url": "https://github.com/gordolio/Trio/compare/3ea5db776180b81ccf4cf2f8de7b7148726eb828...fafabf4e1f09ff6ef8542e364467739c6372f829"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "fafabf4e1f09ff6ef8542e364467739c6372f829",
+      "subject": "make AI prompts searchable",
+      "author": "Gordon Child",
+      "authoredAt": "2026-07-27T06:49:00-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AIServiceSettings/View/AIServiceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AI/OpenRouterService.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/SettingsSearchTests.swift"
+    }
+  ]
+}

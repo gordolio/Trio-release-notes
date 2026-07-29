@@ -1,0 +1,23 @@
+{
+  "inputHash": "1c5eb39a4891b0cde1a3c4982e8d06d6e53c0f115949394619eaf50aa297673c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:7e9bf97957018c33a7eb653324305bbf0b01ee7c",
+    "title": "Remove old AI analysis paths",
+    "changes": [
+      "App now clears several obsolete AI prompt settings from stored preferences on launch.",
+      "Legacy non-streaming and multi-item AI image-analysis code and prompt options were removed.",
+      "Streaming food-image analysis remains the active AI path and existing active prompts are preserved."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:7e9bf9795701",
+      "diff:49395b411f95"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
