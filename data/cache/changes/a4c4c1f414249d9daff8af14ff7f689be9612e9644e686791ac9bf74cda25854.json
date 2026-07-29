@@ -1,0 +1,25 @@
+{
+  "inputHash": "402428efd889d2fb3113125345b5680481090601c03efed7bd7ccee85309dc64",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:c6fe16479f058a7b0acf0c875adc4ba7aa8483c8",
+    "title": "Configurable OpenRouter models for food analysis",
+    "changes": [
+      "You can configure 1–4 OpenRouter models, reorder them, and choose one as the default model.",
+      "AI settings now include a model picker with catalog search, favorites, and compatibility and pricing info; unavailable/.",
+      "models remain configured and are shown as unavailable rather than being replaced.",
+      "A new \"Run all models immediately\" toggle lets you either run only the default first or start all configured models at.",
+      "once, which can increase cost when enabled."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "commit:c6fe16479f05",
+      "diff:a4c4c1f41424"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
