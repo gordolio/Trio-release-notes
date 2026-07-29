@@ -33,7 +33,8 @@ describe("OpenRouter response schemas", () => {
     expect(schema.properties.changeId.enum).toEqual(["change-1"]);
     expect(schema.properties.title.maxLength).toBe(60);
     expect(schema.properties.changes.maxItems).toBe(5);
-    expect(schema.properties.changes.items.maxLength).toBe(120);
+    // Reserve one character for punctuation added during normalization.
+    expect(schema.properties.changes.items.maxLength).toBe(119);
     expect(schema.properties.sourceIds.maxItems).toBe(4);
     expect(schema.properties.sourceIds.items.enum).toEqual(["source-1", "source-2"]);
   });
@@ -87,6 +88,21 @@ describe("OpenRouter response schemas", () => {
     expect(normalized.changes[1]).toBe("Already punctuated.");
     expect(normalized.changes[2]).toBe('Ends with a quote."');
     // A normalized summary passes validation that the raw one would have failed.
+    expect(() => validateChangeSummary(normalized, change("change-1", ["source-1"]))).not.toThrow();
+  });
+
+  it("keeps normalized generated bullets within the published limit", () => {
+    const summary = {
+      changeId: "change-1",
+      title: "Title",
+      changes: ["x".repeat(119)],
+      category: "fixes" as const,
+      sourceIds: ["source-1"],
+      confidence: "high" as const,
+      humanReviewRequired: false
+    };
+    const normalized = normalizeChangeSummary(summary);
+    expect(normalized.changes[0]).toHaveLength(120);
     expect(() => validateChangeSummary(normalized, change("change-1", ["source-1"]))).not.toThrow();
   });
 });

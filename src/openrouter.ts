@@ -22,7 +22,7 @@ const changeJsonSchema = {
   properties: {
     changeId: { type: "string" },
     title: { type: "string", minLength: 1, maxLength: 60 },
-    changes: { type: "array", minItems: 1, maxItems: 5, items: { type: "string", minLength: 1, maxLength: 120 } },
+    changes: { type: "array", minItems: 1, maxItems: 5, items: { type: "string", minLength: 1, maxLength: 119 } },
     category: categorySchema,
     sourceIds: { type: "array", minItems: 1, maxItems: 4, items: { type: "string" } },
     confidence: confidenceSchema,
