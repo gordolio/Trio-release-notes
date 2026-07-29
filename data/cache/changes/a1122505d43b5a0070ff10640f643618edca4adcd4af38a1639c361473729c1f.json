@@ -1,0 +1,24 @@
+{
+  "inputHash": "b75af925bb572b3b68d096c0eab9a16fc8a995c1db14a921b0a99198a0b9906e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1353",
+    "title": "Fix mac build script and package location",
+    "changes": [
+      "The Package.swift manifest was moved into an AlgorithmPackage subdirectory to avoid opening the wrong package in Xcode.",
+      "macOS build and test commands now run with the AlgorithmPackage path instead of a root package.",
+      "CI workflow cache paths and keys were updated to use AlgorithmPackage for algorithm tests.",
+      "This change only affects how the project is built and tested and does not change app features or behavior for users."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1353",
+      "commit:6b3298c25363"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

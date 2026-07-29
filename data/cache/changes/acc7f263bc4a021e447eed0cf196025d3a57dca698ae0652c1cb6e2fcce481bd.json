@@ -1,0 +1,23 @@
+{
+  "inputHash": "32af7784c443622afbbd9c2412a8eab5fe5e42bc4b7fbfcae59a9aca4aa3b054",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1352",
+    "title": "Cancel scheduled runs when nothing changed",
+    "changes": [
+      "Scheduled weekly runs that find no code changes are now cancelled and show as cancelled (grey) instead of appearing as.",
+      "A green checkmark on a scheduled run now guarantees a new build was made and uploaded to TestFlight.",
+      "Build tooling was updated to fastlane 2.236.1 and to use Xcode 26.5 for building."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1352",
+      "diff:acc7f263bc4a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
