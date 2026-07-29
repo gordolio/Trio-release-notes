@@ -1,0 +1,25 @@
+{
+  "inputHash": "a1460e83ca0dc603cb15c78b0dc7af72f3c05bc0ab10e17fdf88b419cfd75d36",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:8a3d3484d24599fde34a92f7d3b36a4f6aad4021",
+    "title": "Model picker crash and loading fixes",
+    "changes": [
+      "Opening the OpenRouter model picker no longer crashes or freezes.",
+      "The Add Model button shows a loading spinner and is disabled while models load.",
+      "The picker shows a loading indicator or error message and presents a scrollable list of models.",
+      "Duplicate or blank models are removed so the catalog list is cleaner.",
+      "Tapping Cancel or selecting a model now reliably closes the picker and favorite buttons are easier to tap."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:8a3d3484d245",
+      "diff:469c78e43f23"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
