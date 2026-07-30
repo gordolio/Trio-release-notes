@@ -1,0 +1,25 @@
+{
+  "inputHash": "ebeda08123685c5daecdc909a60de856604fba30cab36f27347271fda85ea9b7",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:2c9a646c9850d6f10bf4a122775f831aa5c41284",
+    "title": "Suppress auto-applied bolus on very-low forecast",
+    "changes": [
+      "The app now blocks automatically applied boluses when the glucose forecast predicts a very-low condition.",
+      "The forecast view now reflects when an auto-applied bolus was suppressed so forecast and dose match.",
+      "The low‑glucose warning can appear even if an auto-applied bolus was suppressed, and confirmations only prompt for real.",
+      "Recalculations are protected from stale results so forecasts and insulin recommendations stay in sync after input or UI.",
+      "changes."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "commit:2c9a646c9850",
+      "diff:4ad44f98bdb7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

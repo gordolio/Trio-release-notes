@@ -1,0 +1,22 @@
+{
+  "inputHash": "e8cd5aee869daef906a4df4bfea61fce6d02257c07627390698d1ed8f54a95a2",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:fb7890efca9e4e2984732961c1150487944441d7",
+    "title": "Remove duplicate model reorder icon",
+    "changes": [
+      "An extra reorder (drag handle) icon was removed from the AI Service Settings screen.",
+      "Each model now shows only a single reorder icon in the list."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:fb7890efca9e",
+      "diff:9da481aeada2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
