@@ -15,162 +15,46 @@
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1357",
-      "title": "Home glucose color follows target edits",
+      "changeId": "commit:dcae4cfe08eeb44e676da965ccceb0d342c1ac4d",
+      "title": "Restore upstream Treatments state handling",
       "changes": [
-        "Home chart point colors and the header glucose color update immediately after you edit glucose targets.",
-        "Target edits now apply at app launch and whenever target data updates, removing the previous lag.",
-        "Temporary overrides and per-segment target coloring are unchanged and may still differ from the Home display."
+        "Treatments now uses the upstream state model and popup instead of the broader fork-specific state changes.",
+        "Bolus recommendations remain visible but are no longer copied into the Bolus field automatically; tap the recommendation to accept it.",
+        "This supersedes the attempted low-forecast auto-apply fix from build fb7890e."
       ],
-      "category": "interface-improvements",
+      "category": "alerting-and-safety",
       "sourceIds": [
-        "pr:nightscout/Trio#1357",
-        "diff:85612c7f0d0b"
+        "commit:dcae4cfe08ee"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1357"
+        "commit:dcae4cfe08eeb44e676da965ccceb0d342c1ac4d"
       ],
       "highlight": true,
-      "provenance": "upstream",
+      "provenance": "mixed",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1357",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1357: Refresh currentGlucoseTarget so dynamic color follows target edits",
-          "url": "https://github.com/nightscout/Trio/pull/1357"
-        },
-        {
-          "id": "diff:85612c7f0d0b",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1357",
-          "url": "https://github.com/gordolio/Trio/compare/ec57e2b2afc83a86b171534330047aff4eb1e78b...b813fb5e476468a1a69540e2523828863d290be8"
-        }
-      ]
-    },
-    {
-      "changeId": "commit:3efb8351eea977095b89bcea4c89d4bd162cb6f0",
-      "title": "AI food photo analysis and settings",
-      "changes": [
-        "You can now tap \"Analyze Food with AI\" in Treatments to capture a photo and start an AI analysis.",
-        "A new AI settings screen lets you choose, order, and favorite OpenRouter models and control when models run.",
-        "You can edit AI prompts and placeholder text used for image analysis and user-provided descriptions.",
-        "After a photo, provisional carb, fat, and protein estimates are shown for review and are only applied after you confirm.",
-        "A full-screen AI chat lets you refine analysis results, review published nutrition sources, and confirm values to apply."
-      ],
-      "category": "new-features",
-      "sourceIds": [
-        "commit:3efb8351eea9",
-        "diff:9bb029463b51"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "commit:3efb8351eea977095b89bcea4c89d4bd162cb6f0"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "commit:3efb8351eea9",
+          "id": "commit:dcae4cfe08ee",
           "type": "commit",
-          "title": "Add fork-owned AI food analysis components",
-          "url": "https://github.com/gordolio/Trio/commit/3efb8351eea977095b89bcea4c89d4bd162cb6f0"
-        },
-        {
-          "id": "diff:9bb029463b51",
-          "type": "diff",
-          "title": "Diff for commit:3efb8351eea977095b89bcea4c89d4bd162cb6f0",
-          "url": "https://github.com/gordolio/Trio/compare/43724f4583cfccad07c4a70235c0e06db5809019...3efb8351eea977095b89bcea4c89d4bd162cb6f0"
-        }
-      ]
-    },
-    {
-      "changeId": "commit:66ab51ed374d4fd4cbb8be72942f1400db6d7b2b",
-      "title": "AI food analysis and Scan Food shortcut",
-      "changes": [
-        "An AI-based food analysis feature is added to the app.",
-        "A \"Scan Food\" shortcut/intent is integrated for scanning food items.",
-        "New AI service settings pages have been added to the app.",
-        "New chat and food-analysis screens plus a photo picker are included."
-      ],
-      "category": "new-features",
-      "sourceIds": [
-        "commit:66ab51ed374d",
-        "diff:9acf8c677a98"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "commit:66ab51ed374d4fd4cbb8be72942f1400db6d7b2b"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "commit:66ab51ed374d",
-          "type": "commit",
-          "title": "Wire AI food analysis into app services and shortcuts",
-          "url": "https://github.com/gordolio/Trio/commit/66ab51ed374d4fd4cbb8be72942f1400db6d7b2b"
-        },
-        {
-          "id": "diff:9acf8c677a98",
-          "type": "diff",
-          "title": "Diff for commit:66ab51ed374d4fd4cbb8be72942f1400db6d7b2b",
-          "url": "https://github.com/gordolio/Trio/compare/3efb8351eea977095b89bcea4c89d4bd162cb6f0...66ab51ed374d4fd4cbb8be72942f1400db6d7b2b"
-        }
-      ]
-    },
-    {
-      "changeId": "commit:5d7c1c837104ff5d6000d134bbda31e9bfcfdad4",
-      "title": "AI food analysis in Treatments",
-      "changes": [
-        "A new AI Food Analysis entry appears in the Treatments screen.",
-        "Using the AI entry fills the carbs, fat, protein, and note fields automatically.",
-        "Filling nutrition values triggers the same automatic input update behavior as manual edits.",
-        "All other Treatments form fields and layout remain unchanged."
-      ],
-      "category": "new-features",
-      "sourceIds": [
-        "commit:5d7c1c837104",
-        "diff:40c288a2cf95"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "commit:5d7c1c837104ff5d6000d134bbda31e9bfcfdad4"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "commit:5d7c1c837104",
-          "type": "commit",
-          "title": "Add AI food analysis entry to Treatments",
-          "url": "https://github.com/gordolio/Trio/commit/5d7c1c837104ff5d6000d134bbda31e9bfcfdad4"
-        },
-        {
-          "id": "diff:40c288a2cf95",
-          "type": "diff",
-          "title": "Diff for commit:5d7c1c837104ff5d6000d134bbda31e9bfcfdad4",
-          "url": "https://github.com/gordolio/Trio/compare/6df2e7ad606289784cc51e641df9df203f3144c1...5d7c1c837104ff5d6000d134bbda31e9bfcfdad4"
+          "title": "Merge complete fork onto upstream-authored Treatments refactor",
+          "url": "https://github.com/gordolio/Trio/commit/dcae4cfe08eeb44e676da965ccceb0d342c1ac4d"
         }
       ]
     },
     {
       "changeId": "commit:6df2e7ad606289784cc51e641df9df203f3144c1",
-      "title": "Isolate AI food analysis from Treatments",
+      "title": "Keep AI food analysis isolated",
       "changes": [
-        "AI food analysis now runs in its own internal coordinator instead of modifying Treatments state.",
-        "Capturing a photo shows provisional nutrition suggestions immediately without changing the treatment form.",
-        "Multiple AI provider tabs are supported, with the chosen provider analyzed first and others analysed lazily when opened.",
-        "You can open a full-screen AI chat to edit or accept nutrition, and accepted nutrition is returned via an apply-cback."
+        "Analyze Food with AI remains available in Treatments and can fill carbs, fat, protein, and notes after review.",
+        "AI analysis now runs in a fork-owned coordinator outside the upstream Treatments state model.",
+        "Applying AI nutrition recalculates the recommendation but does not populate or enact a bolus."
       ],
-      "category": "interface-improvements",
+      "category": "new-features",
       "sourceIds": [
         "commit:6df2e7ad6062",
-        "diff:c0dd32526ec4"
+        "diff:c0dd32526ec4",
+        "commit:5d7c1c837104"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
@@ -191,6 +75,12 @@
           "type": "diff",
           "title": "Diff for commit:6df2e7ad606289784cc51e641df9df203f3144c1",
           "url": "https://github.com/gordolio/Trio/compare/66ab51ed374d4fd4cbb8be72942f1400db6d7b2b...6df2e7ad606289784cc51e641df9df203f3144c1"
+        },
+        {
+          "id": "commit:5d7c1c837104",
+          "type": "commit",
+          "title": "Add AI food analysis entry to Treatments",
+          "url": "https://github.com/gordolio/Trio/commit/5d7c1c837104ff5d6000d134bbda31e9bfcfdad4"
         }
       ]
     }
@@ -204,43 +94,7 @@
     {
       "category": "fixes",
       "title": "Fixes",
-      "items": [
-        {
-          "changeId": "pr:nightscout/Trio#1362",
-          "title": "Fix Swedish percent sign in exercise help",
-          "changes": [
-            "Fixes an issue that could stop the app from compiling because of a percent sign in the Swedish exercise-mode help text.",
-            "The Swedish exercise-mode help text displays exactly the same as before.",
-            "Only a formatting escape was added; the visible wording did not change."
-          ],
-          "category": "fixes",
-          "sourceIds": [
-            "pr:gordolio/Trio#1362",
-            "diff:cd36e7747531"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "pr:nightscout/Trio#1362"
-          ],
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:gordolio/Trio#1362",
-              "type": "pull-request",
-              "title": "gordolio/Trio#1362: Escape literal percent in Swedish exercise-mode translation",
-              "url": "https://github.com/nightscout/Trio/pull/1362"
-            },
-            {
-              "id": "diff:cd36e7747531",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1362",
-              "url": "https://github.com/gordolio/Trio/compare/ec57e2b2afc83a86b171534330047aff4eb1e78b...cfb9554976c3d92c0fc710545e2e926edcc2bd56"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "algorithm-and-dosing",
@@ -260,78 +114,12 @@
     {
       "category": "interface-improvements",
       "title": "Interface Improvements",
-      "items": [
-        {
-          "changeId": "commit:3b3263134426c0a434a787e583ed4bb612341cdd",
-          "title": "AI model UI localization and formatting tweaks",
-          "changes": [
-            "Added localized strings for AI/model UI elements, including a token-pricing label.",
-            "Updated localized messages for model catalog refresh and model availability.",
-            "Applied minor code formatting changes in AI settings and provider code with no behavior change."
-          ],
-          "category": "interface-improvements",
-          "sourceIds": [
-            "commit:3b3263134426",
-            "diff:49b6a5d4cb45"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "commit:3b3263134426c0a434a787e583ed4bb612341cdd"
-          ],
-          "highlight": false,
-          "provenance": "mixed",
-          "sources": [
-            {
-              "id": "commit:3b3263134426",
-              "type": "commit",
-              "title": "Apply Xcode formatting and localization updates",
-              "url": "https://github.com/gordolio/Trio/commit/3b3263134426c0a434a787e583ed4bb612341cdd"
-            },
-            {
-              "id": "diff:49b6a5d4cb45",
-              "type": "diff",
-              "title": "Diff for commit:3b3263134426c0a434a787e583ed4bb612341cdd",
-              "url": "https://github.com/gordolio/Trio/compare/dcae4cfe08eeb44e676da965ccceb0d342c1ac4d...3b3263134426c0a434a787e583ed4bb612341cdd"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "origin-only-customizations",
       "title": "Origin-Only Customizations",
-      "items": [
-        {
-          "changeId": "commit:dcae4cfe08eeb44e676da965ccceb0d342c1ac4d",
-          "title": "Merge preserving Treatments refactor and origin files",
-          "changes": [
-            "The upstream Treatments refactor is now merged into the app.",
-            "Files from the origin/dev branch are preserved for any parts that weren't refactored.",
-            "The Treatments popup and its root history were kept from the upstream version.",
-            "AI coordination logic was kept isolated during the merge."
-          ],
-          "category": "origin-only-customizations",
-          "sourceIds": [
-            "commit:dcae4cfe08ee"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "commit:dcae4cfe08eeb44e676da965ccceb0d342c1ac4d"
-          ],
-          "highlight": false,
-          "provenance": "origin",
-          "sources": [
-            {
-              "id": "commit:dcae4cfe08ee",
-              "type": "commit",
-              "title": "Merge complete fork onto upstream-authored Treatments refactor",
-              "url": "https://github.com/gordolio/Trio/commit/dcae4cfe08eeb44e676da965ccceb0d342c1ac4d"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "internal-and-build-system",
@@ -347,44 +135,7 @@
   "maintenanceHotspots": [
     "Trio/Sources/Localizations/Main/Localizable.xcstrings"
   ],
-  "includedPullRequests": [
-    {
-      "repository": "gordolio/Trio",
-      "number": 1357,
-      "title": "Refresh currentGlucoseTarget so dynamic color follows target edits",
-      "body": "Resolves #1355 \r\n\r\n## Fix stale glucose target behind the home chart's dynamic color\r\n\r\n### Problem\r\n\r\nEditing the glucose target profile did not update the dynamic glucose color on the\r\nHome view. Point colors — along with the header glucose reading and the chart\r\nselection popover — kept scoring against the previously configured target.\r\n\r\n### Root cause\r\n\r\nAll three of those read `Home.StateModel.currentGlucoseTarget`, which was only ever\r\nassigned from `getCurrentGlucoseTarget()`. That method had exactly one call site:\r\n`settingsDidChange`. Three consequences:\r\n\r\n1. **Target edits never reached it.** BG targets are not part of `TrioSettings` —\r\n   saving the profile notifies `BGTargetsObserver`, so `bgTargetsDidChange` →\r\n   `setupGlucoseTargets()` runs. That path refreshed `bgTargets` and\r\n   `targetProfiles` but never `currentGlucoseTarget`.\r\n2. **When `settingsDidChange` did fire, it read stale data.**\r\n   `getCurrentGlucoseTarget()` ran *before* `setupGlucoseTargets()` reloaded\r\n   `bgTargets`, deriving the current target from the previous profile — always one\r\n   edit behind.\r\n3. **Never initialized at launch.** `setupSettings()` does not assign it, so it sat\r\n   at the hardcoded default of 100 mg/dL until some unrelated setting changed.\r\n\r\n### Fix\r\n\r\nDerive the current target inside `setupGlucoseTargets()` from the profile it just\r\nloaded, and publish it in the same `MainActor.run` as `bgTargets` and\r\n`targetProfiles`. That single hook covers every path that already reloads targets:\r\napp launch, `bgTargetsDidChange`, and `settingsDidChange`. `getCurrentGlucoseTarget()`\r\nis removed — it had no other callers.\r\n\r\nNet −5 lines. Minor side benefit: the `currentTarget()` lookup allocates a\r\n`DateFormatter` per schedule entry via `TherapySettingsUtil.parseTime`, and now runs\r\noff the main actor instead of on it.\r\n\r\n### Not included\r\n\r\n`BGTargets.currentTarget()` reads the *scheduled* profile only — it does not account\r\nfor overrides or temp targets. The Live Activity sources its target from\r\n`determination.currentTarget` (the effective target oref used), so the two can\r\nlegitimately disagree while an override is active. Unchanged here; noting it as a\r\nknown difference rather than a regression.\r\n\r\n`OnboardingStateModel` writes `bg_targets.json` directly without notifying\r\n`BGTargetsObserver`. Harmless in practice (the Home state model is not live during\r\nonboarding) and left alone.\r\n\r\nFor schedules with more than one target segment, `currentGlucoseTarget` is a single\r\nscalar applied to every point on the chart, so historical readings are colored\r\nagainst the segment current at the last targets reload rather than the one in effect\r\nat their own timestamp. Nothing refreshes it when the clock crosses a segment\r\nboundary either, so the value can lag until the next reload. Both are pre-existing\r\nand left alone here — per-point coloring would be a visible behavior change, though\r\n`targetProfiles` already carries the per-segment data it would need.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1357",
-      "mergedAt": "2026-07-31T00:38:46Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1357,
-      "title": "Refresh currentGlucoseTarget so dynamic color follows target edits",
-      "body": "Resolves #1355 \r\n\r\n## Fix stale glucose target behind the home chart's dynamic color\r\n\r\n### Problem\r\n\r\nEditing the glucose target profile did not update the dynamic glucose color on the\r\nHome view. Point colors — along with the header glucose reading and the chart\r\nselection popover — kept scoring against the previously configured target.\r\n\r\n### Root cause\r\n\r\nAll three of those read `Home.StateModel.currentGlucoseTarget`, which was only ever\r\nassigned from `getCurrentGlucoseTarget()`. That method had exactly one call site:\r\n`settingsDidChange`. Three consequences:\r\n\r\n1. **Target edits never reached it.** BG targets are not part of `TrioSettings` —\r\n   saving the profile notifies `BGTargetsObserver`, so `bgTargetsDidChange` →\r\n   `setupGlucoseTargets()` runs. That path refreshed `bgTargets` and\r\n   `targetProfiles` but never `currentGlucoseTarget`.\r\n2. **When `settingsDidChange` did fire, it read stale data.**\r\n   `getCurrentGlucoseTarget()` ran *before* `setupGlucoseTargets()` reloaded\r\n   `bgTargets`, deriving the current target from the previous profile — always one\r\n   edit behind.\r\n3. **Never initialized at launch.** `setupSettings()` does not assign it, so it sat\r\n   at the hardcoded default of 100 mg/dL until some unrelated setting changed.\r\n\r\n### Fix\r\n\r\nDerive the current target inside `setupGlucoseTargets()` from the profile it just\r\nloaded, and publish it in the same `MainActor.run` as `bgTargets` and\r\n`targetProfiles`. That single hook covers every path that already reloads targets:\r\napp launch, `bgTargetsDidChange`, and `settingsDidChange`. `getCurrentGlucoseTarget()`\r\nis removed — it had no other callers.\r\n\r\nNet −5 lines. Minor side benefit: the `currentTarget()` lookup allocates a\r\n`DateFormatter` per schedule entry via `TherapySettingsUtil.parseTime`, and now runs\r\noff the main actor instead of on it.\r\n\r\n### Not included\r\n\r\n`BGTargets.currentTarget()` reads the *scheduled* profile only — it does not account\r\nfor overrides or temp targets. The Live Activity sources its target from\r\n`determination.currentTarget` (the effective target oref used), so the two can\r\nlegitimately disagree while an override is active. Unchanged here; noting it as a\r\nknown difference rather than a regression.\r\n\r\n`OnboardingStateModel` writes `bg_targets.json` directly without notifying\r\n`BGTargetsObserver`. Harmless in practice (the Home state model is not live during\r\nonboarding) and left alone.\r\n\r\nFor schedules with more than one target segment, `currentGlucoseTarget` is a single\r\nscalar applied to every point on the chart, so historical readings are colored\r\nagainst the segment current at the last targets reload rather than the one in effect\r\nat their own timestamp. Nothing refreshes it when the clock crosses a segment\r\nboundary either, so the value can lag until the next reload. Both are pre-existing\r\nand left alone here — per-point coloring would be a visible behavior change, though\r\n`targetProfiles` already carries the per-segment data it would need.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1357",
-      "mergedAt": "2026-07-31T00:38:46Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1362,
-      "title": "Escape literal percent in Swedish exercise-mode translation",
-      "body": "Xcode fails to compile the string catalog with:\n\n```\nUnable to create a Swift type from the format specifier \"%-i\"\n```\n\nIt's in the Swedish translation of the exercise-mode help text (\"Set to a number, e.g. 160, …\"), where \"50%-ig\" (\"fifty-percent\") happens to read as a `%-i` format specifier. Escaping the percent as `%%` fixes the parse, and the string renders exactly the same to Swedish users.\n\nThe string came in with the \"Merge translations into a String Catalog\" migration, and it's the only occurrence of the pattern in the catalog — I checked all 2,557 keys across every localization and variation.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1362",
-      "mergedAt": "2026-07-31T23:37:20Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1362,
-      "title": "Escape literal percent in Swedish exercise-mode translation",
-      "body": "Xcode fails to compile the string catalog with:\n\n```\nUnable to create a Swift type from the format specifier \"%-i\"\n```\n\nIt's in the Swedish translation of the exercise-mode help text (\"Set to a number, e.g. 160, …\"), where \"50%-ig\" (\"fifty-percent\") happens to read as a `%-i` format specifier. Escaping the percent as `%%` fixes the parse, and the string renders exactly the same to Swedish users.\n\nThe string came in with the \"Merge translations into a String Catalog\" migration, and it's the only occurrence of the pattern in the catalog — I checked all 2,557 keys across every localization and variation.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1362",
-      "mergedAt": "2026-07-31T23:37:20Z"
-    }
-  ],
+  "includedPullRequests": [],
   "includedCommits": [
     {
       "sha": "c6b6e6778a52ce5102a155ad197f0e3de17feafa",

@@ -4,61 +4,16 @@ Built 2026-08-01T03:00:41.000Z from `fb7890e..3b32631`.
 
 ## Highlights
 
-- **Home glucose color follows target edits**
-  - Home chart point colors and the header glucose color update immediately after you edit glucose targets.
-  - Target edits now apply at app launch and whenever target data updates, removing the previous lag.
-  - Temporary overrides and per-segment target coloring are unchanged and may still differ from the Home display.
-  - [View source](https://github.com/nightscout/Trio/pull/1357)
-- **AI food photo analysis and settings**
-  - You can now tap "Analyze Food with AI" in Treatments to capture a photo and start an AI analysis.
-  - A new AI settings screen lets you choose, order, and favorite OpenRouter models and control when models run.
-  - You can edit AI prompts and placeholder text used for image analysis and user-provided descriptions.
-  - After a photo, provisional carb, fat, and protein estimates are shown for review and are only applied after you confirm.
-  - A full-screen AI chat lets you refine analysis results, review published nutrition sources, and confirm values to apply.
-  - [View source](https://github.com/gordolio/Trio/commit/3efb8351eea977095b89bcea4c89d4bd162cb6f0)
-- **AI food analysis and Scan Food shortcut**
-  - An AI-based food analysis feature is added to the app.
-  - A "Scan Food" shortcut/intent is integrated for scanning food items.
-  - New AI service settings pages have been added to the app.
-  - New chat and food-analysis screens plus a photo picker are included.
-  - [View source](https://github.com/gordolio/Trio/commit/66ab51ed374d4fd4cbb8be72942f1400db6d7b2b)
-- **AI food analysis in Treatments**
-  - A new AI Food Analysis entry appears in the Treatments screen.
-  - Using the AI entry fills the carbs, fat, protein, and note fields automatically.
-  - Filling nutrition values triggers the same automatic input update behavior as manual edits.
-  - All other Treatments form fields and layout remain unchanged.
-  - [View source](https://github.com/gordolio/Trio/commit/5d7c1c837104ff5d6000d134bbda31e9bfcfdad4)
-- **Isolate AI food analysis from Treatments**
-  - AI food analysis now runs in its own internal coordinator instead of modifying Treatments state.
-  - Capturing a photo shows provisional nutrition suggestions immediately without changing the treatment form.
-  - Multiple AI provider tabs are supported, with the chosen provider analyzed first and others analysed lazily when opened.
-  - You can open a full-screen AI chat to edit or accept nutrition, and accepted nutrition is returned via an apply-cback.
-  - [View source](https://github.com/gordolio/Trio/commit/6df2e7ad606289784cc51e641df9df203f3144c1)
-
-## Fixes
-
-- **Fix Swedish percent sign in exercise help**
-  - Fixes an issue that could stop the app from compiling because of a percent sign in the Swedish exercise-mode help text.
-  - The Swedish exercise-mode help text displays exactly the same as before.
-  - Only a formatting escape was added; the visible wording did not change.
-  - [View source](https://github.com/nightscout/Trio/pull/1362)
-
-## Interface Improvements
-
-- **AI model UI localization and formatting tweaks**
-  - Added localized strings for AI/model UI elements, including a token-pricing label.
-  - Updated localized messages for model catalog refresh and model availability.
-  - Applied minor code formatting changes in AI settings and provider code with no behavior change.
-  - [View source](https://github.com/gordolio/Trio/commit/3b3263134426c0a434a787e583ed4bb612341cdd)
-
-## Origin-Only Customizations
-
-- **Merge preserving Treatments refactor and origin files**
-  - The upstream Treatments refactor is now merged into the app.
-  - Files from the origin/dev branch are preserved for any parts that weren't refactored.
-  - The Treatments popup and its root history were kept from the upstream version.
-  - AI coordination logic was kept isolated during the merge.
+- **Restore upstream Treatments state handling**
+  - Treatments now uses the upstream state model and popup instead of the broader fork-specific state changes.
+  - Bolus recommendations remain visible but are no longer copied into the Bolus field automatically; tap the recommendation to accept it.
+  - This supersedes the attempted low-forecast auto-apply fix from build fb7890e.
   - [View source](https://github.com/gordolio/Trio/commit/dcae4cfe08eeb44e676da965ccceb0d342c1ac4d)
+- **Keep AI food analysis isolated**
+  - Analyze Food with AI remains available in Treatments and can fill carbs, fat, protein, and notes after review.
+  - AI analysis now runs in a fork-owned coordinator outside the upstream Treatments state model.
+  - Applying AI nutrition recalculates the recommendation but does not populate or enact a bolus.
+  - [View source](https://github.com/gordolio/Trio/commit/6df2e7ad606289784cc51e641df9df203f3144c1)
 
 ## Build Metadata
 
