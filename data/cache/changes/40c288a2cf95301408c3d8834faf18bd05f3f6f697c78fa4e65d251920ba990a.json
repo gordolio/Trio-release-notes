@@ -1,0 +1,24 @@
+{
+  "inputHash": "f0c3e240f77b81b9a6293bfdc0805027be782b9f986404cec34bb0abd5f46db8",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:5d7c1c837104ff5d6000d134bbda31e9bfcfdad4",
+    "title": "AI food analysis in Treatments",
+    "changes": [
+      "A new AI Food Analysis entry appears in the Treatments screen.",
+      "Using the AI entry fills the carbs, fat, protein, and note fields automatically.",
+      "Filling nutrition values triggers the same automatic input update behavior as manual edits.",
+      "All other Treatments form fields and layout remain unchanged."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:5d7c1c837104",
+      "diff:40c288a2cf95"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

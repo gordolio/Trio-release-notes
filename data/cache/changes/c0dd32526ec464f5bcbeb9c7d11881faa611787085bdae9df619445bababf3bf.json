@@ -1,0 +1,24 @@
+{
+  "inputHash": "d4ec4096c620304e9c75185d21a416368b7ab249c1caf7137704e1b5a73f6678",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:6df2e7ad606289784cc51e641df9df203f3144c1",
+    "title": "Isolate AI food analysis from Treatments",
+    "changes": [
+      "AI food analysis now runs in its own internal coordinator instead of modifying Treatments state.",
+      "Capturing a photo shows provisional nutrition suggestions immediately without changing the treatment form.",
+      "Multiple AI provider tabs are supported, with the chosen provider analyzed first and others analysed lazily when opened.",
+      "You can open a full-screen AI chat to edit or accept nutrition, and accepted nutrition is returned via an apply-cback."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:6df2e7ad6062",
+      "diff:c0dd32526ec4"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

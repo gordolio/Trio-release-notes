@@ -1,0 +1,23 @@
+{
+  "inputHash": "fa6c5d43afe2505f331796490274a88708145f7e875b1400276d45fce0fe32df",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1362",
+    "title": "Fix Swedish percent sign in exercise help",
+    "changes": [
+      "Fixes an issue that could stop the app from compiling because of a percent sign in the Swedish exercise-mode help text.",
+      "The Swedish exercise-mode help text displays exactly the same as before.",
+      "Only a formatting escape was added; the visible wording did not change."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#1362",
+      "diff:cd36e7747531"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

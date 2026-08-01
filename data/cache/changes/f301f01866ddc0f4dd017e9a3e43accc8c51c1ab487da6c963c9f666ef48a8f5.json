@@ -1,0 +1,23 @@
+{
+  "inputHash": "5342fd4c5a8527a9d0f442ded9edf412ff88231e7285f1f1fe6dd0f3277f5485",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:dcae4cfe08eeb44e676da965ccceb0d342c1ac4d",
+    "title": "Merge preserving Treatments refactor and origin files",
+    "changes": [
+      "The upstream Treatments refactor is now merged into the app.",
+      "Files from the origin/dev branch are preserved for any parts that weren't refactored.",
+      "The Treatments popup and its root history were kept from the upstream version.",
+      "AI coordination logic was kept isolated during the merge."
+    ],
+    "category": "origin-only-customizations",
+    "sourceIds": [
+      "commit:dcae4cfe08ee"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

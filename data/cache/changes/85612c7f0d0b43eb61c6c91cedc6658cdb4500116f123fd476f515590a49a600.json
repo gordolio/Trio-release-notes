@@ -1,0 +1,23 @@
+{
+  "inputHash": "f23aa87117f14cf91b4088e1fa258d2ff2cca343d1287614b16446dc128e23f1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1357",
+    "title": "Home glucose color follows target edits",
+    "changes": [
+      "Home chart point colors and the header glucose color update immediately after you edit glucose targets.",
+      "Target edits now apply at app launch and whenever target data updates, removing the previous lag.",
+      "Temporary overrides and per-segment target coloring are unchanged and may still differ from the Home display."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1357",
+      "diff:85612c7f0d0b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

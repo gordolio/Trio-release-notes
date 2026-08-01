@@ -1,0 +1,25 @@
+{
+  "inputHash": "88fa3a8fb7f7351b674435838674cfdbfdd1a4d7266c467706ba7377e5949593",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:3efb8351eea977095b89bcea4c89d4bd162cb6f0",
+    "title": "AI food photo analysis and settings",
+    "changes": [
+      "You can now tap \"Analyze Food with AI\" in Treatments to capture a photo and start an AI analysis.",
+      "A new AI settings screen lets you choose, order, and favorite OpenRouter models and control when models run.",
+      "You can edit AI prompts and placeholder text used for image analysis and user-provided descriptions.",
+      "After a photo, provisional carb, fat, and protein estimates are shown for review and are only applied after you confirm.",
+      "A full-screen AI chat lets you refine analysis results, review published nutrition sources, and confirm values to apply."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:3efb8351eea9",
+      "diff:9bb029463b51"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "inputHash": "268ae012cfdb74c7323d417a0c63e2f831feeffc9532e8e7e7199de3f3754bc6",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:3b3263134426c0a434a787e583ed4bb612341cdd",
+    "title": "AI model UI localization and formatting tweaks",
+    "changes": [
+      "Added localized strings for AI/model UI elements, including a token-pricing label.",
+      "Updated localized messages for model catalog refresh and model availability.",
+      "Applied minor code formatting changes in AI settings and provider code with no behavior change."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:3b3263134426",
+      "diff:49b6a5d4cb45"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

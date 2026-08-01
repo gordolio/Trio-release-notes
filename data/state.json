@@ -257,6 +257,11 @@
       "fullSha": "fb7890efca9e4e2984732961c1150487944441d7",
       "reportPath": "public/builds/fb7890e.json",
       "processedAt": "2026-07-30T12:34:46.257Z"
+    },
+    "30680651555": {
+      "fullSha": "3b3263134426c0a434a787e583ed4bb612341cdd",
+      "reportPath": "public/builds/3b32631.json",
+      "processedAt": "2026-08-01T03:23:41.534Z"
     }
   },
   "successfulBuilds": [
@@ -675,6 +680,14 @@
       "shortSha": "fb7890e",
       "builtAt": "2026-07-30T12:05:47Z",
       "reportPath": "public/builds/fb7890e.json"
+    },
+    {
+      "runId": 30680651555,
+      "branch": "codex/treatments-origin-complete-poc",
+      "fullSha": "3b3263134426c0a434a787e583ed4bb612341cdd",
+      "shortSha": "3b32631",
+      "builtAt": "2026-08-01T02:45:49Z",
+      "reportPath": "public/builds/3b32631.json"
     }
   ]
 }
