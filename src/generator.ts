@@ -1,10 +1,11 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { BuildMetadataUnavailableError, downloadBuildMetadata } from "./artifact.js";
+import { newestStoredAncestor } from "./build-history.js";
 import { normalizeChanges } from "./changes.js";
 import { config } from "./config.js";
 import { GENERATOR_VERSION, PROMPT_VERSION, SCHEMA_VERSION, SUMMARY_CONCURRENCY } from "./constants.js";
-import { assertDescendant, changedFiles, commitsBetween, maintenanceHotspots, resolveCommit } from "./git.js";
+import { assertDescendant, changedFiles, commitsBetween, isAncestor, maintenanceHotspots, resolveCommit } from "./git.js";
 import { GitHubClient } from "./github.js";
 import { OpenRouterSummarizer } from "./openrouter.js";
 import {
@@ -51,13 +52,13 @@ async function identifyBuild(github: GitHubClient, run: WorkflowRunInfo): Promis
 async function findPreviousBuild(
   github: GitHubClient,
   state: GeneratorState,
-  current: WorkflowRunInfo
+  current: BuildIdentity
 ): Promise<StoredBuild> {
-  let cursor = current;
+  let cursor = current.run;
   while (true) {
     const previousRun = await github.findPreviousSuccessfulRun(cursor);
     if (!previousRun) {
-      throw new Error(`No previous successful build with metadata exists for branch ${current.headBranch}`);
+      break;
     }
     const stored = state.successfulBuilds.find((build) => build.runId === previousRun.id);
     if (stored) {
@@ -81,6 +82,19 @@ async function findPreviousBuild(
       cursor = previousRun;
     }
   }
+
+  const storedAncestor = await newestStoredAncestor(state.successfulBuilds, current, isAncestor);
+  if (storedAncestor) {
+    console.log(
+      `No previous successful build with metadata exists for branch ${current.run.headBranch}; ` +
+      `using ancestor build ${storedAncestor.shortSha} from ${storedAncestor.branch}`
+    );
+    return storedAncestor;
+  }
+
+  throw new Error(
+    `No previous successful build with metadata or recorded ancestor exists for branch ${current.run.headBranch}`
+  );
 }
 
 function reportItems(
@@ -135,7 +149,7 @@ export async function generateForRun(runId: number, force = false): Promise<void
 
   const run = await github.getRun(runId);
   const current = await identifyBuild(github, run);
-  const previous = await findPreviousBuild(github, state, run);
+  const previous = await findPreviousBuild(github, state, current);
   await assertDescendant(previous.fullSha, current.fullSha);
 
   const existingReport = await readExistingReport(current.abbreviatedSha);

@@ -54,10 +54,17 @@ export async function resolveCommit(abbreviatedSha: string): Promise<string> {
 }
 
 export async function assertDescendant(previousSha: string, currentSha: string): Promise<void> {
-  try {
-    await git(["merge-base", "--is-ancestor", previousSha, currentSha]);
-  } catch {
+  if (!(await isAncestor(previousSha, currentSha))) {
     throw new Error(`Built commit ${currentSha} does not descend from previous built commit ${previousSha}`);
+  }
+}
+
+export async function isAncestor(ancestorSha: string, descendantSha: string): Promise<boolean> {
+  try {
+    await git(["merge-base", "--is-ancestor", ancestorSha, descendantSha]);
+    return true;
+  } catch {
+    return false;
   }
 }
 

@@ -37,6 +37,8 @@ Pass `--force` to regenerate already processed reports with the current prompt. 
 
 Backfill includes the nearest successful build before the requested window as its initial comparison baseline. It publishes only builds inside the requested window. Failed workflows, skipped `Build` jobs, and failed `Build` jobs never advance the baseline.
 
+For the first successful build on a new branch, the generator falls back to the newest older recorded build whose commit is an ancestor of the branch build. Unrelated branch builds are never used as comparison baselines.
+
 ## Configuration
 
 Required secrets in this repository:
