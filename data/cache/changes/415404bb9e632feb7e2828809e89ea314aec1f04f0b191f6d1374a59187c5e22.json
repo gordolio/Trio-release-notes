@@ -1,0 +1,24 @@
+{
+  "inputHash": "0459915fbbb86dd35adf557b3cf2345fb464b2b3f62820aa3de56839d9d71a3f",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1321",
+    "title": "Serialize Tidepool uploads",
+    "changes": [
+      "Tidepool uploads are now serialized so only one upload runs at a time.",
+      "Rapid triggers for the same upload type are coalesced so the same data is not uploaded twice.",
+      "Hung or lost upload calls now time out and are logged instead of silently stalling later uploads.",
+      "Tidepool upload log messages are corrected and are now labelled [Service] for clarity."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1321",
+      "commit:52787dfa87da"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
