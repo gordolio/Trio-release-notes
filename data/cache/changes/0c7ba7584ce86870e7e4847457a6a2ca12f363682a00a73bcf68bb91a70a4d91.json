@@ -1,0 +1,24 @@
+{
+  "inputHash": "9dc76deb5c55402ca32b2e66f1ad32cb6ce69a1a7cb901571edb68a10bcf00a3",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1322",
+    "title": "Telemetry & crash reports enabled by default",
+    "changes": [
+      "Telemetry and crash reporting are now enabled by default for new and updated installs.",
+      "The onboarding diagnostics step and the one-time telemetry migration sheet have been removed.",
+      "You can opt out at any time in Settings → Features → App Diagnostics.",
+      "The app privacy policy was updated to reflect the new default and wording changes."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1322",
+      "commit:88a1f5e90f20"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

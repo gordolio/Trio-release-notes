@@ -1,0 +1,23 @@
+{
+  "inputHash": "ba96ade7bb8498614492e5d87a8c3efcbf5391ae7ab94f680f8abede9a723fee",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1292",
+    "title": "Add Accu-Chek SmartGuide CGM",
+    "changes": [
+      "Trio adds support for the Accu-Chek SmartGuide continuous glucose monitor.",
+      "Accu-Chek SmartGuide is now available in the app's CGM selection and pairing options.",
+      "The device name is included in the app localizations so it appears in the user's language."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1292",
+      "diff:37796095d1eb"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

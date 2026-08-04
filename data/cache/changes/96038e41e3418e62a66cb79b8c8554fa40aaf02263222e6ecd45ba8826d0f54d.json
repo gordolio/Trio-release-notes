@@ -1,0 +1,24 @@
+{
+  "inputHash": "d5d52e524c028eca93ce642f152c2dbd24288fbc978dfeb38a3061c292b77a05",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1364",
+    "title": "Garmin watches: dynamic glucose color and target",
+    "changes": [
+      "Compatible Garmin watchfaces can now use Trio's glucose color scheme to color BG values.",
+      "The scheduled glucose target from your profile is sent to compatible Garmin watch apps.",
+      "Changes to the color scheme or profile target are pushed to the watch shortly after you edit them.",
+      "Multiple quick setting edits are grouped so the watch receives updates after a short delay."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1364",
+      "diff:96038e41e341"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

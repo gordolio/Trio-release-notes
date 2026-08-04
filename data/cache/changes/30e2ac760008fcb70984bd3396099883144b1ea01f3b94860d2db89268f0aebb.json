@@ -1,0 +1,24 @@
+{
+  "inputHash": "3da332ea951b3147c064a375df44b97da709788e20ca0ff9465b08a7f0390dd6",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1306",
+    "title": "Show forecasts on Apple Watch",
+    "changes": [
+      "The Apple Watch view can display glucose forecasts and predicted ranges on the chart.",
+      "A new Watch configuration option lets you enable forecasts on the Apple Watch.",
+      "When enabled, the watch chart can show either a forecast cone or distinct forecast lines.",
+      "The chart’s vertical scale expands automatically to include forecast values so future data is visible."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1306",
+      "diff:30e2ac760008"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

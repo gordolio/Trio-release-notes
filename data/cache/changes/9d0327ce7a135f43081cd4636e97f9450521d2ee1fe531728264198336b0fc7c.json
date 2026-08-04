@@ -1,0 +1,23 @@
+{
+  "inputHash": "6dcb32419ba162909b72459a6e7f618df7bcfc1c62fd77cdb630e921dbf4eb4e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1370",
+    "title": "Accu-Chek integration update",
+    "changes": [
+      "Accu-Chek meter support was updated.",
+      "Connection and reconnect behavior for Accu-Chek meters was improved.",
+      "Calibration now uses an updated starting glucose value."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1370",
+      "diff:9d0327ce7a13"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

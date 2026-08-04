@@ -1,0 +1,25 @@
+{
+  "inputHash": "cd848a676ed5c2337e470f4789f9d31e480fc7a15e327fe579764335e00351e9",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1310",
+    "title": "Add Accu-Chek SmartGuide CGM",
+    "changes": [
+      "Trio (dev) now supports the Accu-Chek SmartGuide CGM.",
+      "The sensor is a 14-day CGM and does not connect directly to insulin pumps.",
+      "You must calibrate the sensor at the 12-hour mark and again 30 minutes later.",
+      "The first calibration stays open until you enter it via Trio or the official app.",
+      "If you miss the second calibration window (must be within 2.5 hours of the first), you must restart the startup process."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1310",
+      "commit:b7d1dc2b56fb"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

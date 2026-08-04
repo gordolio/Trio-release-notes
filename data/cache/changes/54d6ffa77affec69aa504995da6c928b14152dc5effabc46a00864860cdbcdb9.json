@@ -1,0 +1,23 @@
+{
+  "inputHash": "030fd6ad9e2fd84c745d834a6d4b454bb23185480594feb1e6f10db9d6c9002c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1376",
+    "title": "Eversense E3/365 and Accu-Chek added to supported CGMs",
+    "changes": [
+      "Eversense E3/365 is now listed as a supported CGM in the app.",
+      "Accu-Chek SmartGuide is now listed as a supported CGM in the app."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1376",
+      "diff:54d6ffa77aff",
+      "commit:ee12ec5bc63e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputHash": "b84a387dfd10af86d6196c4f3b1335c3fa690c01ed303d12512471b4e7b7f09c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1368",
+    "title": "Smarter pump BLE heartbeat handling",
+    "changes": [
+      "The pump will help wake the app when the CGM cannot wake it on its own.",
+      "If your CGM provides its own BLE heartbeat, the app will stop asking the pump for heartbeats.",
+      "Heartbeat requests are refreshed when you connect or switch pumps and when the app returns to the foreground.",
+      "Required LoopKit/OmnipodKit updates are included to support this behavior."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1368",
+      "commit:b9c216046415",
+      "commit:a249a0d2fe82"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
