@@ -1,0 +1,24 @@
+{
+  "inputHash": "5d566eb00d53e49273d9029149525be1c1d9b2b5aab9f0c01b1951f67eff86e9",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1369",
+    "title": "Garmin Connect IQ complication support",
+    "changes": [
+      "A new Complication option is available in the Garmin watch settings.",
+      "You can display Trio glucose, IOB, COB, and sensitivity ratio on any Garmin watchface with Connect IQ complicationslots.",
+      "The Complication app provides a 2-hour internal glucose graph using recent historical readings.",
+      "Select Complication before changing your watchface so data transmission can be resumed correctly."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1369",
+      "diff:1ca1031a7168"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
