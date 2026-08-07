@@ -1,0 +1,24 @@
+{
+  "inputHash": "60c46f6c1d0dca49445c837aaf58a75f338716df741e95ec0ca0e1ab45f8005c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:29ca22d7680e850aeaba947d9e6f72b43fbdd681",
+    "title": "Add Today stats interval",
+    "changes": [
+      "A new 'Today' time interval is added for statistics, showing the current calendar day from midnight until now.",
+      "Insulin and Meal stats now default to the 'Today' interval and show the current day's data.",
+      "Charts and axis labels show hourly granularity for 'Today' (and Day), and scrolling aligns to hours or midnight.",
+      "Averages and totals update from the visible hourly range when viewing 'Today' instead of using daily caches."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:29ca22d7680e",
+      "diff:c568f0e06569"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
