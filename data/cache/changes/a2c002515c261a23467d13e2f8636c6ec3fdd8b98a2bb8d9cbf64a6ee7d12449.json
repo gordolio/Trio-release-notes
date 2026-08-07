@@ -1,0 +1,25 @@
+{
+  "inputHash": "6b292a3369c02af3817ba7973d873b1311cfbd6817d1957f87f4c176026c9a36",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1329",
+    "title": "Interactive home chart with pinch, pan, and scrub",
+    "changes": [
+      "The main Home chart is now draggable and pans smoothly with momentum when you swipe it.",
+      "You can pinch to zoom the chart between short and long windows and double-tap to cycle zoom presets.",
+      "Press-and-hold on the chart shows a selection popover so you can inspect and scrub exact values.",
+      "Pulling the dashboard down forces a refresh/loop and shows an inline refresh indicator.",
+      "Basal bars now hang from the top of their pane and basal schedule visuals update after profile changes."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1329",
+      "commit:f567bef7e4d3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

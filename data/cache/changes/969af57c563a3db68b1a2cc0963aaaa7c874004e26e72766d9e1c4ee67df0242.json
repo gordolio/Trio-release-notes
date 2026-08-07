@@ -1,0 +1,24 @@
+{
+  "inputHash": "b637db4a038eb336015e3b2e0673ce19694486365560adc762fe8fa4009217e4",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1373",
+    "title": "Home screen redesign (Layout v2)",
+    "changes": [
+      "The home screen now uses fixed-height zones so the chart is the only flexible area.",
+      "Updated visual style and glass UI refresh the header, panels, bottom banner, and tab bar.",
+      "A single multi-use bottom panel shows the highest-priority state and allows tap-through actions while keeping stats in.",
+      "The glucose chart is now interactive with drag, momentum panning, pinch-to-zoom, double-tap presets, and press-and-hold."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1373",
+      "commit:76fcb927ba44"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

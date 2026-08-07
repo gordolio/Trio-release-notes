@@ -1,0 +1,24 @@
+{
+  "inputHash": "0cf1eced8841f869185380df5564181171db8a93f7ee91f71400de773be99acf",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1326",
+    "title": "Home dashboard zoning with fixed slots",
+    "changes": [
+      "Home dashboard now reserves fixed-height slots for the header, meal row, and bottom controls.",
+      "The chart is the only flexible area and fills the remaining vertical space.",
+      "Bottom controls are placed in the safe area so the tab bar cannot cover them.",
+      "Banners, badges, and the bolus bar no longer trigger layout reflow, and dashboard size is capped to avoid overflow on大型."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1326",
+      "commit:bbd4ea422b6d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

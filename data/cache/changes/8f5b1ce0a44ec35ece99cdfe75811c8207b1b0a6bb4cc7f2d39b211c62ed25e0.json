@@ -1,0 +1,25 @@
+{
+  "inputHash": "1d333f80c6bb72d1c70ded5bfa89f236b25d79f81b5899bd4b294eaa390eb232",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1328",
+    "title": "Multi-use home panel replaces stats banner",
+    "changes": [
+      "The home stats banner is replaced by one multi-use panel that defaults to showing real time-in-range stats.",
+      "Panel banners respond to taps across their full area.",
+      "If notifications are disabled the panel shows a critical warning and opens the app Settings when tapped.",
+      "If CGM data is stale the panel shows a No Recent Glucose banner that opens a manual glucose entry sheet.",
+      "If the pump clock differs or Max IOB is zero the panel shows warnings that open pump setup or deep-link to the Max IOB."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1328",
+      "diff:8f5b1ce0a44e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputHash": "acd5fe02ba3ea076a35d55dfdec50f0d20564484948b0e17ce66de823a6aa0af",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1332",
+    "title": "Home layout v2: Liquid Glass and updated bottom chrome",
+    "changes": [
+      "Home panels use a real Liquid Glass appearance on iOS 26, with a material fallback on older iOS devices.",
+      "Adjustment cards, multi-use/TIR banners, and bolus progress share a common glass chrome and show a two-color rim when a.",
+      "The bottom tab bar is icon-only on iOS 26 and has a centered floating treatment button that opens the treatment sheet (.",
+      "The floating treatment button stays centered and no longer shifts when the keyboard or safe-area insets change.",
+      "Chart minimum height is reduced so the home layout fits on smaller iPhones with the taller iOS 26 tab bar."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1332",
+      "diff:65832bf1e54c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

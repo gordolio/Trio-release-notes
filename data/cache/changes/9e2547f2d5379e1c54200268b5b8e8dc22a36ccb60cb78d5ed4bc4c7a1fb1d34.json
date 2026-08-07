@@ -1,0 +1,25 @@
+{
+  "inputHash": "900bd57fb852b217fcb3072592206c9d77e5c1cc73d4d1d6d73b4b3f32667927",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1327",
+    "title": "Redesigned Home layout with TIR banner",
+    "changes": [
+      "Home header and panels were reorganized into a new glass-style layout with pump and loop panels.",
+      "A tappable Time‑in‑Range (TIR) stats banner was added under the adjustment panel and opens statistics when tapped.",
+      "The adjustments panel now shows remaining-time progress bars for overrides and temp targets, supports concurrent split‑.",
+      "bars, and the whole panel responds to full taps.",
+      "Meal row now shows an alarms pill that displays a snooze countdown and opens snooze controls when tapped."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1327",
+      "diff:9e2547f2d537"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

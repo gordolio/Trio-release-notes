@@ -1,0 +1,23 @@
+{
+  "inputHash": "f1927e79936a4672bc608a38c50d2edaf4ed1d20b57018a0cdb18158017d33c0",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1374",
+    "title": "Immediate stop of crash uploads on opt-out",
+    "changes": [
+      "When you turn off Diagnostics, any crash reports waiting to be sent are deleted and stop uploading.",
+      "After opting out, the app no longer starts Firebase services so no new diagnostic data is re‑queued or sent.",
+      "Turning Diagnostics back on re-enables Firebase and allows diagnostic reporting to resume immediately."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1374",
+      "commit:5cec1d3eca59"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

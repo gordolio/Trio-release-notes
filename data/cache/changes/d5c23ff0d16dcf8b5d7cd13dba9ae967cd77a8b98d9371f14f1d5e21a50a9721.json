@@ -1,0 +1,25 @@
+{
+  "inputHash": "eebb317eb11ab1136a4514b9167fcbb78a1e4527e507a60b9e9be8b666f5987b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1330",
+    "title": "72-hour chart and smoother zoom",
+    "changes": [
+      "The home chart now shows up to 72 hours of history when opened.",
+      "Charts render only the visible time span plus padding to keep panning and zooming responsive.",
+      "You can pinch-zoom in to 1 hour, with smoother previews that snap to stable zoom steps.",
+      "When auto-following, the current glucose reading stays visible at tight zoom levels.",
+      "The Time in Range banner now shows 'today', and midnight x-axis ticks include day labels."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1330",
+      "diff:d5c23ff0d16d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
