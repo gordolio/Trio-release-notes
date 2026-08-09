@@ -1,0 +1,22 @@
+{
+  "inputHash": "67bcc98f13db792ff2f5d1f1167f58de6b57fae8494f9b7d1f990d311c5a8556",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1380",
+    "title": "Fix repeated Omnipod reconnects",
+    "changes": [
+      "Stops the self-inflicted connect → cancel → reconnect loop when using Omnipod connect-on-demand.",
+      "Trio now uses a newer OmnipodKit version that includes this connectivity fix."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1380",
+      "commit:c17a972b90fb"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

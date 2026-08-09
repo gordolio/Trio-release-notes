@@ -1,0 +1,24 @@
+{
+  "inputHash": "74178bc6a20c9ec79b50869c53a376a203aa10909af2d6355c4e35392e70a636",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1377",
+    "title": "Faster algorithm with identical dosing",
+    "changes": [
+      "The insulin-calculation pipeline runs about twice as fast in testing.",
+      "Dosing decisions are unchanged and match previous outputs exactly.",
+      "New automated parity tests record and compare exact outputs across many scenarios.",
+      "Calculation-heavy scenarios use less CPU time, improving responsiveness."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1377",
+      "diff:d2098d404659"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
