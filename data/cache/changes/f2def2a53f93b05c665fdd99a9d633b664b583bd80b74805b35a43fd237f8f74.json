@@ -1,0 +1,23 @@
+{
+  "inputHash": "2a348aa1736e6399ce91c9f531dbb8013fff4d50c1d120083ec6705dfb624305",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1391",
+    "title": "Clarify ISF/CR picker label in override edit",
+    "changes": [
+      "The ISF/CR picker label in the override edit form now reads \"Also Inversely Change\".",
+      "The override edit UI displays the updated label when choosing ISF/CR options."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1391",
+      "commit:79c99f9f4171",
+      "diff:f2def2a53f93"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

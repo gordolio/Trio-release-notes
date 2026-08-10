@@ -1,0 +1,22 @@
+{
+  "inputHash": "3a0342318e6fb7ae22b04013eebc0851d3804da37c6e2a066757c862d36643e1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1390",
+    "title": "Fix snoozed alert countdown on Home screen",
+    "changes": [
+      "Snoozed alerts on the Home screen now show the correct remaining minutes.",
+      "The countdown is measured from the current time so it no longer uses an outdated timer."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1390",
+      "diff:c520b1ea8ff2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

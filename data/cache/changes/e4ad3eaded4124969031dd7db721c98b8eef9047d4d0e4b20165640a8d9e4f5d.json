@@ -1,0 +1,23 @@
+{
+  "inputHash": "6f62499621a36e68682cd16c335295bac37912afddff8d93f3cb0073a6e1394e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1396",
+    "title": "Chart info button restyled and moved up",
+    "changes": [
+      "The chart’s info (glossary) button now matches the alarm bell visual style in the meal row.",
+      "The info button was nudged upward to avoid overlapping the chart’s x-axis labels.",
+      "The button’s behavior is unchanged and still opens the chart legend when tapped."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1396",
+      "diff:e4ad3eaded41"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

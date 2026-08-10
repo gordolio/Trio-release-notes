@@ -1,0 +1,23 @@
+{
+  "inputHash": "03ba45437d71192af9b5e1ef4ec7f32a9124b1849d0c490468fab38163fb1005",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1392",
+    "title": "Target line spans full chart window",
+    "changes": [
+      "Glucose target lines now extend across the full chart window.",
+      "Targets are repeated for every day shown instead of being limited to a fixed three-day span.",
+      "The target line no longer disappears when the chart history window grows."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1392",
+      "commit:53178cdf8f80"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

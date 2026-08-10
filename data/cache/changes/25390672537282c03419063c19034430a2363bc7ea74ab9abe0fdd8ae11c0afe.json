@@ -1,0 +1,24 @@
+{
+  "inputHash": "b681a7e8b4b4e9a91a6db92aab15f59d440d2f51440dfc792c9665e68dd74799",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1382",
+    "title": "Fix IOB chart shading and show projected IOB decay",
+    "changes": [
+      "IOB shading no longer floats above the COB area and now hugs the IOB line.",
+      "A dashed projected IOB-decay line and faint future shading are shown in the COB/IOB chart.",
+      "Stale or out-of-window IOB projections are not rendered.",
+      "Selection dots are aligned to the stepped COB/IOB lines when inspecting values."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1382",
+      "diff:253906725372"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

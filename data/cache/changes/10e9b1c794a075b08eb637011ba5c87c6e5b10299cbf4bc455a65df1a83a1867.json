@@ -1,0 +1,26 @@
+{
+  "inputHash": "ff162a74a1ff02b2e0daa542e7bd27acdaa6e375a33e94ff3040317625e7db2a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1336",
+    "title": "Quick‑Pick Treatments",
+    "changes": [
+      "Long-pressing the + button on the home screen now shows Quick‑Pick Treatments that suggest bolus and carb amounts.",
+      "You can pick a bolus amount, a carb amount, or both, then slide to confirm to enact the bolus and/or log the carbs.",
+      "If you have no carb history, carb suggestion buttons are not shown.",
+      "The app shows progress text while updating and displays clear alerts if carb logging or bolus enactment partially or完全y.",
+      "The old \"Quick‑Pick Boluses\" setting and labels are renamed to \"Quick‑Pick Treatments\" and existing user opt‑ins are 迁移."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1336",
+      "commit:53288bae7a1d",
+      "diff:10e9b1c794a0"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
