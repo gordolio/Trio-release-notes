@@ -1,0 +1,23 @@
+{
+  "inputHash": "4c99568bea94c87c0ec592c8a7479edcf174be11d123fe13b6c7996a0e329a74",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1406",
+    "title": "Clarify CGM smoothing description",
+    "changes": [
+      "The CGM smoothing help text now says it requires 4 readings in a row, each arriving within 12 minutes of the prior one.",
+      "The text makes clear that only CGM readings are smoothed and manual entries are not changed.",
+      "Localized versions of the updated text were refreshed to match the clarification."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1406",
+      "diff:efd6b5a2849e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

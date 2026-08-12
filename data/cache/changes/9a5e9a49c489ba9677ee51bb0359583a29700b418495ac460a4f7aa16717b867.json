@@ -1,0 +1,25 @@
+{
+  "inputHash": "6752518880db4144bfddb93f2b55316866526ead9c62453bc60ccb19c0e41761",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1394",
+    "title": "Show projected COB decay on Home chart",
+    "changes": [
+      "The COB pane now displays a dashed orange curve and light area showing projected carb absorption into the future.",
+      "The projection extends from the latest determination and is bridged to recent data so the dashed curve connects to the歷.",
+      "The COB projection is refreshed whenever determinations update so it stays current.",
+      "The projected curve is adjusted to track the COB readout and avoid drifting above the displayed remaining carbs.",
+      "The COB projection is display-only and does not affect dosing or serialized determination output."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1394",
+      "commit:21f52ca055c1"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
