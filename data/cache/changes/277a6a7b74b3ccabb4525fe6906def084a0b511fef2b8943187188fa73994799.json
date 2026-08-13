@@ -1,0 +1,23 @@
+{
+  "inputHash": "22a97cb2b73aab065c0b4d61db2a22ad07c465315a8a98a047b479485757142f",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1407",
+    "title": "Prevent pod alert deadlock on startup",
+    "changes": [
+      "App is less likely to freeze during startup when a DASH pod advertises an alert.",
+      "Pod alerts advertised before a connection are handled without causing a deadlock.",
+      "OmnipodKit submodule was updated to include the fix for this issue."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1407",
+      "commit:9717d2752ff6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

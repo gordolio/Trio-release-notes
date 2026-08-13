@@ -1,0 +1,25 @@
+{
+  "inputHash": "ef1be5d0c8dfed2254b1ffff132cae0ea972db3d74c1a95f36835d0983242b80",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1387",
+    "title": "EversenseKit update: DMS logging, keychain, thresholds",
+    "changes": [
+      "DMS uploads now include improved logging.",
+      "DMS credentials are now stored in the device keychain.",
+      "Low glucose threshold can be set from 60 to 115 mg/dL in 1 mg/dL steps.",
+      "High glucose threshold can be set from 125 to 350 mg/dL in 1 mg/dL steps.",
+      "Rate-change threshold can be set from 1.5 to 5 mg/dL/min in 0.1 mg/dL/min steps."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1387",
+      "diff:0601ec17e993"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

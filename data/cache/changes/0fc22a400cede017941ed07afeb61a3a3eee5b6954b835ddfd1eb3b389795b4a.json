@@ -1,0 +1,24 @@
+{
+  "inputHash": "f1d78c57a4310e6b8501e756e183482611c458e0f39a352844bec6444bba6087",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1346",
+    "title": "Stop duplicate remote meals from being recorded",
+    "changes": [
+      "Duplicate remote meal commands are now rejected and not stored or dosed.",
+      "When a newer carb entry exists, the meal command is logged as rejected and handling stops.",
+      "Future-dated equivalents or scheduled meals no longer trigger false rejections.",
+      "Log messages about rejected commands now match the app's actual behavior."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:gordolio/Trio#1346",
+      "diff:0fc22a400ced"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
