@@ -1,0 +1,24 @@
+{
+  "inputHash": "8c82d7cdfc9e11048c3efb991947d4ea85090c892ef873ad91405aa346a97422",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1395",
+    "title": "Fix CI unit tests and speed up workflows",
+    "changes": [
+      "Continuous integration unit tests now run more reliably in CI.",
+      "Golden-file comparisons no longer fail due to time zone mismatches.",
+      "An insulin IOB unit test was fixed to use the expected ascending treatment order.",
+      "The CI workflow was sped up and made more robust with caching, diagnostics, and formatting fixes."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1395",
+      "diff:83cff16a8ea2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
