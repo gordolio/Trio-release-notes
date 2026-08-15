@@ -1,0 +1,25 @@
+{
+  "inputHash": "52939be7a1da65eacbd2c86de4cbacd1ab48e444f5245c680eb1aee203f74b4a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1398",
+    "title": "Show non‑main build warning at startup",
+    "changes": [
+      "Shows a startup warning when the app was built from any branch other than main.",
+      "The warning appears once per launch and is only counted after you dismiss it.",
+      "The popup is suppressed while the app is loading and during onboarding so it won’t interrupt setup.",
+      "The alert offers an “I’m a Tester” dismiss button and a “How to Return to Main” link to documentation.",
+      "Update and critical-update alerts are no longer counted as shown if they couldn’t be presented, so they won’t be lost/”."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1398",
+      "commit:6ef30add3234"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
