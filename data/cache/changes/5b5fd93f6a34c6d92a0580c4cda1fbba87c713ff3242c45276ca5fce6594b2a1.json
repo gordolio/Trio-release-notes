@@ -1,0 +1,23 @@
+{
+  "inputHash": "b7a30d8ce2ad26ff8d0e234a1bfbd11436326f09362b27803af466a2345e9b85",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1388",
+    "title": "Fix mmol/L rounding on Nightscout import",
+    "changes": [
+      "Imported mmol/L settings no longer get bumped up by 0.1 during onboarding.",
+      "ISF and blood glucose target values imported from Nightscout now match the displayed picker values.",
+      "Imports already in mg/dL are not altered by this change."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1388",
+      "diff:5b5fd93f6a34"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

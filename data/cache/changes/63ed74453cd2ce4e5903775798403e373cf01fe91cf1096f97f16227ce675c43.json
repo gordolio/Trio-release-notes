@@ -1,0 +1,23 @@
+{
+  "inputHash": "639bc329b51723420986f9f3fa86ddfe18ccb577e4930d054b57fc52aab84e9f",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1422",
+    "title": "Fix field navigation order in Treatments screen",
+    "changes": [
+      "Up/down keyboard arrows now move between Fat, Protein, Carbs, and Bolus in the correct order.",
+      "The Fat and Protein fields are no longer swapped when moving focus with the arrow buttons.",
+      "This fixes navigation on the Treatments entry screen when using the keyboard's up/down buttons."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1422",
+      "diff:63ed74453cd2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputHash": "de2e88dcdf6d97e7d7087a4c427090cc9bf20fc86fc75deed9369cfbecda739b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1412",
+    "title": "DanaKit update: manual temp basal and fixes",
+    "changes": [
+      "A Manual Temp Basal option was added to the app.",
+      "A Travel Lock feature was added.",
+      "Temporary Basal Rates (TBR) no longer disappear during data sync.",
+      "Navigation titles in the app were corrected.",
+      "The update includes fixes for deadlocks to improve app stability."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1412",
+      "diff:9403d109d59e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
