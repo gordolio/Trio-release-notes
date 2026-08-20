@@ -1,0 +1,25 @@
+{
+  "inputHash": "6408e6897b20807759700cb06b5a50089a27d8a8cd7c36375d6ee0a627e2f56f",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1397",
+    "title": "Show release notes in the app",
+    "changes": [
+      "Home now shows a “New Release” panel when your installed version has unread release notes.",
+      "Tapping the panel opens a full-sheet that summarizes what changed and any important safety callouts.",
+      "Release Notes are also available from Settings, including a list of previous versions to browse.",
+      "Notes are fetched from GitHub with a bundled offline fallback so the notes can load without internet.",
+      "Tapping the sheet’s acknowledge button hides the Home panel for that specific version; viewing from Settings does not."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1397",
+      "commit:ea6c781856ac"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

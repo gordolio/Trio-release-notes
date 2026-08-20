@@ -1,0 +1,23 @@
+{
+  "inputHash": "53186070da9876769737c4e3702e9f751955bea180a968c5c98e80c252646456",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1431",
+    "title": "Show quick-pick bolus with one decimal",
+    "changes": [
+      "Quick-pick bolus suggestions now display with a single decimal place.",
+      "Suggested amounts are floored to one decimal (rounded down) instead of rounded to nearest.",
+      "This prevents the suggestion pill from showing two fractional digits."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1431",
+      "diff:498484753c96"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

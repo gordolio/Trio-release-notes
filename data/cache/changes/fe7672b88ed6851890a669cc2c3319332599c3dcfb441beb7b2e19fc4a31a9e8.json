@@ -1,0 +1,24 @@
+{
+  "inputHash": "d1ed455a86a498530f9a0375b1cae78087fc2cab4dc59587ef1c195c5949c5ab",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1251",
+    "title": "Updated loop indicator spinner",
+    "changes": [
+      "The loop indicator now shows an animated capsule-style spinner instead of a static label or default progress view.",
+      "The looping label is shown only while the spinner is actively animating and is rendered verbatim (not localized).",
+      "The spinner animation is smoother and enforces a short minimum spin time to avoid flicker when starting or stopping.",
+      "A reusable CapsuleSpinner component replaces the previous spinner and the capsule outline thickness was adjusted for a清."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1251",
+      "diff:fe7672b88ed6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
