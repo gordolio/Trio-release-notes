@@ -1,0 +1,25 @@
+{
+  "inputHash": "db0310f9fd08e615eecb8cd4bf9c1224b8b805c2fd2bcbd8c1e513735b0b72b7",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1436",
+    "title": "Restore simple loop spinner and text",
+    "changes": [
+      "The loop indicator now shows a standard spinner and the word \"looping\" when active.",
+      "The custom animated dashed capsule spinner was removed and replaced with a static capsule border.",
+      "Pull-down-to-force shows \"Forcing loop…\" with a spinner while forcing, and an arrow with \"Pull down to force loop\" when.",
+      "Forcing-loop display now remains visible for at least one second.",
+      "The home dashboard gains top padding while forcing the loop, with a short animation to reveal the indicator."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1436",
+      "diff:f1ab5fe0de55"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
