@@ -1,0 +1,21 @@
+{
+  "inputHash": "b56c915962dfe214068f39a2c94e8986acade2cf18a6308c4494a51edc619e75",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1444",
+    "title": "Suspend/Resume button fixed",
+    "changes": [
+      "The Suspend/Resume button now works correctly in the app."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1444",
+      "diff:b2f879bacbce"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
