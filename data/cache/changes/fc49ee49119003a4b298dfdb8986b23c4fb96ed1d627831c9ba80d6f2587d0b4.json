@@ -1,0 +1,24 @@
+{
+  "inputHash": "beaefb227a5a34ce01f501dd8aac5d7bb808be0145e94a9c77e14e7678a87d46",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1427",
+    "title": "Stable contact image backgrounds",
+    "changes": [
+      "You can pick a background for contact images (Transparent or Black) in the contact image editor.",
+      "Choosing Black prevents contact images from randomly switching between white and black backgrounds.",
+      "Transparent background preserves image transparency while Black fills the image area with solid black.",
+      "Your chosen background is saved with each contact image and restored when shown."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1427",
+      "diff:fc49ee491190"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

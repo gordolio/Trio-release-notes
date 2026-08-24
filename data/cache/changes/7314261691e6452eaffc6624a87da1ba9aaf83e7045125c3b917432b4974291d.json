@@ -1,0 +1,23 @@
+{
+  "inputHash": "26caef11b45947ca5245a6b594103fdbf43e9c6f471fdc0f1dfbea812103c3db",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1421",
+    "title": "Home stats banner uses fixed 180 mg/dL bound",
+    "changes": [
+      "The Home stats banner now uses a fixed 180 mg/dL upper bound.",
+      "The banner now matches the Stats screen's Time-in-Range numbers.",
+      "Your High Glucose chart threshold no longer changes the banner's upper bound."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1421",
+      "diff:7314261691e6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

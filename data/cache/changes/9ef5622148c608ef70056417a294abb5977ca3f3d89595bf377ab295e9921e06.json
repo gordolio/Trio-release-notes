@@ -1,0 +1,25 @@
+{
+  "inputHash": "d813595deabef9c745d71e44126899b9d55bd336901ace1e83d2436d70e1b146",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1442",
+    "title": "Eversense CGM update and fixes",
+    "changes": [
+      "Trio can now upload Eversense data to non-US servers.",
+      "Trend arrows on E3 sensors display correctly.",
+      "Calibration countdown on E3 sensors works correctly.",
+      "Eversense sensor insertion dates are uploaded if missing.",
+      "Error 255 is hidden and E3 alert history display is fixed."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:gordolio/Trio#1442",
+      "diff:9ef5622148c6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

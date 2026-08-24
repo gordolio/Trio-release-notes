@@ -1,0 +1,25 @@
+{
+  "inputHash": "119855057c5f55647b34a545122b2557e35278254719b1e0170340bd0f51745e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1439",
+    "title": "Unified device picker and pump-based basal steps",
+    "changes": [
+      "Device selection now uses a single grouped picker with manufacturer sections and device icons.",
+      "CGM hint lists no longer show unreachable entries like Dexcom Share and FreeStyle Libre Demo.",
+      "Onboarding and therapy settings use pump-provided basal increments; Dana now offers 0.01 steps and zero is excluded.",
+      "Device icons are resolved from each kit's bundled artwork, with a category glyph fallback for missing assets."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1439",
+      "commit:9121d70f1e26",
+      "commit:13c9e99f949b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
