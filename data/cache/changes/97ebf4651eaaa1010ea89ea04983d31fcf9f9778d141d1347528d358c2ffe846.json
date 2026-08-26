@@ -1,0 +1,24 @@
+{
+  "inputHash": "54e5cb8ea8fd27c23e70adae9a9668d532550a3f11d2cd81de628e82b388db2b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1447",
+    "title": "Localization updates including Simplified Chinese",
+    "changes": [
+      "Many user-facing strings were updated with new or improved translations across languages.",
+      "Simplified Chinese (zh-Hans) translations were added for numerous app texts.",
+      "Several localized messages had wording or punctuation corrected in various languages.",
+      "These updates may change the text you see in non-English locales, including prompts, alerts, and settings."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1447",
+      "diff:97ebf4651eaa"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
