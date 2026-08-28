@@ -1,0 +1,24 @@
+{
+  "inputHash": "53207163e142069a927329da1b7dd53d32f158b6fcd560b59dbd50fa09129934",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1449",
+    "title": "Atomic log file appends to prevent lost lines",
+    "changes": [
+      "Log file appends are now written atomically so concurrent writers do not overwrite each other.",
+      "Appending to the watch log was updated to use the same atomic write method.",
+      "The previous fallback that could replace the whole log file has been removed."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1449",
+      "commit:b954488da230",
+      "diff:a4320849f225"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
