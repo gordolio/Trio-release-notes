@@ -1,0 +1,24 @@
+{
+  "inputHash": "5a7ef69a02c011a35b79362c42910f8a271eda29015f1377f3e68fa23bcc6025",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1458",
+    "title": "Localization updates and translation fixes",
+    "changes": [
+      "Updated many user-visible strings across multiple languages so app text is more complete and accurate.",
+      "Added and completed Italian translations for numerous app labels and messages.",
+      "Corrected and clarified Simplified and Traditional Chinese text for many labels and prompts.",
+      "Fixed wording, spacing, and punctuation in several languages and added new locale entries to improve localized UI."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1458",
+      "diff:3052964956bc"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
