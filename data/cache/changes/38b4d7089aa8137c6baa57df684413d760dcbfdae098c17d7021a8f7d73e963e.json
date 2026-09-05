@@ -1,0 +1,25 @@
+{
+  "inputHash": "b64304d06a30e58a2c6e6ef1e5b02d4d4a6d13c9ed0e558b7b9e82ac9eb0aeac",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1429",
+    "title": "Round basals to pump's actual supported rates",
+    "changes": [
+      "Basal recommendations are now rounded against the actual paired pump's supported rates.",
+      "The pump is handed a bit-exact rate to avoid tiny numeric errors lowering the delivered dose.",
+      "An obsolete stored pump model setting was removed so the app no longer falls back to a bundled default.",
+      "This prevents unintended small drops in delivered basal rates for affected pumps."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1429",
+      "commit:86c06301259c",
+      "commit:36f8870fe1cb"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

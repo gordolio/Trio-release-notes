@@ -1,0 +1,24 @@
+{
+  "inputHash": "aa55f94205107063fc325b3d2508edb8d9dee92d12b6cc9c055a939372efc598",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1430",
+    "title": "Fix battery update after switching pumps",
+    "changes": [
+      "Battery percent now updates after switching or onboarding a pump without restarting the app.",
+      "The home-screen battery icon shows the new pump's battery immediately after a swap.",
+      "The simulator seeds an initial battery row so a battery appears before its first status update."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1430",
+      "commit:fb3316b9e5f6",
+      "diff:545f6657dd06"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
