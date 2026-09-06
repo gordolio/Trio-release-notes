@@ -1,0 +1,25 @@
+{
+  "inputHash": "3f10d0a21534592870b840df2648d6f0d8f34bca12fd6c0703481259153fae84",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1375",
+    "title": "Fix alarm sounds and Low-Soon alerts",
+    "changes": [
+      "Device alarms now use your selected tone and Play Sound setting when they fire.",
+      "Alarm sound files are bundled so system notifications can resolve and play chosen tones.",
+      "Delayed critical alarms now start their audio when they actually fire instead of remaining silent.",
+      "Low Glucose Soon alerts are evaluated and will fire even when a CGM app handles reading-driven alerts.",
+      "On iOS 26+, Trio will use AlarmKit so critical alarms can ring when the app is suspended and pierce Silent/Focus."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1375",
+      "commit:cdc46d2ce4e4"
+    ],
+    "confidence": "medium",
+    "humanReviewRequired": true
+  }
+}
