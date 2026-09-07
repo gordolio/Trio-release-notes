@@ -1,0 +1,23 @@
+{
+  "inputHash": "bd9c924485f21516c06a6ad1ce9b9bc2183c2a6e5088ce15664e7aceff3dce5a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1476",
+    "title": "Round Nightscout glucose timestamps to ms",
+    "changes": [
+      "Uploaded glucose timestamps are rounded to integer milliseconds before Nightscout upload.",
+      "The same instant is used for both date and dateString fields in uploaded records.",
+      "The rounding and matching timestamp behavior apply to both sensor and manual glucose entries."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1476",
+      "commit:d7430219f84d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
