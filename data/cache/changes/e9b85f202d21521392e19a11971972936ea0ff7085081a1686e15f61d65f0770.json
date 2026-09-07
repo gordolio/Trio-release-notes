@@ -1,0 +1,25 @@
+{
+  "inputHash": "ab7fcb29ea30f96107d7a71360503d5c2bc04717d51ede0c476a211b1338e552",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1366",
+    "title": "Accessibility and VoiceOver improvements",
+    "changes": [
+      "VoiceOver now speaks status, charts, and icon-only buttons in plain words.",
+      "Controls that previously required gestures can now be activated with VoiceOver actions.",
+      "Glucose bobble and charts now read a single, combined summary with value, trend, delta, and age.",
+      "Text scaling is bounded to prevent very large fonts from breaking layouts.",
+      "Glass panels and small UI chrome switch to opaque, higher-contrast fills when Reduce Transparency or Increase Contrast."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1366",
+      "diff:e9b85f202d21"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
