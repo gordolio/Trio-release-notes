@@ -1,0 +1,22 @@
+{
+  "inputHash": "3eb6dda67a41b6f5d2179db66d923e6dca3085a631b6ccaa2c78bd5b493488a1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1469",
+    "title": "Remote meals stop showing the text note",
+    "changes": [
+      "Remote carb entries no longer include the text \"Remote meal command\" as a note.",
+      "Remote carb entries are now marked with a satellite symbol (📡) instead of the text note."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1469",
+      "diff:51c2d0e128e7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
