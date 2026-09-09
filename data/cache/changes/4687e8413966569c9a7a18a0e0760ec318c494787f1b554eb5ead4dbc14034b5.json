@@ -1,0 +1,23 @@
+{
+  "inputHash": "dd0119482fd32c442fc63806cc9b649c9ed5df0975f51ad774ed869f39e3019a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1405",
+    "title": "Show real pump failure instead of blaming authentication",
+    "changes": [
+      "The app shows the pump's real reason when a Quick-Pick bolus fails, instead of always blaming Face ID/Touch ID.",
+      "If carbs were logged but the bolus failed, the alert will include the pump's failure message when available.",
+      "If biometric authentication actually failed, the app still shows the authentication error message."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1405",
+      "commit:cd26280270ff"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

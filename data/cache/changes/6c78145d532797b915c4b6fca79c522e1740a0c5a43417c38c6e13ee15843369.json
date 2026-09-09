@@ -1,0 +1,24 @@
+{
+  "inputHash": "94c9eb9df3bd521f2be43c800e15d245c6828121fc3906ce36e714015b0943e5",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1471",
+    "title": "Refreshed Pump and CGM settings screens",
+    "changes": [
+      "Pump and CGM settings screens use a cleaner list layout with improved spacing and background styling.",
+      "Connected pumps and CGMs appear as larger centered buttons showing the device image and name.",
+      "Add Pump and Add CGM actions are more prominent and include a help button with device hints.",
+      "The Smooth Glucose help text was rewritten with clearer bullet points explaining smoothing behavior."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1471",
+      "diff:6c78145d5327"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
