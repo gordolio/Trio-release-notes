@@ -1,0 +1,23 @@
+{
+  "inputHash": "097ed77edf6a0b5a13b9aa6c37491fcf7e526ac850687ce8e83b6890dc4b66e8",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1483",
+    "title": "Prevent crash when configuring Nightscout CGM",
+    "changes": [
+      "Opening Nightscout configuration from the Home CGM sheet no longer crashes the app.",
+      "The Nightscout 'Fetch' and 'Upload' screens now open correctly from that Home sheet.",
+      "Settings search highlight behavior is preserved when accessing Nightscout from Home."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1483",
+      "diff:5cc05572bed9"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

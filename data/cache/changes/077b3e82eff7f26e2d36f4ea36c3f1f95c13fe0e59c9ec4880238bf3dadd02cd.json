@@ -1,0 +1,23 @@
+{
+  "inputHash": "51f13bf96e6bc4a3cff003dd08853755a6430b250d695c7a68eee662f807bb4b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1464",
+    "title": "Fix forecast lines not drawing in chart",
+    "changes": [
+      "Forecast lines in the main chart now render as connected lines instead of collapsing to points.",
+      "This fixes cases where forecast series could disappear on some builds.",
+      "The forecast cone and Live Activity visuals are unchanged by this fix."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#1464",
+      "commit:fa61ffc54a81"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

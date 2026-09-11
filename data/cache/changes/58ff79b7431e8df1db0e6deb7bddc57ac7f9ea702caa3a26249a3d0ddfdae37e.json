@@ -1,0 +1,25 @@
+{
+  "inputHash": "bba9aa231b9aca54c3ea219dbd434c04c15cd38e00c53a0c9317b53938f880b1",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1450",
+    "title": "Watch: Log Carbs fallback when bolus is zero",
+    "changes": [
+      "If the recommended bolus is zero, the watch shows a \"No Bolus, Log Carbs\" button so you can log carbs without a bolus.",
+      "Turning the insulin dial above zero restores the \"Enact Bolus\" button and opens the bolus confirmation flow.",
+      "Tapping the \"No Bolus, Log Carbs\" button logs the carbs from the watch and shows an acknowledgment screen.",
+      "The watch shows a \"Calculating Bolus...\" progress state while waiting for the phone and clears it on reply, error, or a.",
+      "The insulin amount is snapped to the configured increment so tiny dial residues do not count as a non-zero bolus."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1450",
+      "diff:58ff79b7431e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
