@@ -1,0 +1,21 @@
+{
+  "inputHash": "18b2c93c8caa873741bd26dd99320ca9b6228494665477b2a45bde745a2313ed",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1482",
+    "title": "Centralize override and temp target activation",
+    "changes": [
+      "Overrides and temp targets triggered from the watch, Shortcuts, or remote control now take effect immediately and are (."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1482",
+      "diff:f924c47a0fda"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

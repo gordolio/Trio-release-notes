@@ -1,0 +1,23 @@
+{
+  "inputHash": "f145e7a2d2c9ea96029abc95c73da62a1d265974a51993e3822066a954c74f37",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1468",
+    "title": "Targets editor fixes wrong mmol/L value",
+    "changes": [
+      "Targets editor now picks the closest glucose value if an exact match is missing when switching units.",
+      "Switching from mg/dL to mmol/L no longer shows 4.0 mmol/L for values like 83 mg/dL.",
+      "Existing target values are preserved and displayed accurately when changing units."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1468",
+      "diff:7b5fafe5f469"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
