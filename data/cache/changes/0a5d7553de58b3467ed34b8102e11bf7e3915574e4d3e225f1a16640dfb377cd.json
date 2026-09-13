@@ -1,0 +1,24 @@
+{
+  "inputHash": "9d4984cc8007c8fc3411ac980515f7752090f9fed0d64ee0fb16083888f6cacd",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1493",
+    "title": "Chart gestures added to Chart Legend",
+    "changes": [
+      "The Chart Legend now includes a new \"Chart Gestures\" section.",
+      "It describes drag, pinch, double-tap, and press-and-hold chart actions.",
+      "Each gesture entry shows a short explanation and an icon.",
+      "The chart legend was reorganized into labeled sections for clearer reading."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1493",
+      "diff:0a5d7553de58"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
