@@ -1,0 +1,24 @@
+{
+  "inputHash": "aa29d6fd016ef43d312553674bf68f93d0ecfde07eeacb7de93a88d9ea62244c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1492",
+    "title": "Fix bolus and carb label positioning on iOS 27",
+    "changes": [
+      "Bolus and carbohydrate amount labels now appear next to their triangle markers in the chart.",
+      "This fixes label misplacement that occurred when building with Xcode 27 / iOS 27.",
+      "Marker triangles look the same; only the label anchoring was adjusted."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1492",
+      "commit:f5380e4791f3",
+      "diff:afdeaa06569f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

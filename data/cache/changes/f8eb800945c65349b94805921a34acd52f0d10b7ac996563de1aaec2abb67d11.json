@@ -1,0 +1,25 @@
+{
+  "inputHash": "89b5983a4459dee81931280856b8f7effbfb1f45ad0cf2bda377959ccf1dca70",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1473",
+    "title": "Glucose Bobble contact image for Contact Trick",
+    "changes": [
+      "Adds a new \"Glucose Bobble\" contact image layout for the Contact Trick feature.",
+      "The Bobble shows a ring, a color-coded glucose number, and a rotating trend arrow.",
+      "You can toggle showing minutes-since-reading and showing the glucose delta beneath the number.",
+      "You can switch the glucose number between color and monochrome modes.",
+      "When Bobble is selected, other contact-image customization options are hidden and stale CGM readings are cleared so the."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1473",
+      "commit:be76975247c5"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
