@@ -1,0 +1,25 @@
+{
+  "inputHash": "3198454ef0d5b2a7951ac7ece232fb9edb6e0e65a5f722f652a314b7e253e1f3",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1300",
+    "title": "Finalize pump events and record scheduled basal",
+    "changes": [
+      "Pump doses now finalize with actual delivered amounts instead of keeping only the initial command.",
+      "Gaps with no pump reports are filled by recorded scheduled-basal rows so the app tracks expected basal delivery.",
+      "Scheduled-basal rows are excluded from command inputs and are not uploaded to Nightscout/Health/Tidepool.",
+      "Temporary in-flight (mutable) doses update in place until finalized, and uploads send finalized doses only.",
+      "TDD totals and the basal chart use recorded delivered values and consume scheduled-basal rows where present."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1300",
+      "diff:b0c2c883902f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
