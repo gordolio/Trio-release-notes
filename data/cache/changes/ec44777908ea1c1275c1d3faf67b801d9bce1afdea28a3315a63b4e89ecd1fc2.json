@@ -1,0 +1,25 @@
+{
+  "inputHash": "a9259090abe2f30a76c9823ec3e9c861bcd790f76bca6908ec9e0cbddfb13b41",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1517",
+    "title": "Improve telemetry reliability and privacy",
+    "changes": [
+      "Telemetry uploads are now scheduled to prevent overlapping or duplicate attempts.",
+      "Failed telemetry tries are delayed with a one-hour retry backoff.",
+      "The app records the prior telemetry failure and includes that context in the next attempt.",
+      "If you opt out of full telemetry, the app will still send a minimal anonymous daily check-in with only version, install.",
+      "Telemetry requests now include app version and install ID headers and improved app ID parsing to reduce registration 오류."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1517",
+      "diff:ec44777908ea"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

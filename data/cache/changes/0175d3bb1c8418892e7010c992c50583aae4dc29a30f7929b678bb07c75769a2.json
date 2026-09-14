@@ -1,0 +1,24 @@
+{
+  "inputHash": "d758951545a7d292226dc9ed12b193c259012fa38bed5b489a148897b1c427ac",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1510",
+    "title": "Tamer alarms and no more duplicate sounds",
+    "changes": [
+      "Alarm tones were equalized so different alerts no longer vary wildly in loudness.",
+      "If the system alarm channel is already sounding an alert, the notification is posted silently to avoid the same sound播放.",
+      "Alarms no longer force the device volume to maximum and only raise it to a moderate floor when needed.",
+      "Alarm availability is checked early so alarms don't accidentally play twice before the app is ready."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1510",
+      "diff:0175d3bb1c84"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

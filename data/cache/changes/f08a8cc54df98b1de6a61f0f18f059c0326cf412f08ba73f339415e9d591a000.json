@@ -1,0 +1,23 @@
+{
+  "inputHash": "b81dea24b06130fcef6d98ec7208f1e77ecb0d04f5b2bf67636b164c9ec97cf4",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1465",
+    "title": "Update device and sensor modules; require iOS 17.6",
+    "changes": [
+      "Device and sensor integration modules were refreshed to newer upstream versions.",
+      "OmnipodKit was updated to include an improvement for mid-command disconnects.",
+      "Trio's minimum iOS deployment target was raised to iOS 17.6, so a newer iOS is required to run the app."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1465",
+      "diff:f08a8cc54df9"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

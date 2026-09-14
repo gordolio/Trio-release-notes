@@ -1,0 +1,24 @@
+{
+  "inputHash": "25b6117576221ceae5ac6a1d842edc672aec44509df21a522153049fe5051548",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1367",
+    "title": "Internal dependency-injection cleanup",
+    "changes": [
+      "There are no user-facing feature or UI changes.",
+      "Internal service setup was simplified to remove unused injections and duplicate resolves.",
+      "Several background services are now created and shared by a central container instead of self-managing singletons.",
+      "Automated tests were added so missing or mis-scoped service registrations fail CI instead of causing launch-time issues."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:gordolio/Trio#1367",
+      "commit:4ff187eaa06b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
