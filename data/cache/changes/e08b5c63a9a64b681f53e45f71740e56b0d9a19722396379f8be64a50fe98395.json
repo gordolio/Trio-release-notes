@@ -1,0 +1,23 @@
+{
+  "inputHash": "b81e2758eab2690a6eca9691d837486f633f29b8fc549bb71147cce4f15ec800",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1513",
+    "title": "Use GitHub teams for code owner assignments",
+    "changes": [
+      "Pull request reviewer assignments now use GitHub team groups instead of a single global list.",
+      "Code ownership is organized by component so different teams are auto-assigned for different parts of the repo.",
+      "This repository change is maintenance only and does not affect how the Trio app behaves for users."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1513",
+      "diff:e08b5c63a9a6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

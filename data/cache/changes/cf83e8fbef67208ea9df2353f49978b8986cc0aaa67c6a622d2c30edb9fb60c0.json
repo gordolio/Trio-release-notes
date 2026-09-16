@@ -1,0 +1,25 @@
+{
+  "inputHash": "81fd3033a10217be6f37a73afd2e82401c63ddb506ce89ca4af1fefa83bbe430",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1504",
+    "title": "Dosing Mode replaces Closed Loop toggle",
+    "changes": [
+      "The Closed Loop toggle in Settings is replaced by a Dosing Mode picker.",
+      "Only Closed and Open modes are offered in Settings right now, with short explanatory hints.",
+      "Your existing Closed Loop setting is migrated automatically: true → Closed, false → Open, unknown → Open.",
+      "The Manual Temp Basal screen and related controls have been removed.",
+      "Onboarding now pre-fills Max IOB to one third of your total daily basal instead of leaving it at zero."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1504",
+      "commit:fba0a4636e2a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

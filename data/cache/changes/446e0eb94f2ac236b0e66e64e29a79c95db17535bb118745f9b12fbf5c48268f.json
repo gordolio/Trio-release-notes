@@ -1,0 +1,25 @@
+{
+  "inputHash": "feb014809d26156e38d50482631db2e574bdd02877d92b07a20b04059a13d49a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1505",
+    "title": "Loop pill shows open-loop state and device health",
+    "changes": [
+      "The loop pill no longer claims to be looping when Trio is in open loop.",
+      "In open loop the ring reports device health: green while CGM and pump report, red on device issues.",
+      "The time caption is shown only in closed loop and is hidden in open loop to avoid implying an action.",
+      "The loop icon is now an open ring with horizontal gaps and a centre symbol for constrained modes, and it scales with a\u0000.",
+      "Pull-to-refresh can no longer force a loop when Trio is in open loop."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1505",
+      "diff:446e0eb94f2a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

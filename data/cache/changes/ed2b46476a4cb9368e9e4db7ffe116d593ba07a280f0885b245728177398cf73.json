@@ -1,0 +1,24 @@
+{
+  "inputHash": "da7e67218afeaa6583f82cc488b30409f9ee881dae388e1b3949ed17d9a2ff88",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1507",
+    "title": "Show active dosing mode in loop status",
+    "changes": [
+      "The loop status sheet now shows the active dosing mode.",
+      "Each mode shows a short note about its action (open: no pump command; LGS: may only lower basal; Basal Testing: holds).",
+      "Help text and the glossary now note that Dynamic ISF is disabled during Basal Testing.",
+      "Status badge text color is fixed so it remains readable in dark mode."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1507",
+      "diff:ed2b46476a4c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputHash": "62a046f21355f7abdc5eb3203784f83bc995096aefe7bc97ff5012d228ca13d4",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1511",
+    "title": "New Dosing Modes: Open Loop, LGS, Basal Test",
+    "changes": [
+      "A Dosing Mode picker replaces the Closed Loop toggle with Closed Loop, Open Loop, Low Glucose Suspend, and Basal Test.",
+      "Open Loop now shows forecasts and updates COB and IOB, and the treatment view works correctly.",
+      "Low Glucose Suspend mode can only lower or stop basal insulin and will not give corrective increases.",
+      "Basal Testing mode prevents routine adjustments except for low-glucose suspend and pins sensitivity so you can measure.",
+      "Switching modes does not change your saved settings and switching back restores your original preferences."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1511",
+      "commit:f1c59ab172a2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

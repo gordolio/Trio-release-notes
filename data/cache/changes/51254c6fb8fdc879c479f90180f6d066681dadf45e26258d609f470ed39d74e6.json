@@ -1,0 +1,25 @@
+{
+  "inputHash": "007944b78524b26eb1d7bca270128fe069677dc8cc89245aed0a9866bee8435c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1519",
+    "title": "Prevent launch crash by delaying telemetry startup",
+    "changes": [
+      "Trio no longer crashes on simulator or debug launches caused by telemetry starting too early.",
+      "Telemetry now starts only after the Core Data persistent stores finish loading.",
+      "Foreground-transition telemetry checks do nothing until telemetry has been initialized.",
+      "Cold-launch telemetry timestamps are recorded about one second later than before.",
+      "A remaining race on push-notification cold-launches was left for a follow-up."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1519",
+      "commit:3ed723029562"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "inputHash": "18ba979af46f8ebaa960d4212bab21c2a2e923bf7856098543694a1766f4832d",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1522",
+    "title": "Localization updates and new translated strings",
+    "changes": [
+      "Updated many in-app text translations in multiple languages, especially Portuguese (pt-PT).",
+      "Added new localized labels for treatments and UI items such as carbs, fat, protein, insulin, GMI, and mode status.",
+      "Adjusted wording in several translations, including a French phrasing change for the Add button.",
+      "Added explanatory Color Mode text and other accessibility-focused strings."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1522",
+      "diff:475f30f66633"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

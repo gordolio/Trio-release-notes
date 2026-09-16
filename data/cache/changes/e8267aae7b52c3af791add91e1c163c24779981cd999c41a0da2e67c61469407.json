@@ -1,0 +1,24 @@
+{
+  "inputHash": "ed8c4baed186dd913b9450d8b96b12ba6e8e82f0eeea4ec81efa711b6da57554",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1509",
+    "title": "Show algorithm's open-loop bolus suggestion",
+    "changes": [
+      "The bolus screen now shows the algorithm's open-loop bolus suggestion.",
+      "That suggested amount is reduced by your Recommended Bolus Percentage and capped by Max Bolus.",
+      "The suggestion is hidden when the algorithm asks for a basal reduction instead of a bolus.",
+      "Open loop still does not deliver the suggested bolus; this only displays the recommendation."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1509",
+      "diff:e8267aae7b52"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

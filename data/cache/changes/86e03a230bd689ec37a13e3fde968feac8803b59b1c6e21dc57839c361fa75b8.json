@@ -1,0 +1,22 @@
+{
+  "inputHash": "7cd56e6a58e77b47a7d4b334dd9877b340212db005245e7b031a3c2c2658b7e6",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1527",
+    "title": "Trio v1.0.0 major release",
+    "changes": [
+      "Trio has a new major release labeled v1.0.0.",
+      "The release changes were merged back into the development branch."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1527",
+      "commit:84de4eefad87"
+    ],
+    "confidence": "medium",
+    "humanReviewRequired": true
+  }
+}

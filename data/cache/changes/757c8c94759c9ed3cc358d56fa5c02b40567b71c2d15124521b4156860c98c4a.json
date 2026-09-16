@@ -1,0 +1,24 @@
+{
+  "inputHash": "7583944c66d6dc2af5ab33cf817d568322e467b0c53ee7f8186658e7006a8ed6",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1523",
+    "title": "Fix blank Loop Mode help sheet and clarify LGS hint",
+    "changes": [
+      "Loop Mode help sheet no longer opens blank the first time you tap it.",
+      "Help sheet content is now presented reliably on first open.",
+      "Low Glucose Suspend help text now warns that insulin delivery may resume if IOB goes negative."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1523",
+      "diff:757c8c94759c",
+      "commit:44985a08663e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

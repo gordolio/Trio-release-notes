@@ -1,0 +1,25 @@
+{
+  "inputHash": "a64562d325631de4b3a08cefa8b04536b94722ef7e498d6b44c6fcceac2753a0",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1506",
+    "title": "Add Low Glucose Suspend and Basal Testing modes",
+    "changes": [
+      "Adds two new dosing modes: Low Glucose Suspend and Basal Testing.",
+      "Low Glucose Suspend treats your Max IOB as 0 so Trio will not add corrective insulin.",
+      "Basal Testing fixes sensitivity and disables dynamic ISF so you can observe your programmed basals, and only suspends <.",
+      "Entering Basal Testing cancels any Trio-set temp basal and Trio will otherwise recommend no temp basals.",
+      "These modes are temporary overrides that do not modify your saved preferences, so your settings are restored when you退出."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1506",
+      "diff:1a96134d8d44"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

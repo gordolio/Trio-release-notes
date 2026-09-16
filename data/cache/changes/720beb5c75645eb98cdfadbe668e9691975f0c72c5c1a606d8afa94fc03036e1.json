@@ -1,0 +1,23 @@
+{
+  "inputHash": "0a4fcd65fddf9bcdbebfcfd7ec2f47116bfbbba020809c7731a6a6cb9bdc7b55",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1518",
+    "title": "Option to hide home statistics panel",
+    "changes": [
+      "You can hide the home statistics panel so it only shows a \"View Statistics\" shortcut.",
+      "The Today's Averages view now spells out \"Avg. Glucose\" instead of using the ⌀ symbol.",
+      "The settings text was updated to describe the new Hide Statistics option."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1518",
+      "diff:720beb5c7564"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

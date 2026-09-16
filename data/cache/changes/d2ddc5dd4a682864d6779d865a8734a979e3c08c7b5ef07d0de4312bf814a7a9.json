@@ -1,0 +1,23 @@
+{
+  "inputHash": "67244a8a27a0528a91a7b4443ecdc37aa9cb35012f849151e6a613a1ec77111f",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1508",
+    "title": "Report dosing mode to Nightscout",
+    "changes": [
+      "Trio now includes the raw dosing mode value in Nightscout device status.",
+      "This lets Nightscout followers tell open-loop operation apart from a failed dosing enactment.",
+      "The mode is sent as a stable non-localized string so its name does not change with language settings."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1508",
+      "diff:d2ddc5dd4a68"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

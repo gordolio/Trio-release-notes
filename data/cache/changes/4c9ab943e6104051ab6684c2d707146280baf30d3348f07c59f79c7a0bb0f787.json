@@ -1,0 +1,24 @@
+{
+  "inputHash": "eea835d6b8920bad7088c63891d0050bae8a1128467951c7d4fd946b58c8aa5c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1526",
+    "title": "Trio 1.0.0 major release",
+    "changes": [
+      "Dosing algorithm moved from JavaScript to native Swift, so calculations are faster and use less battery.",
+      "Supports Omnipod 5, FreeStyle Libre 3/3+ (Beta), Eversense E3/365, and Accu-Chek SmartGuide CGMs.",
+      "Home screen and chart were rebuilt to let you drag, pinch and scrub up to 72 hours of data.",
+      "Alarms, watch and lock-screen forecasts, dosing modes, Quick-Pick treatments, and accessibility were improved."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1526",
+      "diff:4c9ab943e610"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
