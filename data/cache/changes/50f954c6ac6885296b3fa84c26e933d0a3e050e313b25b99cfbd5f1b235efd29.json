@@ -1,0 +1,23 @@
+{
+  "inputHash": "4f993dc0057f21d8f6bda389c5eabbca422fa9e36f54e440c72eca6de9a17b08",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1531",
+    "title": "Add @nightscout/ prefix to CODEOWNERS groups",
+    "changes": [
+      "The repository's CODEOWNERS file now includes the @nightscout/ prefix on all team names.",
+      "Team ownership entries for core algorithm, pump drivers, CGMs, CI, and translations were updated.",
+      "This only changes who is automatically requested for code reviews and does not affect the app's behavior."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1531",
+      "diff:50f954c6ac68"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

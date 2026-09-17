@@ -1,0 +1,23 @@
+{
+  "inputHash": "a3752e6af803368cda092fdc0fe67869046d686626a5fbea475b86d3a6bdbe04",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1529",
+    "title": "Fix crash opening Target Behaviors",
+    "changes": [
+      "Opening the Target Behaviors settings no longer crashes the app.",
+      "The Low Temp Target hint now correctly reflects Basal Testing mode.",
+      "Changes to dosing mode are now shown immediately in the Target Behaviors screen."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1529",
+      "diff:e40c26067871"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
