@@ -1,0 +1,24 @@
+{
+  "inputHash": "5306b9ad7f1ca613a387ab40c5111aef03126f4c57af67a51be50d2f31dd82db",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1539",
+    "title": "Fix x-axis label alignment in charts",
+    "changes": [
+      "X-axis time labels on the main chart and all stats charts are correctly aligned again.",
+      "The Glucose Distribution (by day) chart's missing x-axis labels are restored and visible.",
+      "Percentile and distribution-by-time chart labels are now centered on their marks for clearer alignment.",
+      "Removed redundant labels and added glucose units above the Percentile (by day) chart's y-axis."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1539",
+      "diff:24f15c8af17f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

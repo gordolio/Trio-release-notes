@@ -1,0 +1,25 @@
+{
+  "inputHash": "cb4548385c2c21f0afb778e2b75c03e01566da5c137177fb181fb364378db4b4",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1549",
+    "title": "Submodule updates: pump, CGM, and algorithm fixes",
+    "changes": [
+      "Omnipod Bluetooth was improved, adding a better keep‑alive, an O5 beep fix, and more reliable connections.",
+      "DanaKit fixes corrected dose end dates and improved concurrency safety.",
+      "LibreLoop now clears standing CGM alerts correctly when a sensor is deleted.",
+      "Loop algorithm tweaks smooth insulin-on-board behavior and limit correction rates.",
+      "App translations were updated in several components."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1549",
+      "diff:05856452f3cd"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
