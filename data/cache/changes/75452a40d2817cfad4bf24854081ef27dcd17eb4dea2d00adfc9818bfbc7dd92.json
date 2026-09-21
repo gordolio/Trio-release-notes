@@ -1,0 +1,22 @@
+{
+  "inputHash": "43bed6c71a60d1af77233b0f7fffd4712e8efd007c9694b34f608bf2ece04541",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1564",
+    "title": "Sync v1.0.1 patch release to dev",
+    "changes": [
+      "The codebase was updated to include the Trio v1.0.1 patch release.",
+      "Release branch changes were merged back into the development branch."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:gordolio/Trio#1564",
+      "commit:82d694e4eab0"
+    ],
+    "confidence": "low",
+    "humanReviewRequired": true
+  }
+}

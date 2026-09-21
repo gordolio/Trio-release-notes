@@ -1,0 +1,24 @@
+{
+  "inputHash": "901cc25b374afcc1f646e1cad7f101717397a404695eaf6f5a61755d448598d3",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1552",
+    "title": "Not-looping alert now escalates over time",
+    "changes": [
+      "Not-looping now escalates in six steps: warnings at 20, 40, 60, 80, and 100 minutes, then Critical at 120 minutes.",
+      "All escalation steps are scheduled up front so the Critical alarm still arrives if iOS suspends Trio.",
+      "Any successful automated loop clears the entire escalation ladder and restarts the schedule fresh.",
+      "Device alarm defaults changed so only Critical alarms play a sound by default; lower tiers are silent banners."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1552",
+      "commit:93c43206d2c4"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

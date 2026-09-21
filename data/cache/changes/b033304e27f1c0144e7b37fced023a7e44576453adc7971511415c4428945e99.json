@@ -1,22 +1,23 @@
 {
-  "inputHash": "7d7ecccbeab501bb5d0d2ab089a0ce497358fbb34140ef21c8eb19ba11707d07",
+  "inputHash": "c0cb03b7abe930ae6e32d3042c80dd13345e1de676f4a99acf5674bf9ddf69ee",
   "promptVersion": "6",
   "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1455",
-    "title": "Chart selection moved to Meal panel",
+    "title": "Chart selection moved to meal row",
     "changes": [
-      "The chart's floating detail card was removed and the selected-point readout now appears in the Meal panel instead of on.",
-      "The selected time is shown on the chart's x-axis rather than inside the readout row.",
-      "Scrubbing no longer re-lays the chart canvas, so highlights and the readout update without covering data.",
-      "Hour labels were moved into a separate label strip that follows Dynamic Type and avoids overlapping the plot."
+      "Selection readout appears in the meal row instead of a floating card, so it no longer covers chart data.",
+      "Selection time is shown on the chart x-axis under the indicator instead of inside the readout.",
+      "Scrubbing no longer re-lays the chart and selection markers stay aligned during pinches and drags.",
+      "The readout briefly persists across small data gaps instead of flickering back to live IOB/COB while scrubbing.",
+      "The readout uses a glass-styled compact row and shows glucose, smoothed value, and IOB/COB inline."
     ],
     "category": "interface-improvements",
     "sourceIds": [
       "pr:nightscout/Trio#1455",
-      "commit:c10be28bd8fb"
+      "diff:b033304e27f1"
     ],
     "confidence": "high",
     "humanReviewRequired": false

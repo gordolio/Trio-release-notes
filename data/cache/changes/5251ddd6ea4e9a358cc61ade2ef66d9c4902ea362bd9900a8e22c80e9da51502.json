@@ -1,0 +1,23 @@
+{
+  "inputHash": "1cdfe0e78deab2330b87fe18e9f58b0e78b3f497da15bc97a0b5be4deba81000",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1559",
+    "title": "Patch: crash fixes and device updates",
+    "changes": [
+      "Several app crashes were fixed, including deleting a therapy time segment, opening Target Behavior, and a Home screen崩溃.",
+      ".",
+      "Charts now align correctly and Distribution-by-day labels are shown."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1559",
+      "diff:5251ddd6ea4e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "inputHash": "0230279b825632cc9b7463ad18a78c35697c75f8dc435c7a134ffc044f4af687",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1565",
+    "title": "Fix repository codeowner assignments",
+    "changes": [
+      "This change does not alter the Trio app's behavior or features.",
+      "Repository CODEOWNERS patterns were corrected so specialized teams own algorithm, CI, and translation code.",
+      "Automatic code-review assignments will now go to the intended teams for those areas."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1565",
+      "diff:cf2ec7159a3a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
