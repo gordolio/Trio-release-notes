@@ -1,0 +1,24 @@
+{
+  "inputHash": "306f4fae3f945dcc6e00731fed8e91cdb7dbbf733df7381238946470109c3505",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1408",
+    "title": "Improve localized settings and header layout",
+    "changes": [
+      "Verbose settings hints now wrap and expand vertically so descriptive text is no longer cut off and is left-aligned.",
+      "Many settings and configuration screens now show their hint text with consistent left alignment and spacing.",
+      "Home screen header layout was adjusted to prevent overlaps and better position the pump/CGM and glucose panels.",
+      "Watch complication code was restricted so the corner complication is only used on watchOS, improving device-specificity."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1408",
+      "diff:9328eefb5855"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

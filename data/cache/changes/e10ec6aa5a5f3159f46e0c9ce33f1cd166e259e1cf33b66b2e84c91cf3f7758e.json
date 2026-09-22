@@ -1,0 +1,24 @@
+{
+  "inputHash": "1aa71a4cf1bf1e082f24e5388a3c68e7e304e957c5d1a401aa9971c26f2a80dc",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1556",
+    "title": "Basal rate pill shows current pump delivery",
+    "changes": [
+      "The basal rate pill now shows what the pump is actually delivering (suspended, temp, or scheduled).",
+      "The app reports the scheduled basal rate even when the pump has no history yet.",
+      "Manual temp basals are flagged with a hand icon and an accessibility label indicating a manual basal.",
+      "The chart's basal profile line is drawn immediately when the chart appears."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1556",
+      "diff:e10ec6aa5a5f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
