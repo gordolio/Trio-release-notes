@@ -1,23 +1,24 @@
 {
-  "inputHash": "d9a170a22d604766e64f606f878c90a9310d82f760095a0688f43bf424fbd2af",
+  "inputHash": "7659e39788968c02ec4f949f1c11318cb46bce0b07cdf04efca1c8a9a88c417b",
   "promptVersion": "6",
   "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "pr:nightscout/Trio#1275",
-    "title": "Add FreeStyle Libre 3/3+ support",
+    "title": "Add FreeStyle Libre 3/3+ CGM support",
     "changes": [
-      "FreeStyle Libre 3/3+ appears as a new 'beta' option in the CGM picker.",
-      "Trio can pair FreeStyle Libre 3/3+ sensors directly as an experimental plugin without a companion app.",
-      "The home glucose view now shows sensor lifecycle details: progress arc, warmup countdown, and status tags/icons.",
-      "LibreLoop sensor alerts are routed into Trio and delivered as time‑sensitive notifications."
+      "FreeStyle Libre 3/3+ is added to the CGM picker as a beta option.",
+      "You can pair Libre 3/3+ sensors directly in Trio without an external app or internet.",
+      "The home glucose bobble now shows sensor lifecycle, a warmup countdown, and expiry progress.",
+      "LibreLoop sensor alerts appear in Trio and Trio will handle alarms when the CGM has no companion app.",
+      "This support is experimental and does not include 1-minute readings."
     ],
     "category": "pump-and-cgm",
     "sourceIds": [
       "pr:nightscout/Trio#1275",
-      "commit:375c5c1e4d9f",
-      "commit:62ffe0032bbb"
+      "commit:c5680cbe25ad",
+      "commit:375c5c1e4d9f"
     ],
     "confidence": "high",
     "humanReviewRequired": false

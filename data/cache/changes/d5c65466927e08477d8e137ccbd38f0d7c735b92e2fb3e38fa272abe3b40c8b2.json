@@ -1,0 +1,22 @@
+{
+  "inputHash": "1fc541329d45969b4639a104ef2b2cfa81e9730ae83bd44823e421c371d338b6",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1575",
+    "title": "Fix grid toggle spacing in settings",
+    "changes": [
+      "The two grid toggles in User Interface settings no longer touch at small text sizes.",
+      "The Y-axis grid toggle now has added top spacing in the Home view settings screen."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1575",
+      "diff:d5c65466927e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
