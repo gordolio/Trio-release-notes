@@ -1,0 +1,24 @@
+{
+  "inputHash": "e7403652630cccce31290a43e9bee552d14cf667ec2096a3d617733654b279cd",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1592",
+    "title": "Show AccuChek & Eversense sensor times",
+    "changes": [
+      "AccuChek sensors now expose start time, serial, warmup end, and expiration time to the app.",
+      "Eversense sensors now expose expiration time to the app.",
+      "Home screen sensor timers and remaining-time displays use the CGM-reported values for more accurate status.",
+      "AccuChek and Eversense data are now included in CGM data gathering so their sensor state is shown in Trio."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1592",
+      "diff:ac7955bcd66d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
