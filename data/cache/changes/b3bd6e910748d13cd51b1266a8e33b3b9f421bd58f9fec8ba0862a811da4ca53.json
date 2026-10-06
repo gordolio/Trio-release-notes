@@ -1,0 +1,24 @@
+{
+  "inputHash": "986287484247fbdb2eda6b6d56ab827ebc9cabfad5a0d8ba988b2261ecb6dbe5",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:98bd0d2c926f777a1f6de6b9d506d7ca5a7d9f70",
+    "title": "Release note provenance chips use app colors",
+    "changes": [
+      "Provenance labels in Release Notes now use the app color palette.",
+      "Upstream chips now appear dark green instead of teal.",
+      "Our Fork chips now appear darker blue instead of the accent color.",
+      "Mixed chips now appear dark orange instead of orange."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:98bd0d2c926f",
+      "diff:b3bd6e910748"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

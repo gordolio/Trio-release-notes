@@ -1,0 +1,23 @@
+{
+  "inputHash": "bf8e352faabc42ac60b9b2be48a951df30e38db6c31c0035effb6c264d3e226d",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:fa937e5d171e1aacca9f0d6a1cb3e99e23b632fb",
+    "title": "Provenance tags in build release notes",
+    "changes": [
+      "Each entry in build release notes now shows a small colored provenance tag (like \"Upstream\", \"Our Fork\", or \"Mixed\").",
+      "The provenance tag appears next to change titles in both the summary list and the detailed view.",
+      "On narrow layouts the tag moves below the title to preserve readability."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:fa937e5d171e",
+      "diff:0ba295d4d975"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
