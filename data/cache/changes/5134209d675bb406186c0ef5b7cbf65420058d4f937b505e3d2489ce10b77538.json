@@ -1,0 +1,25 @@
+{
+  "inputHash": "e5bea1059d9d5ac7dd2a95c06af1a7d2b784c32b2aeaa795357eb55ecbe31611",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1420",
+    "title": "Upload Dexcom sensor states to Nightscout",
+    "changes": [
+      "Trio can post a Note to Nightscout when a Dexcom G6/G7 reading has no reliable glucose.",
+      "The Note text uses the device kit's own state name (for example “CGM: sensorFailed” or “CGM: questionMarks”).",
+      "Each persistent problem is noted once and stays quiet until a reliable reading or a new sensor session clears it.",
+      "A new Upload CGM Sensor States switch appears in Nightscout upload settings and onboarding; it defaults off and also需要s.",
+      "Failed note uploads are retried automatically on the next CGM reading."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1420",
+      "commit:39f952825764"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "inputHash": "32e814a5911ebcfa7aa2b73c9feb5e9278c5f336961d7e8d522e5754a5ebc52b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1434",
+    "title": "Fix keyboard auto-scrolling in Treatments",
+    "changes": [
+      "Focused input fields in the Treatments screen now scroll into view above the keyboard.",
+      "The treatments list no longer stays hidden behind the keyboard on affected devices.",
+      "Unrelated keyboard appearances no longer trigger unexpected scrolling in the Treatments view.",
+      "A rare hang when tapping a field for the first time while debugging has been reduced."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1434",
+      "diff:7a8f00a9992c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

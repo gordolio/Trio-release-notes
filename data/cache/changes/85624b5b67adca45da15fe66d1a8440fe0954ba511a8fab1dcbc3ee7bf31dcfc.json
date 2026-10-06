@@ -1,0 +1,23 @@
+{
+  "inputHash": "dd54a5a9dfae2b37aa1657356cd75ca40b8ea19ca23d609d495f3ede658e1338",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1571",
+    "title": "Avoid crashes when rendering Override presets",
+    "changes": [
+      "Opening the Override Presets list no longer crashes if a preset's identifier is missing or duplicated.",
+      "Corrupted or invalid duration and percentage values no longer crash the screen; those labels are quietly omitted.",
+      "Presets with valid data render exactly the same as before."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1571",
+      "diff:85624b5b67ad"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
