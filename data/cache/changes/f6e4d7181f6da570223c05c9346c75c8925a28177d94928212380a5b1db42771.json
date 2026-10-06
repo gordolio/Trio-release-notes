@@ -1,0 +1,24 @@
+{
+  "inputHash": "08fe50512e722f735d926f2c538c229257b2a7a462ae985a512092956378ee1a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:943bd282e3e78b087c3d4362cda37ba1e801a50f",
+    "title": "Automatic frontier model selection",
+    "changes": [
+      "Trio can show “frontier” model options that automatically resolve to the current compatible model from a weekly OpenRou.",
+      "The model picker UI now lists frontier choices and shows the resolved model name and ID from the cached catalog.",
+      "Existing AI model settings are migrated safely to the new frontier-aware defaults once and include a migration version.",
+      "Food analysis and other AI calls use the resolved frontier default model automatically by refreshing the catalog when必要."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:943bd282e3e7",
+      "diff:f6e4d7181f6d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

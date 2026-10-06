@@ -1,0 +1,24 @@
+{
+  "inputHash": "36f0c81a35a2fcfc5688df972efb4a187c671dd0fb0bb88e02109bc1f7215dcc",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:608383d6f21cd94c6d48455c6f733847fc3ded94",
+    "title": "Fix Trio test target failures",
+    "changes": [
+      "Internal test code was updated so the Trio test target no longer fails.",
+      "A mock calibration method was added to tests and some numeric expectations were adjusted.",
+      "A test about AI availability was reworked to check after coordinator initialization.",
+      "These updates only affect tests and do not change app behavior for users."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:608383d6f21c",
+      "diff:c92f94870c4e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
