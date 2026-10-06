@@ -49,14 +49,27 @@ async function identifyBuild(github: GitHubClient, run: WorkflowRunInfo): Promis
   };
 }
 
-async function findPreviousBuild(
+export async function findPreviousBuild(
   github: GitHubClient,
   state: GeneratorState,
   current: BuildIdentity
 ): Promise<StoredBuild> {
+  const recordedPrevious = await newestStoredAncestor(
+    state.successfulBuilds.filter((build) => build.branch === current.run.headBranch),
+    current,
+    isAncestor
+  );
   let cursor = current.run;
   while (true) {
     const previousRun = await github.findPreviousSuccessfulRun(cursor);
+    if (recordedPrevious && (!previousRun ||
+      new Date(recordedPrevious.builtAt) > new Date(previousRun.createdAt))) {
+      console.log(
+        `Using recorded build ${recordedPrevious.shortSha} from ${recordedPrevious.branch}; ` +
+        `GitHub returned ${previousRun ? `older run ${previousRun.id}` : "no previous run"}`
+      );
+      return recordedPrevious;
+    }
     if (!previousRun) {
       break;
     }
