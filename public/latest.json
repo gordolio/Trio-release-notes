@@ -4,193 +4,49 @@
     "sourceWorkflowRunId": 37503160396,
     "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/37503160396",
     "sourceBranch": "dev",
-    "previousBuiltSha": "e1dc3274e0a3525ffa17effb72c62ccc2925c16f",
+    "previousBuiltSha": "d127bb42c3dc9aae25450f067dac18704a9d51f5",
     "currentBuiltSha": "943bd282e3e78b087c3d4362cda37ba1e801a50f",
     "shortSha": "943bd28",
     "buildDate": "2026-10-06T17:42:43.000Z",
-    "generationDate": "2026-10-06T18:02:10.988Z",
+    "generationDate": "2026-10-06T18:46:02.672Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1420",
-      "title": "Upload Dexcom sensor states to Nightscout",
+      "changeId": "commit:943bd282e3e78b087c3d4362cda37ba1e801a50f",
+      "title": "Automatic frontier model selection",
       "changes": [
-        "Trio can post a Note to Nightscout when a Dexcom G6/G7 reading has no reliable glucose.",
-        "The Note text uses the device kit's own state name (for example “CGM: sensorFailed” or “CGM: questionMarks”).",
-        "Each persistent problem is noted once and stays quiet until a reliable reading or a new sensor session clears it.",
-        "A new Upload CGM Sensor States switch appears in Nightscout upload settings and onboarding; it defaults off and also需要s.",
-        "Failed note uploads are retried automatically on the next CGM reading."
+        "Frontier choices in AI settings now resolve to the current model from a weekly catalog refresh.",
+        "Legacy AI settings are migrated automatically to the new frontier model choices.",
+        "The model picker shows new \"Latest ...\" frontier options that display the resolved model name and update info.",
+        "Food analysis now uses the resolved frontier model automatically when performing immediate analysis."
       ],
       "category": "new-features",
       "sourceIds": [
-        "pr:nightscout/Trio#1420",
-        "commit:39f952825764"
+        "commit:943bd282e3e7",
+        "diff:f6e4d7181f6d"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1420"
+        "commit:943bd282e3e78b087c3d4362cda37ba1e801a50f"
       ],
       "highlight": true,
-      "provenance": "upstream",
+      "provenance": "origin",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1420",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1420: Report Dexcom sensor states to Nightscout as notes",
-          "url": "https://github.com/nightscout/Trio/pull/1420"
-        },
-        {
-          "id": "commit:39f952825764",
+          "id": "commit:943bd282e3e7",
           "type": "commit",
-          "title": "Report CGM sensor issues to Nightscout as notes",
-          "url": "https://github.com/gordolio/Trio/commit/39f9528257641f51942795727a3636c3dca082a7"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1472",
-      "title": "Store calibrations as manual fingerstick readings",
-      "changes": [
-        "Calibration readings from sensors are now stored as manual fingerstick glucose entries.",
-        "These entries are flagged as manual so the app treats them as user-entered readings.",
-        "Sensor calibrations are saved separately and are not used as CGM sgv values for processing.",
-        "If a CGM value is absent, Nightscout uses the manual calibration value for the reading."
-      ],
-      "category": "pump-and-cgm",
-      "sourceIds": [
-        "pr:nightscout/Trio#1472",
-        "diff:5dd384f72229"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1472"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1472",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1472: fix: store calibrations as manual fingersticks",
-          "url": "https://github.com/nightscout/Trio/pull/1472"
+          "title": "Add automatic frontier model selection",
+          "url": "https://github.com/gordolio/Trio/commit/943bd282e3e78b087c3d4362cda37ba1e801a50f"
         },
         {
-          "id": "diff:5dd384f72229",
+          "id": "diff:f6e4d7181f6d",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1472",
-          "url": "https://github.com/gordolio/Trio/compare/efc0bc1b585b9c000ff8294f3c50288d6b9c110a...972441f8bb45c8fac49e36bb1a593c3ae9cfaec9"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1592",
-      "title": "Show AccuChek & Eversense sensor times",
-      "changes": [
-        "AccuChek sensors now expose start time, serial, warmup end, and expiration time to the app.",
-        "Eversense sensors now expose expiration time to the app.",
-        "Home screen sensor timers and remaining-time displays use the CGM-reported values for more accurate status.",
-        "AccuChek and Eversense data are now included in CGM data gathering so their sensor state is shown in Trio."
-      ],
-      "category": "pump-and-cgm",
-      "sourceIds": [
-        "pr:nightscout/Trio#1592",
-        "diff:ac7955bcd66d"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1592"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1592",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1592: Fix: Eversense & Accuchek expires & warming up",
-          "url": "https://github.com/nightscout/Trio/pull/1592"
-        },
-        {
-          "id": "diff:ac7955bcd66d",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1592",
-          "url": "https://github.com/gordolio/Trio/compare/1802999cd55414fa65878292af1ba0d5b0bc5a95...ec11d0ad2e56e80f339d4dcd9246769d00099dee"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1593",
-      "title": "Eversense CGM data upload and stability updates",
-      "changes": [
-        "Trio now uploads more diagnostic data to Eversense DMS, including app info, battery history, and glucose-related logs.",
-        "Data uploads are more reliable when the app runs in the background.",
-        "The app is less likely to crash during state changes.",
-        "Bluetooth peripheral handling was cleaned up to help improve connection stability."
-      ],
-      "category": "pump-and-cgm",
-      "sourceIds": [
-        "pr:nightscout/Trio#1593",
-        "diff:580fc7d5917a"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1593"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1593",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1593: chore: update EversenseKit",
-          "url": "https://github.com/nightscout/Trio/pull/1593"
-        },
-        {
-          "id": "diff:580fc7d5917a",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1593",
-          "url": "https://github.com/gordolio/Trio/compare/1802999cd55414fa65878292af1ba0d5b0bc5a95...73a0a3cb3874a7b3e88883b71e16340c0043d3a5"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1571",
-      "title": "Avoid crashes when rendering Override presets",
-      "changes": [
-        "Opening the Override Presets list no longer crashes if a preset's identifier is missing or duplicated.",
-        "Corrupted or invalid duration and percentage values no longer crash the screen; those labels are quietly omitted.",
-        "Presets with valid data render exactly the same as before."
-      ],
-      "category": "fixes",
-      "sourceIds": [
-        "pr:nightscout/Trio#1571",
-        "diff:85624b5b67ad"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1571"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1571",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1571: Fix two crash risks in Override preset row rendering",
-          "url": "https://github.com/nightscout/Trio/pull/1571"
-        },
-        {
-          "id": "diff:85624b5b67ad",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1571",
-          "url": "https://github.com/gordolio/Trio/compare/e41c9db37fa946f14047f5b07cfcd3aa5dd9ef6b...cf4754b4acb1b7b9367675bb816baf9e6cd943a0"
+          "title": "Diff for commit:943bd282e3e78b087c3d4362cda37ba1e801a50f",
+          "url": "https://github.com/gordolio/Trio/compare/608383d6f21cd94c6d48455c6f733847fc3ded94...943bd282e3e78b087c3d4362cda37ba1e801a50f"
         }
       ]
     }
@@ -199,44 +55,7 @@
     {
       "category": "new-features",
       "title": "New Features",
-      "items": [
-        {
-          "changeId": "commit:943bd282e3e78b087c3d4362cda37ba1e801a50f",
-          "title": "Automatic frontier model selection",
-          "changes": [
-            "Trio can show “frontier” model options that automatically resolve to the current compatible model from a weekly OpenRou.",
-            "The model picker UI now lists frontier choices and shows the resolved model name and ID from the cached catalog.",
-            "Existing AI model settings are migrated safely to the new frontier-aware defaults once and include a migration version.",
-            "Food analysis and other AI calls use the resolved frontier default model automatically by refreshing the catalog when必要."
-          ],
-          "category": "new-features",
-          "sourceIds": [
-            "commit:943bd282e3e7",
-            "diff:f6e4d7181f6d"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "commit:943bd282e3e78b087c3d4362cda37ba1e801a50f"
-          ],
-          "highlight": false,
-          "provenance": "mixed",
-          "sources": [
-            {
-              "id": "commit:943bd282e3e7",
-              "type": "commit",
-              "title": "Add automatic frontier model selection",
-              "url": "https://github.com/gordolio/Trio/commit/943bd282e3e78b087c3d4362cda37ba1e801a50f"
-            },
-            {
-              "id": "diff:f6e4d7181f6d",
-              "type": "diff",
-              "title": "Diff for commit:943bd282e3e78b087c3d4362cda37ba1e801a50f",
-              "url": "https://github.com/gordolio/Trio/compare/608383d6f21cd94c6d48455c6f733847fc3ded94...943bd282e3e78b087c3d4362cda37ba1e801a50f"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "fixes",
@@ -261,44 +80,7 @@
     {
       "category": "interface-improvements",
       "title": "Interface Improvements",
-      "items": [
-        {
-          "changeId": "pr:nightscout/Trio#1434",
-          "title": "Fix keyboard auto-scrolling in Treatments",
-          "changes": [
-            "Focused input fields in the Treatments screen now scroll into view above the keyboard.",
-            "The treatments list no longer stays hidden behind the keyboard on affected devices.",
-            "Unrelated keyboard appearances no longer trigger unexpected scrolling in the Treatments view.",
-            "A rare hang when tapping a field for the first time while debugging has been reduced."
-          ],
-          "category": "interface-improvements",
-          "sourceIds": [
-            "pr:nightscout/Trio#1434",
-            "diff:7a8f00a9992c"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "pr:nightscout/Trio#1434"
-          ],
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:nightscout/Trio#1434",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1434: Update TreatmentsRootView.swift to fix auto-scrolling and some (related) bugs",
-              "url": "https://github.com/nightscout/Trio/pull/1434"
-            },
-            {
-              "id": "diff:7a8f00a9992c",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1434",
-              "url": "https://github.com/gordolio/Trio/compare/a93d195e257170402aab2969b56d2c19ef3aae97...81cd59800dead6f6d4af57a84736027fc0d12e4f"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "origin-only-customizations",
@@ -353,379 +135,9 @@
       "items": []
     }
   ],
-  "maintenanceHotspots": [
-    "Trio.xcodeproj/project.pbxproj",
-    "Trio/Sources/Models/TrioSettings.swift"
-  ],
-  "includedPullRequests": [
-    {
-      "repository": "gordolio/Trio",
-      "number": 1420,
-      "title": "Report Dexcom sensor states to Nightscout as notes",
-      "body": "When a G6 or G7 reading carries no reliable glucose, Trio uploads a Note treatment with the kit's own name for the sensor state, for example \"CGM: sensorFailed\", \"CGM: questionMarks\" or \"CGM: .unknown(23)\". Trio holds no state table, titles or localizations for this: the kit's hasReliableGlucose decides whether a reading is noted, and the kit's description names it.\n\nA state is noted once and stays quiet while it persists. A reliable reading or a new sensor session clears the log, so a state that returns after recovery is noted again. A failed upload is retried on the next reading. The notes are controlled by a new Upload CGM Sensor States switch under Services, Nightscout, Upload, and in the onboarding upload step; it defaults to off in settings and requires Allow Uploading to Nightscout. Lifecycle states without glucose (warmup, stopped, session ended, G6 initial calibration) are noted too, roughly two to four notes per sensor session.\n\nScope is Dexcom G6 and G7, since the state lives on the kit-specific latestReading. Libre 3, AccuChek and Eversense issue LoopKit alerts and can follow by mirroring those to notes in PluginSource.issueAlert.\n\nTests cover the reliability and naming rule, the dedupe log, and G7 transmitter messages fed through the real G7CGMManager. The upload path was exercised end to end against a Nightscout instance with a scripted state sequence.\n\n",
-      "labels": [
-        "Merge Candidate"
-      ],
-      "url": "https://github.com/nightscout/Trio/pull/1420",
-      "mergedAt": "2026-10-05T20:01:40Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1420,
-      "title": "Report Dexcom sensor states to Nightscout as notes",
-      "body": "When a G6 or G7 reading carries no reliable glucose, Trio uploads a Note treatment with the kit's own name for the sensor state, for example \"CGM: sensorFailed\", \"CGM: questionMarks\" or \"CGM: .unknown(23)\". Trio holds no state table, titles or localizations for this: the kit's hasReliableGlucose decides whether a reading is noted, and the kit's description names it.\n\nA state is noted once and stays quiet while it persists. A reliable reading or a new sensor session clears the log, so a state that returns after recovery is noted again. A failed upload is retried on the next reading. The notes are controlled by a new Upload CGM Sensor States switch under Services, Nightscout, Upload, and in the onboarding upload step; it defaults to off in settings and requires Allow Uploading to Nightscout. Lifecycle states without glucose (warmup, stopped, session ended, G6 initial calibration) are noted too, roughly two to four notes per sensor session.\n\nScope is Dexcom G6 and G7, since the state lives on the kit-specific latestReading. Libre 3, AccuChek and Eversense issue LoopKit alerts and can follow by mirroring those to notes in PluginSource.issueAlert.\n\nTests cover the reliability and naming rule, the dedupe log, and G7 transmitter messages fed through the real G7CGMManager. The upload path was exercised end to end against a Nightscout instance with a scripted state sequence.\n\n",
-      "labels": [
-        "Merge Candidate"
-      ],
-      "url": "https://github.com/nightscout/Trio/pull/1420",
-      "mergedAt": "2026-10-05T20:01:40Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1434,
-      "title": "Update TreatmentsRootView.swift to fix auto-scrolling and some (related) bugs",
-      "body": "Fixes issue #1115. Replaces PR #1365 which I accidentally screwed up when attempting to process the feedback.\r\n\r\n**Issue summary:** \r\nThe treatments menu would, when tapping the bolus screen, not scroll up properly on some devices. It would stay behind the keyboard.\r\n\r\n**This PR:**\r\n**1.)** fixes the problem and scrolls the focused field up properly. The first attempt (see aforementioned PR) relied on a hard-coded delay, about which feedback was given that it shouldn't be done that way. Therefore, this version is event driven/notification driven and tracks states. \r\n\r\n**2.)** Both in the previous version as this one: after the initial changes, the swift compiler would crash on a too large body (causing type-checker limit violation). To accommodate for this, the Reduced Bolus/Super Bolus toggles + Recommendation button + Bolus field + External Insulin toggle were extracted into their own \"_ViewBuilder private var bolusSection: some View_\", called from a single line in place of the original inline block. No logic should've been altered.\r\n\r\n**3.)** Fixed a naming collision that occurred.\r\n\r\n**4.)** Fixes a staleness bug in the queued-scroll state. \"_pendingScrollTarget_\" could be left set if focus cleared before the keyboard ever showed, and - since \"_keyboardWillShowNotification_\" fires app-wide, not scoped to this view - a later, unrelated keyboard appearance could act on that stale value and trigger an unexpected scroll.\r\n\r\nThis was fixed two ways: \"_pendingScrollTarget_\" is now cleared whenever focus becomes nil, and \"_handleKeyboardWillShow_\" re-validates that the queued target still matches the currently focused field before acting on it. Also cleared defensively on \"_keyboardWillHide_\" as a second safety net.\r\n\r\n**5.)** Somehow, perhaps due to some re-arranging, it also fixes the problem that would cause the entire app to hang for +/- 10 seconds when a field was tapped for the first time whilst the app was running with the debugger attached. That wasn't the goal, but won't complain. (Not that it was a major issue... merely annoying when running XCode debugger.)\r\n\r\nAll of the above lives entirely within this file, confined to the scroll-related code. None of it should touch the bolus dosing logic or the Reduced Bolus/Super Bolus toggles' behavior or anything like that.\r\n\r\n**Full-disclosure:**\r\nThe code has been generated and verified with the help of Claude and ChatGPT. Initial testing performed in production on iOS 26 on dev d1a66f4 (the previous version was tested on other dev versions obviously) by myself over the course of the last couple of weeks. Everything appears to be working as intended, no errors triggered and all fields behave as intended.",
-      "labels": [
-        "Merge Candidate"
-      ],
-      "url": "https://github.com/nightscout/Trio/pull/1434",
-      "mergedAt": "2026-10-05T20:02:36Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1434,
-      "title": "Update TreatmentsRootView.swift to fix auto-scrolling and some (related) bugs",
-      "body": "Fixes issue #1115. Replaces PR #1365 which I accidentally screwed up when attempting to process the feedback.\r\n\r\n**Issue summary:** \r\nThe treatments menu would, when tapping the bolus screen, not scroll up properly on some devices. It would stay behind the keyboard.\r\n\r\n**This PR:**\r\n**1.)** fixes the problem and scrolls the focused field up properly. The first attempt (see aforementioned PR) relied on a hard-coded delay, about which feedback was given that it shouldn't be done that way. Therefore, this version is event driven/notification driven and tracks states. \r\n\r\n**2.)** Both in the previous version as this one: after the initial changes, the swift compiler would crash on a too large body (causing type-checker limit violation). To accommodate for this, the Reduced Bolus/Super Bolus toggles + Recommendation button + Bolus field + External Insulin toggle were extracted into their own \"_ViewBuilder private var bolusSection: some View_\", called from a single line in place of the original inline block. No logic should've been altered.\r\n\r\n**3.)** Fixed a naming collision that occurred.\r\n\r\n**4.)** Fixes a staleness bug in the queued-scroll state. \"_pendingScrollTarget_\" could be left set if focus cleared before the keyboard ever showed, and - since \"_keyboardWillShowNotification_\" fires app-wide, not scoped to this view - a later, unrelated keyboard appearance could act on that stale value and trigger an unexpected scroll.\r\n\r\nThis was fixed two ways: \"_pendingScrollTarget_\" is now cleared whenever focus becomes nil, and \"_handleKeyboardWillShow_\" re-validates that the queued target still matches the currently focused field before acting on it. Also cleared defensively on \"_keyboardWillHide_\" as a second safety net.\r\n\r\n**5.)** Somehow, perhaps due to some re-arranging, it also fixes the problem that would cause the entire app to hang for +/- 10 seconds when a field was tapped for the first time whilst the app was running with the debugger attached. That wasn't the goal, but won't complain. (Not that it was a major issue... merely annoying when running XCode debugger.)\r\n\r\nAll of the above lives entirely within this file, confined to the scroll-related code. None of it should touch the bolus dosing logic or the Reduced Bolus/Super Bolus toggles' behavior or anything like that.\r\n\r\n**Full-disclosure:**\r\nThe code has been generated and verified with the help of Claude and ChatGPT. Initial testing performed in production on iOS 26 on dev d1a66f4 (the previous version was tested on other dev versions obviously) by myself over the course of the last couple of weeks. Everything appears to be working as intended, no errors triggered and all fields behave as intended.",
-      "labels": [
-        "Merge Candidate"
-      ],
-      "url": "https://github.com/nightscout/Trio/pull/1434",
-      "mergedAt": "2026-10-05T20:02:36Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1472,
-      "title": "fix: store calibrations as manual fingersticks",
-      "body": "Currently, Eversense and AccuChek do not emit the calibrations to the app. I'm planning on changing this, but Trio records the manual readings as CGM readings.\r\n\r\nThis PR changes that by looking at the `wasUserEntered` property of [NewGlucoseSample](https://github.com/LoopKit/LoopKit/blob/dev/LoopKit/GlucoseKit/NewGlucoseSample.swift#L28). If this value is true, it will mark that reading as a manual glucose (adding the nice red waterdrop icon to the Trio main chart)",
-      "labels": [
-        "Merge Candidate"
-      ],
-      "url": "https://github.com/nightscout/Trio/pull/1472",
-      "mergedAt": "2026-10-05T20:00:36Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1472,
-      "title": "fix: store calibrations as manual fingersticks",
-      "body": "Currently, Eversense and AccuChek do not emit the calibrations to the app. I'm planning on changing this, but Trio records the manual readings as CGM readings.\r\n\r\nThis PR changes that by looking at the `wasUserEntered` property of [NewGlucoseSample](https://github.com/LoopKit/LoopKit/blob/dev/LoopKit/GlucoseKit/NewGlucoseSample.swift#L28). If this value is true, it will mark that reading as a manual glucose (adding the nice red waterdrop icon to the Trio main chart)",
-      "labels": [
-        "Merge Candidate"
-      ],
-      "url": "https://github.com/nightscout/Trio/pull/1472",
-      "mergedAt": "2026-10-05T20:00:36Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1571,
-      "title": "Fix two crash risks in Override preset row rendering",
-      "body": "Two related crashes are possible when the Override Presets list in Adjustments renders:\r\n\r\n1. `ForEach(state.overridePresets)` relied on `OverrideStored`'s own `id` field for row identity, which is optional and can be nil (or, in principle, shared) on presets saved by an older build. SwiftUI hard-crashes when a ForEach sees a duplicate or nil id. Fixed by identifying rows with Core Data's own `objectID` instead, which is always present and always unique.\r\n\r\n2. The row's duration and percentage labels used `Int(_: Decimal)` / `Int(_: Double)` directly, which traps (crashes) rather than failing gracefully if the stored value is NaN or out of Int's range. A preset with a corrupted duration or percentage would crash this screen on every open. Fixed by routing through Double's `isFinite`/range checks first, falling back to omitting that label instead of trapping.\r\n\r\nBoth are defensive fixes for corrupted/unusual saved data rather than changes to normal behavior -- presets with valid data render identically to before.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1571",
-      "mergedAt": "2026-10-05T20:07:05Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1571,
-      "title": "Fix two crash risks in Override preset row rendering",
-      "body": "Two related crashes are possible when the Override Presets list in Adjustments renders:\r\n\r\n1. `ForEach(state.overridePresets)` relied on `OverrideStored`'s own `id` field for row identity, which is optional and can be nil (or, in principle, shared) on presets saved by an older build. SwiftUI hard-crashes when a ForEach sees a duplicate or nil id. Fixed by identifying rows with Core Data's own `objectID` instead, which is always present and always unique.\r\n\r\n2. The row's duration and percentage labels used `Int(_: Decimal)` / `Int(_: Double)` directly, which traps (crashes) rather than failing gracefully if the stored value is NaN or out of Int's range. A preset with a corrupted duration or percentage would crash this screen on every open. Fixed by routing through Double's `isFinite`/range checks first, falling back to omitting that label instead of trapping.\r\n\r\nBoth are defensive fixes for corrupted/unusual saved data rather than changes to normal behavior -- presets with valid data render identically to before.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1571",
-      "mergedAt": "2026-10-05T20:07:05Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1592,
-      "title": "Fix: Eversense & Accuchek expires & warming up",
-      "body": "Changelog:\r\n- update AccuChek to expose startTime, warming up ends, expires at & sensor serial number\r\n- add EversenseKit & AccuChekKit to CGM specific data grabs\r\n- small refactor of `resolveSensorExpiresAt` & `resolveWarmupEndsAt` to use switch instead of if-else\r\n  - cleanup duplicated code inside both functions\r\n\r\n### Screenshots AccuChek:\r\n\r\nWarming up:\r\n\r\n<img height=\"700\" alt=\"Screenshot iPhone 17 Pro 28-09-2026 at 21 03 04\" src=\"https://github.com/user-attachments/assets/d49d867b-e400-44a3-bc22-ff624ea1fd9f\" />\r\n\r\nExpired:\r\n<img height=\"700\" alt=\"Screenshot iPhone 17 Pro 28-09-2026 at 21 13 06\" src=\"https://github.com/user-attachments/assets/6e2b98de-1e1b-44d1-846d-93d122ed5e34\" />\r\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1592",
-      "mergedAt": "2026-10-04T22:52:56Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1592,
-      "title": "Fix: Eversense & Accuchek expires & warming up",
-      "body": "Changelog:\r\n- update AccuChek to expose startTime, warming up ends, expires at & sensor serial number\r\n- add EversenseKit & AccuChekKit to CGM specific data grabs\r\n- small refactor of `resolveSensorExpiresAt` & `resolveWarmupEndsAt` to use switch instead of if-else\r\n  - cleanup duplicated code inside both functions\r\n\r\n### Screenshots AccuChek:\r\n\r\nWarming up:\r\n\r\n<img height=\"700\" alt=\"Screenshot iPhone 17 Pro 28-09-2026 at 21 03 04\" src=\"https://github.com/user-attachments/assets/d49d867b-e400-44a3-bc22-ff624ea1fd9f\" />\r\n\r\nExpired:\r\n<img height=\"700\" alt=\"Screenshot iPhone 17 Pro 28-09-2026 at 21 13 06\" src=\"https://github.com/user-attachments/assets/6e2b98de-1e1b-44d1-846d-93d122ed5e34\" />\r\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1592",
-      "mergedAt": "2026-10-04T22:52:56Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1593,
-      "title": "chore: update EversenseKit",
-      "body": "Changelog (21 commits from current commit in Trio dev):\r\n- include more data uploads in Eversense DMS\r\n  - Add App info upload (PutAppValues) -> Letting Eversense Support know that the user is on Loop or Trio or iAPS\r\n  - Add Battery upload (PostBatteryLogs) -> Contains the history log of the transmitter's battery for diagnostics\r\n  - Add Essential upload (PostEssentialLogs) -> Contains the glucose log for diagnostics\r\n  - Add Algorithm upload (PostAlgorithmLogs) -> Contains the raw glucose data for diagnostics\r\n- fix data upload while app is in background\r\n- fix app crashes during state changes\r\n- cleanup PeripheralManager\r\n- offline fix (first attempt)\r\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1593",
-      "mergedAt": "2026-10-04T22:53:36Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1593,
-      "title": "chore: update EversenseKit",
-      "body": "Changelog (21 commits from current commit in Trio dev):\r\n- include more data uploads in Eversense DMS\r\n  - Add App info upload (PutAppValues) -> Letting Eversense Support know that the user is on Loop or Trio or iAPS\r\n  - Add Battery upload (PostBatteryLogs) -> Contains the history log of the transmitter's battery for diagnostics\r\n  - Add Essential upload (PostEssentialLogs) -> Contains the glucose log for diagnostics\r\n  - Add Algorithm upload (PostAlgorithmLogs) -> Contains the raw glucose data for diagnostics\r\n- fix data upload while app is in background\r\n- fix app crashes during state changes\r\n- cleanup PeripheralManager\r\n- offline fix (first attempt)\r\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1593",
-      "mergedAt": "2026-10-04T22:53:36Z"
-    }
-  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
   "includedCommits": [
-    {
-      "sha": "39f9528257641f51942795727a3636c3dca082a7",
-      "subject": "Report CGM sensor issues to Nightscout as notes",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-08-15T19:11:05+02:00"
-    },
-    {
-      "sha": "56b5882e103ce9cd21ecbd05d58725c4fe1b3e57",
-      "subject": "Update TreatmentsRootView.swift to fix auto-scrolling and some (related) bugs",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-08-20T23:58:18+02:00"
-    },
-    {
-      "sha": "0aa930fe95e6d483743fbd9685df1be2090c63d8",
-      "subject": "Merge branch 'dev' into feat/cgm-sensor-status-notes",
-      "author": "trioneer-dev",
-      "authoredAt": "2026-08-24T10:00:59+02:00"
-    },
-    {
-      "sha": "532f2a9a2e906e4f6db51f969d8a6bf179e1409e",
-      "subject": "Update TreatmentsRootView.swift - clean up comments",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-08-29T15:02:15+02:00"
-    },
-    {
-      "sha": "ccb29ec0b37aeb43c793df8dcc35e52700b27442",
-      "subject": "fix: store calibrations as manual fingersticks",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-06T13:01:44+02:00"
-    },
-    {
-      "sha": "a37219a1a422487cf3adc9d285f9b5e87d4e1e4d",
-      "subject": "Merge branch 'dev' into fix/cgm-reading-user",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-07T19:28:45+02:00"
-    },
-    {
-      "sha": "226fd912de4416240f523b6ee6e05c688edfb128",
-      "subject": "Merge branch 'dev' into fix/cgm-reading-user",
-      "author": "Magnus Reintz",
-      "authoredAt": "2026-09-11T16:26:17+02:00"
-    },
-    {
-      "sha": "1df9a33110cdafac092bba5122b9d0156e21498b",
-      "subject": "Merge branch 'dev' into fix/cgm-reading-user",
-      "author": "Magnus Reintz",
-      "authoredAt": "2026-09-11T23:45:20+02:00"
-    },
-    {
-      "sha": "20a536cc0a3bbe6f3cfc5bdf97cf1f1ba0708fba",
-      "subject": "Merge branch 'dev' into feat/cgm-sensor-status-notes",
-      "author": "Magnus Reintz",
-      "authoredAt": "2026-09-11T23:53:30+02:00"
-    },
-    {
-      "sha": "97f7826dcfdfdfb137c7d99cf9a814cd080bc177",
-      "subject": "Merge branch 'dev' into patch-1",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-09-12T00:51:50+02:00"
-    },
-    {
-      "sha": "579dc773f4ffd10c310cf38486871475d0a56729",
-      "subject": "Merge branch 'dev' into fix/cgm-reading-user",
-      "author": "Bastiaan Verhaar",
-      "authoredAt": "2026-09-12T13:11:58+02:00"
-    },
-    {
-      "sha": "e137ed95b685d9b61801d9dbd4773926790023f0",
-      "subject": "fix: nightscout manual glucose",
-      "author": "Bastiaan Verhaar",
-      "authoredAt": "2026-09-12T13:32:35+02:00"
-    },
-    {
-      "sha": "596e1bf45ab2237ed1ccc5df3d2b1616b4a15af6",
-      "subject": "Note sensor states without reliable glucose using the kit's own names",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-09-13T20:33:02+02:00"
-    },
-    {
-      "sha": "54aa37e057c3bd81f0451bbc5ac5465b6063a366",
-      "subject": "Update TreatmentsRootView.swift - match dev",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-09-15T01:49:30+02:00"
-    },
-    {
-      "sha": "a807e7afcc528867def9da42b66c50d6f40e60eb",
-      "subject": "Merge branch 'dev' into patch-1",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-09-15T01:55:32+02:00"
-    },
-    {
-      "sha": "ec8251b2167176e48e41d2bb1ecc41069b496c86",
-      "subject": "Merge branch 'dev' into patch-1",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-09-18T00:20:32+02:00"
-    },
-    {
-      "sha": "d5718852303579962563ed9f9f66f5ece89693e3",
-      "subject": "Add an Upload CGM Sensor States setting",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-09-18T14:34:16+02:00"
-    },
-    {
-      "sha": "af86d334a3e34ef3e4ebd7f367d58d078c1cf025",
-      "subject": "Merge branch 'dev' into feat/cgm-sensor-status-notes",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-09-18T14:41:26+02:00"
-    },
-    {
-      "sha": "89150087ce27a51ce983d6481bb773a637af5c32",
-      "subject": "Clarify CGM sensor state help text and add it to settings search",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-09-19T21:29:20+02:00"
-    },
-    {
-      "sha": "bace15947f46b180b9d0d73cade06f6b9a447c59",
-      "subject": "Merge branch 'dev' into patch-1",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-09-20T00:22:50+02:00"
-    },
-    {
-      "sha": "4c24e839299969815ef75c7ab930176e074f50c5",
-      "subject": "Merge branch 'dev' into fix/cgm-reading-user",
-      "author": "Bastiaan Verhaar",
-      "authoredAt": "2026-09-20T17:06:13+02:00"
-    },
-    {
-      "sha": "c15efac5f8a27ecffbdfb2608cc5638c338b91e9",
-      "subject": "Fix two crash risks in Override preset row rendering",
-      "author": "kristinkand",
-      "authoredAt": "2026-09-23T09:22:52+02:00"
-    },
-    {
-      "sha": "ccc6e659c6bd617cb44420019e3ac07c7641ee67",
-      "subject": "Trim overly verbose comments per review feedback",
-      "author": "Claude",
-      "authoredAt": "2026-09-25T04:24:37Z"
-    },
-    {
-      "sha": "e72ecf503af1d86b9e9212777ca9b3741e57c461",
-      "subject": "fix: add AccuChek details to CGM values fix: add accuchek warmup end + expires",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-28T20:53:37+02:00"
-    },
-    {
-      "sha": "62e4767ab0f9ad301e0b62dd87335eded8e66d13",
-      "subject": "chore: update AccuChekKit",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-28T21:13:20+02:00"
-    },
-    {
-      "sha": "796abc2186574772ac925529c505f2fec8b24514",
-      "subject": "chore: extra cleanup",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-28T21:26:27+02:00"
-    },
-    {
-      "sha": "757cda3ef3facc0110321d37d2d93fab82674070",
-      "subject": "chore: update AccuChek",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-28T21:32:34+02:00"
-    },
-    {
-      "sha": "bdacd690940c1824dec9f38b118cefcb4ccf37a7",
-      "subject": "chore: add Eversense details",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-28T21:53:41+02:00"
-    },
-    {
-      "sha": "3e2a814b11cbb50ceaa84947c0e665e1b8a0d54f",
-      "subject": "chore: update EversenseKit",
-      "author": "bastiaanv",
-      "authoredAt": "2026-09-28T21:56:07+02:00"
-    },
-    {
-      "sha": "dd3a7b32d9b06402d2f36d6dcc2d7c13c0d7d546",
-      "subject": "Merge branch 'dev' into patch-1",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-10-01T20:03:08+02:00"
-    },
-    {
-      "sha": "ec11d0ad2e56e80f339d4dcd9246769d00099dee",
-      "subject": "Merge pull request #1592 from bastiaanv/fix/accuchek-expires",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-05T00:52:56+02:00"
-    },
-    {
-      "sha": "fbe62dc8f3ab592151b828dab279c570334e52cf",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.1.7 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-10-04T22:53:05Z"
-    },
-    {
-      "sha": "73a0a3cb3874a7b3e88883b71e16340c0043d3a5",
-      "subject": "Merge pull request #1593 from bastiaanv/chore/update-eversense-2809",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-05T00:53:35+02:00"
-    },
-    {
-      "sha": "942c8f8418fe9313e126ce37b2b1e3135f306399",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.1.8 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-10-04T22:53:44Z"
-    },
-    {
-      "sha": "7fe416343b4d09096197bae632d9cb9eb060626a",
-      "subject": "Merge branch 'nightscout:dev' into dev",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-04T21:02:04-05:00"
-    },
-    {
-      "sha": "972441f8bb45c8fac49e36bb1a593c3ae9cfaec9",
-      "subject": "Merge pull request #1472 from bastiaanv/fix/cgm-reading-user",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-05T22:00:35+02:00"
-    },
-    {
-      "sha": "98373cf288df5023b4e230ecdddfaeb1070e2995",
-      "subject": "Merge pull request #1420 from bjorkert/feat/cgm-sensor-status-notes",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-05T22:01:39+02:00"
-    },
-    {
-      "sha": "81cd59800dead6f6d4af57a84736027fc0d12e4f",
-      "subject": "Merge pull request #1434 from LiroyvH/patch-1",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-05T22:02:35+02:00"
-    },
-    {
-      "sha": "4066afd7181e3a196018f1f6d2e85026ea46c011",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.1.9 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-10-05T20:02:55Z"
-    },
-    {
-      "sha": "cf4754b4acb1b7b9367675bb816baf9e6cd943a0",
-      "subject": "Merge pull request #1571 from kristinkand/patch-1",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-05T22:07:05+02:00"
-    },
-    {
-      "sha": "d127bb42c3dc9aae25450f067dac18704a9d51f5",
-      "subject": "Merge upstream dev into dev",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-06T10:12:02-05:00"
-    },
     {
       "sha": "608383d6f21cd94c6d48455c6f733847fc3ded94",
       "subject": "Fix Trio test target failures",
@@ -742,35 +154,7 @@
   "includedFiles": [
     {
       "status": "M",
-      "path": "AccuChekKit"
-    },
-    {
-      "status": "M",
-      "path": "Config.xcconfig"
-    },
-    {
-      "status": "M",
-      "path": "EversenseKit"
-    },
-    {
-      "status": "M",
       "path": "Trio.xcodeproj/project.pbxproj"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/APS/CGM/CGMSensorStateLog.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/APS/CGM/PluginSource.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/APS/FetchGlucoseManager.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/APS/Storage/GlucoseStorage.swift"
     },
     {
       "status": "M",
@@ -786,43 +170,7 @@
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/AdjustmentsRootView+Overrides.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/NightscoutConfig/NightscoutConfigStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/NightscoutConfig/View/NightscoutUploadView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Onboarding/OnboardingStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutUploadStepView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift"
-    },
-    {
-      "status": "M",
       "path": "Trio/Sources/Modules/Treatments/View/AI/AIFoodAnalysisView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift"
     },
     {
       "status": "M",
@@ -835,18 +183,6 @@
     {
       "status": "A",
       "path": "Trio/Sources/Services/AI/OpenRouterFrontierModels.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutAPI.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/CGMSensorStateLogTests.swift"
     },
     {
       "status": "M",

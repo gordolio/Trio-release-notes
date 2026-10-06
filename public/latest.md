@@ -1,57 +1,15 @@
 # Trio Build 943bd28
 
-Built 2026-10-06T17:42:43.000Z from `e1dc327..943bd28`.
+Built 2026-10-06T17:42:43.000Z from `d127bb4..943bd28`.
 
 ## Highlights
 
-- **Upload Dexcom sensor states to Nightscout**
-  - Trio can post a Note to Nightscout when a Dexcom G6/G7 reading has no reliable glucose.
-  - The Note text uses the device kit's own state name (for example “CGM: sensorFailed” or “CGM: questionMarks”).
-  - Each persistent problem is noted once and stays quiet until a reliable reading or a new sensor session clears it.
-  - A new Upload CGM Sensor States switch appears in Nightscout upload settings and onboarding; it defaults off and also需要s.
-  - Failed note uploads are retried automatically on the next CGM reading.
-  - [View source](https://github.com/nightscout/Trio/pull/1420)
-- **Store calibrations as manual fingerstick readings**
-  - Calibration readings from sensors are now stored as manual fingerstick glucose entries.
-  - These entries are flagged as manual so the app treats them as user-entered readings.
-  - Sensor calibrations are saved separately and are not used as CGM sgv values for processing.
-  - If a CGM value is absent, Nightscout uses the manual calibration value for the reading.
-  - [View source](https://github.com/nightscout/Trio/pull/1472)
-- **Show AccuChek & Eversense sensor times**
-  - AccuChek sensors now expose start time, serial, warmup end, and expiration time to the app.
-  - Eversense sensors now expose expiration time to the app.
-  - Home screen sensor timers and remaining-time displays use the CGM-reported values for more accurate status.
-  - AccuChek and Eversense data are now included in CGM data gathering so their sensor state is shown in Trio.
-  - [View source](https://github.com/nightscout/Trio/pull/1592)
-- **Eversense CGM data upload and stability updates**
-  - Trio now uploads more diagnostic data to Eversense DMS, including app info, battery history, and glucose-related logs.
-  - Data uploads are more reliable when the app runs in the background.
-  - The app is less likely to crash during state changes.
-  - Bluetooth peripheral handling was cleaned up to help improve connection stability.
-  - [View source](https://github.com/nightscout/Trio/pull/1593)
-- **Avoid crashes when rendering Override presets**
-  - Opening the Override Presets list no longer crashes if a preset's identifier is missing or duplicated.
-  - Corrupted or invalid duration and percentage values no longer crash the screen; those labels are quietly omitted.
-  - Presets with valid data render exactly the same as before.
-  - [View source](https://github.com/nightscout/Trio/pull/1571)
-
-## New Features
-
 - **Automatic frontier model selection**
-  - Trio can show “frontier” model options that automatically resolve to the current compatible model from a weekly OpenRou.
-  - The model picker UI now lists frontier choices and shows the resolved model name and ID from the cached catalog.
-  - Existing AI model settings are migrated safely to the new frontier-aware defaults once and include a migration version.
-  - Food analysis and other AI calls use the resolved frontier default model automatically by refreshing the catalog when必要.
+  - Frontier choices in AI settings now resolve to the current model from a weekly catalog refresh.
+  - Legacy AI settings are migrated automatically to the new frontier model choices.
+  - The model picker shows new "Latest ..." frontier options that display the resolved model name and update info.
+  - Food analysis now uses the resolved frontier model automatically when performing immediate analysis.
   - [View source](https://github.com/gordolio/Trio/commit/943bd282e3e78b087c3d4362cda37ba1e801a50f)
-
-## Interface Improvements
-
-- **Fix keyboard auto-scrolling in Treatments**
-  - Focused input fields in the Treatments screen now scroll into view above the keyboard.
-  - The treatments list no longer stays hidden behind the keyboard on affected devices.
-  - Unrelated keyboard appearances no longer trigger unexpected scrolling in the Treatments view.
-  - A rare hang when tapping a field for the first time while debugging has been reduced.
-  - [View source](https://github.com/nightscout/Trio/pull/1434)
 
 ## Internal and Build-System Changes
 
@@ -65,7 +23,7 @@ Built 2026-10-06T17:42:43.000Z from `e1dc327..943bd28`.
 ## Build Metadata
 
 - Source workflow: [37503160396](https://github.com/gordolio/Trio/actions/runs/37503160396)
-- Previous built commit: [`e1dc3274e0a3525ffa17effb72c62ccc2925c16f`](https://github.com/gordolio/Trio/commit/e1dc3274e0a3525ffa17effb72c62ccc2925c16f)
+- Previous built commit: [`d127bb42c3dc9aae25450f067dac18704a9d51f5`](https://github.com/gordolio/Trio/commit/d127bb42c3dc9aae25450f067dac18704a9d51f5)
 - Current built commit: [`943bd282e3e78b087c3d4362cda37ba1e801a50f`](https://github.com/gordolio/Trio/commit/943bd282e3e78b087c3d4362cda37ba1e801a50f)
 - Provenance model: `openai/gpt-5-mini`
 - Generator: `0.3.1`, prompt `6`
