@@ -1,0 +1,26 @@
+{
+  "inputHash": "e717adb486a82d2420b24aa75d40330b3fbe0091ae04ca7bafc1e96ff53b938a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1609",
+    "title": "Libre 3/3+ pairing and LibreLoop update",
+    "changes": [
+      "Libre 3/3+ support now uses RoundWhiteDiscKit and an updated LibreLoop branch.",
+      "Pairing now uses and verifies a host-supplied app credential for Libre 3/3+ sensors.",
+      "Pairing selects the sensor by the BLE address from the NFC scan to avoid choosing nearby sensors.",
+      "Settings → Debug Info shows the sensor security version, region, and the app credential used to pair.",
+      "The minute-by-minute forwarding toggle is hidden so forwarding stays at Trio's 5-minute cadence, and the settings title."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1609",
+      "commit:c313d5e56a1a",
+      "diff:736c409a92f0"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

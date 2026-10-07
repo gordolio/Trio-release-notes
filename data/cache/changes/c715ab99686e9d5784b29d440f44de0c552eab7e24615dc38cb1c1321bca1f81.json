@@ -1,0 +1,25 @@
+{
+  "inputHash": "84da1bfa2bd9b8e117d69786335b8ba27c5df6a7f1e350cf6f8a1bc8a123411c",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:553a09f32ea621821f49d013211ee5b3ed677c5a",
+    "title": "AI model pickers match Settings styling",
+    "changes": [
+      "Model selection screens use the app's Settings background color.",
+      "Model names and model IDs follow standard Settings text styling.",
+      "Selected models show an accent-colored checkmark.",
+      "Model lists behave like Settings rows with plain buttons and consistent row backgrounds, and screen titles display in a.",
+      "inline."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:553a09f32ea6",
+      "diff:c715ab99686e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "inputHash": "f2b9622ce1652d7853283fcb009a3d01a7a4e611953dc8ce11871b08232f07ac",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1612",
+    "title": "Update build scripts and submodules",
+    "changes": [
+      "No immediate user-facing changes in the Trio app.",
+      "Build scripts were changed to remove LibreCRKit and to use OmnipodKit's dev branch by default.",
+      "Multiple submodules for sensors, pumps, and algorithms were updated to match Loop v3.14.9.",
+      "LibreLoop was reverted to match its dev branch after an accidental change."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1612",
+      "commit:27ebaf5e2606"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

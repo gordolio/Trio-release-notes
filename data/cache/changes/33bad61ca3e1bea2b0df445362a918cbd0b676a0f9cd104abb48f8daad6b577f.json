@@ -1,0 +1,23 @@
+{
+  "inputHash": "f2302d56a35e9718b0142a5a24e613a3bc240d52753ba46d25bdd215c48228f3",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:2bf30a7779418040c8f5b24b7b0776f2ad1e08c4",
+    "title": "Experimental image decision routing for food analysis",
+    "changes": [
+      "A new experimental Image Classifier option appears under Settings > AI and is disabled by default.",
+      "When enabled, photos are first sent to a decision model that routes them to a label extractor or your configured food分析.",
+      "Label model outputs are validated (single item, high confidence, finite nutrient values) and the app falls back to the."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:2bf30a777941",
+      "diff:33bad61ca3e1"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

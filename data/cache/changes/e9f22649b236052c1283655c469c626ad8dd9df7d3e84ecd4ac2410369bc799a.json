@@ -1,0 +1,25 @@
+{
+  "inputHash": "134dc480b66830db3aa4e11f2a6aced369f4549bdad04c41078d1f0436331f2a",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1614",
+    "title": "Add localization and Treatments UI tweaks",
+    "changes": [
+      "New explanatory text was added describing upload of CGM sensor states and notes to Nightscout.",
+      "New text clarifies that uploading requires Allow Uploading to Nightscout and notes Dexcom G6 and G7 support.",
+      "The Fat-and-Protein order-change banner now has an orange background, a dismiss button, and a fade transition.",
+      "The banner's dismiss button now includes an accessibility label for screen readers.",
+      "The Time and Notes rows in the Treatments screen were adjusted to improve layout and divider rendering."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1614",
+      "diff:e9f22649b236"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
