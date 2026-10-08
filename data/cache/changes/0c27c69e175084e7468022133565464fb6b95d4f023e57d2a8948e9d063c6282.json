@@ -1,0 +1,23 @@
+{
+  "inputHash": "0248550a536d2f3378da1b17cb9cd809d8aadebb88ef0357250ec45bcb7dbe0b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1619",
+    "title": "Patch release v1.0.2 synced to development",
+    "changes": [
+      "The project version was bumped to v1.0.2.",
+      "The patch-release merge commit was synced back into the development branch.",
+      "Release notes for v1.0.2 were added."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1619",
+      "commit:6af4e8775865"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputHash": "d6848aa8d3b3643e1d6d74ea6fcb530cfd82a87e9215b622beadaec41f830323",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1613",
+    "title": "Patch release: Libre 3 driver and multiple fixes",
+    "changes": [
+      "If you use a FreeStyle Libre 3 or 3+, you must re‑pair your current sensor after updating because pairing cannot be迁fer.",
+      "Trio's not‑looping alerts now remind you at 20, 40, 60, 80 and 100 minutes and sound a critical alarm at 120 minutes.",
+      "New default alarm sounds are applied to fresh installs, while existing users keep their current alarm settings.",
+      "The basal rate on the Home chart is corrected and now shows when delivery is suspended.",
+      "Various pump and sensor fixes improve pairing, stop crashes, show sensor warm‑up and expiry, and save calibrations as a."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1613",
+      "diff:c4f642ff9ad1"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
