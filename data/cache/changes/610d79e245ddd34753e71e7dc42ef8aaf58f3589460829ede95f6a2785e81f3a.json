@@ -1,0 +1,25 @@
+{
+  "inputHash": "6a3447acea6a77e76ff72c4d3a8be3ec676a425c1734218a844fd5bf2838352e",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:5fe4153a94cb25303bba7a11a0aaf6b7ba16424b",
+    "title": "Fast mode and model reasoning settings",
+    "changes": [
+      "A new \"Use Fast mode\" toggle prefers faster AI responses when available.",
+      "Fast mode may cost more and will fall back to standard processing if fast capacity is unavailable.",
+      "Each configured food-analysis model now includes a \"Reasoning effort\" picker to set analysis depth.",
+      "Higher reasoning effort can increase response time and cost.",
+      "Saved effort choices stay with each model, update from the catalog, and revert to the model default if unsupported."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:5fe4153a94cb",
+      "diff:610d79e245dd"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

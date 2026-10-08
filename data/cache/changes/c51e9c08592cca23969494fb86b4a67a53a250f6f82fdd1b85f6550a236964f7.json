@@ -1,0 +1,21 @@
+{
+  "inputHash": "2c827aa6fb99f852d18457ccd5db16df00c5ecfced95aa781fefa11233a8e0cb",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#14",
+    "title": "Safer image analysis and label timeouts",
+    "changes": [
+      "Image label results are validated and out-of-range or non-finite nutrients or serving counts now fall back to general分析."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:gordolio/Trio#14",
+      "diff:c51e9c08592c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
