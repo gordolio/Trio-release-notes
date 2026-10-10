@@ -1,0 +1,24 @@
+{
+  "inputHash": "3deda6792adaa723c3829046c65e06af9a7c66508438eccef25c639a44f99409",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#15",
+    "title": "Documentation for image routing and deadlines",
+    "changes": [
+      "No user-visible behavior changed.",
+      "Developer documentation now explains image routing, timeouts, streaming, and label validation.",
+      "Tests and test fixtures received clarifying comments and helpers for routing and deadline scenarios.",
+      "API key docs now describe an injected provider and the Info.plist fallback."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:gordolio/Trio#15",
+      "diff:f6d3e8d96304"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

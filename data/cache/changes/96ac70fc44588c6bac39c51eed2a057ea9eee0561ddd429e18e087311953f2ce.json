@@ -1,0 +1,25 @@
+{
+  "inputHash": "d120d7e4fa494c24f374ba5877d9f598b3b3692d82447eb6656d777f5c4a2093",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:5af6829adb171a1b0167acf893493e6845df4a96",
+    "title": "Nightscout glucose backfill and feedback",
+    "changes": [
+      "A Backfill Glucose action checks Nightscout for missing readings from the last 24 hours.",
+      "A backfill button appears in the Home meal panel when gaps are detected and shows progress while running.",
+      "Backfill results and errors appear as a dismissible toast and are announced for accessibility.",
+      "Backfilled readings skip duplicates and deleted records, and newly added readings are uploaded to HealthKit.",
+      "Nightscout settings include a Backfill button and a shared feedback overlay across Home and settings screens."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:5af6829adb17",
+      "diff:96ac70fc4458"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

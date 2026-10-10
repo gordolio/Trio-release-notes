@@ -1,0 +1,21 @@
+{
+  "inputHash": "e50b48f66da1740eb35fe2b8b047dd09ad57ce23653b49ed6b160d541fa42a43",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:cb1c5b0f02f8a0650ddf53a568f046bbdb5f413e",
+    "title": "Merge: Nightscout backfill feedback",
+    "changes": [
+      "Merges updates from the codex/nightscout-backfill-feedback branch into development.",
+      "The commit message contains no further user-visible details, so specific effects are not specified."
+    ],
+    "category": "origin-only-customizations",
+    "sourceIds": [
+      "commit:cb1c5b0f02f8"
+    ],
+    "confidence": "low",
+    "humanReviewRequired": true
+  }
+}
