@@ -1,0 +1,23 @@
+{
+  "inputHash": "92b460bdb2eea6711c4b4a8eec6660c546e452c506b829be05fe15719f681231",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1624",
+    "title": "Immediate update of glucose app badge",
+    "changes": [
+      "Turning off Show Glucose App Badge removes the number from the app icon immediately.",
+      "Changing glucose units refreshes the app badge right away.",
+      "You no longer need to wait for the next reading or restart the app to update the badge."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1624",
+      "commit:10add1a8d628"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

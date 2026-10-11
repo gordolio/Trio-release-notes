@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build cb1c5b0</title>
+  <title>Trio Build d5db93a</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,14 +16,14 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build cb1c5b0</h1>
-    <p>Built 2026-10-10T04:45:26.000Z from <code>f445541..cb1c5b0</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Nightscout glucose backfill and feedback</h3><ul><li>A Backfill Glucose action checks Nightscout for missing readings from the last 24 hours.</li><li>A backfill button appears in the Home meal panel when gaps are detected and shows progress while running.</li><li>Backfill results and errors appear as a dismissible toast and are announced for accessibility.</li><li>Backfilled readings skip duplicates and deleted records, and newly added readings are uploaded to HealthKit.</li><li>Nightscout settings include a Backfill button and a shared feedback overlay across Home and settings screens.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/5af6829adb171a1b0167acf893493e6845df4a96" rel="noreferrer">View source on GitHub</a></p></article></section>
-<section><h2>Origin-Only Customizations</h2><article><h3>Merge: Nightscout backfill feedback</h3><ul><li>Merges updates from the codex/nightscout-backfill-feedback branch into development.</li><li>The commit message contains no further user-visible details, so specific effects are not specified.</li></ul><p><strong>Human review recommended.</strong></p><p class="sources"><a href="https://github.com/gordolio/Trio/commit/cb1c5b0f02f8a0650ddf53a568f046bbdb5f413e" rel="noreferrer">View source on GitHub</a></p></article></section>
-<section><h2>Internal and Build-System Changes</h2><article><h3>Documentation for image routing and deadlines</h3><ul><li>No user-visible behavior changed.</li><li>Developer documentation now explains image routing, timeouts, streaming, and label validation.</li><li>Tests and test fixtures received clarifying comments and helpers for routing and deadline scenarios.</li><li>API key docs now describe an injected provider and the Info.plist fallback.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/pull/15" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build d5db93a</h1>
+    <p>Built 2026-10-11T13:32:43.000Z from <code>cb1c5b0..d5db93a</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Stop repeated forecast and Carbs Required alerts</h3><ul><li>Forecast (Low Glucose Soon) and Carbs Required alarms no longer re-trigger on every loop when a CGM app owns glucose‑by.</li><li>Only alarms driven by the current CGM reading are handed off to the CGM app when that option is enabled.</li><li>Forecast and Carbs Required alerts now remain active until they recover or are snoozed, instead of being cleared and re.</li><li>Alert behavior around CGM-owned readings is now more consistent and avoids duplicate notifications.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1573" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Prevent freeze when editing carb entries</h3><ul><li>Editing a carb entry no longer sometimes hangs the app when switching back to the chart.</li><li>Saved carb edits no longer risk deleting the entry if an internal recalculation fails.</li><li>Chart updates are more stable because redundant internal updates are skipped.</li><li>Chart performance is improved when many basal segments are shown, reducing slowdowns.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1595" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Immediate update of glucose app badge</h3><ul><li>Turning off Show Glucose App Badge removes the number from the app icon immediately.</li><li>Changing glucose units refreshes the app badge right away.</li><li>You no longer need to wait for the next reading or restart the app to update the badge.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1624" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/38024070146">Source workflow 38024070146</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/38142385389">Source workflow 38142385389</a></p>
   </footer>
 </body>
 </html>

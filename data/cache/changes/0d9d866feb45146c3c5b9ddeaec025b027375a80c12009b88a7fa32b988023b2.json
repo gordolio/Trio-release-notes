@@ -1,0 +1,24 @@
+{
+  "inputHash": "a9e760315e248d1672e5b1c146d1ab15e25db8422fae297c899e1539d8751700",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1573",
+    "title": "Stop repeated forecast and Carbs Required alerts",
+    "changes": [
+      "Forecast (Low Glucose Soon) and Carbs Required alarms no longer re-trigger on every loop when a CGM app owns glucose‑by.",
+      "Only alarms driven by the current CGM reading are handed off to the CGM app when that option is enabled.",
+      "Forecast and Carbs Required alerts now remain active until they recover or are snoozed, instead of being cleared and re.",
+      "Alert behavior around CGM-owned readings is now more consistent and avoids duplicate notifications."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1573",
+      "commit:042188e0e8ac"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

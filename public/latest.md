@@ -1,38 +1,31 @@
-# Trio Build cb1c5b0
+# Trio Build d5db93a
 
-Built 2026-10-10T04:45:26.000Z from `f445541..cb1c5b0`.
+Built 2026-10-11T13:32:43.000Z from `cb1c5b0..d5db93a`.
 
 ## Highlights
 
-- **Nightscout glucose backfill and feedback**
-  - A Backfill Glucose action checks Nightscout for missing readings from the last 24 hours.
-  - A backfill button appears in the Home meal panel when gaps are detected and shows progress while running.
-  - Backfill results and errors appear as a dismissible toast and are announced for accessibility.
-  - Backfilled readings skip duplicates and deleted records, and newly added readings are uploaded to HealthKit.
-  - Nightscout settings include a Backfill button and a shared feedback overlay across Home and settings screens.
-  - [View source](https://github.com/gordolio/Trio/commit/5af6829adb171a1b0167acf893493e6845df4a96)
-
-## Origin-Only Customizations
-
-- **Merge: Nightscout backfill feedback**
-  - Merges updates from the codex/nightscout-backfill-feedback branch into development.
-  - The commit message contains no further user-visible details, so specific effects are not specified.
-  - Human review recommended.
-  - [View source](https://github.com/gordolio/Trio/commit/cb1c5b0f02f8a0650ddf53a568f046bbdb5f413e)
-
-## Internal and Build-System Changes
-
-- **Documentation for image routing and deadlines**
-  - No user-visible behavior changed.
-  - Developer documentation now explains image routing, timeouts, streaming, and label validation.
-  - Tests and test fixtures received clarifying comments and helpers for routing and deadline scenarios.
-  - API key docs now describe an injected provider and the Info.plist fallback.
-  - [View source](https://github.com/gordolio/Trio/pull/15)
+- **Stop repeated forecast and Carbs Required alerts**
+  - Forecast (Low Glucose Soon) and Carbs Required alarms no longer re-trigger on every loop when a CGM app owns glucose‑by.
+  - Only alarms driven by the current CGM reading are handed off to the CGM app when that option is enabled.
+  - Forecast and Carbs Required alerts now remain active until they recover or are snoozed, instead of being cleared and re.
+  - Alert behavior around CGM-owned readings is now more consistent and avoids duplicate notifications.
+  - [View source](https://github.com/nightscout/Trio/pull/1573)
+- **Prevent freeze when editing carb entries**
+  - Editing a carb entry no longer sometimes hangs the app when switching back to the chart.
+  - Saved carb edits no longer risk deleting the entry if an internal recalculation fails.
+  - Chart updates are more stable because redundant internal updates are skipped.
+  - Chart performance is improved when many basal segments are shown, reducing slowdowns.
+  - [View source](https://github.com/nightscout/Trio/pull/1595)
+- **Immediate update of glucose app badge**
+  - Turning off Show Glucose App Badge removes the number from the app icon immediately.
+  - Changing glucose units refreshes the app badge right away.
+  - You no longer need to wait for the next reading or restart the app to update the badge.
+  - [View source](https://github.com/nightscout/Trio/pull/1624)
 
 ## Build Metadata
 
-- Source workflow: [38024070146](https://github.com/gordolio/Trio/actions/runs/38024070146)
-- Previous built commit: [`f4455410bf0f7785b0a8ab410d5782d977317f24`](https://github.com/gordolio/Trio/commit/f4455410bf0f7785b0a8ab410d5782d977317f24)
-- Current built commit: [`cb1c5b0f02f8a0650ddf53a568f046bbdb5f413e`](https://github.com/gordolio/Trio/commit/cb1c5b0f02f8a0650ddf53a568f046bbdb5f413e)
+- Source workflow: [38142385389](https://github.com/gordolio/Trio/actions/runs/38142385389)
+- Previous built commit: [`cb1c5b0f02f8a0650ddf53a568f046bbdb5f413e`](https://github.com/gordolio/Trio/commit/cb1c5b0f02f8a0650ddf53a568f046bbdb5f413e)
+- Current built commit: [`d5db93ac6154872d1dca220942a1e8cca6ad4892`](https://github.com/gordolio/Trio/commit/d5db93ac6154872d1dca220942a1e8cca6ad4892)
 - Provenance model: `openai/gpt-5-mini`
 - Generator: `0.3.1`, prompt `6`

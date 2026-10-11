@@ -1,0 +1,24 @@
+{
+  "inputHash": "c9fbc7e499881a64c3e0ac4912747ed98785c31980e8d5745f0882ef343597d5",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1595",
+    "title": "Prevent freeze when editing carb entries",
+    "changes": [
+      "Editing a carb entry no longer sometimes hangs the app when switching back to the chart.",
+      "Saved carb edits no longer risk deleting the entry if an internal recalculation fails.",
+      "Chart updates are more stable because redundant internal updates are skipped.",
+      "Chart performance is improved when many basal segments are shown, reducing slowdowns."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1595",
+      "commit:b4fa0f2b04d7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
