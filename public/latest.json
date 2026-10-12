@@ -1,52 +1,50 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 38284157675,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/38284157675",
+    "sourceWorkflowRunId": 38290171614,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/38290171614",
     "sourceBranch": "dev",
-    "previousBuiltSha": "d5db93ac6154872d1dca220942a1e8cca6ad4892",
-    "currentBuiltSha": "566c475a1a9044aed6d8159a4d5cf000debfd3a9",
-    "shortSha": "566c475",
-    "buildDate": "2026-10-12T17:48:15.000Z",
-    "generationDate": "2026-10-12T17:58:10.628Z",
+    "previousBuiltSha": "566c475a1a9044aed6d8159a4d5cf000debfd3a9",
+    "currentBuiltSha": "b9ad530e633e9de452b6016b1ae6ca0388807057",
+    "shortSha": "b9ad530",
+    "buildDate": "2026-10-12T18:43:57.000Z",
+    "generationDate": "2026-10-12T18:55:34.821Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "6",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "commit:566c475a1a9044aed6d8159a4d5cf000debfd3a9",
-      "title": "Interactive backfill result card on Home",
+      "changeId": "commit:b9ad530e633e9de452b6016b1ae6ca0388807057",
+      "title": "Backfill toast only shows on visible screen",
       "changes": [
-        "Backfill results now appear above the Home bottom panels with animated transitions.",
-        "A result card shows success or error details and stays until dismissed for errors or VoiceOver users.",
-        "Successful results auto-dismiss after a three-second countdown that resets when you touch the card.",
-        "Home refreshes the current glucose target immediately when new targets are fetched."
+        "Backfill result messages now only appear while their hosting screen is visible.",
+        "Opening Settings will no longer cause a backfill toast from Home to immediately disappear."
       ],
       "category": "interface-improvements",
       "sourceIds": [
-        "commit:566c475a1a90",
-        "diff:72b0a6d35041"
+        "commit:b9ad530e633e",
+        "diff:6155e7a1f7cc"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "commit:566c475a1a9044aed6d8159a4d5cf000debfd3a9"
+        "commit:b9ad530e633e9de452b6016b1ae6ca0388807057"
       ],
       "highlight": true,
       "provenance": "origin",
       "sources": [
         {
-          "id": "commit:566c475a1a90",
+          "id": "commit:b9ad530e633e",
           "type": "commit",
-          "title": "feat(home): Add interactive backfill feedback and refresh the current glucose target",
-          "url": "https://github.com/gordolio/Trio/commit/566c475a1a9044aed6d8159a4d5cf000debfd3a9"
+          "title": "fix(nightscout): Show backfill toast only while its host is on screen",
+          "url": "https://github.com/gordolio/Trio/commit/b9ad530e633e9de452b6016b1ae6ca0388807057"
         },
         {
-          "id": "diff:72b0a6d35041",
+          "id": "diff:6155e7a1f7cc",
           "type": "diff",
-          "title": "Diff for commit:566c475a1a9044aed6d8159a4d5cf000debfd3a9",
-          "url": "https://github.com/gordolio/Trio/compare/d5db93ac6154872d1dca220942a1e8cca6ad4892...566c475a1a9044aed6d8159a4d5cf000debfd3a9"
+          "title": "Diff for commit:b9ad530e633e9de452b6016b1ae6ca0388807057",
+          "url": "https://github.com/gordolio/Trio/compare/566c475a1a9044aed6d8159a4d5cf000debfd3a9...b9ad530e633e9de452b6016b1ae6ca0388807057"
         }
       ]
     }
@@ -102,32 +100,16 @@
   "includedPullRequests": [],
   "includedCommits": [
     {
-      "sha": "566c475a1a9044aed6d8159a4d5cf000debfd3a9",
-      "subject": "feat(home): Add interactive backfill feedback and refresh the current glucose target",
+      "sha": "b9ad530e633e9de452b6016b1ae6ca0388807057",
+      "subject": "fix(nightscout): Show backfill toast only while its host is on screen",
       "author": "Gordon Child",
-      "authoredAt": "2026-10-12T12:25:02-05:00"
+      "authoredAt": "2026-10-12T13:19:08-05:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Home/View/HomeRootView+BottomControls.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
-    },
-    {
-      "status": "M",
       "path": "Trio/Sources/Modules/NightscoutConfig/View/GlucoseBackfillViews.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutBackfill.swift"
     }
   ]
 }

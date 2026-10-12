@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 38290171614,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/38290171614",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "566c475a1a9044aed6d8159a4d5cf000debfd3a9",
+    "currentBuiltSha": "b9ad530e633e9de452b6016b1ae6ca0388807057",
+    "shortSha": "b9ad530",
+    "buildDate": "2026-10-12T18:43:57.000Z",
+    "generationDate": "2026-10-12T18:55:34.821Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:b9ad530e633e9de452b6016b1ae6ca0388807057",
+      "title": "Backfill toast only shows on visible screen",
+      "changes": [
+        "Backfill result messages now only appear while their hosting screen is visible.",
+        "Opening Settings will no longer cause a backfill toast from Home to immediately disappear."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:b9ad530e633e",
+        "diff:6155e7a1f7cc"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:b9ad530e633e9de452b6016b1ae6ca0388807057"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:b9ad530e633e",
+          "type": "commit",
+          "title": "fix(nightscout): Show backfill toast only while its host is on screen",
+          "url": "https://github.com/gordolio/Trio/commit/b9ad530e633e9de452b6016b1ae6ca0388807057"
+        },
+        {
+          "id": "diff:6155e7a1f7cc",
+          "type": "diff",
+          "title": "Diff for commit:b9ad530e633e9de452b6016b1ae6ca0388807057",
+          "url": "https://github.com/gordolio/Trio/compare/566c475a1a9044aed6d8159a4d5cf000debfd3a9...b9ad530e633e9de452b6016b1ae6ca0388807057"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "b9ad530e633e9de452b6016b1ae6ca0388807057",
+      "subject": "fix(nightscout): Show backfill toast only while its host is on screen",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-12T13:19:08-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/NightscoutConfig/View/GlucoseBackfillViews.swift"
+    }
+  ]
+}
