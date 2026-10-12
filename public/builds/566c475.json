@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 38284157675,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/38284157675",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "d5db93ac6154872d1dca220942a1e8cca6ad4892",
+    "currentBuiltSha": "566c475a1a9044aed6d8159a4d5cf000debfd3a9",
+    "shortSha": "566c475",
+    "buildDate": "2026-10-12T17:48:15.000Z",
+    "generationDate": "2026-10-12T17:58:10.628Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:566c475a1a9044aed6d8159a4d5cf000debfd3a9",
+      "title": "Interactive backfill result card on Home",
+      "changes": [
+        "Backfill results now appear above the Home bottom panels with animated transitions.",
+        "A result card shows success or error details and stays until dismissed for errors or VoiceOver users.",
+        "Successful results auto-dismiss after a three-second countdown that resets when you touch the card.",
+        "Home refreshes the current glucose target immediately when new targets are fetched."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:566c475a1a90",
+        "diff:72b0a6d35041"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:566c475a1a9044aed6d8159a4d5cf000debfd3a9"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:566c475a1a90",
+          "type": "commit",
+          "title": "feat(home): Add interactive backfill feedback and refresh the current glucose target",
+          "url": "https://github.com/gordolio/Trio/commit/566c475a1a9044aed6d8159a4d5cf000debfd3a9"
+        },
+        {
+          "id": "diff:72b0a6d35041",
+          "type": "diff",
+          "title": "Diff for commit:566c475a1a9044aed6d8159a4d5cf000debfd3a9",
+          "url": "https://github.com/gordolio/Trio/compare/d5db93ac6154872d1dca220942a1e8cca6ad4892...566c475a1a9044aed6d8159a4d5cf000debfd3a9"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "566c475a1a9044aed6d8159a4d5cf000debfd3a9",
+      "subject": "feat(home): Add interactive backfill feedback and refresh the current glucose target",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-12T12:25:02-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+BottomControls.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/NightscoutConfig/View/GlucoseBackfillViews.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutBackfill.swift"
+    }
+  ]
+}

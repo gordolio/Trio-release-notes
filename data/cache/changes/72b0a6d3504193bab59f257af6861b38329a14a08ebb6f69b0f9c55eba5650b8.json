@@ -1,0 +1,24 @@
+{
+  "inputHash": "c7bc66c7d0a5e0df2512b55dc7dc06336260d0e01fa1c28d47e99d0281709652",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:566c475a1a9044aed6d8159a4d5cf000debfd3a9",
+    "title": "Interactive backfill result card on Home",
+    "changes": [
+      "Backfill results now appear above the Home bottom panels with animated transitions.",
+      "A result card shows success or error details and stays until dismissed for errors or VoiceOver users.",
+      "Successful results auto-dismiss after a three-second countdown that resets when you touch the card.",
+      "Home refreshes the current glucose target immediately when new targets are fetched."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:566c475a1a90",
+      "diff:72b0a6d35041"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
