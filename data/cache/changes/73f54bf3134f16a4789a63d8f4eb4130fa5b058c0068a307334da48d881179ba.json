@@ -1,0 +1,25 @@
+{
+  "inputHash": "0cb8a4bc2903249cd9a1331f8a701aac99fa5c75ec77a821e81a052f43bc71c8",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1639",
+    "title": "Improved Pod connections and Libre CGM info",
+    "changes": [
+      "Trio can connect to InPlay pods in the background on iPhone 16 and 17e.",
+      "Trio gives up faster when a pod cannot be reached to avoid long hangs.",
+      "Trio stops sending pod state updates once pod deactivation starts.",
+      "Pod alert acknowledgments are saved earlier so they persist across sessions.",
+      "LibreLoop now records Libre 3 sensor events, tags backfilled readings, reports paired sensor model, and shows an in-app."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1639",
+      "diff:73f54bf3134f"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

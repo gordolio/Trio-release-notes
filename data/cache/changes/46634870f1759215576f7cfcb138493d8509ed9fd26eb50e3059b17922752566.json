@@ -1,0 +1,24 @@
+{
+  "inputHash": "28d37f4df350fb9c2a0651f9ccc64a5ab9cb0aad6512ec85bcd2d8544dacf02b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1579",
+    "title": "Remote meal edit and delete commands",
+    "changes": [
+      "Trio can accept remote delete_meal and edit_meal commands to remove or replace logged meals.",
+      "An edit operation deletes the old meal and recreates it, so the meal receives a new id.",
+      "Remote actions wait for Nightscout, Health and Tidepool updates and report Nightscout failures in the command ack.",
+      "Meals that include fat/protein but lack the shared fpuID are rejected for remote changes with a clear message."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1579",
+      "commit:14752a1bf40d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

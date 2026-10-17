@@ -1,0 +1,24 @@
+{
+  "inputHash": "9a108260c64ccea64039ec21fb127c4f1a12480ee0d2e3021a386738a6b4ead3",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1566",
+    "title": "Lock-screen widget redesign and font options",
+    "changes": [
+      "You can now add and reorder lock-screen widgets using drag-and-drop instead of tap-to-add/remove.",
+      "The Detailed lock-screen layout gains a new double-width glucose widget that occupies two configuration slots.",
+      "The Simple lock-screen widget exposes font face and font size options and shows a preview in its configuration screen.",
+      "Font choices for the Simple widget are included in the Live Activity state so changes apply to the lock-screen activity."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1566",
+      "diff:4c186ef458f1"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

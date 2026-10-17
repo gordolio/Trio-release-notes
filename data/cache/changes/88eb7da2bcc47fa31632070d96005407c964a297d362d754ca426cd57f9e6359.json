@@ -1,0 +1,23 @@
+{
+  "inputHash": "c6617a8aac0aaacb5d4f0800b1c5da455a286f290717246e51b1a4b5b9ad3c90",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:8d814494048a8827546678390891ad90ee7e61f3",
+    "title": "Glucose Bobble uses a black background",
+    "changes": [
+      "Glucose Bobble contact images now always use a black background.",
+      "This prevents the bobble's white text from being hidden on watchOS.",
+      "Other contact images continue to use the background you selected."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "commit:8d814494048a",
+      "diff:88eb7da2bcc4"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
