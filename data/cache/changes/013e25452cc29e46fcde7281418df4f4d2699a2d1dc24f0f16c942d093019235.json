@@ -1,0 +1,22 @@
+{
+  "inputHash": "24faffde71823984ddda9cd4ffc06d67a48393eeff4d6d1baeb7c26ff8fd78fe",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:070de40acf8497b93ac62f1ace3dd69c4fc05538",
+    "title": "Camera capture feedback and settings",
+    "changes": [
+      "When you take a food photo, the scan frame flashes, the preview freezes, and a haptic tap plays.",
+      "New temporary Camera Feedback options under Settings > AI let you toggle and tune these effects."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:070de40acf84",
+      "diff:013e25452cc2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

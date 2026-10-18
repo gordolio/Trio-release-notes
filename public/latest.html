@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build 377fac0</title>
+  <title>Trio Build 9ef30df</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,15 +16,13 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build 377fac0</h1>
-    <p>Built 2026-10-18T03:42:40.000Z from <code>cbfde60..377fac0</code>.</p>
-    <section><h2>Highlights</h2><article><h3>New Home Statistics Range setting</h3><ul><li>A new Home Statistics Range setting lets you pick Today, Last 24 Hours, Last 7 Days, Last Month, or Last 3 Months for.</li><li>The home stats panel updates its numbers and labels to reflect the chosen time span.</li><li>Tapping the home stats panel opens the full Statistics view on the same selected span.</li><li>Short spans (Today, Last 24 Hours) use the chart&#39;s in-memory data; longer spans fetch older readings in the background,.</li><li>Background refreshes for longer spans are throttled so updates occur at most once every 5 minutes.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1590" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Avoid startup overwrite of restored pump state</h3><ul><li>Trio now saves a restored pump&#39;s state on the pump&#39;s processing (background) queue during startup.</li><li>This prevents a timing issue where an older snapshot could overwrite a newer pump state at launch.</li><li>Legacy saved pump data is cleared only after the new pump state is written to storage.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1606" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Add Glycemia Risk Index to Stats</h3><ul><li>Adds a Glycemia Risk Index (GRI) option to the Stats screen.</li><li>Shows a GRI tile with a numeric score, risk zone, and an info button opening a detailed sheet.</li><li>Calculates GRI from glucose readings and shows component breakdown, weighted contributions, and a 0–100 capped score.</li><li>Includes a risk-grid chart and displays a placeholder when there is no glucose data.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1642" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Fix glucose colors in comma-decimal locales</h3><ul><li>Glucose colors on the lock screen, Dynamic Island, and contact image are now correct for mmol/L users in comma-decimal-.</li><li>+using locales.</li><li>Live Activity now shares the same color logic as the main app so colors match across app, lock screen, and Dynamic I‌s­.</li><li>The app uses the numeric glucose value in mg/dL instead of parsing formatted text to decide colors, preventing wrong 색.</li><li>The expired Live Activity &quot;--&quot; state is now shown as in-range for mmol users as it is for mg/dL users.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1644" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build 9ef30df</h1>
+    <p>Built 2026-10-18T15:20:26.000Z from <code>377fac0..9ef30df</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Direct pairing for Dexcom G7, ONE+ and Stelo</h3><ul><li>Trio can pair directly with Dexcom G7, ONE+ and Stelo sensors.</li><li>Trio will own lifecycle glucose alerts when a sensor is paired and can scan the applicator code.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1548" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Camera capture feedback and settings</h3><ul><li>When you take a food photo, the scan frame flashes, the preview freezes, and a haptic tap plays.</li><li>New temporary Camera Feedback options under Settings &gt; AI let you toggle and tune these effects.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/070de40acf8497b93ac62f1ace3dd69c4fc05538" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/39093810456">Source workflow 39093810456</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/39138603413">Source workflow 39138603413</a></p>
   </footer>
 </body>
 </html>

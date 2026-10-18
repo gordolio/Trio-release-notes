@@ -1,0 +1,22 @@
+{
+  "inputHash": "dbab04b94e2167491b38cd60ef5ffe2b9b27a7f9399a8d9165fad1009e0e7902",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1548",
+    "title": "Direct pairing for Dexcom G7, ONE+ and Stelo",
+    "changes": [
+      "Trio can pair directly with Dexcom G7, ONE+ and Stelo sensors.",
+      "Trio will own lifecycle glucose alerts when a sensor is paired and can scan the applicator code."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1548",
+      "diff:313a8ce6c1e4"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
