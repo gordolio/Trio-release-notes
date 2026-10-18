@@ -1,0 +1,24 @@
+{
+  "inputHash": "0e0ad8586efb293711ae1e55833299d2becdfa4a910bb35d942d17286b9e9e3b",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1642",
+    "title": "Add Glycemia Risk Index to Stats",
+    "changes": [
+      "Adds a Glycemia Risk Index (GRI) option to the Stats screen.",
+      "Shows a GRI tile with a numeric score, risk zone, and an info button opening a detailed sheet.",
+      "Calculates GRI from glucose readings and shows component breakdown, weighted contributions, and a 0–100 capped score.",
+      "Includes a risk-grid chart and displays a placeholder when there is no glucose data."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1642",
+      "diff:91685e8c32a6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

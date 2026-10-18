@@ -1,0 +1,529 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 39093810456,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39093810456",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "cbfde6099b3ef0b5bac97a2df7f141e10f0d6fa8",
+    "currentBuiltSha": "377fac0a2bef2c3e3bf1acb4162fa1e6b54772f9",
+    "shortSha": "377fac0",
+    "buildDate": "2026-10-18T03:42:40.000Z",
+    "generationDate": "2026-10-18T03:52:39.173Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "6",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1590",
+      "title": "New Home Statistics Range setting",
+      "changes": [
+        "A new Home Statistics Range setting lets you pick Today, Last 24 Hours, Last 7 Days, Last Month, or Last 3 Months for.",
+        "The home stats panel updates its numbers and labels to reflect the chosen time span.",
+        "Tapping the home stats panel opens the full Statistics view on the same selected span.",
+        "Short spans (Today, Last 24 Hours) use the chart's in-memory data; longer spans fetch older readings in the background,.",
+        "Background refreshes for longer spans are throttled so updates occur at most once every 5 minutes."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1590",
+        "diff:4dc802bfd234"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1590"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1590",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1590: Add a Statistics Range setting for the home stats panel",
+          "url": "https://github.com/nightscout/Trio/pull/1590"
+        },
+        {
+          "id": "diff:4dc802bfd234",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1590",
+          "url": "https://github.com/gordolio/Trio/compare/1802999cd55414fa65878292af1ba0d5b0bc5a95...d289bfda3e39171829ee0936b45fa6a179b8c5c8"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1606",
+      "title": "Avoid startup overwrite of restored pump state",
+      "changes": [
+        "Trio now saves a restored pump's state on the pump's processing (background) queue during startup.",
+        "This prevents a timing issue where an older snapshot could overwrite a newer pump state at launch.",
+        "Legacy saved pump data is cleared only after the new pump state is written to storage."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1606",
+        "commit:0f5a07bdba09"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1606"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1606",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1606: fix race condition: Persist the restored pump manager's state on processQueue",
+          "url": "https://github.com/nightscout/Trio/pull/1606"
+        },
+        {
+          "id": "commit:0f5a07bdba09",
+          "type": "commit",
+          "title": "Persist the restored pump manager's state on processQueue",
+          "url": "https://github.com/gordolio/Trio/commit/0f5a07bdba0900836fbcf8a26c470123bab24aa4"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1642",
+      "title": "Add Glycemia Risk Index to Stats",
+      "changes": [
+        "Adds a Glycemia Risk Index (GRI) option to the Stats screen.",
+        "Shows a GRI tile with a numeric score, risk zone, and an info button opening a detailed sheet.",
+        "Calculates GRI from glucose readings and shows component breakdown, weighted contributions, and a 0–100 capped score.",
+        "Includes a risk-grid chart and displays a placeholder when there is no glucose data."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1642",
+        "diff:91685e8c32a6"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1642"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1642",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1642: Add Glycemia Risk Index feature with calculations and UI components",
+          "url": "https://github.com/nightscout/Trio/pull/1642"
+        },
+        {
+          "id": "diff:91685e8c32a6",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1642",
+          "url": "https://github.com/gordolio/Trio/compare/1bacd86fb19dc325dff044b8cfe52fb7da6c8b98...ef5adde0a5214a0a7da55a68ffee6cdfd0396098"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1644",
+      "title": "Fix glucose colors in comma-decimal locales",
+      "changes": [
+        "Glucose colors on the lock screen, Dynamic Island, and contact image are now correct for mmol/L users in comma-decimal-.",
+        "+using locales.",
+        "Live Activity now shares the same color logic as the main app so colors match across app, lock screen, and Dynamic I‌s­.",
+        "The app uses the numeric glucose value in mg/dL instead of parsing formatted text to decide colors, preventing wrong 색.",
+        "The expired Live Activity \"--\" state is now shown as in-range for mmol users as it is for mg/dL users."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1644",
+        "commit:c52c66e5f188"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1644"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1644",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1644: Fix glucose color for mmol/L in comma-decimal locales",
+          "url": "https://github.com/nightscout/Trio/pull/1644"
+        },
+        {
+          "id": "commit:c52c66e5f188",
+          "type": "commit",
+          "title": "Fix glucose color for mmol/L in comma-decimal locales",
+          "url": "https://github.com/gordolio/Trio/commit/c52c66e5f188a493e8804fbf5d9030957bad0430"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1590,
+      "title": "Add a Statistics Range setting for the home stats panel",
+      "body": "Add a new setting, Features > User Interface > Statistics Range, to control whether the home stats panel shows data for today (current default), the last 24 hours, the last 7 days, the last month or the last 3 months.\r\n\r\n- The Time in Range, Distribution Bar and Averages faces compute over the chosen span, and their wording follows it (\"Time in Range last 7 days\", \"Average of the Last 7 Days\"). The Averages option drops \"Today's\".\r\n- Today and the last 24 hours still come from the chart's in-memory 72 h of glucose. Longer spans fetch readings on a background context; a new refresh cancels the previous one, and refreshes driven by new readings are throttled to one every 5 minutes.\r\n- Start dates use the same calendar arithmetic as the Statistics screen's glucose fetches, and the Statistics screen now opens on the same span, so tapping the panel shows matching numbers.\r\n\r\n<img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0c5f263d-8a5a-4b9c-a56a-80a190f1c6cb\" /> <img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/53186cc1-fe44-4c18-9427-d4824f44d6cc\" /> <img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/2ef74f9a-c4ef-434d-8937-2b44c94cbd9c\" />\r\n\r\n\r\n<img width=\"1000\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c4752029-3d67-45c8-bd0a-fc6d41020aca\" />\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1590",
+      "mergedAt": "2026-10-18T00:23:44Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1590,
+      "title": "Add a Statistics Range setting for the home stats panel",
+      "body": "Add a new setting, Features > User Interface > Statistics Range, to control whether the home stats panel shows data for today (current default), the last 24 hours, the last 7 days, the last month or the last 3 months.\r\n\r\n- The Time in Range, Distribution Bar and Averages faces compute over the chosen span, and their wording follows it (\"Time in Range last 7 days\", \"Average of the Last 7 Days\"). The Averages option drops \"Today's\".\r\n- Today and the last 24 hours still come from the chart's in-memory 72 h of glucose. Longer spans fetch readings on a background context; a new refresh cancels the previous one, and refreshes driven by new readings are throttled to one every 5 minutes.\r\n- Start dates use the same calendar arithmetic as the Statistics screen's glucose fetches, and the Statistics screen now opens on the same span, so tapping the panel shows matching numbers.\r\n\r\n<img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0c5f263d-8a5a-4b9c-a56a-80a190f1c6cb\" /> <img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/53186cc1-fe44-4c18-9427-d4824f44d6cc\" /> <img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/2ef74f9a-c4ef-434d-8937-2b44c94cbd9c\" />\r\n\r\n\r\n<img width=\"1000\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c4752029-3d67-45c8-bd0a-fc6d41020aca\" />\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1590",
+      "mergedAt": "2026-10-18T00:23:44Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1606,
+      "title": "fix race condition: Persist the restored pump manager's state on processQueue",
+      "body": "Fix observed race condition when stress-testing the TandemKit driver in Trio.\r\n\r\nThe pumpManager didSet attached the delegate and its queue, then wrote rawPumpManager from the calling thread. A pump manager that replays its state once the delegate queue is set (TandemKit does) runs pumpManagerDidUpdateState on processQueue at the same moment, which also writes rawPumpManager. ThreadSanitizer reports the race at launch, and the main thread's older snapshot could overwrite the newer one on disk.\r\n\r\n\r\n```\r\nThread_12357616   DispatchQueue_1: com.apple.main-thread  (serial)\r\n    + 2087 completeTaskWithClosure(swift::AsyncContext*, swift::SwiftError*)  (in libswift_Concurrency.dylib) + 1  [0x256483d85]\r\n    +   2087 partial apply for thunk for @escaping @isolated(any) @callee_guaranteed @async () -> (@out A)  (in Trio.debug.dylib) + 1  [0x10eacec95]  /<compiler-generated>:0\r\n    +     2087 thunk for @escaping @isolated(any) @callee_guaranteed @async () -> (@out A)  (in Trio.debug.dylib) + 1  [0x10eacea71]  /<compiler-generated>:0\r\n    +       2087 partial apply for closure #1 in closure #1 in TrioApp.deferredInitialization()  (in Trio.debug.dylib) + 1  [0x10f145e29]  /<compiler-generated>:0\r\n    +         2087 closure #1 in closure #1 in TrioApp.deferredInitialization()  (in Trio.debug.dylib) + 100  [0x10f113308]  TrioApp.swift:198\r\n    +           2087 TrioApp.loadServices()  (in Trio.debug.dylib) + 520  [0x10f109cd8]  TrioApp.swift:70\r\n    +             2087 protocol witness for Resolver.resolve<A>(_:) in conformance LockedResolver  (in Trio.debug.dylib) + 56  [0x10f6c24c4]  /<compiler-generated>:0\r\n    +               2087 LockedResolver.resolve<A>(_:)  (in Trio.debug.dylib) + 408  [0x10f6c20fc]  LockedResolver.swift:262\r\n    +                 2087 protocol witness for Resolver.resolve<A>(_:) in conformance Container  (in Trio.debug.dylib) + 72  [0x110b149e0]  /<compiler-generated>:0\r\n    +                   2087 Container.resolve<A>(_:)  (in Trio.debug.dylib) + 156  [0x110b1415c]  Container.swift:378\r\n    +                     2087 Container.resolve<A>(_:name:)  (in Trio.debug.dylib) + 276  [0x110b14294]  Container.swift:390\r\n    +                       2087 Container._resolve<A, B>(name:option:invoker:)  (in Trio.debug.dylib) + 400  [0x110b10470]  Container.swift:276\r\n    +                         2087 Container.syncIfEnabled<A>(_:)  (in Trio.debug.dylib) + 384  [0x110b0c534]  Container.swift:445\r\n    +                           2087 partial apply for closure #1 in Container._resolve<A, B>(name:option:invoker:)  (in Trio.debug.dylib) + 104  [0x110b13904]  /<compiler-generated>:0\r\n    +                             2087 closure #1 in Container._resolve<A, B>(name:option:invoker:)  (in Trio.debug.dylib) + 1432  [0x110b10a74]  Container.swift:285\r\n    +                               2087 Container.resolve<A, B>(entry:invoker:)  (in Trio.debug.dylib) + 1476  [0x110b116bc]  Container.swift:416\r\n    +                                 2087 partial apply for thunk for @escaping @callee_guaranteed (@guaranteed @escaping @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 72  [0x110b17854]  /<compiler-generated>:0\r\n    +                                   2087 thunk for @escaping @callee_guaranteed (@guaranteed @escaping @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 112  [0x110b110c8]  /<compiler-generated>:0\r\n    +                                     2087 partial apply for thunk for @escaping @callee_guaranteed (@guaranteed @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 80  [0x110b17790]  /<compiler-generated>:0\r\n    +                                       2087 thunk for @escaping @callee_guaranteed (@guaranteed @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 80  [0x110b11028]  /<compiler-generated>:0\r\n    +                                         2087 partial apply for closure #1 in Container.resolve<A>(_:name:)  (in Trio.debug.dylib) + 64  [0x110b16a3c]  /<compiler-generated>:0\r\n    +                                           2087 closure #1 in Container.resolve<A>(_:name:)  (in Trio.debug.dylib) + 212  [0x110b1439c]  Container.swift:390\r\n    +                                             2087 partial apply for thunk for @escaping @callee_guaranteed (@in_guaranteed Resolver) -> (@out A)  (in Trio.debug.dylib) + 64  [0x110b0e9a0]  /<compiler-generated>:0\r\n    +                                               2087 thunk for @escaping @callee_guaranteed (@in_guaranteed Resolver) -> (@out A)  (in Trio.debug.dylib) + 132  [0x110b0dc18]  /<compiler-generated>:0\r\n    +                                                 2087 closure #1 in APSAssembly.assemble(container:)  (in Trio.debug.dylib) + 136  [0x10f5282c8]  APSAssembly.swift:6\r\n    +                                                   2087 BaseDeviceDataManager.__allocating_init(resolver:)  (in Trio.debug.dylib) + 100  [0x10fc24cb8]  DeviceDataManager.swift:0\r\n    +                                                     2087 BaseDeviceDataManager.init(resolver:)  (in Trio.debug.dylib) + 5276  [0x10fc26184]  DeviceDataManager.swift:219\r\n    +                                                       2087 BaseDeviceDataManager.setupPumpManager()  (in Trio.debug.dylib) + 500  [0x10fc2670c]  DeviceDataManager.swift:236\r\n    +                                                         2087 BaseDeviceDataManager.pumpManager.setter  (in Trio.debug.dylib) + 376  [0x10fc19e28]  DeviceDataManager.swift:0\r\n    +                                                           2087 BaseDeviceDataManager.pumpManager.didset  (in Trio.debug.dylib) + 4016  [0x10fc1ae0c]  DeviceDataManager.swift:90\r\n    +                                                             2087 BaseDeviceDataManager.rawPumpManager.setter  (in Trio.debug.dylib) + 196  [0x10fc1d3c0]  DeviceDataManager.swift:0\r\n    +                                                               2087 __tsan::ExternalAccess(void*, unsigned long, unsigned long, void*, unsigned long)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 476  [0x1012a8bc8]\r\n    +                                                                 2087 __tsan::ReportRace(__tsan::ThreadState*, __tsan::RawShadow*, __tsan::Shadow, __tsan::Shadow, unsigned long)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 2160  [0x1012f1ce0]\r\n    +                                                                   2087 __tsan::ScopedReportBase::AddMemoryAccess(unsigned long, unsigned long, __tsan::Shadow, unsigned int, __sanitizer::StackTrace, __tsan::MutexSet const*)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 200  [0x1012efba8]\r\n    +                                                                     2087 __tsan::SymbolizeStack(__sanitizer::StackTrace)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 84  [0x1012ef5f4]\r\n    +                                                                       2087 __sanitizer::Symbolizer::SymbolizePC(unsigned long)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 332  [0x10129d244]\r\n    +                                                                         2087 __sanitizer::DlAddrSymbolizer::SymbolizePC(unsigned long, __sanitizer::SymbolizedStack*)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 52  [0x10129f2f4]\r\n    +                                                                           2087 dyld4::APIs::dladdr(void const*, dl_info*)  (in dyld_sim) + 184  [0x100fe70fc]\r\n    +                                                                             2087 dyld4::APIs::findImageMappedAt(void const*, dyld3::MachOLoaded const**, bool*, char const**, void const**, unsigned long long*, unsigned char*, dyld4::Loader const**)  (in dyld_sim) + 528  [0x100fe6b54]\r\n    +                                                                               2087 dyld4::RuntimeLocks::withLoadersReadLock(void () block_pointer)  (in dyld_sim) + 48  [0x100fcf460]\r\n    +                                                                                 2087 wrap_os_unfair_recursive_lock_lock_with_options  (in libclang_rt.tsan_iossim_dynamic.dylib) + 192  [0x1012f9078]\r\n    +                                                                                   2087 _os_unfair_lock_lock_slow  (in libsystem_platform.dylib) + 168  [0x100d85258]\r\n    +                                                                                     2087 __ulock_wait2  (in libsystem_kernel.dylib) + 8  [0x105bf1b04]\r\n```\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1606",
+      "mergedAt": "2026-10-17T23:35:31Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1606,
+      "title": "fix race condition: Persist the restored pump manager's state on processQueue",
+      "body": "Fix observed race condition when stress-testing the TandemKit driver in Trio.\r\n\r\nThe pumpManager didSet attached the delegate and its queue, then wrote rawPumpManager from the calling thread. A pump manager that replays its state once the delegate queue is set (TandemKit does) runs pumpManagerDidUpdateState on processQueue at the same moment, which also writes rawPumpManager. ThreadSanitizer reports the race at launch, and the main thread's older snapshot could overwrite the newer one on disk.\r\n\r\n\r\n```\r\nThread_12357616   DispatchQueue_1: com.apple.main-thread  (serial)\r\n    + 2087 completeTaskWithClosure(swift::AsyncContext*, swift::SwiftError*)  (in libswift_Concurrency.dylib) + 1  [0x256483d85]\r\n    +   2087 partial apply for thunk for @escaping @isolated(any) @callee_guaranteed @async () -> (@out A)  (in Trio.debug.dylib) + 1  [0x10eacec95]  /<compiler-generated>:0\r\n    +     2087 thunk for @escaping @isolated(any) @callee_guaranteed @async () -> (@out A)  (in Trio.debug.dylib) + 1  [0x10eacea71]  /<compiler-generated>:0\r\n    +       2087 partial apply for closure #1 in closure #1 in TrioApp.deferredInitialization()  (in Trio.debug.dylib) + 1  [0x10f145e29]  /<compiler-generated>:0\r\n    +         2087 closure #1 in closure #1 in TrioApp.deferredInitialization()  (in Trio.debug.dylib) + 100  [0x10f113308]  TrioApp.swift:198\r\n    +           2087 TrioApp.loadServices()  (in Trio.debug.dylib) + 520  [0x10f109cd8]  TrioApp.swift:70\r\n    +             2087 protocol witness for Resolver.resolve<A>(_:) in conformance LockedResolver  (in Trio.debug.dylib) + 56  [0x10f6c24c4]  /<compiler-generated>:0\r\n    +               2087 LockedResolver.resolve<A>(_:)  (in Trio.debug.dylib) + 408  [0x10f6c20fc]  LockedResolver.swift:262\r\n    +                 2087 protocol witness for Resolver.resolve<A>(_:) in conformance Container  (in Trio.debug.dylib) + 72  [0x110b149e0]  /<compiler-generated>:0\r\n    +                   2087 Container.resolve<A>(_:)  (in Trio.debug.dylib) + 156  [0x110b1415c]  Container.swift:378\r\n    +                     2087 Container.resolve<A>(_:name:)  (in Trio.debug.dylib) + 276  [0x110b14294]  Container.swift:390\r\n    +                       2087 Container._resolve<A, B>(name:option:invoker:)  (in Trio.debug.dylib) + 400  [0x110b10470]  Container.swift:276\r\n    +                         2087 Container.syncIfEnabled<A>(_:)  (in Trio.debug.dylib) + 384  [0x110b0c534]  Container.swift:445\r\n    +                           2087 partial apply for closure #1 in Container._resolve<A, B>(name:option:invoker:)  (in Trio.debug.dylib) + 104  [0x110b13904]  /<compiler-generated>:0\r\n    +                             2087 closure #1 in Container._resolve<A, B>(name:option:invoker:)  (in Trio.debug.dylib) + 1432  [0x110b10a74]  Container.swift:285\r\n    +                               2087 Container.resolve<A, B>(entry:invoker:)  (in Trio.debug.dylib) + 1476  [0x110b116bc]  Container.swift:416\r\n    +                                 2087 partial apply for thunk for @escaping @callee_guaranteed (@guaranteed @escaping @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 72  [0x110b17854]  /<compiler-generated>:0\r\n    +                                   2087 thunk for @escaping @callee_guaranteed (@guaranteed @escaping @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 112  [0x110b110c8]  /<compiler-generated>:0\r\n    +                                     2087 partial apply for thunk for @escaping @callee_guaranteed (@guaranteed @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 80  [0x110b17790]  /<compiler-generated>:0\r\n    +                                       2087 thunk for @escaping @callee_guaranteed (@guaranteed @callee_guaranteed @substituted <A> (@in_guaranteed A) -> (@out Any) for <B>) -> (@out Any)  (in Trio.debug.dylib) + 80  [0x110b11028]  /<compiler-generated>:0\r\n    +                                         2087 partial apply for closure #1 in Container.resolve<A>(_:name:)  (in Trio.debug.dylib) + 64  [0x110b16a3c]  /<compiler-generated>:0\r\n    +                                           2087 closure #1 in Container.resolve<A>(_:name:)  (in Trio.debug.dylib) + 212  [0x110b1439c]  Container.swift:390\r\n    +                                             2087 partial apply for thunk for @escaping @callee_guaranteed (@in_guaranteed Resolver) -> (@out A)  (in Trio.debug.dylib) + 64  [0x110b0e9a0]  /<compiler-generated>:0\r\n    +                                               2087 thunk for @escaping @callee_guaranteed (@in_guaranteed Resolver) -> (@out A)  (in Trio.debug.dylib) + 132  [0x110b0dc18]  /<compiler-generated>:0\r\n    +                                                 2087 closure #1 in APSAssembly.assemble(container:)  (in Trio.debug.dylib) + 136  [0x10f5282c8]  APSAssembly.swift:6\r\n    +                                                   2087 BaseDeviceDataManager.__allocating_init(resolver:)  (in Trio.debug.dylib) + 100  [0x10fc24cb8]  DeviceDataManager.swift:0\r\n    +                                                     2087 BaseDeviceDataManager.init(resolver:)  (in Trio.debug.dylib) + 5276  [0x10fc26184]  DeviceDataManager.swift:219\r\n    +                                                       2087 BaseDeviceDataManager.setupPumpManager()  (in Trio.debug.dylib) + 500  [0x10fc2670c]  DeviceDataManager.swift:236\r\n    +                                                         2087 BaseDeviceDataManager.pumpManager.setter  (in Trio.debug.dylib) + 376  [0x10fc19e28]  DeviceDataManager.swift:0\r\n    +                                                           2087 BaseDeviceDataManager.pumpManager.didset  (in Trio.debug.dylib) + 4016  [0x10fc1ae0c]  DeviceDataManager.swift:90\r\n    +                                                             2087 BaseDeviceDataManager.rawPumpManager.setter  (in Trio.debug.dylib) + 196  [0x10fc1d3c0]  DeviceDataManager.swift:0\r\n    +                                                               2087 __tsan::ExternalAccess(void*, unsigned long, unsigned long, void*, unsigned long)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 476  [0x1012a8bc8]\r\n    +                                                                 2087 __tsan::ReportRace(__tsan::ThreadState*, __tsan::RawShadow*, __tsan::Shadow, __tsan::Shadow, unsigned long)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 2160  [0x1012f1ce0]\r\n    +                                                                   2087 __tsan::ScopedReportBase::AddMemoryAccess(unsigned long, unsigned long, __tsan::Shadow, unsigned int, __sanitizer::StackTrace, __tsan::MutexSet const*)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 200  [0x1012efba8]\r\n    +                                                                     2087 __tsan::SymbolizeStack(__sanitizer::StackTrace)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 84  [0x1012ef5f4]\r\n    +                                                                       2087 __sanitizer::Symbolizer::SymbolizePC(unsigned long)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 332  [0x10129d244]\r\n    +                                                                         2087 __sanitizer::DlAddrSymbolizer::SymbolizePC(unsigned long, __sanitizer::SymbolizedStack*)  (in libclang_rt.tsan_iossim_dynamic.dylib) + 52  [0x10129f2f4]\r\n    +                                                                           2087 dyld4::APIs::dladdr(void const*, dl_info*)  (in dyld_sim) + 184  [0x100fe70fc]\r\n    +                                                                             2087 dyld4::APIs::findImageMappedAt(void const*, dyld3::MachOLoaded const**, bool*, char const**, void const**, unsigned long long*, unsigned char*, dyld4::Loader const**)  (in dyld_sim) + 528  [0x100fe6b54]\r\n    +                                                                               2087 dyld4::RuntimeLocks::withLoadersReadLock(void () block_pointer)  (in dyld_sim) + 48  [0x100fcf460]\r\n    +                                                                                 2087 wrap_os_unfair_recursive_lock_lock_with_options  (in libclang_rt.tsan_iossim_dynamic.dylib) + 192  [0x1012f9078]\r\n    +                                                                                   2087 _os_unfair_lock_lock_slow  (in libsystem_platform.dylib) + 168  [0x100d85258]\r\n    +                                                                                     2087 __ulock_wait2  (in libsystem_kernel.dylib) + 8  [0x105bf1b04]\r\n```\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1606",
+      "mergedAt": "2026-10-17T23:35:31Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1642,
+      "title": "Add Glycemia Risk Index feature with calculations and UI components",
+      "body": "<img width=\"401\" height=\"809\" alt=\"Screenshot 2026-10-16 at 22 16 06\" src=\"https://github.com/user-attachments/assets/1538feaa-f0ba-4c9d-ac7b-a5e86289da27\" />\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1642",
+      "mergedAt": "2026-10-17T21:33:59Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1642,
+      "title": "Add Glycemia Risk Index feature with calculations and UI components",
+      "body": "<img width=\"401\" height=\"809\" alt=\"Screenshot 2026-10-16 at 22 16 06\" src=\"https://github.com/user-attachments/assets/1538feaa-f0ba-4c9d-ac7b-a5e86289da27\" />\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1642",
+      "mergedAt": "2026-10-17T21:33:59Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1644,
+      "title": "Fix glucose color for mmol/L in comma-decimal locales",
+      "body": "The Live Activity and the contact image picked the glucose color by parsing the formatted reading with Decimal(string:). In regions that use a comma as decimal separator \"4,8\" is parsed as 4, so with mmol/L a 4.8 reading and a 4.4 low threshold showed red on the lock screen and contact image, and orange instead of yellow-green with the dynamic color scheme.\r\n\r\nThe Live Activity state now includes the reading in mg/dL, and the lock screen and Dynamic Island use one shared color helper that compares reading, thresholds and target in mg/dL, same as the main app and the Live Activity chart. This also removes a unit mismatch in the Dynamic Island, where mmol readings were compared against mg/dL thresholds with the static scheme. That one wasn't visible because the island draws the reading in the primary color with the static scheme. The contact image now uses the numeric reading too.\r\n\r\nThe expired \"--\" Live Activity state is now colored as in range for mmol users as well. Before, it was colored as high for mmol users and in range for mg/dL users.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1644",
+      "mergedAt": "2026-10-17T12:51:46Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1644,
+      "title": "Fix glucose color for mmol/L in comma-decimal locales",
+      "body": "The Live Activity and the contact image picked the glucose color by parsing the formatted reading with Decimal(string:). In regions that use a comma as decimal separator \"4,8\" is parsed as 4, so with mmol/L a 4.8 reading and a 4.4 low threshold showed red on the lock screen and contact image, and orange instead of yellow-green with the dynamic color scheme.\r\n\r\nThe Live Activity state now includes the reading in mg/dL, and the lock screen and Dynamic Island use one shared color helper that compares reading, thresholds and target in mg/dL, same as the main app and the Live Activity chart. This also removes a unit mismatch in the Dynamic Island, where mmol readings were compared against mg/dL thresholds with the static scheme. That one wasn't visible because the island draws the reading in the primary color with the static scheme. The contact image now uses the numeric reading too.\r\n\r\nThe expired \"--\" Live Activity state is now colored as in range for mmol users as well. Before, it was colored as high for mmol users and in range for mg/dL users.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1644",
+      "mergedAt": "2026-10-17T12:51:46Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "3e114b16c34230c4227366ca7ca0f1d95b5121a2",
+      "subject": "Add a Statistics Range setting for the home stats panel",
+      "author": "Claude",
+      "authoredAt": "2026-09-26T18:01:06Z"
+    },
+    {
+      "sha": "0f5a07bdba0900836fbcf8a26c470123bab24aa4",
+      "subject": "Persist the restored pump manager's state on processQueue",
+      "author": "Claude",
+      "authoredAt": "2026-10-05T17:28:11Z"
+    },
+    {
+      "sha": "800b41b82280deafc33c78e3765d462c86b36cb2",
+      "subject": "Merge branch 'dev' into ccr-0ecc0cce-04uy00",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-05T15:30:51-04:00"
+    },
+    {
+      "sha": "72860f91099b21f226c7f3be175e6747dc02076e",
+      "subject": "Update DeviceDataManager.swift",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-05T15:32:46-04:00"
+    },
+    {
+      "sha": "b18002fdf19e2f85998c469a8cc0b17cf82de2ba",
+      "subject": "Merge branch 'dev' into ccr-0ecc0cce-04uy00",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-09T21:45:12-04:00"
+    },
+    {
+      "sha": "db1958d843d4479ffe01c8a8d7a33d6ebc561abf",
+      "subject": "Add Glycemia Risk Index feature with calculations and UI components",
+      "author": "codebymini",
+      "authoredAt": "2026-10-16T22:02:34+02:00"
+    },
+    {
+      "sha": "aec6bd6776cc825bb86671383872bc3ba863af85",
+      "subject": "Merge branch 'dev' into claude/focused-planck-tsklw8",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-16T23:17:26-04:00"
+    },
+    {
+      "sha": "1f96074bb8337ab1a5d924a2d7bf0814d81de6d5",
+      "subject": "Statistics Range -> Home Statistics Range",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-16T23:30:35-04:00"
+    },
+    {
+      "sha": "c52c66e5f188a493e8804fbf5d9030957bad0430",
+      "subject": "Fix glucose color for mmol/L in comma-decimal locales",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-17T13:57:17+02:00"
+    },
+    {
+      "sha": "868135e602c7a5a1555b6b58b502b94fb3b3391f",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into fix/glucose-color-units-locale",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-17T14:09:51+02:00"
+    },
+    {
+      "sha": "e21bcecd05f77535b49996069fc9b444b2e29da2",
+      "subject": "Merge pull request #1644 from bjorkert/fix/glucose-color-units-locale",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T14:51:45+02:00"
+    },
+    {
+      "sha": "bbb1c0e0ed1f75b0c97e61928e9c6afefac0089d",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.8 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-17T12:51:54Z"
+    },
+    {
+      "sha": "ef5adde0a5214a0a7da55a68ffee6cdfd0396098",
+      "subject": "Merge pull request #1642 from codebymini/feature/gri",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T23:33:58+02:00"
+    },
+    {
+      "sha": "37fe72fbe0a7ca773cbf8db8e4577d53631eb3fe",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.9 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-17T21:34:08Z"
+    },
+    {
+      "sha": "b6486cac6a71bee847907bf4e96d2081cfea4f62",
+      "subject": "Merge branch 'dev' into ccr-0ecc0cce-04uy00",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T23:38:18+02:00"
+    },
+    {
+      "sha": "722aeb2003123601831056a1ccbfe2776b497fe6",
+      "subject": "Merge pull request #1606 from jwoglom/ccr-0ecc0cce-04uy00",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-18T01:35:30+02:00"
+    },
+    {
+      "sha": "fc9fcd3b9c5e9ac2e28e48e16b0fa66ce54f7ba0",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.10 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-17T23:35:41Z"
+    },
+    {
+      "sha": "1b847927a79e9f87cb7dbe3d48c2407470625db1",
+      "subject": "Add Home Statistics Range to settings export",
+      "author": "Claude",
+      "authoredAt": "2026-10-17T23:38:19Z"
+    },
+    {
+      "sha": "eac90d5224126f66af6b263ac276494c1a450aff",
+      "subject": "Add Home Statistics Panel to settings export",
+      "author": "Claude",
+      "authoredAt": "2026-10-18T00:05:49Z"
+    },
+    {
+      "sha": "d289bfda3e39171829ee0936b45fa6a179b8c5c8",
+      "subject": "Merge pull request #1590 from jwoglom/claude/focused-planck-tsklw8",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-18T02:23:43+02:00"
+    },
+    {
+      "sha": "0bdd266c2e789d2ef4ee8507beecf453f5c171e5",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.11 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-18T00:23:54Z"
+    },
+    {
+      "sha": "377fac0a2bef2c3e3bf1acb4162fa1e6b54772f9",
+      "subject": "Merge upstream dev into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-17T22:27:31-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/LiveActivity+Helper.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/LiveActivity.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/LiveActivityView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/HomeStatsPanelFace.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/TrioSettings.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel+Setup/GlucoseSetup.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+BottomControls.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/StatStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/StatRootView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GRICalculator.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GRIView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/UserInterfaceSettingsStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactImageManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactImageState.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactPicture.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActivityAttributes+Helper.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActivityAttributes.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActivityManager.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/GRICalculatorTests.swift"
+    }
+  ]
+}

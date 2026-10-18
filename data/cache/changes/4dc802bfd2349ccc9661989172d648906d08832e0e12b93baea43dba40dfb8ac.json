@@ -1,0 +1,25 @@
+{
+  "inputHash": "4f18a2aa0ab2b45e705401dc0868e4b7a8e1033588e49bcef24478fcbc61afa2",
+  "promptVersion": "6",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1590",
+    "title": "New Home Statistics Range setting",
+    "changes": [
+      "A new Home Statistics Range setting lets you pick Today, Last 24 Hours, Last 7 Days, Last Month, or Last 3 Months for.",
+      "The home stats panel updates its numbers and labels to reflect the chosen time span.",
+      "Tapping the home stats panel opens the full Statistics view on the same selected span.",
+      "Short spans (Today, Last 24 Hours) use the chart's in-memory data; longer spans fetch older readings in the background,.",
+      "Background refreshes for longer spans are throttled so updates occur at most once every 5 minutes."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1590",
+      "diff:4dc802bfd234"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

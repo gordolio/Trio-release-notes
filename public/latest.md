@@ -1,38 +1,39 @@
-# Trio Build cbfde60
+# Trio Build 377fac0
 
-Built 2026-10-17T00:57:25.000Z from `b9ad530..cbfde60`.
+Built 2026-10-18T03:42:40.000Z from `cbfde60..377fac0`.
 
 ## Highlights
 
-- **Lock-screen widget redesign and font options**
-  - You can now add and reorder lock-screen widgets using drag-and-drop instead of tap-to-add/remove.
-  - The Detailed lock-screen layout gains a new double-width glucose widget that occupies two configuration slots.
-  - The Simple lock-screen widget exposes font face and font size options and shows a preview in its configuration screen.
-  - Font choices for the Simple widget are included in the Live Activity state so changes apply to the lock-screen activity.
-  - [View source](https://github.com/nightscout/Trio/pull/1566)
-- **Remote meal edit and delete commands**
-  - Trio can accept remote delete\_meal and edit\_meal commands to remove or replace logged meals.
-  - An edit operation deletes the old meal and recreates it, so the meal receives a new id.
-  - Remote actions wait for Nightscout, Health and Tidepool updates and report Nightscout failures in the command ack.
-  - Meals that include fat/protein but lack the shared fpuID are rejected for remote changes with a clear message.
-  - [View source](https://github.com/nightscout/Trio/pull/1579)
-- **Improved Pod connections and Libre CGM info**
-  - Trio can connect to InPlay pods in the background on iPhone 16 and 17e.
-  - Trio gives up faster when a pod cannot be reached to avoid long hangs.
-  - Trio stops sending pod state updates once pod deactivation starts.
-  - Pod alert acknowledgments are saved earlier so they persist across sessions.
-  - LibreLoop now records Libre 3 sensor events, tags backfilled readings, reports paired sensor model, and shows an in-app.
-  - [View source](https://github.com/nightscout/Trio/pull/1639)
-- **Glucose Bobble uses a black background**
-  - Glucose Bobble contact images now always use a black background.
-  - This prevents the bobble's white text from being hidden on watchOS.
-  - Other contact images continue to use the background you selected.
-  - [View source](https://github.com/gordolio/Trio/commit/8d814494048a8827546678390891ad90ee7e61f3)
+- **New Home Statistics Range setting**
+  - A new Home Statistics Range setting lets you pick Today, Last 24 Hours, Last 7 Days, Last Month, or Last 3 Months for.
+  - The home stats panel updates its numbers and labels to reflect the chosen time span.
+  - Tapping the home stats panel opens the full Statistics view on the same selected span.
+  - Short spans (Today, Last 24 Hours) use the chart's in-memory data; longer spans fetch older readings in the background,.
+  - Background refreshes for longer spans are throttled so updates occur at most once every 5 minutes.
+  - [View source](https://github.com/nightscout/Trio/pull/1590)
+- **Avoid startup overwrite of restored pump state**
+  - Trio now saves a restored pump's state on the pump's processing (background) queue during startup.
+  - This prevents a timing issue where an older snapshot could overwrite a newer pump state at launch.
+  - Legacy saved pump data is cleared only after the new pump state is written to storage.
+  - [View source](https://github.com/nightscout/Trio/pull/1606)
+- **Add Glycemia Risk Index to Stats**
+  - Adds a Glycemia Risk Index (GRI) option to the Stats screen.
+  - Shows a GRI tile with a numeric score, risk zone, and an info button opening a detailed sheet.
+  - Calculates GRI from glucose readings and shows component breakdown, weighted contributions, and a 0–100 capped score.
+  - Includes a risk-grid chart and displays a placeholder when there is no glucose data.
+  - [View source](https://github.com/nightscout/Trio/pull/1642)
+- **Fix glucose colors in comma-decimal locales**
+  - Glucose colors on the lock screen, Dynamic Island, and contact image are now correct for mmol/L users in comma-decimal-.
+  - +using locales.
+  - Live Activity now shares the same color logic as the main app so colors match across app, lock screen, and Dynamic I‌s­.
+  - The app uses the numeric glucose value in mg/dL instead of parsing formatted text to decide colors, preventing wrong 색.
+  - The expired Live Activity "--" state is now shown as in-range for mmol users as it is for mg/dL users.
+  - [View source](https://github.com/nightscout/Trio/pull/1644)
 
 ## Build Metadata
 
-- Source workflow: [38987193603](https://github.com/gordolio/Trio/actions/runs/38987193603)
-- Previous built commit: [`b9ad530e633e9de452b6016b1ae6ca0388807057`](https://github.com/gordolio/Trio/commit/b9ad530e633e9de452b6016b1ae6ca0388807057)
-- Current built commit: [`cbfde6099b3ef0b5bac97a2df7f141e10f0d6fa8`](https://github.com/gordolio/Trio/commit/cbfde6099b3ef0b5bac97a2df7f141e10f0d6fa8)
+- Source workflow: [39093810456](https://github.com/gordolio/Trio/actions/runs/39093810456)
+- Previous built commit: [`cbfde6099b3ef0b5bac97a2df7f141e10f0d6fa8`](https://github.com/gordolio/Trio/commit/cbfde6099b3ef0b5bac97a2df7f141e10f0d6fa8)
+- Current built commit: [`377fac0a2bef2c3e3bf1acb4162fa1e6b54772f9`](https://github.com/gordolio/Trio/commit/377fac0a2bef2c3e3bf1acb4162fa1e6b54772f9)
 - Provenance model: `openai/gpt-5-mini`
 - Generator: `0.3.1`, prompt `6`
