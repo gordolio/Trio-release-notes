@@ -1,5 +1,5 @@
 export const GENERATOR_VERSION = "0.3.1";
-export const PROMPT_VERSION = "6";
+export const PROMPT_VERSION = "7";
 export const SCHEMA_VERSION = "2";
 
 export const CATEGORY_VALUES = [
@@ -34,3 +34,8 @@ export const SOURCE_ARTIFACT_NAME = "release-notes-metadata";
 export const LEGACY_SOURCE_ARTIFACT_NAME = "build-artifacts";
 export const SUMMARY_CONCURRENCY = 5;
 export const MAX_HIGHLIGHTS = 5;
+export const MAX_TITLE_LENGTH = 60;
+export const MAX_CHANGE_BULLETS = 2;
+// The prompt asks for bullets under TARGET_BULLET_LENGTH; MAX_BULLET_LENGTH leaves slack before a retry.
+export const TARGET_BULLET_LENGTH = 100;
+export const MAX_BULLET_LENGTH = 110;

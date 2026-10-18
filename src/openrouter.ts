@@ -3,7 +3,16 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import OpenAI from "openai";
 import { config } from "./config.js";
-import { CATEGORY_VALUES, MAX_HIGHLIGHTS, PROMPT_VERSION, SCHEMA_VERSION } from "./constants.js";
+import {
+  CATEGORY_VALUES,
+  MAX_BULLET_LENGTH,
+  MAX_CHANGE_BULLETS,
+  MAX_HIGHLIGHTS,
+  MAX_TITLE_LENGTH,
+  PROMPT_VERSION,
+  SCHEMA_VERSION,
+  TARGET_BULLET_LENGTH
+} from "./constants.js";
 import {
   changeSummarySchema,
   highlightOutputSchema,
@@ -13,16 +22,18 @@ import {
 
 const categorySchema = { type: "string", enum: CATEGORY_VALUES } as const;
 const confidenceSchema = { type: "string", enum: ["high", "medium", "low"] } as const;
-const VALIDATION_ATTEMPTS = 2;
+const VALIDATION_ATTEMPTS = 3;
 
+// No maxLength on prose: strict decoding stops the model mid-word at the limit. Lengths are
+// enforced by validateChangeSummary instead, which asks for a shorter rewrite.
 const changeJsonSchema = {
   type: "object",
   additionalProperties: false,
   required: ["changeId", "title", "changes", "category", "sourceIds", "confidence", "humanReviewRequired"],
   properties: {
     changeId: { type: "string" },
-    title: { type: "string", minLength: 1, maxLength: 60 },
-    changes: { type: "array", minItems: 1, maxItems: 5, items: { type: "string", minLength: 1, maxLength: 119 } },
+    title: { type: "string", minLength: 1 },
+    changes: { type: "array", minItems: 1, maxItems: MAX_CHANGE_BULLETS, items: { type: "string", minLength: 1 } },
     category: categorySchema,
     sourceIds: { type: "array", minItems: 1, maxItems: 4, items: { type: "string" } },
     confidence: confidenceSchema,
@@ -86,6 +97,9 @@ export function validateProse(value: string, label: string, maxLength: number): 
   if (/[\r\n]/.test(value)) {
     throw new Error(`${label} must be a single paragraph`);
   }
+  if (/\p{Cf}/u.test(value)) {
+    throw new Error(`${label} contains invisible formatting characters`);
+  }
 }
 
 interface CacheRecord {
@@ -126,14 +140,15 @@ function parseContent(content: string | null): unknown {
 }
 
 /// Deterministically repairs cosmetic issues that should not abort generation:
-/// a bullet that is otherwise valid but lacks sentence-ending punctuation gets a
-/// trailing period. Meaning is preserved; only presentation is normalized.
+/// a bullet that ends in a word but lacks sentence-ending punctuation gets a
+/// trailing period. A bullet ending in a comma, hyphen, or similar was cut off,
+/// so it is left alone for validation to reject.
 export function normalizeChangeSummary(summary: ChangeSummary): ChangeSummary {
   return {
     ...summary,
     changes: summary.changes.map((bullet) => {
       const trimmed = bullet.trimEnd();
-      if (trimmed.length === 0 || /[.!?)\]]["']?$/.test(trimmed)) {
+      if (!/[\p{L}\p{N}]$/u.test(trimmed)) {
         return trimmed;
       }
       return `${trimmed}.`;
@@ -151,12 +166,12 @@ export function validateChangeSummary(summary: ChangeSummary, change: Normalized
       throw new Error(`OpenRouter cited unknown source ${sourceId} for ${change.id}`);
     }
   }
-  validateProse(summary.title, "title", 60);
+  validateProse(summary.title, "title", MAX_TITLE_LENGTH);
   for (const [index, bullet] of summary.changes.entries()) {
-    validateProse(bullet, `changes[${index}]`, 120);
-      if (!/[.!?)\]]["']?$/.test(bullet)) {
-        throw new Error(`changes[${index}] must end with sentence-ending punctuation`);
-      }
+    validateProse(bullet, `changes[${index}]`, MAX_BULLET_LENGTH);
+    if (!/[.!?)\]]["']?$/.test(bullet)) {
+      throw new Error(`changes[${index}] must end with sentence-ending punctuation`);
+    }
   }
 }
 
@@ -221,18 +236,18 @@ export class OpenRouterSummarizer {
             content: [
               "Summarize only the supplied logical code change for non-technical users of the Trio app.",
               "Use no outside knowledge and make no unsupported claims.",
-              "Write title as a short plain-language name for the change, at most 60 characters.",
-              "Write changes as 1-5 very brief bullet points, each a complete short sentence ending with punctuation.",
-              "Keep bullets well under 120 characters so they never get cut off mid-word.",
-              "Each bullet states one thing that changed from the user's perspective, as a complete short sentence.",
-              "Do not enumerate commits, files, tests, or subchanges. Synthesize the user-visible effect.",
+              `Write title as a short plain-language name for the change, at most ${MAX_TITLE_LENGTH} characters.`,
+              `Write changes as one short sentence ending with a period, under ${TARGET_BULLET_LENGTH} characters.`,
+              "Add a second sentence only for a separate effect users would notice. Never write more than two.",
+              "Say what users will notice or can now do. Leave out how it works: queues, threads, caching, storage, refresh timing, data sources, and code structure.",
+              "Do not repeat the title. Do not list every option, screen, commit, file, test, or subchange.",
               "Never put source IDs, citations, URLs, Markdown, or code-reference lists in title or changes.",
               "Put 1-4 exact supporting IDs only in sourceIds, preferring a PR and the most direct diff or commit.",
               "Copy changeId exactly. Select sourceIds only from supplied sources and copy those IDs without changes.",
               "Describe changes conservatively. Use humanReviewRequired when evidence is insufficient.",
               "Internal-only changes belong in internal-and-build-system. Origin provenance may use origin-only-customizations.",
               "Example of the desired output structure:",
-              '{"changeId":"<exact changeId from input>","title":"Alert improvements","changes":["Unacknowledged alerts reappear after restarting Trio.","Old not-looping notifications are cleared.","Alarm sounds are easier to select and preview."],"category":"alerting-and-safety","sourceIds":["<exact source IDs from input>"],"confidence":"high","humanReviewRequired":false}',
+              '{"changeId":"<exact changeId from input>","title":"Alert improvements","changes":["Unacknowledged alerts now come back after Trio restarts."],"category":"alerting-and-safety","sourceIds":["<exact source IDs from input>"],"confidence":"high","humanReviewRequired":false}',
               "Return only JSON matching the schema.",
               correction
             ].filter(Boolean).join("\n")
@@ -259,6 +274,7 @@ export class OpenRouterSummarizer {
         correction = [
           `The previous response failed validation: ${errorMessage(error)}`,
           `Allowed sourceIds: ${change.sources.map((source) => source.id).join(", ")}`,
+          `Keep title within ${MAX_TITLE_LENGTH} characters and each change within ${MAX_BULLET_LENGTH} characters.`,
           "Return a corrected response using only exact allowed identifiers."
         ].join("\n");
       }

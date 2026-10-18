@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { MAX_BULLET_LENGTH, MAX_CHANGE_BULLETS } from "../src/constants.js";
 import { changeSchema, highlightSchema, normalizeChangeSummary, validateChangeSummary, validateProse } from "../src/openrouter.js";
 import type { NormalizedChange } from "../src/types.js";
 
@@ -25,16 +26,16 @@ describe("OpenRouter response schemas", () => {
     const schema = changeSchema(change("change-1", ["source-1", "source-2"])) as {
       properties: {
         changeId: { enum: string[] };
-        title: { maxLength: number };
-        changes: { maxItems: number; items: { maxLength: number } };
+        title: { maxLength?: number };
+        changes: { maxItems: number; items: { maxLength?: number } };
         sourceIds: { maxItems: number; items: { enum: string[] } };
       };
     };
     expect(schema.properties.changeId.enum).toEqual(["change-1"]);
-    expect(schema.properties.title.maxLength).toBe(60);
-    expect(schema.properties.changes.maxItems).toBe(5);
-    // Reserve one character for punctuation added during normalization.
-    expect(schema.properties.changes.items.maxLength).toBe(119);
+    expect(schema.properties.changes.maxItems).toBe(MAX_CHANGE_BULLETS);
+    // Prose lengths are validated after decoding; a schema limit cuts the model off mid-word.
+    expect(schema.properties.title.maxLength).toBeUndefined();
+    expect(schema.properties.changes.items.maxLength).toBeUndefined();
     expect(schema.properties.sourceIds.maxItems).toBe(4);
     expect(schema.properties.sourceIds.items.enum).toEqual(["source-1", "source-2"]);
   });
@@ -53,6 +54,7 @@ describe("OpenRouter response schemas", () => {
     expect(() => validateProse("Fixed by commit:abc123", "title", 60)).toThrow(/citation/);
     expect(() => validateProse("First\nSecond", "changes[0]", 120)).toThrow(/single paragraph/);
     expect(() => validateProse("x".repeat(121), "changes[0]", 120)).toThrow(/exceeds/);
+    expect(() => validateProse("Dynamic I\u200cs\u00ad.", "changes[0]", 120)).toThrow(/invisible/);
   });
 
   it("rejects change summaries with bullets cut off mid-word", () => {
@@ -91,18 +93,34 @@ describe("OpenRouter response schemas", () => {
     expect(() => validateChangeSummary(normalized, change("change-1", ["source-1"]))).not.toThrow();
   });
 
-  it("keeps normalized generated bullets within the published limit", () => {
+  it("leaves bullets that were cut off for validation to reject", () => {
     const summary = {
       changeId: "change-1",
       title: "Title",
-      changes: ["x".repeat(119)],
+      changes: ["Older readings load in the background,", "Colors are correct in comma-decimal-"],
       category: "fixes" as const,
       sourceIds: ["source-1"],
       confidence: "high" as const,
       humanReviewRequired: false
     };
     const normalized = normalizeChangeSummary(summary);
-    expect(normalized.changes[0]).toHaveLength(120);
-    expect(() => validateChangeSummary(normalized, change("change-1", ["source-1"]))).not.toThrow();
+    expect(normalized.changes).toEqual(summary.changes);
+    expect(() => validateChangeSummary(normalized, change("change-1", ["source-1"]))).toThrow(/punctuation/);
+  });
+
+  it("rejects bullets over the published limit so the model rewrites them", () => {
+    const summary = {
+      changeId: "change-1",
+      title: "Title",
+      changes: [`${"x".repeat(MAX_BULLET_LENGTH - 1)}.`],
+      category: "fixes" as const,
+      sourceIds: ["source-1"],
+      confidence: "high" as const,
+      humanReviewRequired: false
+    };
+    expect(() => validateChangeSummary(summary, change("change-1", ["source-1"]))).not.toThrow();
+    expect(() =>
+      validateChangeSummary({ ...summary, changes: [`${"x".repeat(MAX_BULLET_LENGTH)}.`] }, change("change-1", ["source-1"]))
+    ).toThrow(/exceeds/);
   });
 });

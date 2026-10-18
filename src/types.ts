@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { CATEGORY_VALUES } from "./constants.js";
+import { CATEGORY_VALUES, MAX_CHANGE_BULLETS } from "./constants.js";
 
 export type Provenance = "upstream" | "origin" | "mixed" | "internal";
 export type Confidence = "high" | "medium" | "low";
@@ -73,8 +73,9 @@ export interface NormalizedChange {
 
 export const changeSummarySchema = z.object({
   changeId: z.string(),
-  title: z.string().min(1).max(60),
-  changes: z.array(z.string().min(1).max(120)).min(1).max(5),
+  // Text lengths are checked by validateChangeSummary so overlong prose gets a clear retry message.
+  title: z.string().min(1),
+  changes: z.array(z.string().min(1)).min(1).max(MAX_CHANGE_BULLETS),
   category: z.enum(CATEGORY_VALUES),
   sourceIds: z.array(z.string()).min(1).max(4),
   confidence: z.enum(["high", "medium", "low"]),
