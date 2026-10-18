@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 39146398291,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39146398291",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "9ef30df487958129f8c0697743c679e5b2935b86",
+    "currentBuiltSha": "f85f601bac2a344a164d1e6ea645a0dc6087e261",
+    "shortSha": "f85f601",
+    "buildDate": "2026-10-18T17:05:35.000Z",
+    "generationDate": "2026-10-18T17:21:02.053Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:f85f601bac2a344a164d1e6ea645a0dc6087e261",
+      "title": "Camera feedback options added to Settings search",
+      "changes": [
+        "You can now find Camera Feedback preview options using Settings search.",
+        "Search results will scroll to and highlight the matching Camera Feedback setting."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:f85f601bac2a",
+        "diff:fad55a73a59c"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:f85f601bac2a344a164d1e6ea645a0dc6087e261"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:f85f601bac2a",
+          "type": "commit",
+          "title": "fix(settings): Make camera feedback preview options searchable",
+          "url": "https://github.com/gordolio/Trio/commit/f85f601bac2a344a164d1e6ea645a0dc6087e261"
+        },
+        {
+          "id": "diff:fad55a73a59c",
+          "type": "diff",
+          "title": "Diff for commit:f85f601bac2a344a164d1e6ea645a0dc6087e261",
+          "url": "https://github.com/gordolio/Trio/compare/9ef30df487958129f8c0697743c679e5b2935b86...f85f601bac2a344a164d1e6ea645a0dc6087e261"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "f85f601bac2a344a164d1e6ea645a0dc6087e261",
+      "subject": "fix(settings): Make camera feedback preview options searchable",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-18T11:32:13-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AIServiceSettings/View/AIServiceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
+    }
+  ]
+}

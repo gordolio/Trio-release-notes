@@ -1,0 +1,22 @@
+{
+  "inputHash": "80563597a28e1071035107fea47ba93fe409aaece417e1b86fbc969f9dc5b36c",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:f85f601bac2a344a164d1e6ea645a0dc6087e261",
+    "title": "Camera feedback options added to Settings search",
+    "changes": [
+      "You can now find Camera Feedback preview options using Settings search.",
+      "Search results will scroll to and highlight the matching Camera Feedback setting."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:f85f601bac2a",
+      "diff:fad55a73a59c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
