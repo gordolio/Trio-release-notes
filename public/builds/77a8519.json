@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 39228077083,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39228077083",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "c8a1e983e49b7d881f5dd3b1225fb8a6d03b1fd6",
+    "currentBuiltSha": "77a8519f21db953ed041a300b6dba2239ce5d24b",
+    "shortSha": "77a8519",
+    "buildDate": "2026-10-19T09:30:47.000Z",
+    "generationDate": "2026-10-19T09:41:55.848Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:77a8519f21db953ed041a300b6dba2239ce5d24b",
+      "title": "Redesigned AI Assistants screen",
+      "changes": [
+        "AI Assistants now show who's signed in, sharing status, and copyable connector URLs.",
+        "You can view example questions by topic, copy them, and sign out with an offline notice if needed."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "commit:77a8519f21db",
+        "diff:5212935bf438"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:77a8519f21db953ed041a300b6dba2239ce5d24b"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:77a8519f21db",
+          "type": "commit",
+          "title": "feat(ai-assistants): Redesign the AI Assistants screen",
+          "url": "https://github.com/gordolio/Trio/commit/77a8519f21db953ed041a300b6dba2239ce5d24b"
+        },
+        {
+          "id": "diff:5212935bf438",
+          "type": "diff",
+          "title": "Diff for commit:77a8519f21db953ed041a300b6dba2239ce5d24b",
+          "url": "https://github.com/gordolio/Trio/compare/c8a1e983e49b7d881f5dd3b1225fb8a6d03b1fd6...77a8519f21db953ed041a300b6dba2239ce5d24b"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "77a8519f21db953ed041a300b6dba2239ce5d24b",
+      "subject": "feat(ai-assistants): Redesign the AI Assistants screen",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-19T04:10:29-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/AIAssistantsConfigContent.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/AIAssistantsConfigDataFlow.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/AIAssistantsConfigStateModel+Display.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/AIAssistantsConfigStateModel.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantSetupView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsAccountSection.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsConfigComponents.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsConfigPreviews.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsConfigRootView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsConnectSection.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsFlowLayout.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsHeaderView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsQuestionsSection.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AIAssistants/AIAssistantsAuthClient.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AIAssistants/AIAssistantsService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AIAssistants/AIAssistantsTokenStore.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AIAssistantsTests/AIAssistantsAuthClientTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/AIAssistantsTests/AIAssistantsConfigDisplayTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AIAssistantsTests/AIAssistantsConfigStateModelTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/AIAssistantsTests/AIAssistantsFlowLayoutTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/AIAssistantsTests/AIAssistantsScreenRenderTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AIAssistantsTests/AIAssistantsServiceTests.swift"
+    }
+  ]
+}

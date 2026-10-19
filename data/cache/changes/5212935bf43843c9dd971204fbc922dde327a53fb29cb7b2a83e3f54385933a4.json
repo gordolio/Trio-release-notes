@@ -1,0 +1,22 @@
+{
+  "inputHash": "9c52e2896f0554328a54a9acc997abf1956a87eae2fad82bec5abd5c4d3e8737",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:77a8519f21db953ed041a300b6dba2239ce5d24b",
+    "title": "Redesigned AI Assistants screen",
+    "changes": [
+      "AI Assistants now show who's signed in, sharing status, and copyable connector URLs.",
+      "You can view example questions by topic, copy them, and sign out with an offline notice if needed."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:77a8519f21db",
+      "diff:5212935bf438"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
