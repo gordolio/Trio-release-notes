@@ -1,0 +1,22 @@
+{
+  "inputHash": "cbdaa1b3d8f0ba53ec9648eacee9b4938c37a68f1486fc3b567ca72ef16801d9",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:c8a1e983e49b7d881f5dd3b1225fb8a6d03b1fd6",
+    "title": "Include Sign in with Apple consent in builds",
+    "changes": [
+      "Build tooling now sends the required Sign in with Apple consent when adding that capability.",
+      "No direct change for app users."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:c8a1e983e49b",
+      "diff:feb15b5798fe"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "82ef292f63239a047f2d153100abaa4e40076f635ac2b2945370f7f0b490ea63",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:06c0882f3e4b5be4c16fb92f30f49a5c00b49af0",
+    "title": "Remove food camera preview settings",
+    "changes": [
+      "Temporary camera feedback preview options were removed from Settings.",
+      "The food camera now uses tuned defaults: 85% flash, frozen preview, and medium haptic."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:06c0882f3e4b",
+      "diff:e17921fde450"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
