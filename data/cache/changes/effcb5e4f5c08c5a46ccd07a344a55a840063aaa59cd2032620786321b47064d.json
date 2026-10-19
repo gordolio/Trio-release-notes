@@ -1,0 +1,22 @@
+{
+  "inputHash": "c4036762af93c079c6cd08551dee058102b36103667624904f38395cd4cb87b7",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1645",
+    "title": "Themed alarm sounds and spoken alerts",
+    "changes": [
+      "Alarms now use themed Acoustic/Electronic sets with Mild/Medium/Harsh intensity and voice alerts.",
+      "Every alarm now defaults to Acoustic Medium and previous tones are moved into an \"Other Sounds\" group."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1645",
+      "diff:effcb5e4f5c0"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

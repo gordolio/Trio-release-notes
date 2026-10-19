@@ -1,0 +1,516 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 39297275622,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39297275622",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "77a8519f21db953ed041a300b6dba2239ce5d24b",
+    "currentBuiltSha": "b1774d80e21b44f00c09ee1359acecf7a78ea9d5",
+    "shortSha": "b1774d8",
+    "buildDate": "2026-10-19T18:09:31.000Z",
+    "generationDate": "2026-10-19T18:19:41.394Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1645",
+      "title": "Themed alarm sounds and spoken alerts",
+      "changes": [
+        "Alarms now use themed Acoustic/Electronic sets with Mild/Medium/Harsh intensity and voice alerts.",
+        "Every alarm now defaults to Acoustic Medium and previous tones are moved into an \"Other Sounds\" group."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1645",
+        "diff:effcb5e4f5c0"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1645"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1645",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1645: Rework Trio Alarm Sounds: Add Urgency Levels and Voice Alarms",
+          "url": "https://github.com/nightscout/Trio/pull/1645"
+        },
+        {
+          "id": "diff:effcb5e4f5c0",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1645",
+          "url": "https://github.com/gordolio/Trio/compare/bbb1c0e0ed1f75b0c97e61928e9c6afefac0089d...cd6ad0706db1e7a546360d4631f75b24a402ba58"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1645,
+      "title": "Rework Trio Alarm Sounds: Add Urgency Levels and Voice Alarms",
+      "body": "## Summary\r\n\r\nReplaces the generic alarm tone list with sound sets written for each individual alarm, in three intensity levels, plus spoken alerts. Every alarm now defaults to the Acoustic Medium set, and the previous tones move into a collapsed \"Other Sounds\" group.\r\n\r\nThe complaints that prompted this were about Critical device alerts being too disruptive, but the underlying problem was broader:  tone choice was secretly a volume control. The bundled tones ranged from `critical.caf` at -1.2 dBFS RMS to `high_chimes.caf` at -30.4, a 29 dB spread, with every file peaking at full scale. Picking \"Critical\" instead of \"High Chimes\" was a 29 dB jump that nothing in the UI hinted at, and the default for the Critical device tier was one of the loudest files we had. \r\n\r\n## The New Sounds\r\n\r\nThis PR proposes new sound sets for Trio's alarms – Urgent Low, Low, Low Glucose Soon, High, Carbs Required, Device Critical and Device Time-Sensitive – in two themes, Acoustic and Electronic, at three intensity levels, Mild, Medium, Harsh, plus a spoken set in two voices. These new sounds were designed for us by an anonymous diabetes dad and trio user who also didn’t like the default sounds. \r\n\r\nIntensity is carried by timbre, loudness and length together, so each level is its own recording rather than one recording at three gain settings. Rising and falling pitch tracks glucose direction, and the sets share a voicing so they read as coming from the same app.\r\n\r\nDefaults move to Acoustic Medium everywhere, which is what we recommend after hallway testing with adult and child PwDs and caregivers.\r\n\r\n## Picker\r\n\r\nOpening Tone on an alarm now shows a \"For This Alarm\" section first — Acoustic, Electronic and Voice, written for that alarm — with the previous 18 tones and 8 new one-offs collapsed under \"Other Sounds\". The group auto-expands when the current selection lives inside it, so a pick is never hidden behind a closed group.\r\n\r\nSelecting Acoustic or Electronic reveals an Urgency Level slider; selecting Voice reveals an Amy/Bryce control. Both audition on change, since the point is hearing how the character differs.\r\n\r\nPurpose-written sets are scoped to the alarm they were written for and do not appear elsewhere. The Normal device tier has no set of its own and shares the Time-Sensitive one, the gentler of the two device sets.\r\n\r\n## Recording\r\nSimulator recordings do not carry sound, so this is just to display the new UI. \r\n\r\nhttps://github.com/user-attachments/assets/087a40b3-d028-49ad-a102-c6984a33413b\r\n\r\n## Licensing\r\n\r\nAdds `ACKNOWLEDGEMENTS.md`. The spoken alerts were generated with Piper:\r\n\r\n- **Bryce** — public domain, credited as a courtesy.\r\n- **Amy** — the Piper model card points at `MycroftAI/mimic3-voices`, which is **CC BY-SA 4.0**. Attribution and share-alike apply to those audio files; Trio's own licence is unaffected. The file records that the clips were looped, since CC BY requires changes to be indicated.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1645",
+      "mergedAt": "2026-10-19T15:10:13Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1645,
+      "title": "Rework Trio Alarm Sounds: Add Urgency Levels and Voice Alarms",
+      "body": "## Summary\r\n\r\nReplaces the generic alarm tone list with sound sets written for each individual alarm, in three intensity levels, plus spoken alerts. Every alarm now defaults to the Acoustic Medium set, and the previous tones move into a collapsed \"Other Sounds\" group.\r\n\r\nThe complaints that prompted this were about Critical device alerts being too disruptive, but the underlying problem was broader:  tone choice was secretly a volume control. The bundled tones ranged from `critical.caf` at -1.2 dBFS RMS to `high_chimes.caf` at -30.4, a 29 dB spread, with every file peaking at full scale. Picking \"Critical\" instead of \"High Chimes\" was a 29 dB jump that nothing in the UI hinted at, and the default for the Critical device tier was one of the loudest files we had. \r\n\r\n## The New Sounds\r\n\r\nThis PR proposes new sound sets for Trio's alarms – Urgent Low, Low, Low Glucose Soon, High, Carbs Required, Device Critical and Device Time-Sensitive – in two themes, Acoustic and Electronic, at three intensity levels, Mild, Medium, Harsh, plus a spoken set in two voices. These new sounds were designed for us by an anonymous diabetes dad and trio user who also didn’t like the default sounds. \r\n\r\nIntensity is carried by timbre, loudness and length together, so each level is its own recording rather than one recording at three gain settings. Rising and falling pitch tracks glucose direction, and the sets share a voicing so they read as coming from the same app.\r\n\r\nDefaults move to Acoustic Medium everywhere, which is what we recommend after hallway testing with adult and child PwDs and caregivers.\r\n\r\n## Picker\r\n\r\nOpening Tone on an alarm now shows a \"For This Alarm\" section first — Acoustic, Electronic and Voice, written for that alarm — with the previous 18 tones and 8 new one-offs collapsed under \"Other Sounds\". The group auto-expands when the current selection lives inside it, so a pick is never hidden behind a closed group.\r\n\r\nSelecting Acoustic or Electronic reveals an Urgency Level slider; selecting Voice reveals an Amy/Bryce control. Both audition on change, since the point is hearing how the character differs.\r\n\r\nPurpose-written sets are scoped to the alarm they were written for and do not appear elsewhere. The Normal device tier has no set of its own and shares the Time-Sensitive one, the gentler of the two device sets.\r\n\r\n## Recording\r\nSimulator recordings do not carry sound, so this is just to display the new UI. \r\n\r\nhttps://github.com/user-attachments/assets/087a40b3-d028-49ad-a102-c6984a33413b\r\n\r\n## Licensing\r\n\r\nAdds `ACKNOWLEDGEMENTS.md`. The spoken alerts were generated with Piper:\r\n\r\n- **Bryce** — public domain, credited as a courtesy.\r\n- **Amy** — the Piper model card points at `MycroftAI/mimic3-voices`, which is **CC BY-SA 4.0**. Attribution and share-alike apply to those audio files; Trio's own licence is unaffected. The file records that the clips were looped, since CC BY requires changes to be indicated.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1645",
+      "mergedAt": "2026-10-19T15:10:13Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "7b080ec9bd269cecfe62512c83ca194e4924de2c",
+      "subject": "Add themed alarm sound sets and loop short tones to a 5s floor",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "5332b6368049a55e3a4800fd4e82b78230669dad",
+      "subject": "Default every alarm to its Acoustic Medium themed sound",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "c6475e6c8a6fbf32fb096b494e20a2506e36e7c7",
+      "subject": "Lead the tone picker with themed sets, collapse the rest under Other Sounds",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "d5b8c68f2138e68f92b25f61bb3db0075cb56b98",
+      "subject": "Cover the themed sound catalog and new defaults",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "4ac46ad8a27e2973a7b26fe68ee11cea7a6961dd",
+      "subject": "Credit the bundled voices and tidy the urgency controls",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T23:27:22+02:00"
+    },
+    {
+      "sha": "b9c3b3949db9ea9ec3d5d289f229e48e624dd83a",
+      "subject": "Linting fixes",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T23:27:22+02:00"
+    },
+    {
+      "sha": "b3daae1a30f25bb6e8fcac79339690607c01d745",
+      "subject": "Merge branch 'dev' into feat/alarm-sound-themes",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-18T14:47:24+02:00"
+    },
+    {
+      "sha": "cd6ad0706db1e7a546360d4631f75b24a402ba58",
+      "subject": "Merge pull request #1645 from dnzxy/feat/alarm-sound-themes",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-10-19T17:10:12+02:00"
+    },
+    {
+      "sha": "bcebda2f5881b5835cecdade8593f951493ac899",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.13 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-19T15:10:51Z"
+    },
+    {
+      "sha": "b1774d80e21b44f00c09ee1359acecf7a78ea9d5",
+      "subject": "Merge upstream dev into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-19T12:48:16-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "A",
+      "path": "ACKNOWLEDGEMENTS.md"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_cr_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_cr_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_cr_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_dcr_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_dcr_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_dcr_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_dts_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_dts_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_dts_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_hg_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_hg_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_hg_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_lg_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_lg_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_lg_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_lgs_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_lgs_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_lgs_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_ulg_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_ulg_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/acoustic_ulg_mild.caf"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/Sounds/chime.caf"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/Sounds/critical.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_cr_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_cr_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_cr_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_dcr_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_dcr_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_dcr_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_dts_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_dts_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_dts_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_hg_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_hg_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_hg_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_lg_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_lg_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_lg_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_lgs_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_lgs_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_lgs_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_ulg_harsh.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_ulg_medium.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/electronic_ulg_mild.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/glass_bell.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/hard_saw_wave.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/harp.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/meow.caf"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/Sounds/minimal.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/open_can.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/open_wrapper.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/saw_wave.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/sine_wave.caf"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/Sounds/trill.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_cr_amy.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_cr_bryce.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_dcr_amy.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_dcr_bryce.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_dts_amy.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_dts_bryce.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_hg_amy.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_hg_bryce.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_lg_amy.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_lg_bryce.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_lgs_amy.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_lgs_bryce.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_ulg_amy.caf"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Resources/Sounds/voice_ulg_bryce.caf"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/GlucoseAlerts/AlarmSoundCatalog.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/GlucoseAlerts/DeviceAlertSeverity.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/GlucoseAlerts/GlucoseAlertType.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/DeviceAlarms/View/DeviceAlarmEditorView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/GlucoseAlerts/View/Components/AlarmAudioSection.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/GlucoseAlerts/View/GlucoseAlertEditorView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/LiveActivitySettings/View/LiveActivityWidgetConfiguration.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActivityGlucoseStyle.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/AlarmSoundCatalogTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/DeviceAlertsStoreTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/GlucoseAlertTests.swift"
+    }
+  ]
+}
