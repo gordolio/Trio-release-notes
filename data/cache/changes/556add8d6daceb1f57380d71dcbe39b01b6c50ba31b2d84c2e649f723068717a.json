@@ -1,0 +1,22 @@
+{
+  "inputHash": "44d913c208942fed9b6d41c51804b7e4a6f16cd4b075b88f90d2fb7b0eeb3964",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1649",
+    "title": "Prevent crash when uploading carbs without ID",
+    "changes": [
+      "Carb uploads no longer crash when an entry has no ID.",
+      "Carb entries missing an ID are skipped during upload and won't create duplicates."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1649",
+      "commit:b435a5ae2ea5"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
