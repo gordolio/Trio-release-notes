@@ -1,0 +1,22 @@
+{
+  "inputHash": "d6e2c35c7ba277572ca092fd847be0dcdf4fdffa3ffb0588ac0895b6079d00bb",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:4873da59f8eb39ecbbc91d951bd8021a67f44cc5",
+    "title": "Move treatment button into side tab bar on iPhone Duo",
+    "changes": [
+      "On iPhone Duo the treatment (+) button appears in the side tab bar slot.",
+      "Other iPhones keep the button at the bottom center."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:4873da59f8eb",
+      "diff:b3bd65a602bb"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

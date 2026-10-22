@@ -1,0 +1,22 @@
+{
+  "inputHash": "2a0e4b4bb791f563593128cde3f4bb970d5f0a8db3b6768dab636ae289ddc272",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:6e352c27682f8b409dc9aecd652a356ab88ec698",
+    "title": "Trio Watch App notification setup adjusted",
+    "changes": [
+      "Push Notifications are now enabled for the Trio Watch App by Fastlane.",
+      "Time Sensitive Notifications must be enabled manually; end users won't see any change."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:6e352c27682f",
+      "diff:244ddbe8ad7a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
