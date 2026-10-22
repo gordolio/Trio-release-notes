@@ -1,0 +1,23 @@
+{
+  "inputHash": "1c4a65712bfa1ac4c5685218d08b376385f9b26b84dfd4ce39f51957126f6174",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:78cfee4bf40433a33715796aafe20ee6f27af939",
+    "title": "Enable Time Sensitive Notifications on Watch app",
+    "changes": [
+      "Trio Watch App now requires enabling Time Sensitive Notifications in App Store Connect.",
+      "The automated setup will still add Push Notifications for the watch app."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:78cfee4bf404",
+      "diff:6e0e4fce135b",
+      "file:f834f27f6e0a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "175831be99c112b93e633b7dfaf37e89c601eb616189a5510d7465997720868f",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#17",
+    "title": "Approve AI meal requests on iPhone and Apple Watch",
+    "changes": [
+      "AI assistants can request meal logging and open Trio's iPhone Treatments or Watch Confirm screen.",
+      "A new \"Allow meal requests\" switch is off by default."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:gordolio/Trio#17",
+      "diff:84cd46de7e3d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
