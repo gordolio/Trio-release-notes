@@ -1,83 +1,49 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 39364041206,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39364041206",
+    "sourceWorkflowRunId": 39706307156,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39706307156",
     "sourceBranch": "dev",
-    "previousBuiltSha": "b1774d80e21b44f00c09ee1359acecf7a78ea9d5",
-    "currentBuiltSha": "668c090239482a9b1c181f41dbf8fae8a13e74be",
-    "shortSha": "668c090",
-    "buildDate": "2026-10-20T03:43:48.000Z",
-    "generationDate": "2026-10-20T03:54:44.851Z",
+    "previousBuiltSha": "668c090239482a9b1c181f41dbf8fae8a13e74be",
+    "currentBuiltSha": "448cc6c91e048b78d68a27a7fa8b66196f25aac8",
+    "shortSha": "448cc6c",
+    "buildDate": "2026-10-22T01:50:43.000Z",
+    "generationDate": "2026-10-22T02:00:20.640Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1649",
-      "title": "Prevent crash when uploading carbs without ID",
+      "changeId": "pr:nightscout/Trio#1651",
+      "title": "Fix inverted SMB low-temp rate",
       "changes": [
-        "Carb uploads no longer crash when an entry has no ID.",
-        "Carb entries missing an ID are skipped during upload and won't create duplicates."
+        "Short 30-minute low-temp SMBs now set the correct lower insulin rate."
       ],
-      "category": "fixes",
+      "category": "algorithm-and-dosing",
       "sourceIds": [
-        "pr:nightscout/Trio#1649",
-        "commit:b435a5ae2ea5"
+        "pr:nightscout/Trio#1651",
+        "commit:75e44e2ef3bd"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1649"
+        "pr:nightscout/Trio#1651"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1649",
+          "id": "pr:nightscout/Trio#1651",
           "type": "pull-request",
-          "title": "nightscout/Trio#1649: fixes crash when uploading carb entry without id to Tidepool issue #1425",
-          "url": "https://github.com/nightscout/Trio/pull/1649"
+          "title": "nightscout/Trio#1651: Fix inverted SMB low temp rate for sub 30m zero temp",
+          "url": "https://github.com/nightscout/Trio/pull/1651"
         },
         {
-          "id": "commit:b435a5ae2ea5",
+          "id": "commit:75e44e2ef3bd",
           "type": "commit",
-          "title": "fixes crash when uploading carb entry without id to Tidepool issue #1425",
-          "url": "https://github.com/gordolio/Trio/commit/b435a5ae2ea5acf682ce417f9df7c5d2c1431709"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:gordolio/Trio#16",
-      "title": "Hide backfill button after Nightscout check",
-      "changes": [
-        "Home hides the backfill button for gaps Nightscout already checked."
-      ],
-      "category": "interface-improvements",
-      "sourceIds": [
-        "pr:gordolio/Trio#16",
-        "diff:4a51d773a7b2"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:gordolio/Trio#16"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "pr:gordolio/Trio#16",
-          "type": "pull-request",
-          "title": "gordolio/Trio#16: feat(nightscout): Hide the backfill button once Nightscout has been checked",
-          "url": "https://github.com/gordolio/Trio/pull/16"
-        },
-        {
-          "id": "diff:4a51d773a7b2",
-          "type": "diff",
-          "title": "Diff for pr:gordolio/Trio#16",
-          "url": "https://github.com/gordolio/Trio/compare/b1774d80e21b44f00c09ee1359acecf7a78ea9d5...239bcab7a06f5663447fb6b136f0e8cf24e193ee"
+          "title": "Fix inverted SMB low temp rate for sub 30m zero temps",
+          "url": "https://github.com/gordolio/Trio/commit/75e44e2ef3bdf65268d384f9a740676b629ddc02"
         }
       ]
     }
@@ -133,74 +99,59 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1649,
-      "title": "fixes crash when uploading carb entry without id to Tidepool issue #1425",
-      "body": "closes #1425\n\nCarbsEntry+LoopKit.swift force unwrapped the id when building the SyncCarbObject:\n`uuid: UUID(uuidString: id!)` -> `uuid: id.flatMap(UUID.init(uuidString:))`\n\nno random UUID as fallback, so the carb keeps the same identity between uploads.\n\nthis is a follow up on #709 by @Sjoerd-Bo3 (closed as stale). it uses the change @kingst  suggested in the review there, and checks what Tidepool does with a carb without uuid.\n\ncarb without id: TidepoolService builds no datum for it, so nothing is sent. it stays not uploaded and is checked again only inside the 24 h upload window. other carbs upload normally.\n\ntests in TrioTests/CarbsEntryLoopKitTests.swift:\n- nil id: no crash, uuid and syncIdentifier are nil (crashes with the old `id!` code)\n- UUID id: uuid and syncIdentifier match the id\n\ntested on Tidepool with a simulator build:\n- signed in to Tidepool, added 10 g carb, uploaded\n- removed its id in the local store, added 20 g carb\n- no crash, 20 g uploaded, the carb without id skipped\n- Tidepool export shows 10 g and 20 g once each, no duplicates\n- the simulator sign-in to Tidepool crashed in TidepoolKit DNS.swift:180 (unaligned load); a local loadUnaligned patch was used for this test only, not part of this PR\n",
+      "number": 1651,
+      "title": "Fix inverted SMB low temp rate for sub 30m zero temp",
+      "body": "Fixes #1359",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1649",
-      "mergedAt": "2026-10-19T20:38:13Z"
+      "url": "https://github.com/nightscout/Trio/pull/1651",
+      "mergedAt": "2026-10-20T14:12:40Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1649,
-      "title": "fixes crash when uploading carb entry without id to Tidepool issue #1425",
-      "body": "closes #1425\n\nCarbsEntry+LoopKit.swift force unwrapped the id when building the SyncCarbObject:\n`uuid: UUID(uuidString: id!)` -> `uuid: id.flatMap(UUID.init(uuidString:))`\n\nno random UUID as fallback, so the carb keeps the same identity between uploads.\n\nthis is a follow up on #709 by @Sjoerd-Bo3 (closed as stale). it uses the change @kingst  suggested in the review there, and checks what Tidepool does with a carb without uuid.\n\ncarb without id: TidepoolService builds no datum for it, so nothing is sent. it stays not uploaded and is checked again only inside the 24 h upload window. other carbs upload normally.\n\ntests in TrioTests/CarbsEntryLoopKitTests.swift:\n- nil id: no crash, uuid and syncIdentifier are nil (crashes with the old `id!` code)\n- UUID id: uuid and syncIdentifier match the id\n\ntested on Tidepool with a simulator build:\n- signed in to Tidepool, added 10 g carb, uploaded\n- removed its id in the local store, added 20 g carb\n- no crash, 20 g uploaded, the carb without id skipped\n- Tidepool export shows 10 g and 20 g once each, no duplicates\n- the simulator sign-in to Tidepool crashed in TidepoolKit DNS.swift:180 (unaligned load); a local loadUnaligned patch was used for this test only, not part of this PR\n",
+      "number": 1651,
+      "title": "Fix inverted SMB low temp rate for sub 30m zero temp",
+      "body": "Fixes #1359",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1649",
-      "mergedAt": "2026-10-19T20:38:13Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 16,
-      "title": "feat(nightscout): Hide the backfill button once Nightscout has been checked",
-      "body": "## Summary\n\nReadings the Dexcom sensor never delivered aren't in Nightscout either, so the Home backfill button kept coming back after \"No new readings found\". Trio now remembers the last successful Nightscout check and stops offering gaps it already covered.\n\n```diff\n hasMissingReadings(readings, now)\n+  if the sensor is warming up → hide\n+  lastCheck = last successful check for this Nightscout URL (ignored once > 24 h old)\n+  drop readings before lastCheck; lastCheck counts as a reading\n   any two readings > 7.5 min apart → show\n-  newest reading > 7.5 min old → show\n+  newest reading or lastCheck > 10 min old → show   # time for late uploads to reach Nightscout\n```\n\n```text\nNightscoutBackfill.run()            # Home button and Settings button\n  fetchAndStore(last 24 h)\n    fetch → save new readings\n    if both succeeded and the page held < 1600 entries\n      NightscoutBackfillChecks.record(now, url)   # one UserDefaults key\n  publish checkedThrough            # Home button hides right away, not on the next 30 s tick\n```\n\nThe Settings button behaves as before: it always fetches the full 24 hours, so it still works when a reading reaches Nightscout after a check.\n\n## Evidence\n\n- **Before:** with stubs in place of the new behaviour, 8 of the new tests in `NightscoutBackfillTests` fail, for example:\n  ```text\n  gap the last check covered          → button still shown\n  CGM 10 min behind, checked 10 min ago → button shown (was 7.5 min)\n  sensor warming up                   → button shown\n  successful backfill                 → no check recorded\n  ```\n  **After:** both `Nightscout backfill` suites and `NightscoutBackfillLayoutTests` pass. Full suite: 1,157 tests. The only failure is `FileStorageTests` \"Can parse mmol/L settings to mg/dL\", which is known to be flaky and passes when run alone.\n\nNot tried on a device or in the simulator yet.\n\n## Merge Danger\n\n**Door:** two-way\n\nAdds one UserDefaults key (`trio.nightscoutBackfill.lastCheck.v1`) and no Core Data changes. Reverting leaves that key unused and harmless.\n\n**Blast Radius:** small\n\nIt only changes when the Home backfill button shows. Fetching, duplicate filtering and saving work as before. Trade-off: a reading that reaches Nightscout after a check won't be offered from Home. The Settings button still fetches it.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n- **Improvements**\n  - Improved glucose backfill detection to identify missing readings more accurately.\n  - Backfill checks now account for sensor warmup periods, recent upload delays, stale readings, and previously checked time ranges.\n  - The backfill option updates immediately when its status changes, without waiting for the Home screen refresh.\n  - Check progress is retained separately for each Nightscout site, reducing unnecessary repeat checks.\n  - Improved handling of large reading windows and unsuccessful backfill attempts.\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
-      "labels": [],
-      "url": "https://github.com/gordolio/Trio/pull/16",
-      "mergedAt": "2026-10-20T02:59:05Z"
+      "url": "https://github.com/nightscout/Trio/pull/1651",
+      "mergedAt": "2026-10-20T14:12:40Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "b435a5ae2ea5acf682ce417f9df7c5d2c1431709",
-      "subject": "fixes crash when uploading carb entry without id to Tidepool issue #1425",
-      "author": "Lamercho",
-      "authoredAt": "2026-10-18T23:25:55+03:00"
+      "sha": "75e44e2ef3bdf65268d384f9a740676b629ddc02",
+      "subject": "Fix inverted SMB low temp rate for sub 30m zero temps",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-19T15:59:28+02:00"
     },
     {
-      "sha": "1b5221d40c0560c24f05fbfe47a0d6baa98078e7",
-      "subject": "Merge pull request #1649 from Lamercho/Lamercho/tidepool-carb-nil-id-fix",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-19T22:38:12+02:00"
+      "sha": "547abe44ba34b2b67ee0470ca6af5ef92d16804a",
+      "subject": "Fix OpenAPS golden parity test",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-19T17:10:29+02:00"
     },
     {
-      "sha": "f5cdbfa8b062d195fe30505f6bfc8ddd16314870",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.14 [skip ci]",
+      "sha": "6b94bd0a02d17c516b9c914cf23a38cdfbfb34a7",
+      "subject": "Document intentional deviation from oref JS in SMB low temp",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-20T10:35:43+02:00"
+    },
+    {
+      "sha": "6f086a96bc22cc0fd7c3bdadad70e9ae5294244b",
+      "subject": "Merge pull request #1651 from lolzivkovic/fix/inverted-smb-low-temp",
+      "author": "Sam King",
+      "authoredAt": "2026-10-20T07:12:39-07:00"
+    },
+    {
+      "sha": "d78bc821333ed81136d56ccc500efdc16c3598ce",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.15 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-10-19T20:38:25Z"
+      "authoredAt": "2026-10-20T14:12:53Z"
     },
     {
-      "sha": "c525ca0a2f64ec3f005aa66a846ce175517731fe",
-      "subject": "feat(nightscout): Hide the backfill button once Nightscout has been checked",
+      "sha": "448cc6c91e048b78d68a27a7fa8b66196f25aac8",
+      "subject": "Merge branch 'nightscout:dev' into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-10-19T21:24:25-05:00"
-    },
-    {
-      "sha": "c2a56fb745ea014e981084a38e3501cdb8395f03",
-      "subject": "fix(nightscout): Ignore backfill checks dated in the future",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-19T21:56:05-05:00"
-    },
-    {
-      "sha": "239bcab7a06f5663447fb6b136f0e8cf24e193ee",
-      "subject": "Merge pull request #16 from gordolio/feat/backfill-checked-through",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-19T21:59:04-05:00"
-    },
-    {
-      "sha": "668c090239482a9b1c181f41dbf8fae8a13e74be",
-      "subject": "Merge upstream dev into dev",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-19T22:10:53-05:00"
+      "authoredAt": "2026-10-21T20:32:26-05:00"
     }
   ],
   "includedFiles": [
@@ -210,27 +161,27 @@
     },
     {
       "status": "M",
-      "path": "Trio.xcodeproj/project.pbxproj"
+      "path": "Trio/Sources/APS/OpenAPSSwift/DetermineBasal/DosingEngine.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Models/CarbsEntry+LoopKit.swift"
+      "path": "TrioTests/OpenAPSSwiftTests/DetermineBasalAggressiveDosingTests.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/NightscoutConfig/View/GlucoseBackfillViews.swift"
+      "path": "TrioTests/OpenAPSSwiftTests/Parity/goldens/autosens-resistance/determination.json"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutBackfill.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/CarbsEntryLoopKitTests.swift"
+      "path": "TrioTests/OpenAPSSwiftTests/Parity/goldens/dynamic-isf-sigmoid/determination.json"
     },
     {
       "status": "M",
-      "path": "TrioTests/NightscoutBackfillTests.swift"
+      "path": "TrioTests/OpenAPSSwiftTests/Parity/goldens/override-active/determination.json"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/OpenAPSSwiftTests/Parity/goldens/post-meal-cob-active/determination.json"
     }
   ]
 }

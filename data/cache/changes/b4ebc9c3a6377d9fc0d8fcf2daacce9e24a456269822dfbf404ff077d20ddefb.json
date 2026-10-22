@@ -1,0 +1,21 @@
+{
+  "inputHash": "359cc5f0521a97ad5d698ddbae5cebff0b3118c52cdf4cb30d81a14493903d5e",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1651",
+    "title": "Fix inverted SMB low-temp rate",
+    "changes": [
+      "Short 30-minute low-temp SMBs now set the correct lower insulin rate."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:nightscout/Trio#1651",
+      "commit:75e44e2ef3bd"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
