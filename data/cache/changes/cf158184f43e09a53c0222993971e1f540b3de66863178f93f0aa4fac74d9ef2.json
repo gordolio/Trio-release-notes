@@ -1,0 +1,22 @@
+{
+  "inputHash": "77fb174c23a6b6a4b33290331d01c1628f6409dc6badfb948d900cf8753865a0",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:b8c6aa398cc682c346af3d085bfd839f3c66841d",
+    "title": "iPhone Duo full-screen layout support",
+    "changes": [
+      "Builds now use Xcode 27.1 to enable full-screen layout on iPhone Duo devices.",
+      "You may see improved full-screen display when using Trio on an iPhone Duo."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:b8c6aa398cc6",
+      "diff:cf158184f43e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

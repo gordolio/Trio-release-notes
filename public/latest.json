@@ -1,84 +1,50 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 40001943452,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40001943452",
+    "sourceWorkflowRunId": 40009614611,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40009614611",
     "sourceBranch": "dev",
-    "previousBuiltSha": "19aaa7970865c56014d45d5115ca65b6de33f806",
-    "currentBuiltSha": "cdbe3ae7278fddd8fcb435ce03ba65899ff22c74",
-    "shortSha": "cdbe3ae",
-    "buildDate": "2026-10-23T18:35:15.000Z",
-    "generationDate": "2026-10-23T18:45:38.964Z",
+    "previousBuiltSha": "cdbe3ae7278fddd8fcb435ce03ba65899ff22c74",
+    "currentBuiltSha": "b8c6aa398cc682c346af3d085bfd839f3c66841d",
+    "shortSha": "b8c6aa3",
+    "buildDate": "2026-10-23T19:28:17.000Z",
+    "generationDate": "2026-10-23T19:38:24.025Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1656",
-      "title": "G7 sensor update and submodule refresh",
+      "changeId": "commit:b8c6aa398cc682c346af3d085bfd839f3c66841d",
+      "title": "iPhone Duo full-screen layout support",
       "changes": [
-        "Updated device components and translations; G7 sensor support pinned to the trio G7 branch.",
-        "Unusable G7 readings will now be flagged as sensor issues."
+        "Builds now use Xcode 27.1 to enable full-screen layout on iPhone Duo devices.",
+        "You may see improved full-screen display when using Trio on an iPhone Duo."
       ],
-      "category": "pump-and-cgm",
+      "category": "internal-and-build-system",
       "sourceIds": [
-        "pr:nightscout/Trio#1656",
-        "commit:0c690f14346c"
+        "commit:b8c6aa398cc6",
+        "diff:cf158184f43e"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1656"
+        "commit:b8c6aa398cc682c346af3d085bfd839f3c66841d"
       ],
       "highlight": true,
-      "provenance": "upstream",
+      "provenance": "internal",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1656",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1656: Update submodules; pin G7SensorKit to feat/trio-g7-direct",
-          "url": "https://github.com/nightscout/Trio/pull/1656"
-        },
-        {
-          "id": "commit:0c690f14346c",
+          "id": "commit:b8c6aa398cc6",
           "type": "commit",
-          "title": "Update submodules to current upstream",
-          "url": "https://github.com/gordolio/Trio/commit/0c690f14346ce22fba446766d4c2cb2de41f48fe"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1658",
-      "title": "Record CC0 license for alarm sounds",
-      "changes": [
-        "Acknowledgements now record the CC0 (public domain) license for new alarm sounds.",
-        "You'll see the author's credit and the CC0 note in the app's acknowledgements."
-      ],
-      "category": "origin-only-customizations",
-      "sourceIds": [
-        "pr:nightscout/Trio#1658",
-        "diff:e5186f99eb36"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1658"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1658",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1658: Record the CC0 licence for the alarm sounds",
-          "url": "https://github.com/nightscout/Trio/pull/1658"
+          "title": "ci(build): Build with Xcode 27.1 on the xcode-27 runner, for iPhone Duo's full-screen layout",
+          "url": "https://github.com/gordolio/Trio/commit/b8c6aa398cc682c346af3d085bfd839f3c66841d"
         },
         {
-          "id": "diff:e5186f99eb36",
+          "id": "diff:cf158184f43e",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1658",
-          "url": "https://github.com/gordolio/Trio/compare/ab11fea572596f9de6d127ee65f7d332e22a4247...165ef16b8cc1f036d991c829eaa21df3f5fbe720"
+          "title": "Diff for commit:b8c6aa398cc682c346af3d085bfd839f3c66841d",
+          "url": "https://github.com/gordolio/Trio/compare/cdbe3ae7278fddd8fcb435ce03ba65899ff22c74...b8c6aa398cc682c346af3d085bfd839f3c66841d"
         }
       ]
     }
@@ -131,160 +97,19 @@
     }
   ],
   "maintenanceHotspots": [],
-  "includedPullRequests": [
-    {
-      "repository": "gordolio/Trio",
-      "number": 1656,
-      "title": "Update submodules; pin G7SensorKit to feat/trio-g7-direct",
-      "body": "Routine submodule refresh. All 16 pins are at the tip of their tracked branch.\n\n| Submodule | Branch | Old → New |\n| --- | --- | --- |\n| LoopKit | `trio` | `f974241` → `ff8c30e` |\n| LoopAlgorithm | `main` | `4604ee3` → `7ef6724` |\n| EversenseKit | `dev` | `e1bb6fa` → `e7a1850` |\n| OmnipodKit | `dev` | `928bb79` → `0c6d68b` |\n| G7SensorKit | `feat/trio-g7-direct` | `5c0fc07` → `e99d631` |\n| CGMBLEKit | `dev` | `ea224e7` → `776543f` |\n| DanaKit | `dev` | `e157a86` → `eadb9fe` |\n| MedtrumKit | `dev` | `ef866fa` → `c336995` |\n\n- **G7SensorKit** — flag any unusable reading as a sensor issue\n- **OmnipodKit** — shared signal-loss test, simplified PKA view\n- **EversenseKit** — 365: retry `GetTxCertificate` with inverted tx_flags\n- **LoopAlgorithm** — per-prediction-point correction range, emulation options\n- **CGMBLEKit / DanaKit / LoopKit / MedtrumKit / OmnipodKit** — lokalise translations, 22 Oct round (string catalogs only; LoopKit's pbxproj diff is a pure re-sort — 918 build-file entries before and after, none added or removed)\n\nAlso pins G7SensorKit to `feat/trio-g7-direct` in `scripts/define_common_trio.sh`. It said `main`, which disagreed with `.gitmodules` — a scripted refresh would have dropped the direct-G7 integration.\n\n### LoopKit carries a Core Data model change\n\nLoopKit includes *Share next-dev's Core Data model* (#649), moving LoopKit's model from v4 to v8 with mapping models and migration code. **It never runs in Trio.** Nothing in Trio or any plugin instantiates a LoopKit `PersistenceController`; the stores all require one injected, and the only construction sites in LoopKit are its own tests and example app. Trio uses its own `TrioCoreDataPersistentContainer`.\n\nVerified by running the pre- and post-bump builds against an identical restored container (~26.7k glucose rows): record counts match, the app launches clean, no LoopKit `Model.sqlite` is created, and the migration log lines never appear — though both strings are present in the shipped binary. A `find` across all simulators located a LoopKit store only for a separately installed Loop app, confirming the check would have found one.\n\nNo removed public API in any bump. The sync alert APIs that the G7 direct integration and LibreLoop's compat branch depend on are unchanged at the new LoopKit tip.\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1656",
-      "mergedAt": "2026-10-23T16:27:48Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1656,
-      "title": "Update submodules; pin G7SensorKit to feat/trio-g7-direct",
-      "body": "Routine submodule refresh. All 16 pins are at the tip of their tracked branch.\n\n| Submodule | Branch | Old → New |\n| --- | --- | --- |\n| LoopKit | `trio` | `f974241` → `ff8c30e` |\n| LoopAlgorithm | `main` | `4604ee3` → `7ef6724` |\n| EversenseKit | `dev` | `e1bb6fa` → `e7a1850` |\n| OmnipodKit | `dev` | `928bb79` → `0c6d68b` |\n| G7SensorKit | `feat/trio-g7-direct` | `5c0fc07` → `e99d631` |\n| CGMBLEKit | `dev` | `ea224e7` → `776543f` |\n| DanaKit | `dev` | `e157a86` → `eadb9fe` |\n| MedtrumKit | `dev` | `ef866fa` → `c336995` |\n\n- **G7SensorKit** — flag any unusable reading as a sensor issue\n- **OmnipodKit** — shared signal-loss test, simplified PKA view\n- **EversenseKit** — 365: retry `GetTxCertificate` with inverted tx_flags\n- **LoopAlgorithm** — per-prediction-point correction range, emulation options\n- **CGMBLEKit / DanaKit / LoopKit / MedtrumKit / OmnipodKit** — lokalise translations, 22 Oct round (string catalogs only; LoopKit's pbxproj diff is a pure re-sort — 918 build-file entries before and after, none added or removed)\n\nAlso pins G7SensorKit to `feat/trio-g7-direct` in `scripts/define_common_trio.sh`. It said `main`, which disagreed with `.gitmodules` — a scripted refresh would have dropped the direct-G7 integration.\n\n### LoopKit carries a Core Data model change\n\nLoopKit includes *Share next-dev's Core Data model* (#649), moving LoopKit's model from v4 to v8 with mapping models and migration code. **It never runs in Trio.** Nothing in Trio or any plugin instantiates a LoopKit `PersistenceController`; the stores all require one injected, and the only construction sites in LoopKit are its own tests and example app. Trio uses its own `TrioCoreDataPersistentContainer`.\n\nVerified by running the pre- and post-bump builds against an identical restored container (~26.7k glucose rows): record counts match, the app launches clean, no LoopKit `Model.sqlite` is created, and the migration log lines never appear — though both strings are present in the shipped binary. A `find` across all simulators located a LoopKit store only for a separately installed Loop app, confirming the check would have found one.\n\nNo removed public API in any bump. The sync alert APIs that the G7 direct integration and LibreLoop's compat branch depend on are unchanged at the new LoopKit tip.\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1656",
-      "mergedAt": "2026-10-23T16:27:48Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1658,
-      "title": "Record the CC0 licence for the alarm sounds",
-      "body": "Adding Creative Commons license for the new Trio alarm sounds.\r\nQuoting from the updated alarm sound file package we received:\r\n\r\n> **License**\r\n> I am the author of the attached files in _mild-medium-harsh sets_ and _One-offs-.\r\n> I have the right to license them, and they contain no third-party material I cannot license. I license them under the Creative Commons Zero license for inclusion in Trio. I also grant Dan / the project maintainers permission to distribute them under any later license adopted by the project. I wish to remain anonymous; please credit me as \"An anonymous diabetes dad and Trio user\" or not at all.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1658",
-      "mergedAt": "2026-10-23T15:43:08Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1658,
-      "title": "Record the CC0 licence for the alarm sounds",
-      "body": "Adding Creative Commons license for the new Trio alarm sounds.\r\nQuoting from the updated alarm sound file package we received:\r\n\r\n> **License**\r\n> I am the author of the attached files in _mild-medium-harsh sets_ and _One-offs-.\r\n> I have the right to license them, and they contain no third-party material I cannot license. I license them under the Creative Commons Zero license for inclusion in Trio. I also grant Dan / the project maintainers permission to distribute them under any later license adopted by the project. I wish to remain anonymous; please credit me as \"An anonymous diabetes dad and Trio user\" or not at all.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1658",
-      "mergedAt": "2026-10-23T15:43:08Z"
-    }
-  ],
+  "includedPullRequests": [],
   "includedCommits": [
     {
-      "sha": "0c690f14346ce22fba446766d4c2cb2de41f48fe",
-      "subject": "Update submodules to current upstream",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-22T21:52:13+02:00"
-    },
-    {
-      "sha": "9f0a1ccfd35955d115ccc1ed96692da35993b1d6",
-      "subject": "Bump LoopKit to current trio",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-22T21:52:26+02:00"
-    },
-    {
-      "sha": "2420af7b838e9bc64f60050f4d6557a0516ba7ef",
-      "subject": "Record the CC0 licence for the alarm sounds",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-23T16:35:28+02:00"
-    },
-    {
-      "sha": "7b7121b361076cc63d9b9a67fa55f686b9973680",
-      "subject": "Bump submodules for the 22 Oct translation round",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-23T16:38:13+02:00"
-    },
-    {
-      "sha": "f61cefbc5ac0f98d1767f603c4d74934154b0d19",
-      "subject": "Bump LibreLoop to current upstream",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-23T17:07:12+02:00"
-    },
-    {
-      "sha": "165ef16b8cc1f036d991c829eaa21df3f5fbe720",
-      "subject": "Merge pull request #1658 from dnzxy/docs/alarm-sound-license",
-      "author": "Sam King",
-      "authoredAt": "2026-10-23T08:43:07-07:00"
-    },
-    {
-      "sha": "3951550b8d7c1f6ac3cc194a1654e4698c434d5f",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.17 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-10-23T15:43:18Z"
-    },
-    {
-      "sha": "0a8c2587ec23e700a234c8cf5a3f09d08216c50a",
-      "subject": "Bump G7SensorKit for the SystemMemoryReset reconnect fix",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-23T17:45:37+02:00"
-    },
-    {
-      "sha": "2c99e1f0156587751960694a0a45a7e8d7f59173",
-      "subject": "Merge pull request #1656 from nightscout/chore/update-submodules-1022",
-      "author": "Sam King",
-      "authoredAt": "2026-10-23T09:27:47-07:00"
-    },
-    {
-      "sha": "3a57aef800cd7956c910f3f31265f9e298098675",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.18 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-10-23T16:27:58Z"
-    },
-    {
-      "sha": "cdbe3ae7278fddd8fcb435ce03ba65899ff22c74",
-      "subject": "Merge branch 'nightscout:dev' into dev",
+      "sha": "b8c6aa398cc682c346af3d085bfd839f3c66841d",
+      "subject": "ci(build): Build with Xcode 27.1 on the xcode-27 runner, for iPhone Duo's full-screen layout",
       "author": "Gordon Child",
-      "authoredAt": "2026-10-23T13:16:01-05:00"
+      "authoredAt": "2026-10-23T14:12:40-05:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
-      "path": "ACKNOWLEDGEMENTS.md"
-    },
-    {
-      "status": "M",
-      "path": "CGMBLEKit"
-    },
-    {
-      "status": "M",
-      "path": "Config.xcconfig"
-    },
-    {
-      "status": "M",
-      "path": "DanaKit"
-    },
-    {
-      "status": "M",
-      "path": "EversenseKit"
-    },
-    {
-      "status": "M",
-      "path": "G7SensorKit"
-    },
-    {
-      "status": "M",
-      "path": "LibreLoop"
-    },
-    {
-      "status": "M",
-      "path": "LoopAlgorithm"
-    },
-    {
-      "status": "M",
-      "path": "LoopKit"
-    },
-    {
-      "status": "M",
-      "path": "MedtrumKit"
-    },
-    {
-      "status": "M",
-      "path": "OmnipodKit"
-    },
-    {
-      "status": "M",
-      "path": "scripts/define_common_trio.sh"
+      "path": ".github/workflows/build_trio.yml"
     }
   ]
 }
