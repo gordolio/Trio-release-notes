@@ -1,0 +1,22 @@
+{
+  "inputHash": "166078de60c9c3bf1b64c4bed67d1500470bfc8f975cd42fd9b5935af5e16acd",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1646",
+    "title": "Prevent meals disappearing during carb edits",
+    "changes": [
+      "Editing a carb entry now replaces the meal in a single operation.",
+      "Fat/protein edits now rebuild their carb-equivalents correctly."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1646",
+      "commit:b29cc886fccd"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

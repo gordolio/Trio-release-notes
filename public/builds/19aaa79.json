@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 39964139643,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39964139643",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "4873da59f8eb39ecbbc91d951bd8021a67f44cc5",
+    "currentBuiltSha": "19aaa7970865c56014d45d5115ca65b6de33f806",
+    "shortSha": "19aaa79",
+    "buildDate": "2026-10-23T14:11:39.000Z",
+    "generationDate": "2026-10-23T14:27:20.488Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1646",
+      "title": "Prevent meals disappearing during carb edits",
+      "changes": [
+        "Editing a carb entry now replaces the meal in a single operation.",
+        "Fat/protein edits now rebuild their carb-equivalents correctly."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:nightscout/Trio#1646",
+        "commit:b29cc886fccd"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1646"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1646",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1646: fix: replace carb entry in a single transaction",
+          "url": "https://github.com/nightscout/Trio/pull/1646"
+        },
+        {
+          "id": "commit:b29cc886fccd",
+          "type": "commit",
+          "title": "Replace carb entry in a single transaction",
+          "url": "https://github.com/gordolio/Trio/commit/b29cc886fccd228c86ebe1126fddb0cf884e1c00"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1646,
+      "title": "fix: replace carb entry in a single transaction",
+      "body": "Fixes an issue when editing a carb entry: the entry could disappear (deleted but not recreated).\r\nThis change replaces the entries in a single transaction.\r\n\r\n### Issue explanation:\r\n`BaseCarbEntryMutationService.replaceMeal` still committed the delete and the insert as two independent Core Data transactions. The insert can fail silently, causing the meal to be completely removed. Similarly, a crash between delete and insert would do the same.\r\n\r\n### Testing:\r\nTested on iPhone 15, iOS26 — the device we use for Trio.\r\nFirst, put the device in a Faraday cage (tin can) for 30 minutes.\r\nThen tried multiple meal edit cycles, simple and complex (fat/protein) meals. Also checked the records are updated on Nightscout properly.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1646",
+      "mergedAt": "2026-10-22T21:59:50Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1646,
+      "title": "fix: replace carb entry in a single transaction",
+      "body": "Fixes an issue when editing a carb entry: the entry could disappear (deleted but not recreated).\r\nThis change replaces the entries in a single transaction.\r\n\r\n### Issue explanation:\r\n`BaseCarbEntryMutationService.replaceMeal` still committed the delete and the insert as two independent Core Data transactions. The insert can fail silently, causing the meal to be completely removed. Similarly, a crash between delete and insert would do the same.\r\n\r\n### Testing:\r\nTested on iPhone 15, iOS26 — the device we use for Trio.\r\nFirst, put the device in a Faraday cage (tin can) for 30 minutes.\r\nThen tried multiple meal edit cycles, simple and complex (fat/protein) meals. Also checked the records are updated on Nightscout properly.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1646",
+      "mergedAt": "2026-10-22T21:59:50Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "b29cc886fccd228c86ebe1126fddb0cf884e1c00",
+      "subject": "Replace carb entry in a single transaction",
+      "author": "Ostap Korkuna",
+      "authoredAt": "2026-10-18T17:34:34-07:00"
+    },
+    {
+      "sha": "ca6187b9b2779a5f3c2556d0239d436f3bcf235a",
+      "subject": "Merge pull request #1646 from ostap-korkuna/fix/edit-carb-entry-in-transaction",
+      "author": "Sam King",
+      "authoredAt": "2026-10-22T14:59:49-07:00"
+    },
+    {
+      "sha": "ab11fea572596f9de6d127ee65f7d332e22a4247",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.16 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-22T22:00:01Z"
+    },
+    {
+      "sha": "19aaa7970865c56014d45d5115ca65b6de33f806",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-23T08:47:12-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/CarbEntryMutationService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/CarbsStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/CarbsStorageTests.swift"
+    }
+  ]
+}

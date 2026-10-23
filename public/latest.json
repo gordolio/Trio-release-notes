@@ -1,91 +1,50 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 39722766966,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39722766966",
+    "sourceWorkflowRunId": 39964139643,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/39964139643",
     "sourceBranch": "dev",
-    "previousBuiltSha": "448cc6c91e048b78d68a27a7fa8b66196f25aac8",
-    "currentBuiltSha": "4873da59f8eb39ecbbc91d951bd8021a67f44cc5",
-    "shortSha": "4873da5",
-    "buildDate": "2026-10-22T04:53:29.000Z",
-    "generationDate": "2026-10-22T05:04:19.997Z",
+    "previousBuiltSha": "4873da59f8eb39ecbbc91d951bd8021a67f44cc5",
+    "currentBuiltSha": "19aaa7970865c56014d45d5115ca65b6de33f806",
+    "shortSha": "19aaa79",
+    "buildDate": "2026-10-23T14:11:39.000Z",
+    "generationDate": "2026-10-23T14:27:20.488Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:gordolio/Trio#17",
-      "title": "Approve AI meal requests from Trio screens",
+      "changeId": "pr:nightscout/Trio#1646",
+      "title": "Prevent meals disappearing during carb edits",
       "changes": [
-        "AI meal requests now open the Treatments sheet on iPhone or the Confirm screen on Apple Watch.",
-        "The \"Allow meal requests\" setting is off by default."
+        "Editing a carb entry now replaces the meal in a single operation.",
+        "Fat/protein edits now rebuild their carb-equivalents correctly."
       ],
-      "category": "new-features",
+      "category": "fixes",
       "sourceIds": [
-        "pr:gordolio/Trio#17",
-        "commit:3e7174a32d5d",
-        "diff:84cd46de7e3d"
+        "pr:nightscout/Trio#1646",
+        "commit:b29cc886fccd"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:gordolio/Trio#17"
+        "pr:nightscout/Trio#1646"
       ],
       "highlight": true,
-      "provenance": "origin",
+      "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:gordolio/Trio#17",
+          "id": "pr:nightscout/Trio#1646",
           "type": "pull-request",
-          "title": "gordolio/Trio#17: feat(ai-requests): Finish an assistant's meal request in Trio's own Treatments sheet and watch Confirm screen",
-          "url": "https://github.com/gordolio/Trio/pull/17"
+          "title": "nightscout/Trio#1646: fix: replace carb entry in a single transaction",
+          "url": "https://github.com/nightscout/Trio/pull/1646"
         },
         {
-          "id": "commit:3e7174a32d5d",
+          "id": "commit:b29cc886fccd",
           "type": "commit",
-          "title": "feat(ai-requests): Approve an assistant's meal request on the Apple Watch or iPhone",
-          "url": "https://github.com/gordolio/Trio/commit/3e7174a32d5d9731b83908b66ba647a62324795f"
-        },
-        {
-          "id": "diff:84cd46de7e3d",
-          "type": "diff",
-          "title": "Diff for pr:gordolio/Trio#17",
-          "url": "https://github.com/gordolio/Trio/compare/77a8519f21db953ed041a300b6dba2239ce5d24b...f812e1482d6eef4e74b9025216402e4882d3b8c6"
-        }
-      ]
-    },
-    {
-      "changeId": "commit:4873da59f8eb39ecbbc91d951bd8021a67f44cc5",
-      "title": "Move treatment button into side tab bar on iPhone Duo",
-      "changes": [
-        "On iPhone Duo the treatment (+) button appears in the side tab bar slot.",
-        "Other iPhones keep the button at the bottom center."
-      ],
-      "category": "interface-improvements",
-      "sourceIds": [
-        "commit:4873da59f8eb",
-        "diff:b3bd65a602bb"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "commit:4873da59f8eb39ecbbc91d951bd8021a67f44cc5"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "commit:4873da59f8eb",
-          "type": "commit",
-          "title": "Put the treatment button in the side tab bar on iPhone Duo",
-          "url": "https://github.com/gordolio/Trio/commit/4873da59f8eb39ecbbc91d951bd8021a67f44cc5"
-        },
-        {
-          "id": "diff:b3bd65a602bb",
-          "type": "diff",
-          "title": "Diff for commit:4873da59f8eb39ecbbc91d951bd8021a67f44cc5",
-          "url": "https://github.com/gordolio/Trio/compare/6e352c27682f8b409dc9aecd652a356ab88ec698...4873da59f8eb39ecbbc91d951bd8021a67f44cc5"
+          "title": "Replace carb entry in a single transaction",
+          "url": "https://github.com/gordolio/Trio/commit/b29cc886fccd228c86ebe1126fddb0cf884e1c00"
         }
       ]
     }
@@ -129,42 +88,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeId": "commit:6e352c27682f8b409dc9aecd652a356ab88ec698",
-          "title": "Trio Watch App notification setup adjusted",
-          "changes": [
-            "Push Notifications are now enabled for the Trio Watch App by Fastlane.",
-            "Time Sensitive Notifications must be enabled manually; end users won't see any change."
-          ],
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "commit:6e352c27682f",
-            "diff:244ddbe8ad7a"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "commit:6e352c27682f8b409dc9aecd652a356ab88ec698"
-          ],
-          "highlight": false,
-          "provenance": "internal",
-          "sources": [
-            {
-              "id": "commit:6e352c27682f",
-              "type": "commit",
-              "title": "fix(fastlane): Enable Time Sensitive Notifications on the watch app by hand, since Apple's API can't",
-              "url": "https://github.com/gordolio/Trio/commit/6e352c27682f8b409dc9aecd652a356ab88ec698"
-            },
-            {
-              "id": "diff:244ddbe8ad7a",
-              "type": "diff",
-              "title": "Diff for commit:6e352c27682f8b409dc9aecd652a356ab88ec698",
-              "url": "https://github.com/gordolio/Trio/compare/f812e1482d6eef4e74b9025216402e4882d3b8c6...6e352c27682f8b409dc9aecd652a356ab88ec698"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -176,580 +100,65 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 17,
-      "title": "feat(ai-requests): Finish an assistant's meal request in Trio's own Treatments sheet and watch Confirm screen",
-      "body": "## Summary\n\nAn AI assistant asks trio-rc to log a meal. trio-rc wakes Trio, which works out its suggested dose and asks the wearer. The wearer finishes the request in **Trio's own screens**:\n- on the iPhone, the **Treatments** sheet, filled in;\n- on the watch, the bolus **Confirm** screen.\n\nThe wearer confirms the normal way, and Trio reports what was actually logged and given. **\"Allow meal requests\" is off by default.**\n\nSince the first draft, the custom approval screens and signed answers have been replaced by the existing screens (decisions D1–D17 in `notes/plans/2026-10-21-meal-requests-existing-screens-decisions.md`).\n\n```text\nrequest arrives (trio-rc)\n  AIRequestCoordinator.receive        # dose for the notification text; pending; watch first, iPhone after the delay\n  iPhone: tap / bring Trio to front   # opens Treatments filled in (carbs, fat/protein if entries are on, \"AI: ChatGPT – pizza slice\")\n    upstream \"Log Carbs and Enact Bolus\" (its own checks, warnings, Face ID)\n    AIRequestTreatmentsSession        # claims the request; outcome from this bolus's own pump event\n  watch: Review                       # asks the phone for live amounts, opens straight on Confirm (Back to adjust)\n    upstream crown confirm / Log Carbs → one confirm over WatchConnectivity → the phone logs and boluses\n  whichever device goes first takes it, through one lock; the other closes its screen (\"Logged on your watch\")\n  report to trio-rc                   # delivering / logged / declined / expired: what was actually done\n```\n\n**Upstream footprint:** only one-line hooks.\n\n| Where | Hook |\n|---|---|\n| Treatments sheet | 2 lines: the decimal formatter for a request's grams, and the session modifier |\n| Treatments state model | 1 line: `refusesSubmit` |\n| `TrioApp` | 2 renamed lines |\n| Watch main view | 1 line |\n| `WatchState+Requests` | 2 lines: the intercepts |\n| Confirm screen's carbs row | 1 line |\n\nPlus the existing one-line hooks. Upstream's algorithm, `APSManager`, `CarbsStorage` and `BolusSafetyValidator` are untouched, and manual Treatments and watch entries behave as before.\n\n**Removed:**\n- the custom iPhone and watch approval screens;\n- test requests;\n- signed answers and the display MAC;\n- the \"Approve from the notification\" style;\n- answer routes;\n- the AI-only checks (D1).\n\nThe notification keeps the dose line, fat and protein (when logged) and the 0 U reason.\n\n**Since review** (`130e2501e`, `5858b52e3`, `42fe9c046`, `b2e3998bf`):\n- A manual watch entry started over a request's screens declines the request and starts from zero, as upstream's does. The request's carbs and dose aren't left underneath it.\n- A request with only fat or protein is refused when it arrives while fat and protein entries are off: Trio would log nothing for it. The assistant hears \"Not given: Fat and protein entries are off in Trio.\"\n- The AI food chat doesn't stop the Treatments sheet closing itself after Log: checked on iOS 26.5 and 27. The comments that said it did are corrected.\n- The watch hears how its confirm went as soon as the pump accepts the bolus, as upstream's watch does. It no longer waits for Trio's post-bolus loop update and the report to trio-rc, which could take up to about 2 minutes on a bad network.\n- Only one device can carry out a request. The iPhone's Log takes the request through a lock before upstream's submit starts, and the watch's confirm takes it through the same lock, so the two can't both log and bolus for one meal. A watch confirm that loses is told \"Logged on your iPhone\".\n- Trio's request files are read again until they can be. Before the first unlock they're there but can't be read. Trio used to take the seen IDs and final reports as empty and delete the pending request, so after a restart a request it had already handled could be asked again. A request that arrives meanwhile is now left for the next check-in.\n- Clearing the watch's notification no longer declines a request that's open on the iPhone's Treatments sheet: the sheet answers it. Leaving the watch's Confirm screens still declines (D11). The settings footer says so.\n- The watch asks to show notifications only once meal requests are on, and only then does the phone send trio-rc the watch's push token. Before, every user of this build got the watch's prompt, with the switch on or off.\n\n**Deploy order (changed): deploy trio-rc first** (gordolio/trio-rc#2), then this build. This build's pending report leaves out `approvalStyle` and `answerRoute`, which today's trio-rc requires.\n\n## Evidence\n\n**Tests:** the full suite passes on `b2e3998bf` (1,499 Swift Testing + 3 XCTest), and the watch builds. Each fix since review has tests that were checked to fail with the fix taken out. Each of the 7 tasks was reviewed. The dosing tasks took two fix rounds each. A final whole-branch review and its fix wave are clean.\n\n### iPhone\n\n| Settings | Request opens Treatments | Logged on the watch |\n|---|---|---|\n| ![AI Assistants settings: Allow meal requests and Ask on iPhone, no style picker, no test requests](https://github.com/user-attachments/assets/a08cad82-b8ef-4df6-ad26-a8d85fec6e37) | ![Treatments sheet filled in: 82.5 g carbs, note AI: ChatGPT – pizza slice, Bolus 0 until the recommendation is tapped](https://github.com/user-attachments/assets/8ca6347c-6636-4004-a730-cfd1261e37f2) | ![The sheet closed with the banner Logged on your watch](https://github.com/user-attachments/assets/18c4c1b0-51e2-4fa0-bacc-2e0f5323b8a1) |\n\nThe settings screenshot predates the footer's new wording (\"…declines it, unless it's open on your iPhone\").\n\nRequest notification → Treatments filled in → Log Carbs:\n\nhttps://github.com/user-attachments/assets/4b81b0d1-7e76-40dc-b6e3-61a24df32307\n\nThe iPhone sheet closes when the watch logs the request (D16):\n\nhttps://github.com/user-attachments/assets/160f819a-4297-44af-84d4-6c2539ae560c\n\n### Apple Watch\n\n| Notification | Review opens Confirm | Back: bolus screen | Back again: carbs, \"Proceed\" | Logged |\n|---|---|---|---|---|\n| ![Doorbell notification with Review](https://github.com/user-attachments/assets/46eb4c98-1365-48e3-8cd0-f18d3fdb8ac5) | ![Upstream Confirm screen: Carbs 82.5 g, Bolus 0.00 U, dial crown](https://github.com/user-attachments/assets/ecc820f6-daed-419f-9af7-b099704db884) | ![Upstream bolus screen: 83 g, 0.00 U, No Bolus, Log Carbs](https://github.com/user-attachments/assets/61d265ee-f589-4e98-8b3b-1e61bfcb423b) | ![Upstream carbs screen showing Proceed](https://github.com/user-attachments/assets/af3fbd3c-2749-43b9-b4a4-748e5773f0ea) | ![Carbs logged successfully](https://github.com/user-attachments/assets/75b405b8-99b5-4d77-a867-9e6d97a54e5b) |\n\nNotification → Review → Confirm → Back → \"No Bolus, Log Carbs\" → upstream's acknowledgement:\n\nhttps://github.com/user-attachments/assets/8d415e50-2b33-486e-a7ab-453912e6e71b\n\nTrio's database after these runs shows:\n- the watch path logged the request's exact 82.5 g, with the note \"AI: ChatGPT – pizza slice\";\n- the iPhone path logged the same;\n- upstream's own watch Meal entry logged \"10 g, Via Watch\", unchanged.\n\n**Simulator limits:**\n- **Where the requests came from.** This build has no trio-rc host, so requests were written into Trio's pending file, and the watch's doorbell was sent with `simctl push` in trio-rc's new shape.\n- **Dose and confirm.** Trio's dose is 0 U (no pump or loop), and the crown can't be turned in the simulator. So the watch path was confirmed with \"No Bolus, Log Carbs\", which goes through the same intercept as the crown.\n- **Not checked here:** a real bolus, Face ID with a pump, the 41 mm layout, and the watch's notification prompt appearing once meal requests are turned on (built, not run).\n\n**Found while testing, a decision for you:**\n- On a branch build, Trio shows the \"Hey Trioneer, watch out!\" alert at every launch.\n- A cold-launch tap of the iPhone request notification therefore finds that alert up. By D15 (no queue, nothing opens over another sheet), the sheet doesn't open. Trio logs \"another sheet is open, so … isn't opened\".\n- Release builds don't show the alert. With Trio already running, the tap opens the sheet.\n\n## Merge Danger\n\n**Door:** two-way. Fork code sits behind a switch that's off by default, and the hooks are one line each. There are no Core Data model changes. Saved files and preferences from the previous build still load.\n\n**Blast Radius:** dosing.\n\nWith the switch on, a request fills in the screens the wearer already uses. Nothing is logged or given until the wearer confirms there, and upstream's own checks and Face ID apply.\n\n**Follow-ups, recorded and not done here:**\n- **Working without the phone:** approving on the watch when the phone is out of reach. Signing made this possible, and it's to be refined (spec \"Later\").\n- **The prefilled note:** when it's longer than 25 characters it can only be replaced, not edited character by character (upstream's text field limit).\n- **Clock skew:** trio-rc's 660 s grace leaves 60 s of skew against Trio's 600 s hold.\n- **Back to the watch's carbs screen:** it shows 0 g with Proceed off, because upstream's carbs screen doesn't read the request's carbs. The wearer dials them again, and a value other than the request's rounded grams is logged as the watch's whole grams.\n- **Smaller ones**, under \"Deferred minors (Trio)\" in `notes/reviews/2026-10-21-meal-requests-rulings.md`:\n  - the watch keeps a request's notification after logging it there;\n  - upstream's notification categories can overwrite the watch's on a first launch;\n  - cleanups: the unused wake-up push type, a duplicated key, and the full status snapshot built for the 0 U reason.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\n\n\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n<!-- coderabbit-ai-generated:v1 -->\n\n## Summary by CodeRabbit\n\n* **New Features**\n  * AI assistants can request meal logging and insulin approval through the iPhone or Apple Watch. Review the request, edit meal details, and approve or decline before anything is logged or delivered.\n  * Configure whether to allow meal requests and how long to wait before asking on iPhone if there’s no watch response.\n  * Requests show their details, expiration, and outcome; notifications can open the relevant approval screen.\n* **Bug Fixes**\n  * Improved handling of request delivery, duplicate requests, interruptions, and sign-in changes.\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "number": 1646,
+      "title": "fix: replace carb entry in a single transaction",
+      "body": "Fixes an issue when editing a carb entry: the entry could disappear (deleted but not recreated).\r\nThis change replaces the entries in a single transaction.\r\n\r\n### Issue explanation:\r\n`BaseCarbEntryMutationService.replaceMeal` still committed the delete and the insert as two independent Core Data transactions. The insert can fail silently, causing the meal to be completely removed. Similarly, a crash between delete and insert would do the same.\r\n\r\n### Testing:\r\nTested on iPhone 15, iOS26 — the device we use for Trio.\r\nFirst, put the device in a Faraday cage (tin can) for 30 minutes.\r\nThen tried multiple meal edit cycles, simple and complex (fat/protein) meals. Also checked the records are updated on Nightscout properly.\r\n",
       "labels": [],
-      "url": "https://github.com/gordolio/Trio/pull/17",
-      "mergedAt": "2026-10-22T03:20:53Z"
+      "url": "https://github.com/nightscout/Trio/pull/1646",
+      "mergedAt": "2026-10-22T21:59:50Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1646,
+      "title": "fix: replace carb entry in a single transaction",
+      "body": "Fixes an issue when editing a carb entry: the entry could disappear (deleted but not recreated).\r\nThis change replaces the entries in a single transaction.\r\n\r\n### Issue explanation:\r\n`BaseCarbEntryMutationService.replaceMeal` still committed the delete and the insert as two independent Core Data transactions. The insert can fail silently, causing the meal to be completely removed. Similarly, a crash between delete and insert would do the same.\r\n\r\n### Testing:\r\nTested on iPhone 15, iOS26 — the device we use for Trio.\r\nFirst, put the device in a Faraday cage (tin can) for 30 minutes.\r\nThen tried multiple meal edit cycles, simple and complex (fat/protein) meals. Also checked the records are updated on Nightscout properly.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1646",
+      "mergedAt": "2026-10-22T21:59:50Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "3e7174a32d5d9731b83908b66ba647a62324795f",
-      "subject": "feat(ai-requests): Approve an assistant's meal request on the Apple Watch or iPhone",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T10:53:51-05:00"
+      "sha": "b29cc886fccd228c86ebe1126fddb0cf884e1c00",
+      "subject": "Replace carb entry in a single transaction",
+      "author": "Ostap Korkuna",
+      "authoredAt": "2026-10-18T17:34:34-07:00"
     },
     {
-      "sha": "c99331d3935a900c5f95e4950c17b5a19eba4500",
-      "subject": "Merge remote-tracking branch 'origin/dev' into feat/ai-meal-requests",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T10:53:52-05:00"
+      "sha": "ca6187b9b2779a5f3c2556d0239d436f3bcf235a",
+      "subject": "Merge pull request #1646 from ostap-korkuna/fix/edit-carb-entry-in-transaction",
+      "author": "Sam King",
+      "authoredAt": "2026-10-22T14:59:49-07:00"
     },
     {
-      "sha": "7279ac64dec4081198ed63abc84677c82dde5581",
-      "subject": "fix(ai-requests): Check recent insulin against the dose's own loop run, and before asking",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T11:08:12-05:00"
+      "sha": "ab11fea572596f9de6d127ee65f7d332e22a4247",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.16 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-22T22:00:01Z"
     },
     {
-      "sha": "811388007464d35480328195a6d6ee46a213e195",
-      "subject": "fix(ai-requests): Check carbs and the dose again at approval, add a dry run and a crash marker",
+      "sha": "19aaa7970865c56014d45d5115ca65b6de33f806",
+      "subject": "Merge branch 'nightscout:dev' into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-10-20T20:59:47-05:00"
-    },
-    {
-      "sha": "6c795b34e7e182451baf66fb12e326293cbb8d6b",
-      "subject": "fix(ai-requests): Keep the carry-out marker when it can't be read yet",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T21:25:20-05:00"
-    },
-    {
-      "sha": "b26585498c01cb5108d9e860219acb03a53ae7a3",
-      "subject": "feat(ai-requests): Publish each request's outcome with the result wording",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T21:39:24-05:00"
-    },
-    {
-      "sha": "547e19cbc5d6544c414d5049af71249b137c6c68",
-      "subject": "feat(ai-requests): Tell the watch each result, notify failures on the iPhone, and wait while the watch is open",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T21:55:54-05:00"
-    },
-    {
-      "sha": "a2a45b49748f8598c7701f5735c5145fc829e1e6",
-      "subject": "feat(ai-requests): Show the dose first and give the approval screens Trio's own context",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T22:28:18-05:00"
-    },
-    {
-      "sha": "666bea47da3cc3f5678ebcbdbf07044c1fbd0635",
-      "subject": "fix(ai-requests): Only give a 0 U reason Trio knows is true",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T22:40:46-05:00"
-    },
-    {
-      "sha": "8612644b7008f01802b79e0b7350457d22d3133b",
-      "subject": "feat(ai-requests): Sign the notification text, style and context, so the watch only acts on what Trio wrote",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T23:05:53-05:00"
-    },
-    {
-      "sha": "1e86452f8c31865cb1d23d027ffe42d82de78890",
-      "subject": "fix(ai-requests): Sign the shown amounts too, and refuse alert text outside the title and body",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T23:24:13-05:00"
-    },
-    {
-      "sha": "bc593bd0a0f7e320e420640e6f83ebf81c925c34",
-      "subject": "feat(ai-requests): Model the watch approval screen's phases",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T23:38:02-05:00"
-    },
-    {
-      "sha": "261dedb6307866e61f027e9c6f85040039a94d41",
-      "subject": "feat(ai-requests): Keep the watch screen for its result, use one notification slot, and build on upstream's notification setup",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-20T23:56:34-05:00"
-    },
-    {
-      "sha": "92237bc288f7b5489629e048d874c97ad6d2315c",
-      "subject": "feat(ai-requests): Show the real outcome on the watch, keep the double-dose context, and make Approve deliberate",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T00:22:14-05:00"
-    },
-    {
-      "sha": "15e777b32d08a3b6a7b94b186bf4d1cfb1a0b31f",
-      "subject": "fix(ai-requests): Never show success the watch doesn't know, fit 41 mm, and move the screen's rules into tested code",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T00:41:51-05:00"
-    },
-    {
-      "sha": "104dabc2dcd361fa9d7d18fc2f8db5071fd68b25",
-      "subject": "fix(ai-requests): Keep the iPhone sheet for its result, and make a waiting request reachable",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T00:57:45-05:00"
-    },
-    {
-      "sha": "73b3478cf3005f70e532fa05104d87ca9c210b6e",
-      "subject": "fix(ai-requests): Notify a failure when Trio isn't in front, even with the sheet up",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T01:07:04-05:00"
-    },
-    {
-      "sha": "31fb0afac515db56d2ffd57eafe36852f7b7a490",
-      "subject": "feat(ai-requests): Make the dose the biggest thing on the iPhone sheet and name it in the Face ID prompt",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T01:16:43-05:00"
-    },
-    {
-      "sha": "1a342d418f78aa780121d4b477e53b64e25182d2",
-      "subject": "fix(ai-requests): Keep the iPhone sheet's warnings and result in view",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T01:24:37-05:00"
-    },
-    {
-      "sha": "160760e8ffbf1895b388a4a0617ead0ad5ee0c13",
-      "subject": "feat(ai-requests): Add the meal-requests switch, the new settings wording, and a dry-run test request",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T01:33:30-05:00"
-    },
-    {
-      "sha": "463ff14f63761936849e95a30df2ec7a180a7a49",
-      "subject": "feat(ai-requests): Animate the watch approval states, map its haptics, and fit small watches and large text",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T01:57:09-05:00"
-    },
-    {
-      "sha": "97b52fb7f2f0bb752565ae02ae3ad655a6bf71c3",
-      "subject": "fix(ai-requests): Keep the crown's confirmation bar in view whenever the crown can approve",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T02:09:38-05:00"
-    },
-    {
-      "sha": "eb1582a4f24761ab207e26b1b1814126062c6f6b",
-      "subject": "feat(ai-requests): Animate the iPhone sheet's states and label its amounts",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T02:21:28-05:00"
-    },
-    {
-      "sha": "9e52e2bb128144c4379bbdb8482f22be38d2558e",
-      "subject": "fix(ai-requests): Tell the wearer when an approval didn't go through, and tidy the final review's minors",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T03:02:32-05:00"
-    },
-    {
-      "sha": "ad0f72338fa0a389ecd34fbeaf8cda6cdb10e831",
-      "subject": "fix(ai-requests): Make every outcome of a watch approval reach the wearer, and don't call a late reply a failure",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T03:20:53-05:00"
-    },
-    {
-      "sha": "188c46a330926aa436fc990fa7cdc6a371e68f25",
-      "subject": "refactor(ai-requests): Remove the test requests",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T08:05:18-05:00"
-    },
-    {
-      "sha": "6d752d7799de5ef69e8d578617c843b4a44a194b",
-      "subject": "feat(ai-requests): Track open screens, claims and endings in the coordinator",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T08:23:21-05:00"
-    },
-    {
-      "sha": "249eb53bf0c12396845b93c4354713f973c9d668",
-      "subject": "feat(ai-requests): Add the watch's open, confirm and close messages, and tell it when a request ends",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T08:43:34-05:00"
-    },
-    {
-      "sha": "35157c76b2e661609ca22996a9b5c960217913e5",
-      "subject": "feat(ai-requests): Open the Treatments sheet filled in for a request, and remove the custom iPhone sheet",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T09:09:37-05:00"
-    },
-    {
-      "sha": "36a5c778e613053eaf05436f9826af0d4b591be1",
-      "subject": "fix(ai-requests): Decide the Treatments outcome from the sheet's own state, and keep watching after it closes",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T09:40:50-05:00"
-    },
-    {
-      "sha": "f323ac1da4fc06b7ea0d3fb9f10de50085d7dda7",
-      "subject": "fix(ai-requests): Confirm a Treatments bolus from its own pump event, and don't decline a sheet that never appeared",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T10:04:41-05:00"
-    },
-    {
-      "sha": "9e55c95f1236cb462a74ecd178bb66a8c3242c7e",
-      "subject": "feat(ai-requests): Open a request straight on the watch's Confirm screen, and remove the custom watch screen",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T10:54:46-05:00"
-    },
-    {
-      "sha": "b3d9944a6c2299105fe0b03f3c04f2534f95a401",
-      "subject": "fix(ai-requests): Swallow the watch's sends after a request ends, lead Back to the bolus screen, and send the dose shown",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T11:28:37-05:00"
-    },
-    {
-      "sha": "548cd152cf816668a412ac77992b0656f75d66f1",
-      "subject": "fix(ai-requests): Send exactly the dose the watch's Confirm screen shows",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T11:51:17-05:00"
-    },
-    {
-      "sha": "9ed86a790587c08b3e2fe0f0ec794104a6f62b1e",
-      "subject": "refactor(ai-requests): Remove signing, the one-gesture style, answer routes and the AI-only checks",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T12:52:06-05:00"
-    },
-    {
-      "sha": "981b7ff40ad90b8d39d1f2ebc46b8cbcccd7eba9",
-      "subject": "feat(ai-requests): Keep the notification to the dose line and the 0 U reason",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T13:07:34-05:00"
-    },
-    {
-      "sha": "f9458192a8238e8894077679aaba774202ac781d",
-      "subject": "fix(ai-requests): Keep the fat and protein line in the notification",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T13:16:49-05:00"
-    },
-    {
-      "sha": "8f370e30aeecfc8c7490c6f0f913d4046e1321db",
-      "subject": "fix(ai-requests): Respect the fat and protein setting, refuse a submit for a request that's gone, and don't reopen a stale one",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T14:28:18-05:00"
-    },
-    {
-      "sha": "130e2501e193f115c3c7cdc1be111e610e457d6b",
-      "subject": "fix(ai-requests): Zero a request's values when a manual watch flow starts over it, and refuse fat/protein-only requests with those entries off",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T16:26:14-05:00"
-    },
-    {
-      "sha": "5858b52e3ea852b8383da5deafa055bec854bd2d",
-      "subject": "fix(ai-requests): Tell the watch how its confirm went as soon as the pump answers",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T20:46:18-05:00"
-    },
-    {
-      "sha": "42fe9c04617e7c88b6ca19eda987c5a161f16688",
-      "subject": "fix(ai-requests): Let only one device carry out a request when the iPhone's Log and the watch's confirm meet",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T20:54:02-05:00"
-    },
-    {
-      "sha": "b2e3998bf7521a129ad9b0648e52f7204f3a4e2c",
-      "subject": "fix(ai-requests): Read request files again until they can be, keep a request open on the iPhone when the watch's notification is cleared, and wait for meal requests before the watch asks for notifications",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T21:30:43-05:00"
-    },
-    {
-      "sha": "d1f43a48afbdb590a540c452e593ced5e7767408",
-      "subject": "Merge remote-tracking branch 'origin/dev' into feat/ai-meal-requests",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T21:53:43-05:00"
-    },
-    {
-      "sha": "f812e1482d6eef4e74b9025216402e4882d3b8c6",
-      "subject": "Merge pull request #17 from gordolio/feat/ai-meal-requests",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T22:20:52-05:00"
-    },
-    {
-      "sha": "6e352c27682f8b409dc9aecd652a356ab88ec698",
-      "subject": "fix(fastlane): Enable Time Sensitive Notifications on the watch app by hand, since Apple's API can't",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T22:32:57-05:00"
-    },
-    {
-      "sha": "4873da59f8eb39ecbbc91d951bd8021a67f44cc5",
-      "subject": "Put the treatment button in the side tab bar on iPhone Duo",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-21T23:11:52-05:00"
+      "authoredAt": "2026-10-23T08:47:12-05:00"
     }
   ],
   "includedFiles": [
     {
-      "status": "A",
-      "path": "Trio Watch App Extension/AIRequests/AIRequestFlowModifier.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio Watch App Extension/AIRequests/AIRequestWatchAppDelegate.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio Watch App Extension/AIRequests/AIRequestWatchCenter.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio Watch App Extension/TrioWatchApp.entitlements"
+      "status": "M",
+      "path": "Config.xcconfig"
     },
     {
       "status": "M",
-      "path": "Trio Watch App Extension/TrioWatchApp.swift"
+      "path": "Trio/Sources/APS/Storage/CarbEntryMutationService.swift"
     },
     {
       "status": "M",
-      "path": "Trio Watch App Extension/Views/BolusConfirmationView.swift"
+      "path": "Trio/Sources/APS/Storage/CarbsStorage.swift"
     },
     {
       "status": "M",
-      "path": "Trio Watch App Extension/Views/TrioMainWatchView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/WatchState+Requests.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/WatchState.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio.xcodeproj/project.pbxproj"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Application/AppDelegate.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Application/TrioApp.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Models/AIRequests/AIRequestIdentifiers.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Models/AIRequests/AIRequestShared.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Models/AIRequests/AIRequestWatchFlowController.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Models/AIRequests/AIRequestWatchMessages.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/AIAssistantsConfig/AIAssistantsConfigStateModel.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsApprovalSection.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsConfigRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsHeaderView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/AIAssistantsConfig/View/AIAssistantsQuestionsSection.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Treatments/TreatmentsStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AIAssistants/AIAssistantsAPI.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AIAssistants/AIAssistantsService.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AIAssistants/AIAssistantsTokenStore.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIAssistantsCheckIn.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIAssistantsPreferences.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIInbox.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestBolusSignals.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestCarryOutMarker.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestCoordinator.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestDisplayText.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestHooks.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestLeftText.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestPhoneBackup.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestPorts.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestSeenStore.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestState.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestTreatmentsOpener.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestTreatmentsSession.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestWatchLink.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestsRuntime.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/BaseAIRequestTreatments.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/ServiceRequestReporter.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/AIAssistantsAPITests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/AIAssistantsConfigDisplayTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/AIAssistantsConfigStateModelTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/AIAssistantsServiceTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIAssistantsCheckInTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIAssistantsPreferencesTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIInboxTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestCarryOutMarkerTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestContextTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestCoordinatorTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestDeliverableDoseTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestDisplayTextTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestFakes.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestPhoneBackupTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestScreensTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestSeenStoreTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestSharedTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestTreatmentsSessionTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestWatchFlowControllerTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestWatchLinkTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/SettingsSearchTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "fastlane/Fastfile"
-    },
-    {
-      "status": "M",
-      "path": "fastlane/testflight.md"
+      "path": "TrioTests/CoreDataTests/CarbsStorageTests.swift"
     }
   ]
 }
