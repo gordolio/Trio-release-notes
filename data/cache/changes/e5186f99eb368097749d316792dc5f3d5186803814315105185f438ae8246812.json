@@ -1,0 +1,22 @@
+{
+  "inputHash": "4b0cfb34b4c2497ecfb7340f1a58c4546caca14263590821939a3f5f403e2dd5",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1658",
+    "title": "Record CC0 license for alarm sounds",
+    "changes": [
+      "Acknowledgements now record the CC0 (public domain) license for new alarm sounds.",
+      "You'll see the author's credit and the CC0 note in the app's acknowledgements."
+    ],
+    "category": "origin-only-customizations",
+    "sourceIds": [
+      "pr:nightscout/Trio#1658",
+      "diff:e5186f99eb36"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

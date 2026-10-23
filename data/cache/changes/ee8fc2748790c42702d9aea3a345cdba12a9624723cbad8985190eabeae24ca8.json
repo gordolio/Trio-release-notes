@@ -1,0 +1,22 @@
+{
+  "inputHash": "2ce5ab6619a79fae33df19ddd955f9810d34fa9eca705de1069e25cf9ad0c925",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1656",
+    "title": "G7 sensor update and submodule refresh",
+    "changes": [
+      "Updated device components and translations; G7 sensor support pinned to the trio G7 branch.",
+      "Unusable G7 readings will now be flagged as sensor issues."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1656",
+      "commit:0c690f14346c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
