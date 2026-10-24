@@ -1,50 +1,193 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 40009614611,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40009614611",
+    "sourceWorkflowRunId": 40127501549,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40127501549",
     "sourceBranch": "dev",
-    "previousBuiltSha": "cdbe3ae7278fddd8fcb435ce03ba65899ff22c74",
-    "currentBuiltSha": "b8c6aa398cc682c346af3d085bfd839f3c66841d",
-    "shortSha": "b8c6aa3",
-    "buildDate": "2026-10-23T19:28:17.000Z",
-    "generationDate": "2026-10-23T19:38:24.025Z",
+    "previousBuiltSha": "b8c6aa398cc682c346af3d085bfd839f3c66841d",
+    "currentBuiltSha": "99ff89f138f7e0c03a0b5f7a8e3608f53e07de5d",
+    "shortSha": "99ff89f",
+    "buildDate": "2026-10-24T20:12:33.000Z",
+    "generationDate": "2026-10-24T20:23:07.037Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "commit:b8c6aa398cc682c346af3d085bfd839f3c66841d",
-      "title": "iPhone Duo full-screen layout support",
+      "changeId": "pr:nightscout/Trio#1558",
+      "title": "Rename TIR setting to Lower Range Threshold",
       "changes": [
-        "Builds now use Xcode 27.1 to enable full-screen layout on iPhone Duo devices.",
-        "You may see improved full-screen display when using Trio on an iPhone Duo."
+        "Time in Range setting renamed to 'Lower Range Threshold' with Standard (70 mg/dL) and Extended (63 mg/dL).",
+        "Charts and statistics will display TIR/TITR ranges using the selected lower threshold."
       ],
-      "category": "internal-and-build-system",
+      "category": "interface-improvements",
       "sourceIds": [
-        "commit:b8c6aa398cc6",
-        "diff:cf158184f43e"
+        "pr:nightscout/Trio#1558",
+        "diff:1712c9471fc2"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "commit:b8c6aa398cc682c346af3d085bfd839f3c66841d"
+        "pr:nightscout/Trio#1558"
       ],
       "highlight": true,
-      "provenance": "internal",
+      "provenance": "upstream",
       "sources": [
         {
-          "id": "commit:b8c6aa398cc6",
-          "type": "commit",
-          "title": "ci(build): Build with Xcode 27.1 on the xcode-27 runner, for iPhone Duo's full-screen layout",
-          "url": "https://github.com/gordolio/Trio/commit/b8c6aa398cc682c346af3d085bfd839f3c66841d"
+          "id": "pr:nightscout/Trio#1558",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1558: Updates \"TIR Type\" setting with newer terminology for improved clarity and accuracy.",
+          "url": "https://github.com/nightscout/Trio/pull/1558"
         },
         {
-          "id": "diff:cf158184f43e",
+          "id": "diff:1712c9471fc2",
           "type": "diff",
-          "title": "Diff for commit:b8c6aa398cc682c346af3d085bfd839f3c66841d",
-          "url": "https://github.com/gordolio/Trio/compare/cdbe3ae7278fddd8fcb435ce03ba65899ff22c74...b8c6aa398cc682c346af3d085bfd839f3c66841d"
+          "title": "Diff for pr:nightscout/Trio#1558",
+          "url": "https://github.com/gordolio/Trio/compare/d834ccfaaa6295df697cebec045ccd429761249b...eb3293829e4c01bdf7c176e5ee3f5181ac922322"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1580",
+      "title": "Mark pump-programmed boluses in History",
+      "changes": [
+        "Pump-programmed boluses are now recorded and identified in the app.",
+        "History > Treatments shows a pump indicator next to those boluses."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1580",
+        "diff:3496d8e0929e"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1580"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1580",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1580: Persist wasProgrammedByPumpUI for boluses",
+          "url": "https://github.com/nightscout/Trio/pull/1580"
+        },
+        {
+          "id": "diff:3496d8e0929e",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1580",
+          "url": "https://github.com/gordolio/Trio/compare/7eaec07dfda018c82e630bac49ea8efceaa38b71...11f1ca357103410e9370c498057a71844ac533f3"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1618",
+      "title": "Add Syai Ultra X1 CGM support",
+      "changes": [
+        "Syai Ultra X1 continuous glucose monitor (CGM) is now available in Trio.",
+        "It requires a Syai account, cannot be calibrated, and can upload glucose data to Syai servers."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1618",
+        "commit:33e1843e6fa7",
+        "diff:6f124f5dc2cb"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1618"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1618",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1618: Add Syai Ultra X1 as CGM ",
+          "url": "https://github.com/nightscout/Trio/pull/1618"
+        },
+        {
+          "id": "commit:33e1843e6fa7",
+          "type": "commit",
+          "title": "feat(cgm): add Syai Ultra as CGM",
+          "url": "https://github.com/gordolio/Trio/commit/33e1843e6fa783bdcc44d8c4fe392a539e562a49"
+        },
+        {
+          "id": "diff:6f124f5dc2cb",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1618",
+          "url": "https://github.com/gordolio/Trio/compare/efb5bea305adfb7a439cb217f09c6c18bfcdef53...4405d72a8abc0daa3431fa3a79880f37f8cf431b"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1652",
+      "title": "Close Edit Override form on save failure",
+      "changes": [
+        "Edit Override form now closes when saving even if the Nightscout upload fails.",
+        "Your changes are saved and the app records the upload failure."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:nightscout/Trio#1652",
+        "diff:3c2a07ee1def"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1652"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1652",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1652: Close the Edit Override form when the Nightscout profile upload fails",
+          "url": "https://github.com/nightscout/Trio/pull/1652"
+        },
+        {
+          "id": "diff:3c2a07ee1def",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1652",
+          "url": "https://github.com/gordolio/Trio/compare/f5cdbfa8b062d195fe30505f6bfc8ddd16314870...fe95d14d76a0b872f897bae2e22489d53c569813"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1659",
+      "title": "Surface CGM warnings and catalog G7 alerts",
+      "changes": [
+        "Sensor warnings now appear during a session instead of being hidden.",
+        "G7 sensor alerts are now categorized and surface like other CGMs."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1659",
+        "diff:ef043543ac35"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1659"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1659",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1659:  Surfaces CGM sensor problems that were reaching the user as silence.",
+          "url": "https://github.com/nightscout/Trio/pull/1659"
+        },
+        {
+          "id": "diff:ef043543ac35",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1659",
+          "url": "https://github.com/gordolio/Trio/compare/0a8c2587ec23e700a234c8cf5a3f09d08216c50a...cc8dd5d4bf3730782d80388e334cf8fc70384f59"
         }
       ]
     }
@@ -97,19 +240,404 @@
     }
   ],
   "maintenanceHotspots": [],
-  "includedPullRequests": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1558,
+      "title": "Updates \"TIR Type\" setting with newer terminology for improved clarity and accuracy.",
+      "body": "Addresses the terminology portion of the discussion in comments of #1553 .\r\n\r\n## Updated Settings Flow\r\n\r\n**Setting Name:** Lower Range Threshold\r\n\r\n**Options:** \"Standard (70 mg/dL)\" and \"Extended (63 mg/dL)\"\r\n\r\n**Description:** Choose the preferred lower threshold for Time in Range statistics.\r\n\r\n**Expanded Description:** \r\nChoose the preferred lower threshold used for Time in Range statistics across all charts and displays. This applies to both Time in Range (TIR) with an upper threshold of 180 mg/dL, and Time in Tight Range (TITR) with an upper threshold of 140 mg/dL.\r\n\r\nStandard: Uses the established lower threshold of 70 mg/dL.\r\nExtended: Uses the newer Time in Normoglycemia (TING) lower threshold of 63 mg/dL.\r\n\r\n\r\n\r\n## Updated Terms\r\n\r\nTIR now refers to both 70-180 mg/dL and 63-180 mg/dL. TITR now refers to both 70-140 mg/dL and 63-140 mg/dL. The Lower Range Threshold setting determines wether the ranges use the \"Standard (70 mg/dL)\" or \"Extended (63 mg/dL)\" thresholds.\r\n\r\n\"Time in Range Type\" > \"Lower Range Threshold\"\r\n\"TITR\" > \"Standard (70 mg/dL)\"\r\n\"TING\" > \"Extended (63 mg/dL)\"\r\n\r\n\r\n**_NOTE: This commit was entirely created using agentic coding at my direction. Comments may be too verbose._**\r\n\r\n\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9516\" src=\"https://github.com/user-attachments/assets/6017093b-8c25-4be6-8114-d51722606339\" />\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9517\" src=\"https://github.com/user-attachments/assets/802eb8f5-c5fe-4757-893c-7f167a96a26b\" />\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9518\" src=\"https://github.com/user-attachments/assets/5604ec2e-e973-43bb-b6c7-20b096be0aec\" />\r\n\r\nStandard (70 mg/dL) | Extended (63 mg/dL)\r\n-- | --\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9522\" src=\"https://github.com/user-attachments/assets/90bb04a1-798b-4518-bcff-fd8c6d76ef1f\" />  |  <img width=\"590\" height=\"1278\" alt=\"IMG_9519\" src=\"https://github.com/user-attachments/assets/d5136d18-eecd-410e-9223-8fa33122dd9a\" />\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9523\" src=\"https://github.com/user-attachments/assets/82a462b1-7304-4cad-a669-d25e20e5357c\" />  |  <img width=\"590\" height=\"1278\" alt=\"IMG_9520\" src=\"https://github.com/user-attachments/assets/b90b7369-1d24-4591-a49c-6f7b3909c7bb\" />\r\n\r\n\r\n\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1558",
+      "mergedAt": "2026-10-24T13:32:01Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1558,
+      "title": "Updates \"TIR Type\" setting with newer terminology for improved clarity and accuracy.",
+      "body": "Addresses the terminology portion of the discussion in comments of #1553 .\r\n\r\n## Updated Settings Flow\r\n\r\n**Setting Name:** Lower Range Threshold\r\n\r\n**Options:** \"Standard (70 mg/dL)\" and \"Extended (63 mg/dL)\"\r\n\r\n**Description:** Choose the preferred lower threshold for Time in Range statistics.\r\n\r\n**Expanded Description:** \r\nChoose the preferred lower threshold used for Time in Range statistics across all charts and displays. This applies to both Time in Range (TIR) with an upper threshold of 180 mg/dL, and Time in Tight Range (TITR) with an upper threshold of 140 mg/dL.\r\n\r\nStandard: Uses the established lower threshold of 70 mg/dL.\r\nExtended: Uses the newer Time in Normoglycemia (TING) lower threshold of 63 mg/dL.\r\n\r\n\r\n\r\n## Updated Terms\r\n\r\nTIR now refers to both 70-180 mg/dL and 63-180 mg/dL. TITR now refers to both 70-140 mg/dL and 63-140 mg/dL. The Lower Range Threshold setting determines wether the ranges use the \"Standard (70 mg/dL)\" or \"Extended (63 mg/dL)\" thresholds.\r\n\r\n\"Time in Range Type\" > \"Lower Range Threshold\"\r\n\"TITR\" > \"Standard (70 mg/dL)\"\r\n\"TING\" > \"Extended (63 mg/dL)\"\r\n\r\n\r\n**_NOTE: This commit was entirely created using agentic coding at my direction. Comments may be too verbose._**\r\n\r\n\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9516\" src=\"https://github.com/user-attachments/assets/6017093b-8c25-4be6-8114-d51722606339\" />\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9517\" src=\"https://github.com/user-attachments/assets/802eb8f5-c5fe-4757-893c-7f167a96a26b\" />\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9518\" src=\"https://github.com/user-attachments/assets/5604ec2e-e973-43bb-b6c7-20b096be0aec\" />\r\n\r\nStandard (70 mg/dL) | Extended (63 mg/dL)\r\n-- | --\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9522\" src=\"https://github.com/user-attachments/assets/90bb04a1-798b-4518-bcff-fd8c6d76ef1f\" />  |  <img width=\"590\" height=\"1278\" alt=\"IMG_9519\" src=\"https://github.com/user-attachments/assets/d5136d18-eecd-410e-9223-8fa33122dd9a\" />\r\n<img width=\"590\" height=\"1278\" alt=\"IMG_9523\" src=\"https://github.com/user-attachments/assets/82a462b1-7304-4cad-a669-d25e20e5357c\" />  |  <img width=\"590\" height=\"1278\" alt=\"IMG_9520\" src=\"https://github.com/user-attachments/assets/b90b7369-1d24-4591-a49c-6f7b3909c7bb\" />\r\n\r\n\r\n\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1558",
+      "mergedAt": "2026-10-24T13:32:01Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1580,
+      "title": "Persist wasProgrammedByPumpUI for boluses",
+      "body": "Persist LoopKit's DoseEntry.wasProgrammedByPumpUI on BolusStored as wasProgrammedByPumpUI (optional boolean, default NO; covered by lightweight migration) on both the insert and the mutable-bolus finalize paths, and show a \"Pump UI\" secondary label on the treatment row next to \"External\".\r\n\r\nMotivation: allows distinguishing pump-triggered boluses (e.g. Quick Bolus) from Trio-triggered boluses. wasProgrammedByPumpUI is an existing field on LoopKit's DoseEntry.\r\n\r\n\r\n<img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c551732e-bb0d-4177-afd9-5a05a33f619c\" />\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1580",
+      "mergedAt": "2026-10-24T13:35:57Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1580,
+      "title": "Persist wasProgrammedByPumpUI for boluses",
+      "body": "Persist LoopKit's DoseEntry.wasProgrammedByPumpUI on BolusStored as wasProgrammedByPumpUI (optional boolean, default NO; covered by lightweight migration) on both the insert and the mutable-bolus finalize paths, and show a \"Pump UI\" secondary label on the treatment row next to \"External\".\r\n\r\nMotivation: allows distinguishing pump-triggered boluses (e.g. Quick Bolus) from Trio-triggered boluses. wasProgrammedByPumpUI is an existing field on LoopKit's DoseEntry.\r\n\r\n\r\n<img height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c551732e-bb0d-4177-afd9-5a05a33f619c\" />\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1580",
+      "mergedAt": "2026-10-24T13:35:57Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1618,
+      "title": "Add Syai Ultra X1 as CGM ",
+      "body": "# Summary\n\nThis PR adds the Syai Ultra CGM to Trio ``dev``.\n\nThe Syai Ultra is a 14-day CGM made by Syai.\nIt comes with its own app, no direct integrations with a pump possible.\n\nThis CGM can not be calibrated. The sensor can also not be activated offline and requires an account.\nFurthermore, support for uploading glucose values to Syai servers is supported as well.\n\n# Additional Notes\n\nThis CGM and its Trio driver has been tested intesively by a few users over the span of at least of 2 months. We are moving ahead in adding it to Trio ``dev`` to make it available for more users and potential testing.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1618",
+      "mergedAt": "2026-10-24T15:34:05Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1618,
+      "title": "Add Syai Ultra X1 as CGM ",
+      "body": "# Summary\n\nThis PR adds the Syai Ultra CGM to Trio ``dev``.\n\nThe Syai Ultra is a 14-day CGM made by Syai.\nIt comes with its own app, no direct integrations with a pump possible.\n\nThis CGM can not be calibrated. The sensor can also not be activated offline and requires an account.\nFurthermore, support for uploading glucose values to Syai servers is supported as well.\n\n# Additional Notes\n\nThis CGM and its Trio driver has been tested intesively by a few users over the span of at least of 2 months. We are moving ahead in adding it to Trio ``dev`` to make it available for more users and potential testing.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1618",
+      "mergedAt": "2026-10-24T15:34:05Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1652,
+      "title": "Close the Edit Override form when the Nightscout profile upload fails",
+      "body": "closes #1601\n\nonly the Edit Override form (EditOverrideForm) is changed. the Add form is not affected.\n\nas @jdtoppin found, Save stores the edit but the form does not close. @dnzxy pointed out it is not a pump or device issue.\n\ncause: Save awaits `uploadProfiles()` before it disables the previous active override, refreshes the override configuration and dismisses. when the upload throws (Nightscout host not found, non-200 reply), all three are skipped. the log in #1601 shows one `uploadProfile` error (-1003, host not found) per Save tap. it does not happen with a working Nightscout, with Nightscout upload switched off, or with no network (`uploadProfiles()` then returns without an error), which may be why #959 could not be reproduced.\n\nchange: upload after the dismiss, in its own do/catch, and log the error like the profile editors do.\n\ntested in the simulator (Nightscout URL https://httpbin.org/anything: connect gets 200, profile upload gets 404), edit a preset, Save:\n- before: the form stays open, the log shows only `uploadProfile ... Code=-1011`\n- after: the form closes, the edit is saved, the log shows `failed to upload profiles to Nightscout: ... Code=-1011`\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1652",
+      "mergedAt": "2026-10-24T13:41:15Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1652,
+      "title": "Close the Edit Override form when the Nightscout profile upload fails",
+      "body": "closes #1601\n\nonly the Edit Override form (EditOverrideForm) is changed. the Add form is not affected.\n\nas @jdtoppin found, Save stores the edit but the form does not close. @dnzxy pointed out it is not a pump or device issue.\n\ncause: Save awaits `uploadProfiles()` before it disables the previous active override, refreshes the override configuration and dismisses. when the upload throws (Nightscout host not found, non-200 reply), all three are skipped. the log in #1601 shows one `uploadProfile` error (-1003, host not found) per Save tap. it does not happen with a working Nightscout, with Nightscout upload switched off, or with no network (`uploadProfiles()` then returns without an error), which may be why #959 could not be reproduced.\n\nchange: upload after the dismiss, in its own do/catch, and log the error like the profile editors do.\n\ntested in the simulator (Nightscout URL https://httpbin.org/anything: connect gets 200, profile upload gets 404), edit a preset, Save:\n- before: the form stays open, the log shows only `uploadProfile ... Code=-1011`\n- after: the form closes, the edit is saved, the log shows `failed to upload profiles to Nightscout: ... Code=-1011`\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1652",
+      "mergedAt": "2026-10-24T13:41:15Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1659,
+      "title": " Surfaces CGM sensor problems that were reaching the user as silence.",
+      "body": "> [!IMPORTANT] \n> Currently **blocked** by #1656 \n\n**A warning or critical CGM status now shows at any point in a session.** The home-screen status tag was gated behind the lifecycle arc's 48h-to-expiry window, so `Sensor Issue`, `Signal Loss`, `Connection Refused` and `Sensor Failed` could not appear until the last two days of a sensor. Mid-session the user saw a stale number and a timestamp with no reason for either. Normal-tier tags (warmup countdown, remaining time) keep the old gating, and the existing rule that hides the tag behind a downward trend arrow is unchanged.\n\n**G7 lifecycle alerts are catalogued.** G7 was the only CGM with no `AlertCatalogRegistry` entries, so its alerts passed through with no sound, no tier config, no snooze mapping and no Device Alarms row — a \"Sensor Expired\" notification arrived as a silent banner. Levels are identical to the LibreLoop set: every CGM lifecycle alert Time-Sensitive, none critical, none normal.\n\n**Any unusable reading now reports as a sensor issue** (G7SensorKit `e99d631`, already pinned by #1656). The highlight keyed off `temporarySensorIssue` alone, while a reading is kept only when the state is `ok` — so excess noise, a stop, a calibration state, an early session end and any firmware code the build predates were all discarded with no highlight at all.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1659",
+      "mergedAt": "2026-10-23T21:34:08Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1659,
+      "title": " Surfaces CGM sensor problems that were reaching the user as silence.",
+      "body": "> [!IMPORTANT] \n> Currently **blocked** by #1656 \n\n**A warning or critical CGM status now shows at any point in a session.** The home-screen status tag was gated behind the lifecycle arc's 48h-to-expiry window, so `Sensor Issue`, `Signal Loss`, `Connection Refused` and `Sensor Failed` could not appear until the last two days of a sensor. Mid-session the user saw a stale number and a timestamp with no reason for either. Normal-tier tags (warmup countdown, remaining time) keep the old gating, and the existing rule that hides the tag behind a downward trend arrow is unchanged.\n\n**G7 lifecycle alerts are catalogued.** G7 was the only CGM with no `AlertCatalogRegistry` entries, so its alerts passed through with no sound, no tier config, no snooze mapping and no Device Alarms row — a \"Sensor Expired\" notification arrived as a silent banner. Levels are identical to the LibreLoop set: every CGM lifecycle alert Time-Sensitive, none critical, none normal.\n\n**Any unusable reading now reports as a sensor issue** (G7SensorKit `e99d631`, already pinned by #1656). The highlight keyed off `temporarySensorIssue` alone, while a reading is kept only when the state is `ok` — so excess noise, a stop, a calibration state, an early session end and any firmware code the build predates were all discarded with no highlight at all.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1659",
+      "mergedAt": "2026-10-23T21:34:08Z"
+    }
+  ],
   "includedCommits": [
     {
-      "sha": "b8c6aa398cc682c346af3d085bfd839f3c66841d",
-      "subject": "ci(build): Build with Xcode 27.1 on the xcode-27 runner, for iPhone Duo's full-screen layout",
+      "sha": "08fafb2519c377b6e83beece9e29787186bd81cd",
+      "subject": "New clearer terminology for TIR and its lower threshold",
+      "author": "munchyk",
+      "authoredAt": "2026-09-19T18:01:28-04:00"
+    },
+    {
+      "sha": "cd99c253a4002e0a9c0473bbcedca2b0034475c4",
+      "subject": "Rename TIR Lower Threshold and refine help text",
+      "author": "munchyk",
+      "authoredAt": "2026-09-24T19:32:17-04:00"
+    },
+    {
+      "sha": "135ee8e53bd86e16f0a8a0127646ba10614dfd89",
+      "subject": "Label pump-programmed boluses in History > Treatments",
+      "author": "Claude",
+      "authoredAt": "2026-09-26T02:44:44Z"
+    },
+    {
+      "sha": "cde0a80ff34b076ed9d5e3f3f977845d6b65e202",
+      "subject": "Rename BolusStored.isPumpUI to isProgrammedByPumpUI",
+      "author": "Claude",
+      "authoredAt": "2026-09-26T02:48:24Z"
+    },
+    {
+      "sha": "33e1843e6fa783bdcc44d8c4fe392a539e562a49",
+      "subject": "feat(cgm): add Syai Ultra as CGM",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-08T15:25:05+02:00"
+    },
+    {
+      "sha": "cc8a9c01f3dd9d7c59a5fb63ca6fa27705cc1580",
+      "subject": "Merge branch 'dev' into TIR-bottom-threshold",
+      "author": "munchyk",
+      "authoredAt": "2026-10-16T23:16:34-04:00"
+    },
+    {
+      "sha": "78288eb7edc72d9ba757df115df1ed8b107057d2",
+      "subject": "Use pump icon with accessibility label for pump-UI boluses in History",
+      "author": "Claude",
+      "authoredAt": "2026-10-17T03:54:02Z"
+    },
+    {
+      "sha": "ecb79e574a4b58d8498a36e34019d9fc141edf7f",
+      "subject": "Merge branch 'dev' into claude/busy-babbage-x2bwzo",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-17T00:05:02-04:00"
+    },
+    {
+      "sha": "a3c7546bd23cd345b9b743e25280837d675973a7",
+      "subject": "Merge branch 'dev' into feat/syai",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-18T17:15:54+02:00"
+    },
+    {
+      "sha": "915881e60ef24d6b31140364e43271b4a78f206e",
+      "subject": "Close the Edit Override form when the Nightscout profile upload fails",
+      "author": "Lamercho",
+      "authoredAt": "2026-10-20T01:17:29+03:00"
+    },
+    {
+      "sha": "bec255f285d96281896959e1b32680fabd8dadb4",
+      "subject": "Merge branch 'dev' into claude/busy-babbage-x2bwzo",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-22T17:02:38+02:00"
+    },
+    {
+      "sha": "c9299563974f89a6badab0fffa8101d6db85d25b",
+      "subject": "chore: update syaikit submodule",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T11:23:51+02:00"
+    },
+    {
+      "sha": "9db67330853647e76fd393673f7765c6fbf44e59",
+      "subject": "Merge branch 'dev' into feat/syai",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T11:25:08+02:00"
+    },
+    {
+      "sha": "9b593b2835333572b3da7d925f235e9d74bd125c",
+      "subject": "Show CGM sensor warnings whatever the sensor's age",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-19T20:24:02+02:00"
+    },
+    {
+      "sha": "0c511a797b50243c63f5c13974a480d85690a76c",
+      "subject": "Catalog the G7 sensor lifecycle alerts",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-19T20:24:09+02:00"
+    },
+    {
+      "sha": "5bcbed7246a0c4e4c45a4089a9e87a44e11f48dc",
+      "subject": "Merge branch 'dev' into fix/cgm-sensor-issue-surfacing",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-23T18:28:27+02:00"
+    },
+    {
+      "sha": "74ee666e9c190f943a9ef0d8ac74e2b9691e3916",
+      "subject": "Merge branch 'dev' into feat/syai",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T18:46:14+02:00"
+    },
+    {
+      "sha": "aec0e43dbad21db8073e0a72c4a3395a80df390a",
+      "subject": "feat(alerts): add Syai entries to alert catalog",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T19:49:26+02:00"
+    },
+    {
+      "sha": "457fe4890e769844a3b08d2b0619d113aa4cdc22",
+      "subject": "chore: update syaikit submodule",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T20:39:36+02:00"
+    },
+    {
+      "sha": "0df3c74d94af24b9b9f7f5c09afff40dc38cc743",
+      "subject": "chore: update syaikit submodule",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T21:28:17+02:00"
+    },
+    {
+      "sha": "f3818647335c52f75a0712fc5dc4c53ff43121f6",
+      "subject": "chore: update syaikit submodule",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T21:34:19+02:00"
+    },
+    {
+      "sha": "b661083972e9eb0507d548d5d5f38cabde1334db",
+      "subject": "chore: update syaikit submodule",
+      "author": "ETolboom",
+      "authoredAt": "2026-10-23T21:41:42+02:00"
+    },
+    {
+      "sha": "cc8dd5d4bf3730782d80388e334cf8fc70384f59",
+      "subject": "Merge pull request #1659 from dnzxy/fix/cgm-sensor-issue-surfacing",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-23T23:34:08+02:00"
+    },
+    {
+      "sha": "d166b09a1e6a6963c41e38e7f06dcc3402fa6d4d",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.19 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-23T21:34:18Z"
+    },
+    {
+      "sha": "eb3293829e4c01bdf7c176e5ee3f5181ac922322",
+      "subject": "Merge pull request #1558 from munchyk-loop/TIR-bottom-threshold",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-24T15:32:00+02:00"
+    },
+    {
+      "sha": "db974e1fc5bd25e57e833d23067d2b2139fac432",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.20 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-24T13:32:11Z"
+    },
+    {
+      "sha": "11f1ca357103410e9370c498057a71844ac533f3",
+      "subject": "Merge pull request #1580 from jwoglom/claude/busy-babbage-x2bwzo",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-24T15:35:56+02:00"
+    },
+    {
+      "sha": "02fa0cfb665c19c12bc104f625205ac5f72b94f0",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.21 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-24T13:36:08Z"
+    },
+    {
+      "sha": "f672737b30ddf6f9b35807a635c7cccf15e7f3aa",
+      "subject": "Merge branch 'dev' into feat/syai",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-24T15:39:15+02:00"
+    },
+    {
+      "sha": "fe95d14d76a0b872f897bae2e22489d53c569813",
+      "subject": "Merge pull request #1652 from Lamercho/Lamercho/edit-override-save-dismiss",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-24T15:41:15+02:00"
+    },
+    {
+      "sha": "979419f0bc717ea9f32b59af2c03e719d52cfba5",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.22 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-24T13:41:25Z"
+    },
+    {
+      "sha": "4405d72a8abc0daa3431fa3a79880f37f8cf431b",
+      "subject": "Merge pull request #1618 from ETolboom/feat/syai",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-24T17:34:04+02:00"
+    },
+    {
+      "sha": "4b425101228e15aa2b7ed83f3870338a4395bf13",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.23 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-24T15:34:14Z"
+    },
+    {
+      "sha": "99ff89f138f7e0c03a0b5f7a8e3608f53e07de5d",
+      "subject": "Merge upstream dev into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-10-23T14:12:40-05:00"
+      "authoredAt": "2026-10-24T14:55:27-05:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
-      "path": ".github/workflows/build_trio.yml"
+      "path": ".gitmodules"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Model/Classes+Properties/BolusStored+CoreDataProperties.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/TrioCoreDataPersistentContainer.xcdatamodeld/TrioCoreDataPersistentContainer.xcdatamodel/contents"
+    },
+    {
+      "status": "A",
+      "path": "SyaiKit"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/CGM/PluginSource.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Devices/DeviceCatalog.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/PumpHistoryStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/TimeInRangeType.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/EditOverrideForm.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Treatments.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/CurrentGlucoseView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucosePercentileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseSectorChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/AlertCatalogRegistry.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AlertCatalogRegistryEntriesTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/SettingsSearchTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "scripts/swiftformat.sh"
     }
   ]
 }

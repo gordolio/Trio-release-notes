@@ -1,0 +1,22 @@
+{
+  "inputHash": "871736e722b53741fac369ba5d3ede2b5306fe868374c891d70aad9a83132b5a",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1580",
+    "title": "Mark pump-programmed boluses in History",
+    "changes": [
+      "Pump-programmed boluses are now recorded and identified in the app.",
+      "History > Treatments shows a pump indicator next to those boluses."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1580",
+      "diff:3496d8e0929e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

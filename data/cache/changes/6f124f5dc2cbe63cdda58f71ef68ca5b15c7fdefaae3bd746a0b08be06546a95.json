@@ -1,0 +1,23 @@
+{
+  "inputHash": "b2da4a25161056f2a5fd1b7e1c54a0f5f0fbc1a65ff597f38f1b3488bf891ddd",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1618",
+    "title": "Add Syai Ultra X1 CGM support",
+    "changes": [
+      "Syai Ultra X1 continuous glucose monitor (CGM) is now available in Trio.",
+      "It requires a Syai account, cannot be calibrated, and can upload glucose data to Syai servers."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1618",
+      "commit:33e1843e6fa7",
+      "diff:6f124f5dc2cb"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

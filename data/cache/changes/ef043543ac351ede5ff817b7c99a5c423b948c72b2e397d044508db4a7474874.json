@@ -1,0 +1,22 @@
+{
+  "inputHash": "a674a6ba0dbea7ba42df8bd36d38c949aeae67d9fab2a6922d4de58ecead1359",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1659",
+    "title": "Surface CGM warnings and catalog G7 alerts",
+    "changes": [
+      "Sensor warnings now appear during a session instead of being hidden.",
+      "G7 sensor alerts are now categorized and surface like other CGMs."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1659",
+      "diff:ef043543ac35"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

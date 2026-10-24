@@ -1,0 +1,22 @@
+{
+  "inputHash": "5dc62d70644449e9b8bc49030152bac55f47e5bb9504ee2ea4048c98105bae4c",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1652",
+    "title": "Close Edit Override form on save failure",
+    "changes": [
+      "Edit Override form now closes when saving even if the Nightscout upload fails.",
+      "Your changes are saved and the app records the upload failure."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1652",
+      "diff:3c2a07ee1def"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

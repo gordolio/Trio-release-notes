@@ -1,0 +1,22 @@
+{
+  "inputHash": "f3d7a7025a9f461fca4f05626be680df78fe45c23d4d979ccd36a59679f6822f",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1558",
+    "title": "Rename TIR setting to Lower Range Threshold",
+    "changes": [
+      "Time in Range setting renamed to 'Lower Range Threshold' with Standard (70 mg/dL) and Extended (63 mg/dL).",
+      "Charts and statistics will display TIR/TITR ranges using the selected lower threshold."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1558",
+      "diff:1712c9471fc2"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
