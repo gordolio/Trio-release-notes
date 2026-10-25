@@ -1,91 +1,50 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 40232674299,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40232674299",
+    "sourceWorkflowRunId": 40238673142,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40238673142",
     "sourceBranch": "dev",
-    "previousBuiltSha": "9abf724776c601d8e06d573430d0a2372776a8b3",
-    "currentBuiltSha": "25f385401f6b903a80440d9414d855b30e3f9796",
-    "shortSha": "25f3854",
-    "buildDate": "2026-10-25T21:07:38.000Z",
-    "generationDate": "2026-10-25T21:18:13.554Z",
+    "previousBuiltSha": "25f385401f6b903a80440d9414d855b30e3f9796",
+    "currentBuiltSha": "141ccc8809cd6caa34bac60a91959d5387f48cdb",
+    "shortSha": "141ccc8",
+    "buildDate": "2026-10-25T22:21:40.000Z",
+    "generationDate": "2026-10-25T22:31:43.020Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1668",
-      "title": "Prevent Dynamic Island compact text truncation",
+      "changeId": "pr:nightscout/Trio#1654",
+      "title": "Put treatment (+) button in iPhone Duo side rail",
       "changes": [
-        "Compact Dynamic Island text now scales instead of truncating.",
-        "When multiple Live Activities appear or in landscape, arrows and glucose values remain visible."
+        "The treatment (+) button is moved from bottom center into the side tab rail on iPhone Duo.",
+        "All other iPhones keep the original bottom-centre button."
       ],
       "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1668",
-        "diff:8a5dd03f7e05",
-        "commit:76961bc07030"
+        "pr:gordolio/Trio#1654",
+        "diff:3c08c4420cf2"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1668"
+        "pr:nightscout/Trio#1654"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1668",
+          "id": "pr:gordolio/Trio#1654",
           "type": "pull-request",
-          "title": "nightscout/Trio#1668: Scale compact Dynamic Island text instead of truncating it in a narrow island",
-          "url": "https://github.com/nightscout/Trio/pull/1668"
+          "title": "gordolio/Trio#1654: Put the treatment button in the side tab bar on iPhone Duo",
+          "url": "https://github.com/nightscout/Trio/pull/1654"
         },
         {
-          "id": "diff:8a5dd03f7e05",
+          "id": "diff:3c08c4420cf2",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1668",
-          "url": "https://github.com/gordolio/Trio/compare/4cc5e7b0ecfa09766f90bf93f898828eacb29b51...6054291b3b5453ae0ae17e0a79f7b372f64f33d2"
-        },
-        {
-          "id": "commit:76961bc07030",
-          "type": "commit",
-          "title": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
-          "url": "https://github.com/gordolio/Trio/commit/76961bc070308a4609adf71aafbcaae4bfc47ad5"
-        }
-      ]
-    },
-    {
-      "changeId": "commit:b2ae40d7f4659059e40c05db213405e3117aebe0",
-      "title": "Watch opens pushed meals sooner",
-      "changes": [
-        "Pushed meals now open on the watch even if Trio hasn't received them.",
-        "Trio checks in more reliably when the watch contacts the phone, on app foreground, or on pushes."
-      ],
-      "category": "interface-improvements",
-      "sourceIds": [
-        "commit:b2ae40d7f465",
-        "diff:af82b28ce403"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "commit:b2ae40d7f4659059e40c05db213405e3117aebe0"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "commit:b2ae40d7f465",
-          "type": "commit",
-          "title": "feat(ai-requests): Open a meal on the watch before Trio has it, and check in whenever Trio runs",
-          "url": "https://github.com/gordolio/Trio/commit/b2ae40d7f4659059e40c05db213405e3117aebe0"
-        },
-        {
-          "id": "diff:af82b28ce403",
-          "type": "diff",
-          "title": "Diff for commit:b2ae40d7f4659059e40c05db213405e3117aebe0",
-          "url": "https://github.com/gordolio/Trio/compare/194ea4992d4dd52076e9e1ba4d14156fd6e1fddd...b2ae40d7f4659059e40c05db213405e3117aebe0"
+          "title": "Diff for pr:nightscout/Trio#1654",
+          "url": "https://github.com/gordolio/Trio/compare/d78bc821333ed81136d56ccc500efdc16c3598ce...49b1096f55bf2529e5f98cfe60772bf49f30266a"
         }
       ]
     }
@@ -129,42 +88,7 @@
     {
       "category": "internal-and-build-system",
       "title": "Internal and Build-System Changes",
-      "items": [
-        {
-          "changeId": "pr:nightscout/Trio#1670",
-          "title": "Make schedule tests DST-safe",
-          "changes": [
-            "Automated schedule-related tests were fixed to avoid DST-related failures.",
-            "This does not change app behavior for users."
-          ],
-          "category": "internal-and-build-system",
-          "sourceIds": [
-            "pr:nightscout/Trio#1670",
-            "diff:94cd019d903e"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "pr:nightscout/Trio#1670"
-          ],
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:nightscout/Trio#1670",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1670: Make schedule unit tests DST-safe",
-              "url": "https://github.com/nightscout/Trio/pull/1670"
-            },
-            {
-              "id": "diff:94cd019d903e",
-              "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1670",
-              "url": "https://github.com/gordolio/Trio/compare/4cc5e7b0ecfa09766f90bf93f898828eacb29b51...aaa65a7b97cc3aa93af83ebc25aa89540177ac26"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "known-concerns",
@@ -176,177 +100,59 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1668,
-      "title": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
-      "body": "closes #1657\n\nonly the compact Dynamic Island views are changed (`LiveActivityCompactLeadingView`, `LiveActivityCompactTrailingView` in LiveActivityView.swift, and one `contentMargins` line in LiveActivity.swift). expanded, minimal, lock screen and watch views are not changed.\n\nas @kamilosxdman showed, with a second Live Activity the compact island shows `…→ …`. as @MikePlante1 showed, in landscape on iOS 27 the arrow and the delta are cut off.\n\ncause: iOS 27 makes the compact views narrower when the island shows more than one Live Activity, and in landscape. the compact views have no `lineLimit` or `minimumScaleFactor`, so the glucose and the delta truncate to `…`. in landscape, `.contentMargins(.trailing, 0, for: .compactLeading)` makes the leading view wider than the visible pill, so the text does not scale and the pill edge cuts the arrow.\n\nchange:\n- `.lineLimit(1)` and `.minimumScaleFactor(0.5)` on both compact views, so the text scales down instead of truncating\n- remove `.contentMargins(.trailing, 0, for: .compactLeading)`, so the leading view stays inside the pill\n- remove `.padding(.leading, 4)` from the compact leading view, so the glucose keeps more room (with 2 activities it scales to about 0.76 instead of 0.6)\n\nwith one activity the glucose keeps its full size and position; the pill is about 4 pt narrower on the left, on iOS 26 too.\n\nI chose scaling because CI builds with Xcode 26.5. iOS 27 has a better way: `isDynamicIslandLimitedInWidth` tells the view that the island is narrow, so it could show only the glucose, larger (as the HIG suggests). the Xcode 26.5 SDK does not have it; behind `#if compiler(>=6.4)` it compiles, but CI builds would not get it.\n\ntested in the simulator (iPhone 18 Pro Max iOS 27.0, iPhone 17 Pro iOS 26.5), built with Xcode 27.1, second activity = Safari audio:\n- before: 2 activities `…→ …`; landscape `8,9-` and `+…`\n- after: 2 activities `8,9→ +0,0`, a bit smaller; landscape `8,9→` and `+0,0`; mg/dL `161→ +1`; one activity unchanged on both iOS versions\n\n| | before | after |\n| --- | --- | --- |\n| 2 activities, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/035f03e2-0064-4499-baab-3a3f7611d63b\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/0d34d1f2-dd1a-48c0-8031-1f4f6ccfb306\" /> |\n| landscape, iOS 27 | <img width=\"85\" alt=\"before\" src=\"https://github.com/user-attachments/assets/f8ec8d42-c26b-4113-80cc-97091812f375\" /> | <img width=\"111\" alt=\"after\" src=\"https://github.com/user-attachments/assets/1e5db5d0-9b68-4f7f-b82e-e7b755e6867d\" /> |\n| one activity, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/c1a14152-9d4b-4b8d-a1e5-db060e3ddf4d\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/f8af97d7-0667-4fb4-b13a-bb31aae6088a\" /> |\n| one activity, iOS 26.5 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/5a6bfea7-1df5-4418-aef3-6f94ad6f2072\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/ccd3db6a-208d-46a9-9c06-adf723a16d37\" /> |\n",
+      "number": 1654,
+      "title": "Put the treatment button in the side tab bar on iPhone Duo",
+      "body": "On iPhone Duo, the tab bar can lay out as a vertical rail down the side of the screen. Trio draws its treatment (+) button over the tab bar at a fixed spot, bottom centre, so on the Duo the button floats over the home screen cards and the rail is left with an empty slot.\r\n\r\n## Summary\r\n\r\n```diff\r\n GeometryReader { geo in\r\n     treatmentButton\r\n-        .position(x: geo.size.width / 2, y: geo.size.height - 52)\r\n+        .position(treatmentButtonPosition(in: geo))\r\n }\r\n```\r\n\r\n```text\r\ntreatmentButtonPosition(in: geo)\r\n  if iPhone and the safe area has a side inset      // vertical bars add side insets\r\n    rail's empty slot: 48 pt in from that edge, 156 pt up\r\n  else\r\n    bottom centre, 52 pt up                         // unchanged\r\n```\r\n\r\nSwiftUI's `tabBarPlacement` still reports `.bottomBar` for the rail, so it can't tell the two apart. Apple documents that vertical bars provide leading and trailing safe-area insets, and Trio's iPhone layout is otherwise portrait-only, so other iPhones never have side insets.\r\n\r\n## Evidence\r\n\r\niPhone Duo simulator, closed (outer display):\r\n\r\n| Before | After |\r\n|---|---|\r\n|  <img width=\"1398\" height=\"2034\" alt=\"duo-before\" src=\"https://github.com/user-attachments/assets/6600cee5-db3a-4ee1-aac4-36349b729c61\" /> | <img width=\"1398\" height=\"2034\" alt=\"duo-after\" src=\"https://github.com/user-attachments/assets/e3765fa9-f83a-4bb1-bfdf-f0e0f0bb675a\" /> |\r\n\r\nOpen (inner display):\r\n\r\n| Landscape: side rail | Portrait: bottom bar, unchanged |\r\n|---|---|\r\n| <img width=\"2853\" height=\"2007\" alt=\"duo-inner-after\" src=\"https://github.com/user-attachments/assets/b4c50674-d302-428a-8f6f-391fd5c77f0c\" /> | <img width=\"2007\" height=\"2853\" alt=\"duo-inner-portrait-after\" src=\"https://github.com/user-attachments/assets/dfa792cc-5a75-4110-a39c-aa807a7a6bdc\" /> |\r\n\r\nAlso checked:\r\n\r\n- On both Duo displays, the button's centre is within 0.5 pt of the rail icons' centre line and the empty slot's centre (measured on the screenshots).\r\n- Forced right-to-left: the rail stays on the physical right, which is the leading side, and the button follows it.\r\n- iPhone 17 on iOS 26.5: the button is still centred in the bottom bar.\r\n- Tested in the simulator only (Xcode 27.1, iOS 27.1), not on a real iPhone Duo.\r\n\r\n**Blast Radius:** layout\r\n\r\nOnly the + position moves, and only on iPhones whose safe area has a side inset: today that's iPhone Duo with its tab bar down the side. It builds with Xcode 26.2 (this PR's CI) and Xcode 27.1. The 48 pt and 156 pt offsets are measured from the Duo simulator, are the same on both displays, and would need re-measuring if Apple changes the rail's metrics.",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1668",
-      "mergedAt": "2026-10-25T20:20:45Z"
+      "url": "https://github.com/nightscout/Trio/pull/1654",
+      "mergedAt": "2026-10-25T21:26:25Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1668,
-      "title": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
-      "body": "closes #1657\n\nonly the compact Dynamic Island views are changed (`LiveActivityCompactLeadingView`, `LiveActivityCompactTrailingView` in LiveActivityView.swift, and one `contentMargins` line in LiveActivity.swift). expanded, minimal, lock screen and watch views are not changed.\n\nas @kamilosxdman showed, with a second Live Activity the compact island shows `…→ …`. as @MikePlante1 showed, in landscape on iOS 27 the arrow and the delta are cut off.\n\ncause: iOS 27 makes the compact views narrower when the island shows more than one Live Activity, and in landscape. the compact views have no `lineLimit` or `minimumScaleFactor`, so the glucose and the delta truncate to `…`. in landscape, `.contentMargins(.trailing, 0, for: .compactLeading)` makes the leading view wider than the visible pill, so the text does not scale and the pill edge cuts the arrow.\n\nchange:\n- `.lineLimit(1)` and `.minimumScaleFactor(0.5)` on both compact views, so the text scales down instead of truncating\n- remove `.contentMargins(.trailing, 0, for: .compactLeading)`, so the leading view stays inside the pill\n- remove `.padding(.leading, 4)` from the compact leading view, so the glucose keeps more room (with 2 activities it scales to about 0.76 instead of 0.6)\n\nwith one activity the glucose keeps its full size and position; the pill is about 4 pt narrower on the left, on iOS 26 too.\n\nI chose scaling because CI builds with Xcode 26.5. iOS 27 has a better way: `isDynamicIslandLimitedInWidth` tells the view that the island is narrow, so it could show only the glucose, larger (as the HIG suggests). the Xcode 26.5 SDK does not have it; behind `#if compiler(>=6.4)` it compiles, but CI builds would not get it.\n\ntested in the simulator (iPhone 18 Pro Max iOS 27.0, iPhone 17 Pro iOS 26.5), built with Xcode 27.1, second activity = Safari audio:\n- before: 2 activities `…→ …`; landscape `8,9-` and `+…`\n- after: 2 activities `8,9→ +0,0`, a bit smaller; landscape `8,9→` and `+0,0`; mg/dL `161→ +1`; one activity unchanged on both iOS versions\n\n| | before | after |\n| --- | --- | --- |\n| 2 activities, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/035f03e2-0064-4499-baab-3a3f7611d63b\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/0d34d1f2-dd1a-48c0-8031-1f4f6ccfb306\" /> |\n| landscape, iOS 27 | <img width=\"85\" alt=\"before\" src=\"https://github.com/user-attachments/assets/f8ec8d42-c26b-4113-80cc-97091812f375\" /> | <img width=\"111\" alt=\"after\" src=\"https://github.com/user-attachments/assets/1e5db5d0-9b68-4f7f-b82e-e7b755e6867d\" /> |\n| one activity, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/c1a14152-9d4b-4b8d-a1e5-db060e3ddf4d\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/f8af97d7-0667-4fb4-b13a-bb31aae6088a\" /> |\n| one activity, iOS 26.5 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/5a6bfea7-1df5-4418-aef3-6f94ad6f2072\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/ccd3db6a-208d-46a9-9c06-adf723a16d37\" /> |\n",
+      "number": 1654,
+      "title": "Put the treatment button in the side tab bar on iPhone Duo",
+      "body": "On iPhone Duo, the tab bar can lay out as a vertical rail down the side of the screen. Trio draws its treatment (+) button over the tab bar at a fixed spot, bottom centre, so on the Duo the button floats over the home screen cards and the rail is left with an empty slot.\r\n\r\n## Summary\r\n\r\n```diff\r\n GeometryReader { geo in\r\n     treatmentButton\r\n-        .position(x: geo.size.width / 2, y: geo.size.height - 52)\r\n+        .position(treatmentButtonPosition(in: geo))\r\n }\r\n```\r\n\r\n```text\r\ntreatmentButtonPosition(in: geo)\r\n  if iPhone and the safe area has a side inset      // vertical bars add side insets\r\n    rail's empty slot: 48 pt in from that edge, 156 pt up\r\n  else\r\n    bottom centre, 52 pt up                         // unchanged\r\n```\r\n\r\nSwiftUI's `tabBarPlacement` still reports `.bottomBar` for the rail, so it can't tell the two apart. Apple documents that vertical bars provide leading and trailing safe-area insets, and Trio's iPhone layout is otherwise portrait-only, so other iPhones never have side insets.\r\n\r\n## Evidence\r\n\r\niPhone Duo simulator, closed (outer display):\r\n\r\n| Before | After |\r\n|---|---|\r\n|  <img width=\"1398\" height=\"2034\" alt=\"duo-before\" src=\"https://github.com/user-attachments/assets/6600cee5-db3a-4ee1-aac4-36349b729c61\" /> | <img width=\"1398\" height=\"2034\" alt=\"duo-after\" src=\"https://github.com/user-attachments/assets/e3765fa9-f83a-4bb1-bfdf-f0e0f0bb675a\" /> |\r\n\r\nOpen (inner display):\r\n\r\n| Landscape: side rail | Portrait: bottom bar, unchanged |\r\n|---|---|\r\n| <img width=\"2853\" height=\"2007\" alt=\"duo-inner-after\" src=\"https://github.com/user-attachments/assets/b4c50674-d302-428a-8f6f-391fd5c77f0c\" /> | <img width=\"2007\" height=\"2853\" alt=\"duo-inner-portrait-after\" src=\"https://github.com/user-attachments/assets/dfa792cc-5a75-4110-a39c-aa807a7a6bdc\" /> |\r\n\r\nAlso checked:\r\n\r\n- On both Duo displays, the button's centre is within 0.5 pt of the rail icons' centre line and the empty slot's centre (measured on the screenshots).\r\n- Forced right-to-left: the rail stays on the physical right, which is the leading side, and the button follows it.\r\n- iPhone 17 on iOS 26.5: the button is still centred in the bottom bar.\r\n- Tested in the simulator only (Xcode 27.1, iOS 27.1), not on a real iPhone Duo.\r\n\r\n**Blast Radius:** layout\r\n\r\nOnly the + position moves, and only on iPhones whose safe area has a side inset: today that's iPhone Duo with its tab bar down the side. It builds with Xcode 26.2 (this PR's CI) and Xcode 27.1. The 48 pt and 156 pt offsets are measured from the Duo simulator, are the same on both displays, and would need re-measuring if Apple changes the rail's metrics.",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1668",
-      "mergedAt": "2026-10-25T20:20:45Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1670,
-      "title": "Make schedule unit tests DST-safe",
-      "body": "Two test helpers built times as \"midnight + N hours\" or measured elapsed minutes since midnight. On a DST day (25 Oct in Europe has 25 hours) those land an hour off from the wall clock, so CI fails on `dev` and every PR today:\n\n- `ScheduledBasalInferenceTests`: `time(_:_:)` now uses `Calendar.date(bySettingHour:minute:second:of:)`. The old helper also crashed the test host (index out of range) once a segment went missing.\n- `BolusCalculatorTests`: the test-local `getCurrentSettingValue` now reads wall-clock hour and minute.\n\nThe app code under test already uses wall-clock boundaries, so this is test-only. Verified on 25 Oct (CET, 25-hour day): both suites, 22 tests, pass; before the change 3 tests failed.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1670",
-      "mergedAt": "2026-10-25T15:10:26Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1670,
-      "title": "Make schedule unit tests DST-safe",
-      "body": "Two test helpers built times as \"midnight + N hours\" or measured elapsed minutes since midnight. On a DST day (25 Oct in Europe has 25 hours) those land an hour off from the wall clock, so CI fails on `dev` and every PR today:\n\n- `ScheduledBasalInferenceTests`: `time(_:_:)` now uses `Calendar.date(bySettingHour:minute:second:of:)`. The old helper also crashed the test host (index out of range) once a segment went missing.\n- `BolusCalculatorTests`: the test-local `getCurrentSettingValue` now reads wall-clock hour and minute.\n\nThe app code under test already uses wall-clock boundaries, so this is test-only. Verified on 25 Oct (CET, 25-hour day): both suites, 22 tests, pass; before the change 3 tests failed.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1670",
-      "mergedAt": "2026-10-25T15:10:26Z"
+      "url": "https://github.com/nightscout/Trio/pull/1654",
+      "mergedAt": "2026-10-25T21:26:25Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "76961bc070308a4609adf71aafbcaae4bfc47ad5",
-      "subject": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
-      "author": "Lamercho",
-      "authoredAt": "2026-10-25T03:03:11+02:00"
+      "sha": "369e8754d7eff59028b2991d8b4d0f97a7860f6d",
+      "subject": "Put the treatment button in the side tab bar on iPhone Duo",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-21T23:11:52-05:00"
     },
     {
-      "sha": "e614f416ba94918eeb54299d58a8988cf1b35005",
-      "subject": "Make schedule tests DST-safe",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-25T15:11:03+01:00"
+      "sha": "0f937d2ee5661cefbbfe1427569523c95a462423",
+      "subject": "Merge branch 'dev' into fix/tab-rail-treatment-button",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-25T12:00:17-05:00"
     },
     {
-      "sha": "aaa65a7b97cc3aa93af83ebc25aa89540177ac26",
-      "subject": "Merge pull request #1670 from dnzxy/fix/dst-unit-tests",
+      "sha": "49b1096f55bf2529e5f98cfe60772bf49f30266a",
+      "subject": "Merge pull request #1654 from gordolio/fix/tab-rail-treatment-button",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-25T16:10:26+01:00"
+      "authoredAt": "2026-10-25T22:26:24+01:00"
     },
     {
-      "sha": "b4de74760b588923b255c965f28e5d6fea3dccfa",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.27 [skip ci]",
+      "sha": "7ff1f777e7921feed7370298da92f5ab29665e8d",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.29 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-10-25T15:10:35Z"
+      "authoredAt": "2026-10-25T21:26:35Z"
     },
     {
-      "sha": "b86d399ae498d2546a47e16fd30d17169e584a2f",
-      "subject": "Re-run CI on current dev",
-      "author": "Lamercho",
-      "authoredAt": "2026-10-25T18:01:58+02:00"
-    },
-    {
-      "sha": "f168fd87f3a58f58f23b8632f43f285d7e32e25d",
-      "subject": "Merge branch 'dev' into fix/live-activity-compact-island",
-      "author": "/dev/null",
-      "authoredAt": "2026-10-25T18:02:39+02:00"
-    },
-    {
-      "sha": "bc66515b46359205021ace89a3e0fcf350c58521",
-      "subject": "Re-run CI",
-      "author": "Lamercho",
-      "authoredAt": "2026-10-25T18:15:30+02:00"
-    },
-    {
-      "sha": "194ea4992d4dd52076e9e1ba4d14156fd6e1fddd",
+      "sha": "141ccc8809cd6caa34bac60a91959d5387f48cdb",
       "subject": "Merge branch 'nightscout:dev' into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-10-25T11:58:28-05:00"
-    },
-    {
-      "sha": "065f5f3102df7d03367ca963cb7e1b4b3d30822a",
-      "subject": "Remove code comments",
-      "author": "Lamercho",
-      "authoredAt": "2026-10-25T22:01:18+02:00"
-    },
-    {
-      "sha": "6054291b3b5453ae0ae17e0a79f7b372f64f33d2",
-      "subject": "Merge pull request #1668 from Lamercho/fix/live-activity-compact-island",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-25T21:20:45+01:00"
-    },
-    {
-      "sha": "a60d8b3b84a5f8eec577805b87993ab6861d01e8",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.28 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-10-25T20:20:55Z"
-    },
-    {
-      "sha": "b2ae40d7f4659059e40c05db213405e3117aebe0",
-      "subject": "feat(ai-requests): Open a meal on the watch before Trio has it, and check in whenever Trio runs",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-25T15:38:21-05:00"
-    },
-    {
-      "sha": "25f385401f6b903a80440d9414d855b30e3f9796",
-      "subject": "Merge branch 'nightscout:dev' into dev",
-      "author": "Gordon Child",
-      "authoredAt": "2026-10-25T15:50:13-05:00"
+      "authoredAt": "2026-10-25T17:06:43-05:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
       "path": "Config.xcconfig"
-    },
-    {
-      "status": "M",
-      "path": "LiveActivity/LiveActivity.swift"
-    },
-    {
-      "status": "M",
-      "path": "LiveActivity/Views/LiveActivityView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/AIRequests/AIRequestWatchCenter.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Models/AIRequests/AIRequestWatchFlowController.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIAssistantsCheckIn.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestHooks.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestTreatmentsOpener.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestsRuntime.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIAssistantsCheckInTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestWatchFlowControllerTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestWatchLinkTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/BolusCalculatorTests/BolusCalculatorTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/CoreDataTests/ScheduledBasalInferenceTests.swift"
     }
   ]
 }
