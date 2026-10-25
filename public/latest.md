@@ -1,29 +1,29 @@
-# Trio Build 9abf724
+# Trio Build 25f3854
 
-Built 2026-10-25T12:14:27.000Z from `99ff89f..9abf724`.
+Built 2026-10-25T21:07:38.000Z from `9abf724..25f3854`.
 
 ## Highlights
 
-- **Target line continues past midnight**
-  - Glucose target line now continues past midnight on the home chart.
-  - You will no longer see the green target line stop at 00:00 after a day without restarting.
-  - [View source](https://github.com/nightscout/Trio/pull/1665)
-- **Show pump-programmed boluses in Nightscout**
-  - Nightscout treatments now show when a bolus was programmed on the pump.
-  - Boluses finalized as pump-programmed after upload are re-sent so Nightscout reflects the change.
-  - [View source](https://github.com/nightscout/Trio/pull/1666)
+- **Prevent Dynamic Island compact text truncation**
+  - Compact Dynamic Island text now scales instead of truncating.
+  - When multiple Live Activities appear or in landscape, arrows and glucose values remain visible.
+  - [View source](https://github.com/nightscout/Trio/pull/1668)
+- **Watch opens pushed meals sooner**
+  - Pushed meals now open on the watch even if Trio hasn't received them.
+  - Trio checks in more reliably when the watch contacts the phone, on app foreground, or on pushes.
+  - [View source](https://github.com/gordolio/Trio/commit/b2ae40d7f4659059e40c05db213405e3117aebe0)
 
 ## Internal and Build-System Changes
 
-- **RoundWhiteDiscKit update for SwiftFormat parse fix**
-  - Updated RoundWhiteDiscKit submodule to pick up a SwiftFormat parse fix.
-  - Local builds that were failing during formatting should now succeed.
-  - [View source](https://github.com/nightscout/Trio/pull/1662)
+- **Make schedule tests DST-safe**
+  - Automated schedule-related tests were fixed to avoid DST-related failures.
+  - This does not change app behavior for users.
+  - [View source](https://github.com/nightscout/Trio/pull/1670)
 
 ## Build Metadata
 
-- Source workflow: [40191191221](https://github.com/gordolio/Trio/actions/runs/40191191221)
-- Previous built commit: [`99ff89f138f7e0c03a0b5f7a8e3608f53e07de5d`](https://github.com/gordolio/Trio/commit/99ff89f138f7e0c03a0b5f7a8e3608f53e07de5d)
-- Current built commit: [`9abf724776c601d8e06d573430d0a2372776a8b3`](https://github.com/gordolio/Trio/commit/9abf724776c601d8e06d573430d0a2372776a8b3)
+- Source workflow: [40232674299](https://github.com/gordolio/Trio/actions/runs/40232674299)
+- Previous built commit: [`9abf724776c601d8e06d573430d0a2372776a8b3`](https://github.com/gordolio/Trio/commit/9abf724776c601d8e06d573430d0a2372776a8b3)
+- Current built commit: [`25f385401f6b903a80440d9414d855b30e3f9796`](https://github.com/gordolio/Trio/commit/25f385401f6b903a80440d9414d855b30e3f9796)
 - Provenance model: `openai/gpt-5-mini`
 - Generator: `0.3.1`, prompt `7`

@@ -1,84 +1,91 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 40191191221,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40191191221",
+    "sourceWorkflowRunId": 40232674299,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40232674299",
     "sourceBranch": "dev",
-    "previousBuiltSha": "99ff89f138f7e0c03a0b5f7a8e3608f53e07de5d",
-    "currentBuiltSha": "9abf724776c601d8e06d573430d0a2372776a8b3",
-    "shortSha": "9abf724",
-    "buildDate": "2026-10-25T12:14:27.000Z",
-    "generationDate": "2026-10-25T12:24:07.537Z",
+    "previousBuiltSha": "9abf724776c601d8e06d573430d0a2372776a8b3",
+    "currentBuiltSha": "25f385401f6b903a80440d9414d855b30e3f9796",
+    "shortSha": "25f3854",
+    "buildDate": "2026-10-25T21:07:38.000Z",
+    "generationDate": "2026-10-25T21:18:13.554Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1665",
-      "title": "Target line continues past midnight",
+      "changeId": "pr:nightscout/Trio#1668",
+      "title": "Prevent Dynamic Island compact text truncation",
       "changes": [
-        "Glucose target line now continues past midnight on the home chart.",
-        "You will no longer see the green target line stop at 00:00 after a day without restarting."
+        "Compact Dynamic Island text now scales instead of truncating.",
+        "When multiple Live Activities appear or in landscape, arrows and glucose values remain visible."
       ],
       "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1665",
-        "diff:75fe97e7e52c"
+        "pr:nightscout/Trio#1668",
+        "diff:8a5dd03f7e05",
+        "commit:76961bc07030"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1665"
+        "pr:nightscout/Trio#1668"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1665",
+          "id": "pr:nightscout/Trio#1668",
           "type": "pull-request",
-          "title": "nightscout/Trio#1665: Rebuild glucose target profiles when the chart window passes their end",
-          "url": "https://github.com/nightscout/Trio/pull/1665"
+          "title": "nightscout/Trio#1668: Scale compact Dynamic Island text instead of truncating it in a narrow island",
+          "url": "https://github.com/nightscout/Trio/pull/1668"
         },
         {
-          "id": "diff:75fe97e7e52c",
+          "id": "diff:8a5dd03f7e05",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1665",
-          "url": "https://github.com/gordolio/Trio/compare/4b425101228e15aa2b7ed83f3870338a4395bf13...480253769bdb6a199aa9d83088cada055a3ac529"
+          "title": "Diff for pr:nightscout/Trio#1668",
+          "url": "https://github.com/gordolio/Trio/compare/4cc5e7b0ecfa09766f90bf93f898828eacb29b51...6054291b3b5453ae0ae17e0a79f7b372f64f33d2"
+        },
+        {
+          "id": "commit:76961bc07030",
+          "type": "commit",
+          "title": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
+          "url": "https://github.com/gordolio/Trio/commit/76961bc070308a4609adf71aafbcaae4bfc47ad5"
         }
       ]
     },
     {
-      "changeId": "pr:nightscout/Trio#1666",
-      "title": "Show pump-programmed boluses in Nightscout",
+      "changeId": "commit:b2ae40d7f4659059e40c05db213405e3117aebe0",
+      "title": "Watch opens pushed meals sooner",
       "changes": [
-        "Nightscout treatments now show when a bolus was programmed on the pump.",
-        "Boluses finalized as pump-programmed after upload are re-sent so Nightscout reflects the change."
+        "Pushed meals now open on the watch even if Trio hasn't received them.",
+        "Trio checks in more reliably when the watch contacts the phone, on app foreground, or on pushes."
       ],
-      "category": "pump-and-cgm",
+      "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1666",
-        "diff:01fb7d829013"
+        "commit:b2ae40d7f465",
+        "diff:af82b28ce403"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1666"
+        "commit:b2ae40d7f4659059e40c05db213405e3117aebe0"
       ],
       "highlight": true,
-      "provenance": "upstream",
+      "provenance": "origin",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1666",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1666: Upload pump-programmed bolus flag to Nightscout",
-          "url": "https://github.com/nightscout/Trio/pull/1666"
+          "id": "commit:b2ae40d7f465",
+          "type": "commit",
+          "title": "feat(ai-requests): Open a meal on the watch before Trio has it, and check in whenever Trio runs",
+          "url": "https://github.com/gordolio/Trio/commit/b2ae40d7f4659059e40c05db213405e3117aebe0"
         },
         {
-          "id": "diff:01fb7d829013",
+          "id": "diff:af82b28ce403",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1666",
-          "url": "https://github.com/gordolio/Trio/compare/4b425101228e15aa2b7ed83f3870338a4395bf13...2ef7645cb037525b9e0da89d954f91c620d02c2e"
+          "title": "Diff for commit:b2ae40d7f4659059e40c05db213405e3117aebe0",
+          "url": "https://github.com/gordolio/Trio/compare/194ea4992d4dd52076e9e1ba4d14156fd6e1fddd...b2ae40d7f4659059e40c05db213405e3117aebe0"
         }
       ]
     }
@@ -124,36 +131,36 @@
       "title": "Internal and Build-System Changes",
       "items": [
         {
-          "changeId": "pr:nightscout/Trio#1662",
-          "title": "RoundWhiteDiscKit update for SwiftFormat parse fix",
+          "changeId": "pr:nightscout/Trio#1670",
+          "title": "Make schedule tests DST-safe",
           "changes": [
-            "Updated RoundWhiteDiscKit submodule to pick up a SwiftFormat parse fix.",
-            "Local builds that were failing during formatting should now succeed."
+            "Automated schedule-related tests were fixed to avoid DST-related failures.",
+            "This does not change app behavior for users."
           ],
           "category": "internal-and-build-system",
           "sourceIds": [
-            "pr:nightscout/Trio#1662",
-            "commit:3c8cf877e3dc"
+            "pr:nightscout/Trio#1670",
+            "diff:94cd019d903e"
           ],
           "confidence": "high",
           "humanReviewRequired": false,
           "changeIds": [
-            "pr:nightscout/Trio#1662"
+            "pr:nightscout/Trio#1670"
           ],
           "highlight": false,
           "provenance": "upstream",
           "sources": [
             {
-              "id": "pr:nightscout/Trio#1662",
+              "id": "pr:nightscout/Trio#1670",
               "type": "pull-request",
-              "title": "nightscout/Trio#1662: Bump RoundWhiteDiscKit for the SwiftFormat parse fix",
-              "url": "https://github.com/nightscout/Trio/pull/1662"
+              "title": "nightscout/Trio#1670: Make schedule unit tests DST-safe",
+              "url": "https://github.com/nightscout/Trio/pull/1670"
             },
             {
-              "id": "commit:3c8cf877e3dc",
-              "type": "commit",
-              "title": "Bump RoundWhiteDiscKit for the SwiftFormat parse fix",
-              "url": "https://github.com/gordolio/Trio/commit/3c8cf877e3dcb19dc9e8762462759b03d7c45088"
+              "id": "diff:94cd019d903e",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1670",
+              "url": "https://github.com/gordolio/Trio/compare/4cc5e7b0ecfa09766f90bf93f898828eacb29b51...aaa65a7b97cc3aa93af83ebc25aa89540177ac26"
             }
           ]
         }
@@ -169,119 +176,119 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1662,
-      "title": "Bump RoundWhiteDiscKit for the SwiftFormat parse fix",
-      "body": "| Submodule | Branch | Old → New |\n| --- | --- | --- |\n| RoundWhiteDiscKit | `main` | `e66da6c` → `7dd6396` |\n\nPicks up the SwiftFormat parse fix (airedev326/RoundWhiteDiscKit#1). The `loopandlearn` fork was fast-forwarded to upstream first; the two commits are that fix and its merge.\n\nThis unblocks local builds. SwiftFormat 0.47 could not parse the attributed conformance in `SensorScannerNG.Event`'s inheritance clause, so the format phase aborted and then reformatted submodule sources it had been told to exclude — producing compile errors in `LoopKit` that looked unrelated. `CI=true` was the workaround.\n\nLinted with the version the project uses (0.47.11): 1 parse error at the old pin, 0 at the new one.\n\nEverything else is already at the tip of its tracked branch. Checked both directions — each `loopandlearn` fork against its upstream parent as well — and RoundWhiteDiscKit was the only one behind.\n",
+      "number": 1668,
+      "title": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
+      "body": "closes #1657\n\nonly the compact Dynamic Island views are changed (`LiveActivityCompactLeadingView`, `LiveActivityCompactTrailingView` in LiveActivityView.swift, and one `contentMargins` line in LiveActivity.swift). expanded, minimal, lock screen and watch views are not changed.\n\nas @kamilosxdman showed, with a second Live Activity the compact island shows `…→ …`. as @MikePlante1 showed, in landscape on iOS 27 the arrow and the delta are cut off.\n\ncause: iOS 27 makes the compact views narrower when the island shows more than one Live Activity, and in landscape. the compact views have no `lineLimit` or `minimumScaleFactor`, so the glucose and the delta truncate to `…`. in landscape, `.contentMargins(.trailing, 0, for: .compactLeading)` makes the leading view wider than the visible pill, so the text does not scale and the pill edge cuts the arrow.\n\nchange:\n- `.lineLimit(1)` and `.minimumScaleFactor(0.5)` on both compact views, so the text scales down instead of truncating\n- remove `.contentMargins(.trailing, 0, for: .compactLeading)`, so the leading view stays inside the pill\n- remove `.padding(.leading, 4)` from the compact leading view, so the glucose keeps more room (with 2 activities it scales to about 0.76 instead of 0.6)\n\nwith one activity the glucose keeps its full size and position; the pill is about 4 pt narrower on the left, on iOS 26 too.\n\nI chose scaling because CI builds with Xcode 26.5. iOS 27 has a better way: `isDynamicIslandLimitedInWidth` tells the view that the island is narrow, so it could show only the glucose, larger (as the HIG suggests). the Xcode 26.5 SDK does not have it; behind `#if compiler(>=6.4)` it compiles, but CI builds would not get it.\n\ntested in the simulator (iPhone 18 Pro Max iOS 27.0, iPhone 17 Pro iOS 26.5), built with Xcode 27.1, second activity = Safari audio:\n- before: 2 activities `…→ …`; landscape `8,9-` and `+…`\n- after: 2 activities `8,9→ +0,0`, a bit smaller; landscape `8,9→` and `+0,0`; mg/dL `161→ +1`; one activity unchanged on both iOS versions\n\n| | before | after |\n| --- | --- | --- |\n| 2 activities, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/035f03e2-0064-4499-baab-3a3f7611d63b\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/0d34d1f2-dd1a-48c0-8031-1f4f6ccfb306\" /> |\n| landscape, iOS 27 | <img width=\"85\" alt=\"before\" src=\"https://github.com/user-attachments/assets/f8ec8d42-c26b-4113-80cc-97091812f375\" /> | <img width=\"111\" alt=\"after\" src=\"https://github.com/user-attachments/assets/1e5db5d0-9b68-4f7f-b82e-e7b755e6867d\" /> |\n| one activity, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/c1a14152-9d4b-4b8d-a1e5-db060e3ddf4d\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/f8af97d7-0667-4fb4-b13a-bb31aae6088a\" /> |\n| one activity, iOS 26.5 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/5a6bfea7-1df5-4418-aef3-6f94ad6f2072\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/ccd3db6a-208d-46a9-9c06-adf723a16d37\" /> |\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1662",
-      "mergedAt": "2026-10-24T23:36:37Z"
+      "url": "https://github.com/nightscout/Trio/pull/1668",
+      "mergedAt": "2026-10-25T20:20:45Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1662,
-      "title": "Bump RoundWhiteDiscKit for the SwiftFormat parse fix",
-      "body": "| Submodule | Branch | Old → New |\n| --- | --- | --- |\n| RoundWhiteDiscKit | `main` | `e66da6c` → `7dd6396` |\n\nPicks up the SwiftFormat parse fix (airedev326/RoundWhiteDiscKit#1). The `loopandlearn` fork was fast-forwarded to upstream first; the two commits are that fix and its merge.\n\nThis unblocks local builds. SwiftFormat 0.47 could not parse the attributed conformance in `SensorScannerNG.Event`'s inheritance clause, so the format phase aborted and then reformatted submodule sources it had been told to exclude — producing compile errors in `LoopKit` that looked unrelated. `CI=true` was the workaround.\n\nLinted with the version the project uses (0.47.11): 1 parse error at the old pin, 0 at the new one.\n\nEverything else is already at the tip of its tracked branch. Checked both directions — each `loopandlearn` fork against its upstream parent as well — and RoundWhiteDiscKit was the only one behind.\n",
+      "number": 1668,
+      "title": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
+      "body": "closes #1657\n\nonly the compact Dynamic Island views are changed (`LiveActivityCompactLeadingView`, `LiveActivityCompactTrailingView` in LiveActivityView.swift, and one `contentMargins` line in LiveActivity.swift). expanded, minimal, lock screen and watch views are not changed.\n\nas @kamilosxdman showed, with a second Live Activity the compact island shows `…→ …`. as @MikePlante1 showed, in landscape on iOS 27 the arrow and the delta are cut off.\n\ncause: iOS 27 makes the compact views narrower when the island shows more than one Live Activity, and in landscape. the compact views have no `lineLimit` or `minimumScaleFactor`, so the glucose and the delta truncate to `…`. in landscape, `.contentMargins(.trailing, 0, for: .compactLeading)` makes the leading view wider than the visible pill, so the text does not scale and the pill edge cuts the arrow.\n\nchange:\n- `.lineLimit(1)` and `.minimumScaleFactor(0.5)` on both compact views, so the text scales down instead of truncating\n- remove `.contentMargins(.trailing, 0, for: .compactLeading)`, so the leading view stays inside the pill\n- remove `.padding(.leading, 4)` from the compact leading view, so the glucose keeps more room (with 2 activities it scales to about 0.76 instead of 0.6)\n\nwith one activity the glucose keeps its full size and position; the pill is about 4 pt narrower on the left, on iOS 26 too.\n\nI chose scaling because CI builds with Xcode 26.5. iOS 27 has a better way: `isDynamicIslandLimitedInWidth` tells the view that the island is narrow, so it could show only the glucose, larger (as the HIG suggests). the Xcode 26.5 SDK does not have it; behind `#if compiler(>=6.4)` it compiles, but CI builds would not get it.\n\ntested in the simulator (iPhone 18 Pro Max iOS 27.0, iPhone 17 Pro iOS 26.5), built with Xcode 27.1, second activity = Safari audio:\n- before: 2 activities `…→ …`; landscape `8,9-` and `+…`\n- after: 2 activities `8,9→ +0,0`, a bit smaller; landscape `8,9→` and `+0,0`; mg/dL `161→ +1`; one activity unchanged on both iOS versions\n\n| | before | after |\n| --- | --- | --- |\n| 2 activities, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/035f03e2-0064-4499-baab-3a3f7611d63b\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/0d34d1f2-dd1a-48c0-8031-1f4f6ccfb306\" /> |\n| landscape, iOS 27 | <img width=\"85\" alt=\"before\" src=\"https://github.com/user-attachments/assets/f8ec8d42-c26b-4113-80cc-97091812f375\" /> | <img width=\"111\" alt=\"after\" src=\"https://github.com/user-attachments/assets/1e5db5d0-9b68-4f7f-b82e-e7b755e6867d\" /> |\n| one activity, iOS 27 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/c1a14152-9d4b-4b8d-a1e5-db060e3ddf4d\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/f8af97d7-0667-4fb4-b13a-bb31aae6088a\" /> |\n| one activity, iOS 26.5 | <img width=\"400\" alt=\"before\" src=\"https://github.com/user-attachments/assets/5a6bfea7-1df5-4418-aef3-6f94ad6f2072\" /> | <img width=\"400\" alt=\"after\" src=\"https://github.com/user-attachments/assets/ccd3db6a-208d-46a9-9c06-adf723a16d37\" /> |\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1662",
-      "mergedAt": "2026-10-24T23:36:37Z"
+      "url": "https://github.com/nightscout/Trio/pull/1668",
+      "mergedAt": "2026-10-25T20:20:45Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1665,
-      "title": "Rebuild glucose target profiles when the chart window passes their end",
-      "body": "closes #1581\n\nonly the home chart target line is changed (`updateStartEndMarkers` in StartEndMarkerSetup.swift).\n\nas @StephaneMARTINEZ13600 showed, the green target line stops at 00:00 while glucose keeps going.\n\ncause: `setupGlucoseTargets` builds `targetProfiles` only at launch and on a settings or targets change. `processFetchedTargets` makes one profile per day up to a midnight after the `endMarker` of that moment (#1383 widened the span, but still only at build time). the chart's `endMarker` moves with every reading and on foreground, so after about one to two days without a restart or a settings change it passes the last profile, and the line ends at that midnight. a restart brings it back.\n\nchange: when `updateStartEndMarkers` moves `endMarker` past the last profile's end, rebuild the profiles from the cached `bgTargets` and the new `startMarker`. this runs about once a day, on the main actor like the other callers. temp targets and overrides use their own data and are not affected.\n\ntested in the simulator with a local-only change that cuts the profiles at today's 00:00 (the state the app reaches after a day), then background and foreground:\n- before: the target line stops at 00:00\n- after: the target line continues past 00:00 to the right edge of the chart\n\n| before | after |\n| --- | --- |\n| <img width=\"300\" alt=\"before\" src=\"https://github.com/user-attachments/assets/6dac85eb-142c-4d75-a68d-0fa968513f2a\" /> | <img width=\"300\" alt=\"after\" src=\"https://github.com/user-attachments/assets/b797f516-82cc-496b-9d15-aec38463c334\" /> |\n",
+      "number": 1670,
+      "title": "Make schedule unit tests DST-safe",
+      "body": "Two test helpers built times as \"midnight + N hours\" or measured elapsed minutes since midnight. On a DST day (25 Oct in Europe has 25 hours) those land an hour off from the wall clock, so CI fails on `dev` and every PR today:\n\n- `ScheduledBasalInferenceTests`: `time(_:_:)` now uses `Calendar.date(bySettingHour:minute:second:of:)`. The old helper also crashed the test host (index out of range) once a segment went missing.\n- `BolusCalculatorTests`: the test-local `getCurrentSettingValue` now reads wall-clock hour and minute.\n\nThe app code under test already uses wall-clock boundaries, so this is test-only. Verified on 25 Oct (CET, 25-hour day): both suites, 22 tests, pass; before the change 3 tests failed.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1665",
-      "mergedAt": "2026-10-24T23:11:00Z"
+      "url": "https://github.com/nightscout/Trio/pull/1670",
+      "mergedAt": "2026-10-25T15:10:26Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1665,
-      "title": "Rebuild glucose target profiles when the chart window passes their end",
-      "body": "closes #1581\n\nonly the home chart target line is changed (`updateStartEndMarkers` in StartEndMarkerSetup.swift).\n\nas @StephaneMARTINEZ13600 showed, the green target line stops at 00:00 while glucose keeps going.\n\ncause: `setupGlucoseTargets` builds `targetProfiles` only at launch and on a settings or targets change. `processFetchedTargets` makes one profile per day up to a midnight after the `endMarker` of that moment (#1383 widened the span, but still only at build time). the chart's `endMarker` moves with every reading and on foreground, so after about one to two days without a restart or a settings change it passes the last profile, and the line ends at that midnight. a restart brings it back.\n\nchange: when `updateStartEndMarkers` moves `endMarker` past the last profile's end, rebuild the profiles from the cached `bgTargets` and the new `startMarker`. this runs about once a day, on the main actor like the other callers. temp targets and overrides use their own data and are not affected.\n\ntested in the simulator with a local-only change that cuts the profiles at today's 00:00 (the state the app reaches after a day), then background and foreground:\n- before: the target line stops at 00:00\n- after: the target line continues past 00:00 to the right edge of the chart\n\n| before | after |\n| --- | --- |\n| <img width=\"300\" alt=\"before\" src=\"https://github.com/user-attachments/assets/6dac85eb-142c-4d75-a68d-0fa968513f2a\" /> | <img width=\"300\" alt=\"after\" src=\"https://github.com/user-attachments/assets/b797f516-82cc-496b-9d15-aec38463c334\" /> |\n",
+      "number": 1670,
+      "title": "Make schedule unit tests DST-safe",
+      "body": "Two test helpers built times as \"midnight + N hours\" or measured elapsed minutes since midnight. On a DST day (25 Oct in Europe has 25 hours) those land an hour off from the wall clock, so CI fails on `dev` and every PR today:\n\n- `ScheduledBasalInferenceTests`: `time(_:_:)` now uses `Calendar.date(bySettingHour:minute:second:of:)`. The old helper also crashed the test host (index out of range) once a segment went missing.\n- `BolusCalculatorTests`: the test-local `getCurrentSettingValue` now reads wall-clock hour and minute.\n\nThe app code under test already uses wall-clock boundaries, so this is test-only. Verified on 25 Oct (CET, 25-hour day): both suites, 22 tests, pass; before the change 3 tests failed.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1665",
-      "mergedAt": "2026-10-24T23:11:00Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1666,
-      "title": "Upload pump-programmed bolus flag to Nightscout",
-      "body": "Boluses programmed on the pump itself are stored as BolusStored.isProgrammedByPumpUI as of #1580 but were not included in the Nightscout treatment payload. Send it as isProgrammedByPumpUI on bolus treatments (omitted when false), re-upload an uploaded row when the flag changes on finalization, and include it in the upload-stamp check.\r\n\r\n@dnzxy ",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1666",
-      "mergedAt": "2026-10-24T23:11:21Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1666,
-      "title": "Upload pump-programmed bolus flag to Nightscout",
-      "body": "Boluses programmed on the pump itself are stored as BolusStored.isProgrammedByPumpUI as of #1580 but were not included in the Nightscout treatment payload. Send it as isProgrammedByPumpUI on bolus treatments (omitted when false), re-upload an uploaded row when the flag changes on finalization, and include it in the upload-stamp check.\r\n\r\n@dnzxy ",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1666",
-      "mergedAt": "2026-10-24T23:11:21Z"
+      "url": "https://github.com/nightscout/Trio/pull/1670",
+      "mergedAt": "2026-10-25T15:10:26Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "3c8cf877e3dcb19dc9e8762462759b03d7c45088",
-      "subject": "Bump RoundWhiteDiscKit for the SwiftFormat parse fix",
-      "author": "dnzxy",
-      "authoredAt": "2026-10-24T17:34:02+02:00"
-    },
-    {
-      "sha": "2b8d4aee9cfcac1079c2ecdeff809bf5933afa68",
-      "subject": "Rebuild glucose target profiles when the chart window passes their end",
+      "sha": "76961bc070308a4609adf71aafbcaae4bfc47ad5",
+      "subject": "Scale compact Dynamic Island text instead of truncating it in a narrow island",
       "author": "Lamercho",
-      "authoredAt": "2026-10-24T20:26:20+03:00"
+      "authoredAt": "2026-10-25T03:03:11+02:00"
     },
     {
-      "sha": "25936ebc8e7beb26ab0d67fe7615427c1d9bbb5c",
-      "subject": "Upload pump-programmed bolus flag to Nightscout",
-      "author": "Claude",
-      "authoredAt": "2026-10-24T18:51:13Z"
+      "sha": "e614f416ba94918eeb54299d58a8988cf1b35005",
+      "subject": "Make schedule tests DST-safe",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-25T15:11:03+01:00"
     },
     {
-      "sha": "480253769bdb6a199aa9d83088cada055a3ac529",
-      "subject": "Merge pull request #1665 from Lamercho/fix/target-glucose-line-gap",
+      "sha": "aaa65a7b97cc3aa93af83ebc25aa89540177ac26",
+      "subject": "Merge pull request #1670 from dnzxy/fix/dst-unit-tests",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-25T01:10:59+02:00"
+      "authoredAt": "2026-10-25T16:10:26+01:00"
     },
     {
-      "sha": "938e5880e36a1fad3657cac24fc07153a8c8b66c",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.24 [skip ci]",
+      "sha": "b4de74760b588923b255c965f28e5d6fea3dccfa",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.27 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-10-24T23:11:11Z"
+      "authoredAt": "2026-10-25T15:10:35Z"
     },
     {
-      "sha": "2ef7645cb037525b9e0da89d954f91c620d02c2e",
-      "subject": "Merge pull request #1666 from jwoglom/ccr-5a5f0336-6kkxht",
+      "sha": "b86d399ae498d2546a47e16fd30d17169e584a2f",
+      "subject": "Re-run CI on current dev",
+      "author": "Lamercho",
+      "authoredAt": "2026-10-25T18:01:58+02:00"
+    },
+    {
+      "sha": "f168fd87f3a58f58f23b8632f43f285d7e32e25d",
+      "subject": "Merge branch 'dev' into fix/live-activity-compact-island",
+      "author": "/dev/null",
+      "authoredAt": "2026-10-25T18:02:39+02:00"
+    },
+    {
+      "sha": "bc66515b46359205021ace89a3e0fcf350c58521",
+      "subject": "Re-run CI",
+      "author": "Lamercho",
+      "authoredAt": "2026-10-25T18:15:30+02:00"
+    },
+    {
+      "sha": "194ea4992d4dd52076e9e1ba4d14156fd6e1fddd",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-25T11:58:28-05:00"
+    },
+    {
+      "sha": "065f5f3102df7d03367ca963cb7e1b4b3d30822a",
+      "subject": "Remove code comments",
+      "author": "Lamercho",
+      "authoredAt": "2026-10-25T22:01:18+02:00"
+    },
+    {
+      "sha": "6054291b3b5453ae0ae17e0a79f7b372f64f33d2",
+      "subject": "Merge pull request #1668 from Lamercho/fix/live-activity-compact-island",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-25T01:11:20+02:00"
+      "authoredAt": "2026-10-25T21:20:45+01:00"
     },
     {
-      "sha": "aff37ac933d9e92a2eaf6d046f4706c0e03fb6de",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.25 [skip ci]",
+      "sha": "a60d8b3b84a5f8eec577805b87993ab6861d01e8",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.28 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-10-24T23:11:32Z"
+      "authoredAt": "2026-10-25T20:20:55Z"
     },
     {
-      "sha": "c4470012d9b2cb41566ce908fe5385f60299992e",
-      "subject": "Merge pull request #1662 from nightscout/chore/update-submodules-1024",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-10-25T01:36:36+02:00"
+      "sha": "b2ae40d7f4659059e40c05db213405e3117aebe0",
+      "subject": "feat(ai-requests): Open a meal on the watch before Trio has it, and check in whenever Trio runs",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-25T15:38:21-05:00"
     },
     {
-      "sha": "4cc5e7b0ecfa09766f90bf93f898828eacb29b51",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.26 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-10-24T23:36:48Z"
-    },
-    {
-      "sha": "9abf724776c601d8e06d573430d0a2372776a8b3",
-      "subject": "Merge branch 'dev' of https://github.com/nightscout/Trio into dev",
-      "author": "GH Action - Upstream Sync",
-      "authoredAt": "2026-10-25T12:00:36Z"
+      "sha": "25f385401f6b903a80440d9414d855b30e3f9796",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-25T15:50:13-05:00"
     }
   ],
   "includedFiles": [
@@ -291,27 +298,55 @@
     },
     {
       "status": "M",
-      "path": "RoundWhiteDiscKit"
+      "path": "LiveActivity/LiveActivity.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/APS/Storage/PumpHistoryStorage.swift"
+      "path": "LiveActivity/Views/LiveActivityView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Models/NightscoutTreatment.swift"
+      "path": "Trio Watch App Extension/AIRequests/AIRequestWatchCenter.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Home/HomeStateModel+Setup/StartEndMarkerSetup.swift"
+      "path": "Trio/Sources/Models/AIRequests/AIRequestWatchFlowController.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
+      "path": "Trio/Sources/Services/AIAssistants/Requests/AIAssistantsCheckIn.swift"
     },
     {
       "status": "M",
-      "path": "TrioTests/CoreDataTests/PumpEventFinalizationTests.swift"
+      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestHooks.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestTreatmentsOpener.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AIAssistants/Requests/AIRequestsRuntime.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AIAssistantsTests/Requests/AIAssistantsCheckInTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestWatchFlowControllerTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestWatchLinkTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/BolusCalculatorTests/BolusCalculatorTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/ScheduledBasalInferenceTests.swift"
     }
   ]
 }

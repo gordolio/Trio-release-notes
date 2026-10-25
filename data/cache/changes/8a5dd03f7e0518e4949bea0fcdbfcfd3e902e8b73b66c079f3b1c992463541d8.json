@@ -1,0 +1,23 @@
+{
+  "inputHash": "2d561e63656eb073c491bf573e41ac08dad4fcf0c6c9a0fbe9308c4a0269a3e2",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1668",
+    "title": "Prevent Dynamic Island compact text truncation",
+    "changes": [
+      "Compact Dynamic Island text now scales instead of truncating.",
+      "When multiple Live Activities appear or in landscape, arrows and glucose values remain visible."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1668",
+      "diff:8a5dd03f7e05",
+      "commit:76961bc07030"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

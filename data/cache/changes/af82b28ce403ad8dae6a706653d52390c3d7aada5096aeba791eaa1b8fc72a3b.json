@@ -1,0 +1,22 @@
+{
+  "inputHash": "589a5f53a698423621d2c776567866213bee38572444656ce7ffa89524fbedb8",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:b2ae40d7f4659059e40c05db213405e3117aebe0",
+    "title": "Watch opens pushed meals sooner",
+    "changes": [
+      "Pushed meals now open on the watch even if Trio hasn't received them.",
+      "Trio checks in more reliably when the watch contacts the phone, on app foreground, or on pushes."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:b2ae40d7f465",
+      "diff:af82b28ce403"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
