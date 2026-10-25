@@ -1,0 +1,22 @@
+{
+  "inputHash": "569cf2fa389c951e911c6e3eb68ffec12bc5c91f078f724884a495eefb0a1ed6",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1665",
+    "title": "Target line continues past midnight",
+    "changes": [
+      "Glucose target line now continues past midnight on the home chart.",
+      "You will no longer see the green target line stop at 00:00 after a day without restarting."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1665",
+      "diff:75fe97e7e52c"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "73ba3cdeefc01092f4a90b6a3e6d5fd5bce259f841c39b3bd05bc5fc59ee7d0e",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1666",
+    "title": "Show pump-programmed boluses in Nightscout",
+    "changes": [
+      "Nightscout treatments now show when a bolus was programmed on the pump.",
+      "Boluses finalized as pump-programmed after upload are re-sent so Nightscout reflects the change."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1666",
+      "diff:01fb7d829013"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

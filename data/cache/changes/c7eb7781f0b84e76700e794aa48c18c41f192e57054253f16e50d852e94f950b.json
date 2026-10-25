@@ -1,0 +1,22 @@
+{
+  "inputHash": "0297269c90419bad24908aa3e6a2a03f5edb68546d7892983c18a0e88214c20e",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1662",
+    "title": "RoundWhiteDiscKit update for SwiftFormat parse fix",
+    "changes": [
+      "Updated RoundWhiteDiscKit submodule to pick up a SwiftFormat parse fix.",
+      "Local builds that were failing during formatting should now succeed."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1662",
+      "commit:3c8cf877e3dc"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

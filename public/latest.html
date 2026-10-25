@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build 99ff89f</title>
+  <title>Trio Build 9abf724</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,16 +16,14 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build 99ff89f</h1>
-    <p>Built 2026-10-24T20:12:33.000Z from <code>b8c6aa3..99ff89f</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Rename TIR setting to Lower Range Threshold</h3><ul><li>Time in Range setting renamed to &#39;Lower Range Threshold&#39; with Standard (70 mg/dL) and Extended (63 mg/dL).</li><li>Charts and statistics will display TIR/TITR ranges using the selected lower threshold.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1558" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Mark pump-programmed boluses in History</h3><ul><li>Pump-programmed boluses are now recorded and identified in the app.</li><li>History &gt; Treatments shows a pump indicator next to those boluses.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1580" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Add Syai Ultra X1 CGM support</h3><ul><li>Syai Ultra X1 continuous glucose monitor (CGM) is now available in Trio.</li><li>It requires a Syai account, cannot be calibrated, and can upload glucose data to Syai servers.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1618" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Close Edit Override form on save failure</h3><ul><li>Edit Override form now closes when saving even if the Nightscout upload fails.</li><li>Your changes are saved and the app records the upload failure.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1652" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Surface CGM warnings and catalog G7 alerts</h3><ul><li>Sensor warnings now appear during a session instead of being hidden.</li><li>G7 sensor alerts are now categorized and surface like other CGMs.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1659" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build 9abf724</h1>
+    <p>Built 2026-10-25T12:14:27.000Z from <code>99ff89f..9abf724</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Target line continues past midnight</h3><ul><li>Glucose target line now continues past midnight on the home chart.</li><li>You will no longer see the green target line stop at 00:00 after a day without restarting.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1665" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Show pump-programmed boluses in Nightscout</h3><ul><li>Nightscout treatments now show when a bolus was programmed on the pump.</li><li>Boluses finalized as pump-programmed after upload are re-sent so Nightscout reflects the change.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1666" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>RoundWhiteDiscKit update for SwiftFormat parse fix</h3><ul><li>Updated RoundWhiteDiscKit submodule to pick up a SwiftFormat parse fix.</li><li>Local builds that were failing during formatting should now succeed.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1662" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/40127501549">Source workflow 40127501549</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/40191191221">Source workflow 40191191221</a></p>
   </footer>
 </body>
 </html>
