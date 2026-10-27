@@ -1,0 +1,22 @@
+{
+  "inputHash": "0a6e5fca4a9a1acf83d189d264bef28c0308f5bbc0a5f5e54c710b86ef4b13dd",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:b80cde33c451dcc89b75c6f0933ab3ad13372a96",
+    "title": "Skip Beta App Review for Internal TestFlight",
+    "changes": [
+      "Internal TestFlight builds no longer require Beta App Review when sent to internal groups.",
+      "Internal testers will receive builds without an extra beta review step."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:b80cde33c451",
+      "diff:c1a6675c7aea"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

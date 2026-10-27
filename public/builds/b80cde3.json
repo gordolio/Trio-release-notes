@@ -1,0 +1,308 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 40424160425,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40424160425",
+    "sourceBranch": "feat/settings-test-wizards",
+    "previousBuiltSha": "141ccc8809cd6caa34bac60a91959d5387f48cdb",
+    "currentBuiltSha": "b80cde33c451dcc89b75c6f0933ab3ad13372a96",
+    "shortSha": "b80cde3",
+    "buildDate": "2026-10-27T00:29:47.000Z",
+    "generationDate": "2026-10-27T00:41:08.611Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "commit:ac25cd04585323573e68b7442506f8ad52d2db1f",
+      "title": "Add Settings Tests hub and basal test",
+      "changes": [
+        "A new Settings Tests entry in Therapy Settings adds guided basal testing.",
+        "You can run readiness checks and see saved outcomes after a test finishes."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "commit:ac25cd045853",
+        "diff:48bef3e3d3ac"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "commit:ac25cd04585323573e68b7442506f8ad52d2db1f"
+      ],
+      "highlight": true,
+      "provenance": "origin",
+      "sources": [
+        {
+          "id": "commit:ac25cd045853",
+          "type": "commit",
+          "title": "feat(settings-tests): Add settings test hub, shared wizard kit, and guided basal test",
+          "url": "https://github.com/gordolio/Trio/commit/ac25cd04585323573e68b7442506f8ad52d2db1f"
+        },
+        {
+          "id": "diff:48bef3e3d3ac",
+          "type": "diff",
+          "title": "Diff for commit:ac25cd04585323573e68b7442506f8ad52d2db1f",
+          "url": "https://github.com/gordolio/Trio/compare/141ccc8809cd6caa34bac60a91959d5387f48cdb...ac25cd04585323573e68b7442506f8ad52d2db1f"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "commit:ce9df3faf87e3cd326ba00c870978ade36eb159d",
+          "title": "Choose TestFlight groups for manual builds",
+          "changes": [
+            "When triggering a manual build, you can limit recipients by selecting TestFlight groups.",
+            "If no groups are selected, the build is uploaded the usual way."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "commit:ce9df3faf87e",
+            "diff:83cae8e8ed1d"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "commit:ce9df3faf87e3cd326ba00c870978ade36eb159d"
+          ],
+          "highlight": false,
+          "provenance": "internal",
+          "sources": [
+            {
+              "id": "commit:ce9df3faf87e",
+              "type": "commit",
+              "title": "ci(testflight): Choose which TestFlight groups get a hand-run build",
+              "url": "https://github.com/gordolio/Trio/commit/ce9df3faf87e3cd326ba00c870978ade36eb159d"
+            },
+            {
+              "id": "diff:83cae8e8ed1d",
+              "type": "diff",
+              "title": "Diff for commit:ce9df3faf87e3cd326ba00c870978ade36eb159d",
+              "url": "https://github.com/gordolio/Trio/compare/ac25cd04585323573e68b7442506f8ad52d2db1f...ce9df3faf87e3cd326ba00c870978ade36eb159d"
+            }
+          ]
+        },
+        {
+          "changeId": "commit:b80cde33c451dcc89b75c6f0933ab3ad13372a96",
+          "title": "Skip Beta App Review for Internal TestFlight",
+          "changes": [
+            "Internal TestFlight builds no longer require Beta App Review when sent to internal groups.",
+            "Internal testers will receive builds without an extra beta review step."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "commit:b80cde33c451",
+            "diff:c1a6675c7aea"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "commit:b80cde33c451dcc89b75c6f0933ab3ad13372a96"
+          ],
+          "highlight": false,
+          "provenance": "internal",
+          "sources": [
+            {
+              "id": "commit:b80cde33c451",
+              "type": "commit",
+              "title": "fix(testflight): Skip Beta App Review when sending a build to internal groups",
+              "url": "https://github.com/gordolio/Trio/commit/b80cde33c451dcc89b75c6f0933ab3ad13372a96"
+            },
+            {
+              "id": "diff:c1a6675c7aea",
+              "type": "diff",
+              "title": "Diff for commit:b80cde33c451dcc89b75c6f0933ab3ad13372a96",
+              "url": "https://github.com/gordolio/Trio/compare/ce9df3faf87e3cd326ba00c870978ade36eb159d...b80cde33c451dcc89b75c6f0933ab3ad13372a96"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [],
+  "includedCommits": [
+    {
+      "sha": "ac25cd04585323573e68b7442506f8ad52d2db1f",
+      "subject": "feat(settings-tests): Add settings test hub, shared wizard kit, and guided basal test",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-26T07:00:25-05:00"
+    },
+    {
+      "sha": "ce9df3faf87e3cd326ba00c870978ade36eb159d",
+      "subject": "ci(testflight): Choose which TestFlight groups get a hand-run build",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-26T17:55:10-05:00"
+    },
+    {
+      "sha": "b80cde33c451dcc89b75c6f0933ab3ad13372a96",
+      "subject": "fix(testflight): Skip Beta App Review when sending a build to internal groups",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-26T19:00:48-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": ".github/workflows/build_trio.yml"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/TrioApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Assemblies/ServiceAssembly.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestDataFlow.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestModels.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestProvider.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestStateModel.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestCheckView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestFastView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestResultView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestRootView.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/View/CalibrationProgressBar.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/View/CarbRatioCalibrationRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/View/ObservationPhaseView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/View/PreflightCheckView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/View/PrepPhaseView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/View/ResultsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/View/TestPhaseView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/Subviews/TherapySettingsView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestDataFlow.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestModels.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestStateModel.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestComponents.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Router/Screen.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Services/SettingsTest/SettingsTestService.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/SettingsTestTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "fastlane/Fastfile"
+    }
+  ]
+}

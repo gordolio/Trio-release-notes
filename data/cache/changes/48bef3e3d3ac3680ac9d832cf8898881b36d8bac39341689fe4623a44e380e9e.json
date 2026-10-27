@@ -1,0 +1,22 @@
+{
+  "inputHash": "1a4e4a1f917e1d26d4b9a4f1418eb08b978a70433950f85c7c5f768f4b932c3e",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:ac25cd04585323573e68b7442506f8ad52d2db1f",
+    "title": "Add Settings Tests hub and basal test",
+    "changes": [
+      "A new Settings Tests entry in Therapy Settings adds guided basal testing.",
+      "You can run readiness checks and see saved outcomes after a test finishes."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "commit:ac25cd045853",
+      "diff:48bef3e3d3ac"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

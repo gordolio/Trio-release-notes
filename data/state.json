@@ -607,6 +607,11 @@
       "fullSha": "141ccc8809cd6caa34bac60a91959d5387f48cdb",
       "reportPath": "public/builds/141ccc8.json",
       "processedAt": "2026-10-25T22:31:43.023Z"
+    },
+    "40424160425": {
+      "fullSha": "b80cde33c451dcc89b75c6f0933ab3ad13372a96",
+      "reportPath": "public/builds/b80cde3.json",
+      "processedAt": "2026-10-27T00:41:08.614Z"
     }
   },
   "successfulBuilds": [
@@ -1585,6 +1590,14 @@
       "shortSha": "141ccc8",
       "builtAt": "2026-10-25T22:07:02Z",
       "reportPath": "public/builds/141ccc8.json"
+    },
+    {
+      "runId": 40424160425,
+      "branch": "feat/settings-test-wizards",
+      "fullSha": "b80cde33c451dcc89b75c6f0933ab3ad13372a96",
+      "shortSha": "b80cde3",
+      "builtAt": "2026-10-27T00:05:51Z",
+      "reportPath": "public/builds/b80cde3.json"
     }
   ]
 }

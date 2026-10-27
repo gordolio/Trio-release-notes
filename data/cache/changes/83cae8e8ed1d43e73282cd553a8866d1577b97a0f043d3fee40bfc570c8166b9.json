@@ -1,0 +1,22 @@
+{
+  "inputHash": "ae9e4b74fe967afbc3895c3764e7f35b3be4a75f399bb4ba816421501726e1ba",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:ce9df3faf87e3cd326ba00c870978ade36eb159d",
+    "title": "Choose TestFlight groups for manual builds",
+    "changes": [
+      "When triggering a manual build, you can limit recipients by selecting TestFlight groups.",
+      "If no groups are selected, the build is uploaded the usual way."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:ce9df3faf87e",
+      "diff:83cae8e8ed1d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
