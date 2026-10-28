@@ -1,0 +1,22 @@
+{
+  "inputHash": "0d567ebcd0802eef3d68405292da220e8a215ac6f80e85ee560b11fd7a439bc9",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:262cf39cfb877e1b03fa14a3e0431783a07a024e",
+    "title": "Help sheets use correct horizontal padding",
+    "changes": [
+      "Help sheets now use horizontal side padding and keep only vertical overall padding.",
+      "The \"Got it!\" button and help list content now align with consistent side margins."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:262cf39cfb87",
+      "diff:0375cc857fae"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

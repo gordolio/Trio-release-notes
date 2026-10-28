@@ -1,0 +1,21 @@
+{
+  "inputHash": "75073bbbd52f7932983d274d4157e9a1e19bd51ad436ddb91f8cc5e3042feb1c",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:7e9e72b50e4a497309fa705d866921b9a1317735",
+    "title": "Duo help sheet layout fix",
+    "changes": [
+      "A layout fix for the Duo help sheet was merged.",
+      "You may notice adjusted spacing when viewing the Duo help sheet."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:7e9e72b50e4a"
+    ],
+    "confidence": "low",
+    "humanReviewRequired": true
+  }
+}

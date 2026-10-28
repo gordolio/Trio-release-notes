@@ -1,0 +1,22 @@
+{
+  "inputHash": "b264b2f5fc9f082980ee8626d51711ba79452a8c181d202efdfdc1b85ec20d85",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:c6bd339b0e5d51706b31fb6c0a8f9673fe629d95",
+    "title": "Error buttons and widget preview fit their containers",
+    "changes": [
+      "Retry and Proceed buttons plus the Live Activity widget preview now scale to their view area.",
+      "Buttons keep a consistent height for a uniform appearance."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:c6bd339b0e5d",
+      "diff:1f7f6e205ba3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

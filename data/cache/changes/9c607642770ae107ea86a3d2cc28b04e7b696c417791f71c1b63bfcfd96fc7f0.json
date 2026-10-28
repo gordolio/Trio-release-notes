@@ -1,0 +1,22 @@
+{
+  "inputHash": "dee20c69a65cebb0549c3590db47614454d9c79794e7ae7fc641e171a2ce8b65",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1673",
+    "title": "Stop Node.js deprecation warnings in tests",
+    "changes": [
+      "Failed unit-test runs no longer show the Node.js 20 deprecation warning.",
+      "No change to app behavior or user experience."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1673",
+      "diff:9c607642770a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

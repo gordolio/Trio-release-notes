@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build 7dca2c8</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build 7dca2c8</h1>
+    <p>Built 2026-10-28T13:37:06.000Z from <code>141ccc8..7dca2c8</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Improved log sharing and diagnostic export</h3><ul><li>Share redacted Trio, pump, or CGM logs from Settings → Report a Problem.</li><li>Choose 24‑hour, 3‑day or 7‑day ranges and get one zip with a single time‑sorted text file.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1660" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>In-app &#39;Send to the Trio Team&#39; problem reports</h3><ul><li>Users can send private problem reports with text, up to 8 screenshots and optional recent logs.</li><li>They receive a report ID after sending and can view or delete sent reports for up to 90 days.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1667" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Settings Tests hub and guided Basal Test</h3><ul><li>A Settings Tests hub now appears under Therapy Settings.</li><li>A guided Basal Test lets you run a fasted test, see readiness checks, and view results.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/ac25cd04585323573e68b7442506f8ad52d2db1f" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Device kit updates for Eversense and Medtrum</h3><ul><li>Eversense now records each sensor&#39;s insertion date and migrates prior insertion info.</li><li>Medtrum adds a base-reset alert, keeps unsaved patch settings on sync, and updates activation screens.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1677" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Save bar sizing in therapy editors</h3><ul><li>Save bars in therapy editors now size correctly to their containers.</li><li>Save bar backgrounds now extend across the full horizontal safe area.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/aeafc774673ef72020763275bcfb8ec9f8f1c391" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Fixes</h2><article><h3>Fix Duo error screen buttons</h3><ul><li>Fixes buttons on the Duo error screen.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/a7b761354900a2d9f538b8586a456bc8cc039050" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Interface Improvements</h2><article><h3>Fix list top spacing in sheets</h3><ul><li>Fix top spacing for lists in Treatments and adjustment forms.</li><li>This prevents the first row from being hidden under the sheet bar on some iPhones.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/35e60ec34f827d231a3b24786e720ec99994f04e" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Help sheets use correct horizontal padding</h3><ul><li>Help sheets now use horizontal side padding and keep only vertical overall padding.</li><li>The &quot;Got it!&quot; button and help list content now align with consistent side margins.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/262cf39cfb877e1b03fa14a3e0431783a07a024e" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Sticky action bars fit their view width</h3><ul><li>Sticky action bars and buttons now size to their view instead of the full device width.</li><li>Bar backgrounds now extend across horizontal safe areas for an edge-to-edge appearance.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/0b23a263f790d8d5fd8f4d90ca4f51cf4b15877f" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Error buttons and widget preview fit their containers</h3><ul><li>Retry and Proceed buttons plus the Live Activity widget preview now scale to their view area.</li><li>Buttons keep a consistent height for a uniform appearance.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/c6bd339b0e5d51706b31fb6c0a8f9673fe629d95" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix for Duo therapy save bar</h3><ul><li>Fixes for saving Duo therapy settings were merged into development.</li></ul><p><strong>Human review recommended.</strong></p><p class="sources"><a href="https://github.com/gordolio/Trio/commit/2892aeb782cdfbf2b48d92527b8f3e019a2abd90" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix Duo sheet top inset</h3><ul><li>Duo sheet now aligns correctly with the top of the screen.</li></ul><p><strong>Human review recommended.</strong></p><p class="sources"><a href="https://github.com/gordolio/Trio/commit/fb4d9835902f5f480cd1d928e9b5a97b42a25879" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Duo help sheet layout fix</h3><ul><li>A layout fix for the Duo help sheet was merged.</li><li>You may notice adjusted spacing when viewing the Duo help sheet.</li></ul><p><strong>Human review recommended.</strong></p><p class="sources"><a href="https://github.com/gordolio/Trio/commit/7e9e72b50e4a497309fa705d866921b9a1317735" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix sticky action bars on Duo screens</h3><ul><li>Duo-related action bars stop sticking unexpectedly.</li><li>You should see more consistent action controls when using Duo features.</li></ul><p><strong>Human review recommended.</strong></p><p class="sources"><a href="https://github.com/gordolio/Trio/commit/0444009d5a976d5d54a35495db4b4df8af72a8d4" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Stop Node.js deprecation warnings in tests</h3><ul><li>Failed unit-test runs no longer show the Node.js 20 deprecation warning.</li><li>No change to app behavior or user experience.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1673" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Choose TestFlight groups for manual builds</h3><ul><li>When triggering a manual build, you can limit recipients by selecting TestFlight groups.</li><li>If no groups are selected, the build is uploaded the usual way.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/ce9df3faf87e3cd326ba00c870978ade36eb159d" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Skip Beta App Review for Internal TestFlight</h3><ul><li>Internal TestFlight builds no longer require Beta App Review when sent to internal groups.</li><li>Internal testers will receive builds without an extra beta review step.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/b80cde33c451dcc89b75c6f0933ab3ad13372a96" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Internal build and logging fixes</h3><ul><li>Fix build errors and update watch app logging calls.</li><li>Users will not see any changes in app behavior.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/da3652ff857624bd9f351c76472e4c064e0c0918" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Adjust debug log categories</h3><ul><li>Internal debug log categories were changed. You won&#39;t notice any change.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/20cacfaf77356edd005d0a23a36553e2dce74258" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Background test maintenance</h3><ul><li>Automated unit tests were re-run.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/5897074581dd3d39f972621f348cce5024ac3af7" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Rename test URL protocol helper</h3><ul><li>Test helper StubURLProtocol was renamed to AIStubURLProtocol and updated in the AI assistants tests.</li><li>This is a test-only change; there are no user-visible changes.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/5284d219e1815e6539df886d8a01255dffa780ac" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Skip automatic TestFlight groups during upload</h3><ul><li>Uploaded builds are not manually added to TestFlight groups that already receive every build.</li><li>Only the manually selected tester groups will receive the new build when chosen.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/commit/7dca2c89ec2d1f363b0ecab05b8fb3d2e04ab0b9" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/40694767000">Source workflow 40694767000</a></p>
+  </footer>
+</body>
+</html>

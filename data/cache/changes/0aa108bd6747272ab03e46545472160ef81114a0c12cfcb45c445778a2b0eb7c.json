@@ -1,0 +1,20 @@
+{
+  "inputHash": "050b8aa8bbdefdb4766957f1b20bd0443acb4f366adb8a5e7493c15b36f3842f",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:fb4d9835902f5f480cd1d928e9b5a97b42a25879",
+    "title": "Fix Duo sheet top inset",
+    "changes": [
+      "Duo sheet now aligns correctly with the top of the screen."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:fb4d9835902f"
+    ],
+    "confidence": "medium",
+    "humanReviewRequired": true
+  }
+}

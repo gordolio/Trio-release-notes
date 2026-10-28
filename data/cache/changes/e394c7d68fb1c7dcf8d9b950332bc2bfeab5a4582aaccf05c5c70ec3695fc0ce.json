@@ -1,0 +1,22 @@
+{
+  "inputHash": "fd7b642b2e840fd76d50ac9aeb1b490702ac740cd5e544128a107661a34680c3",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1667",
+    "title": "In-app 'Send to the Trio Team' problem reports",
+    "changes": [
+      "Users can send private problem reports with text, up to 8 screenshots and optional recent logs.",
+      "They receive a report ID after sending and can view or delete sent reports for up to 90 days."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1667",
+      "commit:e477500389c7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

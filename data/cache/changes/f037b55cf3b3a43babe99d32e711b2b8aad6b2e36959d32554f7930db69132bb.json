@@ -1,0 +1,21 @@
+{
+  "inputHash": "fc18dcc228007a548bbc100c2223ce89b8baa288f8b362886e590d4011db5818",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:5897074581dd3d39f972621f348cce5024ac3af7",
+    "title": "Background test maintenance",
+    "changes": [
+      "Automated unit tests were re-run."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:5897074581dd",
+      "diff:f037b55cf3b3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

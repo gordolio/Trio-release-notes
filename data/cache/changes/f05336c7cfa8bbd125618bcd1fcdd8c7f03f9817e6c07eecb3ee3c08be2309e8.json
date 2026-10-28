@@ -1,0 +1,22 @@
+{
+  "inputHash": "d742c18a189f32ac637fce7367a3a34c2df68c5a6ad558cb940a9087d4e15642",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1660",
+    "title": "Improved log sharing and diagnostic export",
+    "changes": [
+      "Share redacted Trio, pump, or CGM logs from Settings → Report a Problem.",
+      "Choose 24‑hour, 3‑day or 7‑day ranges and get one zip with a single time‑sorted text file."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1660",
+      "diff:f05336c7cfa8"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

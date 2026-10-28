@@ -1,0 +1,22 @@
+{
+  "inputHash": "ac8404d96bde9142fbb72b26cc65f1b91c38b49a16d0d5fc4d3528f22173aad7",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:da3652ff857624bd9f351c76472e4c064e0c0918",
+    "title": "Internal build and logging fixes",
+    "changes": [
+      "Fix build errors and update watch app logging calls.",
+      "Users will not see any changes in app behavior."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:da3652ff8576",
+      "diff:1831c026aab3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "5f3e08fe2134358bc5227785d812136f1cea30d0b4e9f2713d00a1eff03da812",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:35e60ec34f827d231a3b24786e720ec99994f04e",
+    "title": "Fix list top spacing in sheets",
+    "changes": [
+      "Fix top spacing for lists in Treatments and adjustment forms.",
+      "This prevents the first row from being hidden under the sheet bar on some iPhones."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:35e60ec34f82",
+      "diff:5899e06d7ecf"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

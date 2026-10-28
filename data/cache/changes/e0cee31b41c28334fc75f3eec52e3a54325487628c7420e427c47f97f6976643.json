@@ -1,0 +1,20 @@
+{
+  "inputHash": "0ed6ae4a2b2891e86ec60f7541dde0a100a516bcfd14a84618ce73a6af722fe9",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:a7b761354900a2d9f538b8586a456bc8cc039050",
+    "title": "Fix Duo error screen buttons",
+    "changes": [
+      "Fixes buttons on the Duo error screen."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "commit:a7b761354900"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "inputHash": "5dd3af469ffa2912d77609294b726611fa615c83520d1c8c84340cfa7955070b",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:20cacfaf77356edd005d0a23a36553e2dce74258",
+    "title": "Adjust debug log categories",
+    "changes": [
+      "Internal debug log categories were changed. You won't notice any change."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:20cacfaf7735",
+      "diff:22821080aa90"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

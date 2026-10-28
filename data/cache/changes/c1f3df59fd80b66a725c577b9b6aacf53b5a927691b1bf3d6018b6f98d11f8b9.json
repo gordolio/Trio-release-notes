@@ -1,0 +1,22 @@
+{
+  "inputHash": "b6f3bed7a7d4ebda47b33b9bad34c39cf30628321e012d780093e2305421f5c2",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1677",
+    "title": "Device kit updates for Eversense and Medtrum",
+    "changes": [
+      "Eversense now records each sensor's insertion date and migrates prior insertion info.",
+      "Medtrum adds a base-reset alert, keeps unsaved patch settings on sync, and updates activation screens."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1677",
+      "diff:c1f3df59fd80"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

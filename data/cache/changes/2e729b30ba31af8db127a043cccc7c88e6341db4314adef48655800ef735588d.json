@@ -1,0 +1,22 @@
+{
+  "inputHash": "ecbb4a3e36b0297352ee3627516e6aa1adbb42ed5425f8fd569024bca76a2b26",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:7dca2c89ec2d1f363b0ecab05b8fb3d2e04ab0b9",
+    "title": "Skip automatic TestFlight groups during upload",
+    "changes": [
+      "Uploaded builds are not manually added to TestFlight groups that already receive every build.",
+      "Only the manually selected tester groups will receive the new build when chosen."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:7dca2c89ec2d",
+      "diff:2e729b30ba31"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,15 +1,15 @@
 {
-  "inputHash": "1a4e4a1f917e1d26d4b9a4f1418eb08b978a70433950f85c7c5f768f4b932c3e",
+  "inputHash": "34ca88a45588b0692a3d24a9f4a3e0174eb3ede0048df58a41ece73e8ebf53bc",
   "promptVersion": "7",
   "schemaVersion": "2",
   "requestedModel": "openai/gpt-5-mini",
   "responseModel": "openai/gpt-5-mini",
   "summary": {
     "changeId": "commit:ac25cd04585323573e68b7442506f8ad52d2db1f",
-    "title": "Add Settings Tests hub and basal test",
+    "title": "Settings Tests hub and guided Basal Test",
     "changes": [
-      "A new Settings Tests entry in Therapy Settings adds guided basal testing.",
-      "You can run readiness checks and see saved outcomes after a test finishes."
+      "A Settings Tests hub now appears under Therapy Settings.",
+      "A guided Basal Test lets you run a fasted test, see readiness checks, and view results."
     ],
     "category": "new-features",
     "sourceIds": [

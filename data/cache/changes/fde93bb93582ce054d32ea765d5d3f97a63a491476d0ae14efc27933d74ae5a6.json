@@ -1,0 +1,23 @@
+{
+  "inputHash": "188949bd616fe0d6f31146be97a9d37df325af0b1dded13ced3945db2147c972",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:5284d219e1815e6539df886d8a01255dffa780ac",
+    "title": "Rename test URL protocol helper",
+    "changes": [
+      "Test helper StubURLProtocol was renamed to AIStubURLProtocol and updated in the AI assistants tests.",
+      "This is a test-only change; there are no user-visible changes."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "commit:5284d219e181",
+      "file:5e3c4ddce937",
+      "diff:fde93bb93582"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

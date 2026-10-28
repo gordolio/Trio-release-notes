@@ -1,0 +1,22 @@
+{
+  "inputHash": "dd1c046805602cccd04ca875c43cb6e533335042caeddc61859baf61e2c0ea37",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:aeafc774673ef72020763275bcfb8ec9f8f1c391",
+    "title": "Save bar sizing in therapy editors",
+    "changes": [
+      "Save bars in therapy editors now size correctly to their containers.",
+      "Save bar backgrounds now extend across the full horizontal safe area."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:aeafc774673e",
+      "diff:036cde9aaf69"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

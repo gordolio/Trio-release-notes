@@ -1,0 +1,21 @@
+{
+  "inputHash": "57f3b804773415e86a1e3292e201e17a7c850251ab321b6d11ee7b372f854cd0",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "commit:0444009d5a976d5d54a35495db4b4df8af72a8d4",
+    "title": "Fix sticky action bars on Duo screens",
+    "changes": [
+      "Duo-related action bars stop sticking unexpectedly.",
+      "You should see more consistent action controls when using Duo features."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "commit:0444009d5a97"
+    ],
+    "confidence": "medium",
+    "humanReviewRequired": true
+  }
+}
