@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build ec787c7</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build ec787c7</h1>
+    <p>Built 2026-10-30T04:03:47.000Z from <code>7dca2c8..ec787c7</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Fix notification snooze and alarm repetition</h3><ul><li>Dismissing glucose notifications now snoozes the alarm (15 min default) rather than silencing it.</li><li>Tapping notifications and snooze buttons now apply the chosen snooze durations.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1679" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Upload IOB forecast to Nightscout</h3><ul><li>Trio uploads an IOB forecast (IOB and insulin activity values) to Nightscout.</li><li>Followers can display where IOB and insulin activity are heading.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1689" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Use classic tab bar in iOS 26 compatibility mode</h3><ul><li>When iOS 26 runs in design-compatibility mode, Trio uses the legacy tab layout.</li><li>The + button and tab labels will appear in the correct positions.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1691" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Compiler-warning cleanup and unused code removal</h3><ul><li>Removed unused code, redundant awaits, and small warnings to clean up the build.</li><li>There should be no visible changes for users.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1688" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/40998768962">Source workflow 40998768962</a></p>
+  </footer>
+</body>
+</html>

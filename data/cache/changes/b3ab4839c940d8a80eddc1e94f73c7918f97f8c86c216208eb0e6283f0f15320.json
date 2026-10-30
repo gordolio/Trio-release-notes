@@ -1,0 +1,22 @@
+{
+  "inputHash": "afd47cc62a7442ec6b07de96833658fc4f72e50461a287b3fd58c42d06334326",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1689",
+    "title": "Upload IOB forecast to Nightscout",
+    "changes": [
+      "Trio uploads an IOB forecast (IOB and insulin activity values) to Nightscout.",
+      "Followers can display where IOB and insulin activity are heading."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1689",
+      "diff:b3ab4839c940"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

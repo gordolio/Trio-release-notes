@@ -1,0 +1,22 @@
+{
+  "inputHash": "7277327bac26b0aaee2574ef9bcfc970dcabf17d48fa54b63b4328699055b1fa",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1679",
+    "title": "Fix notification snooze and alarm repetition",
+    "changes": [
+      "Dismissing glucose notifications now snoozes the alarm (15 min default) rather than silencing it.",
+      "Tapping notifications and snooze buttons now apply the chosen snooze durations."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1679",
+      "commit:0439f82f0b36"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

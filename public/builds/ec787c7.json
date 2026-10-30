@@ -1,0 +1,510 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 40998768962,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/40998768962",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "7dca2c89ec2d1f363b0ecab05b8fb3d2e04ab0b9",
+    "currentBuiltSha": "ec787c73aa39c3f2698b25b65586b2a58e85418e",
+    "shortSha": "ec787c7",
+    "buildDate": "2026-10-30T04:03:47.000Z",
+    "generationDate": "2026-10-30T04:14:29.259Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1679",
+      "title": "Fix notification snooze and alarm repetition",
+      "changes": [
+        "Dismissing glucose notifications now snoozes the alarm (15 min default) rather than silencing it.",
+        "Tapping notifications and snooze buttons now apply the chosen snooze durations."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1679",
+        "commit:0439f82f0b36"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1679"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1679",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1679: Glucose Alarm Repetition and Snoozing Fixes",
+          "url": "https://github.com/nightscout/Trio/pull/1679"
+        },
+        {
+          "id": "commit:0439f82f0b36",
+          "type": "commit",
+          "title": "Snooze an alert when it is dismissed, never silence it outright",
+          "url": "https://github.com/gordolio/Trio/commit/0439f82f0b36e82c8a29579dd144506ad6aa81be"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1689",
+      "title": "Upload IOB forecast to Nightscout",
+      "changes": [
+        "Trio uploads an IOB forecast (IOB and insulin activity values) to Nightscout.",
+        "Followers can display where IOB and insulin activity are heading."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1689",
+        "diff:b3ab4839c940"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1689"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1689",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1689: Upload the IOB forecast to Nightscout",
+          "url": "https://github.com/nightscout/Trio/pull/1689"
+        },
+        {
+          "id": "diff:b3ab4839c940",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1689",
+          "url": "https://github.com/gordolio/Trio/compare/c6b47419ea80d9c980779aea5cf4961504739024...759ed33280848d54c87c23ca61bdee3557b17509"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1691",
+      "title": "Use classic tab bar in iOS 26 compatibility mode",
+      "changes": [
+        "When iOS 26 runs in design-compatibility mode, Trio uses the legacy tab layout.",
+        "The + button and tab labels will appear in the correct positions."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1691",
+        "commit:e53cd2644d56"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1691"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1691",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1691: Home: use the classic tab bar when iOS 26 runs in design-compatibility mode",
+          "url": "https://github.com/nightscout/Trio/pull/1691"
+        },
+        {
+          "id": "commit:e53cd2644d56",
+          "type": "commit",
+          "title": "fix(ui): Use the classic tab bar in iOS 26 design-compatibility mode",
+          "url": "https://github.com/gordolio/Trio/commit/e53cd2644d564b41733650848eeb9e3a8e1c2dd1"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1688",
+          "title": "Compiler-warning cleanup and unused code removal",
+          "changes": [
+            "Removed unused code, redundant awaits, and small warnings to clean up the build.",
+            "There should be no visible changes for users."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1688",
+            "commit:65aee25f0192",
+            "diff:f8dcf6a1a419"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1688"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1688",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1688: Clean up compiler warnings",
+              "url": "https://github.com/nightscout/Trio/pull/1688"
+            },
+            {
+              "id": "commit:65aee25f0192",
+              "type": "commit",
+              "title": "Clean up compiler warnings",
+              "url": "https://github.com/gordolio/Trio/commit/65aee25f01926344238cafbc6c9225db89b9cdab"
+            },
+            {
+              "id": "diff:f8dcf6a1a419",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1688",
+              "url": "https://github.com/gordolio/Trio/compare/45cd2cacb2604fb5b38fd060e482094d3af74fda...6b0141e2c642505dadb8befad87211cda3728ba3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1679,
+      "title": "Glucose Alarm Repetition and Snoozing Fixes",
+      "body": "## Summary\n\n- Dismissing a glucose notification called `handleAcknowledgement` directly, which never tells `GlucoseAlertCoordinator` anything. The alarm's id stayed in `firingAlertIDs`, so it could not fire again until glucose recovered.\n- Only `UNNotificationDismissActionIdentifier` (swipe) was special-cased into a 15-minute snooze. Everything else fell through to the bare acknowledgement.\n- The snooze action buttons were broken the same way: `BaseUserNotificationsManager`'s delegate returns early for any alert carrying a `managerIdentifier`, so the quick-snooze handling below it was unreachable. Picking \"Snooze 3 hrs\" did exactly what picking \"OK\" did — acknowledge, and never alert again that excursion.\n\n| gesture | before | after |\n|---|---|---|\n| swipe away | snooze 15 min | snooze 15 min |\n| tap the notification | silent until glucose recovers | snooze 15 min |\n| \"Snooze 1 hr\" / \"3 hrs\" / \"6 hrs\" | silent until glucose recovers | snooze for the chosen time |\n| AlarmKit stop slider | silent until glucose recovers | snooze 15 min |\n\n## What changed\n\n- `handleNotificationResponse` routes every response through `modalScheduler.snooze` instead of `handleAcknowledgement`. Duration comes from `snoozeDuration(forActionIdentifier:)`: a named snooze action keeps its own, anything else takes the quick 15 minutes.\n- The AlarmKit stop handler does the same, so stopping a ringing alarm snoozes it rather than silencing it for the excursion.\n- `requestSnooze` still acknowledges first, so alert history and the issuing device manager see the user's response exactly as before.\n- One `BaseTrioAlertManager.quickSnooze`, derived from `NotificationResponseAction.snooze15`, replaces the `15 * 60` literals in the manager and the in-app banner, so the two paths can't drift apart again.\n- Tone preview delegate checks player identity, so a preview finishing during the main-actor hop can't stop the one that replaced it (from @ps2's review on LoopKit/Loop#2597).\n\n## Additional notes\n\n- The in-app banner was already correct. This means a tap and a swipe-up both snooze 15 min, the context menu (after long press) takes a chosen duration via user selection. Only the notification and AlarmKit paths – so what the user interacts with on the home screen – were wrong, which is why this was hard to pin down: it reproduced from the lock screen but not in the app. Thanks for reporting this with details @t1dude .\n- No new settings. The existing 15 min / 1 h / 3 h / 6 h menu stays the only place a duration is chosen.\n- A tap now reaches the same `requestSnooze` fallback the banner already used. For a **critical-tier device** alert that means a global 15-minute snooze rather than a per-tier one, because `requestSnooze`'s tier branch excludes `.critical`. Pre-existing behaviour on the banner and swipe paths, not changed here, but tapping is a more common gesture so it will be hit more often. ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1679",
+      "mergedAt": "2026-10-28T22:33:42Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1679,
+      "title": "Glucose Alarm Repetition and Snoozing Fixes",
+      "body": "## Summary\n\n- Dismissing a glucose notification called `handleAcknowledgement` directly, which never tells `GlucoseAlertCoordinator` anything. The alarm's id stayed in `firingAlertIDs`, so it could not fire again until glucose recovered.\n- Only `UNNotificationDismissActionIdentifier` (swipe) was special-cased into a 15-minute snooze. Everything else fell through to the bare acknowledgement.\n- The snooze action buttons were broken the same way: `BaseUserNotificationsManager`'s delegate returns early for any alert carrying a `managerIdentifier`, so the quick-snooze handling below it was unreachable. Picking \"Snooze 3 hrs\" did exactly what picking \"OK\" did — acknowledge, and never alert again that excursion.\n\n| gesture | before | after |\n|---|---|---|\n| swipe away | snooze 15 min | snooze 15 min |\n| tap the notification | silent until glucose recovers | snooze 15 min |\n| \"Snooze 1 hr\" / \"3 hrs\" / \"6 hrs\" | silent until glucose recovers | snooze for the chosen time |\n| AlarmKit stop slider | silent until glucose recovers | snooze 15 min |\n\n## What changed\n\n- `handleNotificationResponse` routes every response through `modalScheduler.snooze` instead of `handleAcknowledgement`. Duration comes from `snoozeDuration(forActionIdentifier:)`: a named snooze action keeps its own, anything else takes the quick 15 minutes.\n- The AlarmKit stop handler does the same, so stopping a ringing alarm snoozes it rather than silencing it for the excursion.\n- `requestSnooze` still acknowledges first, so alert history and the issuing device manager see the user's response exactly as before.\n- One `BaseTrioAlertManager.quickSnooze`, derived from `NotificationResponseAction.snooze15`, replaces the `15 * 60` literals in the manager and the in-app banner, so the two paths can't drift apart again.\n- Tone preview delegate checks player identity, so a preview finishing during the main-actor hop can't stop the one that replaced it (from @ps2's review on LoopKit/Loop#2597).\n\n## Additional notes\n\n- The in-app banner was already correct. This means a tap and a swipe-up both snooze 15 min, the context menu (after long press) takes a chosen duration via user selection. Only the notification and AlarmKit paths – so what the user interacts with on the home screen – were wrong, which is why this was hard to pin down: it reproduced from the lock screen but not in the app. Thanks for reporting this with details @t1dude .\n- No new settings. The existing 15 min / 1 h / 3 h / 6 h menu stays the only place a duration is chosen.\n- A tap now reaches the same `requestSnooze` fallback the banner already used. For a **critical-tier device** alert that means a global 15-minute snooze rather than a per-tier one, because `requestSnooze`'s tier branch excludes `.critical`. Pre-existing behaviour on the banner and swipe paths, not changed here, but tapping is a more common gesture so it will be hit more often. ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1679",
+      "mergedAt": "2026-10-28T22:33:42Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1689,
+      "title": "Upload the IOB forecast to Nightscout",
+      "body": "Devicestatus now includes openaps.iobForecast with the IOB and insulin activity that Trio already projects when it calculates IOB. It has 48 values of each, five minutes apart starting at openaps.iob.time, with iob in U and activity in U/min like openaps.iob. The projection covers the insulin already delivered and the running temp basal until it ends. openaps.iob is unchanged.\n\nThis lets followers show where IOB and insulin activity are heading, which LoopFollow does in loopandlearn/LoopFollow#798. It adds about 0.7 KB to each devicestatus record.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1689",
+      "mergedAt": "2026-10-28T22:22:18Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1689,
+      "title": "Upload the IOB forecast to Nightscout",
+      "body": "Devicestatus now includes openaps.iobForecast with the IOB and insulin activity that Trio already projects when it calculates IOB. It has 48 values of each, five minutes apart starting at openaps.iob.time, with iob in U and activity in U/min like openaps.iob. The projection covers the insulin already delivered and the running temp basal until it ends. openaps.iob is unchanged.\n\nThis lets followers show where IOB and insulin activity are heading, which LoopFollow does in loopandlearn/LoopFollow#798. It adds about 0.7 KB to each devicestatus record.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1689",
+      "mergedAt": "2026-10-28T22:22:18Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1688,
+      "title": "Clean up compiler warnings",
+      "body": "Removed unused values, redundant awaits, and an unused glucose fetch. Moved Core Data request creation inside the context’s perform blocks, changed variables that never mutate to let, and replaced optional bindings whose values weren’t used with != nil checks.  These are small and targeted changes to reduce compiler warnings",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1688",
+      "mergedAt": "2026-10-29T15:28:49Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1688,
+      "title": "Clean up compiler warnings",
+      "body": "Removed unused values, redundant awaits, and an unused glucose fetch. Moved Core Data request creation inside the context’s perform blocks, changed variables that never mutate to let, and replaced optional bindings whose values weren’t used with != nil checks.  These are small and targeted changes to reduce compiler warnings",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1688",
+      "mergedAt": "2026-10-29T15:28:49Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1691,
+      "title": "Home: use the classic tab bar when iOS 26 runs in design-compatibility mode",
+      "body": "I noticed this while retesting [#1682 and the others like it](https://github.com/nightscout/Trio/pull/1682#issuecomment-6487147975) on iOS 26 with Liquid Glass turned off.\n\nWith `UIDesignRequiresCompatibility` set to YES, iOS 26 draws the classic tab bar instead of Liquid Glass. `tabBar()` still picks the glass layout on any iOS 26 device, so the + keeps its glass-tuned position (above the icons on the SE, below them on the 17 Pro) and the tabs lose their labels.\n\nThis picks `legacyTabBar()`, the layout iOS 18 uses, when the flag is on. iOS 27 ignores the flag and keeps glass, so the check only applies on iOS 26. With the flag off, and on iOS 18 and 27, the tab bar and the Duo's side rail are pixel-identical before and after.\n\n**iOS 26.0, `UIDesignRequiresCompatibility` = YES**\n\n| iPhone SE (3rd gen), before | iPhone SE (3rd gen), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/f60bcd68-60fc-4449-be64-94d946332aac\" width=\"300\" alt=\"Home on iPhone SE, iOS 26.0 compatibility mode, before\"> | <img src=\"https://github.com/user-attachments/assets/e4b4aa9c-75f8-4569-b493-c5e4898d3614\" width=\"300\" alt=\"Home on iPhone SE, iOS 26.0 compatibility mode, after\"> |\n\n| iPhone 17 Pro, before | iPhone 17 Pro, after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/bf8ab87b-9f03-41e2-927f-5cba25350c4b\" width=\"300\" alt=\"Home on iPhone 17 Pro, iOS 26.0 compatibility mode, before\"> | <img src=\"https://github.com/user-attachments/assets/21538ca9-468a-4e07-9c8c-c5036c5d78b1\" width=\"300\" alt=\"Home on iPhone 17 Pro, iOS 26.0 compatibility mode, after\"> |\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1691",
+      "mergedAt": "2026-10-29T15:09:09Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1691,
+      "title": "Home: use the classic tab bar when iOS 26 runs in design-compatibility mode",
+      "body": "I noticed this while retesting [#1682 and the others like it](https://github.com/nightscout/Trio/pull/1682#issuecomment-6487147975) on iOS 26 with Liquid Glass turned off.\n\nWith `UIDesignRequiresCompatibility` set to YES, iOS 26 draws the classic tab bar instead of Liquid Glass. `tabBar()` still picks the glass layout on any iOS 26 device, so the + keeps its glass-tuned position (above the icons on the SE, below them on the 17 Pro) and the tabs lose their labels.\n\nThis picks `legacyTabBar()`, the layout iOS 18 uses, when the flag is on. iOS 27 ignores the flag and keeps glass, so the check only applies on iOS 26. With the flag off, and on iOS 18 and 27, the tab bar and the Duo's side rail are pixel-identical before and after.\n\n**iOS 26.0, `UIDesignRequiresCompatibility` = YES**\n\n| iPhone SE (3rd gen), before | iPhone SE (3rd gen), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/f60bcd68-60fc-4449-be64-94d946332aac\" width=\"300\" alt=\"Home on iPhone SE, iOS 26.0 compatibility mode, before\"> | <img src=\"https://github.com/user-attachments/assets/e4b4aa9c-75f8-4569-b493-c5e4898d3614\" width=\"300\" alt=\"Home on iPhone SE, iOS 26.0 compatibility mode, after\"> |\n\n| iPhone 17 Pro, before | iPhone 17 Pro, after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/bf8ab87b-9f03-41e2-927f-5cba25350c4b\" width=\"300\" alt=\"Home on iPhone 17 Pro, iOS 26.0 compatibility mode, before\"> | <img src=\"https://github.com/user-attachments/assets/21538ca9-468a-4e07-9c8c-c5036c5d78b1\" width=\"300\" alt=\"Home on iPhone 17 Pro, iOS 26.0 compatibility mode, after\"> |\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1691",
+      "mergedAt": "2026-10-29T15:09:09Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "804405c8997cd090a21b3c802e9b516a23c86b44",
+      "subject": "Stop a finished tone preview from cutting off its replacement",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-26T22:47:29+01:00"
+    },
+    {
+      "sha": "0439f82f0b36e82c8a29579dd144506ad6aa81be",
+      "subject": "Snooze an alert when it is dismissed, never silence it outright",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-27T01:03:56+01:00"
+    },
+    {
+      "sha": "d93a0a41d921e7b872fae3fd0dcf912f1288b3e8",
+      "subject": "Cover the dismissal snooze durations",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-27T01:03:57+01:00"
+    },
+    {
+      "sha": "c0f2fb13bd6f4d460bd772fe269ef31dd196144a",
+      "subject": "Upload the IOB forecast to Nightscout",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-28T15:07:25+01:00"
+    },
+    {
+      "sha": "65aee25f01926344238cafbc6c9225db89b9cdab",
+      "subject": "Clean up compiler warnings",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-28T18:58:23+01:00"
+    },
+    {
+      "sha": "759ed33280848d54c87c23ca61bdee3557b17509",
+      "subject": "Merge pull request #1689 from bjorkert/feature/iob-forecast-upload",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-28T23:22:17+01:00"
+    },
+    {
+      "sha": "568afd4824037536f31e9694f3c08047b27764fd",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.34 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-28T22:22:30Z"
+    },
+    {
+      "sha": "f697f7e0d4e33c5a25ac3372c690ac525b3d075c",
+      "subject": "Merge pull request #1679 from dnzxy/fix/glucose-alarm-repeat",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-28T23:33:41+01:00"
+    },
+    {
+      "sha": "e24d2de97489251afb0f3c095d3d233651e1e961",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.35 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-28T22:33:52Z"
+    },
+    {
+      "sha": "e53cd2644d564b41733650848eeb9e3a8e1c2dd1",
+      "subject": "fix(ui): Use the classic tab bar in iOS 26 design-compatibility mode",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-28T18:52:15-05:00"
+    },
+    {
+      "sha": "33acf105cc14c4ca98a37cc156c7558c460b98f5",
+      "subject": "Remove unused views and Nightscout settings model",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-29T09:25:44+01:00"
+    },
+    {
+      "sha": "e0d51bf075df88514e3c7d91fb39990984406460",
+      "subject": "Remove unused AnimatedBackground",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-29T10:49:17+01:00"
+    },
+    {
+      "sha": "4ebf188cd1f5ac6b0a9fdc7d3b888478ca016db4",
+      "subject": "Revert \"Remove unused AnimatedBackground\"",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-29T16:00:17+01:00"
+    },
+    {
+      "sha": "df9dc5450d7028ef4c5fba2868af13631f6a323e",
+      "subject": "Revert \"Remove unused views and Nightscout settings model\"",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-29T16:00:24+01:00"
+    },
+    {
+      "sha": "6a21286be9bd88decfd70873e2d43f7348222354",
+      "subject": "Merge pull request #1691 from gordolio/fix/compat-tab-bar",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-29T16:09:08+01:00"
+    },
+    {
+      "sha": "59c8575dadd5b5d04bcbf51d7aac55e815956811",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.36 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-29T15:09:26Z"
+    },
+    {
+      "sha": "6b0141e2c642505dadb8befad87211cda3728ba3",
+      "subject": "Merge pull request #1688 from lolzivkovic/fix/build-warnings",
+      "author": "Sam King",
+      "authoredAt": "2026-10-29T08:28:49-07:00"
+    },
+    {
+      "sha": "83bce206a434e05eb8031b48f8dbc6926ede49c8",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.37 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-29T15:29:01Z"
+    },
+    {
+      "sha": "ec787c73aa39c3f2698b25b65586b2a58e85418e",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-29T22:41:08-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Model/CoreDataStack.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/JSONImporter.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPS/OpenAPS.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPSSwift/DetermineBasal/DetermineBasal+Helpers.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPSSwift/DetermineBasal/DetermineBasalGenerator.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPSSwift/Extensions/Decimal+rounding.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPSSwift/Meal/MealTotal.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/CarbEntryMutationService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/CarbsStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/NightscoutStatus.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/TempTargets/EditTempTargetForm.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/GlucoseAlerts/View/Components/AlarmAudioSection.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel+Setup/GlucoseSetup.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/TidepoolStartView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/PopupView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/TrioAlertManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/TrioModalAlertScheduler.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/TidepoolUploadSerializer.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Notifications/NotificationCenter.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Telemetry/TelemetryClient.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/AlertDismissalSnoozeTests.swift"
+    }
+  ]
+}

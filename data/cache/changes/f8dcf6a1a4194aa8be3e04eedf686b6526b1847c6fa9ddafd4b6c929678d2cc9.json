@@ -1,0 +1,23 @@
+{
+  "inputHash": "bf1eff3460740788b2fdf63a58f3236164dc4fdca1d8457cf74c9e093943765b",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1688",
+    "title": "Compiler-warning cleanup and unused code removal",
+    "changes": [
+      "Removed unused code, redundant awaits, and small warnings to clean up the build.",
+      "There should be no visible changes for users."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1688",
+      "commit:65aee25f0192",
+      "diff:f8dcf6a1a419"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
