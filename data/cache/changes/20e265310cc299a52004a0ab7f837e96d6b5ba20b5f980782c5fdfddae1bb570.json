@@ -1,0 +1,22 @@
+{
+  "inputHash": "913597a848c4c302746db862357fae76e86acff963573f8ee45e34e846c6b4fb",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1682",
+    "title": "Save bar sizing fixed for Duo display",
+    "changes": [
+      "Therapy editors' save bar now fits the editor container instead of spanning the screen.",
+      "On iPhone Duo's closed display the editors no longer shift off the edge of the screen."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#1682",
+      "commit:fc9a9e4acc74"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

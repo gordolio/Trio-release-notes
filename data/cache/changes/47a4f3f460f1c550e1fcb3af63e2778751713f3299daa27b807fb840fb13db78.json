@@ -1,0 +1,22 @@
+{
+  "inputHash": "02308b5a9e1f1508ed8d7e31375739dc93d281b92cc6ee527dd33823224f63b9",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1693",
+    "title": "Remove unused and dead code",
+    "changes": [
+      "Removed unused screens, helper utilities, and dead configuration files.",
+      "You should not notice any change in app behavior."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1693",
+      "commit:8c3404afa659"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

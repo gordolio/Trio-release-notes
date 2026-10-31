@@ -1,0 +1,23 @@
+{
+  "inputHash": "840b6d434fc48466bce189496649ee36cc0d1f16492bb700136be5a0d46811c0",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1702",
+    "title": "Fingerstick entries no longer hide CGM readings",
+    "changes": [
+      "Trio now ignores manual fingerstick entries when deciding which CGM readings to keep.",
+      "CGM readings that arrive shortly after a fingerstick will no longer be dropped and will be backfilled."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1702",
+      "commit:a8e180f3e91e",
+      "diff:79c36571617e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

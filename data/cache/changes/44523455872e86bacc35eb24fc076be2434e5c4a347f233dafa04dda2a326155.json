@@ -1,0 +1,22 @@
+{
+  "inputHash": "8ae4db915c2971e1cb91c304fb1de88757f4f1d81b8d6d826e8b3712a480533f",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1710",
+    "title": "Fix inconsistent glucose delta rounding",
+    "changes": [
+      "Glucose delta values are now calculated and formatted consistently.",
+      "You'll see matching delta numbers across the app, removing 0.1 mmol/L mismatches."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1710",
+      "diff:44523455872e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

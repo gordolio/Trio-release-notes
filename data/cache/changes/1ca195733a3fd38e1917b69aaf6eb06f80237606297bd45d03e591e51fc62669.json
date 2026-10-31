@@ -1,0 +1,22 @@
+{
+  "inputHash": "8daeba4cfb246935cadfbe1fbdc02fc81738bb74bee36fc5af0369d0d7750913",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1685",
+    "title": "Fix sticky action bar size on Duo closed display",
+    "changes": [
+      "Sticky action bars now fit their visible space on iPhone Duo's closed display.",
+      "Other iPhone models are unchanged and behave as before."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#1685",
+      "commit:d0968c849e9b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

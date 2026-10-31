@@ -1,0 +1,22 @@
+{
+  "inputHash": "29b08b1c4a363cfbfea451914da0a9a85917ac01e0672bf4c2b85fb7790fec57",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1707",
+    "title": "GRI now displays in chosen glucose units",
+    "changes": [
+      "GRI calculations now display in your selected glucose unit (mg/dL or mmol/L).",
+      "Range labels and score breakdowns now show converted values with units."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1707",
+      "diff:4bea351b4cf8"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

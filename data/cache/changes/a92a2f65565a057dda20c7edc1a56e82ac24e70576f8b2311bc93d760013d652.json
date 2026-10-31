@@ -1,0 +1,22 @@
+{
+  "inputHash": "f2cf31d783ee247deddc16b74e0ba8919b749e1e68b74424c0fe2e0258ddca58",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1576",
+    "title": "Alarm snooze control on Apple Watch",
+    "changes": [
+      "You can now view and control alarm snooze from the Apple Watch.",
+      "Tapping opens snooze options including ending an active snooze and shows remaining time."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1576",
+      "diff:a92a2f65565a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

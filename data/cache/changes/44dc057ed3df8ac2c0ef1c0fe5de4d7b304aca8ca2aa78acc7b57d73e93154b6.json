@@ -1,0 +1,22 @@
+{
+  "inputHash": "e480a9e6285fa7082dd311e36b06958caac76fa4245d39538045210925edf7f9",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1686",
+    "title": "Fix oversized buttons and Live Activity preview on Duo",
+    "changes": [
+      "Buttons and the Live Activity preview now fit the Duo closed display.",
+      "Other iPhones are unchanged."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1686",
+      "commit:5b346ff9f813"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build ec787c7</title>
+  <title>Trio Build 3b9866b</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,15 +16,25 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build ec787c7</h1>
-    <p>Built 2026-10-30T04:03:47.000Z from <code>7dca2c8..ec787c7</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Fix notification snooze and alarm repetition</h3><ul><li>Dismissing glucose notifications now snoozes the alarm (15 min default) rather than silencing it.</li><li>Tapping notifications and snooze buttons now apply the chosen snooze durations.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1679" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Upload IOB forecast to Nightscout</h3><ul><li>Trio uploads an IOB forecast (IOB and insulin activity values) to Nightscout.</li><li>Followers can display where IOB and insulin activity are heading.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1689" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Use classic tab bar in iOS 26 compatibility mode</h3><ul><li>When iOS 26 runs in design-compatibility mode, Trio uses the legacy tab layout.</li><li>The + button and tab labels will appear in the correct positions.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1691" rel="noreferrer">View source on GitHub</a></p></article></section>
-<section><h2>Internal and Build-System Changes</h2><article><h3>Compiler-warning cleanup and unused code removal</h3><ul><li>Removed unused code, redundant awaits, and small warnings to clean up the build.</li><li>There should be no visible changes for users.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1688" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build 3b9866b</h1>
+    <p>Built 2026-10-31T16:10:01.000Z from <code>ec787c7..3b9866b</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Alarm snooze control on Apple Watch</h3><ul><li>You can now view and control alarm snooze from the Apple Watch.</li><li>Tapping opens snooze options including ending an active snooze and shows remaining time.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1576" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Don&#39;t mark loop actions as enacted during suspend</h3><ul><li>Loops that run while the pump is suspended are no longer marked as enacted.</li><li>Nightscout will no longer show suggested temp basals or SMB as delivered when nothing was given.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1696" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Show suspended pump status during pod changes</h3><ul><li>Nightscout now uploads the pump status read at upload time.</li><li>Pumps will be shown as suspended during pod changes or after pod faults when appropriate.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1697" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fingerstick entries no longer hide CGM readings</h3><ul><li>Trio now ignores manual fingerstick entries when deciding which CGM readings to keep.</li><li>CGM readings that arrive shortly after a fingerstick will no longer be dropped and will be backfilled.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1702" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Save pump status for uploads</h3><ul><li>Pump delivery status is now stored and included when Trio uploads device status.</li><li>Without a connected pump, uploads use the last known status and removed pumps appear as suspended.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1703" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Interface Improvements</h2><article><h3>GRI now displays in chosen glucose units</h3><ul><li>GRI calculations now display in your selected glucose unit (mg/dL or mmol/L).</li><li>Range labels and score breakdowns now show converted values with units.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1707" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix inconsistent glucose delta rounding</h3><ul><li>Glucose delta values are now calculated and formatted consistently.</li><li>You&#39;ll see matching delta numbers across the app, removing 0.1 mmol/L mismatches.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1710" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Save bar sizing fixed for Duo display</h3><ul><li>Therapy editors&#39; save bar now fits the editor container instead of spanning the screen.</li><li>On iPhone Duo&#39;s closed display the editors no longer shift off the edge of the screen.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1682" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix top-row overlap on iPhone Duo (closed)</h3><ul><li>Treatments and adjustment forms no longer have their first row hidden on iPhone Duo (closed).</li><li>Other iPhones&#39; layouts are unchanged.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1683" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix help-sheet layout on iPhone Duo</h3><ul><li>Help sheets display correctly on iPhone Duo&#39;s closed screen.</li><li>Layouts on other iPhones are unchanged.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1684" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix sticky action bar size on Duo closed display</h3><ul><li>Sticky action bars now fit their visible space on iPhone Duo&#39;s closed display.</li><li>Other iPhone models are unchanged and behave as before.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1685" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix oversized buttons and Live Activity preview on Duo</h3><ul><li>Buttons and the Live Activity preview now fit the Duo closed display.</li><li>Other iPhones are unchanged.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1686" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Remove unused and dead code</h3><ul><li>Removed unused screens, helper utilities, and dead configuration files.</li><li>You should not notice any change in app behavior.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1693" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Remove unused formatters</h3><ul><li>Removed unused number, date, and percent formatters from the app.</li><li>Users should not notice any visible changes.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1711" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/40998768962">Source workflow 40998768962</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/41216489454">Source workflow 41216489454</a></p>
   </footer>
 </body>
 </html>

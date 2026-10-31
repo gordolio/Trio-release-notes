@@ -1,0 +1,22 @@
+{
+  "inputHash": "830e0b897fc44a8e32edfdb9784ab883d179c67eebaf69dcd0726ed1dd108d16",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1703",
+    "title": "Save pump status for uploads",
+    "changes": [
+      "Pump delivery status is now stored and included when Trio uploads device status.",
+      "Without a connected pump, uploads use the last known status and removed pumps appear as suspended."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1703",
+      "diff:06d513a45a22"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

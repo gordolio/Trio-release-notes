@@ -1,0 +1,22 @@
+{
+  "inputHash": "93ca78f2fd16e4330c73c0cbffd2a2486780b6ff1b525d366b19f17a97d9b334",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1697",
+    "title": "Show suspended pump status during pod changes",
+    "changes": [
+      "Nightscout now uploads the pump status read at upload time.",
+      "Pumps will be shown as suspended during pod changes or after pod faults when appropriate."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1697",
+      "commit:11dd07f9e0ac"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

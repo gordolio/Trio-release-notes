@@ -1,0 +1,22 @@
+{
+  "inputHash": "564f49459f2d550e236c0f54ba468694adce0749e168d804eae73c666e31d272",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1696",
+    "title": "Don't mark loop actions as enacted during suspend",
+    "changes": [
+      "Loops that run while the pump is suspended are no longer marked as enacted.",
+      "Nightscout will no longer show suggested temp basals or SMB as delivered when nothing was given."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1696",
+      "commit:5cd866532461"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

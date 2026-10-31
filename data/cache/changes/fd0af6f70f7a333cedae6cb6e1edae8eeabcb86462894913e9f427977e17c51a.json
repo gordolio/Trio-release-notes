@@ -1,0 +1,22 @@
+{
+  "inputHash": "40b513a4ec52653eb76237780b07f5d9ebcddfb866407306e0ab5903af3065f9",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1684",
+    "title": "Fix help-sheet layout on iPhone Duo",
+    "changes": [
+      "Help sheets display correctly on iPhone Duo's closed screen.",
+      "Layouts on other iPhones are unchanged."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#1684",
+      "commit:be061879576a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

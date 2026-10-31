@@ -1,0 +1,1357 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 41216489454,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/41216489454",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "ec787c73aa39c3f2698b25b65586b2a58e85418e",
+    "currentBuiltSha": "3b9866b45e10e4abf10f0893f0a254dfbcd33b63",
+    "shortSha": "3b9866b",
+    "buildDate": "2026-10-31T16:10:01.000Z",
+    "generationDate": "2026-10-31T16:21:07.074Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1576",
+      "title": "Alarm snooze control on Apple Watch",
+      "changes": [
+        "You can now view and control alarm snooze from the Apple Watch.",
+        "Tapping opens snooze options including ending an active snooze and shows remaining time."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1576",
+        "diff:a92a2f65565a"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1576"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1576",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1576: Add alarm snooze page to watch app",
+          "url": "https://github.com/nightscout/Trio/pull/1576"
+        },
+        {
+          "id": "diff:a92a2f65565a",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1576",
+          "url": "https://github.com/gordolio/Trio/compare/83bce206a434e05eb8031b48f8dbc6926ede49c8...34bf78e0d4fbd4891b906c7ff79e6374056361a9"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1696",
+      "title": "Don't mark loop actions as enacted during suspend",
+      "changes": [
+        "Loops that run while the pump is suspended are no longer marked as enacted.",
+        "Nightscout will no longer show suggested temp basals or SMB as delivered when nothing was given."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1696",
+        "commit:5cd866532461"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1696"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1696",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1696: Mark a determination enacted only when the loop enacts it",
+          "url": "https://github.com/nightscout/Trio/pull/1696"
+        },
+        {
+          "id": "commit:5cd866532461",
+          "type": "commit",
+          "title": "Mark a determination enacted only when the loop enacts it",
+          "url": "https://github.com/gordolio/Trio/commit/5cd866532461d517e2e2150d652c8e0b424c29b4"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1697",
+      "title": "Show suspended pump status during pod changes",
+      "changes": [
+        "Nightscout now uploads the pump status read at upload time.",
+        "Pumps will be shown as suspended during pod changes or after pod faults when appropriate."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1697",
+        "commit:11dd07f9e0ac"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1697"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1697",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1697: Upload the pump status read at upload time, suspended also during a pod change",
+          "url": "https://github.com/nightscout/Trio/pull/1697"
+        },
+        {
+          "id": "commit:11dd07f9e0ac",
+          "type": "commit",
+          "title": "Upload the pump status read at upload time, suspended also during a pod change",
+          "url": "https://github.com/gordolio/Trio/commit/11dd07f9e0acfe4d093a1082323b59cb8607109b"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1702",
+      "title": "Fingerstick entries no longer hide CGM readings",
+      "changes": [
+        "Trio now ignores manual fingerstick entries when deciding which CGM readings to keep.",
+        "CGM readings that arrive shortly after a fingerstick will no longer be dropped and will be backfilled."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1702",
+        "commit:a8e180f3e91e",
+        "diff:79c36571617e"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1702"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1702",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1702: Ignore manual glucose when filtering CGM readings",
+          "url": "https://github.com/nightscout/Trio/pull/1702"
+        },
+        {
+          "id": "commit:a8e180f3e91e",
+          "type": "commit",
+          "title": "Ignore manual glucose when filtering CGM readings",
+          "url": "https://github.com/gordolio/Trio/commit/a8e180f3e91ee157d0a09790ba398876c95ba723"
+        },
+        {
+          "id": "diff:79c36571617e",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1702",
+          "url": "https://github.com/gordolio/Trio/compare/118b1cf52cd954c718b882b116f88bd4561d59ee...5f3cd5f38e4dbf2f6f773caf00ba4983748667ab"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1703",
+      "title": "Save pump status for uploads",
+      "changes": [
+        "Pump delivery status is now stored and included when Trio uploads device status.",
+        "Without a connected pump, uploads use the last known status and removed pumps appear as suspended."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1703",
+        "diff:06d513a45a22"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1703"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1703",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1703: Store the pump status in Core Data",
+          "url": "https://github.com/nightscout/Trio/pull/1703"
+        },
+        {
+          "id": "diff:06d513a45a22",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1703",
+          "url": "https://github.com/gordolio/Trio/compare/118b1cf52cd954c718b882b116f88bd4561d59ee...180d2fe204e1f5d8a7966a0fabf47ba877dec0af"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1707",
+          "title": "GRI now displays in chosen glucose units",
+          "changes": [
+            "GRI calculations now display in your selected glucose unit (mg/dL or mmol/L).",
+            "Range labels and score breakdowns now show converted values with units."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:nightscout/Trio#1707",
+            "diff:4bea351b4cf8"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1707"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1707",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1707: Respect user unit selection when showing GRI calculations",
+              "url": "https://github.com/nightscout/Trio/pull/1707"
+            },
+            {
+              "id": "diff:4bea351b4cf8",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1707",
+              "url": "https://github.com/gordolio/Trio/compare/d064f71df0cc39d9f3dde726bcdf772493b76a84...3c6b7d518f4f42a52328808596d90a8473631575"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1710",
+          "title": "Fix inconsistent glucose delta rounding",
+          "changes": [
+            "Glucose delta values are now calculated and formatted consistently.",
+            "You'll see matching delta numbers across the app, removing 0.1 mmol/L mismatches."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:nightscout/Trio#1710",
+            "diff:44523455872e"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1710"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1710",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1710: Fix glucose delta rounding in mmol/L and unify delta formatting",
+              "url": "https://github.com/nightscout/Trio/pull/1710"
+            },
+            {
+              "id": "diff:44523455872e",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1710",
+              "url": "https://github.com/gordolio/Trio/compare/e24d2de97489251afb0f3c095d3d233651e1e961...e400df2dfbb191f5d5c449f57ac8ad71866eac81"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1682",
+          "title": "Save bar sizing fixed for Duo display",
+          "changes": [
+            "Therapy editors' save bar now fits the editor container instead of spanning the screen.",
+            "On iPhone Duo's closed display the editors no longer shift off the edge of the screen."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:gordolio/Trio#1682",
+            "commit:fc9a9e4acc74"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1682"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:gordolio/Trio#1682",
+              "type": "pull-request",
+              "title": "gordolio/Trio#1682: [Duo 1/5] Therapy editors: size the save bar to its container, not the screen",
+              "url": "https://github.com/nightscout/Trio/pull/1682"
+            },
+            {
+              "id": "commit:fc9a9e4acc74",
+              "type": "commit",
+              "title": "Merge pull request #1682 from gordolio/fix/duo-therapy-save-bar",
+              "url": "https://github.com/gordolio/Trio/commit/fc9a9e4acc74128d73d17260693be7d30e0a3ae2"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1683",
+          "title": "Fix top-row overlap on iPhone Duo (closed)",
+          "changes": [
+            "Treatments and adjustment forms no longer have their first row hidden on iPhone Duo (closed).",
+            "Other iPhones' layouts are unchanged."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:gordolio/Trio#1683",
+            "commit:252428d65cde"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1683"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:gordolio/Trio#1683",
+              "type": "pull-request",
+              "title": "gordolio/Trio#1683: [Duo 2/5] Treatments and adjustment forms: pin the list's top content margin",
+              "url": "https://github.com/nightscout/Trio/pull/1683"
+            },
+            {
+              "id": "commit:252428d65cde",
+              "type": "commit",
+              "title": "Merge pull request #1683 from gordolio/fix/duo-sheet-top-inset",
+              "url": "https://github.com/gordolio/Trio/commit/252428d65cde7fcf4fb5dc84bed529674ca63d56"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1684",
+          "title": "Fix help-sheet layout on iPhone Duo",
+          "changes": [
+            "Help sheets display correctly on iPhone Duo's closed screen.",
+            "Layouts on other iPhones are unchanged."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:gordolio/Trio#1684",
+            "commit:be061879576a"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1684"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:gordolio/Trio#1684",
+              "type": "pull-request",
+              "title": "gordolio/Trio#1684: [Duo 3/5] Help sheets: pad inside the NavigationStack, not around it",
+              "url": "https://github.com/nightscout/Trio/pull/1684"
+            },
+            {
+              "id": "commit:be061879576a",
+              "type": "commit",
+              "title": "Merge pull request #1684 from gordolio/fix/duo-help-sheet-padding",
+              "url": "https://github.com/gordolio/Trio/commit/be061879576acac964998664d834fe1402b64490"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1685",
+          "title": "Fix sticky action bar size on Duo closed display",
+          "changes": [
+            "Sticky action bars now fit their visible space on iPhone Duo's closed display.",
+            "Other iPhone models are unchanged and behave as before."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:gordolio/Trio#1685",
+            "commit:d0968c849e9b"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1685"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:gordolio/Trio#1685",
+              "type": "pull-request",
+              "title": "gordolio/Trio#1685: [Duo 4/5] Sticky action bars: size them to their container, not the screen",
+              "url": "https://github.com/nightscout/Trio/pull/1685"
+            },
+            {
+              "id": "commit:d0968c849e9b",
+              "type": "commit",
+              "title": "Merge pull request #1685 from gordolio/fix/duo-sticky-action-bars",
+              "url": "https://github.com/gordolio/Trio/commit/d0968c849e9b0492c2c2840a311e64b99128e69f"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1686",
+          "title": "Fix oversized buttons and Live Activity preview on Duo",
+          "changes": [
+            "Buttons and the Live Activity preview now fit the Duo closed display.",
+            "Other iPhones are unchanged."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:nightscout/Trio#1686",
+            "commit:5b346ff9f813"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1686"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1686",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1686: [Duo 5/5] Error screens and Live Activity preview: size to the container, not the screen",
+              "url": "https://github.com/nightscout/Trio/pull/1686"
+            },
+            {
+              "id": "commit:5b346ff9f813",
+              "type": "commit",
+              "title": "Merge pull request #1686 from gordolio/fix/duo-error-screen-buttons",
+              "url": "https://github.com/gordolio/Trio/commit/5b346ff9f81300c25adba7fcf3fb40a58d700c2e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1693",
+          "title": "Remove unused and dead code",
+          "changes": [
+            "Removed unused screens, helper utilities, and dead configuration files.",
+            "You should not notice any change in app behavior."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1693",
+            "commit:8c3404afa659"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1693"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1693",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1693: Remove unused and dead code",
+              "url": "https://github.com/nightscout/Trio/pull/1693"
+            },
+            {
+              "id": "commit:8c3404afa659",
+              "type": "commit",
+              "title": "Remove unused code and dead configuration",
+              "url": "https://github.com/gordolio/Trio/commit/8c3404afa659a7988ac2f735326344da52f0a571"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1711",
+          "title": "Remove unused formatters",
+          "changes": [
+            "Removed unused number, date, and percent formatters from the app.",
+            "Users should not notice any visible changes."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1711",
+            "diff:8e73edbc52e5"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1711"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1711",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1711: Remove unused formatters",
+              "url": "https://github.com/nightscout/Trio/pull/1711"
+            },
+            {
+              "id": "diff:8e73edbc52e5",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1711",
+              "url": "https://github.com/gordolio/Trio/compare/e24d2de97489251afb0f3c095d3d233651e1e961...b9cf850f7221bded9242b0e85c7a4fffe0c89dab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1693,
+      "title": "Remove unused and dead code",
+      "body": "Follow up to #1688, split into separate PR. \r\n\r\nRemoved dead files after searching the repository for references and checking that they were no longer included in Xcode project or used by AlgorithmPackage.\r\n\r\nAlso removed some of unused code flagged by Periphery, after manually checking for potential usage.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1693",
+      "mergedAt": "2026-10-31T13:39:33Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1693,
+      "title": "Remove unused and dead code",
+      "body": "Follow up to #1688, split into separate PR. \r\n\r\nRemoved dead files after searching the repository for references and checking that they were no longer included in Xcode project or used by AlgorithmPackage.\r\n\r\nAlso removed some of unused code flagged by Periphery, after manually checking for potential usage.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1693",
+      "mergedAt": "2026-10-31T13:39:33Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1576,
+      "title": "Add alarm snooze page to watch app",
+      "body": "Use case: Inspired by an idea from Justin, I'd like to be able to proactively silence Trio from the watch app. I'd like to change or stop an active snooze period from the watch app. Typical scenario: in a meeting, at the movies, or in another social setting and want to silence Trio without having to take out the phone.\r\n\r\nThis PR adds a third watch page showing the current alarm snooze state with the remaining time. Tapping it opens the same snooze options as the iPhone sheet, including ending an active snooze.\r\n\r\nThe iPhone now includes the snooze end date in the watch state and pushes an update whenever the snooze changes. The Home bell pill observes snooze changes so snoozes from the watch show up immediately.\r\n\r\n**There's a +1 min bug** that needs to be fixed, but I'm putting it out here as a draft to get input, comments, testing, etc.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1576",
+      "mergedAt": "2026-10-30T14:39:43Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1576,
+      "title": "Add alarm snooze page to watch app",
+      "body": "Use case: Inspired by an idea from Justin, I'd like to be able to proactively silence Trio from the watch app. I'd like to change or stop an active snooze period from the watch app. Typical scenario: in a meeting, at the movies, or in another social setting and want to silence Trio without having to take out the phone.\r\n\r\nThis PR adds a third watch page showing the current alarm snooze state with the remaining time. Tapping it opens the same snooze options as the iPhone sheet, including ending an active snooze.\r\n\r\nThe iPhone now includes the snooze end date in the watch state and pushes an update whenever the snooze changes. The Home bell pill observes snooze changes so snoozes from the watch show up immediately.\r\n\r\n**There's a +1 min bug** that needs to be fixed, but I'm putting it out here as a draft to get input, comments, testing, etc.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1576",
+      "mergedAt": "2026-10-30T14:39:43Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1696,
+      "title": "Mark a determination enacted only when the loop enacts it",
+      "body": "When a closed loop runs while the pump is suspended, enactDetermination returns without dosing, but finalizeLoop still marked the determination as enacted. Nightscout then received the suggested temp basal and SMB as enacted even though nothing was delivered. enactDetermination now returns whether it enacted, and the determination is marked enacted only when it did. Verified with a Medtrum base simulator over Bluetooth: loops during a suspend are uploaded as not enacted, and the device status keeps the last real enactment.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1696",
+      "mergedAt": "2026-10-30T17:05:22Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1696,
+      "title": "Mark a determination enacted only when the loop enacts it",
+      "body": "When a closed loop runs while the pump is suspended, enactDetermination returns without dosing, but finalizeLoop still marked the determination as enacted. Nightscout then received the suggested temp basal and SMB as enacted even though nothing was delivered. enactDetermination now returns whether it enacted, and the determination is marked enacted only when it did. Verified with a Medtrum base simulator over Bluetooth: loops during a suspend are uploaded as not enacted, and the device status keeps the last real enactment.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1696",
+      "mergedAt": "2026-10-30T17:05:22Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1697,
+      "title": "Upload the pump status read at upload time, suspended also during a pod change",
+      "body": "The device status pump status came from a file written only on pump status updates, so its timestamp was often far behind the upload. It is now read from the pump manager when the device status is uploaded. Omnipod reports delivery as active since the distant past while no pod is active, so during a pod change and after a pod fault the pump showed as not suspended. A pump that reports delivery active since before its last pump suspend, with no resume, temp basal or pump bolus after it, is now uploaded as suspended. Verified with a Medtrum base simulator over Bluetooth through a suspend and a patch change. The Omnipod path is covered by unit tests and matches the deactivation and fault handling in OmnipodKit, but has not run against a real pod.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1697",
+      "mergedAt": "2026-10-30T13:23:46Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1697,
+      "title": "Upload the pump status read at upload time, suspended also during a pod change",
+      "body": "The device status pump status came from a file written only on pump status updates, so its timestamp was often far behind the upload. It is now read from the pump manager when the device status is uploaded. Omnipod reports delivery as active since the distant past while no pod is active, so during a pod change and after a pod fault the pump showed as not suspended. A pump that reports delivery active since before its last pump suspend, with no resume, temp basal or pump bolus after it, is now uploaded as suspended. Verified with a Medtrum base simulator over Bluetooth through a suspend and a patch change. The Omnipod path is covered by unit tests and matches the deactivation and fault handling in OmnipodKit, but has not run against a real pod.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1697",
+      "mergedAt": "2026-10-30T13:23:46Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1702,
+      "title": "Ignore manual glucose when filtering CGM readings",
+      "body": "A manual fingerstick counted as the latest CGM reading. Any CGM reading that arrived within 3.5 min after it was silently dropped as too frequent and never backfilled. Plugin CGMs that filter on `startDateToFilterNewData` (LibreTransmitter, Dexcom Share) also discarded readings older than the fingerstick, and the pump BLE heartbeat was aligned to the manual entry.\n\n- `syncDate()`, `lastGlucoseDate()` and the backfill dedup now only consider CGM rows (`NSPredicate.cgmGlucose`)\n- Debug log when readings are skipped as too frequent\n- Tests for both paths; they fail without the fix\n\nNote: the algorithm still uses manual readings as input, so a fingerstick and a CGM reading can now sit 1–2 min apart and get averaged into current BG. This already happens when a fingerstick follows a CGM reading.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1702",
+      "mergedAt": "2026-10-30T18:01:59Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1702,
+      "title": "Ignore manual glucose when filtering CGM readings",
+      "body": "A manual fingerstick counted as the latest CGM reading. Any CGM reading that arrived within 3.5 min after it was silently dropped as too frequent and never backfilled. Plugin CGMs that filter on `startDateToFilterNewData` (LibreTransmitter, Dexcom Share) also discarded readings older than the fingerstick, and the pump BLE heartbeat was aligned to the manual entry.\n\n- `syncDate()`, `lastGlucoseDate()` and the backfill dedup now only consider CGM rows (`NSPredicate.cgmGlucose`)\n- Debug log when readings are skipped as too frequent\n- Tests for both paths; they fail without the fix\n\nNote: the algorithm still uses manual readings as input, so a fingerstick and a CGM reading can now sit 1–2 min apart and get averaged into current BG. This already happens when a fingerstick follows a CGM reading.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1702",
+      "mergedAt": "2026-10-30T18:01:59Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1703,
+      "title": "Store the pump status in Core Data",
+      "body": "Follow-up to #1697. The pump status is stored in Core Data when its basal delivery state or delivery uncertainty changes, and monitor/status.json is removed. Without a pump manager, the device status upload uses the last stored status, with the upload time as timestamp and bolusing false. A removed pump is stored as unknown and uploaded as suspended, as is Omnipod's delivery active since the distant past while no pod is active. Rows older than 90 days are purged with the other entities. Tested in the simulator with OmnipodKit against a DASH pod simulator and with MedtrumKit against a Medtrum Nano simulator, through pairing or patch activation, suspend, resume, uncertain delivery after a lost pod response, pod and patch deactivation and removing the pump. The stored states and the pump status in the uploaded device status were verified against a Nightscout server.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1703",
+      "mergedAt": "2026-10-31T13:31:59Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1703,
+      "title": "Store the pump status in Core Data",
+      "body": "Follow-up to #1697. The pump status is stored in Core Data when its basal delivery state or delivery uncertainty changes, and monitor/status.json is removed. Without a pump manager, the device status upload uses the last stored status, with the upload time as timestamp and bolusing false. A removed pump is stored as unknown and uploaded as suspended, as is Omnipod's delivery active since the distant past while no pod is active. Rows older than 90 days are purged with the other entities. Tested in the simulator with OmnipodKit against a DASH pod simulator and with MedtrumKit against a Medtrum Nano simulator, through pairing or patch activation, suspend, resume, uncertain delivery after a lost pod response, pod and patch deactivation and removing the pump. The stored states and the pump status in the uploaded device status were verified against a Nightscout server.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1703",
+      "mergedAt": "2026-10-31T13:31:59Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1707,
+      "title": "Respect user unit selection when showing GRI calculations",
+      "body": "GRI calculations is now shown in the users selected unit (mg/dL or mmol/L)\nhttps://github.com/nightscout/Trio/issues/1650",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1707",
+      "mergedAt": "2026-10-30T23:11:00Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1707,
+      "title": "Respect user unit selection when showing GRI calculations",
+      "body": "GRI calculations is now shown in the users selected unit (mg/dL or mmol/L)\nhttps://github.com/nightscout/Trio/issues/1650",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1707",
+      "mergedAt": "2026-10-30T23:11:00Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1710,
+      "title": "Fix glucose delta rounding in mmol/L and unify delta formatting",
+      "body": "Home, the Live Activity and the Watch converted each reading to mmol/L and rounded it before subtracting, so the delta could be off by 0.1. Delta between 100 and 101 mg/dL showed +0.0, but for 98 to 100 showed +0.2. The contact image, calendar and Shortcuts already subtracted first and showed +0.1 for the same readings.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1710",
+      "mergedAt": "2026-10-31T13:48:36Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1710,
+      "title": "Fix glucose delta rounding in mmol/L and unify delta formatting",
+      "body": "Home, the Live Activity and the Watch converted each reading to mmol/L and rounded it before subtracting, so the delta could be off by 0.1. Delta between 100 and 101 mg/dL showed +0.0, but for 98 to 100 showed +0.2. The contact image, calendar and Shortcuts already subtracted first and showed +0.1 for the same readings.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1710",
+      "mergedAt": "2026-10-31T13:48:36Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1711,
+      "title": "Remove unused formatters",
+      "body": "Removed formatters that have no callers  anymore",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1711",
+      "mergedAt": "2026-10-31T13:49:29Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1711,
+      "title": "Remove unused formatters",
+      "body": "Removed formatters that have no callers  anymore",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1711",
+      "mergedAt": "2026-10-31T13:49:29Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1682,
+      "title": "[Duo 1/5] Therapy editors: size the save bar to its container, not the screen",
+      "body": "The four therapy editors (Glucose Targets, Basal Rates, Carb Ratios, Insulin Sensitivities) size their save bar with `UIScreen.main.bounds.width`. On the iPhone Duo's closed display, the side tab bar and status bar take 84 pt of the screen width. The full-width bar then pushes the whole editor about 42 pt to the left, off the edge of the screen.\n\nThis sizes the bar's background to its container, still edge to edge, and makes the button 0.9 × its container with `containerRelativeFrame`. On every other iPhone the container is the full screen width, so nothing changes there.\n\n![Insulin Sensitivities before and after, on iPhone Duo, iPhone SE (3rd gen) and iPhone 17 Pro](https://github.com/user-attachments/assets/3d5574c2-6e7d-47c1-b100-c6f224f9b55d)\n\nThis doesn't change one thing that's already in upstream on every iPhone: the bar's background ends in a faint line at the tab bar (arrows below). On the Duo it runs behind the side tab bar. A separate PR could replace the background with an overlay.\n\n![The faint line where the save bar's background ends, zoomed, on iPhone SE, iPhone 17 Pro and iPhone Duo](https://github.com/user-attachments/assets/d03ccd00-4730-4747-99ab-c8b5295f7f94)\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all four editors are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): the before and after screenshots are pixel-identical.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1682",
+      "mergedAt": "2026-10-31T13:33:22Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1682,
+      "title": "[Duo 1/5] Therapy editors: size the save bar to its container, not the screen",
+      "body": "The four therapy editors (Glucose Targets, Basal Rates, Carb Ratios, Insulin Sensitivities) size their save bar with `UIScreen.main.bounds.width`. On the iPhone Duo's closed display, the side tab bar and status bar take 84 pt of the screen width. The full-width bar then pushes the whole editor about 42 pt to the left, off the edge of the screen.\n\nThis sizes the bar's background to its container, still edge to edge, and makes the button 0.9 × its container with `containerRelativeFrame`. On every other iPhone the container is the full screen width, so nothing changes there.\n\n![Insulin Sensitivities before and after, on iPhone Duo, iPhone SE (3rd gen) and iPhone 17 Pro](https://github.com/user-attachments/assets/3d5574c2-6e7d-47c1-b100-c6f224f9b55d)\n\nThis doesn't change one thing that's already in upstream on every iPhone: the bar's background ends in a faint line at the tab bar (arrows below). On the Duo it runs behind the side tab bar. A separate PR could replace the background with an overlay.\n\n![The faint line where the save bar's background ends, zoomed, on iPhone SE, iPhone 17 Pro and iPhone Duo](https://github.com/user-attachments/assets/d03ccd00-4730-4747-99ab-c8b5295f7f94)\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all four editors are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): the before and after screenshots are pixel-identical.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1682",
+      "mergedAt": "2026-10-31T13:33:22Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1683,
+      "title": "[Duo 2/5] Treatments and adjustment forms: pin the list's top content margin",
+      "body": "The Treatments sheet and the Add and Edit forms for overrides and temp targets ignore the top safe area with `.ignoresSafeArea(edges: .top)`, then push their `List` back down with a fixed `.padding(.top, N)`. That relies on the 35 pt top content margin iOS gives a List on iPhone. On the iPhone Duo's closed display, iOS 27.1 uses 0 instead, so the first row sits under the sheet's bar.\n\nThis keeps upstream's padding and pins the list's top margin with `.contentMargins(.top, 35, for: .scrollContent)`. On any iPhone that already uses 35 pt, nothing changes.\n\n**Treatments**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/63805725-9a01-43c2-9968-5728f3975e70\" width=\"350\" alt=\"Treatments on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/d40ff383-de77-4234-a672-004ee0ca508e\" width=\"350\" alt=\"Treatments on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/b18751ee-9425-45a2-bff5-8fbf669dd4af\" width=\"281\" alt=\"Treatments on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/046de03f-f745-4a55-b3b0-5bad92d4b327\" width=\"302\" alt=\"Treatments on iPhone 17 Pro\"> |\n\n**Add Override**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/860bfb3f-8952-4cb5-babd-cc1693c0e4fa\" width=\"350\" alt=\"Add Override on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/328b8298-fcf0-4148-bdb8-cd7b1c8d2616\" width=\"350\" alt=\"Add Override on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/32ee1ff1-5411-467e-b5f3-bb7fe5107425\" width=\"281\" alt=\"Add Override on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/6a1794bb-a8bd-428b-bd41-43863c11f845\" width=\"302\" alt=\"Add Override on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all five sheets are fixed, and focusing Carbs on Treatments still scrolls the field above the keyboard.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): no layout change; only live data differs.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1683",
+      "mergedAt": "2026-10-31T13:34:02Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1683,
+      "title": "[Duo 2/5] Treatments and adjustment forms: pin the list's top content margin",
+      "body": "The Treatments sheet and the Add and Edit forms for overrides and temp targets ignore the top safe area with `.ignoresSafeArea(edges: .top)`, then push their `List` back down with a fixed `.padding(.top, N)`. That relies on the 35 pt top content margin iOS gives a List on iPhone. On the iPhone Duo's closed display, iOS 27.1 uses 0 instead, so the first row sits under the sheet's bar.\n\nThis keeps upstream's padding and pins the list's top margin with `.contentMargins(.top, 35, for: .scrollContent)`. On any iPhone that already uses 35 pt, nothing changes.\n\n**Treatments**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/63805725-9a01-43c2-9968-5728f3975e70\" width=\"350\" alt=\"Treatments on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/d40ff383-de77-4234-a672-004ee0ca508e\" width=\"350\" alt=\"Treatments on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/b18751ee-9425-45a2-bff5-8fbf669dd4af\" width=\"281\" alt=\"Treatments on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/046de03f-f745-4a55-b3b0-5bad92d4b327\" width=\"302\" alt=\"Treatments on iPhone 17 Pro\"> |\n\n**Add Override**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/860bfb3f-8952-4cb5-babd-cc1693c0e4fa\" width=\"350\" alt=\"Add Override on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/328b8298-fcf0-4148-bdb8-cd7b1c8d2616\" width=\"350\" alt=\"Add Override on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/32ee1ff1-5411-467e-b5f3-bb7fe5107425\" width=\"281\" alt=\"Add Override on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/6a1794bb-a8bd-428b-bd41-43863c11f845\" width=\"302\" alt=\"Add Override on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all five sheets are fixed, and focusing Carbs on Treatments still scrolls the field above the keyboard.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): no layout change; only live data differs.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1683",
+      "mergedAt": "2026-10-31T13:34:02Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1684,
+      "title": "[Duo 3/5] Help sheets: pad inside the NavigationStack, not around it",
+      "body": "`SettingInputHintView`, the shared help sheet behind the question-mark buttons on 31 settings screens, puts `.padding()` on its root `NavigationStack`, and so do `OverrideHelpView`, `TempTargetHelpView` and `ContactImageHelpView`. On the iPhone Duo's closed display the sheet has a trailing safe-area inset for the status bar and side tab bar. Padded from outside, the stack's content loses that inset twice.\n\nThis keeps only `.padding(.vertical)` on the stack and moves the horizontal padding inside it, onto the `List` and the Got it! button, so the inset applies once. On every other iPhone the sheet has no side insets, so the padding lands in the same place and nothing changes there.\n\n**Maximum IOB help sheet (Units and Limits)**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/4e26eaa4-4570-4933-8bb9-65228b250db1\" width=\"350\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/fc23ac37-1119-468c-8eda-5979ece7df5d\" width=\"350\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/88a18786-6592-495e-b894-0702e057d5fd\" width=\"281\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/581a75bf-1469-4223-92f3-fc9b9d67eac9\" width=\"302\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone 17 Pro\"> |\n\n**Override help sheet**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/eabb7137-7376-43a1-be8d-f0c05df74a26\" width=\"350\" alt=\"Override help sheet on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/d42af356-d348-44e6-af66-b1664a56f2e5\" width=\"350\" alt=\"Override help sheet on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/7063a16f-7e19-4c0d-8062-54f204ba0be0\" width=\"281\" alt=\"Override help sheet on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/1b7279dc-79f4-434a-91cf-57f0d7d56851\" width=\"302\" alt=\"Override help sheet on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all seven help sheets tested are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): the before and after screenshots are pixel-identical.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1684",
+      "mergedAt": "2026-10-31T13:35:10Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1684,
+      "title": "[Duo 3/5] Help sheets: pad inside the NavigationStack, not around it",
+      "body": "`SettingInputHintView`, the shared help sheet behind the question-mark buttons on 31 settings screens, puts `.padding()` on its root `NavigationStack`, and so do `OverrideHelpView`, `TempTargetHelpView` and `ContactImageHelpView`. On the iPhone Duo's closed display the sheet has a trailing safe-area inset for the status bar and side tab bar. Padded from outside, the stack's content loses that inset twice.\n\nThis keeps only `.padding(.vertical)` on the stack and moves the horizontal padding inside it, onto the `List` and the Got it! button, so the inset applies once. On every other iPhone the sheet has no side insets, so the padding lands in the same place and nothing changes there.\n\n**Maximum IOB help sheet (Units and Limits)**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/4e26eaa4-4570-4933-8bb9-65228b250db1\" width=\"350\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/fc23ac37-1119-468c-8eda-5979ece7df5d\" width=\"350\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/88a18786-6592-495e-b894-0702e057d5fd\" width=\"281\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/581a75bf-1469-4223-92f3-fc9b9d67eac9\" width=\"302\" alt=\"Maximum IOB help sheet (Units and Limits) on iPhone 17 Pro\"> |\n\n**Override help sheet**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/eabb7137-7376-43a1-be8d-f0c05df74a26\" width=\"350\" alt=\"Override help sheet on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/d42af356-d348-44e6-af66-b1664a56f2e5\" width=\"350\" alt=\"Override help sheet on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/7063a16f-7e19-4c0d-8062-54f204ba0be0\" width=\"281\" alt=\"Override help sheet on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/1b7279dc-79f4-434a-91cf-57f0d7d56851\" width=\"302\" alt=\"Override help sheet on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all seven help sheets tested are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): the before and after screenshots are pixel-identical.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1684",
+      "mergedAt": "2026-10-31T13:35:10Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1685,
+      "title": "[Duo 4/5] Sticky action bars: size them to their container, not the screen",
+      "body": "Six sticky action bars size their background with `UIScreen.main.bounds.width` and their button at 0.9 × that: Save on Add Contact and Edit Contact, Delete CGM on the CGM options sheet, Stop Override and Stop Temp Target in Adjustments, and the meal editor in History. On the iPhone Duo's closed display, the side tab bar and status bar take 84 pt of the screen width, so each bar is wider than the space it has.\n\nThis is the same fix as #1682: each bar's background is sized to its container, still edge to edge, and each button is 0.9 × its container with `containerRelativeFrame`. On every other iPhone the container is the full screen width, so nothing changes there.\n\n**CGM options**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/9ec4194d-a4b4-47b5-94f1-5a46710a89a2\" width=\"350\" alt=\"CGM options on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/b2fed134-7799-4e18-b7b9-362d9d8dcaf6\" width=\"350\" alt=\"CGM options on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/2b6fb13c-386b-43fd-9d7e-f86a61710cd1\" width=\"281\" alt=\"CGM options on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/304ba3d3-3a34-4c81-b0f7-b433b24e8621\" width=\"302\" alt=\"CGM options on iPhone 17 Pro\"> |\n\n**Adjustments with an override running**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/5d7b4630-142b-4904-a962-b506b0bed38b\" width=\"350\" alt=\"Adjustments with an override running on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/5e3a5db3-2eb0-4caf-8e98-71708dc1cff3\" width=\"350\" alt=\"Adjustments with an override running on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/85850c05-6557-43f8-8b6d-bb7fa726603a\" width=\"281\" alt=\"Adjustments with an override running on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/04bcc551-fc71-4107-bb23-c6a224dbb7c3\" width=\"302\" alt=\"Adjustments with an override running on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all six bars are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): no change apart from live content.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1685",
+      "mergedAt": "2026-10-31T13:36:51Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1685,
+      "title": "[Duo 4/5] Sticky action bars: size them to their container, not the screen",
+      "body": "Six sticky action bars size their background with `UIScreen.main.bounds.width` and their button at 0.9 × that: Save on Add Contact and Edit Contact, Delete CGM on the CGM options sheet, Stop Override and Stop Temp Target in Adjustments, and the meal editor in History. On the iPhone Duo's closed display, the side tab bar and status bar take 84 pt of the screen width, so each bar is wider than the space it has.\n\nThis is the same fix as #1682: each bar's background is sized to its container, still edge to edge, and each button is 0.9 × its container with `containerRelativeFrame`. On every other iPhone the container is the full screen width, so nothing changes there.\n\n**CGM options**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/9ec4194d-a4b4-47b5-94f1-5a46710a89a2\" width=\"350\" alt=\"CGM options on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/b2fed134-7799-4e18-b7b9-362d9d8dcaf6\" width=\"350\" alt=\"CGM options on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/2b6fb13c-386b-43fd-9d7e-f86a61710cd1\" width=\"281\" alt=\"CGM options on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/304ba3d3-3a34-4c81-b0f7-b433b24e8621\" width=\"302\" alt=\"CGM options on iPhone 17 Pro\"> |\n\n**Adjustments with an override running**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/5d7b4630-142b-4904-a962-b506b0bed38b\" width=\"350\" alt=\"Adjustments with an override running on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/5e3a5db3-2eb0-4caf-8e98-71708dc1cff3\" width=\"350\" alt=\"Adjustments with an override running on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/85850c05-6557-43f8-8b6d-bb7fa726603a\" width=\"281\" alt=\"Adjustments with an override running on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/04bcc551-fc71-4107-bb23-c6a224dbb7c3\" width=\"302\" alt=\"Adjustments with an override running on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators:\n- iPhone Duo (iOS 27.1, closed): all six bars are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): no change apart from live content.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1685",
+      "mergedAt": "2026-10-31T13:36:51Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1686,
+      "title": "[Duo 5/5] Error screens and Live Activity preview: size to the container, not the screen",
+      "body": "The load-error screen's Retry button and the migration-error screen's \"I understand! Proceed\" button are `UIScreen.main.bounds.width - 60` wide, and the Live Activity widget configuration's preview is 0.9 × `UIScreen.main.bounds.width`. On the iPhone Duo's closed display, the status bar takes 84 pt of the screen width, so all three are wider than the space they're laid out in.\n\nThis sizes them with `containerRelativeFrame(.horizontal)` instead: the buttons are their container's width minus 60, and the preview is 0.9 × its container. On every other iPhone the container is the full screen width, so nothing changes there.\n\n**Migration-error screen**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/9ca4a3fb-61cd-4a30-9ca1-d8f88506788f\" width=\"350\" alt=\"Migration-error screen on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/5d04d130-a6f2-4102-9891-3d0950afe55c\" width=\"350\" alt=\"Migration-error screen on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/08f1207e-4cdf-4e51-8401-2998df663131\" width=\"281\" alt=\"Migration-error screen on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/9c0f48b5-2d23-42e4-8ddd-a3b81230ee9f\" width=\"302\" alt=\"Migration-error screen on iPhone 17 Pro\"> |\n\n**Live Activity widget configuration**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/42bbfea1-efe2-48f3-99d8-861759d79a12\" width=\"350\" alt=\"Live Activity widget configuration on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/e456bab4-0f4d-4887-a73b-76e776dbde1e\" width=\"350\" alt=\"Live Activity widget configuration on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/bd4e37a4-d40e-4f47-8ff6-0804532c1352\" width=\"281\" alt=\"Live Activity widget configuration on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/2d7fac54-dd11-48a1-b5e8-c003ea153005\" width=\"302\" alt=\"Live Activity widget configuration on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators, with both error states forced:\n- iPhone Duo (iOS 27.1, closed): both error screens and the widget configuration are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): the before and after screenshots are identical, apart from the preview's dummy glucose curve, which upstream randomises on every load.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1686",
+      "mergedAt": "2026-10-31T14:00:52Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1686,
+      "title": "[Duo 5/5] Error screens and Live Activity preview: size to the container, not the screen",
+      "body": "The load-error screen's Retry button and the migration-error screen's \"I understand! Proceed\" button are `UIScreen.main.bounds.width - 60` wide, and the Live Activity widget configuration's preview is 0.9 × `UIScreen.main.bounds.width`. On the iPhone Duo's closed display, the status bar takes 84 pt of the screen width, so all three are wider than the space they're laid out in.\n\nThis sizes them with `containerRelativeFrame(.horizontal)` instead: the buttons are their container's width minus 60, and the preview is 0.9 × its container. On every other iPhone the container is the full screen width, so nothing changes there.\n\n**Migration-error screen**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/9ca4a3fb-61cd-4a30-9ca1-d8f88506788f\" width=\"350\" alt=\"Migration-error screen on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/5d04d130-a6f2-4102-9891-3d0950afe55c\" width=\"350\" alt=\"Migration-error screen on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/08f1207e-4cdf-4e51-8401-2998df663131\" width=\"281\" alt=\"Migration-error screen on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/9c0f48b5-2d23-42e4-8ddd-a3b81230ee9f\" width=\"302\" alt=\"Migration-error screen on iPhone 17 Pro\"> |\n\n**Live Activity widget configuration**\n\n| iPhone Duo (closed), before | iPhone Duo (closed), after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/42bbfea1-efe2-48f3-99d8-861759d79a12\" width=\"350\" alt=\"Live Activity widget configuration on iPhone Duo (closed), before\"> | <img src=\"https://github.com/user-attachments/assets/e456bab4-0f4d-4887-a73b-76e776dbde1e\" width=\"350\" alt=\"Live Activity widget configuration on iPhone Duo (closed), after\"> |\n\n| iPhone SE (3rd gen), unchanged | iPhone 17 Pro, unchanged |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/bd4e37a4-d40e-4f47-8ff6-0804532c1352\" width=\"281\" alt=\"Live Activity widget configuration on iPhone SE (3rd gen)\"> | <img src=\"https://github.com/user-attachments/assets/2d7fac54-dd11-48a1-b5e8-c003ea153005\" width=\"302\" alt=\"Live Activity widget configuration on iPhone 17 Pro\"> |\n\nTested with an Xcode 27.1 build on the simulators, with both error states forced:\n- iPhone Duo (iOS 27.1, closed): both error screens and the widget configuration are fixed.\n- iPhone SE (3rd gen) and iPhone 17 Pro (iOS 27.0): the before and after screenshots are identical, apart from the preview's dummy glucose curve, which upstream randomises on every load.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1686",
+      "mergedAt": "2026-10-31T14:00:52Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "8c3404afa659a7988ac2f735326344da52f0a571",
+      "subject": "Remove unused code and dead configuration",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-29T13:00:46+01:00"
+    },
+    {
+      "sha": "ce3e05cbdec5e30c0e58553bb3388d2619bbd034",
+      "subject": "Add alarm snooze page to watch app",
+      "author": "t1dude",
+      "authoredAt": "2026-09-24T18:03:24+02:00"
+    },
+    {
+      "sha": "4ea9d5d3d57e39f5e2bd7a444fafb6ca15da9375",
+      "subject": "Address watch snooze review feedback",
+      "author": "t1dude",
+      "authoredAt": "2026-10-29T16:48:21+01:00"
+    },
+    {
+      "sha": "5cd866532461d517e2e2150d652c8e0b424c29b4",
+      "subject": "Mark a determination enacted only when the loop enacts it",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-29T21:16:52+01:00"
+    },
+    {
+      "sha": "11dd07f9e0acfe4d093a1082323b59cb8607109b",
+      "subject": "Upload the pump status read at upload time, suspended also during a pod change",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-29T21:22:16+01:00"
+    },
+    {
+      "sha": "55b56f9a0e22db166f1dc20053f2c1ff1d28c91e",
+      "subject": "Use new WatchLogger API for snooze request log",
+      "author": "t1dude",
+      "authoredAt": "2026-10-29T22:05:14+01:00"
+    },
+    {
+      "sha": "e5e77160ce795dbe3350c6035f0353f175b0065e",
+      "subject": "Merge pull request #1697 from bjorkert/feature/upload-suspended-pump-status",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-30T14:23:46+01:00"
+    },
+    {
+      "sha": "94c6bfe307819ed1b810b03565731311a9c1e27c",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.38 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-30T13:23:58Z"
+    },
+    {
+      "sha": "34bf78e0d4fbd4891b906c7ff79e6374056361a9",
+      "subject": "Merge pull request #1576 from t1dude/feat/watch-alarm-snooze",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-30T15:39:42+01:00"
+    },
+    {
+      "sha": "0af920af63f106384a13533e524176d3c922fe4b",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.39 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-30T14:39:53Z"
+    },
+    {
+      "sha": "5ef7695f37af9084a7ac6e67bb96cf3bfc215c00",
+      "subject": "Merge pull request #1696 from bjorkert/fix/enacted-when-pump-suspended",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-30T18:05:22+01:00"
+    },
+    {
+      "sha": "118b1cf52cd954c718b882b116f88bd4561d59ee",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.40 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-30T17:05:34Z"
+    },
+    {
+      "sha": "a8e180f3e91ee157d0a09790ba398876c95ba723",
+      "subject": "Ignore manual glucose when filtering CGM readings",
+      "author": "trioneer",
+      "authoredAt": "2026-10-30T18:30:21+01:00"
+    },
+    {
+      "sha": "fcaa8f6f68d94bbcddcae696807c3e9bab3b6d70",
+      "subject": "Store the pump status in Core Data",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-30T19:00:52+01:00"
+    },
+    {
+      "sha": "5f3cd5f38e4dbf2f6f773caf00ba4983748667ab",
+      "subject": "Merge pull request #1702 from trioneer-dev/fix/manual-glucose-cgm-filter",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-30T19:01:59+01:00"
+    },
+    {
+      "sha": "d064f71df0cc39d9f3dde726bcdf772493b76a84",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.41 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-30T18:02:10Z"
+    },
+    {
+      "sha": "fa3073cf160b47abb7b92cbb5a567953662cd17b",
+      "subject": "Respect user unit selection when showing GRI calculations",
+      "author": "codebymini",
+      "authoredAt": "2026-10-30T23:44:21+01:00"
+    },
+    {
+      "sha": "3c6b7d518f4f42a52328808596d90a8473631575",
+      "subject": "Merge pull request #1707 from codebymini/fix/gri-units",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T00:10:59+01:00"
+    },
+    {
+      "sha": "26e457d9605ca1924b29f3e39afa276094a34dd3",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.42 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-30T23:11:10Z"
+    },
+    {
+      "sha": "92b86a78722ed53ae1bb3582d1c48951d3f56295",
+      "subject": "Keep the stored pump status across removals, migration and purges, with one upload mapping for both paths",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-31T09:36:35+01:00"
+    },
+    {
+      "sha": "69bedb5d19f774c8370c5ba879fe664c3adf8793",
+      "subject": "Fix glucose delta rounding and use one delta formatter",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-31T11:09:54+01:00"
+    },
+    {
+      "sha": "6998a6cfbfdfdb51e8891bdabb31c94eb2a36e10",
+      "subject": "Remove unused formatters",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-31T11:57:13+01:00"
+    },
+    {
+      "sha": "180d2fe204e1f5d8a7966a0fabf47ba877dec0af",
+      "subject": "Merge pull request #1703 from bjorkert/feature/pump-status-storage",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:31:58+01:00"
+    },
+    {
+      "sha": "32876aa8966ce6e59837f31a4d7e8cb2262863d4",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.43 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:32:09Z"
+    },
+    {
+      "sha": "fc9a9e4acc74128d73d17260693be7d30e0a3ae2",
+      "subject": "Merge pull request #1682 from gordolio/fix/duo-therapy-save-bar",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:33:22+01:00"
+    },
+    {
+      "sha": "8c9cd5f3a53a4f9de9da695dac1075e8df1df4c0",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.44 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:33:32Z"
+    },
+    {
+      "sha": "252428d65cde7fcf4fb5dc84bed529674ca63d56",
+      "subject": "Merge pull request #1683 from gordolio/fix/duo-sheet-top-inset",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:34:02+01:00"
+    },
+    {
+      "sha": "a4e16093576a8c9316c64987baa3f1a740e7d1f9",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.45 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:34:12Z"
+    },
+    {
+      "sha": "be061879576acac964998664d834fe1402b64490",
+      "subject": "Merge pull request #1684 from gordolio/fix/duo-help-sheet-padding",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:35:09+01:00"
+    },
+    {
+      "sha": "a9e1b10c774ff8343d343894b2409e106f2b5cb0",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.46 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:35:19Z"
+    },
+    {
+      "sha": "d0968c849e9b0492c2c2840a311e64b99128e69f",
+      "subject": "Merge pull request #1685 from gordolio/fix/duo-sticky-action-bars",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:36:50+01:00"
+    },
+    {
+      "sha": "f5cedb5f38d89bf9958f4cc135306ee1a35756c7",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.47 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:37:00Z"
+    },
+    {
+      "sha": "a50d55aea8cfb2bfa0655e000c1d8611b500a967",
+      "subject": "Merge branch 'dev' into fix/duo-error-screen-buttons",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:37:49+01:00"
+    },
+    {
+      "sha": "31d40301a9e1cc9b389c4565f86ce52159be5d7c",
+      "subject": "Merge pull request #1693 from lolzivkovic/cleanup/remove-unused-code",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:39:32+01:00"
+    },
+    {
+      "sha": "87126ef271771235c9c89beb45d4c4ecde833a46",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.48 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:39:44Z"
+    },
+    {
+      "sha": "e400df2dfbb191f5d5c449f57ac8ad71866eac81",
+      "subject": "Merge pull request #1710 from lolzivkovic/fix/glucose-delta",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:48:35+01:00"
+    },
+    {
+      "sha": "6bc16eb29af072d2007cee950c3fd4875ff0ac3a",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.49 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:48:46Z"
+    },
+    {
+      "sha": "b9cf850f7221bded9242b0e85c7a4fffe0c89dab",
+      "subject": "Merge pull request #1711 from lolzivkovic/refactor/remove-unused-formatters",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T14:49:28+01:00"
+    },
+    {
+      "sha": "e92ee42f11be0edd20d912c1f162a4d90fa67584",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.50 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T13:49:39Z"
+    },
+    {
+      "sha": "5b346ff9f81300c25adba7fcf3fb40a58d700c2e",
+      "subject": "Merge pull request #1686 from gordolio/fix/duo-error-screen-buttons",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-31T15:00:52+01:00"
+    },
+    {
+      "sha": "ccb00bb7bd277c4abcc7ba2f364725510bbe2592",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.51 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-31T14:01:03Z"
+    },
+    {
+      "sha": "3b9866b45e10e4abf10f0893f0a254dfbcd33b63",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-31T10:46:54-05:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/LiveActivity+Helper.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/PumpStatusStored+CoreDataClass.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/PumpStatusStored+CoreDataProperties.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/Helper/NSPredicates.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/Helper/PumpEvent+helper.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Helper/PumpStatusStored+helper.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/TrioCoreDataPersistentContainer.xcdatamodeld/TrioCoreDataPersistentContainer.xcdatamodel/contents"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/Helper/WatchNotificationHandler.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio Watch App Extension/Views/AlarmSnoozeView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/Views/TrioMainWatchView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/WatchState+Requests.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/WatchState.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/FetchGlucoseManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPS/Constants.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/APS/OpenAPSSwift/Extensions/ComputedBGTargets+Getter.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/GlucoseStorage.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/APS/Storage/PumpStatusStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/TrioApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Assemblies/StorageAssembly.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Extensions/Color+Extensions.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Helpers/Array+Extension.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Helpers/ConcurrentMap.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/Formatters.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Helpers/MD5.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Helpers/ProgressBar.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Helpers/SettingsRowView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/BloodGlucose.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/PumpStatus.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/WatchMessageKeys.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/WatchState.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/AddCarbs/AddCarbsStateModel.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/AddCarbs/View/AddCarbsRootView.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/AutotuneConfig/AutotuneConfigDataFlow.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/AutotuneConfig/AutotuneConfigProvider.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/AutotuneConfig/AutotuneConfigStateModel.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/AutotuneConfig/View/AutotuneConfigRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BolusCalculatorConfig/View/BolusCalculatorConfigRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioEditor/View/CarbRatioEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/DynamicSettings/View/DynamicSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/HistoryDataFlow+Models.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/CurrentGlucoseView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/PumpView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+MealPanel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/ISFEditor/View/ISFEditorRootView.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/LibreConfig/View/LibreConfigRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/LiveActivitySettings/View/LiveActivitySimpleWidgetConfiguration.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/MealSettings/View/MealSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/GlucoseTargetStepView.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/Settings/View/SettingsRootViewModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/StatRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GRIView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/TargetsEditor/View/TargetsEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/PopupView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/TreatmentsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Calendar/CalendarManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactImageManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/LiveActivity/LiveActivityAttributes+Helper.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/State/ListStateView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/State/StateIntentRequest.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Views/BolusProgressViewStyle.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/GlucoseStorageTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/CoreDataTests/PumpStatusStorageTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/TestAssembly.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/NightscoutBackfillTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/PumpStatusSuspendTests.swift"
+    }
+  ]
+}
