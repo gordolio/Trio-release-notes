@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 41312979588,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/41312979588",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "3b9866b45e10e4abf10f0893f0a254dfbcd33b63",
+    "currentBuiltSha": "2b81a799ef3981621144dcbfe8be88411cf8635a",
+    "shortSha": "2b81a79",
+    "buildDate": "2026-11-01T14:07:23.000Z",
+    "generationDate": "2026-11-01T14:18:03.538Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1714",
+      "title": "Reset button color updated",
+      "changes": [
+        "The glucose simulator's Reset to Defaults button now uses system blue.",
+        "This matches other primary buttons like Enact Bolus and Save."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1714",
+        "commit:5a69d67fb71b"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1714"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1714",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1714: CGM options: fill the glucose simulator's Reset to Defaults with system blue",
+          "url": "https://github.com/nightscout/Trio/pull/1714"
+        },
+        {
+          "id": "commit:5a69d67fb71b",
+          "type": "commit",
+          "title": "fix(ui): Fill the glucose simulator's Reset to Defaults with system blue",
+          "url": "https://github.com/gordolio/Trio/commit/5a69d67fb71b1559549a9fcf5675c4329e574b09"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1714,
+      "title": "CGM options: fill the glucose simulator's Reset to Defaults with system blue",
+      "body": "Follow-up to #1685. The glucose simulator's Reset to Defaults button is filled with `Color.accentColor`, which in the CGM sheet picks up the tab bar's lavender tint. It now uses `Color(.systemBlue)`, like Trio's other filled buttons such as Enact Bolus and the therapy editors' Save.\n\n| iPhone 17 Pro, iOS 27.2, before | iPhone 17 Pro, iOS 27.2, after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/75734d92-2b43-44b4-b2c7-3591e55c24a4\" width=\"300\" alt=\"iPhone 17 Pro on iOS 27.2, before: lavender Reset to Defaults\"> | <img src=\"https://github.com/user-attachments/assets/edadedfd-72a3-451e-a3da-e1a2f667f9fb\" width=\"300\" alt=\"iPhone 17 Pro on iOS 27.2, after: system blue Reset to Defaults\"> |\n\n| iPhone SE, iOS 18.0, before | iPhone SE, iOS 18.0, after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/a367a6b3-b74d-49d2-885a-fa2a445af091\" width=\"300\" alt=\"iPhone SE on iOS 18.0, before: lavender Reset to Defaults\"> | <img src=\"https://github.com/user-attachments/assets/d1db972a-359a-42cd-94b8-9f37e9c6ae3e\" width=\"300\" alt=\"iPhone SE on iOS 18.0, after: system blue Reset to Defaults\"> |\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1714",
+      "mergedAt": "2026-11-01T00:45:53Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1714,
+      "title": "CGM options: fill the glucose simulator's Reset to Defaults with system blue",
+      "body": "Follow-up to #1685. The glucose simulator's Reset to Defaults button is filled with `Color.accentColor`, which in the CGM sheet picks up the tab bar's lavender tint. It now uses `Color(.systemBlue)`, like Trio's other filled buttons such as Enact Bolus and the therapy editors' Save.\n\n| iPhone 17 Pro, iOS 27.2, before | iPhone 17 Pro, iOS 27.2, after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/75734d92-2b43-44b4-b2c7-3591e55c24a4\" width=\"300\" alt=\"iPhone 17 Pro on iOS 27.2, before: lavender Reset to Defaults\"> | <img src=\"https://github.com/user-attachments/assets/edadedfd-72a3-451e-a3da-e1a2f667f9fb\" width=\"300\" alt=\"iPhone 17 Pro on iOS 27.2, after: system blue Reset to Defaults\"> |\n\n| iPhone SE, iOS 18.0, before | iPhone SE, iOS 18.0, after |\n| --- | --- |\n| <img src=\"https://github.com/user-attachments/assets/a367a6b3-b74d-49d2-885a-fa2a445af091\" width=\"300\" alt=\"iPhone SE on iOS 18.0, before: lavender Reset to Defaults\"> | <img src=\"https://github.com/user-attachments/assets/d1db972a-359a-42cd-94b8-9f37e9c6ae3e\" width=\"300\" alt=\"iPhone SE on iOS 18.0, after: system blue Reset to Defaults\"> |\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1714",
+      "mergedAt": "2026-11-01T00:45:53Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "5a69d67fb71b1559549a9fcf5675c4329e574b09",
+      "subject": "fix(ui): Fill the glucose simulator's Reset to Defaults with system blue",
+      "author": "Gordon Child",
+      "authoredAt": "2026-10-31T15:36:33-05:00"
+    },
+    {
+      "sha": "3894c026a97c4c1bf85a9ef2a59c0db49fda708f",
+      "subject": "Merge pull request #1714 from gordolio/fix/glucose-sim-reset-button-color",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-01T01:45:53+01:00"
+    },
+    {
+      "sha": "cda314ce5229eb6f36e9423bbf3f20fcb11a8e9e",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.52 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-01T00:46:03Z"
+    },
+    {
+      "sha": "2b81a799ef3981621144dcbfe8be88411cf8635a",
+      "subject": "Merge branch 'dev' of https://github.com/nightscout/Trio into dev",
+      "author": "GH Action - Upstream Sync",
+      "authoredAt": "2026-11-01T13:48:19Z"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CGMSettings/View/CustomCGMOptionsView.swift"
+    }
+  ]
+}

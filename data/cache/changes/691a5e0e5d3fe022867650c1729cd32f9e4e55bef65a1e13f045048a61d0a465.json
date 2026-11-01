@@ -1,0 +1,22 @@
+{
+  "inputHash": "e3bddafc8f19fdee65f55a8375745adea1323495697a2330b2727462e6eb8eb5",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1714",
+    "title": "Reset button color updated",
+    "changes": [
+      "The glucose simulator's Reset to Defaults button now uses system blue.",
+      "This matches other primary buttons like Enact Bolus and Save."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1714",
+      "commit:5a69d67fb71b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
