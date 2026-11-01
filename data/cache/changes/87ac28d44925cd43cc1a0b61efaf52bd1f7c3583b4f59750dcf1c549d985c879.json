@@ -1,0 +1,22 @@
+{
+  "inputHash": "e05798948fceefa146c251ce4a9a6fa24e510277cb32c3dcdf178f8d702d8983",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1720",
+    "title": "Skip misdated insulin entries to prevent crashes",
+    "changes": [
+      "Trio now skips insulin entries whose end time is before their start.",
+      "You should no longer see repeated app crashes caused by those misdated insulin rows."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1720",
+      "commit:8a790531902d"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

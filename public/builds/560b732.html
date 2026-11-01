@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build 560b732</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build 560b732</h1>
+    <p>Built 2026-11-01T22:59:12.000Z from <code>2b81a79..560b732</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Update to LoopKit next-dev</h3><ul><li>Libre 2 via LibreTransmitter now triggers Trio&#39;s glucose alarms.</li><li>Inoperable pump states now stop automated insulin delivery like a suspended pump.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1718" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Unify glucose number formatting</h3><ul><li>Glucose values now display consistently with correct decimals and local decimal separators across the app.</li><li>History, settings and exports use the same format (e.g. mmol/L shows 6.0 and French locales show 3,9).</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1715" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Skip misdated insulin entries to prevent crashes</h3><ul><li>Trio now skips insulin entries whose end time is before their start.</li><li>You should no longer see repeated app crashes caused by those misdated insulin rows.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1720" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/41357863557">Source workflow 41357863557</a></p>
+  </footer>
+</body>
+</html>

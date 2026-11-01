@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build 2b81a79</title>
+  <title>Trio Build 560b732</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,12 +16,14 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build 2b81a79</h1>
-    <p>Built 2026-11-01T14:07:23.000Z from <code>3b9866b..2b81a79</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Reset button color updated</h3><ul><li>The glucose simulator&#39;s Reset to Defaults button now uses system blue.</li><li>This matches other primary buttons like Enact Bolus and Save.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1714" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build 560b732</h1>
+    <p>Built 2026-11-01T22:59:12.000Z from <code>2b81a79..560b732</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Update to LoopKit next-dev</h3><ul><li>Libre 2 via LibreTransmitter now triggers Trio&#39;s glucose alarms.</li><li>Inoperable pump states now stop automated insulin delivery like a suspended pump.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1718" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Unify glucose number formatting</h3><ul><li>Glucose values now display consistently with correct decimals and local decimal separators across the app.</li><li>History, settings and exports use the same format (e.g. mmol/L shows 6.0 and French locales show 3,9).</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1715" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Skip misdated insulin entries to prevent crashes</h3><ul><li>Trio now skips insulin entries whose end time is before their start.</li><li>You should no longer see repeated app crashes caused by those misdated insulin rows.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1720" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/41312979588">Source workflow 41312979588</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/41357863557">Source workflow 41357863557</a></p>
   </footer>
 </body>
 </html>

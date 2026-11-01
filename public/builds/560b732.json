@@ -1,0 +1,825 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 41357863557,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/41357863557",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "2b81a799ef3981621144dcbfe8be88411cf8635a",
+    "currentBuiltSha": "560b7325be1621978ac10d76fc25a38f9f44d45a",
+    "shortSha": "560b732",
+    "buildDate": "2026-11-01T22:59:12.000Z",
+    "generationDate": "2026-11-01T23:28:32.782Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1718",
+      "title": "Update to LoopKit next-dev",
+      "changes": [
+        "Libre 2 via LibreTransmitter now triggers Trio's glucose alarms.",
+        "Inoperable pump states now stop automated insulin delivery like a suspended pump."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1718",
+        "commit:138b0037b474",
+        "commit:d53acb6f0d03"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1718"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1718",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1718: Move to LoopKit next-dev",
+          "url": "https://github.com/nightscout/Trio/pull/1718"
+        },
+        {
+          "id": "commit:138b0037b474",
+          "type": "commit",
+          "title": "Treat Libre 2 as a direct CGM for glucose alerts",
+          "url": "https://github.com/gordolio/Trio/commit/138b0037b474ac6517feaaf71aa6147ad3257a8c"
+        },
+        {
+          "id": "commit:d53acb6f0d03",
+          "type": "commit",
+          "title": "Treat pumpInoperable as pump unavailable",
+          "url": "https://github.com/gordolio/Trio/commit/d53acb6f0d031b3759937434f96931021d8bc0b3"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1715",
+      "title": "Unify glucose number formatting",
+      "changes": [
+        "Glucose values now display consistently with correct decimals and local decimal separators across the app.",
+        "History, settings and exports use the same format (e.g. mmol/L shows 6.0 and French locales show 3,9)."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1715",
+        "diff:95e4af9dd0be"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1715"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1715",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1715: Fix glucose decimals and unify glucose formatting",
+          "url": "https://github.com/nightscout/Trio/pull/1715"
+        },
+        {
+          "id": "diff:95e4af9dd0be",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1715",
+          "url": "https://github.com/gordolio/Trio/compare/cda314ce5229eb6f36e9423bbf3f20fcb11a8e9e...44dd6e8d86cabccf0ad35a42977404b88c0ecc6d"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1720",
+      "title": "Skip misdated insulin entries to prevent crashes",
+      "changes": [
+        "Trio now skips insulin entries whose end time is before their start.",
+        "You should no longer see repeated app crashes caused by those misdated insulin rows."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1720",
+        "commit:8a790531902d"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1720"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1720",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1720: Skip Apple Health insulin samples that end before they start",
+          "url": "https://github.com/nightscout/Trio/pull/1720"
+        },
+        {
+          "id": "commit:8a790531902d",
+          "type": "commit",
+          "title": "Skip Apple Health insulin samples that end before they start",
+          "url": "https://github.com/gordolio/Trio/commit/8a790531902d73658ab8f124176d4d2c1122c852"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1718,
+      "title": "Move to LoopKit next-dev",
+      "body": "Trio has been running on a loopandlearn LoopKit fork that kept the `dev` API. This moves Trio and every pump and CGM kit to LoopKit `next-dev` without compat shims, including the kits Loop doesn't ship (DanaKit, AccuChekKit, SyaiKit). Kits Loop already supports are re-pinned to its `next-dev` ports. The rest are ported, and all of them sit on `trio-next-dev` branches on their forks.\r\n\r\n**Changes**\r\n- LoopKit types now come from LoopAlgorithm (`LoopQuantity`/`LoopUnit` at the LoopKit boundary); LoopAlgorithm is linked only through LoopKit, unmodified.\r\n- Async device delegate, alert, device-log and Tidepool service APIs adopted; plugin identifiers per instance.\r\n- Pump enact calls pass `decisionId: nil`. No dosing logic changes.\r\n- `.pumpInoperable` (halted Medtrum patch, faulted pod) blocks the loop like a suspended pump.\r\n- Libre 2/2+ via LibreTransmitter is now a direct CGM, so Trio's glucose alarms apply. G5/G6, eavesdropped G7 and xDrip keep their app's alarms.\r\n- `.timeZoneSync` pump events are ignored explicitly; LoopKit maps them to no dose.\r\n\r\n**Hotspots for review**\r\n- Alert delivery: on `next-dev` every kit wraps `issueAlert`/`retractAlert` in its own `Task`, so an issue and a retract can arrive reversed. Confirmed by stress test (rare, needs back-to-back calls). Fixed upstream, see checklist.\r\n- CGM deletion: `notifyDelegateOfDeletion` completion no longer runs on the delegate queue, and G7's lifecycle-alert retractions aren't ordered before the deletion notice.\r\n- `APSManager` pump status / `.pumpInoperable` handling, `DeviceDataManager` pump events, `CGMManagerAlertOwnership`.\r\n- Tidepool: `automatedDelivery` is gone from TidepoolKit, so closed-loop state is no longer reported in pump settings. TidepoolService's `next-dev` login path also drops two `await`s, so UI and onboarding callbacks can run off the main thread (upstream code; that repo has no issue tracker).\r\n- DanaKit and AccuChekKit pickers fall back to SwiftUI `Picker(.wheel)` because LoopKitUI made `ResizeablePicker` internal.\r\n\r\n**Testing**\r\n- Builds signed with SwiftFormat on (no changes) and with `CI=true`. 972 Trio tests pass serially; AlgorithmPackage 226 pass.\r\n- Simulator: temp basals, a manual bolus and closed-loop temp basal plus SMB enacted.\r\n- Strict-concurrency warning diff against `dev`: 156 new / 164 gone. The new ones trace almost entirely to the async alert APIs in the kits.\r\n- Thread Sanitizer + `-enable-actor-data-race-checks`: Trio Tests identical to `dev`; kit suites clean apart from the G7 deletion trap above.\r\n- Stress tests: CGM deletion during incoming readings and overlapping pump-event batches show no regression; alert reordering confirmed.\r\n- 65-minute side-by-side simulator run against `dev`: no memory growth or leak regression.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1718",
+      "mergedAt": "2026-11-01T22:13:46Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1718,
+      "title": "Move to LoopKit next-dev",
+      "body": "Trio has been running on a loopandlearn LoopKit fork that kept the `dev` API. This moves Trio and every pump and CGM kit to LoopKit `next-dev` without compat shims, including the kits Loop doesn't ship (DanaKit, AccuChekKit, SyaiKit). Kits Loop already supports are re-pinned to its `next-dev` ports. The rest are ported, and all of them sit on `trio-next-dev` branches on their forks.\r\n\r\n**Changes**\r\n- LoopKit types now come from LoopAlgorithm (`LoopQuantity`/`LoopUnit` at the LoopKit boundary); LoopAlgorithm is linked only through LoopKit, unmodified.\r\n- Async device delegate, alert, device-log and Tidepool service APIs adopted; plugin identifiers per instance.\r\n- Pump enact calls pass `decisionId: nil`. No dosing logic changes.\r\n- `.pumpInoperable` (halted Medtrum patch, faulted pod) blocks the loop like a suspended pump.\r\n- Libre 2/2+ via LibreTransmitter is now a direct CGM, so Trio's glucose alarms apply. G5/G6, eavesdropped G7 and xDrip keep their app's alarms.\r\n- `.timeZoneSync` pump events are ignored explicitly; LoopKit maps them to no dose.\r\n\r\n**Hotspots for review**\r\n- Alert delivery: on `next-dev` every kit wraps `issueAlert`/`retractAlert` in its own `Task`, so an issue and a retract can arrive reversed. Confirmed by stress test (rare, needs back-to-back calls). Fixed upstream, see checklist.\r\n- CGM deletion: `notifyDelegateOfDeletion` completion no longer runs on the delegate queue, and G7's lifecycle-alert retractions aren't ordered before the deletion notice.\r\n- `APSManager` pump status / `.pumpInoperable` handling, `DeviceDataManager` pump events, `CGMManagerAlertOwnership`.\r\n- Tidepool: `automatedDelivery` is gone from TidepoolKit, so closed-loop state is no longer reported in pump settings. TidepoolService's `next-dev` login path also drops two `await`s, so UI and onboarding callbacks can run off the main thread (upstream code; that repo has no issue tracker).\r\n- DanaKit and AccuChekKit pickers fall back to SwiftUI `Picker(.wheel)` because LoopKitUI made `ResizeablePicker` internal.\r\n\r\n**Testing**\r\n- Builds signed with SwiftFormat on (no changes) and with `CI=true`. 972 Trio tests pass serially; AlgorithmPackage 226 pass.\r\n- Simulator: temp basals, a manual bolus and closed-loop temp basal plus SMB enacted.\r\n- Strict-concurrency warning diff against `dev`: 156 new / 164 gone. The new ones trace almost entirely to the async alert APIs in the kits.\r\n- Thread Sanitizer + `-enable-actor-data-race-checks`: Trio Tests identical to `dev`; kit suites clean apart from the G7 deletion trap above.\r\n- Stress tests: CGM deletion during incoming readings and overlapping pump-event batches show no regression; alert reordering confirmed.\r\n- 65-minute side-by-side simulator run against `dev`: no memory growth or leak regression.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1718",
+      "mergedAt": "2026-11-01T22:13:46Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1715,
+      "title": "Fix glucose decimals and unify glucose formatting",
+      "body": "Unify glucose formatting so every screen shows glucose the same way. Now for example users with French locale see \"3,9\" instead of \"3.9\" in settings pickers, stats and History. Whole mmol/L values showed \"6\" instead of \"6.0\", and a few mg/dL values showed \"120.0\" instead of \"120\", like in the CGM Simulator settings. The settings export now writes every glucose value the same way instead of mixing \"5,5\" and \"5.5\". Translation keys are unchanged.\r\n\r\nFew examples of\r\n| Before | After |\r\n| :---: | :---: |\r\n| <img width=\"1206\" height=\"2622\" alt=\"Before_Screenshot iPhone 17 31 10 2026  at 15 46 45\" src=\"https://github.com/user-attachments/assets/a7ceff6d-7342-4e81-ab4b-725ac92dece4\" /> | <img width=\"1206\" height=\"2622\" alt=\"Screenshot iPhone 17 31 10 2026  at 21 31 16\" src=\"https://github.com/user-attachments/assets/6764eefb-7180-4dc8-a847-4cd861677824\" /> |\r\n| <img width=\"1206\" height=\"2622\" alt=\"Before_Screenshot iPhone 17 31 10 2026  at 15 56 07\" src=\"https://github.com/user-attachments/assets/355adc84-0d05-4fc3-bce9-aaa670e6705c\" /> | <img width=\"1206\" height=\"2622\" alt=\"Screenshot iPhone 17 31 10 2026  at 21 41 19\" src=\"https://github.com/user-attachments/assets/f6e6d8c2-4b36-4b2f-9df9-8a17df3cd437\" /> |\r\n| <img width=\"1199\" height=\"216\" alt=\"Before_Screenshot iPhone 17 31 10 2026  at 15 48 32\" src=\"https://github.com/user-attachments/assets/cee2cb42-0881-451a-b6a9-cb48321808ef\" /> | <img width=\"1198\" height=\"213\" alt=\"Screenshot iPhone 17 31 10 2026  at 21 40 37\" src=\"https://github.com/user-attachments/assets/0261d8c3-6636-4efe-8d70-d46a128dc800\" /> |\r\n\r\n\r\n\r\n\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1715",
+      "mergedAt": "2026-11-01T16:50:52Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1715,
+      "title": "Fix glucose decimals and unify glucose formatting",
+      "body": "Unify glucose formatting so every screen shows glucose the same way. Now for example users with French locale see \"3,9\" instead of \"3.9\" in settings pickers, stats and History. Whole mmol/L values showed \"6\" instead of \"6.0\", and a few mg/dL values showed \"120.0\" instead of \"120\", like in the CGM Simulator settings. The settings export now writes every glucose value the same way instead of mixing \"5,5\" and \"5.5\". Translation keys are unchanged.\r\n\r\nFew examples of\r\n| Before | After |\r\n| :---: | :---: |\r\n| <img width=\"1206\" height=\"2622\" alt=\"Before_Screenshot iPhone 17 31 10 2026  at 15 46 45\" src=\"https://github.com/user-attachments/assets/a7ceff6d-7342-4e81-ab4b-725ac92dece4\" /> | <img width=\"1206\" height=\"2622\" alt=\"Screenshot iPhone 17 31 10 2026  at 21 31 16\" src=\"https://github.com/user-attachments/assets/6764eefb-7180-4dc8-a847-4cd861677824\" /> |\r\n| <img width=\"1206\" height=\"2622\" alt=\"Before_Screenshot iPhone 17 31 10 2026  at 15 56 07\" src=\"https://github.com/user-attachments/assets/355adc84-0d05-4fc3-bce9-aaa670e6705c\" /> | <img width=\"1206\" height=\"2622\" alt=\"Screenshot iPhone 17 31 10 2026  at 21 41 19\" src=\"https://github.com/user-attachments/assets/f6e6d8c2-4b36-4b2f-9df9-8a17df3cd437\" /> |\r\n| <img width=\"1199\" height=\"216\" alt=\"Before_Screenshot iPhone 17 31 10 2026  at 15 48 32\" src=\"https://github.com/user-attachments/assets/cee2cb42-0881-451a-b6a9-cb48321808ef\" /> | <img width=\"1198\" height=\"213\" alt=\"Screenshot iPhone 17 31 10 2026  at 21 40 37\" src=\"https://github.com/user-attachments/assets/0261d8c3-6636-4efe-8d70-d46a128dc800\" /> |\r\n\r\n\r\n\r\n\r\n\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1715",
+      "mergedAt": "2026-11-01T16:50:52Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1720,
+      "title": "Skip Apple Health insulin samples that end before they start",
+      "body": "## Problem\n\nTrio terminates with an uncatchable HealthKit exception when an insulin row ends before it starts:\n\n```\n*** Terminating app due to uncaught exception '_HKObjectValidationFailureException', reason: 'startDate (2026-11-01 12:40:51 +0000) cannot occur after endDate (2026-11-01 11:54:51 +0000)'\n```\n\n`uploadInsulin(_:)` builds `HKQuantitySample`s from pump history and `HealthKitManager` saves them. HealthKit validates the sample when saving and raises an `NSException`, which the `do/catch` around `healthKitStore.save` cannot handle, so the process terminates.\n\nThe duration comes from `PumpHistoryStorage.storedSpan()`, which stores `round((dose.endDate - dose.startDate) / 60)` as `Int16`, so a dose dated across a clock change can store a negative duration. `createSample(for:sampleType:)` then turns it into a sample whose `endDate` precedes its `startDate`.\n\nThe row stays in the not-yet-uploaded set (`timestamp >= 24h ago AND isUploadedToHealth == false`), so the upload is retried every time a pump event is stored and the app crash-loops until the row ages out of that window.\n\n## Change\n\nGuard the two places that derive a sample's end from a pump event:\n\n- `createSample(for:sampleType:)` skips a sample whose end precedes its start\n- `processPredecessorEntry(_:nextEventTimestamp:sampleType:)` does the same for the truncated predecessor span\n\nBoth log a warning, so a misdated row is visible instead of fatal.\n\n## Notes for review\n\nThe misdated dose originates in the Tandem driver and is fixed there: TandemKit `798c029d` and `dcfbcf82` add `HostDoseDates` so nothing ending before it starts leaves the driver. This is the host-side backstop, because a row already stored in Core Data keeps being re-read and re-sent, so the driver fix alone does not recover an install that is already crash-looping.\n\nNo unit test: both helpers are private and construct `HKQuantitySample` directly, so testing them needs an `HKHealthStore` mock and a seeded temp basal row. Happy to add that if you would like it in this PR.\n\nThe patch also applies cleanly to `feat/tandem-closed-beta` if it is wanted there first; `Trio/Sources/Services/HealthKit/HealthKitManager.swift` is identical on both branches apart from this change.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1720",
+      "mergedAt": "2026-11-01T20:58:35Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1720,
+      "title": "Skip Apple Health insulin samples that end before they start",
+      "body": "## Problem\n\nTrio terminates with an uncatchable HealthKit exception when an insulin row ends before it starts:\n\n```\n*** Terminating app due to uncaught exception '_HKObjectValidationFailureException', reason: 'startDate (2026-11-01 12:40:51 +0000) cannot occur after endDate (2026-11-01 11:54:51 +0000)'\n```\n\n`uploadInsulin(_:)` builds `HKQuantitySample`s from pump history and `HealthKitManager` saves them. HealthKit validates the sample when saving and raises an `NSException`, which the `do/catch` around `healthKitStore.save` cannot handle, so the process terminates.\n\nThe duration comes from `PumpHistoryStorage.storedSpan()`, which stores `round((dose.endDate - dose.startDate) / 60)` as `Int16`, so a dose dated across a clock change can store a negative duration. `createSample(for:sampleType:)` then turns it into a sample whose `endDate` precedes its `startDate`.\n\nThe row stays in the not-yet-uploaded set (`timestamp >= 24h ago AND isUploadedToHealth == false`), so the upload is retried every time a pump event is stored and the app crash-loops until the row ages out of that window.\n\n## Change\n\nGuard the two places that derive a sample's end from a pump event:\n\n- `createSample(for:sampleType:)` skips a sample whose end precedes its start\n- `processPredecessorEntry(_:nextEventTimestamp:sampleType:)` does the same for the truncated predecessor span\n\nBoth log a warning, so a misdated row is visible instead of fatal.\n\n## Notes for review\n\nThe misdated dose originates in the Tandem driver and is fixed there: TandemKit `798c029d` and `dcfbcf82` add `HostDoseDates` so nothing ending before it starts leaves the driver. This is the host-side backstop, because a row already stored in Core Data keeps being re-read and re-sent, so the driver fix alone does not recover an install that is already crash-looping.\n\nNo unit test: both helpers are private and construct `HKQuantitySample` directly, so testing them needs an `HKHealthStore` mock and a seeded temp basal row. Happy to add that if you would like it in this PR.\n\nThe patch also applies cleanly to `feat/tandem-closed-beta` if it is wanted there first; `Trio/Sources/Services/HealthKit/HealthKitManager.swift` is identical on both branches apart from this change.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1720",
+      "mergedAt": "2026-11-01T20:58:35Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "5e4ccc5c76791de267370d695a5d207157b3c211",
+      "subject": "Pass nil decisionId to pump enact calls",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:26:43+01:00"
+    },
+    {
+      "sha": "d53acb6f0d031b3759937434f96931021d8bc0b3",
+      "subject": "Treat pumpInoperable as pump unavailable",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:26:53+01:00"
+    },
+    {
+      "sha": "46f5dfc61854aadb6f570828c29f5a6c82fb74dd",
+      "subject": "Use LoopQuantity and LoopUnit at LoopKit boundary",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:27:00+01:00"
+    },
+    {
+      "sha": "901391b2153f4a9af833bff5af84ed5b6fd25af9",
+      "subject": "Adopt async device delegate and alert APIs",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:27:04+01:00"
+    },
+    {
+      "sha": "0b3d1a3aa39669e6528d75a25f83b90da0e25551",
+      "subject": "State plugin identifiers in device catalog",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:27:10+01:00"
+    },
+    {
+      "sha": "fa6362959a056620f9fec962049e58a5a51935b1",
+      "subject": "Move Tidepool to next-dev service API",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:27:10+01:00"
+    },
+    {
+      "sha": "b09796a213af801e93526953618d8aed98166241",
+      "subject": "Read device log through async fetch",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:27:10+01:00"
+    },
+    {
+      "sha": "1bb4c46c058df9fa969fb3a1e27d5917465be5df",
+      "subject": "Adopt next-dev LoopKitUI signatures",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:27:11+01:00"
+    },
+    {
+      "sha": "e9d2f3deff877b128376f5487b7c0b3f403fc619",
+      "subject": "Pass decisionId to test DoseEntry fixtures",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:27:11+01:00"
+    },
+    {
+      "sha": "fee2a70cc451cec7a2257e5cedfad95dd571d7ea",
+      "subject": "Bump TidepoolKit to LoopWorkspace next-dev pin",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:21:38+01:00"
+    },
+    {
+      "sha": "4cab8724f7a5236fa5bf1260b4741768ccae3d3c",
+      "subject": "Pin LoopKit and kits to next-dev ports",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:29:01+01:00"
+    },
+    {
+      "sha": "cb341ea1fcd12cda7bc026f5107e5b39c90f0067",
+      "subject": "Link LoopAlgorithm only through LoopKit",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:33:55+01:00"
+    },
+    {
+      "sha": "479f35caa0a9aa713af5ffdce392d8a111cf0281",
+      "subject": "Drop test for removed Tidepool automatedDelivery",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T23:35:49+01:00"
+    },
+    {
+      "sha": "469033590e78aef6a4619244d641d4d1af6cb4af",
+      "subject": "Don't loop against an inoperable pump",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T00:02:20+01:00"
+    },
+    {
+      "sha": "138b0037b474ac6517feaaf71aa6147ad3257a8c",
+      "subject": "Treat Libre 2 as a direct CGM for glucose alerts",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T00:02:20+01:00"
+    },
+    {
+      "sha": "a8d776f4d8be8f25ae41889dd7c9286ab9e8bbba",
+      "subject": "Track trio-next-dev for G7SensorKit and LibreLoop",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T00:53:23+01:00"
+    },
+    {
+      "sha": "68e13b6e16e7f7acc084d58c7d170f78d72ce1e3",
+      "subject": "Use one formatter for glucose display",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-31T12:29:16+01:00"
+    },
+    {
+      "sha": "c61c7aeade32e971a27ff83b134ce7ec64ca60bf",
+      "subject": "Keep ISF decimals and finish glucose formatting cleanup",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-01T12:52:12+01:00"
+    },
+    {
+      "sha": "28c86f29e8eed57e96daf05a3ce14d915ac36b8c",
+      "subject": "Ignore timeZoneSync pump events explicitly",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T13:08:26+01:00"
+    },
+    {
+      "sha": "927ad50afff0d74cb7bb8764ed59158b4b710177",
+      "subject": "Describe alert catalog as Trio-owned in comments",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T14:03:50+01:00"
+    },
+    {
+      "sha": "2b74f6d6e1383d9ee801036967f6f03a87a19e52",
+      "subject": "Mark Tidepool async upload operation Sendable",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T14:12:39+01:00"
+    },
+    {
+      "sha": "680711fd6376edc9548e06ba8b8873a911013272",
+      "subject": "Bump DanaKit, AccuChekKit and EversenseKit pins",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T14:41:16+01:00"
+    },
+    {
+      "sha": "9b74620012825874f67e83666befbd82e121bca5",
+      "subject": "Handle kit alerts off the main actor",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T16:17:20+01:00"
+    },
+    {
+      "sha": "1b181d1be7ed31bc0dc479d20d30ee1000dbc925",
+      "subject": "Mark Bluetooth state manager MainActor",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T16:17:20+01:00"
+    },
+    {
+      "sha": "f6af098a225e6fed4741590fc13d84382e5b122a",
+      "subject": "Format Tidepool upload closure",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T16:17:20+01:00"
+    },
+    {
+      "sha": "44dd6e8d86cabccf0ad35a42977404b88c0ecc6d",
+      "subject": "Merge pull request #1715 from lolzivkovic/refactor/glucose-display-formatting",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-01T17:50:52+01:00"
+    },
+    {
+      "sha": "ccb38a34ea5902fc264a93d7e6c8c25d8c115f59",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.53 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-01T16:51:02Z"
+    },
+    {
+      "sha": "8a790531902d73658ab8f124176d4d2c1122c852",
+      "subject": "Skip Apple Health insulin samples that end before they start",
+      "author": "Haaris Edhi",
+      "authoredAt": "2026-11-01T13:10:06-06:00"
+    },
+    {
+      "sha": "75188485bc91906935cc695b3886305187c475d5",
+      "subject": "Merge pull request #1720 from haarisedhi102/fix/healthkit-insulin-sample-dates",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-01T21:58:34+01:00"
+    },
+    {
+      "sha": "7b2b623db544896f3135d40fe387b191d218c9a3",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.54 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-01T20:58:46Z"
+    },
+    {
+      "sha": "1eb8e44abd07ca6a6419dee7c7693211b41d4466",
+      "subject": "Merge pull request #1718 from dnzxy/feat/loopkit-next-dev",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-01T23:13:45+01:00"
+    },
+    {
+      "sha": "96bbe5950b361a6fcd7d4acdd0dbf0896b328e8a",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.55 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-01T22:13:57Z"
+    },
+    {
+      "sha": "560b7325be1621978ac10d76fc25a38f9f44d45a",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-01T16:21:48-06:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": ".gitmodules"
+    },
+    {
+      "status": "M",
+      "path": "AccuChekKit"
+    },
+    {
+      "status": "M",
+      "path": "CGMBLEKit"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "DanaKit"
+    },
+    {
+      "status": "M",
+      "path": "EversenseKit"
+    },
+    {
+      "status": "M",
+      "path": "G7SensorKit"
+    },
+    {
+      "status": "M",
+      "path": "LibreLoop"
+    },
+    {
+      "status": "M",
+      "path": "LibreTransmitter"
+    },
+    {
+      "status": "M",
+      "path": "LoopKit"
+    },
+    {
+      "status": "M",
+      "path": "MedtrumKit"
+    },
+    {
+      "status": "M",
+      "path": "MinimedKit"
+    },
+    {
+      "status": "M",
+      "path": "OmnipodKit"
+    },
+    {
+      "status": "M",
+      "path": "RileyLinkKit"
+    },
+    {
+      "status": "M",
+      "path": "SyaiKit"
+    },
+    {
+      "status": "M",
+      "path": "TidepoolService"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcworkspace/xcshareddata/swiftpm/Package.resolved"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/CGM/PluginSource.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Devices/DeviceCatalog.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Extensions/LoopUIColorPalette+Default.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Extensions/PumpManagerExtensions.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/FetchGlucoseManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/PluginManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/PumpHistoryStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/PumpStatusStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/Formatters.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Logger/DeviceLog/DeviceLogStore.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/BloodGlucose+LoopKit.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/BloodGlucose.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/AdjustmentsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/AdjustmentsRootView+Overrides.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/TempTargets/AddTempTargetForm.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/TempTargets/AdjustmentsRootView+TempTargets.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/TempTargets/EditTempTargetForm.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/ViewElements/TargetPicker.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AlgorithmAdvancedSettings/AlgorithmAdvancedSettingsProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AlgorithmAdvancedSettings/View/AlgorithmAdvancedSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AutosensSettings/View/AutosensSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BolusCalculatorConfig/View/BolusCalculatorConfigRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CGMSettings/View/CustomCGMOptionsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioCalibration/CarbRatioCalibrationStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/GeneralSettings/UnitsLimitsSettingsProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/GeneralSettings/View/UnitsLimitsSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/HistoryDeletionTarget.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Adjustments.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Glucose.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Chart/ChartElements/ChartSelectionRow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Chart/MainChartView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/CurrentGlucoseView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+BottomControls.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+Header.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/NightscoutConfig/NightscoutConfigProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/AlgorithmSettings/AlgorithmSettingsSubstepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/DeliveryLimitsStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/InsulinSensitivityStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingView+AlgorithmUtil.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingView+Util.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/TherapySettingEditorView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SMBSettings/View/SMBSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/TidepoolConfigView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDistributionChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucosePercentileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseSectorChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/TargetBehavoir/View/TargetBehavoirRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/ForecastChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/PopupView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/AlertCatalogRegistry.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/AlertCatalogVendor.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/CGMManagerAlertOwnership.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/TrioAlertManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Bluetooth/BluetoothStateManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Calendar/CalendarManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactImageManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/HealthKit/HealthKitManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/TidepoolManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/TidepoolUploadSerializer.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/State/StateIntentRequest.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Views/SettingInputSection.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/PumpEventFinalizationTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/PumpEventPredicateTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/PumpHistoryStorageTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/PumpStatusStorageTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/DeliveryLimitsSyncTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/DeviceCatalogTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/GlucoseFormattingTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/Logging/DeviceLogStoreTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/Logging/LogExportTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/Logging/LoggingLongRunStressTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/Logging/LoggingRobustnessStressTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/Logging/LoggingVolumeStressTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/TidepoolTherapySettingsTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "dexcom-share-client-swift"
+    }
+  ]
+}

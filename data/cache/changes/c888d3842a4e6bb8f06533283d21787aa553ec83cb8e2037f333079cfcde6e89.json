@@ -1,0 +1,23 @@
+{
+  "inputHash": "6e21825214ec5b566c09248742fd35b78426226c4172992fc79b52a1efba16e9",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1718",
+    "title": "Update to LoopKit next-dev",
+    "changes": [
+      "Libre 2 via LibreTransmitter now triggers Trio's glucose alarms.",
+      "Inoperable pump states now stop automated insulin delivery like a suspended pump."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1718",
+      "commit:138b0037b474",
+      "commit:d53acb6f0d03"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

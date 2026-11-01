@@ -1,0 +1,22 @@
+{
+  "inputHash": "c33bcbeedab2d85ef3f8ff1d37c95bab6d3dad3f1a3fa02fce59b1f15c09ccea",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1715",
+    "title": "Unify glucose number formatting",
+    "changes": [
+      "Glucose values now display consistently with correct decimals and local decimal separators across the app.",
+      "History, settings and exports use the same format (e.g. mmol/L shows 6.0 and French locales show 3,9)."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1715",
+      "diff:95e4af9dd0be"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
