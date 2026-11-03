@@ -1,0 +1,22 @@
+{
+  "inputHash": "ac82f241a764c68e37da5bf8e14edda1e09c1e8545635262c62d8777df8c23c2",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1716",
+    "title": "Fix critical alarms and AlarmKit permissions",
+    "changes": [
+      "Critical glucose alarms now keep sounding only for their alert and ring once for a bounded burst.",
+      "Existing users will be prompted for AlarmKit permission so system alarms can replace in-app audio."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1716",
+      "diff:4e9602e57429"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

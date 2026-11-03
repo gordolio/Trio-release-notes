@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build e526f43</title>
+  <title>Trio Build 959fd00</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,12 +16,14 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build e526f43</h1>
-    <p>Built 2026-11-03T03:25:17.000Z from <code>560b732..e526f43</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Stop showing stale reservoir after pump changes</h3><ul><li>Trio no longer shows or uploads an old reservoir after a pump, patch, or pod is removed.</li><li>Home and Nightscout will show no reservoir until the active device reports one.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1712" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build 959fd00</h1>
+    <p>Built 2026-11-03T22:23:31.000Z from <code>e526f43..959fd00</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Fix critical alarms and AlarmKit permissions</h3><ul><li>Critical glucose alarms now keep sounding only for their alert and ring once for a bounded burst.</li><li>Existing users will be prompted for AlarmKit permission so system alarms can replace in-app audio.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1716" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Basal test alignment and clearer results</h3><ul><li>Basal testing now follows Trio docs (4-hour minimum fast, 10% step) and shows clearer results.</li><li>Results include supporting formulas, docs links, fasting SMB history and which basal periods were tested.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/pull/25" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Remove LoopAlgorithm submodule</h3><ul><li>Removed the LoopAlgorithm module from Trio.</li><li>Users will see no change to dosing or saved device state.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1726" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/41570439225">Source workflow 41570439225</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/41727038980">Source workflow 41727038980</a></p>
   </footer>
 </body>
 </html>

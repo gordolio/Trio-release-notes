@@ -1,0 +1,564 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 41727038980,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/41727038980",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "e526f43945658865b48882cf2065fadbbc7c0065",
+    "currentBuiltSha": "959fd00e76bd4db2fcbc32def848408656a8d7d3",
+    "shortSha": "959fd00",
+    "buildDate": "2026-11-03T22:23:31.000Z",
+    "generationDate": "2026-11-03T22:34:49.254Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1716",
+      "title": "Fix critical alarms and AlarmKit permissions",
+      "changes": [
+        "Critical glucose alarms now keep sounding only for their alert and ring once for a bounded burst.",
+        "Existing users will be prompted for AlarmKit permission so system alarms can replace in-app audio."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1716",
+        "diff:4e9602e57429"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1716"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1716",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1716: Fix Critical Alarms Cut Off and AlarmKit Permission Issues",
+          "url": "https://github.com/nightscout/Trio/pull/1716"
+        },
+        {
+          "id": "diff:4e9602e57429",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1716",
+          "url": "https://github.com/gordolio/Trio/compare/ccb00bb7bd277c4abcc7ba2f364725510bbe2592...699fb2060494052eb353c5221e2c435d2b6ef78d"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:gordolio/Trio#25",
+      "title": "Basal test alignment and clearer results",
+      "changes": [
+        "Basal testing now follows Trio docs (4-hour minimum fast, 10% step) and shows clearer results.",
+        "Results include supporting formulas, docs links, fasting SMB history and which basal periods were tested."
+      ],
+      "category": "algorithm-and-dosing",
+      "sourceIds": [
+        "pr:gordolio/Trio#25",
+        "commit:d0a5e82a8ee7",
+        "diff:7f90e57b4a23"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:gordolio/Trio#25"
+      ],
+      "highlight": true,
+      "provenance": "mixed",
+      "sources": [
+        {
+          "id": "pr:gordolio/Trio#25",
+          "type": "pull-request",
+          "title": "gordolio/Trio#25: feat(settings-test): Align basal testing with Trio docs and explain results",
+          "url": "https://github.com/gordolio/Trio/pull/25"
+        },
+        {
+          "id": "commit:d0a5e82a8ee7",
+          "type": "commit",
+          "title": "feat(settings-test): Align basal testing with Trio docs and explain results",
+          "url": "https://github.com/gordolio/Trio/commit/d0a5e82a8ee7c18b6962d43ce0b297d6e40b5c00"
+        },
+        {
+          "id": "diff:7f90e57b4a23",
+          "type": "diff",
+          "title": "Diff for pr:gordolio/Trio#25",
+          "url": "https://github.com/gordolio/Trio/compare/560b7325be1621978ac10d76fc25a38f9f44d45a...29ba5e8292100e0c24a1f6e1872c431be48f7f01"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1726",
+          "title": "Remove LoopAlgorithm submodule",
+          "changes": [
+            "Removed the LoopAlgorithm module from Trio.",
+            "Users will see no change to dosing or saved device state."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1726",
+            "commit:800ba231d9ce",
+            "diff:b9cbdca7b032"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1726"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1726",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1726: Remove LoopAlgorithm submodule",
+              "url": "https://github.com/nightscout/Trio/pull/1726"
+            },
+            {
+              "id": "commit:800ba231d9ce",
+              "type": "commit",
+              "title": "Remove LoopAlgorithm submodule",
+              "url": "https://github.com/gordolio/Trio/commit/800ba231d9cefffa50f24be9b59f000e3e7547a2"
+            },
+            {
+              "id": "diff:b9cbdca7b032",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1726",
+              "url": "https://github.com/gordolio/Trio/compare/96bbe5950b361a6fcd7d4acdd0dbf0896b328e8a...406278cc40a2ad3a55ae05c2a17ab136239c959d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [
+    "Trio.xcodeproj/project.pbxproj"
+  ],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1716,
+      "title": "Fix Critical Alarms Cut Off and AlarmKit Permission Issues",
+      "body": "Glucose alarms set to override Silence & Focus were going quiet about a second after they started. On every successful loop, `NotLoopingMonitor` retracts its not-looping ladder, and `retractAlert` stopped the shared critical audio player no matter which alert it was playing for. So each glucose alarm was killed as soon as the loop that followed the CGM reading finished. On top of that, AlarmKit permission was only requested during onboarding, so anyone who onboarded before AlarmKit landed never got the system alarm and stayed on the in-app audio fallback.\n\nThis keeps the alarm sounding for the alert it belongs to, gets existing users onto AlarmKit, and gives every critical alarm one bounded ring instead of looping until stopped.\n\n- Track which alert owns the critical audio; retract/acknowledge of any other alert leaves it playing\n- Request AlarmKit authorization on launch once onboarding is done (no-op once decided or below iOS 26), as Loop does\n- Derive AlarmKit alarm IDs from the alert identifier and look them up in `AlarmManager.alarms`, so an alarm scheduled before a relaunch can still be stopped or cancelled (ported from Loop)\n- Play one burst per alarm, ported from Loop: whole passes of the tone until at least 6 s, capped at 30 s. Applies to the in-app audio and, best-effort, to the AlarmKit alarm, which is stopped after the same burst\n- Unchanged: interacting with an alarm snoozes it for 15 min, global snooze, no repeat\n\nFixes issues reported by @t1dude , [this user on Discord](https://discord.com/channels/1020905149037813862/1239981634145747024/1566167343846006834), and others. ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1716",
+      "mergedAt": "2026-11-03T19:29:28Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1716,
+      "title": "Fix Critical Alarms Cut Off and AlarmKit Permission Issues",
+      "body": "Glucose alarms set to override Silence & Focus were going quiet about a second after they started. On every successful loop, `NotLoopingMonitor` retracts its not-looping ladder, and `retractAlert` stopped the shared critical audio player no matter which alert it was playing for. So each glucose alarm was killed as soon as the loop that followed the CGM reading finished. On top of that, AlarmKit permission was only requested during onboarding, so anyone who onboarded before AlarmKit landed never got the system alarm and stayed on the in-app audio fallback.\n\nThis keeps the alarm sounding for the alert it belongs to, gets existing users onto AlarmKit, and gives every critical alarm one bounded ring instead of looping until stopped.\n\n- Track which alert owns the critical audio; retract/acknowledge of any other alert leaves it playing\n- Request AlarmKit authorization on launch once onboarding is done (no-op once decided or below iOS 26), as Loop does\n- Derive AlarmKit alarm IDs from the alert identifier and look them up in `AlarmManager.alarms`, so an alarm scheduled before a relaunch can still be stopped or cancelled (ported from Loop)\n- Play one burst per alarm, ported from Loop: whole passes of the tone until at least 6 s, capped at 30 s. Applies to the in-app audio and, best-effort, to the AlarmKit alarm, which is stopped after the same burst\n- Unchanged: interacting with an alarm snoozes it for 15 min, global snooze, no repeat\n\nFixes issues reported by @t1dude , [this user on Discord](https://discord.com/channels/1020905149037813862/1239981634145747024/1566167343846006834), and others. ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1716",
+      "mergedAt": "2026-11-03T19:29:28Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1726,
+      "title": "Remove LoopAlgorithm submodule",
+      "body": "Since the move to LoopKit next-dev, Trio had to build LoopAlgorithm only for shared value types like `LoopQuantity` and `LoopUnit`. LoopKit/LoopKit#674 moved those types into LoopKit, and LoopKit/LoopWorkspace#568 bumps the plugins to import LoopKit instead. This adopts that and removes the LoopAlgorithm submodule.\r\n\r\n- Bump kits to their `trio-next-dev` tips on the LoopWorkspace #568 pins. LoopKit is on the next-dev tip, which also includes LoopKit/LoopKit#682.\r\n- DanaKit, AccuChekKit and SyaiKit aren't in Loop, so they get the same import swap on their own branches.\r\n- Remove the submodule, its project and workspace references, the SwiftFormat exclude, and the app's `import LoopAlgorithm` lines.\r\n- Update the branch list in `scripts/define_common_trio.sh` to match `trio-next-dev`, and add SyaiKit.\r\n- No dosing or saved device state changes. The kit diffs are import lines plus existing Trio carries.\r\n- G7 picks up LoopKit/G7SensorKit#104 (no reconnect refusal window) and LoopKit/G7SensorKit#104#105. With LoopKit/G7SensorKit#104#105, \"Read on Apple Watch\" stays hidden because Trio doesn't opt in yet.\r\n- Tested: Trio build, Trio Tests build-for-testing, and `DeliveryLimitsSyncTests`, `PumpEventFinalizationTests`, `StoredSettingsTidepoolFormatTests` and `BaseTidepoolManagerTests` pass.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1726",
+      "mergedAt": "2026-11-03T20:18:06Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1726,
+      "title": "Remove LoopAlgorithm submodule",
+      "body": "Since the move to LoopKit next-dev, Trio had to build LoopAlgorithm only for shared value types like `LoopQuantity` and `LoopUnit`. LoopKit/LoopKit#674 moved those types into LoopKit, and LoopKit/LoopWorkspace#568 bumps the plugins to import LoopKit instead. This adopts that and removes the LoopAlgorithm submodule.\r\n\r\n- Bump kits to their `trio-next-dev` tips on the LoopWorkspace #568 pins. LoopKit is on the next-dev tip, which also includes LoopKit/LoopKit#682.\r\n- DanaKit, AccuChekKit and SyaiKit aren't in Loop, so they get the same import swap on their own branches.\r\n- Remove the submodule, its project and workspace references, the SwiftFormat exclude, and the app's `import LoopAlgorithm` lines.\r\n- Update the branch list in `scripts/define_common_trio.sh` to match `trio-next-dev`, and add SyaiKit.\r\n- No dosing or saved device state changes. The kit diffs are import lines plus existing Trio carries.\r\n- G7 picks up LoopKit/G7SensorKit#104 (no reconnect refusal window) and LoopKit/G7SensorKit#104#105. With LoopKit/G7SensorKit#104#105, \"Read on Apple Watch\" stays hidden because Trio doesn't opt in yet.\r\n- Tested: Trio build, Trio Tests build-for-testing, and `DeliveryLimitsSyncTests`, `PumpEventFinalizationTests`, `StoredSettingsTidepoolFormatTests` and `BaseTidepoolManagerTests` pass.\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1726",
+      "mergedAt": "2026-11-03T20:18:06Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 25,
+      "title": "feat(settings-test): Align basal testing with Trio docs and explain results",
+      "body": "Evaluate glucose drift against saved ISF and scheduled basal using a 10% threshold and a four-hour minimum fast. Show supporting formulas, docs links, fasting SMB history and results by basal period.\n\nRestore normal dosing when suspends or logged carbs end a test, preserve the end reason and prevent overlapping sessions. Disable the carb ratio wizard while allowing cleanup of existing tests.\n\nExpand coverage for evaluation, schedule snapshots, session handling and shared UI helpers.\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n<!-- coderabbit-ai-generated:v1 -->\n\n## Summary by CodeRabbit\n\n* **New Features**\n  * Basal tests now show fasting readiness, covered basal schedule periods, a live countdown, and clearer guidance throughout the test.\n  * Results explain whether glucose was steady, rising, or falling, with charts and formula details when available.\n  * Settings tests now show basal periods and their test status, plus clearer availability and lock information.\n  * Documentation links and explanations are available in test details.\n* **Bug Fixes**\n  * Ending a lingering carb-ratio test now reports errors and keeps the test available if cleanup fails.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "labels": [],
+      "url": "https://github.com/gordolio/Trio/pull/25",
+      "mergedAt": "2026-11-03T21:44:43Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "cba6b42982370b1b7c028f95939629ee80604c5c",
+      "subject": "Stop critical audio only for the alert that owns it",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T22:09:12+01:00"
+    },
+    {
+      "sha": "e9850f4d1b52c0e94e13e6ed7129eeafd995aa98",
+      "subject": "Ask for AlarmKit permission on launch",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T22:09:12+01:00"
+    },
+    {
+      "sha": "11ecb634785a95b5ddc7244677b66c5e44268e2a",
+      "subject": "Derive AlarmKit alarm IDs from the alert identifier",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T22:09:12+01:00"
+    },
+    {
+      "sha": "7b3d0283b01768bcca30a711dab1e1f6966237ed",
+      "subject": "Ring critical alarms for one bounded burst",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-31T22:09:12+01:00"
+    },
+    {
+      "sha": "daf19d1c5da31223e541776d9989858661fa2421",
+      "subject": "Play alert sounds while Trio is in the foreground",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-01T00:57:41+01:00"
+    },
+    {
+      "sha": "4ec3bcf8681e644de802a118c6cc0f49578c912b",
+      "subject": "Merge branch 'dev' into fix/critical-audio-owner",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-01T23:19:19+01:00"
+    },
+    {
+      "sha": "3e5d3f4e3634987fb8eb475a2f297f4591823fbe",
+      "subject": "Bump submodules to LoopKit-owned value types",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-02T01:05:13+01:00"
+    },
+    {
+      "sha": "a9ffc88405d4988212fb25cf6fa6c91699350968",
+      "subject": "Update submodule branches in update script",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-02T01:05:13+01:00"
+    },
+    {
+      "sha": "800ba231d9cefffa50f24be9b59f000e3e7547a2",
+      "subject": "Remove LoopAlgorithm submodule",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-02T01:05:18+01:00"
+    },
+    {
+      "sha": "d0a5e82a8ee7c18b6962d43ce0b297d6e40b5c00",
+      "subject": "feat(settings-test): Align basal testing with Trio docs and explain results",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-02T23:32:28-06:00"
+    },
+    {
+      "sha": "fb61c1b8d7374295d3f57a4f4a184eb62e458740",
+      "subject": "fix(basaltest): Correct basal test evaluation and session completion",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-03T07:06:28-06:00"
+    },
+    {
+      "sha": "98ed07284bcec23f748654633e3a7608119edaa6",
+      "subject": "fix(basaltest): Count a zero temp as a low only when Trio asked for it",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-03T07:39:42-06:00"
+    },
+    {
+      "sha": "dbeb40aadb5d673efcc574a2639663a9a178d42e",
+      "subject": "fix(basaltest): Keep unread checks and late lows from giving a wrong result",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-03T08:13:26-06:00"
+    },
+    {
+      "sha": "b736204f489567c28147e4f4bb7acafc306c518b",
+      "subject": "fix(basaltest): Keep a low from before a mode change and guard the start",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-03T08:44:25-06:00"
+    },
+    {
+      "sha": "699fb2060494052eb353c5221e2c435d2b6ef78d",
+      "subject": "Merge pull request #1716 from dnzxy/fix/critical-audio-owner",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-03T20:29:27+01:00"
+    },
+    {
+      "sha": "1c6e49b5c5058c8e9790e65d0c9e01a53410771d",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.57 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-03T19:29:41Z"
+    },
+    {
+      "sha": "406278cc40a2ad3a55ae05c2a17ab136239c959d",
+      "subject": "Merge pull request #1726 from dnzxy/feat/drop-loopalgorithm",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-03T21:18:05+01:00"
+    },
+    {
+      "sha": "685a0d82949cf70f8531e4625aaecca8ee3307c2",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.58 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-03T20:18:38Z"
+    },
+    {
+      "sha": "29ba5e8292100e0c24a1f6e1872c431be48f7f01",
+      "subject": "Merge pull request #25 from gordolio/feat/settings-test-basal-docs",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-03T15:44:43-06:00"
+    },
+    {
+      "sha": "959fd00e76bd4db2fcbc32def848408656a8d7d3",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-03T15:45:22-06:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": ".gitmodules"
+    },
+    {
+      "status": "M",
+      "path": "AccuChekKit"
+    },
+    {
+      "status": "M",
+      "path": "CGMBLEKit"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "DanaKit"
+    },
+    {
+      "status": "M",
+      "path": "EversenseKit"
+    },
+    {
+      "status": "M",
+      "path": "G7SensorKit"
+    },
+    {
+      "status": "M",
+      "path": "LibreLoop"
+    },
+    {
+      "status": "M",
+      "path": "LibreTransmitter"
+    },
+    {
+      "status": "D",
+      "path": "LoopAlgorithm"
+    },
+    {
+      "status": "M",
+      "path": "LoopKit"
+    },
+    {
+      "status": "M",
+      "path": "MedtrumKit"
+    },
+    {
+      "status": "M",
+      "path": "MinimedKit"
+    },
+    {
+      "status": "M",
+      "path": "OmnipodKit"
+    },
+    {
+      "status": "M",
+      "path": "SyaiKit"
+    },
+    {
+      "status": "M",
+      "path": "TidepoolService"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/FetchGlucoseManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/TrioApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/BloodGlucose+LoopKit.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AlgorithmAdvancedSettings/AlgorithmAdvancedSettingsProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestDataFlow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestModels.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalTest/BasalTestStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestCheckView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestFastView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestResultView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/GeneralSettings/UnitsLimitsSettingsProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/NightscoutConfig/NightscoutConfigProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestDataFlow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestModels.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestSchedule.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestComponents.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestFormula.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/CriticalAlertAlarmScheduler.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/CriticalAlertAudioPlayer.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/TrioAlertManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/TidepoolManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/SettingsTest/SettingsTestService.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/PumpEventFinalizationTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/DeliveryLimitsSyncTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/SettingsTestTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/TidepoolTherapySettingsTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "dexcom-share-client-swift"
+    },
+    {
+      "status": "M",
+      "path": "scripts/define_common_trio.sh"
+    },
+    {
+      "status": "M",
+      "path": "scripts/swiftformat.sh"
+    }
+  ]
+}

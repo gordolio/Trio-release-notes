@@ -1,0 +1,23 @@
+{
+  "inputHash": "efd9cf4117ef414712e014154a451c56bf5e8c13ecaaed0fa4e9243f3065f2bf",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1726",
+    "title": "Remove LoopAlgorithm submodule",
+    "changes": [
+      "Removed the LoopAlgorithm module from Trio.",
+      "Users will see no change to dosing or saved device state."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1726",
+      "commit:800ba231d9ce",
+      "diff:b9cbdca7b032"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "inputHash": "5c2bc30448075791fecefd1bbd275d0caf3fd5719d83c89414df20927311fe93",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#25",
+    "title": "Basal test alignment and clearer results",
+    "changes": [
+      "Basal testing now follows Trio docs (4-hour minimum fast, 10% step) and shows clearer results.",
+      "Results include supporting formulas, docs links, fasting SMB history and which basal periods were tested."
+    ],
+    "category": "algorithm-and-dosing",
+    "sourceIds": [
+      "pr:gordolio/Trio#25",
+      "commit:d0a5e82a8ee7",
+      "diff:7f90e57b4a23"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
