@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 41570439225,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/41570439225",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "560b7325be1621978ac10d76fc25a38f9f44d45a",
+    "currentBuiltSha": "e526f43945658865b48882cf2065fadbbc7c0065",
+    "shortSha": "e526f43",
+    "buildDate": "2026-11-03T03:25:17.000Z",
+    "generationDate": "2026-11-03T03:35:11.021Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1712",
+      "title": "Stop showing stale reservoir after pump changes",
+      "changes": [
+        "Trio no longer shows or uploads an old reservoir after a pump, patch, or pod is removed.",
+        "Home and Nightscout will show no reservoir until the active device reports one."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1712",
+        "diff:8a044ff03140"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1712"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1712",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1712: Read the reservoir from the pump manager instead of storing it",
+          "url": "https://github.com/nightscout/Trio/pull/1712"
+        },
+        {
+          "id": "diff:8a044ff03140",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1712",
+          "url": "https://github.com/gordolio/Trio/compare/26e457d9605ca1924b29f3e39afa276094a34dd3...8bb6d77650db1821f828dec016e479c0a1e8333a"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1712,
+      "title": "Read the reservoir from the pump manager instead of storing it",
+      "body": "After removing a pump, or deactivating a Medtrum patch or Omnipod pod, Trio kept showing and uploading the old reservoir from monitor/reservoir.json until the new pump reported one.\n\nThe reservoir is not stored anymore. Home and the Nightscout upload read it from the active pump manager's state, so no pump, patch or pod means no reservoir. For Medtrum patchSessionEnded is checked, since MedtrumKit keeps the old value until a new patch is activated (jbr7rr/MedtrumKit#139). For Dana the value is used only after pumpTime is set, since reservoirLevel is 0 until the first sync. The old file is removed at startup, and the unused reservoir input to determine basal and the reservoir check in APSManager are removed.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1712",
+      "mergedAt": "2026-11-02T22:15:26Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1712,
+      "title": "Read the reservoir from the pump manager instead of storing it",
+      "body": "After removing a pump, or deactivating a Medtrum patch or Omnipod pod, Trio kept showing and uploading the old reservoir from monitor/reservoir.json until the new pump reported one.\n\nThe reservoir is not stored anymore. Home and the Nightscout upload read it from the active pump manager's state, so no pump, patch or pod means no reservoir. For Medtrum patchSessionEnded is checked, since MedtrumKit keeps the old value until a new patch is activated (jbr7rr/MedtrumKit#139). For Dana the value is used only after pumpTime is set, since reservoirLevel is 0 until the first sync. The old file is removed at startup, and the unused reservoir input to determine basal and the reservoir check in APSManager are removed.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1712",
+      "mergedAt": "2026-11-02T22:15:26Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "7cf674721ef597d2eea57c629590792a0c66157b",
+      "subject": "Clear the stored reservoir when the pump is removed or the Medtrum patch session has ended",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-31T13:12:27+01:00"
+    },
+    {
+      "sha": "49f7a4b3f8a83c5d88d8f34a5174d230ff3f36a5",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into fix/reservoir-after-pump-change",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-31T20:03:30+01:00"
+    },
+    {
+      "sha": "0028dd35ddfbedc4ef29189223019a6bf701231e",
+      "subject": "Read the reservoir from the pump manager instead of storing it",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-31T20:03:31+01:00"
+    },
+    {
+      "sha": "c610d062022cb2ed097fb843a79a182144cac851",
+      "subject": "Merge branch 'dev' into fix/reservoir-after-pump-change",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-01T12:24:16+01:00"
+    },
+    {
+      "sha": "20c438ea2ffe6535bebbfc75fca918b70ac751e3",
+      "subject": "Merge branch 'dev' into fix/reservoir-after-pump-change",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-01T23:19:39+01:00"
+    },
+    {
+      "sha": "8bb6d77650db1821f828dec016e479c0a1e8333a",
+      "subject": "Merge pull request #1712 from bjorkert/fix/reservoir-after-pump-change",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-02T23:15:26+01:00"
+    },
+    {
+      "sha": "78491be2b7a80c3c7593afa89f96e8a9faad07fa",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.56 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-02T22:15:44Z"
+    },
+    {
+      "sha": "e526f43945658865b48882cf2065fadbbc7c0065",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-02T21:07:45-06:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPS/Constants.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPS/OpenAPS.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPSSwift/DetermineBasal/DetermineBasalGenerator.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/OpenAPSSwiftTests/DetermineBasalEarlyExitTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/OpenAPSSwiftTests/DetermineBasalSmbMicroBolusTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/OpenAPSSwiftTests/Parity/ParityScenarios.swift"
+    }
+  ]
+}
