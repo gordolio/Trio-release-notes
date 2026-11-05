@@ -1,0 +1,22 @@
+{
+  "inputHash": "a329c3724e20ea6ba712fa7148ece69920786244be45b196dfa43d5b016214ff",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#26",
+    "title": "Guided ISF test and improved test notifications",
+    "changes": [
+      "A guided ISF test wizard has been added to Trio.",
+      "Tests continue when you leave a screen, send tappable notifications, and open the test screen if needed."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:gordolio/Trio#26",
+      "diff:1a215135ef81"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
