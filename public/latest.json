@@ -1,50 +1,84 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 41970816374,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/41970816374",
+    "sourceWorkflowRunId": 42016896981,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/42016896981",
     "sourceBranch": "dev",
-    "previousBuiltSha": "959fd00e76bd4db2fcbc32def848408656a8d7d3",
-    "currentBuiltSha": "c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5",
-    "shortSha": "c7ec5cb",
-    "buildDate": "2026-11-05T05:16:21.000Z",
-    "generationDate": "2026-11-05T05:26:43.698Z",
+    "previousBuiltSha": "c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5",
+    "currentBuiltSha": "1959ed3e2665263da769860f70758b00ce0f0bb8",
+    "shortSha": "1959ed3",
+    "buildDate": "2026-11-05T11:31:42.000Z",
+    "generationDate": "2026-11-05T11:43:10.607Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:gordolio/Trio#26",
-      "title": "Guided ISF test and improved test notifications",
+      "changeId": "pr:nightscout/Trio#1738",
+      "title": "Smoother pump removal and updated device libraries",
       "changes": [
-        "A guided ISF test wizard has been added to Trio.",
-        "Tests continue when you leave a screen, send tappable notifications, and open the test screen if needed."
+        "Removing a pump now completes without interrupting other app actions.",
+        "Device and sensor integrations were updated to newer next-dev branches."
       ],
-      "category": "new-features",
+      "category": "pump-and-cgm",
       "sourceIds": [
-        "pr:gordolio/Trio#26",
-        "diff:1a215135ef81"
+        "pr:nightscout/Trio#1738",
+        "diff:6a74a5a2fbc7"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:gordolio/Trio#26"
+        "pr:nightscout/Trio#1738"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1738",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1738: Adopt async device deletion and track next-dev",
+          "url": "https://github.com/nightscout/Trio/pull/1738"
+        },
+        {
+          "id": "diff:6a74a5a2fbc7",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1738",
+          "url": "https://github.com/gordolio/Trio/compare/685a0d82949cf70f8531e4625aaecca8ee3307c2...b60a0d07d9e2f2580995cbbee2fda17d27941479"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:gordolio/Trio#27",
+      "title": "View test checks and steps before starting",
+      "changes": [
+        "You can open any settings test to read its checks and steps while another test runs.",
+        "Starting remains blocked and the Check screen names the active test."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:gordolio/Trio#27",
+        "diff:2a755bde97e7"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:gordolio/Trio#27"
       ],
       "highlight": true,
       "provenance": "origin",
       "sources": [
         {
-          "id": "pr:gordolio/Trio#26",
+          "id": "pr:gordolio/Trio#27",
           "type": "pull-request",
-          "title": "gordolio/Trio#26: feat(isftest): Add the guided ISF test and run settings tests in a service",
-          "url": "https://github.com/gordolio/Trio/pull/26"
+          "title": "gordolio/Trio#27: feat(settings-test): Show a test's checks and steps before it can start",
+          "url": "https://github.com/gordolio/Trio/pull/27"
         },
         {
-          "id": "diff:1a215135ef81",
+          "id": "diff:2a755bde97e7",
           "type": "diff",
-          "title": "Diff for pr:gordolio/Trio#26",
-          "url": "https://github.com/gordolio/Trio/compare/b736204f489567c28147e4f4bb7acafc306c518b...c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5"
+          "title": "Diff for pr:gordolio/Trio#27",
+          "url": "https://github.com/gordolio/Trio/compare/c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5...0983774948ba6dda8747c0c47b035d0ae661e3e4"
         }
       ]
     }
@@ -100,72 +134,152 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 26,
-      "title": "feat(isftest): Add the guided ISF test and run settings tests in a service",
-      "body": "Adds the guided ISF test (#21) and moves both settings tests into `SettingsTestService`, so a test settles, cancels on a spoiled bolus, ends on a low and finishes with its screen closed. A notification says when a step needs you or the test ends, and tapping it opens that screen, even when it starts Trio. Upstream changes are one line each in `AppDelegate` and `UserNotificationsManager`.\n\n![ISF Dose Ready notification](https://github.com/user-attachments/assets/623d6ede-dbe7-4515-a5bc-5b6cc0e6adb3) ![Dose step opened from the notification](https://github.com/user-attachments/assets/965e8025-76ea-4f3a-a542-77c905a8d763)\n\nTested with the unit suites and on the iOS 27.2 simulator (17 Pro, SE): a spoiled bolus from Home, endings in the background, and notification taps from a cold launch. Draft while an adversarial review runs and before the device matrix.\n\n#21 · [ISF testing method](https://triodocs.org/usage/concepts/isf/#testing-method)\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n<!-- coderabbit-ai-generated:v1 -->\n\n## Summary by CodeRabbit\n\n* **New Features**\n  * Added ISF Testing alongside Basal Testing, with guided steps for checking readiness, raising glucose when needed, calculating a dose, monitoring progress, and reviewing results.\n  * Added ISF test schedules and history to the settings hub, with guidance when settings may affect a test.\n  * Added clearer test status, glucose and insulin information, progress charts, and notifications for relevant test updates.\n* **Bug Fixes**\n  * Improved test handling around stale or missing readings, changing pump conditions, and tests that end early.\n  * Prevented older data refreshes from replacing newer displayed information and disabled stop actions while a test is ending.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "number": 1738,
+      "title": "Adopt async device deletion and track next-dev",
+      "body": "Brings in changes as of https://github.com/LoopKit/LoopKit/pull/685\nMoves submodule SHA pins to track LoopKit next-dev for the loopandlearn forks of our submodules. ",
       "labels": [],
-      "url": "https://github.com/gordolio/Trio/pull/26",
-      "mergedAt": "2026-11-05T04:55:06Z"
+      "url": "https://github.com/nightscout/Trio/pull/1738",
+      "mergedAt": "2026-11-05T06:03:41Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1738,
+      "title": "Adopt async device deletion and track next-dev",
+      "body": "Brings in changes as of https://github.com/LoopKit/LoopKit/pull/685\nMoves submodule SHA pins to track LoopKit next-dev for the loopandlearn forks of our submodules. ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1738",
+      "mergedAt": "2026-11-05T06:03:41Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 27,
+      "title": "feat(settings-test): Show a test's checks and steps before it can start",
+      "body": "Every settings test's row in the hub now opens, even while another test runs, so you can read what a test needs and how it goes before you can start it. Starting is still up to its Check screen. With another test running, that screen's first blocker now names that test. It used to say to switch out of Basal Testing, which would have ended the running test. **See the steps** under the Check screen's header opens a sheet with every step. Carb Ratio stays closed while it's rebuilt.\n\n![Hub while the basal test runs, before and after](https://github.com/user-attachments/assets/f6f5b872-6d11-4dac-ac76-2c4b9997942f) ![ISF Check while the basal test runs, before and after, and its steps sheet](https://github.com/user-attachments/assets/76f3bb28-0f01-4f78-8fe6-71dfa451736a)\n\nAn old result reached this way doesn't offer the basal or ISF editor while the other test runs, and doesn't say the usual mode is back while Basal Testing is on.\n\nTested with the full unit suite and rendered before and after on iOS 27.2 (SE, 17 Pro), 18.0 (SE, 16 Pro) and 26.0 with Liquid Glass off (SE, 17 Pro), at five text sizes and Display Zoom.\n\n#19\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n<!-- coderabbit-ai-generated:v1 -->\n\n## Summary by CodeRabbit\n\n* **New Features**\n  * Added step-by-step guides for basal and ISF tests, including details based on selected test settings.\n  * Test screens remain available to review while another settings test is running; the checks identify the active test and prevent starting a second one.\n* **Updates**\n  * Basal and ISF results now explain when to wait before changing basal rates or opening the ISF editor.\n  * Mode guidance clarifies whether Trio will return to the usual mode or whether the user should finish another test first.\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "labels": [],
+      "url": "https://github.com/gordolio/Trio/pull/27",
+      "mergedAt": "2026-11-05T11:09:39Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "a25a7e81e04b91e3dcf708f67a9d57af973457ab",
-      "subject": "feat(isftest): Add guided ISF testing wizard with persisted sessions and results",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-03T23:44:09-06:00"
+      "sha": "e11ddab1e864dc9a21e5102f89df37f22de1e3ad",
+      "subject": "Adopt async device deletion and track next-dev",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-04T23:14:54+01:00"
     },
     {
-      "sha": "47bf4e31a9b87581909545a583108bc69a010de5",
-      "subject": "feat(settings-test): Run the ISF and basal tests in the settings test service",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-04T10:30:55-06:00"
+      "sha": "b60a0d07d9e2f2580995cbbee2fda17d27941479",
+      "subject": "Merge pull request #1738 from dnzxy/feat/async-device-deletion",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-05T07:03:41+01:00"
     },
     {
-      "sha": "a20f24e9417f9db920eb379fb8cf7c70e0e3ecb4",
-      "subject": "fix(settings-test): Close the gaps an adversarial review found in the ISF and basal tests",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-04T16:26:19-06:00"
+      "sha": "23bb3be3634e3d3f3fe2e9bcf525c3d4425b24ae",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.59 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-05T06:03:53Z"
     },
     {
-      "sha": "fdc68e3de0acc5002b0b78bb69cdeab1c9a6f484",
-      "subject": "fix(settings-test): Address CodeRabbit's review of the ISF and basal tests",
+      "sha": "465fad44af52a1cc2c97c382843c8cbff9992277",
+      "subject": "feat(settings-test): Open a test while another runs and list its steps in a sheet",
       "author": "Gordon Child",
-      "authoredAt": "2026-11-04T22:31:47-06:00"
+      "authoredAt": "2026-11-05T02:29:03-06:00"
     },
     {
-      "sha": "8697a6a8dd1d559fd274350a9eb52b0b4b493013",
-      "subject": "fix(basaltest): Show the error when the SMB read fails after a refresh",
+      "sha": "8a76b6e274718ceabc8fbe76e69438dcc9064a90",
+      "subject": "fix(settings-test): Word two ISF steps as the test runs them",
       "author": "Gordon Child",
-      "authoredAt": "2026-11-04T22:48:12-06:00"
+      "authoredAt": "2026-11-05T02:57:55-06:00"
     },
     {
-      "sha": "c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5",
-      "subject": "Merge pull request #26 from gordolio/feat/isf-test-wizard",
+      "sha": "f3fc90a43c375486567eccb405b99481d04bd083",
+      "subject": "test(settings-test): Wait for a begin task before checking none was sent",
       "author": "Gordon Child",
-      "authoredAt": "2026-11-04T22:55:06-06:00"
+      "authoredAt": "2026-11-05T04:47:25-06:00"
+    },
+    {
+      "sha": "2acaebef670c470c0230617a9e58288e7bd69484",
+      "subject": "fix(settings-test): Don't name a test's own session as another test running",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-05T05:05:32-06:00"
+    },
+    {
+      "sha": "0983774948ba6dda8747c0c47b035d0ae661e3e4",
+      "subject": "Merge pull request #27 from gordolio/feat/settings-test-steps-sheet",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-05T05:09:39-06:00"
+    },
+    {
+      "sha": "1959ed3e2665263da769860f70758b00ce0f0bb8",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-05T05:10:28-06:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
-      "path": "Trio.xcodeproj/project.pbxproj"
+      "path": ".gitmodules"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Application/AppDelegate.swift"
+      "path": "AccuChekKit"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/BasalTestDataFlow.swift"
+      "path": "CGMBLEKit"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/BasalTestModels.swift"
+      "path": "Config.xcconfig"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/BasalTestProvider.swift"
+      "path": "DanaKit"
+    },
+    {
+      "status": "M",
+      "path": "EversenseKit"
+    },
+    {
+      "status": "M",
+      "path": "G7SensorKit"
+    },
+    {
+      "status": "M",
+      "path": "LibreLoop"
+    },
+    {
+      "status": "M",
+      "path": "LibreTransmitter"
+    },
+    {
+      "status": "M",
+      "path": "LoopKit"
+    },
+    {
+      "status": "M",
+      "path": "MedtrumKit"
+    },
+    {
+      "status": "M",
+      "path": "MinimedKit"
+    },
+    {
+      "status": "M",
+      "path": "OmnipodKit"
+    },
+    {
+      "status": "M",
+      "path": "RileyLinkKit"
+    },
+    {
+      "status": "M",
+      "path": "SyaiKit"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
     },
     {
       "status": "M",
@@ -177,79 +291,19 @@
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestFastView.swift"
-    },
-    {
-      "status": "M",
       "path": "Trio/Sources/Modules/BasalTest/View/BasalTestResultView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestRootView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/ISFTestDataFlow.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/ISFTestModels.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/ISFTestProvider.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/ISFTestRunnerRules.swift"
-    },
-    {
-      "status": "A",
       "path": "Trio/Sources/Modules/ISFTest/ISFTestStateModel.swift"
     },
     {
-      "status": "A",
+      "status": "M",
       "path": "Trio/Sources/Modules/ISFTest/View/ISFTestCheckView.swift"
     },
     {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestDoseView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestRaiseView.swift"
-    },
-    {
-      "status": "A",
+      "status": "M",
       "path": "Trio/Sources/Modules/ISFTest/View/ISFTestResultView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestRootView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestSettleView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestWaitView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestWaitingCards.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestDataFlow.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestModels.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestSchedule.swift"
     },
     {
       "status": "M",
@@ -261,79 +315,23 @@
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestFormula.swift"
-    },
-    {
-      "status": "M",
       "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestRootView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Router/Screen.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/BasalTestRunner.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/ISFTestRunner.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/ISFTestRunnerFinish.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/ISFTestRunnerTypes.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/SettingsTestLaunchNotifications.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/SettingsTestNotices.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/SettingsTestRunner.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Services/SettingsTest/SettingsTestScreenOpener.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/SettingsTest/SettingsTestService.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/UserNotifications/UserNotificationsManager.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/BasalTestRunnerTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/ISFTestRunnerTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/ISFTestTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/SettingsTestFakes.swift"
-    },
-    {
-      "status": "A",
       "path": "TrioTests/SettingsTestRunnerTests.swift"
     },
     {
       "status": "M",
       "path": "TrioTests/SettingsTestTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "dexcom-share-client-swift"
+    },
+    {
+      "status": "M",
+      "path": "scripts/define_common_trio.sh"
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "inputHash": "eafbd725367b61a388c440db8fa9f73a23482f55c87456ef589a1d70c71e94e7",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1738",
+    "title": "Smoother pump removal and updated device libraries",
+    "changes": [
+      "Removing a pump now completes without interrupting other app actions.",
+      "Device and sensor integrations were updated to newer next-dev branches."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1738",
+      "diff:6a74a5a2fbc7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

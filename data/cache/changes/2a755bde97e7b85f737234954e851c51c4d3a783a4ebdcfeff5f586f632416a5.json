@@ -1,0 +1,22 @@
+{
+  "inputHash": "3344b8d73cb5e8fb419c95dfbf057ea9be1e2f27d25729c29b09cc6b706f5ac4",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#27",
+    "title": "View test checks and steps before starting",
+    "changes": [
+      "You can open any settings test to read its checks and steps while another test runs.",
+      "Starting remains blocked and the Check screen names the active test."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:gordolio/Trio#27",
+      "diff:2a755bde97e7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
