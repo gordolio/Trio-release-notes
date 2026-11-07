@@ -1,22 +1,18 @@
-# Trio Build 1959ed3
+# Trio Build b4a5d38
 
-Built 2026-11-05T11:31:42.000Z from `c7ec5cb..1959ed3`.
+Built 2026-11-07T18:43:05.000Z from `1959ed3..b4a5d38`.
 
 ## Highlights
 
-- **Smoother pump removal and updated device libraries**
-  - Removing a pump now completes without interrupting other app actions.
-  - Device and sensor integrations were updated to newer next-dev branches.
-  - [View source](https://github.com/nightscout/Trio/pull/1738)
-- **View test checks and steps before starting**
-  - You can open any settings test to read its checks and steps while another test runs.
-  - Starting remains blocked and the Check screen names the active test.
-  - [View source](https://github.com/gordolio/Trio/pull/27)
+- **Fix Tidepool dose upload failures**
+  - Dose uploads to Tidepool now succeed instead of failing with a configuration error.
+  - Previously missing insulin entries are now uploaded and visible in Tidepool Web.
+  - [View source](https://github.com/nightscout/Trio/pull/1742)
 
 ## Build Metadata
 
-- Source workflow: [42016896981](https://github.com/gordolio/Trio/actions/runs/42016896981)
-- Previous built commit: [`c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5`](https://github.com/gordolio/Trio/commit/c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5)
-- Current built commit: [`1959ed3e2665263da769860f70758b00ce0f0bb8`](https://github.com/gordolio/Trio/commit/1959ed3e2665263da769860f70758b00ce0f0bb8)
+- Source workflow: [42400898116](https://github.com/gordolio/Trio/actions/runs/42400898116)
+- Previous built commit: [`1959ed3e2665263da769860f70758b00ce0f0bb8`](https://github.com/gordolio/Trio/commit/1959ed3e2665263da769860f70758b00ce0f0bb8)
+- Current built commit: [`b4a5d3807348c0240134781fd72867dbd819513b`](https://github.com/gordolio/Trio/commit/b4a5d3807348c0240134781fd72867dbd819513b)
 - Provenance model: `openai/gpt-5-mini`
 - Generator: `0.3.1`, prompt `7`

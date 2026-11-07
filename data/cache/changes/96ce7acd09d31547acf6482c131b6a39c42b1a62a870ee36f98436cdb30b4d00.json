@@ -1,0 +1,22 @@
+{
+  "inputHash": "740e67d0b749638bc3e3084a58244781a781f25f684d5eeece5ba14ae86a5f51",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1742",
+    "title": "Fix Tidepool dose upload failures",
+    "changes": [
+      "Dose uploads to Tidepool now succeed instead of failing with a configuration error.",
+      "Previously missing insulin entries are now uploaded and visible in Tidepool Web."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#1742",
+      "commit:83e890d9fc66"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 42400898116,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/42400898116",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "1959ed3e2665263da769860f70758b00ce0f0bb8",
+    "currentBuiltSha": "b4a5d3807348c0240134781fd72867dbd819513b",
+    "shortSha": "b4a5d38",
+    "buildDate": "2026-11-07T18:43:05.000Z",
+    "generationDate": "2026-11-07T18:52:44.941Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1742",
+      "title": "Fix Tidepool dose upload failures",
+      "changes": [
+        "Dose uploads to Tidepool now succeed instead of failing with a configuration error.",
+        "Previously missing insulin entries are now uploaded and visible in Tidepool Web."
+      ],
+      "category": "fixes",
+      "sourceIds": [
+        "pr:gordolio/Trio#1742",
+        "commit:83e890d9fc66"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1742"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:gordolio/Trio#1742",
+          "type": "pull-request",
+          "title": "gordolio/Trio#1742: Fix Tidepool dose uploads failing with \"configuration\"",
+          "url": "https://github.com/nightscout/Trio/pull/1742"
+        },
+        {
+          "id": "commit:83e890d9fc66",
+          "type": "commit",
+          "title": "Fix Tidepool dose uploads failing with \"configuration\"",
+          "url": "https://github.com/gordolio/Trio/commit/83e890d9fc668d18e9479e02b3dddd45cd756a6c"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1742,
+      "title": "Fix Tidepool dose uploads failing with \"configuration\"",
+      "body": "Fixes #1734\n\n## Problem\n\nOn `dev`, with Tidepool connected, every dose upload fails with `Tidepool upload of N dose entries failed: configuration`. Carbs, glucose, settings and pump events still upload. Doses are only retried for 24 hours, so insulin that keeps failing is eventually not backfilled.\n\n`TidepoolService.uploadDoseData` annotates doses first, and `annotateDoses` throws `TidepoolServiceError.configuration` when `remoteDataServiceDelegate` is nil. Trio never sets that delegate.\n\n## Change\n\n`BaseTidepoolManager` now conforms to `RemoteDataServiceDelegate` and sets itself as the delegate in the `tidepoolService` property's `didSet`, so every created or restored service gets it.\n\n- `getBasalHistory` returns `[]` on purpose. With a non-empty history, `DoseEntry.annotated(with:)` hits a `preconditionFailure` for temp basals with `unit == .units`, which is how Trio builds them. An empty history leaves each dose as Trio built it.\n- `automationHistory` returns one period covering the requested range, using the current dosing mode. Trio sets `automatic` on every dose, and the overlay skips doses that already have it.\n- `fetchDeviceLogs` returns `[]`.\n\nUpload-only: nothing here changes how Trio doses insulin.\n\n## Testing\n\n- Added unit tests (`Tidepool dose annotation Tests`): an empty basal history leaves a Trio temp basal untouched, the explicit `automatic` flag is preserved, and a single automation period doesn't split a dose. All 38 tests in the 4 Tidepool suites pass on this branch.\n- Verified on a real device on `dev` 1.0.2.58 (TidepoolService `9cee9e1`) with only this change applied. Before the change every upload logged `failed: configuration` with a 218-entry backlog. After installing the branch, `Uploaded 218 dose entries to Tidepool` followed immediately, then `Uploaded 1 dose entries` for a new dose. The doses show in Tidepool Web's Daily view.\n- Also verified earlier on a fork build of `dev` 1.0.2.55 (TidepoolService `54097855`).\n\n## Screenshots\n- Tidepool Data Platform\n<img width=\"600\" height=\"439\" alt=\"image\" src=\"https://github.com/user-attachments/assets/83aeff43-5705-4d24-8059-736f81384d99\" />\n\n- Trio\n<img width=\"337\" height=\"600\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a3c1e335-828d-4329-882c-58e194d59a8c\" />\n\nThe bug reproduces on `dev` 1.0.2.58 with #1719 applied (details in #1734).\n\n---\nThe root-cause analysis and fix were worked out with Claude Code.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1742",
+      "mergedAt": "2026-11-07T15:30:18Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1742,
+      "title": "Fix Tidepool dose uploads failing with \"configuration\"",
+      "body": "Fixes #1734\n\n## Problem\n\nOn `dev`, with Tidepool connected, every dose upload fails with `Tidepool upload of N dose entries failed: configuration`. Carbs, glucose, settings and pump events still upload. Doses are only retried for 24 hours, so insulin that keeps failing is eventually not backfilled.\n\n`TidepoolService.uploadDoseData` annotates doses first, and `annotateDoses` throws `TidepoolServiceError.configuration` when `remoteDataServiceDelegate` is nil. Trio never sets that delegate.\n\n## Change\n\n`BaseTidepoolManager` now conforms to `RemoteDataServiceDelegate` and sets itself as the delegate in the `tidepoolService` property's `didSet`, so every created or restored service gets it.\n\n- `getBasalHistory` returns `[]` on purpose. With a non-empty history, `DoseEntry.annotated(with:)` hits a `preconditionFailure` for temp basals with `unit == .units`, which is how Trio builds them. An empty history leaves each dose as Trio built it.\n- `automationHistory` returns one period covering the requested range, using the current dosing mode. Trio sets `automatic` on every dose, and the overlay skips doses that already have it.\n- `fetchDeviceLogs` returns `[]`.\n\nUpload-only: nothing here changes how Trio doses insulin.\n\n## Testing\n\n- Added unit tests (`Tidepool dose annotation Tests`): an empty basal history leaves a Trio temp basal untouched, the explicit `automatic` flag is preserved, and a single automation period doesn't split a dose. All 38 tests in the 4 Tidepool suites pass on this branch.\n- Verified on a real device on `dev` 1.0.2.58 (TidepoolService `9cee9e1`) with only this change applied. Before the change every upload logged `failed: configuration` with a 218-entry backlog. After installing the branch, `Uploaded 218 dose entries to Tidepool` followed immediately, then `Uploaded 1 dose entries` for a new dose. The doses show in Tidepool Web's Daily view.\n- Also verified earlier on a fork build of `dev` 1.0.2.55 (TidepoolService `54097855`).\n\n## Screenshots\n- Tidepool Data Platform\n<img width=\"600\" height=\"439\" alt=\"image\" src=\"https://github.com/user-attachments/assets/83aeff43-5705-4d24-8059-736f81384d99\" />\n\n- Trio\n<img width=\"337\" height=\"600\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a3c1e335-828d-4329-882c-58e194d59a8c\" />\n\nThe bug reproduces on `dev` 1.0.2.58 with #1719 applied (details in #1734).\n\n---\nThe root-cause analysis and fix were worked out with Claude Code.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1742",
+      "mergedAt": "2026-11-07T15:30:18Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "83e890d9fc668d18e9479e02b3dddd45cd756a6c",
+      "subject": "Fix Tidepool dose uploads failing with \"configuration\"",
+      "author": "David Cintron",
+      "authoredAt": "2026-11-03T09:21:24-06:00"
+    },
+    {
+      "sha": "d785ea9b501dd25e37217e788b482283530080b4",
+      "subject": "Trim Tidepool delegate comments",
+      "author": "David Cintron",
+      "authoredAt": "2026-11-06T10:45:52-06:00"
+    },
+    {
+      "sha": "169637a609d6035044f9d0bf57692459f638e7ad",
+      "subject": "Merge pull request #1742 from loudestnoise/fix/tidepool-remote-data-delegate",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-07T16:30:17+01:00"
+    },
+    {
+      "sha": "7040d5ac34c2deeec7e0e91ba33a2de2b7468a0f",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.60 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-07T15:30:28Z"
+    },
+    {
+      "sha": "b4a5d3807348c0240134781fd72867dbd819513b",
+      "subject": "Merge branch 'nightscout:dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-07T12:21:10-06:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/TidepoolManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/TidepoolTherapySettingsTests.swift"
+    }
+  ]
+}

@@ -1,84 +1,50 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 42016896981,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/42016896981",
+    "sourceWorkflowRunId": 42400898116,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/42400898116",
     "sourceBranch": "dev",
-    "previousBuiltSha": "c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5",
-    "currentBuiltSha": "1959ed3e2665263da769860f70758b00ce0f0bb8",
-    "shortSha": "1959ed3",
-    "buildDate": "2026-11-05T11:31:42.000Z",
-    "generationDate": "2026-11-05T11:43:10.607Z",
+    "previousBuiltSha": "1959ed3e2665263da769860f70758b00ce0f0bb8",
+    "currentBuiltSha": "b4a5d3807348c0240134781fd72867dbd819513b",
+    "shortSha": "b4a5d38",
+    "buildDate": "2026-11-07T18:43:05.000Z",
+    "generationDate": "2026-11-07T18:52:44.941Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1738",
-      "title": "Smoother pump removal and updated device libraries",
+      "changeId": "pr:nightscout/Trio#1742",
+      "title": "Fix Tidepool dose upload failures",
       "changes": [
-        "Removing a pump now completes without interrupting other app actions.",
-        "Device and sensor integrations were updated to newer next-dev branches."
+        "Dose uploads to Tidepool now succeed instead of failing with a configuration error.",
+        "Previously missing insulin entries are now uploaded and visible in Tidepool Web."
       ],
-      "category": "pump-and-cgm",
+      "category": "fixes",
       "sourceIds": [
-        "pr:nightscout/Trio#1738",
-        "diff:6a74a5a2fbc7"
+        "pr:gordolio/Trio#1742",
+        "commit:83e890d9fc66"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1738"
+        "pr:nightscout/Trio#1742"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1738",
+          "id": "pr:gordolio/Trio#1742",
           "type": "pull-request",
-          "title": "nightscout/Trio#1738: Adopt async device deletion and track next-dev",
-          "url": "https://github.com/nightscout/Trio/pull/1738"
+          "title": "gordolio/Trio#1742: Fix Tidepool dose uploads failing with \"configuration\"",
+          "url": "https://github.com/nightscout/Trio/pull/1742"
         },
         {
-          "id": "diff:6a74a5a2fbc7",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1738",
-          "url": "https://github.com/gordolio/Trio/compare/685a0d82949cf70f8531e4625aaecca8ee3307c2...b60a0d07d9e2f2580995cbbee2fda17d27941479"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:gordolio/Trio#27",
-      "title": "View test checks and steps before starting",
-      "changes": [
-        "You can open any settings test to read its checks and steps while another test runs.",
-        "Starting remains blocked and the Check screen names the active test."
-      ],
-      "category": "interface-improvements",
-      "sourceIds": [
-        "pr:gordolio/Trio#27",
-        "diff:2a755bde97e7"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:gordolio/Trio#27"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "pr:gordolio/Trio#27",
-          "type": "pull-request",
-          "title": "gordolio/Trio#27: feat(settings-test): Show a test's checks and steps before it can start",
-          "url": "https://github.com/gordolio/Trio/pull/27"
-        },
-        {
-          "id": "diff:2a755bde97e7",
-          "type": "diff",
-          "title": "Diff for pr:gordolio/Trio#27",
-          "url": "https://github.com/gordolio/Trio/compare/c7ec5cb471d348b5bbfcc5c5641c1c31cad269a5...0983774948ba6dda8747c0c47b035d0ae661e3e4"
+          "id": "commit:83e890d9fc66",
+          "type": "commit",
+          "title": "Fix Tidepool dose uploads failing with \"configuration\"",
+          "url": "https://github.com/gordolio/Trio/commit/83e890d9fc668d18e9479e02b3dddd45cd756a6c"
         }
       ]
     }
@@ -134,204 +100,67 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1738,
-      "title": "Adopt async device deletion and track next-dev",
-      "body": "Brings in changes as of https://github.com/LoopKit/LoopKit/pull/685\nMoves submodule SHA pins to track LoopKit next-dev for the loopandlearn forks of our submodules. ",
+      "number": 1742,
+      "title": "Fix Tidepool dose uploads failing with \"configuration\"",
+      "body": "Fixes #1734\n\n## Problem\n\nOn `dev`, with Tidepool connected, every dose upload fails with `Tidepool upload of N dose entries failed: configuration`. Carbs, glucose, settings and pump events still upload. Doses are only retried for 24 hours, so insulin that keeps failing is eventually not backfilled.\n\n`TidepoolService.uploadDoseData` annotates doses first, and `annotateDoses` throws `TidepoolServiceError.configuration` when `remoteDataServiceDelegate` is nil. Trio never sets that delegate.\n\n## Change\n\n`BaseTidepoolManager` now conforms to `RemoteDataServiceDelegate` and sets itself as the delegate in the `tidepoolService` property's `didSet`, so every created or restored service gets it.\n\n- `getBasalHistory` returns `[]` on purpose. With a non-empty history, `DoseEntry.annotated(with:)` hits a `preconditionFailure` for temp basals with `unit == .units`, which is how Trio builds them. An empty history leaves each dose as Trio built it.\n- `automationHistory` returns one period covering the requested range, using the current dosing mode. Trio sets `automatic` on every dose, and the overlay skips doses that already have it.\n- `fetchDeviceLogs` returns `[]`.\n\nUpload-only: nothing here changes how Trio doses insulin.\n\n## Testing\n\n- Added unit tests (`Tidepool dose annotation Tests`): an empty basal history leaves a Trio temp basal untouched, the explicit `automatic` flag is preserved, and a single automation period doesn't split a dose. All 38 tests in the 4 Tidepool suites pass on this branch.\n- Verified on a real device on `dev` 1.0.2.58 (TidepoolService `9cee9e1`) with only this change applied. Before the change every upload logged `failed: configuration` with a 218-entry backlog. After installing the branch, `Uploaded 218 dose entries to Tidepool` followed immediately, then `Uploaded 1 dose entries` for a new dose. The doses show in Tidepool Web's Daily view.\n- Also verified earlier on a fork build of `dev` 1.0.2.55 (TidepoolService `54097855`).\n\n## Screenshots\n- Tidepool Data Platform\n<img width=\"600\" height=\"439\" alt=\"image\" src=\"https://github.com/user-attachments/assets/83aeff43-5705-4d24-8059-736f81384d99\" />\n\n- Trio\n<img width=\"337\" height=\"600\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a3c1e335-828d-4329-882c-58e194d59a8c\" />\n\nThe bug reproduces on `dev` 1.0.2.58 with #1719 applied (details in #1734).\n\n---\nThe root-cause analysis and fix were worked out with Claude Code.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1738",
-      "mergedAt": "2026-11-05T06:03:41Z"
+      "url": "https://github.com/nightscout/Trio/pull/1742",
+      "mergedAt": "2026-11-07T15:30:18Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1738,
-      "title": "Adopt async device deletion and track next-dev",
-      "body": "Brings in changes as of https://github.com/LoopKit/LoopKit/pull/685\nMoves submodule SHA pins to track LoopKit next-dev for the loopandlearn forks of our submodules. ",
+      "number": 1742,
+      "title": "Fix Tidepool dose uploads failing with \"configuration\"",
+      "body": "Fixes #1734\n\n## Problem\n\nOn `dev`, with Tidepool connected, every dose upload fails with `Tidepool upload of N dose entries failed: configuration`. Carbs, glucose, settings and pump events still upload. Doses are only retried for 24 hours, so insulin that keeps failing is eventually not backfilled.\n\n`TidepoolService.uploadDoseData` annotates doses first, and `annotateDoses` throws `TidepoolServiceError.configuration` when `remoteDataServiceDelegate` is nil. Trio never sets that delegate.\n\n## Change\n\n`BaseTidepoolManager` now conforms to `RemoteDataServiceDelegate` and sets itself as the delegate in the `tidepoolService` property's `didSet`, so every created or restored service gets it.\n\n- `getBasalHistory` returns `[]` on purpose. With a non-empty history, `DoseEntry.annotated(with:)` hits a `preconditionFailure` for temp basals with `unit == .units`, which is how Trio builds them. An empty history leaves each dose as Trio built it.\n- `automationHistory` returns one period covering the requested range, using the current dosing mode. Trio sets `automatic` on every dose, and the overlay skips doses that already have it.\n- `fetchDeviceLogs` returns `[]`.\n\nUpload-only: nothing here changes how Trio doses insulin.\n\n## Testing\n\n- Added unit tests (`Tidepool dose annotation Tests`): an empty basal history leaves a Trio temp basal untouched, the explicit `automatic` flag is preserved, and a single automation period doesn't split a dose. All 38 tests in the 4 Tidepool suites pass on this branch.\n- Verified on a real device on `dev` 1.0.2.58 (TidepoolService `9cee9e1`) with only this change applied. Before the change every upload logged `failed: configuration` with a 218-entry backlog. After installing the branch, `Uploaded 218 dose entries to Tidepool` followed immediately, then `Uploaded 1 dose entries` for a new dose. The doses show in Tidepool Web's Daily view.\n- Also verified earlier on a fork build of `dev` 1.0.2.55 (TidepoolService `54097855`).\n\n## Screenshots\n- Tidepool Data Platform\n<img width=\"600\" height=\"439\" alt=\"image\" src=\"https://github.com/user-attachments/assets/83aeff43-5705-4d24-8059-736f81384d99\" />\n\n- Trio\n<img width=\"337\" height=\"600\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a3c1e335-828d-4329-882c-58e194d59a8c\" />\n\nThe bug reproduces on `dev` 1.0.2.58 with #1719 applied (details in #1734).\n\n---\nThe root-cause analysis and fix were worked out with Claude Code.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1738",
-      "mergedAt": "2026-11-05T06:03:41Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 27,
-      "title": "feat(settings-test): Show a test's checks and steps before it can start",
-      "body": "Every settings test's row in the hub now opens, even while another test runs, so you can read what a test needs and how it goes before you can start it. Starting is still up to its Check screen. With another test running, that screen's first blocker now names that test. It used to say to switch out of Basal Testing, which would have ended the running test. **See the steps** under the Check screen's header opens a sheet with every step. Carb Ratio stays closed while it's rebuilt.\n\n![Hub while the basal test runs, before and after](https://github.com/user-attachments/assets/f6f5b872-6d11-4dac-ac76-2c4b9997942f) ![ISF Check while the basal test runs, before and after, and its steps sheet](https://github.com/user-attachments/assets/76f3bb28-0f01-4f78-8fe6-71dfa451736a)\n\nAn old result reached this way doesn't offer the basal or ISF editor while the other test runs, and doesn't say the usual mode is back while Basal Testing is on.\n\nTested with the full unit suite and rendered before and after on iOS 27.2 (SE, 17 Pro), 18.0 (SE, 16 Pro) and 26.0 with Liquid Glass off (SE, 17 Pro), at five text sizes and Display Zoom.\n\n#19\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n<!-- coderabbit-ai-generated:v1 -->\n\n## Summary by CodeRabbit\n\n* **New Features**\n  * Added step-by-step guides for basal and ISF tests, including details based on selected test settings.\n  * Test screens remain available to review while another settings test is running; the checks identify the active test and prevent starting a second one.\n* **Updates**\n  * Basal and ISF results now explain when to wait before changing basal rates or opening the ISF editor.\n  * Mode guidance clarifies whether Trio will return to the usual mode or whether the user should finish another test first.\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
-      "labels": [],
-      "url": "https://github.com/gordolio/Trio/pull/27",
-      "mergedAt": "2026-11-05T11:09:39Z"
+      "url": "https://github.com/nightscout/Trio/pull/1742",
+      "mergedAt": "2026-11-07T15:30:18Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "e11ddab1e864dc9a21e5102f89df37f22de1e3ad",
-      "subject": "Adopt async device deletion and track next-dev",
-      "author": "dnzxy",
-      "authoredAt": "2026-11-04T23:14:54+01:00"
+      "sha": "83e890d9fc668d18e9479e02b3dddd45cd756a6c",
+      "subject": "Fix Tidepool dose uploads failing with \"configuration\"",
+      "author": "David Cintron",
+      "authoredAt": "2026-11-03T09:21:24-06:00"
     },
     {
-      "sha": "b60a0d07d9e2f2580995cbbee2fda17d27941479",
-      "subject": "Merge pull request #1738 from dnzxy/feat/async-device-deletion",
+      "sha": "d785ea9b501dd25e37217e788b482283530080b4",
+      "subject": "Trim Tidepool delegate comments",
+      "author": "David Cintron",
+      "authoredAt": "2026-11-06T10:45:52-06:00"
+    },
+    {
+      "sha": "169637a609d6035044f9d0bf57692459f638e7ad",
+      "subject": "Merge pull request #1742 from loudestnoise/fix/tidepool-remote-data-delegate",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-05T07:03:41+01:00"
+      "authoredAt": "2026-11-07T16:30:17+01:00"
     },
     {
-      "sha": "23bb3be3634e3d3f3fe2e9bcf525c3d4425b24ae",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.59 [skip ci]",
+      "sha": "7040d5ac34c2deeec7e0e91ba33a2de2b7468a0f",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.60 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-05T06:03:53Z"
+      "authoredAt": "2026-11-07T15:30:28Z"
     },
     {
-      "sha": "465fad44af52a1cc2c97c382843c8cbff9992277",
-      "subject": "feat(settings-test): Open a test while another runs and list its steps in a sheet",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-05T02:29:03-06:00"
-    },
-    {
-      "sha": "8a76b6e274718ceabc8fbe76e69438dcc9064a90",
-      "subject": "fix(settings-test): Word two ISF steps as the test runs them",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-05T02:57:55-06:00"
-    },
-    {
-      "sha": "f3fc90a43c375486567eccb405b99481d04bd083",
-      "subject": "test(settings-test): Wait for a begin task before checking none was sent",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-05T04:47:25-06:00"
-    },
-    {
-      "sha": "2acaebef670c470c0230617a9e58288e7bd69484",
-      "subject": "fix(settings-test): Don't name a test's own session as another test running",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-05T05:05:32-06:00"
-    },
-    {
-      "sha": "0983774948ba6dda8747c0c47b035d0ae661e3e4",
-      "subject": "Merge pull request #27 from gordolio/feat/settings-test-steps-sheet",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-05T05:09:39-06:00"
-    },
-    {
-      "sha": "1959ed3e2665263da769860f70758b00ce0f0bb8",
+      "sha": "b4a5d3807348c0240134781fd72867dbd819513b",
       "subject": "Merge branch 'nightscout:dev' into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-11-05T05:10:28-06:00"
+      "authoredAt": "2026-11-07T12:21:10-06:00"
     }
   ],
   "includedFiles": [
-    {
-      "status": "M",
-      "path": ".gitmodules"
-    },
-    {
-      "status": "M",
-      "path": "AccuChekKit"
-    },
-    {
-      "status": "M",
-      "path": "CGMBLEKit"
-    },
     {
       "status": "M",
       "path": "Config.xcconfig"
     },
     {
       "status": "M",
-      "path": "DanaKit"
+      "path": "Trio/Sources/Services/Network/TidepoolManager.swift"
     },
     {
       "status": "M",
-      "path": "EversenseKit"
-    },
-    {
-      "status": "M",
-      "path": "G7SensorKit"
-    },
-    {
-      "status": "M",
-      "path": "LibreLoop"
-    },
-    {
-      "status": "M",
-      "path": "LibreTransmitter"
-    },
-    {
-      "status": "M",
-      "path": "LoopKit"
-    },
-    {
-      "status": "M",
-      "path": "MedtrumKit"
-    },
-    {
-      "status": "M",
-      "path": "MinimedKit"
-    },
-    {
-      "status": "M",
-      "path": "OmnipodKit"
-    },
-    {
-      "status": "M",
-      "path": "RileyLinkKit"
-    },
-    {
-      "status": "M",
-      "path": "SyaiKit"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/APS/DeviceDataManager.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/BasalTestStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestCheckView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/BasalTest/View/BasalTestResultView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/ISFTest/ISFTestStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestCheckView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/ISFTest/View/ISFTestResultView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/SettingsTest/SettingsTestStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestComponents.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/SettingsTest/View/SettingsTestRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/SettingsTestRunnerTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/SettingsTestTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "dexcom-share-client-swift"
-    },
-    {
-      "status": "M",
-      "path": "scripts/define_common_trio.sh"
+      "path": "TrioTests/TidepoolTherapySettingsTests.swift"
     }
   ]
 }
