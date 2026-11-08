@@ -1,0 +1,21 @@
+{
+  "inputHash": "ea6e57d8173517dfbaf9b322b7ac553093a67cd7f39a965dedce58eb728f4b69",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1674",
+    "title": "Fix basal rate editor rounding on 0.01 U/h pumps",
+    "changes": [
+      "Basal rates no longer revert to 0.01 after reopening. Saving will correct profiles with the wrong lowest rate."
+    ],
+    "category": "pump-and-cgm",
+    "sourceIds": [
+      "pr:nightscout/Trio#1674",
+      "diff:d85661e301f5"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

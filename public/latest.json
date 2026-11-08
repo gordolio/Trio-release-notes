@@ -1,50 +1,49 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 42400898116,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/42400898116",
+    "sourceWorkflowRunId": 42486975637,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/42486975637",
     "sourceBranch": "dev",
-    "previousBuiltSha": "1959ed3e2665263da769860f70758b00ce0f0bb8",
-    "currentBuiltSha": "b4a5d3807348c0240134781fd72867dbd819513b",
-    "shortSha": "b4a5d38",
-    "buildDate": "2026-11-07T18:43:05.000Z",
-    "generationDate": "2026-11-07T18:52:44.941Z",
+    "previousBuiltSha": "b4a5d3807348c0240134781fd72867dbd819513b",
+    "currentBuiltSha": "9fdbdc8ec4e65fba22ac05df899ea5d6b0a7638f",
+    "shortSha": "9fdbdc8",
+    "buildDate": "2026-11-08T14:07:52.000Z",
+    "generationDate": "2026-11-08T14:18:38.995Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1742",
-      "title": "Fix Tidepool dose upload failures",
+      "changeId": "pr:nightscout/Trio#1674",
+      "title": "Fix basal rate editor rounding on 0.01 U/h pumps",
       "changes": [
-        "Dose uploads to Tidepool now succeed instead of failing with a configuration error.",
-        "Previously missing insulin entries are now uploaded and visible in Tidepool Web."
+        "Basal rates no longer revert to 0.01 after reopening. Saving will correct profiles with the wrong lowest rate."
       ],
-      "category": "fixes",
+      "category": "pump-and-cgm",
       "sourceIds": [
-        "pr:gordolio/Trio#1742",
-        "commit:83e890d9fc66"
+        "pr:nightscout/Trio#1674",
+        "diff:d85661e301f5"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1742"
+        "pr:nightscout/Trio#1674"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:gordolio/Trio#1742",
+          "id": "pr:nightscout/Trio#1674",
           "type": "pull-request",
-          "title": "gordolio/Trio#1742: Fix Tidepool dose uploads failing with \"configuration\"",
-          "url": "https://github.com/nightscout/Trio/pull/1742"
+          "title": "nightscout/Trio#1674: Fix basal rate editor saving the lowest rate on 0.01 U/h pumps",
+          "url": "https://github.com/nightscout/Trio/pull/1674"
         },
         {
-          "id": "commit:83e890d9fc66",
-          "type": "commit",
-          "title": "Fix Tidepool dose uploads failing with \"configuration\"",
-          "url": "https://github.com/gordolio/Trio/commit/83e890d9fc668d18e9479e02b3dddd45cd756a6c"
+          "id": "diff:d85661e301f5",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1674",
+          "url": "https://github.com/gordolio/Trio/compare/7ff1f777e7921feed7370298da92f5ab29665e8d...11a4239a5d3b62c03372c54cf5d800a9fe6f7dc7"
         }
       ]
     }
@@ -100,53 +99,77 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1742,
-      "title": "Fix Tidepool dose uploads failing with \"configuration\"",
-      "body": "Fixes #1734\n\n## Problem\n\nOn `dev`, with Tidepool connected, every dose upload fails with `Tidepool upload of N dose entries failed: configuration`. Carbs, glucose, settings and pump events still upload. Doses are only retried for 24 hours, so insulin that keeps failing is eventually not backfilled.\n\n`TidepoolService.uploadDoseData` annotates doses first, and `annotateDoses` throws `TidepoolServiceError.configuration` when `remoteDataServiceDelegate` is nil. Trio never sets that delegate.\n\n## Change\n\n`BaseTidepoolManager` now conforms to `RemoteDataServiceDelegate` and sets itself as the delegate in the `tidepoolService` property's `didSet`, so every created or restored service gets it.\n\n- `getBasalHistory` returns `[]` on purpose. With a non-empty history, `DoseEntry.annotated(with:)` hits a `preconditionFailure` for temp basals with `unit == .units`, which is how Trio builds them. An empty history leaves each dose as Trio built it.\n- `automationHistory` returns one period covering the requested range, using the current dosing mode. Trio sets `automatic` on every dose, and the overlay skips doses that already have it.\n- `fetchDeviceLogs` returns `[]`.\n\nUpload-only: nothing here changes how Trio doses insulin.\n\n## Testing\n\n- Added unit tests (`Tidepool dose annotation Tests`): an empty basal history leaves a Trio temp basal untouched, the explicit `automatic` flag is preserved, and a single automation period doesn't split a dose. All 38 tests in the 4 Tidepool suites pass on this branch.\n- Verified on a real device on `dev` 1.0.2.58 (TidepoolService `9cee9e1`) with only this change applied. Before the change every upload logged `failed: configuration` with a 218-entry backlog. After installing the branch, `Uploaded 218 dose entries to Tidepool` followed immediately, then `Uploaded 1 dose entries` for a new dose. The doses show in Tidepool Web's Daily view.\n- Also verified earlier on a fork build of `dev` 1.0.2.55 (TidepoolService `54097855`).\n\n## Screenshots\n- Tidepool Data Platform\n<img width=\"600\" height=\"439\" alt=\"image\" src=\"https://github.com/user-attachments/assets/83aeff43-5705-4d24-8059-736f81384d99\" />\n\n- Trio\n<img width=\"337\" height=\"600\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a3c1e335-828d-4329-882c-58e194d59a8c\" />\n\nThe bug reproduces on `dev` 1.0.2.58 with #1719 applied (details in #1734).\n\n---\nThe root-cause analysis and fix were worked out with Claude Code.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "number": 1674,
+      "title": "Fix basal rate editor saving the lowest rate on 0.01 U/h pumps",
+      "body": "closes #1669\r\n\r\nchanges in:\r\n- basal rate editor (`BasalProfileEditorProvider`, `BasalProfileEditor.StateModel`)\r\n- pump setup from Home (`HomeStateModel`)\r\n- pump settings (`PumpConfigStateModel`)\r\n- Autotune basal sync (`AutotuneConfigStateModel`)\r\n\r\nas @Frans6812 showed on a Dana-i, and @MikePlante1 saw on a Tandem Mobi, the rate shows as 0.01 after a reopen. it hits pumps whose rate list has a 0.01 U/h step; a 0.025 or 0.05 step is not affected.\r\n\r\ncause: the editor builds its rate list with `Decimal(Double)`, so 0.59 becomes 0.5899999999999998976, and the picker writes `Decimal($0)` of a `Double` again. the editor then looks the rate up with `firstIndex(of:)`, an exact match. on a miss it falls back to index 0, the lowest rate. so after a reopen the row shows 0.01 and the total is wrong, and the next save sends 0.01 for every such row, also rows that were not edited. the value that was sent before was also 1 ulp low (0.5899999999999997), which the Dana-i stores as 0.58.\r\n\r\nchange:\r\n- round the pump rates to 3 places, as `APSManager.supportedBasalRates` does.\r\n- match a row to the largest pump rate that is not above it, so a rate is never rounded up.\r\n- enable Save when a stored rate differs from its pump rate, so 1 save corrects a profile saved before this fix.\r\n- round the `Double` sent to the pump to 3 places at the 4 places that sync the schedule.\r\n\r\nnot changed: the Dana-i still cuts some exact rates by 0.01 (for example 0.57 → 0.56) because DanaKit converts with `UInt16(rate * 100)`. that needs a DanaKit fix.\r\n\r\neffect on other pumps (each driver's conversion run over its full rate list, old vs new value):\r\n- Omnipod, Minimed x22/x23, Medtrum: same value on the pump for every rate.\r\n- Dana-i: better for most rates (editor save: 26 better, 0 worse). from an exact source (Nightscout import, onboarding, Autotune) 9 rates are 0.01 lower, for example 0.57 → 0.56, because of the DanaKit truncation above.\r\n- oref, Garmin, chart and bolus calculator: same. Nightscout upload, settings export and Tidepool: the exact rate (0.59, before 0.5899999999999999); Tidepool sends 1 extra settings upload.\r\n- Tandem Mobi: not checked.\r\n\r\ntested in the simulator with the pump simulator set to Dana increments (0.01 U/h):\r\n- before: set 00:00 to 0.59 and save, reopen: the row shows 0.01 and the total 0.24 U/day. add a 00:30 row with 0.59 and save: 00:00 is saved and sent as 0.01.\r\n- after: set 00:00 to 0.59 and save, reopen: the row shows 0.59 and the total 14.16 U/day; `basal_profile.json` and the pump schedule hold 0.59.\r\n\r\nbefore:\r\n\r\nhttps://github.com/user-attachments/assets/6897b190-12c9-406b-a740-60b77460cdf1\r\n\r\nafter:\r\n\r\nhttps://github.com/user-attachments/assets/5fe61052-92fe-4bb8-9119-dfb0562dca57\r\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1742",
-      "mergedAt": "2026-11-07T15:30:18Z"
+      "url": "https://github.com/nightscout/Trio/pull/1674",
+      "mergedAt": "2026-11-08T03:39:18Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1742,
-      "title": "Fix Tidepool dose uploads failing with \"configuration\"",
-      "body": "Fixes #1734\n\n## Problem\n\nOn `dev`, with Tidepool connected, every dose upload fails with `Tidepool upload of N dose entries failed: configuration`. Carbs, glucose, settings and pump events still upload. Doses are only retried for 24 hours, so insulin that keeps failing is eventually not backfilled.\n\n`TidepoolService.uploadDoseData` annotates doses first, and `annotateDoses` throws `TidepoolServiceError.configuration` when `remoteDataServiceDelegate` is nil. Trio never sets that delegate.\n\n## Change\n\n`BaseTidepoolManager` now conforms to `RemoteDataServiceDelegate` and sets itself as the delegate in the `tidepoolService` property's `didSet`, so every created or restored service gets it.\n\n- `getBasalHistory` returns `[]` on purpose. With a non-empty history, `DoseEntry.annotated(with:)` hits a `preconditionFailure` for temp basals with `unit == .units`, which is how Trio builds them. An empty history leaves each dose as Trio built it.\n- `automationHistory` returns one period covering the requested range, using the current dosing mode. Trio sets `automatic` on every dose, and the overlay skips doses that already have it.\n- `fetchDeviceLogs` returns `[]`.\n\nUpload-only: nothing here changes how Trio doses insulin.\n\n## Testing\n\n- Added unit tests (`Tidepool dose annotation Tests`): an empty basal history leaves a Trio temp basal untouched, the explicit `automatic` flag is preserved, and a single automation period doesn't split a dose. All 38 tests in the 4 Tidepool suites pass on this branch.\n- Verified on a real device on `dev` 1.0.2.58 (TidepoolService `9cee9e1`) with only this change applied. Before the change every upload logged `failed: configuration` with a 218-entry backlog. After installing the branch, `Uploaded 218 dose entries to Tidepool` followed immediately, then `Uploaded 1 dose entries` for a new dose. The doses show in Tidepool Web's Daily view.\n- Also verified earlier on a fork build of `dev` 1.0.2.55 (TidepoolService `54097855`).\n\n## Screenshots\n- Tidepool Data Platform\n<img width=\"600\" height=\"439\" alt=\"image\" src=\"https://github.com/user-attachments/assets/83aeff43-5705-4d24-8059-736f81384d99\" />\n\n- Trio\n<img width=\"337\" height=\"600\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a3c1e335-828d-4329-882c-58e194d59a8c\" />\n\nThe bug reproduces on `dev` 1.0.2.58 with #1719 applied (details in #1734).\n\n---\nThe root-cause analysis and fix were worked out with Claude Code.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "number": 1674,
+      "title": "Fix basal rate editor saving the lowest rate on 0.01 U/h pumps",
+      "body": "closes #1669\r\n\r\nchanges in:\r\n- basal rate editor (`BasalProfileEditorProvider`, `BasalProfileEditor.StateModel`)\r\n- pump setup from Home (`HomeStateModel`)\r\n- pump settings (`PumpConfigStateModel`)\r\n- Autotune basal sync (`AutotuneConfigStateModel`)\r\n\r\nas @Frans6812 showed on a Dana-i, and @MikePlante1 saw on a Tandem Mobi, the rate shows as 0.01 after a reopen. it hits pumps whose rate list has a 0.01 U/h step; a 0.025 or 0.05 step is not affected.\r\n\r\ncause: the editor builds its rate list with `Decimal(Double)`, so 0.59 becomes 0.5899999999999998976, and the picker writes `Decimal($0)` of a `Double` again. the editor then looks the rate up with `firstIndex(of:)`, an exact match. on a miss it falls back to index 0, the lowest rate. so after a reopen the row shows 0.01 and the total is wrong, and the next save sends 0.01 for every such row, also rows that were not edited. the value that was sent before was also 1 ulp low (0.5899999999999997), which the Dana-i stores as 0.58.\r\n\r\nchange:\r\n- round the pump rates to 3 places, as `APSManager.supportedBasalRates` does.\r\n- match a row to the largest pump rate that is not above it, so a rate is never rounded up.\r\n- enable Save when a stored rate differs from its pump rate, so 1 save corrects a profile saved before this fix.\r\n- round the `Double` sent to the pump to 3 places at the 4 places that sync the schedule.\r\n\r\nnot changed: the Dana-i still cuts some exact rates by 0.01 (for example 0.57 → 0.56) because DanaKit converts with `UInt16(rate * 100)`. that needs a DanaKit fix.\r\n\r\neffect on other pumps (each driver's conversion run over its full rate list, old vs new value):\r\n- Omnipod, Minimed x22/x23, Medtrum: same value on the pump for every rate.\r\n- Dana-i: better for most rates (editor save: 26 better, 0 worse). from an exact source (Nightscout import, onboarding, Autotune) 9 rates are 0.01 lower, for example 0.57 → 0.56, because of the DanaKit truncation above.\r\n- oref, Garmin, chart and bolus calculator: same. Nightscout upload, settings export and Tidepool: the exact rate (0.59, before 0.5899999999999999); Tidepool sends 1 extra settings upload.\r\n- Tandem Mobi: not checked.\r\n\r\ntested in the simulator with the pump simulator set to Dana increments (0.01 U/h):\r\n- before: set 00:00 to 0.59 and save, reopen: the row shows 0.01 and the total 0.24 U/day. add a 00:30 row with 0.59 and save: 00:00 is saved and sent as 0.01.\r\n- after: set 00:00 to 0.59 and save, reopen: the row shows 0.59 and the total 14.16 U/day; `basal_profile.json` and the pump schedule hold 0.59.\r\n\r\nbefore:\r\n\r\nhttps://github.com/user-attachments/assets/6897b190-12c9-406b-a740-60b77460cdf1\r\n\r\nafter:\r\n\r\nhttps://github.com/user-attachments/assets/5fe61052-92fe-4bb8-9119-dfb0562dca57\r\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1742",
-      "mergedAt": "2026-11-07T15:30:18Z"
+      "url": "https://github.com/nightscout/Trio/pull/1674",
+      "mergedAt": "2026-11-08T03:39:18Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "83e890d9fc668d18e9479e02b3dddd45cd756a6c",
-      "subject": "Fix Tidepool dose uploads failing with \"configuration\"",
-      "author": "David Cintron",
-      "authoredAt": "2026-11-03T09:21:24-06:00"
+      "sha": "d951c37e053fdeb5501a445e5aff92dbd778e846",
+      "subject": "Fix basal rate editor saving the lowest rate on 0.01 U/h pumps",
+      "author": "Lamercho",
+      "authoredAt": "2026-10-26T11:07:13+02:00"
     },
     {
-      "sha": "d785ea9b501dd25e37217e788b482283530080b4",
-      "subject": "Trim Tidepool delegate comments",
-      "author": "David Cintron",
-      "authoredAt": "2026-11-06T10:45:52-06:00"
+      "sha": "9b60e4e8b732ebbd74d92802599bb7f83f557253",
+      "subject": "Merge branch 'dev' into fix/basal-rate-editor-rounding",
+      "author": "/dev/null",
+      "authoredAt": "2026-10-29T11:32:03+02:00"
     },
     {
-      "sha": "169637a609d6035044f9d0bf57692459f638e7ad",
-      "subject": "Merge pull request #1742 from loudestnoise/fix/tidepool-remote-data-delegate",
+      "sha": "76181fd380ad16d733d9ddb1e501c66e5d11952e",
+      "subject": "Merge branch 'dev' into fix/basal-rate-editor-rounding",
+      "author": "/dev/null",
+      "authoredAt": "2026-10-30T17:20:33+02:00"
+    },
+    {
+      "sha": "7c48cab0acbc617cb1cbda2d664245f1d3210963",
+      "subject": "Merge branch 'dev' into fix/basal-rate-editor-rounding",
+      "author": "Lamercho",
+      "authoredAt": "2026-10-31T20:45:40+02:00"
+    },
+    {
+      "sha": "d5492dbcad2ee8bc5a4eb8eb21de19f2942a057a",
+      "subject": "Merge branch 'dev' into fix/basal-rate-editor-rounding",
+      "author": "/dev/null",
+      "authoredAt": "2026-11-01T16:22:10+02:00"
+    },
+    {
+      "sha": "9b742e3818e008d46f48eda5dc5b3975eb3cee6c",
+      "subject": "Merge branch 'dev' into fix/basal-rate-editor-rounding",
+      "author": "/dev/null",
+      "authoredAt": "2026-11-03T00:36:16+02:00"
+    },
+    {
+      "sha": "11a4239a5d3b62c03372c54cf5d800a9fe6f7dc7",
+      "subject": "Merge pull request #1674 from Lamercho/fix/basal-rate-editor-rounding",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-07T16:30:17+01:00"
+      "authoredAt": "2026-11-08T04:39:17+01:00"
     },
     {
-      "sha": "7040d5ac34c2deeec7e0e91ba33a2de2b7468a0f",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.60 [skip ci]",
+      "sha": "e7ded6fe89df9d6816b30f74cfd72225fab7b7d5",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.61 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-07T15:30:28Z"
+      "authoredAt": "2026-11-08T03:39:28Z"
     },
     {
-      "sha": "b4a5d3807348c0240134781fd72867dbd819513b",
-      "subject": "Merge branch 'nightscout:dev' into dev",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-07T12:21:10-06:00"
+      "sha": "9fdbdc8ec4e65fba22ac05df899ea5d6b0a7638f",
+      "subject": "Merge branch 'dev' of https://github.com/nightscout/Trio into dev",
+      "author": "GH Action - Upstream Sync",
+      "authoredAt": "2026-11-08T13:52:32Z"
     }
   ],
   "includedFiles": [
@@ -156,11 +179,19 @@
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Network/TidepoolManager.swift"
+      "path": "Trio/Sources/Modules/BasalProfileEditor/BasalProfileEditorProvider.swift"
     },
     {
       "status": "M",
-      "path": "TrioTests/TidepoolTherapySettingsTests.swift"
+      "path": "Trio/Sources/Modules/BasalProfileEditor/BasalProfileEditorStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/PumpConfig/PumpConfigStateModel.swift"
     }
   ]
 }
