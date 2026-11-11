@@ -1,0 +1,22 @@
+{
+  "inputHash": "a538828f6d5ab8b2ff36105f56eabc54b1224db3f80370c40cd9600584f45209",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1727",
+    "title": "Consistent percent formatting and rounding",
+    "changes": [
+      "Percent values now follow the user's locale and round correctly.",
+      "Screens show consistent percent text (no trailing .0) and translated adjustment footers."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1727",
+      "commit:5352a14b5ba3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

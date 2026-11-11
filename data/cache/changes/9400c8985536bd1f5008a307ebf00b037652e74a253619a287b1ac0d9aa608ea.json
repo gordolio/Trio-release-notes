@@ -1,0 +1,22 @@
+{
+  "inputHash": "bfa0a26b6df50c4680d52e0dbb27b056137f1bd518fe71f341e570c93b1f98e4",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1757",
+    "title": "Fix Medtrum alarm crash loop",
+    "changes": [
+      "App no longer repeatedly crashes when Medtrum pump alarms occur.",
+      "Deleting devices should no longer cause intermittent errors."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1757",
+      "diff:9400c8985536"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

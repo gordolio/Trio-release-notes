@@ -1,0 +1,22 @@
+{
+  "inputHash": "c426817b98855819e974573fc1057f39d8d84b717c303082b5374ce979ce5dc3",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1672",
+    "title": "Delay database open until first unlock",
+    "changes": [
+      "Trio waits for the first device unlock before opening its database to avoid startup failures.",
+      "After unlocking, Trio will start itself instead of staying on the \"Oops, something went wrong\" screen."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1672",
+      "commit:c6ff7e02c5ab"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

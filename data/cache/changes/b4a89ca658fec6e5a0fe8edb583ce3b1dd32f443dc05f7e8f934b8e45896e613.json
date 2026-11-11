@@ -1,0 +1,23 @@
+{
+  "inputHash": "fb2fd7cfb20b1433a8ef11a9afad4ad50a9c3721ce2332adde248222f329efc7",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1756",
+    "title": "Redact signed-out Dexcom Share accounts",
+    "changes": [
+      "Log exports now redact Dexcom Share account names even if they were signed out.",
+      "Exported logs show a generic account placeholder instead of the real name."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1756",
+      "commit:a349f86d427c",
+      "diff:b4a89ca658fe"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

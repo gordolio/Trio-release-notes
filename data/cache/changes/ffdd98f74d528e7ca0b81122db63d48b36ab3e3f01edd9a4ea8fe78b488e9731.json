@@ -1,0 +1,23 @@
+{
+  "inputHash": "5c362bf68ce7b5b77dbd6130ac777fd50c2cd22d80638b8c8166c90c1214a90c",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#31",
+    "title": "Food camera rotation fix for iPhone Duo",
+    "changes": [
+      "Food camera preview and photos now appear upright on iPhone Duo.",
+      "Switching cameras no longer produces upside-down or mis-cropped pictures."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#31",
+      "commit:5b729500e5d2",
+      "commit:e8a9141145ce"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "9332535a10d362376c04a606390dfa6613c4b17c3a63d70203746ef1ceb28f28",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1743",
+    "title": "Unified, localized duration and time-ago text",
+    "changes": [
+      "Durations and \"time ago\" labels now follow your device language and use a consistent compact format.",
+      "VoiceOver will speak durations with correct words and plurals (e.g., \"1 hour, 30 minutes\")."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1743",
+      "commit:3bb3c6019fc1"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
