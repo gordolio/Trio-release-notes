@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trio Build fd76774</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin-top: 2.5rem; }
+    article { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 1rem 0; }
+    .sources, footer { font-size: .875rem; opacity: .8; }
+    a { color: inherit; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trio Build fd76774</h1>
+    <p>Built 2026-11-12T01:14:47.000Z from <code>57a6734..fd76774</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Prevent zero-unit boluses and expire stale entries</h3><ul><li>The Watch refuses and won&#39;t send 0 U bolus requests, showing an error message.</li><li>Processing screens now time out and entries older than 2 minutes are cleared and not sent.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1751" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix front-camera cropping and mirroring</h3><ul><li>Front-camera photos now crop correctly to the scan frame.</li><li>Front-camera photos no longer trigger a mirroring error.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/pull/32" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Respect custom app display name</h3><ul><li>iPhone will show the app&#39;s configured display name instead of always showing &quot;Trio&quot;.</li><li>If you changed the app display name, your chosen name will now appear.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1767" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Tidepool login alerts and UI indicator</h3><ul><li>Trio alerts you when Tidepool login is rejected and shows a Login Required indicator.</li><li>Home and Settings show the status and let you open Tidepool settings.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1706" rel="noreferrer">View source on GitHub</a></p></article></section>
+  </main>
+  <footer>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/43130885490">Source workflow 43130885490</a></p>
+  </footer>
+</body>
+</html>

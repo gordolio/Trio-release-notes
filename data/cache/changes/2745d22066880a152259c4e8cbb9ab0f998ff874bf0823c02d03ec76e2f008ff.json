@@ -1,0 +1,22 @@
+{
+  "inputHash": "867353a9f992533d3f7620f1dce3be1fb05a1a44ab67a27134a2bbf03ed91a9e",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1751",
+    "title": "Prevent zero-unit boluses and expire stale entries",
+    "changes": [
+      "The Watch refuses and won't send 0 U bolus requests, showing an error message.",
+      "Processing screens now time out and entries older than 2 minutes are cleared and not sent."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1751",
+      "commit:d0b62df51d46"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build 57a6734</title>
+  <title>Trio Build fd76774</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,17 +16,15 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build 57a6734</h1>
-    <p>Built 2026-11-11T04:00:19.000Z from <code>9fdbdc8..57a6734</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Consistent percent formatting and rounding</h3><ul><li>Percent values now follow the user&#39;s locale and round correctly.</li><li>Screens show consistent percent text (no trailing .0) and translated adjustment footers.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1727" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Unified, localized duration and time-ago text</h3><ul><li>Durations and &quot;time ago&quot; labels now follow your device language and use a consistent compact format.</li><li>VoiceOver will speak durations with correct words and plurals (e.g., &quot;1 hour, 30 minutes&quot;).</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1743" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Redact signed-out Dexcom Share accounts</h3><ul><li>Log exports now redact Dexcom Share account names even if they were signed out.</li><li>Exported logs show a generic account placeholder instead of the real name.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1756" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Fix Medtrum alarm crash loop</h3><ul><li>App no longer repeatedly crashes when Medtrum pump alarms occur.</li><li>Deleting devices should no longer cause intermittent errors.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1757" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Delay database open until first unlock</h3><ul><li>Trio waits for the first device unlock before opening its database to avoid startup failures.</li><li>After unlocking, Trio will start itself instead of staying on the &quot;Oops, something went wrong&quot; screen.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1672" rel="noreferrer">View source on GitHub</a></p></article></section>
-<section><h2>Fixes</h2><article><h3>Food camera rotation fix for iPhone Duo</h3><ul><li>Food camera preview and photos now appear upright on iPhone Duo.</li><li>Switching cameras no longer produces upside-down or mis-cropped pictures.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/pull/31" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build fd76774</h1>
+    <p>Built 2026-11-12T01:14:47.000Z from <code>57a6734..fd76774</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Prevent zero-unit boluses and expire stale entries</h3><ul><li>The Watch refuses and won&#39;t send 0 U bolus requests, showing an error message.</li><li>Processing screens now time out and entries older than 2 minutes are cleared and not sent.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1751" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Fix front-camera cropping and mirroring</h3><ul><li>Front-camera photos now crop correctly to the scan frame.</li><li>Front-camera photos no longer trigger a mirroring error.</li></ul><p class="sources"><a href="https://github.com/gordolio/Trio/pull/32" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Respect custom app display name</h3><ul><li>iPhone will show the app&#39;s configured display name instead of always showing &quot;Trio&quot;.</li><li>If you changed the app display name, your chosen name will now appear.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1767" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Tidepool login alerts and UI indicator</h3><ul><li>Trio alerts you when Tidepool login is rejected and shows a Login Required indicator.</li><li>Home and Settings show the status and let you open Tidepool settings.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1706" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/42954436914">Source workflow 42954436914</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/43130885490">Source workflow 43130885490</a></p>
   </footer>
 </body>
 </html>

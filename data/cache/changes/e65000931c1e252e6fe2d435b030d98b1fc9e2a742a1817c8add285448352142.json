@@ -1,0 +1,22 @@
+{
+  "inputHash": "672a6f88d494cb86544d42028a5057ecd7086734f3dbf9536603067e0e525cc7",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:gordolio/Trio#32",
+    "title": "Fix front-camera cropping and mirroring",
+    "changes": [
+      "Front-camera photos now crop correctly to the scan frame.",
+      "Front-camera photos no longer trigger a mirroring error."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:gordolio/Trio#32",
+      "diff:e65000931c1e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "7d133c209697c02ee0b74070055d55b5a63d6f39494eaf0f8d607b852d476c37",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1706",
+    "title": "Tidepool login alerts and UI indicator",
+    "changes": [
+      "Trio alerts you when Tidepool login is rejected and shows a Login Required indicator.",
+      "Home and Settings show the status and let you open Tidepool settings."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1706",
+      "commit:d1dda095d33e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

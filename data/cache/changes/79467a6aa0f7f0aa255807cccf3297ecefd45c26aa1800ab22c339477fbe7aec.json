@@ -1,0 +1,22 @@
+{
+  "inputHash": "6ba6aa496d0d3a491d31f47b706ca15207d66f5b368d3191b45d1625baafb4d2",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1767",
+    "title": "Respect custom app display name",
+    "changes": [
+      "iPhone will show the app's configured display name instead of always showing \"Trio\".",
+      "If you changed the app display name, your chosen name will now appear."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1767",
+      "diff:79467a6aa0f7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
