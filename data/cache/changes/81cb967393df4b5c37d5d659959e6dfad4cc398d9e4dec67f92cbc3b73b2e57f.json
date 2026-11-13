@@ -1,0 +1,22 @@
+{
+  "inputHash": "effb4760330f716f306dd4b29a1c2a9b9e2a00f7f21e3d05b259baa97c2c3a87",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1695",
+    "title": "Improved automated TestFlight notes",
+    "changes": [
+      "TestFlight build notes now show the full 4-part dev version alongside branch and commit when available.",
+      "Automated 'What to Test' notes are now created, and main builds append bundled release highlights."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1695",
+      "commit:204c43bd64d3"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,152 +1,50 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 43130885490,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/43130885490",
+    "sourceWorkflowRunId": 43370746741,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/43370746741",
     "sourceBranch": "dev",
-    "previousBuiltSha": "57a6734bdd33bd98bd05d0de0f31c0ce879b16f6",
-    "currentBuiltSha": "fd76774cc9033f5903c715ea5731d25205a6f979",
-    "shortSha": "fd76774",
-    "buildDate": "2026-11-12T01:14:47.000Z",
-    "generationDate": "2026-11-12T01:29:09.378Z",
+    "previousBuiltSha": "fd76774cc9033f5903c715ea5731d25205a6f979",
+    "currentBuiltSha": "7e2ad5150ae5306a531eaa0fc73dfcc601bcdf36",
+    "shortSha": "7e2ad51",
+    "buildDate": "2026-11-13T05:39:12.000Z",
+    "generationDate": "2026-11-13T05:55:27.166Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1751",
-      "title": "Prevent zero-unit boluses and expire stale entries",
+      "changeId": "pr:nightscout/Trio#1695",
+      "title": "Improved automated TestFlight notes",
       "changes": [
-        "The Watch refuses and won't send 0 U bolus requests, showing an error message.",
-        "Processing screens now time out and entries older than 2 minutes are cleared and not sent."
-      ],
-      "category": "fixes",
-      "sourceIds": [
-        "pr:nightscout/Trio#1751",
-        "commit:d0b62df51d46"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1751"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1751",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1751: Watch: stop 0 U boluses after a reconnect, time out Processing, expire entries after 2 min",
-          "url": "https://github.com/nightscout/Trio/pull/1751"
-        },
-        {
-          "id": "commit:d0b62df51d46",
-          "type": "commit",
-          "title": "Stop the watch from sending a 0 U bolus after the phone reconnects",
-          "url": "https://github.com/gordolio/Trio/commit/d0b62df51d46cb576fdb265cf9a1ad63c47a32a1"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:gordolio/Trio#32",
-      "title": "Fix front-camera cropping and mirroring",
-      "changes": [
-        "Front-camera photos now crop correctly to the scan frame.",
-        "Front-camera photos no longer trigger a mirroring error."
-      ],
-      "category": "fixes",
-      "sourceIds": [
-        "pr:gordolio/Trio#32",
-        "diff:e65000931c1e"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:gordolio/Trio#32"
-      ],
-      "highlight": true,
-      "provenance": "origin",
-      "sources": [
-        {
-          "id": "pr:gordolio/Trio#32",
-          "type": "pull-request",
-          "title": "gordolio/Trio#32: fix(food-camera): Keep front-camera crops on the scan frame and avoid a mirroring exception",
-          "url": "https://github.com/gordolio/Trio/pull/32"
-        },
-        {
-          "id": "diff:e65000931c1e",
-          "type": "diff",
-          "title": "Diff for pr:gordolio/Trio#32",
-          "url": "https://github.com/gordolio/Trio/compare/57a6734bdd33bd98bd05d0de0f31c0ce879b16f6...1055d4e770562a851d99665fb97f6c2579a85af8"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1767",
-      "title": "Respect custom app display name",
-      "changes": [
-        "iPhone will show the app's configured display name instead of always showing \"Trio\".",
-        "If you changed the app display name, your chosen name will now appear."
+        "TestFlight build notes now show the full 4-part dev version alongside branch and commit when available.",
+        "Automated 'What to Test' notes are now created, and main builds append bundled release highlights."
       ],
       "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1767",
-        "diff:79467a6aa0f7"
+        "pr:nightscout/Trio#1695",
+        "commit:204c43bd64d3"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1767"
+        "pr:nightscout/Trio#1695"
       ],
       "highlight": true,
-      "provenance": "upstream",
+      "provenance": "internal",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1767",
+          "id": "pr:nightscout/Trio#1695",
           "type": "pull-request",
-          "title": "nightscout/Trio#1767: Remove localization strings for CFBundleName and CFBundleDisplayName",
-          "url": "https://github.com/nightscout/Trio/pull/1767"
+          "title": "nightscout/Trio#1695: Improve automated TestFlight notes for browser build",
+          "url": "https://github.com/nightscout/Trio/pull/1695"
         },
         {
-          "id": "diff:79467a6aa0f7",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1767",
-          "url": "https://github.com/gordolio/Trio/compare/ade3a11a6342857fc5f51b3e2cd918362b374615...a876a487f5d3532e0b1eef1b14c2ffd426d23a10"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1706",
-      "title": "Tidepool login alerts and UI indicator",
-      "changes": [
-        "Trio alerts you when Tidepool login is rejected and shows a Login Required indicator.",
-        "Home and Settings show the status and let you open Tidepool settings."
-      ],
-      "category": "alerting-and-safety",
-      "sourceIds": [
-        "pr:nightscout/Trio#1706",
-        "commit:d1dda095d33e"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1706"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1706",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1706: Alert when Tidepool login is rejected",
-          "url": "https://github.com/nightscout/Trio/pull/1706"
-        },
-        {
-          "id": "commit:d1dda095d33e",
+          "id": "commit:204c43bd64d3",
           "type": "commit",
-          "title": "Alert when Tidepool login is rejected (#1706)",
-          "url": "https://github.com/gordolio/Trio/commit/d1dda095d33ed0aaa2ecf9138ec3ae65211f1be0"
+          "title": "Improve automated TestFlight notes for browser build (#1695)",
+          "url": "https://github.com/gordolio/Trio/commit/204c43bd64d345f3c740bb6a2cfa3e781cb8a678"
         }
       ]
     }
@@ -202,146 +100,41 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1751,
-      "title": "Watch: stop 0 U boluses after a reconnect, time out Processing, expire entries after 2 min",
-      "body": "## Problem\n\nA bolus entered on the Apple Watch can be sent to the phone as **0 U**, and the watch then stays on \"Processing…\" indefinitely.\n\nSeen in practice: a user dialed 3 U, reached the confirm screen, lowered and raised their wrist, then turned the crown to confirm. The watch log shows `Bolus of 0 U requested`; the phone log shows `Watch requested bolus of 0.0 U` and nothing after it. No insulin was delivered and the watch never left \"Processing…\".\n\nThree bugs combine:\n\n1. **A reconnect clears the entry being confirmed.** `WatchState.sessionReachabilityDidChange` reset `bolusAmount`, `carbsAmount` and `confirmationProgress` every time the phone became reachable again, which happens on each wrist raise. The confirm screen is bound to those same values, so the amount became 0 while it was on screen.\n2. **Nothing refuses a 0 U bolus, and the phone doesn't answer one.** The watch sent it, and `APSManager.enactBolus` returned early for `amount <= 0` without calling its callback, so the watch got no acknowledgment.\n3. **\"Processing…\" never times out.** `AcknowledgementPendingView` started its 5 s fallback in `onChange(of: showCommsAnimation)`, but the flag is already `true` when the view appears, so the fallback never ran. The `sendMessage` error handlers only logged.\n\n## Changes\n\nWatch:\n- Reachability changes no longer touch entries in progress. The main view still resets them when it appears.\n- `sendBolusRequest` refuses amounts of 0 or less with a visible message.\n- Every treatment request (bolus, carbs, override, temp target) shows \"iPhone not reachable. Nothing was sent.\" instead of an empty screen when the phone is unreachable.\n- `WatchState` times out a missing answer after 15 s, and ends the wait on a send error, with \"No answer from iPhone. Check Trio on your iPhone before trying again.\" A send error does not prove the request wasn't delivered: in the logs from this report, a message reported as failed (not reachable) was delivered about 2 s later. So the message points the user to the phone instead of saying the request failed. The view-level timer is removed.\n- **Entries expire 2 minutes after their last edit.** Confirming with the crown, or \"Log Carbs\", sends only an entry edited in the last 2 minutes; an older one is cleared and the watch says nothing was sent. When the app becomes active again, an entry older than 2 minutes is cleared and the watch returns to the main screen. Returning to the main screen, Cancel and sending end the entry. This replaces the reset-on-reconnect, which was presumably there to avoid stale amounts.\n\nPhone:\n- `enactBolus` answers every caller with a failure (\"Error! Bolus amount must be greater than 0 U.\") for amounts of 0 or less, or amounts that round to 0 on the pump. This also covers quick-pick and remote bolus, which got no answer before.\n\n## Tests\n\n- **Watch** (`Trio Watch App Tests`): a reconnect keeps the bolus entry; 0 U and negative boluses are refused; unreachable requests say nothing was sent; the timeout fires, is cancelled by an answer, and a send error ends the wait; the 2 minute entry boundary; expired and unedited entries are not sent; fresh entries are sent; a stale entry is cleared when the app becomes active.\n  - This target did not compile on `dev`: its tests used members that no longer exist (`isBolusCanceled`, `maxCOB`, the bolus cancel request) and `import SwiftUICore`, which Xcode 26 rejects. Those are removed or fixed here.\n- **Phone** (`TrioTests/BolusSafetyTests/EnactBolusAmountTests.swift`): `enactBolus` with 0, -0.05, -3 and NaN calls back exactly once with a failure.\n\nNot covered by automated tests: the view wiring (marking edits in the input views, the scene-phase check, popping to the main screen).\n\n## Known, unchanged\n\n- In the Meal & Bolus flow the watch sends carbs and bolus as two requests; the carbs answer ends the wait, so the bolus result isn't shown on the watch. Same as before this PR.\n- The confirm screen shows the amount floored to the bolus increment but sends the unrounded value, which the phone rounds again.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+      "number": 1695,
+      "title": "Improve automated TestFlight notes for browser build",
+      "body": "This PR is broken into three commits:\n\n1) Adds the 4-place version number to the notes if one is available (so not when building main)\n\n2) Removes the requirement of manually editing a note in App Store Connect before the automated notes are allowed\n\n3) Adds the bundled release notes from the last main release in the build to the notes in TestFlight. Limited to 4000-bytes by Apple.\n\nI can confirm that 1 and 3 work, but am unable to test 2 since my TestFlight already gets automated notes. Tested with https://github.com/MikePlante1/Trio/tree/testflight-notes-x27 to avoid issues acquiring GitHub runners.\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/0e34e167-d276-44b3-b455-4fe9845858c5\" />\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/c4e26b4a-2c15-4d7a-b092-14986d0c5c34\" />",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1751",
-      "mergedAt": "2026-11-11T04:36:25Z"
+      "url": "https://github.com/nightscout/Trio/pull/1695",
+      "mergedAt": "2026-11-12T22:54:34Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1751,
-      "title": "Watch: stop 0 U boluses after a reconnect, time out Processing, expire entries after 2 min",
-      "body": "## Problem\n\nA bolus entered on the Apple Watch can be sent to the phone as **0 U**, and the watch then stays on \"Processing…\" indefinitely.\n\nSeen in practice: a user dialed 3 U, reached the confirm screen, lowered and raised their wrist, then turned the crown to confirm. The watch log shows `Bolus of 0 U requested`; the phone log shows `Watch requested bolus of 0.0 U` and nothing after it. No insulin was delivered and the watch never left \"Processing…\".\n\nThree bugs combine:\n\n1. **A reconnect clears the entry being confirmed.** `WatchState.sessionReachabilityDidChange` reset `bolusAmount`, `carbsAmount` and `confirmationProgress` every time the phone became reachable again, which happens on each wrist raise. The confirm screen is bound to those same values, so the amount became 0 while it was on screen.\n2. **Nothing refuses a 0 U bolus, and the phone doesn't answer one.** The watch sent it, and `APSManager.enactBolus` returned early for `amount <= 0` without calling its callback, so the watch got no acknowledgment.\n3. **\"Processing…\" never times out.** `AcknowledgementPendingView` started its 5 s fallback in `onChange(of: showCommsAnimation)`, but the flag is already `true` when the view appears, so the fallback never ran. The `sendMessage` error handlers only logged.\n\n## Changes\n\nWatch:\n- Reachability changes no longer touch entries in progress. The main view still resets them when it appears.\n- `sendBolusRequest` refuses amounts of 0 or less with a visible message.\n- Every treatment request (bolus, carbs, override, temp target) shows \"iPhone not reachable. Nothing was sent.\" instead of an empty screen when the phone is unreachable.\n- `WatchState` times out a missing answer after 15 s, and ends the wait on a send error, with \"No answer from iPhone. Check Trio on your iPhone before trying again.\" A send error does not prove the request wasn't delivered: in the logs from this report, a message reported as failed (not reachable) was delivered about 2 s later. So the message points the user to the phone instead of saying the request failed. The view-level timer is removed.\n- **Entries expire 2 minutes after their last edit.** Confirming with the crown, or \"Log Carbs\", sends only an entry edited in the last 2 minutes; an older one is cleared and the watch says nothing was sent. When the app becomes active again, an entry older than 2 minutes is cleared and the watch returns to the main screen. Returning to the main screen, Cancel and sending end the entry. This replaces the reset-on-reconnect, which was presumably there to avoid stale amounts.\n\nPhone:\n- `enactBolus` answers every caller with a failure (\"Error! Bolus amount must be greater than 0 U.\") for amounts of 0 or less, or amounts that round to 0 on the pump. This also covers quick-pick and remote bolus, which got no answer before.\n\n## Tests\n\n- **Watch** (`Trio Watch App Tests`): a reconnect keeps the bolus entry; 0 U and negative boluses are refused; unreachable requests say nothing was sent; the timeout fires, is cancelled by an answer, and a send error ends the wait; the 2 minute entry boundary; expired and unedited entries are not sent; fresh entries are sent; a stale entry is cleared when the app becomes active.\n  - This target did not compile on `dev`: its tests used members that no longer exist (`isBolusCanceled`, `maxCOB`, the bolus cancel request) and `import SwiftUICore`, which Xcode 26 rejects. Those are removed or fixed here.\n- **Phone** (`TrioTests/BolusSafetyTests/EnactBolusAmountTests.swift`): `enactBolus` with 0, -0.05, -3 and NaN calls back exactly once with a failure.\n\nNot covered by automated tests: the view wiring (marking edits in the input views, the scene-phase check, popping to the main screen).\n\n## Known, unchanged\n\n- In the Meal & Bolus flow the watch sends carbs and bolus as two requests; the carbs answer ends the wait, so the bolus result isn't shown on the watch. Same as before this PR.\n- The confirm screen shows the amount floored to the bolus increment but sends the unrounded value, which the phone rounds again.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+      "number": 1695,
+      "title": "Improve automated TestFlight notes for browser build",
+      "body": "This PR is broken into three commits:\n\n1) Adds the 4-place version number to the notes if one is available (so not when building main)\n\n2) Removes the requirement of manually editing a note in App Store Connect before the automated notes are allowed\n\n3) Adds the bundled release notes from the last main release in the build to the notes in TestFlight. Limited to 4000-bytes by Apple.\n\nI can confirm that 1 and 3 work, but am unable to test 2 since my TestFlight already gets automated notes. Tested with https://github.com/MikePlante1/Trio/tree/testflight-notes-x27 to avoid issues acquiring GitHub runners.\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/0e34e167-d276-44b3-b455-4fe9845858c5\" />\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/c4e26b4a-2c15-4d7a-b092-14986d0c5c34\" />",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1751",
-      "mergedAt": "2026-11-11T04:36:25Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 32,
-      "title": "fix(food-camera): Keep front-camera crops on the scan frame and avoid a mirroring exception",
-      "body": "Follow-up to #31. Front cameras that support sensor orientation compensation rotate a photo's pixels, so the scan-frame crop missed on them. Apple says every iPhone Duo front camera uses it. The camera now turns compensation off after setup and after every camera switch, as Apple recommends once you use the rotation coordinator. The photo connection also stops adjusting mirroring automatically before it sets mirroring, because the SDK header says setting it otherwise throws. The crop test now checks which way the result turned.\n\nTested: `FoodCameraCropTests` pass on the iOS 27.2 simulator. Not yet checked on a physical Duo.\n\nApple: [Build a great camera experience for iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111465/)\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n<!-- coderabbit-ai-generated:v1 -->\n\n## Summary by CodeRabbit\n\n* **Bug Fixes**\n  * Improved camera capture orientation and front-camera mirroring so photos are more consistently presented as expected.\n  * Updated photo cropping behavior for rotated images, helping preserve the correct visual arrangement when photos are displayed upright.\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
-      "labels": [],
-      "url": "https://github.com/gordolio/Trio/pull/32",
-      "mergedAt": "2026-11-11T04:12:11Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1767,
-      "title": "Remove localization strings for CFBundleName and CFBundleDisplayName",
-      "body": "Fixes issue #1754 - stops the iPhone from using \"Trio\" as app name regardless of APP_DISPLAY_NAME in ConfigOverride.xcconfig OR display name in XCode being modified manually. Caused by the app name being defined as localized string, whilst the app name will never be translated. (in the official repo anyway)",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1767",
-      "mergedAt": "2026-11-11T23:51:36Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1767,
-      "title": "Remove localization strings for CFBundleName and CFBundleDisplayName",
-      "body": "Fixes issue #1754 - stops the iPhone from using \"Trio\" as app name regardless of APP_DISPLAY_NAME in ConfigOverride.xcconfig OR display name in XCode being modified manually. Caused by the app name being defined as localized string, whilst the app name will never be translated. (in the official repo anyway)",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1767",
-      "mergedAt": "2026-11-11T23:51:36Z"
-    },
-    {
-      "repository": "gordolio/Trio",
-      "number": 1706,
-      "title": "Alert when Tidepool login is rejected",
-      "body": "When Tidepool rejects the stored login (e.g. after a password change), uploads fail silently and Settings still shows \"Connected to Tidepool\". TidepoolKit didn't clear the session on a rejected token refresh, so TidepoolService never raised its own \"no longer authorized\" alert, and Trio dropped plugin alerts anyway.\n\n- Bump TidepoolKit to `0f127de` (tidepool-org/TidepoolKit#82), which drops the session on a 401 or 400 `invalid_grant` refresh, so the plugin's re-login alert fires\n- Route TidepoolService `issueAlert`/`retractAlert` into `TrioAlertManager`; catalog entry in Device Alarms (Normal tier, \"Services\")\n- Retract the re-login alert once logged in again, since TidepoolService doesn't\n- Wire service delegates on first setup too, not only after relaunch\n- Settings shows \"Tidepool Login Required\" with a red indicator when there is no session\n- Home multi-use panel shows \"Tidepool Login Required\" (below dosing warnings, above What's New), tapping opens Tidepool settings\n- Persist the login-required flag, since `TidepoolService` can't be restored without a session and the panel would otherwise vanish after a relaunch\n\nSupersedes #1186. Closes #1183.\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1706",
-      "mergedAt": "2026-11-11T23:52:28Z"
-    },
-    {
-      "repository": "nightscout/Trio",
-      "number": 1706,
-      "title": "Alert when Tidepool login is rejected",
-      "body": "When Tidepool rejects the stored login (e.g. after a password change), uploads fail silently and Settings still shows \"Connected to Tidepool\". TidepoolKit didn't clear the session on a rejected token refresh, so TidepoolService never raised its own \"no longer authorized\" alert, and Trio dropped plugin alerts anyway.\n\n- Bump TidepoolKit to `0f127de` (tidepool-org/TidepoolKit#82), which drops the session on a 401 or 400 `invalid_grant` refresh, so the plugin's re-login alert fires\n- Route TidepoolService `issueAlert`/`retractAlert` into `TrioAlertManager`; catalog entry in Device Alarms (Normal tier, \"Services\")\n- Retract the re-login alert once logged in again, since TidepoolService doesn't\n- Wire service delegates on first setup too, not only after relaunch\n- Settings shows \"Tidepool Login Required\" with a red indicator when there is no session\n- Home multi-use panel shows \"Tidepool Login Required\" (below dosing warnings, above What's New), tapping opens Tidepool settings\n- Persist the login-required flag, since `TidepoolService` can't be restored without a session and the panel would otherwise vanish after a relaunch\n\nSupersedes #1186. Closes #1183.\n",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1706",
-      "mergedAt": "2026-11-11T23:52:28Z"
+      "url": "https://github.com/nightscout/Trio/pull/1695",
+      "mergedAt": "2026-11-12T22:54:34Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "d0b62df51d46cb576fdb265cf9a1ad63c47a32a1",
-      "subject": "Stop the watch from sending a 0 U bolus after the phone reconnects",
-      "author": "James Woglom",
-      "authoredAt": "2026-11-07T13:55:43-05:00"
+      "sha": "204c43bd64d345f3c740bb6a2cfa3e781cb8a678",
+      "subject": "Improve automated TestFlight notes for browser build (#1695)",
+      "author": "Mike Plante",
+      "authoredAt": "2026-11-12T17:54:34-05:00"
     },
     {
-      "sha": "9a5cac061fb968eb6243c1c5b25f4327602a5bad",
-      "subject": "Expire watch carbs/bolus entries after 2 minutes",
-      "author": "James Woglom",
-      "authoredAt": "2026-11-07T14:00:06-05:00"
-    },
-    {
-      "sha": "3c6c1fcd7decc900899257eac599413f7c52ee53",
-      "subject": "fix(food-camera): Turn off sensor orientation compensation so front-camera crops match the scan frame",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-10T22:08:22-06:00"
-    },
-    {
-      "sha": "28142df829b694a1865762be645962aa23f0ac5d",
-      "subject": "fix(food-camera): Turn off automatic mirroring before mirroring front-camera photos",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-10T22:08:28-06:00"
-    },
-    {
-      "sha": "1055d4e770562a851d99665fb97f6c2579a85af8",
-      "subject": "Merge pull request #32 from gordolio/fix/duo-front-camera-crop",
-      "author": "Gordon Child",
-      "authoredAt": "2026-11-10T22:12:11-06:00"
-    },
-    {
-      "sha": "ce86febc4d40b58dfd69e5c77624a6a81dfd0602",
-      "subject": "Merge pull request #1751 from jwoglom-osaid/fix/watch-bolus-zero-amount",
-      "author": "James Woglom",
-      "authoredAt": "2026-11-10T23:36:25-05:00"
-    },
-    {
-      "sha": "ade3a11a6342857fc5f51b3e2cd918362b374615",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.67 [skip ci]",
+      "sha": "1197b518ec2a5bfebaa4e97831e42ba3041bcf02",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.70 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-11T04:36:35Z"
+      "authoredAt": "2026-11-12T22:54:50Z"
     },
     {
-      "sha": "67110b99a3894f34f90eb7569a29178f12979757",
-      "subject": "Remove localization strings for CFBundleName and CFBundleDisplayName",
-      "author": "Liroy van Hoewijk",
-      "authoredAt": "2026-11-11T23:10:07+01:00"
-    },
-    {
-      "sha": "a876a487f5d3532e0b1eef1b14c2ffd426d23a10",
-      "subject": "Merge pull request #1767 from LiroyvH/dev",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-12T00:51:35+01:00"
-    },
-    {
-      "sha": "233c31aaf4a6e75f89bd08f629e41a9c06d80f39",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.68 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-11-11T23:51:47Z"
-    },
-    {
-      "sha": "d1dda095d33ed0aaa2ecf9138ec3ae65211f1be0",
-      "subject": "Alert when Tidepool login is rejected (#1706)",
-      "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-12T00:52:27+01:00"
-    },
-    {
-      "sha": "6246f33bcce03e451303a87cdad5ead6cb50227a",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.69 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-11-11T23:52:39Z"
-    },
-    {
-      "sha": "fd76774cc9033f5903c715ea5731d25205a6f979",
+      "sha": "7e2ad5150ae5306a531eaa0fc73dfcc601bcdf36",
       "subject": "Merge upstream/dev into dev",
       "author": "Claude",
-      "authoredAt": "2026-11-12T00:49:57Z"
+      "authoredAt": "2026-11-13T05:11:10Z"
     }
   ],
   "includedFiles": [
@@ -351,119 +144,7 @@
     },
     {
       "status": "M",
-      "path": "Trio Watch App Extension/AIRequests/AIRequestFlowModifier.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/Views/AcknowledgementPendingView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/Views/BolusConfirmationView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/Views/BolusInputView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/Views/CarbsInputView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/Views/TrioMainWatchView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/WatchState+Requests.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Extension/WatchState.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio Watch App Tests/Unit Tests.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio.xcodeproj/project.pbxproj"
-    },
-    {
-      "status": "M",
-      "path": "Trio.xcworkspace/xcshareddata/swiftpm/Package.resolved"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Resources/InfoPlist.xcstrings"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/APS/APSManager.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Models/AIRequests/AIRequestWatchFlowController.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Home/View/HomeRootView+BottomControls.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Home/View/MultiUsePanelState.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Settings/View/TidepoolStartView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Treatments/View/AI/PhotoPickerWrapper.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/Alerts/AlertCatalogRegistry.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/Alerts/AlertCatalogVendor.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/Network/TidepoolManager.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AIAssistantsTests/Requests/AIRequestWatchFlowControllerTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AlertCatalogRegistryEntriesTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/BolusSafetyTests/EnactBolusAmountTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/CoreDataTests/CarbEntryMutationServiceTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/CoreDataTests/MultiUsePanelStateTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/FoodCameraCropTests.swift"
+      "path": "fastlane/Fastfile"
     }
   ]
 }

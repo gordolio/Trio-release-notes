@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 43370746741,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/43370746741",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "fd76774cc9033f5903c715ea5731d25205a6f979",
+    "currentBuiltSha": "7e2ad5150ae5306a531eaa0fc73dfcc601bcdf36",
+    "shortSha": "7e2ad51",
+    "buildDate": "2026-11-13T05:39:12.000Z",
+    "generationDate": "2026-11-13T05:55:27.166Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1695",
+      "title": "Improved automated TestFlight notes",
+      "changes": [
+        "TestFlight build notes now show the full 4-part dev version alongside branch and commit when available.",
+        "Automated 'What to Test' notes are now created, and main builds append bundled release highlights."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1695",
+        "commit:204c43bd64d3"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1695"
+      ],
+      "highlight": true,
+      "provenance": "internal",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1695",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1695: Improve automated TestFlight notes for browser build",
+          "url": "https://github.com/nightscout/Trio/pull/1695"
+        },
+        {
+          "id": "commit:204c43bd64d3",
+          "type": "commit",
+          "title": "Improve automated TestFlight notes for browser build (#1695)",
+          "url": "https://github.com/gordolio/Trio/commit/204c43bd64d345f3c740bb6a2cfa3e781cb8a678"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": []
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1695,
+      "title": "Improve automated TestFlight notes for browser build",
+      "body": "This PR is broken into three commits:\n\n1) Adds the 4-place version number to the notes if one is available (so not when building main)\n\n2) Removes the requirement of manually editing a note in App Store Connect before the automated notes are allowed\n\n3) Adds the bundled release notes from the last main release in the build to the notes in TestFlight. Limited to 4000-bytes by Apple.\n\nI can confirm that 1 and 3 work, but am unable to test 2 since my TestFlight already gets automated notes. Tested with https://github.com/MikePlante1/Trio/tree/testflight-notes-x27 to avoid issues acquiring GitHub runners.\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/0e34e167-d276-44b3-b455-4fe9845858c5\" />\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/c4e26b4a-2c15-4d7a-b092-14986d0c5c34\" />",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1695",
+      "mergedAt": "2026-11-12T22:54:34Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1695,
+      "title": "Improve automated TestFlight notes for browser build",
+      "body": "This PR is broken into three commits:\n\n1) Adds the 4-place version number to the notes if one is available (so not when building main)\n\n2) Removes the requirement of manually editing a note in App Store Connect before the automated notes are allowed\n\n3) Adds the bundled release notes from the last main release in the build to the notes in TestFlight. Limited to 4000-bytes by Apple.\n\nI can confirm that 1 and 3 work, but am unable to test 2 since my TestFlight already gets automated notes. Tested with https://github.com/MikePlante1/Trio/tree/testflight-notes-x27 to avoid issues acquiring GitHub runners.\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/0e34e167-d276-44b3-b455-4fe9845858c5\" />\n\n<img width=\"333\" src=\"https://github.com/user-attachments/assets/c4e26b4a-2c15-4d7a-b092-14986d0c5c34\" />",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1695",
+      "mergedAt": "2026-11-12T22:54:34Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "204c43bd64d345f3c740bb6a2cfa3e781cb8a678",
+      "subject": "Improve automated TestFlight notes for browser build (#1695)",
+      "author": "Mike Plante",
+      "authoredAt": "2026-11-12T17:54:34-05:00"
+    },
+    {
+      "sha": "1197b518ec2a5bfebaa4e97831e42ba3041bcf02",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.70 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-12T22:54:50Z"
+    },
+    {
+      "sha": "7e2ad5150ae5306a531eaa0fc73dfcc601bcdf36",
+      "subject": "Merge upstream/dev into dev",
+      "author": "Claude",
+      "authoredAt": "2026-11-13T05:11:10Z"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "fastlane/Fastfile"
+    }
+  ]
+}
