@@ -1,0 +1,21 @@
+{
+  "inputHash": "e69f60aac45fdc679ffecfab6bbc5ae26f43334024bf9cec339d9f12b85704f7",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1772",
+    "title": "Sponsor link updated",
+    "changes": [
+      "The \"Sponsor this project\" link now goes to donate.nightscoutfoundation.org."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1772",
+      "diff:793b0612f303"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
