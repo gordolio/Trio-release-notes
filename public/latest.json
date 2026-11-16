@@ -1,49 +1,84 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 43616217286,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/43616217286",
+    "sourceWorkflowRunId": 43922359747,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/43922359747",
     "sourceBranch": "dev",
-    "previousBuiltSha": "7e2ad5150ae5306a531eaa0fc73dfcc601bcdf36",
-    "currentBuiltSha": "aca8c0457e451635a461845fbee130368c609080",
-    "shortSha": "aca8c04",
-    "buildDate": "2026-11-14T16:57:19.000Z",
-    "generationDate": "2026-11-14T17:08:29.381Z",
+    "previousBuiltSha": "fc4f5c8f0f8d49b61f6e4631529042af546c7040",
+    "currentBuiltSha": "edb7b795e42df79af2526cdda4bfa2dc95850653",
+    "shortSha": "edb7b79",
+    "buildDate": "2026-11-16T18:23:18.000Z",
+    "generationDate": "2026-11-16T18:37:14.481Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1772",
-      "title": "Sponsor link updated",
+      "changeId": "pr:nightscout/Trio#1777",
+      "title": "Export Statistics to PDF",
       "changes": [
-        "The \"Sponsor this project\" link now goes to donate.nightscoutfoundation.org."
+        "You can export Statistics as a printable PDF report from the Statistics screen.",
+        "Build multi-page reports including charts and therapy settings, then share them via the iOS share sheet."
       ],
-      "category": "interface-improvements",
+      "category": "new-features",
       "sourceIds": [
-        "pr:nightscout/Trio#1772",
-        "diff:793b0612f303"
+        "pr:nightscout/Trio#1777",
+        "commit:d71b0a830659"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1772"
+        "pr:nightscout/Trio#1777"
       ],
       "highlight": true,
-      "provenance": "internal",
+      "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1772",
+          "id": "pr:nightscout/Trio#1777",
           "type": "pull-request",
-          "title": "nightscout/Trio#1772: Fix \"Sponsor this project\" link ",
-          "url": "https://github.com/nightscout/Trio/pull/1772"
+          "title": "nightscout/Trio#1777: [HackDiabetes2026] Export Statistics to PDF",
+          "url": "https://github.com/nightscout/Trio/pull/1777"
         },
         {
-          "id": "diff:793b0612f303",
-          "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1772",
-          "url": "https://github.com/gordolio/Trio/compare/1197b518ec2a5bfebaa4e97831e42ba3041bcf02...2c58c64f97dad99d2deb59a80cf931fa879cb204"
+          "id": "commit:d71b0a830659",
+          "type": "commit",
+          "title": "Expand Statistics PDF export into a multi-page report builder",
+          "url": "https://github.com/gordolio/Trio/commit/d71b0a8306592c4c409fb1a97b09a6056b8673dd"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1779",
+      "title": "Fix development-branch warning alert",
+      "changes": [
+        "Dismissing the non-release build warning now reliably closes the alert.",
+        "The 'How to Return to Main' button opens the documentation as expected."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1779",
+        "commit:a500b0ca7462"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1779"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1779",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1779: Fix \"Publishing changes from within view updates\" from the dev branch…",
+          "url": "https://github.com/nightscout/Trio/pull/1779"
+        },
+        {
+          "id": "commit:a500b0ca7462",
+          "type": "commit",
+          "title": "Fix \"Publishing changes from within view updates\" from the dev branch warning",
+          "url": "https://github.com/gordolio/Trio/commit/a500b0ca7462c81774a210320e15920fd4b231e4"
         }
       ]
     }
@@ -99,57 +134,291 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1772,
-      "title": "Fix \"Sponsor this project\" link ",
-      "body": "Fixes \"Sponsor this project\" link leading to 404 page\n",
+      "number": 1777,
+      "title": "[HackDiabetes2026] Export Statistics to PDF",
+      "body": "Built on top of https://github.com/nightscout/Trio/pull/1746 to improve the overall UX",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1772",
-      "mergedAt": "2026-11-13T18:29:22Z"
+      "url": "https://github.com/nightscout/Trio/pull/1777",
+      "mergedAt": "2026-11-16T06:46:33Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1772,
-      "title": "Fix \"Sponsor this project\" link ",
-      "body": "Fixes \"Sponsor this project\" link leading to 404 page\n",
+      "number": 1777,
+      "title": "[HackDiabetes2026] Export Statistics to PDF",
+      "body": "Built on top of https://github.com/nightscout/Trio/pull/1746 to improve the overall UX",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1772",
-      "mergedAt": "2026-11-13T18:29:22Z"
+      "url": "https://github.com/nightscout/Trio/pull/1777",
+      "mergedAt": "2026-11-16T06:46:33Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1779,
+      "title": "Fix \"Publishing changes from within view updates\" from the dev branch…",
+      "body": "fixes the following warning: `Trio/Sources/Services/DevelopmentBranchAlerter/DevelopmentBranchAlerter.swift:96 Publishing changes from within view updates is not allowed, this will cause undefined behavior.`",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1779",
+      "mergedAt": "2026-11-16T06:48:37Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1779,
+      "title": "Fix \"Publishing changes from within view updates\" from the dev branch…",
+      "body": "fixes the following warning: `Trio/Sources/Services/DevelopmentBranchAlerter/DevelopmentBranchAlerter.swift:96 Publishing changes from within view updates is not allowed, this will cause undefined behavior.`",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1779",
+      "mergedAt": "2026-11-16T06:48:37Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "86a9b5ea4f1c333936b09aaccb8957d42cfeed6a",
-      "subject": "Fix \"Sponsor this project\" link",
-      "author": "Luka Zivkovic",
-      "authoredAt": "2026-11-13T18:24:59+01:00"
+      "sha": "47925376b308d4680bcec854bee8ad6e48dafcac",
+      "subject": "Add PDF export to Statistics sheet",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-07-20T20:39:13+02:00"
     },
     {
-      "sha": "2c58c64f97dad99d2deb59a80cf931fa879cb204",
-      "subject": "Merge pull request #1772 from lolzivkovic/fix/funding",
-      "author": "Mike Plante",
-      "authoredAt": "2026-11-13T13:29:21-05:00"
+      "sha": "d71b0a8306592c4c409fb1a97b09a6056b8673dd",
+      "subject": "Expand Statistics PDF export into a multi-page report builder",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-07-21T12:29:51+02:00"
     },
     {
-      "sha": "3f6b238b450d423f9aa2585e173d50d212d5273d",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.71 [skip ci]",
+      "sha": "28d7a13dba40b732512fbd2b4ec3c294fb3969b4",
+      "subject": "Reduce duplication in the Statistics PDF export feature",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-07-21T13:50:17+02:00"
+    },
+    {
+      "sha": "85517e7258949a104db00608301e36b34be9d1ba",
+      "subject": "Add (?) help sheet to Statistics PDF export menu",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-07-22T10:13:29+02:00"
+    },
+    {
+      "sha": "dc204be4674e41ea08bd4cbe7398607c3c794c67",
+      "subject": "Fix Statistics export build after rebasing onto dev",
+      "author": "t1dude",
+      "authoredAt": "2026-11-06T16:33:29+01:00"
+    },
+    {
+      "sha": "06b4a0bd335bdaff3b06dcc0733d0b84270a1d39",
+      "subject": "Add Glycemia Risk Index to Statistics PDF export",
+      "author": "t1dude",
+      "authoredAt": "2026-11-06T16:33:37+01:00"
+    },
+    {
+      "sha": "acc6c0c901439ead7c6765c7130b8008a6eb1fa4",
+      "subject": "Show iPhone name instead of model identifier in PDF export header",
+      "author": "t1dude",
+      "authoredAt": "2026-11-08T13:40:17+01:00"
+    },
+    {
+      "sha": "2e9c7030c47822cbeb25932b493f2ce68bf2c1d9",
+      "subject": "Add iPhone 18 Pro, 18 Pro Max and iPhone Duo to device name list",
+      "author": "t1dude",
+      "authoredAt": "2026-11-08T13:42:43+01:00"
+    },
+    {
+      "sha": "12141eba7f223bc6578f8411ce9c8233ea7789c3",
+      "subject": "Updates Stats Export UI",
+      "author": "Cameron Ingham",
+      "authoredAt": "2026-11-14T13:29:17-07:00"
+    },
+    {
+      "sha": "a500b0ca7462c81774a210320e15920fd4b231e4",
+      "subject": "Fix \"Publishing changes from within view updates\" from the dev branch warning",
+      "author": "marv-out",
+      "authoredAt": "2026-11-14T14:52:32-07:00"
+    },
+    {
+      "sha": "5e928702d11f2ed3fac1fdb98e5305c526ea7997",
+      "subject": "Remove stale StatExportMenuInfoView.swift reference from project",
+      "author": "t1dude",
+      "authoredAt": "2026-11-15T15:32:20-07:00"
+    },
+    {
+      "sha": "521ac385bd4f8bd68bf2cd3510024d4e5110ac20",
+      "subject": "Merge branch 'dev' into feat/stats-export",
+      "author": "t1dude",
+      "authoredAt": "2026-11-15T16:06:26-07:00"
+    },
+    {
+      "sha": "d992433453798c56de218ff8d4c4f4a598df534a",
+      "subject": "Shorten code comments in Statistics PDF export",
+      "author": "t1dude",
+      "authoredAt": "2026-11-15T16:27:17-07:00"
+    },
+    {
+      "sha": "f91ed2bafc7cfed48525d2e0995bd029fabcd5c8",
+      "subject": "Add therapy settings to the Statistics PDF export",
+      "author": "t1dude",
+      "authoredAt": "2026-11-15T17:06:28-07:00"
+    },
+    {
+      "sha": "3b6580b6ec95599f6c5f83f6c4a4e0e1adb64e87",
+      "subject": "Fix basal total build error in therapy PDF export",
+      "author": "t1dude",
+      "authoredAt": "2026-11-15T22:45:20-07:00"
+    },
+    {
+      "sha": "f096d9739fb70fea203216bb05625309fb3dd776",
+      "subject": "Merge pull request #1777 from Camji55/feat/stats-export",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-16T07:46:32+01:00"
+    },
+    {
+      "sha": "102bf772a5571fc158c6bb03595404e814834395",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.73 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-13T18:29:41Z"
+      "authoredAt": "2026-11-16T06:46:45Z"
     },
     {
-      "sha": "aca8c0457e451635a461845fbee130368c609080",
+      "sha": "3adbc238efac7f6ec08bbb9479e0fb5b059cc14e",
+      "subject": "Merge pull request #1779 from nightscout/fix/publisher-warning",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-16T07:48:36+01:00"
+    },
+    {
+      "sha": "4a9fdecff8927a3e7ab9abce10fad49021b84471",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.74 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-16T06:48:47Z"
+    },
+    {
+      "sha": "edb7b795e42df79af2526cdda4bfa2dc95850653",
       "subject": "Merge branch 'nightscout:dev' into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-11-14T10:32:43-06:00"
+      "authoredAt": "2026-11-16T11:48:52-06:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
-      "path": ".github/FUNDING.yml"
+      "path": "Config.xcconfig"
     },
     {
       "status": "M",
-      "path": "Config.xcconfig"
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/TrioApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/UIDevice+Extensions.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalProfileEditor/View/BasalProfileEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioEditor/View/CarbRatioEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/ISFEditor/View/ISFEditorRootView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Onboarding/View/TherapyProfileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/AreaChartSetup.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/ExportSetup.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/ReportPresetSetup.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/StackedChartSetup.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/StatStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/StatChartUtils.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/StatRootView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/GlucoseDistributionByDayPDFChart.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/GlucosePercentileByDayPDFChart.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/InsulinBolusPDFChart.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/InsulinTDDPDFChart.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/MealsPDFChart.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/PDFReportContent.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/TherapySchedulePDFContent.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/ReportChartType.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/StatExportMenuView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/StatPDFExporter.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/StatPDFReportView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GRIView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyDistributionChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyPercentileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/TargetsEditor/View/TargetsEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/DevelopmentBranchAlerter/DevelopmentBranchAlerter.swift"
     }
   ]
 }

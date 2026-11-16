@@ -1,0 +1,22 @@
+{
+  "inputHash": "e10035d47c6cad693d6c723a23b995dcae96c75ce484c07436d43ea56c6e5f95",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1779",
+    "title": "Fix development-branch warning alert",
+    "changes": [
+      "Dismissing the non-release build warning now reliably closes the alert.",
+      "The 'How to Return to Main' button opens the documentation as expected."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1779",
+      "commit:a500b0ca7462"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

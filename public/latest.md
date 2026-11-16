@@ -1,17 +1,22 @@
-# Trio Build aca8c04
+# Trio Build edb7b79
 
-Built 2026-11-14T16:57:19.000Z from `7e2ad51..aca8c04`.
+Built 2026-11-16T18:23:18.000Z from `fc4f5c8..edb7b79`.
 
 ## Highlights
 
-- **Sponsor link updated**
-  - The "Sponsor this project" link now goes to donate.nightscoutfoundation.org.
-  - [View source](https://github.com/nightscout/Trio/pull/1772)
+- **Export Statistics to PDF**
+  - You can export Statistics as a printable PDF report from the Statistics screen.
+  - Build multi-page reports including charts and therapy settings, then share them via the iOS share sheet.
+  - [View source](https://github.com/nightscout/Trio/pull/1777)
+- **Fix development-branch warning alert**
+  - Dismissing the non-release build warning now reliably closes the alert.
+  - The 'How to Return to Main' button opens the documentation as expected.
+  - [View source](https://github.com/nightscout/Trio/pull/1779)
 
 ## Build Metadata
 
-- Source workflow: [43616217286](https://github.com/gordolio/Trio/actions/runs/43616217286)
-- Previous built commit: [`7e2ad5150ae5306a531eaa0fc73dfcc601bcdf36`](https://github.com/gordolio/Trio/commit/7e2ad5150ae5306a531eaa0fc73dfcc601bcdf36)
-- Current built commit: [`aca8c0457e451635a461845fbee130368c609080`](https://github.com/gordolio/Trio/commit/aca8c0457e451635a461845fbee130368c609080)
+- Source workflow: [43922359747](https://github.com/gordolio/Trio/actions/runs/43922359747)
+- Previous built commit: [`fc4f5c8f0f8d49b61f6e4631529042af546c7040`](https://github.com/gordolio/Trio/commit/fc4f5c8f0f8d49b61f6e4631529042af546c7040)
+- Current built commit: [`edb7b795e42df79af2526cdda4bfa2dc95850653`](https://github.com/gordolio/Trio/commit/edb7b795e42df79af2526cdda4bfa2dc95850653)
 - Provenance model: `openai/gpt-5-mini`
 - Generator: `0.3.1`, prompt `7`

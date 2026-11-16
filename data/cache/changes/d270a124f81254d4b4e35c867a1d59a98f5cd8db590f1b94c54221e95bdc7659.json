@@ -1,0 +1,22 @@
+{
+  "inputHash": "0b9fe38de78bd66a3449da7f5ed56211efe135a4f8b9c0c721dfbb9c2326d20c",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1777",
+    "title": "Export Statistics to PDF",
+    "changes": [
+      "You can export Statistics as a printable PDF report from the Statistics screen.",
+      "Build multi-page reports including charts and therapy settings, then share them via the iOS share sheet."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1777",
+      "commit:d71b0a830659"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
