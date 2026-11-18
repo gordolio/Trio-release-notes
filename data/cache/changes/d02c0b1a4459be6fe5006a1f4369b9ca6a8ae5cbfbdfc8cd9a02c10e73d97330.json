@@ -1,0 +1,21 @@
+{
+  "inputHash": "c2a5c8c7aa201b7ac75cfd64b0b679a44fe00411e9b241c1892fc733173c9e50",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1783",
+    "title": "Fix Apple Watch bolus arrow direction",
+    "changes": [
+      "Bolus confirmation on Apple Watch now shows an arrow that matches the crown side and points the correct way."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1783",
+      "commit:f6a0532a0bb9"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

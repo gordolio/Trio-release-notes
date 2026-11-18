@@ -1,84 +1,83 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 43922359747,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/43922359747",
+    "sourceWorkflowRunId": 44316311683,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/44316311683",
     "sourceBranch": "dev",
-    "previousBuiltSha": "fc4f5c8f0f8d49b61f6e4631529042af546c7040",
-    "currentBuiltSha": "edb7b795e42df79af2526cdda4bfa2dc95850653",
-    "shortSha": "edb7b79",
-    "buildDate": "2026-11-16T18:23:18.000Z",
-    "generationDate": "2026-11-16T18:37:14.481Z",
+    "previousBuiltSha": "edb7b795e42df79af2526cdda4bfa2dc95850653",
+    "currentBuiltSha": "998887784cc59402dc15058ccc35ef62bfc810b9",
+    "shortSha": "9988877",
+    "buildDate": "2026-11-18T14:15:46.000Z",
+    "generationDate": "2026-11-18T14:28:28.706Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1777",
-      "title": "Export Statistics to PDF",
+      "changeId": "pr:nightscout/Trio#1598",
+      "title": "Fewer, better-timed Apple Watch updates",
       "changes": [
-        "You can export Statistics as a printable PDF report from the Statistics screen.",
-        "Build multi-page reports including charts and therapy settings, then share them via the iOS share sheet."
+        "Watch updates are sent less often and at better times.",
+        "The watch shows the last glucose with its age, and syncing appears only for real updates."
       ],
-      "category": "new-features",
+      "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1777",
-        "commit:d71b0a830659"
+        "pr:nightscout/Trio#1598",
+        "commit:927c22b7a9c9"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1777"
+        "pr:nightscout/Trio#1598"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1777",
+          "id": "pr:nightscout/Trio#1598",
           "type": "pull-request",
-          "title": "nightscout/Trio#1777: [HackDiabetes2026] Export Statistics to PDF",
-          "url": "https://github.com/nightscout/Trio/pull/1777"
+          "title": "nightscout/Trio#1598:  Watch: fewer, better-timed state updates",
+          "url": "https://github.com/nightscout/Trio/pull/1598"
         },
         {
-          "id": "commit:d71b0a830659",
+          "id": "commit:927c22b7a9c9",
           "type": "commit",
-          "title": "Expand Statistics PDF export into a multi-page report builder",
-          "url": "https://github.com/gordolio/Trio/commit/d71b0a8306592c4c409fb1a97b09a6056b8673dd"
+          "title": "Merge pull request #1598 from EJM0/feat/watch-only-sent-glucose-delta",
+          "url": "https://github.com/gordolio/Trio/commit/927c22b7a9c98140233027b8edc27f36f37d734e"
         }
       ]
     },
     {
-      "changeId": "pr:nightscout/Trio#1779",
-      "title": "Fix development-branch warning alert",
+      "changeId": "pr:nightscout/Trio#1783",
+      "title": "Fix Apple Watch bolus arrow direction",
       "changes": [
-        "Dismissing the non-release build warning now reliably closes the alert.",
-        "The 'How to Return to Main' button opens the documentation as expected."
+        "Bolus confirmation on Apple Watch now shows an arrow that matches the crown side and points the correct way."
       ],
-      "category": "alerting-and-safety",
+      "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1779",
-        "commit:a500b0ca7462"
+        "pr:nightscout/Trio#1783",
+        "commit:f6a0532a0bb9"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1779"
+        "pr:nightscout/Trio#1783"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1779",
+          "id": "pr:nightscout/Trio#1783",
           "type": "pull-request",
-          "title": "nightscout/Trio#1779: Fix \"Publishing changes from within view updates\" from the dev branch…",
-          "url": "https://github.com/nightscout/Trio/pull/1779"
+          "title": "nightscout/Trio#1783: Fix Apple Watch bolus direction arrow",
+          "url": "https://github.com/nightscout/Trio/pull/1783"
         },
         {
-          "id": "commit:a500b0ca7462",
+          "id": "commit:f6a0532a0bb9",
           "type": "commit",
-          "title": "Fix \"Publishing changes from within view updates\" from the dev branch warning",
-          "url": "https://github.com/gordolio/Trio/commit/a500b0ca7462c81774a210320e15920fd4b231e4"
+          "title": "Point the watch bolus crown hint arrow by crown side, not wrist",
+          "url": "https://github.com/gordolio/Trio/commit/f6a0532a0bb93f06f2fdca8bb404cc9556e331eb"
         }
       ]
     }
@@ -134,161 +133,863 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1777,
-      "title": "[HackDiabetes2026] Export Statistics to PDF",
-      "body": "Built on top of https://github.com/nightscout/Trio/pull/1746 to improve the overall UX",
+      "number": 1598,
+      "title": " Watch: fewer, better-timed state updates",
+      "body": "## Summary\n\nThe phone rebuilt and resent the whole watch state far more often than needed: on every new reading, every loop, every IOB change and every write that only set an upload flag, and it queued each snapshot with `transferUserInfo`, so a backgrounded watch worked through a backlog of outdated states. This PR sends fewer and better-timed updates and fixes a few bugs on the way. The data sent to the watch stays as on dev.\n\n## What's new\n\n### Fewer, better-timed pushes\n- **Upload flags ignored:** new `CoreDataStack.contentChangePublisher`, like `entityChangePublisher` without updates that only set `isUploadedToNS` / `isUploadedToHealth` / `isUploadedToTidepool`. Used by the Apple Watch and the Garmin manager.\n- **Coalesced:** every trigger (glucose, IOB, determination, override, temp target, settings) goes through `scheduleWatchStatePush()`. The first trigger starts a 0.5 s window; triggers inside it join that push instead of delaying it. While a loop is running it holds the push until the result is in, capped at 30 s so a slow pump can't delay the BG value.\n- `setupWatchState()` returns `nil` instead of an empty placeholder state, which the watch would have shown. Reachability is no longer required to build it: `isReachable` is only true while the watch app is in the foreground, and the context is what reaches it otherwise. There is no backlog, since the context holds only the newest state.\n\n### Transport\n- `transferUserInfo` → `updateApplicationContext`: only the newest state is kept, no backlog. It is also what reaches a watch app that isn't running, so a backgrounded watch and its complications stay current.\n- Watch requests use `sendMessage` with a reply. The phone answers with the state directly through a new `didReceiveMessage(_:replyHandler:)` (every path replies; an empty reply means no state) and updates the context with it. A watch app not yet updated still asks without a reply handler; it gets the state pushed, as on dev.\n- The phone no longer pushes when the watch becomes reachable: the watch asks itself, and only one request is in flight at a time (a second one waits for the reply or the 10 s timeout).\n\n### Watch app\n- `WatchState.shared` singleton. Before, every view re-init created a new instance that took over the weak session delegate and was then released, leaving nothing to receive from the phone.\n- If the session is already activated at launch, it is handled right away (the activation callback won't come) and `receivedApplicationContext` is applied. The app also refreshes when its scene becomes active.\n- In the background a received state is applied right away instead of after the debounce, because watchOS suspends the app before a delayed work item runs. On leaving the foreground a pending state is applied.\n- Duplicate detection is in memory (`lastAcceptedStateDate`) instead of a timestamp saved to disk, so a payload is never dropped as a duplicate of one a previous launch showed. `WatchStateSnapshot` is removed on both sides.\n- A stale state's glucose readings are still taken over when they are newer; its IOB, COB and trend are not.\n- The BG bubble is dated by the newest reading's age (over 6 min) instead of the last update. IOB, COB and the treatment buttons stay on the last update (over 5 min) as on dev, so a CGM gap doesn't block treatments. A 30 s timer and a refresh when the app becomes active keep both current. The text under the bubble still shows the loop's age, as on dev.\n- The syncing animation only shows when a request was actually sent, and is hidden after 10 s without an answer or when the request fails.\n\n### Fixes\n- The BG target was read asynchronously in `init`, so the watch sometimes got the default of 100. It is now read on each build.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1777",
-      "mergedAt": "2026-11-16T06:46:33Z"
+      "url": "https://github.com/nightscout/Trio/pull/1598",
+      "mergedAt": "2026-11-16T20:48:50Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1777,
-      "title": "[HackDiabetes2026] Export Statistics to PDF",
-      "body": "Built on top of https://github.com/nightscout/Trio/pull/1746 to improve the overall UX",
+      "number": 1598,
+      "title": " Watch: fewer, better-timed state updates",
+      "body": "## Summary\n\nThe phone rebuilt and resent the whole watch state far more often than needed: on every new reading, every loop, every IOB change and every write that only set an upload flag, and it queued each snapshot with `transferUserInfo`, so a backgrounded watch worked through a backlog of outdated states. This PR sends fewer and better-timed updates and fixes a few bugs on the way. The data sent to the watch stays as on dev.\n\n## What's new\n\n### Fewer, better-timed pushes\n- **Upload flags ignored:** new `CoreDataStack.contentChangePublisher`, like `entityChangePublisher` without updates that only set `isUploadedToNS` / `isUploadedToHealth` / `isUploadedToTidepool`. Used by the Apple Watch and the Garmin manager.\n- **Coalesced:** every trigger (glucose, IOB, determination, override, temp target, settings) goes through `scheduleWatchStatePush()`. The first trigger starts a 0.5 s window; triggers inside it join that push instead of delaying it. While a loop is running it holds the push until the result is in, capped at 30 s so a slow pump can't delay the BG value.\n- `setupWatchState()` returns `nil` instead of an empty placeholder state, which the watch would have shown. Reachability is no longer required to build it: `isReachable` is only true while the watch app is in the foreground, and the context is what reaches it otherwise. There is no backlog, since the context holds only the newest state.\n\n### Transport\n- `transferUserInfo` → `updateApplicationContext`: only the newest state is kept, no backlog. It is also what reaches a watch app that isn't running, so a backgrounded watch and its complications stay current.\n- Watch requests use `sendMessage` with a reply. The phone answers with the state directly through a new `didReceiveMessage(_:replyHandler:)` (every path replies; an empty reply means no state) and updates the context with it. A watch app not yet updated still asks without a reply handler; it gets the state pushed, as on dev.\n- The phone no longer pushes when the watch becomes reachable: the watch asks itself, and only one request is in flight at a time (a second one waits for the reply or the 10 s timeout).\n\n### Watch app\n- `WatchState.shared` singleton. Before, every view re-init created a new instance that took over the weak session delegate and was then released, leaving nothing to receive from the phone.\n- If the session is already activated at launch, it is handled right away (the activation callback won't come) and `receivedApplicationContext` is applied. The app also refreshes when its scene becomes active.\n- In the background a received state is applied right away instead of after the debounce, because watchOS suspends the app before a delayed work item runs. On leaving the foreground a pending state is applied.\n- Duplicate detection is in memory (`lastAcceptedStateDate`) instead of a timestamp saved to disk, so a payload is never dropped as a duplicate of one a previous launch showed. `WatchStateSnapshot` is removed on both sides.\n- A stale state's glucose readings are still taken over when they are newer; its IOB, COB and trend are not.\n- The BG bubble is dated by the newest reading's age (over 6 min) instead of the last update. IOB, COB and the treatment buttons stay on the last update (over 5 min) as on dev, so a CGM gap doesn't block treatments. A 30 s timer and a refresh when the app becomes active keep both current. The text under the bubble still shows the loop's age, as on dev.\n- The syncing animation only shows when a request was actually sent, and is hidden after 10 s without an answer or when the request fails.\n\n### Fixes\n- The BG target was read asynchronously in `init`, so the watch sometimes got the default of 100. It is now read on each build.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1777",
-      "mergedAt": "2026-11-16T06:46:33Z"
+      "url": "https://github.com/nightscout/Trio/pull/1598",
+      "mergedAt": "2026-11-16T20:48:50Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1779,
-      "title": "Fix \"Publishing changes from within view updates\" from the dev branch…",
-      "body": "fixes the following warning: `Trio/Sources/Services/DevelopmentBranchAlerter/DevelopmentBranchAlerter.swift:96 Publishing changes from within view updates is not allowed, this will cause undefined behavior.`",
+      "number": 1783,
+      "title": "Fix Apple Watch bolus direction arrow",
+      "body": "Add tests and validate that the bolus crown wheel animation shows the arrow in the correct appropriate direction. \n\n- **Target:** simulator  \n- **Commit:** `f6a0532a0b` Point the watch bolus crown hint arrow by crown side, not wrist  \n- **Xcode:** 26.2 · **Result:** passed\n- **Full report:** https://github.com/jwoglom/trio-test-harness/actions/runs/43893036686\n\nTested all 4 wrist/crown combinations on the bolus Confirm screen. A (wrist=L,crown=R): clockwise, expected clockwise, MATCH. B (wrist=L,crown=L): counterclockwise, expected counterclockwise, MATCH. C (wrist=R,crown=L): counterclockwise, expected counterclockwise, MATCH. D (wrist=R,crown=R): clockwise, expected clockwise, MATCH. All 4 bolus requests (0.1 U each) confirmed via crown turn and verified received by the Pump Simulator in Trio logs and phone UI. \n\n#### ✅ Works as expected\n\n\n|   |   |   |\n|---|---|---|\n| ![Setup A (wrist left, crown right): Confirm screen shows the clockwise crown-hint arrow, matching expectation.](https://github.com/user-attachments/assets/d7bb5bef-02e0-40a7-be31-b292c8c499ab)<br><sub>Setup A (wrist left, crown right): Confirm screen shows the clockwise crown-hint arrow, matching expectation.</sub> | ![Setup A: phone&#x27;s Pump Simulator chart shows the 0.1 U bolus delivered after the crown turn confirmed it.](https://github.com/user-attachments/assets/6d6f075d-0808-459e-bf56-60a9be1540d6)<br><sub>Setup A: phone&#x27;s Pump Simulator chart shows the 0.1 U bolus delivered after the crown turn confirmed it.</sub> | ![Setup B (wrist left, crown left): Confirm screen shows the counterclockwise arrow, matching expectation despite sharing the same wrist as setup A.](https://github.com/user-attachments/assets/cc2a8755-9ad4-44bc-a0bc-065beab58cd1)<br><sub>Setup B (wrist left, crown left): Confirm screen shows the counterclockwise arrow, matching expectation despite sharing the same wrist as setup A.</sub> |\n| ![Setup B: after a negative crown delta (the positive one had no effect), IOB rises to 0.2 U, confirming the second bolus was sent.](https://github.com/user-attachments/assets/129961f6-9930-4717-975c-d6f4d17d3c0c)<br><sub>Setup B: after a negative crown delta (the positive one had no effect), IOB rises to 0.2 U, confirming the second bolus was sent.</sub> | ![Setup C (wrist right, crown left): Confirm screen shows the counterclockwise arrow, matching expectation.](https://github.com/user-attachments/assets/fbec2187-57c4-4dac-86cf-3b710885006f)<br><sub>Setup C (wrist right, crown left): Confirm screen shows the counterclockwise arrow, matching expectation.</sub> | ![Setup C: after the crown turn, watch IOB rises to 0.3 U, confirming the third bolus was sent.](https://github.com/user-attachments/assets/761017f9-7457-4128-b29f-2cb604031895)<br><sub>Setup C: after the crown turn, watch IOB rises to 0.3 U, confirming the third bolus was sent.</sub> |\n| ![Setup D (wrist right, crown right): Confirm screen shows the clockwise arrow, matching expectation and contradicting the PR text&#x27;s predicted known-issue mismatch for this case.](https://github.com/user-attachments/assets/38663b4c-4540-4bf5-b0f2-a3897e35a837)<br><sub>Setup D (wrist right, crown right): Confirm screen shows the clockwise arrow, matching expectation and contradicting the PR text&#x27;s predicted known-issue mismatch for this case.</sub> | ![Setup D: phone&#x27;s Pump Simulator chart shows cumulative 0.4 U delivered after all four boluses, confirming the final one was received.](https://github.com/user-attachments/assets/a3eab998-b19d-4778-888b-fd844dee9b29)<br><sub>Setup D: phone&#x27;s Pump Simulator chart shows cumulative 0.4 U delivered after all four boluses, confirming the final one was received.</sub> |   |\n\n<sub>8 of 27 screenshots chosen by a separate review pass; all steps are in the [full report](https://github.com/jwoglom/trio-test-harness/actions/runs/43893036686).</sub>\n\n<!-- trio-test-harness comment -->\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1779",
-      "mergedAt": "2026-11-16T06:48:37Z"
+      "url": "https://github.com/nightscout/Trio/pull/1783",
+      "mergedAt": "2026-11-16T22:59:22Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1779,
-      "title": "Fix \"Publishing changes from within view updates\" from the dev branch…",
-      "body": "fixes the following warning: `Trio/Sources/Services/DevelopmentBranchAlerter/DevelopmentBranchAlerter.swift:96 Publishing changes from within view updates is not allowed, this will cause undefined behavior.`",
+      "number": 1783,
+      "title": "Fix Apple Watch bolus direction arrow",
+      "body": "Add tests and validate that the bolus crown wheel animation shows the arrow in the correct appropriate direction. \n\n- **Target:** simulator  \n- **Commit:** `f6a0532a0b` Point the watch bolus crown hint arrow by crown side, not wrist  \n- **Xcode:** 26.2 · **Result:** passed\n- **Full report:** https://github.com/jwoglom/trio-test-harness/actions/runs/43893036686\n\nTested all 4 wrist/crown combinations on the bolus Confirm screen. A (wrist=L,crown=R): clockwise, expected clockwise, MATCH. B (wrist=L,crown=L): counterclockwise, expected counterclockwise, MATCH. C (wrist=R,crown=L): counterclockwise, expected counterclockwise, MATCH. D (wrist=R,crown=R): clockwise, expected clockwise, MATCH. All 4 bolus requests (0.1 U each) confirmed via crown turn and verified received by the Pump Simulator in Trio logs and phone UI. \n\n#### ✅ Works as expected\n\n\n|   |   |   |\n|---|---|---|\n| ![Setup A (wrist left, crown right): Confirm screen shows the clockwise crown-hint arrow, matching expectation.](https://github.com/user-attachments/assets/d7bb5bef-02e0-40a7-be31-b292c8c499ab)<br><sub>Setup A (wrist left, crown right): Confirm screen shows the clockwise crown-hint arrow, matching expectation.</sub> | ![Setup A: phone&#x27;s Pump Simulator chart shows the 0.1 U bolus delivered after the crown turn confirmed it.](https://github.com/user-attachments/assets/6d6f075d-0808-459e-bf56-60a9be1540d6)<br><sub>Setup A: phone&#x27;s Pump Simulator chart shows the 0.1 U bolus delivered after the crown turn confirmed it.</sub> | ![Setup B (wrist left, crown left): Confirm screen shows the counterclockwise arrow, matching expectation despite sharing the same wrist as setup A.](https://github.com/user-attachments/assets/cc2a8755-9ad4-44bc-a0bc-065beab58cd1)<br><sub>Setup B (wrist left, crown left): Confirm screen shows the counterclockwise arrow, matching expectation despite sharing the same wrist as setup A.</sub> |\n| ![Setup B: after a negative crown delta (the positive one had no effect), IOB rises to 0.2 U, confirming the second bolus was sent.](https://github.com/user-attachments/assets/129961f6-9930-4717-975c-d6f4d17d3c0c)<br><sub>Setup B: after a negative crown delta (the positive one had no effect), IOB rises to 0.2 U, confirming the second bolus was sent.</sub> | ![Setup C (wrist right, crown left): Confirm screen shows the counterclockwise arrow, matching expectation.](https://github.com/user-attachments/assets/fbec2187-57c4-4dac-86cf-3b710885006f)<br><sub>Setup C (wrist right, crown left): Confirm screen shows the counterclockwise arrow, matching expectation.</sub> | ![Setup C: after the crown turn, watch IOB rises to 0.3 U, confirming the third bolus was sent.](https://github.com/user-attachments/assets/761017f9-7457-4128-b29f-2cb604031895)<br><sub>Setup C: after the crown turn, watch IOB rises to 0.3 U, confirming the third bolus was sent.</sub> |\n| ![Setup D (wrist right, crown right): Confirm screen shows the clockwise arrow, matching expectation and contradicting the PR text&#x27;s predicted known-issue mismatch for this case.](https://github.com/user-attachments/assets/38663b4c-4540-4bf5-b0f2-a3897e35a837)<br><sub>Setup D (wrist right, crown right): Confirm screen shows the clockwise arrow, matching expectation and contradicting the PR text&#x27;s predicted known-issue mismatch for this case.</sub> | ![Setup D: phone&#x27;s Pump Simulator chart shows cumulative 0.4 U delivered after all four boluses, confirming the final one was received.](https://github.com/user-attachments/assets/a3eab998-b19d-4778-888b-fd844dee9b29)<br><sub>Setup D: phone&#x27;s Pump Simulator chart shows cumulative 0.4 U delivered after all four boluses, confirming the final one was received.</sub> |   |\n\n<sub>8 of 27 screenshots chosen by a separate review pass; all steps are in the [full report](https://github.com/jwoglom/trio-test-harness/actions/runs/43893036686).</sub>\n\n<!-- trio-test-harness comment -->\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1779",
-      "mergedAt": "2026-11-16T06:48:37Z"
+      "url": "https://github.com/nightscout/Trio/pull/1783",
+      "mergedAt": "2026-11-16T22:59:22Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "47925376b308d4680bcec854bee8ad6e48dafcac",
-      "subject": "Add PDF export to Statistics sheet",
-      "author": "Magnus Reintz",
-      "authoredAt": "2026-07-20T20:39:13+02:00"
+      "sha": "c8316caf695c21dc7aa43af8ce7f55a9f91d6271",
+      "subject": "Trim overly verbose comments per review feedback",
+      "author": "Claude",
+      "authoredAt": "2026-09-25T04:24:37Z"
     },
     {
-      "sha": "d71b0a8306592c4c409fb1a97b09a6056b8673dd",
-      "subject": "Expand Statistics PDF export into a multi-page report builder",
-      "author": "Magnus Reintz",
-      "authoredAt": "2026-07-21T12:29:51+02:00"
+      "sha": "2fdded370e04d58c955d4a34c8624bf5d0dab873",
+      "subject": "init -adds new way of syncing -removes unused files",
+      "author": "ejm0",
+      "authoredAt": "2026-09-28T14:48:55+02:00"
     },
     {
-      "sha": "28d7a13dba40b732512fbd2b4ec3c294fb3969b4",
-      "subject": "Reduce duplication in the Statistics PDF export feature",
-      "author": "Magnus Reintz",
-      "authoredAt": "2026-07-21T13:50:17+02:00"
+      "sha": "525a3ae9221571e66f13ab11810bfec24635c989",
+      "subject": "fix async init of bg target resulting in standard value being send to watch",
+      "author": "ejm0",
+      "authoredAt": "2026-09-28T15:18:01+02:00"
     },
     {
-      "sha": "85517e7258949a104db00608301e36b34be9d1ba",
-      "subject": "Add (?) help sheet to Statistics PDF export menu",
-      "author": "Magnus Reintz",
-      "authoredAt": "2026-07-22T10:13:29+02:00"
+      "sha": "40bc2c4544f6aa98558c3a5a5306d62276293a25",
+      "subject": "trash messages without changes",
+      "author": "ejm0",
+      "authoredAt": "2026-09-28T16:05:05+02:00"
     },
     {
-      "sha": "dc204be4674e41ea08bd4cbe7398607c3c794c67",
-      "subject": "Fix Statistics export build after rebasing onto dev",
-      "author": "t1dude",
-      "authoredAt": "2026-11-06T16:33:29+01:00"
+      "sha": "0e149ab650a401a05f9ca0455945dc0ec73cc5ee",
+      "subject": "introduce new Publisher not observing the uploadflags this is a performance improvement for Garmin and Apple watch",
+      "author": "ejm0",
+      "authoredAt": "2026-09-28T16:06:55+02:00"
     },
     {
-      "sha": "06b4a0bd335bdaff3b06dcc0733d0b84270a1d39",
-      "subject": "Add Glycemia Risk Index to Statistics PDF export",
-      "author": "t1dude",
-      "authoredAt": "2026-11-06T16:33:37+01:00"
+      "sha": "afa24429a7bf75388386699f46e44b835efd99c8",
+      "subject": "min display displays now the age of the shown bg reading",
+      "author": "ejm0",
+      "authoredAt": "2026-09-28T16:17:43+02:00"
     },
     {
-      "sha": "acc6c0c901439ead7c6765c7130b8008a6eb1fa4",
-      "subject": "Show iPhone name instead of model identifier in PDF export header",
-      "author": "t1dude",
-      "authoredAt": "2026-11-08T13:40:17+01:00"
+      "sha": "3b8c467cb890445110930d83b5bdcbce109e1be1",
+      "subject": "Watch: keep showing the last reading with its age, as on the phone",
+      "author": "Claude",
+      "authoredAt": "2026-09-29T17:11:53Z"
     },
     {
-      "sha": "2e9c7030c47822cbeb25932b493f2ce68bf2c1d9",
-      "subject": "Add iPhone 18 Pro, 18 Pro Max and iPhone Duo to device name list",
-      "author": "t1dude",
-      "authoredAt": "2026-11-08T13:42:43+01:00"
+      "sha": "217f5e77f6b5a2b69466add8af023145631a21a4",
+      "subject": "Revert \"Watch: keep showing the last reading with its age, as on the phone\"",
+      "author": "Claude",
+      "authoredAt": "2026-09-29T17:13:16Z"
     },
     {
-      "sha": "12141eba7f223bc6578f8411ce9c8233ea7789c3",
-      "subject": "Updates Stats Export UI",
-      "author": "Cameron Ingham",
-      "authoredAt": "2026-11-14T13:29:17-07:00"
+      "sha": "94d28b8bcbdcf636a59ddbd6da54d886970b4b0d",
+      "subject": "fix: drop trigger for change of upload flag for bg readings AW/Gramin",
+      "author": "ejm0",
+      "authoredAt": "2026-09-30T14:15:22+02:00"
     },
     {
-      "sha": "a500b0ca7462c81774a210320e15920fd4b231e4",
-      "subject": "Fix \"Publishing changes from within view updates\" from the dev branch warning",
-      "author": "marv-out",
-      "authoredAt": "2026-11-14T14:52:32-07:00"
+      "sha": "9a4f4351861e13e9cc3c418bf3404ee14eaa2395",
+      "subject": "Buckets with checksums",
+      "author": "ejm0",
+      "authoredAt": "2026-09-30T15:18:25+02:00"
     },
     {
-      "sha": "5e928702d11f2ed3fac1fdb98e5305c526ea7997",
-      "subject": "Remove stale StatExportMenuInfoView.swift reference from project",
-      "author": "t1dude",
-      "authoredAt": "2026-11-15T15:32:20-07:00"
+      "sha": "8eb194286eae1d0dcebefe7385803f308ff2a4df",
+      "subject": "Watch: test the glucose history sync",
+      "author": "ejm0",
+      "authoredAt": "2026-09-30T16:45:50+02:00"
     },
     {
-      "sha": "521ac385bd4f8bd68bf2cd3510024d4e5110ac20",
-      "subject": "Merge branch 'dev' into feat/stats-export",
-      "author": "t1dude",
-      "authoredAt": "2026-11-15T16:06:26-07:00"
+      "sha": "ae76b8309170dfd98cad11aa20f8cd0a66358d03",
+      "subject": "wait for watch to send sync first, only sync from phone after 1s debounce",
+      "author": "ejm0",
+      "authoredAt": "2026-09-30T23:11:59+02:00"
     },
     {
-      "sha": "d992433453798c56de218ff8d4c4f4a598df534a",
-      "subject": "Shorten code comments in Statistics PDF export",
-      "author": "t1dude",
-      "authoredAt": "2026-11-15T16:27:17-07:00"
+      "sha": "c3832ab78ca2fed93527fcf08d07b92846d5e373",
+      "subject": "separate building the state payload from sending the context",
+      "author": "ejm0",
+      "authoredAt": "2026-09-30T23:41:19+02:00"
     },
     {
-      "sha": "f91ed2bafc7cfed48525d2e0995bd029fabcd5c8",
-      "subject": "Add therapy settings to the Statistics PDF export",
-      "author": "t1dude",
-      "authoredAt": "2026-11-15T17:06:28-07:00"
+      "sha": "2196e4314fb428b865760317485f31ca372477d0",
+      "subject": "apply a received state right away in the background",
+      "author": "ejm0",
+      "authoredAt": "2026-10-04T15:51:43+02:00"
     },
     {
-      "sha": "3b6580b6ec95599f6c5f83f6c4a4e0e1adb64e87",
-      "subject": "Fix basal total build error in therapy PDF export",
-      "author": "t1dude",
-      "authoredAt": "2026-11-15T22:45:20-07:00"
-    },
-    {
-      "sha": "f096d9739fb70fea203216bb05625309fb3dd776",
-      "subject": "Merge pull request #1777 from Camji55/feat/stats-export",
+      "sha": "dfd415621505654c541834dc8cea0e66a9420483",
+      "subject": "Merge pull request #1571 from kristinkand/patch-1",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-16T07:46:32+01:00"
+      "authoredAt": "2026-10-05T22:07:05+02:00"
     },
     {
-      "sha": "102bf772a5571fc158c6bb03595404e814834395",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.73 [skip ci]",
-      "author": "github-actions[bot]",
-      "authoredAt": "2026-11-16T06:46:45Z"
+      "sha": "9febeccd7afb3b510136e6c32b17d394c10210be",
+      "subject": "Replace LibreCRKit with RoundWhiteDiscKit and track LoopKit's LibreLoop",
+      "author": "Pete Schwamb",
+      "authoredAt": "2026-10-05T17:15:50-05:00"
     },
     {
-      "sha": "3adbc238efac7f6ec08bbb9479e0fb5b059cc14e",
-      "subject": "Merge pull request #1779 from nightscout/fix/publisher-warning",
+      "sha": "f89fe474ebf44e42429030b0584dc930187154d3",
+      "subject": "Bump LibreLoop to 70f0e4c, hiding the minute-by-minute forwarding toggle",
+      "author": "Pete Schwamb",
+      "authoredAt": "2026-10-05T17:41:17-05:00"
+    },
+    {
+      "sha": "7158398de158c2ba7930c3adabc74c982b2e6a66",
+      "subject": "Bump LibreLoop to b352234 for the settings title",
+      "author": "Pete Schwamb",
+      "authoredAt": "2026-10-05T17:43:31-05:00"
+    },
+    {
+      "sha": "83aa57aeb6b62c61dbb8585eb9e23bca8ac20518",
+      "subject": "Merge branch 'dev' into feat/g7-direct",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-16T07:48:36+01:00"
+      "authoredAt": "2026-10-06T12:37:23+02:00"
     },
     {
-      "sha": "4a9fdecff8927a3e7ab9abce10fad49021b84471",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.74 [skip ci]",
+      "sha": "7b6d342975ea864132115f6fad89b2b08b7698b3",
+      "subject": "Bump RoundWhiteDiscKit to e66da6c and LibreLoop to c6e9cc1",
+      "author": "Pete Schwamb",
+      "authoredAt": "2026-10-06T15:53:16-05:00"
+    },
+    {
+      "sha": "1c46cdaac20a6df2ef0ceae302d2089426023895",
+      "subject": "Track LibreLoop from loopandlearn/LibreLoop",
+      "author": "Pete Schwamb",
+      "authoredAt": "2026-10-06T16:35:04-05:00"
+    },
+    {
+      "sha": "d8462376bcc8c677fe1b37780e130a1ccdc3bbd9",
+      "subject": "List LibreLoop under loopandlearn in define_common_trio.sh",
+      "author": "Pete Schwamb",
+      "authoredAt": "2026-10-06T16:35:15-05:00"
+    },
+    {
+      "sha": "2754bde343ffa8537379df258d146c57d1b427c3",
+      "subject": "Track RoundWhiteDiscKit from loopandlearn/RoundWhiteDiscKit",
+      "author": "Pete Schwamb",
+      "authoredAt": "2026-10-06T16:46:14-05:00"
+    },
+    {
+      "sha": "70dfe4de3ce8ef3c294d424520c7e61ce7e240d1",
+      "subject": "Merge pull request #1609 from ps2/libreloop-roundwhitedisckit",
+      "author": "Sam King",
+      "authoredAt": "2026-10-06T15:34:55-07:00"
+    },
+    {
+      "sha": "aa78f6c773f822c688bed02c235028d70de70416",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.1.10 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-16T06:48:47Z"
+      "authoredAt": "2026-10-06T22:35:05Z"
     },
     {
-      "sha": "edb7b795e42df79af2526cdda4bfa2dc95850653",
-      "subject": "Merge branch 'nightscout:dev' into dev",
+      "sha": "40cdd5e2a693c5d73ba8f6426cd062708dc5812b",
+      "subject": "Run swiftformat and extract missing strings",
+      "author": "Sam King",
+      "authoredAt": "2026-10-07T04:45:26-07:00"
+    },
+    {
+      "sha": "8cc9cd66433acbdd078f61a625086be0da1d4ec2",
+      "subject": "Update scripts and selected submodules (#1612)",
+      "author": "Marion Barker",
+      "authoredAt": "2026-10-07T05:38:52-07:00"
+    },
+    {
+      "sha": "82009213d0095d9598611d2681c50711a8d2a44f",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.1.11 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-07T12:39:03Z"
+    },
+    {
+      "sha": "084000dfc61b67efa846e1615b21a764c06083e1",
+      "subject": "Merge pull request #1614 from nightscout/formatting-and-strings",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-07T14:54:38+02:00"
+    },
+    {
+      "sha": "9de0a344786879194b4524e61fc8ddc0b82de135",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.1.12 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-07T12:54:50Z"
+    },
+    {
+      "sha": "7c44b3972414a95935e5161cd8bbbf9b2bc70b47",
+      "subject": "Prepare release: Bump version to 1.0.2",
+      "author": "Sam King",
+      "authoredAt": "2026-10-06T16:07:30-07:00"
+    },
+    {
+      "sha": "b4bfe42c72cfc4114cc524fa26d4d2f17ddc7ee9",
+      "subject": "Merge pull request #1613 from nightscout/release/v1.0.2",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-07T21:40:16+02:00"
+    },
+    {
+      "sha": "c7dc2c496699ed95b50ca8a57c79ab24509d0325",
+      "subject": "Merge branch 'dev' into feat/g7-direct",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-07T22:23:57+02:00"
+    },
+    {
+      "sha": "e0203bc680fcb85fed5958c177306c55c186ee91",
+      "subject": "Merge pull request #1619 from nightscout/main",
+      "author": "Mike Plante",
+      "authoredAt": "2026-10-08T10:17:32-04:00"
+    },
+    {
+      "sha": "79409364e7febef9a9ce08caed09c6b55b2a1d77",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.1 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-08T14:17:45Z"
+    },
+    {
+      "sha": "1dad685089a9da38fbde485a319c168460f75b59",
+      "subject": "Merge branch 'dev' into feat/g7-direct",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-08T16:47:10+02:00"
+    },
+    {
+      "sha": "5074f7b069e069ef140f21876a7d2dcbc7745e13",
+      "subject": "Merge branch 'dev' into ccr-0ecc0cce-04uy00",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-09T21:45:12-04:00"
+    },
+    {
+      "sha": "79cd7aa6148ebc60dc6fd419443c8d9ec308d84f",
+      "subject": "Merge pull request #1624 from bjorkert/fix/glucose-badge-setting-refresh",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-10T11:24:58+02:00"
+    },
+    {
+      "sha": "f69ffd6a23b835fd71d4bdb68d1f7646f1396b39",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.2 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-10T09:25:09Z"
+    },
+    {
+      "sha": "3d731ccf1243be3e6bcdbb132f87c8c2f0dcc12f",
+      "subject": "Merge remote-tracking branch 'nightscout/dev' into feat/g7-direct",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-10T15:25:08+02:00"
+    },
+    {
+      "sha": "3b49814d13a4aa124dff88c7882d141afadfc6d3",
+      "subject": "Merge pull request #1573 from cachrisman/fix/glucose-alarm-retract-scope",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-10T15:45:09+02:00"
+    },
+    {
+      "sha": "dc0d4dd262477c1ec51b394b36666e4d4b5a5687",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.3 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-10T13:45:20Z"
+    },
+    {
+      "sha": "0bf208d92c91ac3cb92bfad4828fac550a81fe4f",
+      "subject": "Merge branch 'dev' into fix/carb-edit-freeze",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-10T15:47:02+02:00"
+    },
+    {
+      "sha": "2bf9e33de8b92b4ecc2c1f529c6b2076eef92a31",
+      "subject": "Merge pull request #1595 from ostap-korkuna/fix/carb-edit-freeze",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-10T16:27:38+02:00"
+    },
+    {
+      "sha": "4cbc68a63f0c6811e933e3f4f4c7e753e859fa38",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.4 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-10T14:27:49Z"
+    },
+    {
+      "sha": "7e244a64673c4fbbab47ae13c7809a86ebc11d8e",
+      "subject": "Bump G7SensorKit: failed-sensor parsing and alert fix",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-14T00:19:23+02:00"
+    },
+    {
+      "sha": "f498950ba4518e7ba238e09d7703599abc64d04c",
+      "subject": "Own glucose alerts when the G7 is paired directly",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-14T00:42:45+02:00"
+    },
+    {
+      "sha": "2aa0aa52e63533292a2e7356cb9d732b2ea2ad8a",
+      "subject": "Bump OmnipodKit to current dev",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-15T22:19:29+02:00"
+    },
+    {
+      "sha": "7169b4a4301fdb0002a2d688a58c2e2a11f985ae",
+      "subject": "Update fastlane to 2.240.1",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-15T22:30:17+02:00"
+    },
+    {
+      "sha": "ae325eab395e1846877b224a4b138a03287d1880",
+      "subject": "Pin Ubuntu runners to 26.04",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-15T22:30:17+02:00"
+    },
+    {
+      "sha": "405b3e215fd2b613eccfcb719991618726d2d4ea",
+      "subject": "Bump LibreLoop to current upstream",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-15T23:18:10+02:00"
+    },
+    {
+      "sha": "2602b99795c692f70f7ffdc2515e83bac48db6ad",
+      "subject": "Bump LibreLoop for the in-app Abbott notice",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-15T23:30:10+02:00"
+    },
+    {
+      "sha": "eddece9cab5285c485567d918b6b8712b184386c",
+      "subject": "Bump LibreLoop for the legacy-LoopKit fix",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-15T23:39:03+02:00"
+    },
+    {
+      "sha": "df7ebd49eb03814c28245e8adb7084546c2f4526",
+      "subject": "Bump LibreLoop for the legacy CGM-event fix",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-15T23:47:02+02:00"
+    },
+    {
+      "sha": "0ffde9ff4bfcd8cef5c1a0f19840573043c0158b",
+      "subject": "Merge branch 'dev' into claude/affectionate-clarke-ziw7il",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-16T09:54:59+02:00"
+    },
+    {
+      "sha": "cb0e2b54aa7ad10c7bcf2dca98bb73f45ce2a9a8",
+      "subject": "Merge branch 'dev' into feature/remote-meal-mutation",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-16T21:24:39+02:00"
+    },
+    {
+      "sha": "ba6319c8622018292e370c88eb57c5770441bd3a",
+      "subject": "Match uploadNoteTreatment return type in test stub",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-16T21:52:30+02:00"
+    },
+    {
+      "sha": "43405ee0b4dc0572ad23972849c7c1410549aa30",
+      "subject": "Add Glycemia Risk Index feature with calculations and UI components",
+      "author": "codebymini",
+      "authoredAt": "2026-10-16T22:02:34+02:00"
+    },
+    {
+      "sha": "832f8e5ec743bc656cffef033b95176eef583d52",
+      "subject": "Merge pull request #1579 from bjorkert/feature/remote-meal-mutation",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T01:00:38+02:00"
+    },
+    {
+      "sha": "74d9b2a7f9385306e623ba588b8ac84b0323c951",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.5 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-16T23:00:48Z"
+    },
+    {
+      "sha": "d365ee9f7ef9bee7121b344246230f733201f44e",
+      "subject": "Merge pull request #1566 from jwoglom/claude/affectionate-clarke-ziw7il",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T01:12:26+02:00"
+    },
+    {
+      "sha": "a07904e8a29dd1e54e9a35d226c0c0dc0e22e53d",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.6 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-16T23:12:37Z"
+    },
+    {
+      "sha": "5ad765c8bf0bffe69d77b4beee45d6d4450fbc08",
+      "subject": "Merge pull request #1639 from nightscout/chore/update-submodules-1015",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T01:12:47+02:00"
+    },
+    {
+      "sha": "9e149c00c1bada5b784c32ca73eb41636822373d",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.7 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-16T23:12:58Z"
+    },
+    {
+      "sha": "6f2673ed098939176680b9369daed8a12fd1ac3f",
+      "subject": "Merge branch 'dev' into claude/focused-planck-tsklw8",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-16T23:17:26-04:00"
+    },
+    {
+      "sha": "bd76ba8763c531cd0cfcf9c082772b75cd677e41",
+      "subject": "Statistics Range -> Home Statistics Range",
+      "author": "James Woglom",
+      "authoredAt": "2026-10-16T23:30:35-04:00"
+    },
+    {
+      "sha": "b377a7386d97dc8bb6d974d0e143940604c0134f",
+      "subject": "Fix glucose color for mmol/L in comma-decimal locales",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-17T13:57:17+02:00"
+    },
+    {
+      "sha": "6f122a79792e1b3f7189db098de7e976ab8f2d56",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into fix/glucose-color-units-locale",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-10-17T14:09:51+02:00"
+    },
+    {
+      "sha": "c8318fa7c709752f2c085f431abea2831480ba00",
+      "subject": "Merge pull request #1644 from bjorkert/fix/glucose-color-units-locale",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T14:51:45+02:00"
+    },
+    {
+      "sha": "6afc7616dfcbfc3ab06e9b65cf3532755c1f238e",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.8 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-17T12:51:54Z"
+    },
+    {
+      "sha": "2b32685e0f7885f576d195815608213cc0e351cb",
+      "subject": "Add themed alarm sound sets and loop short tones to a 5s floor",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "d770ae94d280aede3c1c5b629f0b7aac9776e27e",
+      "subject": "Default every alarm to its Acoustic Medium themed sound",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "49c8a436725d4959fbc6d2fb182b45f7b6931be3",
+      "subject": "Lead the tone picker with themed sets, collapse the rest under Other Sounds",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "59bb733fbe44a38d787f92261320547a31ec36ff",
+      "subject": "Cover the themed sound catalog and new defaults",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T17:46:19+02:00"
+    },
+    {
+      "sha": "532d6f05b9f5869d5610b9727dae7cc45aa43c0d",
+      "subject": "Credit the bundled voices and tidy the urgency controls",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T23:27:22+02:00"
+    },
+    {
+      "sha": "b6a30b01ed39ff3abc61223311ce9a7e08027336",
+      "subject": "Linting fixes",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-17T23:27:22+02:00"
+    },
+    {
+      "sha": "249298285fbc99d73ed3ac746158630545e17639",
+      "subject": "Merge pull request #1642 from codebymini/feature/gri",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T23:33:58+02:00"
+    },
+    {
+      "sha": "3ac893b6b92d6f3a27fc2a324f983bec73852925",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.9 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-17T21:34:08Z"
+    },
+    {
+      "sha": "900d3819cdb99967403be980600480434c2317e6",
+      "subject": "Merge branch 'dev' into ccr-0ecc0cce-04uy00",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-17T23:38:18+02:00"
+    },
+    {
+      "sha": "5753fdb92f91ee2df543444d5b9b3cc7b5dbf4e6",
+      "subject": "Merge pull request #1606 from jwoglom/ccr-0ecc0cce-04uy00",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-18T01:35:30+02:00"
+    },
+    {
+      "sha": "97659bbae1a1f87b9d29bfe382331289476ff0f6",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.10 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-17T23:35:41Z"
+    },
+    {
+      "sha": "db389071c40b1e47e9ed3dd65aba4aad1f571e46",
+      "subject": "Add Home Statistics Range to settings export",
+      "author": "Claude",
+      "authoredAt": "2026-10-17T23:38:19Z"
+    },
+    {
+      "sha": "611386095a114d897113342ce40c969a2a31e342",
+      "subject": "Add Home Statistics Panel to settings export",
+      "author": "Claude",
+      "authoredAt": "2026-10-18T00:05:49Z"
+    },
+    {
+      "sha": "77ab2a55c5205ef7de9033f582dd3bb75c4a206d",
+      "subject": "Merge pull request #1590 from jwoglom/claude/focused-planck-tsklw8",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-18T02:23:43+02:00"
+    },
+    {
+      "sha": "8c1786db6037a1c276dbb4511f22a4566aa2f007",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.11 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-18T00:23:54Z"
+    },
+    {
+      "sha": "241bbca2d5adba5f0c9b9f82d5dfb54fcef34d7c",
+      "subject": "Merge pull request #1548 from nightscout/feat/g7-direct",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-18T14:27:58+02:00"
+    },
+    {
+      "sha": "c609606fc31bddff035cf935f9eb4ea0d1614287",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.12 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-18T12:28:08Z"
+    },
+    {
+      "sha": "14950b24e5234e5d9054a80a439de2b545e1ccf4",
+      "subject": "Merge branch 'dev' into feat/alarm-sound-themes",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-18T14:47:24+02:00"
+    },
+    {
+      "sha": "cc2aa5d652aab31b91a57571555d4d0e3d96ea4f",
+      "subject": "fixes crash when uploading carb entry without id to Tidepool issue #1425",
+      "author": "Lamercho",
+      "authoredAt": "2026-10-18T23:25:55+03:00"
+    },
+    {
+      "sha": "adc8bdb0ac0c0a3727ab43a77f641e80fd880794",
+      "subject": "Replace carb entry in a single transaction",
+      "author": "Ostap Korkuna",
+      "authoredAt": "2026-10-18T17:34:34-07:00"
+    },
+    {
+      "sha": "72ab5c5a5a9631807a1627ff02953eb99d15fc2e",
+      "subject": "Fix inverted SMB low temp rate for sub 30m zero temps",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-19T15:59:28+02:00"
+    },
+    {
+      "sha": "98f5224e07cc0fa1c00a809275109846e39dd8cb",
+      "subject": "Merge pull request #1645 from dnzxy/feat/alarm-sound-themes",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-10-19T17:10:12+02:00"
+    },
+    {
+      "sha": "f1c5a6d3adf478ac60d24e57ec81bcc25b2cb5a3",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.13 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-19T15:10:51Z"
+    },
+    {
+      "sha": "3a4024afbb488a8563116b121664c127276156e0",
+      "subject": "Fix OpenAPS golden parity test",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-19T17:10:29+02:00"
+    },
+    {
+      "sha": "5dca4ff6bc366e5927164cc0b14adfff23c10a45",
+      "subject": "Merge pull request #1649 from Lamercho/Lamercho/tidepool-carb-nil-id-fix",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-19T22:38:12+02:00"
+    },
+    {
+      "sha": "9787ea90af08cf5ff2abc365a4628036403687d6",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.14 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-19T20:38:25Z"
+    },
+    {
+      "sha": "838f720ac5db2999ae830f2a600fe409b48bba10",
+      "subject": "Document intentional deviation from oref JS in SMB low temp",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-20T10:35:43+02:00"
+    },
+    {
+      "sha": "7e14fecb496cd766c353c470d9238fea58e63228",
+      "subject": "Merge pull request #1651 from lolzivkovic/fix/inverted-smb-low-temp",
+      "author": "Sam King",
+      "authoredAt": "2026-10-20T07:12:39-07:00"
+    },
+    {
+      "sha": "e4ecf6201f0ea936beab2180bdfff7ec65834be7",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.15 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-20T14:12:53Z"
+    },
+    {
+      "sha": "95820392ccc449a5d1a98285043f4b4ba9608085",
+      "subject": "Merge branch 'dev' into feat/watch-only-sent-glucose-delta",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-22T17:08:24+02:00"
+    },
+    {
+      "sha": "e0a517d3026174bbf605ac6951655357f7f82f0f",
+      "subject": "Update submodules to current upstream",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-22T21:52:13+02:00"
+    },
+    {
+      "sha": "915869f15eb8cff20a762fa24b5512f9e51f5b4d",
+      "subject": "Bump LoopKit to current trio",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-22T21:52:26+02:00"
+    },
+    {
+      "sha": "b75290cfbc80531834f05e40cb664930d736fb9a",
+      "subject": "Merge pull request #1646 from ostap-korkuna/fix/edit-carb-entry-in-transaction",
+      "author": "Sam King",
+      "authoredAt": "2026-10-22T14:59:49-07:00"
+    },
+    {
+      "sha": "48e4952e89f5145e8eef20b9cb14e223927eda34",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.16 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-22T22:00:01Z"
+    },
+    {
+      "sha": "33e89ec478feeaf74a417d88731cf2b31151846b",
+      "subject": "Record the CC0 licence for the alarm sounds",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-23T16:35:28+02:00"
+    },
+    {
+      "sha": "251b6dd8032d8641f7df10171c8a959d83ed6acb",
+      "subject": "Bump submodules for the 22 Oct translation round",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-23T16:38:13+02:00"
+    },
+    {
+      "sha": "07f57566025a5368e80739f621029053bf69fa09",
+      "subject": "Bump LibreLoop to current upstream",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-23T17:07:12+02:00"
+    },
+    {
+      "sha": "e75ac1c75e90fd114e51818e9abb763484c97d73",
+      "subject": "Merge pull request #1658 from dnzxy/docs/alarm-sound-license",
+      "author": "Sam King",
+      "authoredAt": "2026-10-23T08:43:07-07:00"
+    },
+    {
+      "sha": "d673f96248d8cc9f1fda6f023b311d5de082a140",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.17 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-23T15:43:18Z"
+    },
+    {
+      "sha": "39b9392f127065fdaaaf34c8e2ed455099e87bc1",
+      "subject": "Bump G7SensorKit for the SystemMemoryReset reconnect fix",
+      "author": "dnzxy",
+      "authoredAt": "2026-10-23T17:45:37+02:00"
+    },
+    {
+      "sha": "f738e90106180bbcd1dc0a26d38d1c0b9a01af63",
+      "subject": "Show CGM sensor warnings whatever the sensor's age",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-19T20:24:02+02:00"
+    },
+    {
+      "sha": "1b8cbc40663b2a34a96f4018013191b8aee02c7d",
+      "subject": "Catalog the G7 sensor lifecycle alerts",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-19T20:24:09+02:00"
+    },
+    {
+      "sha": "0dcaa9674ab1b4f1c955c1d7ab11b6f8f1d382a8",
+      "subject": "Merge pull request #1656 from nightscout/chore/update-submodules-1022",
+      "author": "Sam King",
+      "authoredAt": "2026-10-23T09:27:47-07:00"
+    },
+    {
+      "sha": "10d89e8a8d4d79e2b9da1751c3362b237a8009e4",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.18 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-23T16:27:58Z"
+    },
+    {
+      "sha": "5f02768af679754985eec8d01c9bebefb22bf989",
+      "subject": "Merge branch 'dev' into fix/cgm-sensor-issue-surfacing",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-23T18:28:27+02:00"
+    },
+    {
+      "sha": "f581a22bb34c0118397cea673c9a593d396e09fe",
+      "subject": "Merge pull request #1659 from dnzxy/fix/cgm-sensor-issue-surfacing",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-10-23T23:34:08+02:00"
+    },
+    {
+      "sha": "72489a0dc7865957d21df3186ff2fc922dcc8d2c",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.19 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-10-23T21:34:18Z"
+    },
+    {
+      "sha": "f17ba179b724e694c759b875507fe8ede76c623a",
+      "subject": "Watch: send the whole glucose trace compactly instead of syncing a history",
+      "author": "Claude",
+      "authoredAt": "2026-10-24T12:47:07Z"
+    },
+    {
+      "sha": "f48ffadab45e6f7a5b6d90ef83e8226906c02c1b",
+      "subject": "Merge nightscout/Trio dev into feat/watch-only-sent-glucose-delta",
+      "author": "Claude",
+      "authoredAt": "2026-10-24T12:47:15Z"
+    },
+    {
+      "sha": "ec1a8069b1774f6e6a616f53923fd86f7f7cd996",
+      "subject": "Watch: no completion on the state request, now that nothing waits for it",
+      "author": "Claude",
+      "authoredAt": "2026-10-24T12:47:41Z"
+    },
+    {
+      "sha": "f0653414c8d94739c4bfd946c54279ad032b6518",
+      "subject": "Xcode project: IDs for WatchGlucoseTrace.swift that no fork's files use",
+      "author": "Claude",
+      "authoredAt": "2026-10-24T12:51:21Z"
+    },
+    {
+      "sha": "c3fb16ad1155a964cd1895a2faa0cd608454954c",
+      "subject": "Watch: color the readings with the phone's own getDynamicGlucoseColor",
+      "author": "Claude",
+      "authoredAt": "2026-10-24T12:54:40Z"
+    },
+    {
+      "sha": "e6d3b8a6b05bce57ed647560066c28ad6a45f479",
+      "subject": "Watch: the phone sends the dynamic scheme's colors with the trace",
+      "author": "ejm0",
+      "authoredAt": "2026-10-24T19:43:41+02:00"
+    },
+    {
+      "sha": "42fa59df84047286570240eb1ec9ce73f1d58f45",
+      "subject": "Watch: the trace carries the phone's values and colors, as dev sends them",
+      "author": "ejm0",
+      "authoredAt": "2026-10-24T19:49:32+02:00"
+    },
+    {
+      "sha": "b3dbb98ef6393207a5f4c9d252c4579d5153a526",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into feat/watch-only-sent-glucose-delta",
+      "author": "ejm0",
+      "authoredAt": "2026-10-24T19:50:41+02:00"
+    },
+    {
+      "sha": "bdb25150e71f283466bf12e0010b6114f86b6d39",
+      "subject": "Merge upstream/dev into feat/watch-only-sent-glucose-delta",
+      "author": "ejm0",
+      "authoredAt": "2026-11-01T13:10:26+01:00"
+    },
+    {
+      "sha": "17e46c6a153e41c9c39e7b8519dff56cce6deffd",
+      "subject": "Watch: send glucose as on dev again, without the compact trace",
+      "author": "ejm0",
+      "authoredAt": "2026-11-12T16:03:11+01:00"
+    },
+    {
+      "sha": "d71568ff8c1495115446ea3f3502a9f82ee4d844",
+      "subject": "Merge upstream/dev into feat/watch-only-sent-glucose-delta",
+      "author": "ejm0",
+      "authoredAt": "2026-11-12T16:07:27+01:00"
+    },
+    {
+      "sha": "8e81c900156dad58c7a9e1d5ed56484cfa122eb9",
+      "subject": "Watch: a CGM gap only dates the BG bubble; an older watch app's request is answered",
+      "author": "ejm0",
+      "authoredAt": "2026-11-13T00:05:26+01:00"
+    },
+    {
+      "sha": "f465a5ec440a9217812921474623eda6a3673615",
+      "subject": "Watch: one request in flight, a fixed push window, no content check",
+      "author": "ejm0",
+      "authoredAt": "2026-11-13T00:33:37+01:00"
+    },
+    {
+      "sha": "1c79d0f75b3124bf0a16487ad57dd1740455c98d",
+      "subject": "Add watch tests for the bolus confirmation crown hint arrow",
+      "author": "Claude",
+      "authoredAt": "2026-11-16T08:16:13Z"
+    },
+    {
+      "sha": "f6a0532a0bb93f06f2fdca8bb404cc9556e331eb",
+      "subject": "Point the watch bolus crown hint arrow by crown side, not wrist",
+      "author": "Claude",
+      "authoredAt": "2026-11-16T08:20:42Z"
+    },
+    {
+      "sha": "927c22b7a9c98140233027b8edc27f36f37d734e",
+      "subject": "Merge pull request #1598 from EJM0/feat/watch-only-sent-glucose-delta",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-16T21:48:49+01:00"
+    },
+    {
+      "sha": "e6a9259e27a023d5157ba0c0183c808b68f3e109",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.75 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-16T20:49:04Z"
+    },
+    {
+      "sha": "d2c7f318611ec818896df33c6e7677d0f39598bc",
+      "subject": "Merge pull request #1783 from jwoglom/ccr-af5f37d2-65cxjj",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-16T23:59:21+01:00"
+    },
+    {
+      "sha": "7e2fa52cb73509596d28b3cdbe0035133f938276",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.76 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-16T22:59:33Z"
+    },
+    {
+      "sha": "998887784cc59402dc15058ccc35ef62bfc810b9",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-11-16T11:48:52-06:00"
+      "authoredAt": "2026-11-18T07:41:35-06:00"
     }
   ],
   "includedFiles": [
@@ -298,127 +999,51 @@
     },
     {
       "status": "M",
+      "path": "Model/CoreDataStack.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/TrioWatchApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/Views/BolusConfirmationView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/Views/TrioMainWatchView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/WatchState+Requests.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Extension/WatchState.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio Watch App Extension/WatchStateSnapshot.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Tests/Unit Tests.swift"
+    },
+    {
+      "status": "M",
       "path": "Trio.xcodeproj/project.pbxproj"
     },
     {
-      "status": "M",
-      "path": "Trio/Sources/Application/TrioApp.swift"
+      "status": "D",
+      "path": "Trio/Sources/Models/WatchStateSnapshot.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Helpers/UIDevice+Extensions.swift"
+      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/BasalProfileEditor/View/BasalProfileEditorRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/CarbRatioEditor/View/CarbRatioEditorRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/ISFEditor/View/ISFEditorRootView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Onboarding/View/TherapyProfileChart.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/AreaChartSetup.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/ExportSetup.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/ReportPresetSetup.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/StatStateModel+Setup/StackedChartSetup.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/StatStateModel.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/View/StatChartUtils.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/View/StatRootView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/GlucoseDistributionByDayPDFChart.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/GlucosePercentileByDayPDFChart.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/InsulinBolusPDFChart.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/InsulinTDDPDFChart.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/MealsPDFChart.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/PDFReportContent.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/Charts/TherapySchedulePDFContent.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/ReportChartType.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/StatExportMenuView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/StatPDFExporter.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Export/StatPDFReportView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GRIView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyDistributionChart.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyPercentileChart.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Modules/TargetsEditor/View/TargetsEditorRootView.swift"
-    },
-    {
-      "status": "M",
-      "path": "Trio/Sources/Services/DevelopmentBranchAlerter/DevelopmentBranchAlerter.swift"
+      "path": "Trio/Sources/Services/WatchManager/GarminManager.swift"
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "inputHash": "7b7507f79e4091a92b4d23c0e94e2fe0738c6cac723b2079b3820c01087bae1d",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1598",
+    "title": "Fewer, better-timed Apple Watch updates",
+    "changes": [
+      "Watch updates are sent less often and at better times.",
+      "The watch shows the last glucose with its age, and syncing appears only for real updates."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1598",
+      "commit:927c22b7a9c9"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
