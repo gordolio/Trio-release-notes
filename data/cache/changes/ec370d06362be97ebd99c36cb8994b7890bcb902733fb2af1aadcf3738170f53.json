@@ -1,0 +1,21 @@
+{
+  "inputHash": "414e3a7a0fdadd8d91b71eb3c95fd056f47c1b84aa7a71e0f0e1a0ed9f9014a3",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1681",
+    "title": "Remove unused statistics and APS cleanup",
+    "changes": [
+      "Removed unused statistics models and related APS code; users should see no functional changes."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1681",
+      "diff:ec370d06362b"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

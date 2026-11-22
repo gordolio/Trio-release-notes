@@ -1,0 +1,1014 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 45072776325,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/45072776325",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "998887784cc59402dc15058ccc35ef62bfc810b9",
+    "currentBuiltSha": "633836f5dc10e91f1f8da64287cbc83066f84445",
+    "shortSha": "633836f",
+    "buildDate": "2026-11-22T21:48:45.000Z",
+    "generationDate": "2026-11-22T21:58:38.483Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1764",
+      "title": "Therapy profiles: create, edit and switch",
+      "changes": [
+        "You can create, rename, delete and switch between therapy profiles, and edit their settings.",
+        "The Home screen shows the active profile name when more than one profile exists."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1764",
+        "commit:6eabcad87cea"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1764"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1764",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1764: [Part 2/4] Add therapy profiles with switching and editing",
+          "url": "https://github.com/nightscout/Trio/pull/1764"
+        },
+        {
+          "id": "commit:6eabcad87cea",
+          "type": "commit",
+          "title": "Add therapy profiles with switching and editing",
+          "url": "https://github.com/gordolio/Trio/commit/6eabcad87ceadfdba8bb119c6d4d7021e924ea49"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1765",
+      "title": "Upload and import multiple therapy profiles",
+      "changes": [
+        "Trio now uploads all therapy profiles and scheduled profile switches to Nightscout.",
+        "Onboarding can import multiple Nightscout profiles so your profiles are preserved during setup."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1765",
+        "commit:b5862b235c22"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1765"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1765",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1765: [Part 3/4] Upload every therapy profile to Nightscout",
+          "url": "https://github.com/nightscout/Trio/pull/1765"
+        },
+        {
+          "id": "commit:b5862b235c22",
+          "type": "commit",
+          "title": "Upload every therapy profile to Nightscout",
+          "url": "https://github.com/gordolio/Trio/commit/b5862b235c2201fbd5f20787a17829d1bda1fc6a"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1766",
+      "title": "Remote therapy profile commands",
+      "changes": [
+        "Trio now accepts remote commands to switch, save, delete therapy profiles and scheduled starts.",
+        "Saves and deletes include a profile fingerprint; the active profile and Default cannot be deleted."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1766",
+        "commit:e981cbbd99bb",
+        "diff:fdc6c777ad7e"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1766"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1766",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1766: [Part 4/4] Add remote profile switch, save and delete commands",
+          "url": "https://github.com/nightscout/Trio/pull/1766"
+        },
+        {
+          "id": "commit:e981cbbd99bb",
+          "type": "commit",
+          "title": "Add remote profile switch, save and delete commands",
+          "url": "https://github.com/gordolio/Trio/commit/e981cbbd99bbf36e9cf2b5e8dfb419f5a41551c1"
+        },
+        {
+          "id": "diff:fdc6c777ad7e",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1766",
+          "url": "https://github.com/gordolio/Trio/compare/b5862b235c2201fbd5f20787a17829d1bda1fc6a...cadb155b531dd667b187f1fef9efebeb88710e09"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1788",
+      "title": "Therapy profiles",
+      "changes": [
+        "You can create and switch between therapy profiles with different basal, carb, ISF, and target settings.",
+        "Profiles can be scheduled weekly or selected from LoopFollow."
+      ],
+      "category": "new-features",
+      "sourceIds": [
+        "pr:nightscout/Trio#1788",
+        "commit:de0f7f1f92a7"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1788"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1788",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1788: Therapy profiles in Trio",
+          "url": "https://github.com/nightscout/Trio/pull/1788"
+        },
+        {
+          "id": "commit:de0f7f1f92a7",
+          "type": "commit",
+          "title": "Merge pull request #1788 from nightscout/feat/profiles",
+          "url": "https://github.com/gordolio/Trio/commit/de0f7f1f92a7c824c25bf4c660755b45e3432d66"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1781",
+      "title": "Stop duplicate app initialization when opening CGM",
+      "changes": [
+        "Opening the CGM setup sheet no longer triggers the app to initialize twice.",
+        "This avoids duplicate startup behavior when first setting up or using certain CGM sources."
+      ],
+      "category": "pump-and-cgm",
+      "sourceIds": [
+        "pr:nightscout/Trio#1781",
+        "commit:15d8e7f95218"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1781"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1781",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1781: Fix app init running twice from TrioApp().resolver",
+          "url": "https://github.com/nightscout/Trio/pull/1781"
+        },
+        {
+          "id": "commit:15d8e7f95218",
+          "type": "commit",
+          "title": "Use static TrioApp.resolver instead of creating new TrioApp",
+          "url": "https://github.com/gordolio/Trio/commit/15d8e7f9521888164d3a6f64fdac4559de8d02a5"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1763",
+          "title": "Store therapy profiles and scheduled switches",
+          "changes": [
+            "Trio can now save named therapy profiles and their scheduled switches.",
+            "This change adds only background storage—there is no new user interface yet, so you won’t see new screens."
+          ],
+          "category": "new-features",
+          "sourceIds": [
+            "pr:nightscout/Trio#1763",
+            "commit:ea16c23a83d6"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1763"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1763",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1763: [Part 1/4] Store therapy profiles in Core Data",
+              "url": "https://github.com/nightscout/Trio/pull/1763"
+            },
+            {
+              "id": "commit:ea16c23a83d6",
+              "type": "commit",
+              "title": "Store therapy profiles in Core Data",
+              "url": "https://github.com/gordolio/Trio/commit/ea16c23a83d6dfc17a0543ad6c76e9c264840828"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": []
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1681",
+          "title": "Remove unused statistics and APS cleanup",
+          "changes": [
+            "Removed unused statistics models and related APS code; users should see no functional changes."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1681",
+            "diff:ec370d06362b"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1681"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1681",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1681: Remove unused statistics reporting pipeline and StatsData entity",
+              "url": "https://github.com/nightscout/Trio/pull/1681"
+            },
+            {
+              "id": "diff:ec370d06362b",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1681",
+              "url": "https://github.com/gordolio/Trio/compare/45cd2cacb2604fb5b38fd060e482094d3af74fda...b9fcb5434a15a51956a4446509a2f5d452dad60a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1681,
+      "title": "Remove unused statistics reporting pipeline and StatsData entity",
+      "body": "While refactoring Stats #1600, I discovered some unused code within APSManager. I included and cleaned up what was no longer needed or had been used in obsolete functions.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1681",
+      "mergedAt": "2026-11-19T18:39:24Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1681,
+      "title": "Remove unused statistics reporting pipeline and StatsData entity",
+      "body": "While refactoring Stats #1600, I discovered some unused code within APSManager. I included and cleaned up what was no longer needed or had been used in obsolete functions.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1681",
+      "mergedAt": "2026-11-19T18:39:24Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1763,
+      "title": "[Part 1/4] Store therapy profiles in Core Data",
+      "body": "Trio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow. This part adds only the storage: the profiles, the active profile, the switch history and the scheduled starts, in one model change with no UI. The live settings files stay the source the algorithm reads, and they always equal the active profile.\n\nTested in the simulator and on an iPhone XS Max with Omnipod DASH (a water-filled pod, not on a body) and a simulated Dana-i, with LoopFollow on a second phone. Not tested in daily use.\n\nThis addresses #805 (multiple therapy profiles).\n\nParts: #1763, #1764, #1765, #1766. Companion: loopandlearn/LoopFollow#833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1763",
+      "mergedAt": "2026-11-17T01:19:21Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1763,
+      "title": "[Part 1/4] Store therapy profiles in Core Data",
+      "body": "Trio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow. This part adds only the storage: the profiles, the active profile, the switch history and the scheduled starts, in one model change with no UI. The live settings files stay the source the algorithm reads, and they always equal the active profile.\n\nTested in the simulator and on an iPhone XS Max with Omnipod DASH (a water-filled pod, not on a body) and a simulated Dana-i, with LoopFollow on a second phone. Not tested in daily use.\n\nThis addresses #805 (multiple therapy profiles).\n\nParts: #1763, #1764, #1765, #1766. Companion: loopandlearn/LoopFollow#833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1763",
+      "mergedAt": "2026-11-17T01:19:21Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1764,
+      "title": "[Part 2/4] Add therapy profiles with switching and editing",
+      "body": "Adds the Therapy Profiles screen, switching, editing with a banner that names the profile, the scheduled starts and the active profile on the home screen. A switch validates against the pump, writes the basal schedule to the pump and only then writes the settings and Core Data, and it is refused while delivery is suspended. A scheduled start waits for a running bolus and retries while suspended. The basal editor matches a stored rate to the nearest supported rate and says when a rate is not supported, which replaces the rounding from #1674.\n\nStacked on #1763; only the last commit is new.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1764",
+      "mergedAt": "2026-11-17T01:39:54Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1764,
+      "title": "[Part 2/4] Add therapy profiles with switching and editing",
+      "body": "Adds the Therapy Profiles screen, switching, editing with a banner that names the profile, the scheduled starts and the active profile on the home screen. A switch validates against the pump, writes the basal schedule to the pump and only then writes the settings and Core Data, and it is refused while delivery is suspended. A scheduled start waits for a running bolus and retries while suspended. The basal editor matches a stored rate to the nearest supported rate and says when a rate is not supported, which replaces the rounding from #1674.\n\nStacked on #1763; only the last commit is new.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1764",
+      "mergedAt": "2026-11-17T01:39:54Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1765,
+      "title": "[Part 3/4] Upload every therapy profile to Nightscout",
+      "body": "The profile document carries every profile, the active one as defaultProfile, and the scheduled starts, and each switch is a Profile Switch treatment. Onboarding can import all profiles, also from a profile document uploaded by Loop, so moving from Loop to Trio keeps them. The import takes the active profile from defaultProfile and finds the default entry regardless of case, which may be what #729 ran into.\n\nStacked on #1764; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1765",
+      "mergedAt": "2026-11-18T14:57:30Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1765,
+      "title": "[Part 3/4] Upload every therapy profile to Nightscout",
+      "body": "The profile document carries every profile, the active one as defaultProfile, and the scheduled starts, and each switch is a Profile Switch treatment. Onboarding can import all profiles, also from a profile document uploaded by Loop, so moving from Loop to Trio keeps them. The import takes the active profile from defaultProfile and finds the default entry regardless of case, which may be what #729 ran into.\n\nStacked on #1764; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1765",
+      "mergedAt": "2026-11-18T14:57:30Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1766,
+      "title": "[Part 4/4] Add remote profile switch, save and delete commands",
+      "body": "Adds TRC commands to switch, save and delete a profile and to replace the scheduled starts. A save or delete carries the fingerprint of the profile the caregiver saw, and the active profile and Default cannot be deleted. Companion: loopandlearn/LoopFollow#833.\n\nStacked on #1765; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1766",
+      "mergedAt": "2026-11-18T15:13:45Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1766,
+      "title": "[Part 4/4] Add remote profile switch, save and delete commands",
+      "body": "Adds TRC commands to switch, save and delete a profile and to replace the scheduled starts. A save or delete carries the fingerprint of the profile the caregiver saw, and the active profile and Default cannot be deleted. Companion: loopandlearn/LoopFollow#833.\n\nStacked on #1765; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1766",
+      "mergedAt": "2026-11-18T15:13:45Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1781,
+      "title": "Fix app init running twice from TrioApp().resolver",
+      "body": "Fixes the app init running again when the CGM sheet is opened from Home for the first time with Simulator, xDrip or Nightscout as CGM source, or with no CGM set up yet, as well as in a few tests. `TrioApp()` runs the whole `init()`, so `TrioApp().resolver` was starting the app again just to get the resolver. Replaced it with the static `TrioApp.resolver` that is already used in other places.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1781",
+      "mergedAt": "2026-11-19T14:33:24Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1781,
+      "title": "Fix app init running twice from TrioApp().resolver",
+      "body": "Fixes the app init running again when the CGM sheet is opened from Home for the first time with Simulator, xDrip or Nightscout as CGM source, or with no CGM set up yet, as well as in a few tests. `TrioApp()` runs the whole `init()`, so `TrioApp().resolver` was starting the app again just to get the resolver. Replaced it with the static `TrioApp.resolver` that is already used in other places.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1781",
+      "mergedAt": "2026-11-19T14:33:24Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1788,
+      "title": "Therapy profiles in Trio",
+      "body": "This was a 4 part PR of @bjorkert. Thanks for the work! We just merged the 4 parts into a separate feature branch.\n\nTrio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow.\n\nParts: https://github.com/nightscout/Trio/pull/1763, https://github.com/nightscout/Trio/pull/1764, https://github.com/nightscout/Trio/pull/1765, https://github.com/nightscout/Trio/pull/1766. Companion: https://github.com/loopandlearn/LoopFollow/pull/833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1788",
+      "mergedAt": "2026-11-19T13:52:00Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1788,
+      "title": "Therapy profiles in Trio",
+      "body": "This was a 4 part PR of @bjorkert. Thanks for the work! We just merged the 4 parts into a separate feature branch.\n\nTrio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow.\n\nParts: https://github.com/nightscout/Trio/pull/1763, https://github.com/nightscout/Trio/pull/1764, https://github.com/nightscout/Trio/pull/1765, https://github.com/nightscout/Trio/pull/1766. Companion: https://github.com/loopandlearn/LoopFollow/pull/833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1788",
+      "mergedAt": "2026-11-19T13:52:00Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "59ccd6af0c26eee54e18074d5451df660bbde292",
+      "subject": "Remove unused statistics reporting pipeline and StatsData entity",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-27T13:38:29+01:00"
+    },
+    {
+      "sha": "508f3bda8a7b6ed505ba8e68f5587d504bf18acc",
+      "subject": "Remove unused APS state, injected services, and pump helpers",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-10-28T16:38:20+01:00"
+    },
+    {
+      "sha": "bc84b1361db2ee477cfeeccc6f003c6cefa779b6",
+      "subject": "Merge branch 'dev' into refactor/apsmanager-clean-up",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-10T11:25:02+01:00"
+    },
+    {
+      "sha": "ea16c23a83d6dfc17a0543ad6c76e9c264840828",
+      "subject": "Store therapy profiles in Core Data",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-07T22:59:41+01:00"
+    },
+    {
+      "sha": "6eabcad87ceadfdba8bb119c6d4d7021e924ea49",
+      "subject": "Add therapy profiles with switching and editing",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-07T23:11:01+01:00"
+    },
+    {
+      "sha": "b5862b235c2201fbd5f20787a17829d1bda1fc6a",
+      "subject": "Upload every therapy profile to Nightscout",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-07T23:19:37+01:00"
+    },
+    {
+      "sha": "e981cbbd99bbf36e9cf2b5e8dfb419f5a41551c1",
+      "subject": "Add remote profile switch, save and delete commands",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-07T23:23:24+01:00"
+    },
+    {
+      "sha": "5ac33cd333ca755f692426eaea411a58b1da8eeb",
+      "subject": "Resolve the therapy profile manager once through the app's locked resolver",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-12T08:15:23+01:00"
+    },
+    {
+      "sha": "6bb4b9b256af35f368287d95dca8a7de18363028",
+      "subject": "Resolve the therapy profile manager once through the app's locked resolver",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-12T08:15:23+01:00"
+    },
+    {
+      "sha": "a28b05090c5fb10efb576b2868d2a7ebf4ca5640",
+      "subject": "Resolve the therapy profile manager once through the app's locked resolver",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-12T08:15:23+01:00"
+    },
+    {
+      "sha": "7387293caad8bf491f26edeceae304b4b4ba2160",
+      "subject": "Merge nightscout/Trio dev",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-12T08:45:33+01:00"
+    },
+    {
+      "sha": "a07acbe9a961804323a406cdc7d1fde57e539bdd",
+      "subject": "Merge nightscout/Trio dev",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-12T08:45:33+01:00"
+    },
+    {
+      "sha": "51982bb242806f3a53e1b3d5c2df97517d752437",
+      "subject": "Merge nightscout/Trio dev",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-12T08:45:39+01:00"
+    },
+    {
+      "sha": "15d8e7f9521888164d3a6f64fdac4559de8d02a5",
+      "subject": "Use static TrioApp.resolver instead of creating new TrioApp",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-15T15:12:59+01:00"
+    },
+    {
+      "sha": "21cee1463f0e619017b0e74cb3199f9c38dfcbcf",
+      "subject": "Validate therapy profiles before storing them and read them asynchronously",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-16T11:06:41+01:00"
+    },
+    {
+      "sha": "f2a667e02925f591aab628e49162d5979697a51d",
+      "subject": "Validate therapy profiles before storing them, read them asynchronously and keep them in memory in the manager",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-16T11:06:41+01:00"
+    },
+    {
+      "sha": "9fad90e2676e4f66ed463699588c7a44b95ea88a",
+      "subject": "Validate therapy profiles before storing them, read them asynchronously and keep them in memory in the manager",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-16T11:06:41+01:00"
+    },
+    {
+      "sha": "3afd3d73796caeaad8b540f98a5d50b29278713d",
+      "subject": "Validate therapy profiles before storing them, read them asynchronously, keep them in memory in the manager and load them before a remote save",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-16T11:06:41+01:00"
+    },
+    {
+      "sha": "4dc05c849c77bf548d77e98fdd75994fe3619cf0",
+      "subject": "Merge pull request #1763 from bjorkert/therapy-profiles-part-1",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-17T02:19:21+01:00"
+    },
+    {
+      "sha": "054b215759310891308a9a841c539724c27e6923",
+      "subject": "Merge nightscout/Trio feat/profiles",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-16T18:36:37-07:00"
+    },
+    {
+      "sha": "b053b2e05519e41f7f70b91c17954b1e460e4c0a",
+      "subject": "Merge pull request #1764 from bjorkert/therapy-profiles-part-2",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-17T02:39:53+01:00"
+    },
+    {
+      "sha": "df93f1b64a332ec04a2f7839a336bb1b1e607264",
+      "subject": "Merge nightscout/Trio feat/profiles",
+      "author": "dnzxy",
+      "authoredAt": "2026-11-17T00:55:38-07:00"
+    },
+    {
+      "sha": "0ac9f4232839acbc7a0c2d377d9afb0df32f0e67",
+      "subject": "Merge pull request #1765 from bjorkert/therapy-profiles-part-3",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-11-18T14:57:29Z"
+    },
+    {
+      "sha": "c0e4dc1019f2689fefec6a7cc676e9a6c7146687",
+      "subject": "Merge nightscout/Trio feat/profiles into therapy-profiles-part-4",
+      "author": "marv-out",
+      "authoredAt": "2026-11-18T16:06:37+01:00"
+    },
+    {
+      "sha": "cadb155b531dd667b187f1fef9efebeb88710e09",
+      "subject": "Merge pull request #1766 from bjorkert/therapy-profiles-part-4",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-11-18T15:13:45Z"
+    },
+    {
+      "sha": "de0f7f1f92a7c824c25bf4c660755b45e3432d66",
+      "subject": "Merge pull request #1788 from nightscout/feat/profiles",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-11-19T13:51:59Z"
+    },
+    {
+      "sha": "e11a823e7391ba4123d703a9969c301007564e25",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.77 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-19T13:52:12Z"
+    },
+    {
+      "sha": "7da2c1e0d8e9262ab8c3f9ef2f89f7a09bfb2430",
+      "subject": "Merge branch 'dev' into refactor/apsmanager-clean-up",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-19T15:26:39+01:00"
+    },
+    {
+      "sha": "f4696918433cf61204638912e2beebe59db61e95",
+      "subject": "Merge branch 'dev' into fix/duplicate-init",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-11-19T14:33:01Z"
+    },
+    {
+      "sha": "5587e4b35525e6d8bafc3c2fdd6297551f1ea8ae",
+      "subject": "Merge pull request #1781 from lolzivkovic/fix/duplicate-init",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-11-19T14:33:23Z"
+    },
+    {
+      "sha": "1bbf79dfd3e98a4b7a6b7e36b880c838d993e637",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.78 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-19T14:33:34Z"
+    },
+    {
+      "sha": "295251b1515839c9ab1ec5667159a73887f7a71f",
+      "subject": "Merge branch 'dev' into refactor/apsmanager-clean-up",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-11-19T14:52:13Z"
+    },
+    {
+      "sha": "b9fcb5434a15a51956a4446509a2f5d452dad60a",
+      "subject": "Merge pull request #1681 from lolzivkovic/refactor/apsmanager-clean-up",
+      "author": "Marvin Polscheit",
+      "authoredAt": "2026-11-19T18:39:23Z"
+    },
+    {
+      "sha": "d37fe347e0b0758510e58f9edb0bae14b8a3dc64",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.79 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-19T18:39:35Z"
+    },
+    {
+      "sha": "633836f5dc10e91f1f8da64287cbc83066f84445",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-22T15:33:19-06:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/ScheduledProfileSwitchStored+CoreDataClass.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/ScheduledProfileSwitchStored+CoreDataProperties.swift"
+    },
+    {
+      "status": "D",
+      "path": "Model/Classes+Properties/StatsData+CoreDataClass.swift"
+    },
+    {
+      "status": "D",
+      "path": "Model/Classes+Properties/StatsData+CoreDataProperties.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/TherapyProfileEntryStored+CoreDataClass.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/TherapyProfileEntryStored+CoreDataProperties.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/TherapyProfileStored+CoreDataClass.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/TherapyProfileStored+CoreDataProperties.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/TherapyProfileSwitchStored+CoreDataClass.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Classes+Properties/TherapyProfileSwitchStored+CoreDataProperties.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/Helper/NSPredicates.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/Helper/PumpEvent+helper.swift"
+    },
+    {
+      "status": "A",
+      "path": "Model/Helper/TherapyProfileStored+helper.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/TrioCoreDataPersistentContainer.xcdatamodeld/TrioCoreDataPersistentContainer.xcdatamodel/contents"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/APSManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPS/Constants.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/APS/Storage/TherapyProfileStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Application/TrioApp.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Assemblies/ServiceAssembly.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Assemblies/StorageAssembly.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/CommandPayload.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Models/CompactTherapyProfile.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Models/Loops.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/NightscoutStatus.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/NightscoutTreatment.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/RawFetchedProfile.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Models/ScheduledProfileSwitch.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Models/Statistics.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Models/TherapyProfile.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalProfileEditor/BasalProfileEditorProvider.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalProfileEditor/BasalProfileEditorStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/BasalProfileEditor/View/BasalProfileEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CGMSettings/CGMSettingsStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioEditor/CarbRatioEditorStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/CarbRatioEditor/View/CarbRatioEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/ISFEditor/ISFEditorStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/ISFEditor/View/ISFEditorRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/OnboardingStateModel+Nightscout.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/OnboardingStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutImportStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/Subviews/TherapySettingsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/TargetsEditor/TargetsEditorStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/TargetsEditor/View/TargetsEditorRootView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/TherapyProfiles/TherapyProfilesDataFlow.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/TherapyProfiles/TherapyProfilesProvider.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/TherapyProfiles/TherapyProfilesStateModel.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/TherapyProfiles/View/ScheduledSwitchEditorView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/TherapyProfiles/View/TherapyProfileBanner.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/TherapyProfiles/View/TherapyProfileDetailView.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Modules/TherapyProfiles/View/TherapyProfilesRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Router/Screen.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/AlertCatalogRegistry.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Alerts/AlertCatalogVendor.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutAPI.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutUploadPipeline.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/RemoteControl/RemoteNotificationResponseManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl+Helpers.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl+Profile.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Services/TherapyProfiles/TherapyProfileManager.swift"
+    },
+    {
+      "status": "A",
+      "path": "Trio/Sources/Services/TherapyProfiles/TherapyProfileValidator.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/AlertCatalogRegistryEntriesTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/BolusCalculatorTests/BolusCalculatorTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/BolusSafetyTests/BolusSafetyValidatorTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CalibrationsTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/ContainerResolutionTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/CarbEntryMutationServiceTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/CoreDataTests/TestAssembly.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/CoreDataTests/TherapyProfileStorageTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/PluginManagerTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/NightscoutProfileImportTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/ScheduledProfileSwitchTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileFixtures.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileManagerTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileModelTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileNightscoutTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileRemoteValuesTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileScheduledSwitchTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileTestSupport.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TherapyProfileValidatorTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TherapyProfileTests/TrioRemoteControlProfileTests.swift"
+    }
+  ]
+}

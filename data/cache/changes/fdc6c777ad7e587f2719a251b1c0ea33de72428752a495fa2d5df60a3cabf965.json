@@ -1,0 +1,23 @@
+{
+  "inputHash": "519fea531da1410025d035a8116b8c0cdbabbb5af698caefc0be44a2d1ca3798",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1766",
+    "title": "Remote therapy profile commands",
+    "changes": [
+      "Trio now accepts remote commands to switch, save, delete therapy profiles and scheduled starts.",
+      "Saves and deletes include a profile fingerprint; the active profile and Default cannot be deleted."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1766",
+      "commit:e981cbbd99bb",
+      "diff:fdc6c777ad7e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build 9988877</title>
+  <title>Trio Build 633836f</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,13 +16,18 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build 9988877</h1>
-    <p>Built 2026-11-18T14:15:46.000Z from <code>edb7b79..9988877</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Fewer, better-timed Apple Watch updates</h3><ul><li>Watch updates are sent less often and at better times.</li><li>The watch shows the last glucose with its age, and syncing appears only for real updates.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1598" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Fix Apple Watch bolus arrow direction</h3><ul><li>Bolus confirmation on Apple Watch now shows an arrow that matches the crown side and points the correct way.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1783" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build 633836f</h1>
+    <p>Built 2026-11-22T21:48:45.000Z from <code>9988877..633836f</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Therapy profiles: create, edit and switch</h3><ul><li>You can create, rename, delete and switch between therapy profiles, and edit their settings.</li><li>The Home screen shows the active profile name when more than one profile exists.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1764" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Upload and import multiple therapy profiles</h3><ul><li>Trio now uploads all therapy profiles and scheduled profile switches to Nightscout.</li><li>Onboarding can import multiple Nightscout profiles so your profiles are preserved during setup.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1765" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Remote therapy profile commands</h3><ul><li>Trio now accepts remote commands to switch, save, delete therapy profiles and scheduled starts.</li><li>Saves and deletes include a profile fingerprint; the active profile and Default cannot be deleted.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1766" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Therapy profiles</h3><ul><li>You can create and switch between therapy profiles with different basal, carb, ISF, and target settings.</li><li>Profiles can be scheduled weekly or selected from LoopFollow.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1788" rel="noreferrer">View source on GitHub</a></p></article>
+<article><h3>Stop duplicate app initialization when opening CGM</h3><ul><li>Opening the CGM setup sheet no longer triggers the app to initialize twice.</li><li>This avoids duplicate startup behavior when first setting up or using certain CGM sources.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1781" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>New Features</h2><article><h3>Store therapy profiles and scheduled switches</h3><ul><li>Trio can now save named therapy profiles and their scheduled switches.</li><li>This change adds only background storage—there is no new user interface yet, so you won’t see new screens.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1763" rel="noreferrer">View source on GitHub</a></p></article></section>
+<section><h2>Internal and Build-System Changes</h2><article><h3>Remove unused statistics and APS cleanup</h3><ul><li>Removed unused statistics models and related APS code; users should see no functional changes.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1681" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/44316311683">Source workflow 44316311683</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/45072776325">Source workflow 45072776325</a></p>
   </footer>
 </body>
 </html>

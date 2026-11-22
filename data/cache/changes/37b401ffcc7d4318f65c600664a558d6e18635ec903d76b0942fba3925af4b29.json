@@ -1,0 +1,22 @@
+{
+  "inputHash": "d7507f226877391206ff69def2bb8c7b704c3e45e7f1c3262182ae7cedb69ea3",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1788",
+    "title": "Therapy profiles",
+    "changes": [
+      "You can create and switch between therapy profiles with different basal, carb, ISF, and target settings.",
+      "Profiles can be scheduled weekly or selected from LoopFollow."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1788",
+      "commit:de0f7f1f92a7"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "b91d5fb068b0d9a16c40de2cd54cfcb454397628807544a806fddd77241cf625",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1763",
+    "title": "Store therapy profiles and scheduled switches",
+    "changes": [
+      "Trio can now save named therapy profiles and their scheduled switches.",
+      "This change adds only background storage—there is no new user interface yet, so you won’t see new screens."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1763",
+      "commit:ea16c23a83d6"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

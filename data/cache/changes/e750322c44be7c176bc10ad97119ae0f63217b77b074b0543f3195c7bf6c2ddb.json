@@ -1,0 +1,22 @@
+{
+  "inputHash": "f99c4ee187d81d852230205def2f38d00300202269f4dfd7c8beaeb2ada432c1",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1764",
+    "title": "Therapy profiles: create, edit and switch",
+    "changes": [
+      "You can create, rename, delete and switch between therapy profiles, and edit their settings.",
+      "The Home screen shows the active profile name when more than one profile exists."
+    ],
+    "category": "new-features",
+    "sourceIds": [
+      "pr:nightscout/Trio#1764",
+      "commit:6eabcad87cea"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
