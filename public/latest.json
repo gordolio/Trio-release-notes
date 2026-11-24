@@ -1,193 +1,199 @@
 {
   "schemaVersion": "2",
   "metadata": {
-    "sourceWorkflowRunId": 45072776325,
-    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/45072776325",
+    "sourceWorkflowRunId": 45500857259,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/45500857259",
     "sourceBranch": "dev",
-    "previousBuiltSha": "998887784cc59402dc15058ccc35ef62bfc810b9",
-    "currentBuiltSha": "633836f5dc10e91f1f8da64287cbc83066f84445",
-    "shortSha": "633836f",
-    "buildDate": "2026-11-22T21:48:45.000Z",
-    "generationDate": "2026-11-22T21:58:38.483Z",
+    "previousBuiltSha": "633836f5dc10e91f1f8da64287cbc83066f84445",
+    "currentBuiltSha": "9f8982fc1a8c3b540b6b6d288fd0c9f2034b57d3",
+    "shortSha": "9f8982f",
+    "buildDate": "2026-11-24T22:55:00.000Z",
+    "generationDate": "2026-11-24T23:07:37.205Z",
     "generatorVersion": "0.3.1",
     "promptVersion": "7",
     "model": "openai/gpt-5-mini"
   },
   "highlights": [
     {
-      "changeId": "pr:nightscout/Trio#1764",
-      "title": "Therapy profiles: create, edit and switch",
+      "changeId": "pr:nightscout/Trio#1484",
+      "title": "Show IOB on Live Activity widget",
       "changes": [
-        "You can create, rename, delete and switch between therapy profiles, and edit their settings.",
-        "The Home screen shows the active profile name when more than one profile exists."
+        "The Live Activity widget now displays IOB (insulin on board) with its unit.",
+        "Numbers and labels now scale to fit different display sizes, including Apple Watch and CarPlay."
       ],
-      "category": "new-features",
+      "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1764",
-        "commit:6eabcad87cea"
+        "pr:nightscout/Trio#1484",
+        "diff:14df1eea0c55"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1764"
+        "pr:nightscout/Trio#1484"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1764",
+          "id": "pr:nightscout/Trio#1484",
           "type": "pull-request",
-          "title": "nightscout/Trio#1764: [Part 2/4] Add therapy profiles with switching and editing",
-          "url": "https://github.com/nightscout/Trio/pull/1764"
+          "title": "nightscout/Trio#1484: fix(widget): Make IOB info available",
+          "url": "https://github.com/nightscout/Trio/pull/1484"
         },
         {
-          "id": "commit:6eabcad87cea",
-          "type": "commit",
-          "title": "Add therapy profiles with switching and editing",
-          "url": "https://github.com/gordolio/Trio/commit/6eabcad87ceadfdba8bb119c6d4d7021e924ea49"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1765",
-      "title": "Upload and import multiple therapy profiles",
-      "changes": [
-        "Trio now uploads all therapy profiles and scheduled profile switches to Nightscout.",
-        "Onboarding can import multiple Nightscout profiles so your profiles are preserved during setup."
-      ],
-      "category": "new-features",
-      "sourceIds": [
-        "pr:nightscout/Trio#1765",
-        "commit:b5862b235c22"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1765"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1765",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1765: [Part 3/4] Upload every therapy profile to Nightscout",
-          "url": "https://github.com/nightscout/Trio/pull/1765"
-        },
-        {
-          "id": "commit:b5862b235c22",
-          "type": "commit",
-          "title": "Upload every therapy profile to Nightscout",
-          "url": "https://github.com/gordolio/Trio/commit/b5862b235c2201fbd5f20787a17829d1bda1fc6a"
-        }
-      ]
-    },
-    {
-      "changeId": "pr:nightscout/Trio#1766",
-      "title": "Remote therapy profile commands",
-      "changes": [
-        "Trio now accepts remote commands to switch, save, delete therapy profiles and scheduled starts.",
-        "Saves and deletes include a profile fingerprint; the active profile and Default cannot be deleted."
-      ],
-      "category": "new-features",
-      "sourceIds": [
-        "pr:nightscout/Trio#1766",
-        "commit:e981cbbd99bb",
-        "diff:fdc6c777ad7e"
-      ],
-      "confidence": "high",
-      "humanReviewRequired": false,
-      "changeIds": [
-        "pr:nightscout/Trio#1766"
-      ],
-      "highlight": true,
-      "provenance": "upstream",
-      "sources": [
-        {
-          "id": "pr:nightscout/Trio#1766",
-          "type": "pull-request",
-          "title": "nightscout/Trio#1766: [Part 4/4] Add remote profile switch, save and delete commands",
-          "url": "https://github.com/nightscout/Trio/pull/1766"
-        },
-        {
-          "id": "commit:e981cbbd99bb",
-          "type": "commit",
-          "title": "Add remote profile switch, save and delete commands",
-          "url": "https://github.com/gordolio/Trio/commit/e981cbbd99bbf36e9cf2b5e8dfb419f5a41551c1"
-        },
-        {
-          "id": "diff:fdc6c777ad7e",
+          "id": "diff:14df1eea0c55",
           "type": "diff",
-          "title": "Diff for pr:nightscout/Trio#1766",
-          "url": "https://github.com/gordolio/Trio/compare/b5862b235c2201fbd5f20787a17829d1bda1fc6a...cadb155b531dd667b187f1fef9efebeb88710e09"
+          "title": "Diff for pr:nightscout/Trio#1484",
+          "url": "https://github.com/gordolio/Trio/compare/83bce206a434e05eb8031b48f8dbc6926ede49c8...60f35c622f4bbeb3bdd284d54aa9fd1044313ed9"
         }
       ]
     },
     {
-      "changeId": "pr:nightscout/Trio#1788",
-      "title": "Therapy profiles",
+      "changeId": "pr:nightscout/Trio#1731",
+      "title": "Consistent IOB display and rounding",
       "changes": [
-        "You can create and switch between therapy profiles with different basal, carb, ISF, and target settings.",
-        "Profiles can be scheduled weekly or selected from LoopFollow."
+        "IOB (insulin on board) now displays consistently with up to two decimals and halves rounded away from zero.",
+        "Small negative IOB values now show as 0 and VoiceOver/readouts use the word \"units\" instead of the letter \"U\"."
       ],
-      "category": "new-features",
+      "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1788",
-        "commit:de0f7f1f92a7"
+        "pr:nightscout/Trio#1731",
+        "commit:3ba9b0875157",
+        "diff:daec567f03f1"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1788"
+        "pr:nightscout/Trio#1731"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1788",
+          "id": "pr:nightscout/Trio#1731",
           "type": "pull-request",
-          "title": "nightscout/Trio#1788: Therapy profiles in Trio",
-          "url": "https://github.com/nightscout/Trio/pull/1788"
+          "title": "nightscout/Trio#1731: Fix IOB rounding and unify IOB formatting",
+          "url": "https://github.com/nightscout/Trio/pull/1731"
         },
         {
-          "id": "commit:de0f7f1f92a7",
+          "id": "commit:3ba9b0875157",
           "type": "commit",
-          "title": "Merge pull request #1788 from nightscout/feat/profiles",
-          "url": "https://github.com/gordolio/Trio/commit/de0f7f1f92a7c824c25bf4c660755b45e3432d66"
+          "title": "Fix IOB rounding and unify IOB formatting (#1731)",
+          "url": "https://github.com/gordolio/Trio/commit/3ba9b0875157d2bf0d0863b5056aa407f94c1a5f"
+        },
+        {
+          "id": "diff:daec567f03f1",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1731",
+          "url": "https://github.com/gordolio/Trio/compare/563a93a54ed43670fba7360fd2c1da1eabb9845a...3ba9b0875157d2bf0d0863b5056aa407f94c1a5f"
         }
       ]
     },
     {
-      "changeId": "pr:nightscout/Trio#1781",
-      "title": "Stop duplicate app initialization when opening CGM",
+      "changeId": "pr:nightscout/Trio#1760",
+      "title": "Fix 12/24h time and date formatting",
       "changes": [
-        "Opening the CGM setup sheet no longer triggers the app to initialize twice.",
-        "This avoids duplicate startup behavior when first setting up or using certain CGM sources."
+        "Times and dates now follow your 12/24h preference and are consistent. SMBs now show the off time range."
       ],
-      "category": "pump-and-cgm",
+      "category": "interface-improvements",
       "sourceIds": [
-        "pr:nightscout/Trio#1781",
-        "commit:15d8e7f95218"
+        "pr:nightscout/Trio#1760",
+        "commit:bebec46fb53c",
+        "diff:0be6e09ba93a"
       ],
       "confidence": "high",
       "humanReviewRequired": false,
       "changeIds": [
-        "pr:nightscout/Trio#1781"
+        "pr:nightscout/Trio#1760"
       ],
       "highlight": true,
       "provenance": "upstream",
       "sources": [
         {
-          "id": "pr:nightscout/Trio#1781",
+          "id": "pr:nightscout/Trio#1760",
           "type": "pull-request",
-          "title": "nightscout/Trio#1781: Fix app init running twice from TrioApp().resolver",
-          "url": "https://github.com/nightscout/Trio/pull/1781"
+          "title": "nightscout/Trio#1760: Fix 12/24h time formatting and unify date and time formatting",
+          "url": "https://github.com/nightscout/Trio/pull/1760"
         },
         {
-          "id": "commit:15d8e7f95218",
+          "id": "commit:bebec46fb53c",
           "type": "commit",
-          "title": "Use static TrioApp.resolver instead of creating new TrioApp",
-          "url": "https://github.com/gordolio/Trio/commit/15d8e7f9521888164d3a6f64fdac4559de8d02a5"
+          "title": "Fix 12/24h time formatting and unify date and time formatting (#1760)",
+          "url": "https://github.com/gordolio/Trio/commit/bebec46fb53c1c88ee54662e093fe2979736b852"
+        },
+        {
+          "id": "diff:0be6e09ba93a",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1760",
+          "url": "https://github.com/gordolio/Trio/compare/eee0331a746925430589948ceea6246ecda7f01e...bebec46fb53c1c88ee54662e093fe2979736b852"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1798",
+      "title": "Blacklist can target branch or commit SHA",
+      "changes": [
+        "Blacklist entries can now target a branch and commit SHA as well as a version.",
+        "When a matching blacklist entry includes one, the \"Update Required\" alert can show its optional message."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1798",
+        "commit:0bdcde91936e"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1798"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1798",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1798: Let blacklist entries target a branch and commit SHA",
+          "url": "https://github.com/nightscout/Trio/pull/1798"
+        },
+        {
+          "id": "commit:0bdcde91936e",
+          "type": "commit",
+          "title": "Let blacklist entries target a branch and commit SHA (#1798)",
+          "url": "https://github.com/gordolio/Trio/commit/0bdcde91936e528ad4188de7b027eee5f7082e98"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1790",
+      "title": "Restore space in duration labels",
+      "changes": [
+        "Duration labels now include a space between number and unit (e.g. 90 min).",
+        "This appears in time spans and time-ago labels throughout the app."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1790",
+        "commit:c193a68cf4bc"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1790"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1790",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1790: Restore space between number and unit in durations",
+          "url": "https://github.com/nightscout/Trio/pull/1790"
+        },
+        {
+          "id": "commit:c193a68cf4bc",
+          "type": "commit",
+          "title": "Restore space between number and unit in durations",
+          "url": "https://github.com/gordolio/Trio/commit/c193a68cf4bc33bbbe13a5da0b0ab75cb5aa1532"
         }
       ]
     }
@@ -196,42 +202,7 @@
     {
       "category": "new-features",
       "title": "New Features",
-      "items": [
-        {
-          "changeId": "pr:nightscout/Trio#1763",
-          "title": "Store therapy profiles and scheduled switches",
-          "changes": [
-            "Trio can now save named therapy profiles and their scheduled switches.",
-            "This change adds only background storage—there is no new user interface yet, so you won’t see new screens."
-          ],
-          "category": "new-features",
-          "sourceIds": [
-            "pr:nightscout/Trio#1763",
-            "commit:ea16c23a83d6"
-          ],
-          "confidence": "high",
-          "humanReviewRequired": false,
-          "changeIds": [
-            "pr:nightscout/Trio#1763"
-          ],
-          "highlight": false,
-          "provenance": "upstream",
-          "sources": [
-            {
-              "id": "pr:nightscout/Trio#1763",
-              "type": "pull-request",
-              "title": "nightscout/Trio#1763: [Part 1/4] Store therapy profiles in Core Data",
-              "url": "https://github.com/nightscout/Trio/pull/1763"
-            },
-            {
-              "id": "commit:ea16c23a83d6",
-              "type": "commit",
-              "title": "Store therapy profiles in Core Data",
-              "url": "https://github.com/gordolio/Trio/commit/ea16c23a83d6dfc17a0543ad6c76e9c264840828"
-            }
-          ]
-        }
-      ]
+      "items": []
     },
     {
       "category": "fixes",
@@ -256,7 +227,42 @@
     {
       "category": "interface-improvements",
       "title": "Interface Improvements",
-      "items": []
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1799",
+          "title": "Fix five typos in app text",
+          "changes": [
+            "Corrected spelling mistakes in five English strings shown in the app.",
+            "You will see the corrected spellings in various settings and explanatory text within the app."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:nightscout/Trio#1799",
+            "commit:fbfc017243b9"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1799"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1799",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1799: Fix spelling in five English source strings the app shows",
+              "url": "https://github.com/nightscout/Trio/pull/1799"
+            },
+            {
+              "id": "commit:fbfc017243b9",
+              "type": "commit",
+              "title": "Fix spelling in the English source strings the app actually shows",
+              "url": "https://github.com/gordolio/Trio/commit/fbfc017243b91daa6e5736e1e79fe429668d73f3"
+            }
+          ]
+        }
+      ]
     },
     {
       "category": "origin-only-customizations",
@@ -268,35 +274,104 @@
       "title": "Internal and Build-System Changes",
       "items": [
         {
-          "changeId": "pr:nightscout/Trio#1681",
-          "title": "Remove unused statistics and APS cleanup",
+          "changeId": "pr:nightscout/Trio#1804",
+          "title": "Use Xcode 27 runners for macOS builds",
           "changes": [
-            "Removed unused statistics models and related APS code; users should see no functional changes."
+            "Builds and unit tests now run on Xcode 27 macOS runners.",
+            "CI runs should start sooner and tests use the iPhone 17 iOS 27 simulator."
           ],
           "category": "internal-and-build-system",
           "sourceIds": [
-            "pr:nightscout/Trio#1681",
-            "diff:ec370d06362b"
+            "pr:nightscout/Trio#1804",
+            "diff:d9ce97765f4f"
           ],
           "confidence": "high",
           "humanReviewRequired": false,
           "changeIds": [
-            "pr:nightscout/Trio#1681"
+            "pr:nightscout/Trio#1804"
           ],
           "highlight": false,
           "provenance": "upstream",
           "sources": [
             {
-              "id": "pr:nightscout/Trio#1681",
+              "id": "pr:nightscout/Trio#1804",
               "type": "pull-request",
-              "title": "nightscout/Trio#1681: Remove unused statistics reporting pipeline and StatsData entity",
-              "url": "https://github.com/nightscout/Trio/pull/1681"
+              "title": "nightscout/Trio#1804: Run the macOS jobs and unit tests on the xcode-27 runners",
+              "url": "https://github.com/nightscout/Trio/pull/1804"
             },
             {
-              "id": "diff:ec370d06362b",
+              "id": "diff:d9ce97765f4f",
               "type": "diff",
-              "title": "Diff for pr:nightscout/Trio#1681",
-              "url": "https://github.com/gordolio/Trio/compare/45cd2cacb2604fb5b38fd060e482094d3af74fda...b9fcb5434a15a51956a4446509a2f5d452dad60a"
+              "title": "Diff for pr:nightscout/Trio#1804",
+              "url": "https://github.com/gordolio/Trio/compare/d37fe347e0b0758510e58f9edb0bae14b8a3dc64...dbc9044eb5ed0e55100dd08381afaadfbc8876d7"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1805",
+          "title": "Xcode project reorganized to folders",
+          "changes": [
+            "The Xcode project was reorganized to use folders and unused files were removed.",
+            "There should be no change to app functionality for users."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1805",
+            "diff:0b5859eb02c2"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1805"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1805",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1805: chore: migrate to xcode folder",
+              "url": "https://github.com/nightscout/Trio/pull/1805"
+            },
+            {
+              "id": "diff:0b5859eb02c2",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1805",
+              "url": "https://github.com/gordolio/Trio/compare/d37fe347e0b0758510e58f9edb0bae14b8a3dc64...3f1f6b4fa76d42883661c3c9944429e0c4bdc812"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1807",
+          "title": "Restore missing logging shim to fix tests",
+          "changes": [
+            "No visible change in the Trio app.",
+            "Unit tests were fixed so developers can run the algorithm test suite again."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1807",
+            "diff:27abb1dad59e"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1807"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1807",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1807: fix: unit tests",
+              "url": "https://github.com/nightscout/Trio/pull/1807"
+            },
+            {
+              "id": "diff:27abb1dad59e",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1807",
+              "url": "https://github.com/gordolio/Trio/compare/d37fe347e0b0758510e58f9edb0bae14b8a3dc64...1b7d7c274c016b27c2212e7bc7a097aeffb1a7ce"
             }
           ]
         }
@@ -312,403 +387,441 @@
   "includedPullRequests": [
     {
       "repository": "gordolio/Trio",
-      "number": 1681,
-      "title": "Remove unused statistics reporting pipeline and StatsData entity",
-      "body": "While refactoring Stats #1600, I discovered some unused code within APSManager. I included and cleaned up what was no longer needed or had been used in obsolete functions.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1681",
-      "mergedAt": "2026-11-19T18:39:24Z"
+      "number": 1484,
+      "title": "fix(widget): Make IOB info available",
+      "body": "This adds the IOB field to the display in the Live Activity widget and makes the numbers more fluid depending on the display size. This allows information to dynamically resize and be available both in CarPlay and an Apple Watch.",
+      "labels": [
+        "On Hold"
+      ],
+      "url": "https://github.com/nightscout/Trio/pull/1484",
+      "mergedAt": "2026-11-24T10:14:24Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1681,
-      "title": "Remove unused statistics reporting pipeline and StatsData entity",
-      "body": "While refactoring Stats #1600, I discovered some unused code within APSManager. I included and cleaned up what was no longer needed or had been used in obsolete functions.",
-      "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1681",
-      "mergedAt": "2026-11-19T18:39:24Z"
+      "number": 1484,
+      "title": "fix(widget): Make IOB info available",
+      "body": "This adds the IOB field to the display in the Live Activity widget and makes the numbers more fluid depending on the display size. This allows information to dynamically resize and be available both in CarPlay and an Apple Watch.",
+      "labels": [
+        "On Hold"
+      ],
+      "url": "https://github.com/nightscout/Trio/pull/1484",
+      "mergedAt": "2026-11-24T10:14:24Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1763,
-      "title": "[Part 1/4] Store therapy profiles in Core Data",
-      "body": "Trio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow. This part adds only the storage: the profiles, the active profile, the switch history and the scheduled starts, in one model change with no UI. The live settings files stay the source the algorithm reads, and they always equal the active profile.\n\nTested in the simulator and on an iPhone XS Max with Omnipod DASH (a water-filled pod, not on a body) and a simulated Dana-i, with LoopFollow on a second phone. Not tested in daily use.\n\nThis addresses #805 (multiple therapy profiles).\n\nParts: #1763, #1764, #1765, #1766. Companion: loopandlearn/LoopFollow#833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070\n",
+      "number": 1790,
+      "title": "Restore space between number and unit in durations",
+      "body": "Fixes #1780\n\n#1743 switched duration labels to Apple's formatter with the narrow width,\nwhich dropped the space before the unit in English and German. The issue\nasked for it back, and the SI convention linked there is a good reason\nto follow.\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1763",
-      "mergedAt": "2026-11-17T01:19:21Z"
+      "url": "https://github.com/nightscout/Trio/pull/1790",
+      "mergedAt": "2026-11-23T05:53:25Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1763,
-      "title": "[Part 1/4] Store therapy profiles in Core Data",
-      "body": "Trio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow. This part adds only the storage: the profiles, the active profile, the switch history and the scheduled starts, in one model change with no UI. The live settings files stay the source the algorithm reads, and they always equal the active profile.\n\nTested in the simulator and on an iPhone XS Max with Omnipod DASH (a water-filled pod, not on a body) and a simulated Dana-i, with LoopFollow on a second phone. Not tested in daily use.\n\nThis addresses #805 (multiple therapy profiles).\n\nParts: #1763, #1764, #1765, #1766. Companion: loopandlearn/LoopFollow#833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070\n",
+      "number": 1790,
+      "title": "Restore space between number and unit in durations",
+      "body": "Fixes #1780\n\n#1743 switched duration labels to Apple's formatter with the narrow width,\nwhich dropped the space before the unit in English and German. The issue\nasked for it back, and the SI convention linked there is a good reason\nto follow.\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1763",
-      "mergedAt": "2026-11-17T01:19:21Z"
+      "url": "https://github.com/nightscout/Trio/pull/1790",
+      "mergedAt": "2026-11-23T05:53:25Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1764,
-      "title": "[Part 2/4] Add therapy profiles with switching and editing",
-      "body": "Adds the Therapy Profiles screen, switching, editing with a banner that names the profile, the scheduled starts and the active profile on the home screen. A switch validates against the pump, writes the basal schedule to the pump and only then writes the settings and Core Data, and it is refused while delivery is suspended. A scheduled start waits for a running bolus and retries while suspended. The basal editor matches a stored rate to the nearest supported rate and says when a rate is not supported, which replaces the rounding from #1674.\n\nStacked on #1763; only the last commit is new.",
+      "number": 1799,
+      "title": "Fix spelling in five English source strings the app shows",
+      "body": "## What\nCorrects five misspelled English source strings that are visible in the app, and renames their keys in `Localizable.xcstrings` so the lookups still match:\n\n| Before | After |\n|---|---|\n| Savatzky-Golay | Savitzky-Golay |\n| the algothim's result | the algorithm's result |\n| typically be adressed | typically be addressed |\n| injesting … quanitity | ingesting … quantity |\n| Setup & Configuraton | Setup & Configuration |\n\n## Why\nThese are user-facing typos in the source language; translators copy them into other languages (several translations of the smoothing explanation currently say \"Savatzky\").\n\n## Notes\n- The existing translations of the five strings are carried over to the renamed keys in the catalog, so nothing is lost in the app. Crowdin will see the renamed keys as new source strings, so its stored translations for the old keys will need to be re-linked or re-approved there.\n- Translations themselves are not touched; those remain Crowdin's.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1764",
-      "mergedAt": "2026-11-17T01:39:54Z"
+      "url": "https://github.com/nightscout/Trio/pull/1799",
+      "mergedAt": "2026-11-24T10:20:22Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1764,
-      "title": "[Part 2/4] Add therapy profiles with switching and editing",
-      "body": "Adds the Therapy Profiles screen, switching, editing with a banner that names the profile, the scheduled starts and the active profile on the home screen. A switch validates against the pump, writes the basal schedule to the pump and only then writes the settings and Core Data, and it is refused while delivery is suspended. A scheduled start waits for a running bolus and retries while suspended. The basal editor matches a stored rate to the nearest supported rate and says when a rate is not supported, which replaces the rounding from #1674.\n\nStacked on #1763; only the last commit is new.",
+      "number": 1799,
+      "title": "Fix spelling in five English source strings the app shows",
+      "body": "## What\nCorrects five misspelled English source strings that are visible in the app, and renames their keys in `Localizable.xcstrings` so the lookups still match:\n\n| Before | After |\n|---|---|\n| Savatzky-Golay | Savitzky-Golay |\n| the algothim's result | the algorithm's result |\n| typically be adressed | typically be addressed |\n| injesting … quanitity | ingesting … quantity |\n| Setup & Configuraton | Setup & Configuration |\n\n## Why\nThese are user-facing typos in the source language; translators copy them into other languages (several translations of the smoothing explanation currently say \"Savatzky\").\n\n## Notes\n- The existing translations of the five strings are carried over to the renamed keys in the catalog, so nothing is lost in the app. Crowdin will see the renamed keys as new source strings, so its stored translations for the old keys will need to be re-linked or re-approved there.\n- Translations themselves are not touched; those remain Crowdin's.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1764",
-      "mergedAt": "2026-11-17T01:39:54Z"
+      "url": "https://github.com/nightscout/Trio/pull/1799",
+      "mergedAt": "2026-11-24T10:20:22Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1765,
-      "title": "[Part 3/4] Upload every therapy profile to Nightscout",
-      "body": "The profile document carries every profile, the active one as defaultProfile, and the scheduled starts, and each switch is a Profile Switch treatment. Onboarding can import all profiles, also from a profile document uploaded by Loop, so moving from Loop to Trio keeps them. The import takes the active profile from defaultProfile and finds the default entry regardless of case, which may be what #729 ran into.\n\nStacked on #1764; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "number": 1804,
+      "title": "Run the macOS jobs and unit tests on the xcode-27 runners",
+      "body": "All macOS jobs, the browser build (Validate Secrets, Add Identifiers, Create Certificates, Build Trio) and the unit tests, now run on the xcode-27 runner image with Xcode 27.0 selected explicitly. Builds on macos-26 have been waiting a long time for a runner and some fail; Loop and LoopFollow have already moved to xcode-27. Built from this branch in my fork, with every macOS job getting a runner within seconds and the build finishing in 26 minutes: https://github.com/bjorkert/Trio/actions/runs/45029349440\n\nThe unit tests use the iPhone 17 simulator on iOS 27.0 and get new cache keys so nothing built with Xcode 26.2 is restored. The simulator boots while the app builds, since its first boot on the xcode-27 image takes several minutes and otherwise pushes the test run past the test runner timeout. The algorithm package excludes the string catalog, because SwiftPM in Xcode 27 generates string symbols for it and fails on keys that differ only in case or punctuation; the algorithm reads its strings from the main bundle. Unit tests passed twice in my fork on a branch where the tests run on push: https://github.com/bjorkert/Trio/actions/runs/45051149766\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1765",
-      "mergedAt": "2026-11-18T14:57:30Z"
+      "url": "https://github.com/nightscout/Trio/pull/1804",
+      "mergedAt": "2026-11-23T05:49:34Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1765,
-      "title": "[Part 3/4] Upload every therapy profile to Nightscout",
-      "body": "The profile document carries every profile, the active one as defaultProfile, and the scheduled starts, and each switch is a Profile Switch treatment. Onboarding can import all profiles, also from a profile document uploaded by Loop, so moving from Loop to Trio keeps them. The import takes the active profile from defaultProfile and finds the default entry regardless of case, which may be what #729 ran into.\n\nStacked on #1764; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "number": 1804,
+      "title": "Run the macOS jobs and unit tests on the xcode-27 runners",
+      "body": "All macOS jobs, the browser build (Validate Secrets, Add Identifiers, Create Certificates, Build Trio) and the unit tests, now run on the xcode-27 runner image with Xcode 27.0 selected explicitly. Builds on macos-26 have been waiting a long time for a runner and some fail; Loop and LoopFollow have already moved to xcode-27. Built from this branch in my fork, with every macOS job getting a runner within seconds and the build finishing in 26 minutes: https://github.com/bjorkert/Trio/actions/runs/45029349440\n\nThe unit tests use the iPhone 17 simulator on iOS 27.0 and get new cache keys so nothing built with Xcode 26.2 is restored. The simulator boots while the app builds, since its first boot on the xcode-27 image takes several minutes and otherwise pushes the test run past the test runner timeout. The algorithm package excludes the string catalog, because SwiftPM in Xcode 27 generates string symbols for it and fails on keys that differ only in case or punctuation; the algorithm reads its strings from the main bundle. Unit tests passed twice in my fork on a branch where the tests run on push: https://github.com/bjorkert/Trio/actions/runs/45051149766\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1765",
-      "mergedAt": "2026-11-18T14:57:30Z"
+      "url": "https://github.com/nightscout/Trio/pull/1804",
+      "mergedAt": "2026-11-23T05:49:34Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1766,
-      "title": "[Part 4/4] Add remote profile switch, save and delete commands",
-      "body": "Adds TRC commands to switch, save and delete a profile and to replace the scheduled starts. A save or delete carries the fingerprint of the profile the caregiver saw, and the active profile and Default cannot be deleted. Companion: loopandlearn/LoopFollow#833.\n\nStacked on #1765; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "number": 1805,
+      "title": "chore: migrate to xcode folder",
+      "body": "(re-open #1563)\r\n\r\nThis PR migrates Trio from Groups to Folders.\r\nAlso delete unused files in order to make the migration complete.\r\n\r\nTested both iOS app and Watch app before submitting PR\r\n\r\nBenefits of using Folders instead of Groups:\r\n\r\n- The project.pbxproj is much smaller now (6910 lines -> 1733 lines)\r\n  - Not all files and groups are defined in the file, the project structure is defined in your folder structure\r\n  - Less merge conflicts in this file or random line changes\r\n- If you delete a file in Xcode, you will also delete it in XCode\r\n  - This will prevent zombi code from existing\r\n\r\nAlso fixes #1800 ",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1766",
-      "mergedAt": "2026-11-18T15:13:45Z"
+      "url": "https://github.com/nightscout/Trio/pull/1805",
+      "mergedAt": "2026-11-23T05:49:56Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1766,
-      "title": "[Part 4/4] Add remote profile switch, save and delete commands",
-      "body": "Adds TRC commands to switch, save and delete a profile and to replace the scheduled starts. A save or delete carries the fingerprint of the profile the caregiver saw, and the active profile and Default cannot be deleted. Companion: loopandlearn/LoopFollow#833.\n\nStacked on #1765; the commit named after this part is the new one. The commit \"Resolve the therapy profile manager once through the app's locked resolver\" is the same fix as in Part 2.",
+      "number": 1805,
+      "title": "chore: migrate to xcode folder",
+      "body": "(re-open #1563)\r\n\r\nThis PR migrates Trio from Groups to Folders.\r\nAlso delete unused files in order to make the migration complete.\r\n\r\nTested both iOS app and Watch app before submitting PR\r\n\r\nBenefits of using Folders instead of Groups:\r\n\r\n- The project.pbxproj is much smaller now (6910 lines -> 1733 lines)\r\n  - Not all files and groups are defined in the file, the project structure is defined in your folder structure\r\n  - Less merge conflicts in this file or random line changes\r\n- If you delete a file in Xcode, you will also delete it in XCode\r\n  - This will prevent zombi code from existing\r\n\r\nAlso fixes #1800 ",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1766",
-      "mergedAt": "2026-11-18T15:13:45Z"
+      "url": "https://github.com/nightscout/Trio/pull/1805",
+      "mergedAt": "2026-11-23T05:49:56Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1781,
-      "title": "Fix app init running twice from TrioApp().resolver",
-      "body": "Fixes the app init running again when the CGM sheet is opened from Home for the first time with Simulator, xDrip or Nightscout as CGM source, or with no CGM set up yet, as well as in a few tests. `TrioApp()` runs the whole `init()`, so `TrioApp().resolver` was starting the app again just to get the resolver. Replaced it with the static `TrioApp.resolver` that is already used in other places.\n",
+      "number": 1807,
+      "title": "fix: unit tests",
+      "body": "Because of #1805 units test are broken",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1781",
-      "mergedAt": "2026-11-19T14:33:24Z"
+      "url": "https://github.com/nightscout/Trio/pull/1807",
+      "mergedAt": "2026-11-23T13:52:06Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1781,
-      "title": "Fix app init running twice from TrioApp().resolver",
-      "body": "Fixes the app init running again when the CGM sheet is opened from Home for the first time with Simulator, xDrip or Nightscout as CGM source, or with no CGM set up yet, as well as in a few tests. `TrioApp()` runs the whole `init()`, so `TrioApp().resolver` was starting the app again just to get the resolver. Replaced it with the static `TrioApp.resolver` that is already used in other places.\n",
+      "number": 1807,
+      "title": "fix: unit tests",
+      "body": "Because of #1805 units test are broken",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1781",
-      "mergedAt": "2026-11-19T14:33:24Z"
+      "url": "https://github.com/nightscout/Trio/pull/1807",
+      "mergedAt": "2026-11-23T13:52:06Z"
     },
     {
       "repository": "gordolio/Trio",
-      "number": 1788,
-      "title": "Therapy profiles in Trio",
-      "body": "This was a 4 part PR of @bjorkert. Thanks for the work! We just merged the 4 parts into a separate feature branch.\n\nTrio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow.\n\nParts: https://github.com/nightscout/Trio/pull/1763, https://github.com/nightscout/Trio/pull/1764, https://github.com/nightscout/Trio/pull/1765, https://github.com/nightscout/Trio/pull/1766. Companion: https://github.com/loopandlearn/LoopFollow/pull/833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070",
+      "number": 1798,
+      "title": "Let blacklist entries target a branch and commit SHA",
+      "body": "Allow blacklisted-versions.json to carry optional\n`branch` and `sha` fields. An entry matches when its version matches\nand, if given, the build's branch and commit (prefix match, 7+ chars,\ncase-insensitive) from BuildDetails.plist also match.\n\nEarlier builds keep working: their decoder ignores unknown keys and\nmatches on `version` alone, so `version` stays required on every entry.\nThe cache is now also keyed on the commit SHA, and a malformed entry is\nskipped rather than discarding the whole list.\n\nAdds AppVersionCheckerTests, including a copy of the decoder from\nearlier builds run against the new format and the published JSON file.\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1788",
-      "mergedAt": "2026-11-19T13:52:00Z"
+      "url": "https://github.com/nightscout/Trio/pull/1798",
+      "mergedAt": "2026-11-24T01:24:27Z"
     },
     {
       "repository": "nightscout/Trio",
-      "number": 1788,
-      "title": "Therapy profiles in Trio",
-      "body": "This was a 4 part PR of @bjorkert. Thanks for the work! We just merged the 4 parts into a separate feature branch.\n\nTrio gets therapy profiles: named sets of basal rates, ISF, carb ratios and targets that the user can switch between, by hand, on a weekly schedule, or from LoopFollow.\n\nParts: https://github.com/nightscout/Trio/pull/1763, https://github.com/nightscout/Trio/pull/1764, https://github.com/nightscout/Trio/pull/1765, https://github.com/nightscout/Trio/pull/1766. Companion: https://github.com/loopandlearn/LoopFollow/pull/833.\n\nScreenshots and recordings from the simulator with invented data.\n\n<table>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"01-profile-list-and-scheduled-switches\" src=\"https://github.com/user-attachments/assets/38a9144d-7248-4d02-bade-0f9b1ffd08fb\" /><br><sub>Profiles with scheduled switches</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"02-profile-detail-weekend\" src=\"https://github.com/user-attachments/assets/eb493303-b48c-4815-8f58-72a3bbd78a62\" /><br><sub>Profile detail</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"03-profile-detail-actions\" src=\"https://github.com/user-attachments/assets/af99e4b4-2ef2-4f62-9d9d-6e4ef2e01006\" /><br><sub>Activate, rename, delete</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"04-switch-confirmation\" src=\"https://github.com/user-attachments/assets/e6d194c5-02fa-430a-8908-caf6a92b1d03\" /><br><sub>Switch confirmation</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"05-basal-editor-banner-weekend\" src=\"https://github.com/user-attachments/assets/e463776b-0e7a-4629-87a5-ebc6c7bccc1a\" /><br><sub>Basal editor editing a profile</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"06-delete-confirmation\" src=\"https://github.com/user-attachments/assets/808c38e3-adc0-4c68-9b14-150846a805bf\" /><br><sub>Delete confirmation</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"07-scheduled-switch-start-editor\" src=\"https://github.com/user-attachments/assets/16c9d7f0-6aeb-489f-8371-e3460f51cdbe\" /><br><sub>Start editor</sub></td><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"08-home-active-profile\" src=\"https://github.com/user-attachments/assets/7dc0573f-b8fb-45d9-b1b4-014a79e3abb1\" /><br><sub>Home screen: active profile</sub></td></tr>\n<tr><td width=\"25%\" valign=\"top\"><img width=\"200\" alt=\"09-export-settings-therapy-profiles-category\" src=\"https://github.com/user-attachments/assets/70948536-e1cc-4b19-8954-a4ec3e5f20cb\" /><br><sub>Settings Export</sub></td></tr>\n</table>\n\nCreate a profile, switch to it, edit it with the banner\n\nhttps://github.com/user-attachments/assets/11b54c99-e1dd-4650-af48-07a782cc7070",
+      "number": 1798,
+      "title": "Let blacklist entries target a branch and commit SHA",
+      "body": "Allow blacklisted-versions.json to carry optional\n`branch` and `sha` fields. An entry matches when its version matches\nand, if given, the build's branch and commit (prefix match, 7+ chars,\ncase-insensitive) from BuildDetails.plist also match.\n\nEarlier builds keep working: their decoder ignores unknown keys and\nmatches on `version` alone, so `version` stays required on every entry.\nThe cache is now also keyed on the commit SHA, and a malformed entry is\nskipped rather than discarding the whole list.\n\nAdds AppVersionCheckerTests, including a copy of the decoder from\nearlier builds run against the new format and the published JSON file.\n",
       "labels": [],
-      "url": "https://github.com/nightscout/Trio/pull/1788",
-      "mergedAt": "2026-11-19T13:52:00Z"
+      "url": "https://github.com/nightscout/Trio/pull/1798",
+      "mergedAt": "2026-11-24T01:24:27Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1731,
+      "title": "Fix IOB rounding and unify IOB formatting",
+      "body": "Unify IOB formatting so insulin on board shows the same way on every screen while following the user's locale.\n\n- IOB slightly below zero, like -0.004, showed \"-0 U\", now it shows \"0 U\"\n- Halves round away from zero like glucose and percent, so 0.125 shows \"0.13\" instead of \"0.12\"\n- Contact image and calendar show up to two decimals, to be consistent with rest of IOB displays\n- VoiceOver reads the Home IOB unit as \"units\" instead of the letter \"U\"\n- Added tests for decimals, rounding and negative zero\n\nTranslation keys are unchanged.\n\nFor Live Activity consistency I will follow up in separate PR once I post other unifications for carbs/COB, TDD and durations.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1731",
+      "mergedAt": "2026-11-24T19:27:52Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1731,
+      "title": "Fix IOB rounding and unify IOB formatting",
+      "body": "Unify IOB formatting so insulin on board shows the same way on every screen while following the user's locale.\n\n- IOB slightly below zero, like -0.004, showed \"-0 U\", now it shows \"0 U\"\n- Halves round away from zero like glucose and percent, so 0.125 shows \"0.13\" instead of \"0.12\"\n- Contact image and calendar show up to two decimals, to be consistent with rest of IOB displays\n- VoiceOver reads the Home IOB unit as \"units\" instead of the letter \"U\"\n- Added tests for decimals, rounding and negative zero\n\nTranslation keys are unchanged.\n\nFor Live Activity consistency I will follow up in separate PR once I post other unifications for carbs/COB, TDD and durations.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1731",
+      "mergedAt": "2026-11-24T19:27:52Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1760,
+      "title": "Fix 12/24h time formatting and unify date and time formatting",
+      "body": "This fixes times not following the user's 12/24h setting. The manual 12/24h checks and the DateFormatters created in each screen are replaced with two shared styles, `.timeOfDay` and `.dateAndTime`.\r\n\r\n- 12h/24h was detected by looking for \"AM\"/\"PM\" in a formatted time, so 12h users in locales that don't use \"AM\"/\"PM\" for example \"pm\", got 24h times in the override SMB schedule\r\n- When the SMB schedule had the same start and end hour, it showed only \"SMBs Off\", so it looked like SMBs were off all day. But `DosingEngine` turns them off only for that hour, so now it shows it, for example \"SMBs Off 2:00 PM – 3:00 PM\"\r\n- Stats hour ranges were always 24h (\"23:00-24:00\"), now they follow the locale\r\n- Times use one format now, before some screens showed \"6:07\" and others \"06:07\"\r\n- Removed duplicate and unused date formatters\r\n- Numeric dates now show the full year\r\n- Added tests\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1760",
+      "mergedAt": "2026-11-24T21:53:14Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1760,
+      "title": "Fix 12/24h time formatting and unify date and time formatting",
+      "body": "This fixes times not following the user's 12/24h setting. The manual 12/24h checks and the DateFormatters created in each screen are replaced with two shared styles, `.timeOfDay` and `.dateAndTime`.\r\n\r\n- 12h/24h was detected by looking for \"AM\"/\"PM\" in a formatted time, so 12h users in locales that don't use \"AM\"/\"PM\" for example \"pm\", got 24h times in the override SMB schedule\r\n- When the SMB schedule had the same start and end hour, it showed only \"SMBs Off\", so it looked like SMBs were off all day. But `DosingEngine` turns them off only for that hour, so now it shows it, for example \"SMBs Off 2:00 PM – 3:00 PM\"\r\n- Stats hour ranges were always 24h (\"23:00-24:00\"), now they follow the locale\r\n- Times use one format now, before some screens showed \"6:07\" and others \"06:07\"\r\n- Removed duplicate and unused date formatters\r\n- Numeric dates now show the full year\r\n- Added tests\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1760",
+      "mergedAt": "2026-11-24T21:53:14Z"
     }
   ],
   "includedCommits": [
     {
-      "sha": "59ccd6af0c26eee54e18074d5451df660bbde292",
-      "subject": "Remove unused statistics reporting pipeline and StatsData entity",
+      "sha": "7b3ff22e438eb20c44360229466d73f607db8c8b",
+      "subject": "fix(widget): Make IOB info available",
+      "author": "Ryan Sherlock",
+      "authoredAt": "2026-02-26T09:34:11+01:00"
+    },
+    {
+      "sha": "ed3148e669b392f677639edd34454103e6e2892c",
+      "subject": "refactor(widget): Split watch IOB into its own label view",
+      "author": "Ryan Sherlock",
+      "authoredAt": "2026-09-20T14:52:47+02:00"
+    },
+    {
+      "sha": "c193a68cf4bc33bbbe13a5da0b0ab75cb5aa1532",
+      "subject": "Restore space between number and unit in durations",
       "author": "Luka Zivkovic",
-      "authoredAt": "2026-10-27T13:38:29+01:00"
+      "authoredAt": "2026-11-19T21:03:41+01:00"
     },
     {
-      "sha": "508f3bda8a7b6ed505ba8e68f5587d504bf18acc",
-      "subject": "Remove unused APS state, injected services, and pump helpers",
-      "author": "Luka Zivkovic",
-      "authoredAt": "2026-10-28T16:38:20+01:00"
+      "sha": "fbfc017243b91daa6e5736e1e79fe429668d73f3",
+      "subject": "Fix spelling in the English source strings the app actually shows",
+      "author": "Ramazan TUNCER",
+      "authoredAt": "2026-09-18T23:20:22+03:00"
     },
     {
-      "sha": "bc84b1361db2ee477cfeeccc6f003c6cefa779b6",
-      "subject": "Merge branch 'dev' into refactor/apsmanager-clean-up",
-      "author": "Luka Zivkovic",
-      "authoredAt": "2026-11-10T11:25:02+01:00"
-    },
-    {
-      "sha": "ea16c23a83d6dfc17a0543ad6c76e9c264840828",
-      "subject": "Store therapy profiles in Core Data",
+      "sha": "c4da92f5566827ecd8c0cb94a4295b460ca110b9",
+      "subject": "Run the macOS jobs of the browser build on the xcode-27 runners with Xcode 27.0",
       "author": "Jonas Björkert",
-      "authoredAt": "2026-11-07T22:59:41+01:00"
+      "authoredAt": "2026-11-22T14:10:40+01:00"
     },
     {
-      "sha": "6eabcad87ceadfdba8bb119c6d4d7021e924ea49",
-      "subject": "Add therapy profiles with switching and editing",
+      "sha": "561a258e2497330d3f56227bfcd1ee4dcc1bc51b",
+      "subject": "Run the unit tests on the xcode-27 runners with Xcode 27.0",
       "author": "Jonas Björkert",
-      "authoredAt": "2026-11-07T23:11:01+01:00"
+      "authoredAt": "2026-11-22T17:27:34+01:00"
     },
     {
-      "sha": "b5862b235c2201fbd5f20787a17829d1bda1fc6a",
-      "subject": "Upload every therapy profile to Nightscout",
+      "sha": "8e9beadb273c8c6a97e00e4f58dd42fc20cb0c69",
+      "subject": "Exclude the string catalog from the algorithm package",
       "author": "Jonas Björkert",
-      "authoredAt": "2026-11-07T23:19:37+01:00"
+      "authoredAt": "2026-11-22T17:59:13+01:00"
     },
     {
-      "sha": "e981cbbd99bbf36e9cf2b5e8dfb419f5a41551c1",
-      "subject": "Add remote profile switch, save and delete commands",
+      "sha": "728b3bf86e49d65f41478eb0e524fc38242aae90",
+      "subject": "Boot the unit test simulator while the app builds",
       "author": "Jonas Björkert",
-      "authoredAt": "2026-11-07T23:23:24+01:00"
+      "authoredAt": "2026-11-22T18:44:38+01:00"
     },
     {
-      "sha": "5ac33cd333ca755f692426eaea411a58b1da8eeb",
-      "subject": "Resolve the therapy profile manager once through the app's locked resolver",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-12T08:15:23+01:00"
+      "sha": "6cb9d3758d9a3874224330ad833be3870c8d3a94",
+      "subject": "chore: migrate to folders",
+      "author": "bastiaanv",
+      "authoredAt": "2026-11-22T21:26:13+01:00"
     },
     {
-      "sha": "6bb4b9b256af35f368287d95dca8a7de18363028",
-      "subject": "Resolve the therapy profile manager once through the app's locked resolver",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-12T08:15:23+01:00"
-    },
-    {
-      "sha": "a28b05090c5fb10efb576b2868d2a7ebf4ca5640",
-      "subject": "Resolve the therapy profile manager once through the app's locked resolver",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-12T08:15:23+01:00"
-    },
-    {
-      "sha": "7387293caad8bf491f26edeceae304b4b4ba2160",
-      "subject": "Merge nightscout/Trio dev",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-12T08:45:33+01:00"
-    },
-    {
-      "sha": "a07acbe9a961804323a406cdc7d1fde57e539bdd",
-      "subject": "Merge nightscout/Trio dev",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-12T08:45:33+01:00"
-    },
-    {
-      "sha": "51982bb242806f3a53e1b3d5c2df97517d752437",
-      "subject": "Merge nightscout/Trio dev",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-12T08:45:39+01:00"
-    },
-    {
-      "sha": "15d8e7f9521888164d3a6f64fdac4559de8d02a5",
-      "subject": "Use static TrioApp.resolver instead of creating new TrioApp",
-      "author": "Luka Zivkovic",
-      "authoredAt": "2026-11-15T15:12:59+01:00"
-    },
-    {
-      "sha": "21cee1463f0e619017b0e74cb3199f9c38dfcbcf",
-      "subject": "Validate therapy profiles before storing them and read them asynchronously",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-16T11:06:41+01:00"
-    },
-    {
-      "sha": "f2a667e02925f591aab628e49162d5979697a51d",
-      "subject": "Validate therapy profiles before storing them, read them asynchronously and keep them in memory in the manager",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-16T11:06:41+01:00"
-    },
-    {
-      "sha": "9fad90e2676e4f66ed463699588c7a44b95ea88a",
-      "subject": "Validate therapy profiles before storing them, read them asynchronously and keep them in memory in the manager",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-16T11:06:41+01:00"
-    },
-    {
-      "sha": "3afd3d73796caeaad8b540f98a5d50b29278713d",
-      "subject": "Validate therapy profiles before storing them, read them asynchronously, keep them in memory in the manager and load them before a remote save",
-      "author": "Jonas Björkert",
-      "authoredAt": "2026-11-16T11:06:41+01:00"
-    },
-    {
-      "sha": "4dc05c849c77bf548d77e98fdd75994fe3619cf0",
-      "subject": "Merge pull request #1763 from bjorkert/therapy-profiles-part-1",
+      "sha": "dbc9044eb5ed0e55100dd08381afaadfbc8876d7",
+      "subject": "Merge pull request #1804 from bjorkert/ci/xcode-27-runners",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-17T02:19:21+01:00"
+      "authoredAt": "2026-11-22T22:49:34-07:00"
     },
     {
-      "sha": "054b215759310891308a9a841c539724c27e6923",
-      "subject": "Merge nightscout/Trio feat/profiles",
-      "author": "dnzxy",
-      "authoredAt": "2026-11-16T18:36:37-07:00"
+      "sha": "d0ae19d70219d8018704cd82bf020f4849d1d907",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.80 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-23T05:49:44Z"
     },
     {
-      "sha": "b053b2e05519e41f7f70b91c17954b1e460e4c0a",
-      "subject": "Merge pull request #1764 from bjorkert/therapy-profiles-part-2",
+      "sha": "3f1f6b4fa76d42883661c3c9944429e0c4bdc812",
+      "subject": "Merge pull request #1805 from bastiaanv/chore/migrate-folders",
       "author": "Deniz Cengiz",
-      "authoredAt": "2026-11-17T02:39:53+01:00"
+      "authoredAt": "2026-11-22T22:49:55-07:00"
     },
     {
-      "sha": "df93f1b64a332ec04a2f7839a336bb1b1e607264",
-      "subject": "Merge nightscout/Trio feat/profiles",
-      "author": "dnzxy",
-      "authoredAt": "2026-11-17T00:55:38-07:00"
-    },
-    {
-      "sha": "0ac9f4232839acbc7a0c2d377d9afb0df32f0e67",
-      "subject": "Merge pull request #1765 from bjorkert/therapy-profiles-part-3",
-      "author": "Marvin Polscheit",
-      "authoredAt": "2026-11-18T14:57:29Z"
-    },
-    {
-      "sha": "c0e4dc1019f2689fefec6a7cc676e9a6c7146687",
-      "subject": "Merge nightscout/Trio feat/profiles into therapy-profiles-part-4",
-      "author": "marv-out",
-      "authoredAt": "2026-11-18T16:06:37+01:00"
-    },
-    {
-      "sha": "cadb155b531dd667b187f1fef9efebeb88710e09",
-      "subject": "Merge pull request #1766 from bjorkert/therapy-profiles-part-4",
-      "author": "Marvin Polscheit",
-      "authoredAt": "2026-11-18T15:13:45Z"
-    },
-    {
-      "sha": "de0f7f1f92a7c824c25bf4c660755b45e3432d66",
-      "subject": "Merge pull request #1788 from nightscout/feat/profiles",
-      "author": "Marvin Polscheit",
-      "authoredAt": "2026-11-19T13:51:59Z"
-    },
-    {
-      "sha": "e11a823e7391ba4123d703a9969c301007564e25",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.77 [skip ci]",
+      "sha": "b51d6725109e746de769ae347c71b6c8912fc56a",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.81 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-19T13:52:12Z"
+      "authoredAt": "2026-11-23T05:50:09Z"
     },
     {
-      "sha": "7da2c1e0d8e9262ab8c3f9ef2f89f7a09bfb2430",
-      "subject": "Merge branch 'dev' into refactor/apsmanager-clean-up",
+      "sha": "1a7cb7f48174bcb54c1438f02add408e6005f2bd",
+      "subject": "Merge branch 'dev' into fix/source-string-spelling",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-22T22:52:48-07:00"
+    },
+    {
+      "sha": "ec48a159009c351b98ac96b5d73cc659f5895ae8",
+      "subject": "Merge pull request #1790 from lolzivkovic/fix/duration-spacing",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-22T22:53:24-07:00"
+    },
+    {
+      "sha": "efe051ffabd25e50cc5207762b600bdd4ea11e7c",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.82 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-23T05:53:34Z"
+    },
+    {
+      "sha": "dff976ce666c744ffbb3c5cb4c29816f32f34420",
+      "subject": "fix: unit tests",
+      "author": "bastiaanverhaar",
+      "authoredAt": "2026-11-23T08:23:18+01:00"
+    },
+    {
+      "sha": "ef83053c4812c543c7bb7184ef20f26d362808e6",
+      "subject": "Merge branch 'dev' into chore/fix-unit",
+      "author": "Bastiaan Verhaar",
+      "authoredAt": "2026-11-23T08:24:32+01:00"
+    },
+    {
+      "sha": "86c17e4b3c51a978475624744c26ea80372979f7",
+      "subject": "fix: re-add missing Shim",
+      "author": "bastiaanverhaar",
+      "authoredAt": "2026-11-23T09:00:09+01:00"
+    },
+    {
+      "sha": "1b7d7c274c016b27c2212e7bc7a097aeffb1a7ce",
+      "subject": "Merge pull request #1807 from bastiaanv/chore/fix-unit",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-23T14:52:06+01:00"
+    },
+    {
+      "sha": "3e3f58eaa16003e56c968de846b8fca261ed897f",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.83 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-23T13:52:17Z"
+    },
+    {
+      "sha": "0bdcde91936e528ad4188de7b027eee5f7082e98",
+      "subject": "Let blacklist entries target a branch and commit SHA (#1798)",
+      "author": "James Woglom",
+      "authoredAt": "2026-11-23T20:24:26-05:00"
+    },
+    {
+      "sha": "cdc68ad66a20172fa9d097c069cec820815b8f4b",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.84 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T01:24:48Z"
+    },
+    {
+      "sha": "60f35c622f4bbeb3bdd284d54aa9fd1044313ed9",
+      "subject": "Merge pull request #1484 from SherlockInSpace-org/dev",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-24T11:14:22+01:00"
+    },
+    {
+      "sha": "d79c880412378cfad6a76873b4cd8de3d4b25341",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.85 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T10:14:35Z"
+    },
+    {
+      "sha": "ef562eaf8faf840c7363e427b4d8363727588409",
+      "subject": "Merge branch 'dev' into fix/source-string-spelling",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-24T11:19:41+01:00"
+    },
+    {
+      "sha": "5ec85606847e692187b889482295dae393eedc08",
+      "subject": "Merge pull request #1799 from zerloop/fix/source-string-spelling",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-24T11:20:21+01:00"
+    },
+    {
+      "sha": "563a93a54ed43670fba7360fd2c1da1eabb9845a",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.86 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T10:20:33Z"
+    },
+    {
+      "sha": "3ba9b0875157d2bf0d0863b5056aa407f94c1a5f",
+      "subject": "Fix IOB rounding and unify IOB formatting (#1731)",
       "author": "Luka Zivkovic",
-      "authoredAt": "2026-11-19T15:26:39+01:00"
+      "authoredAt": "2026-11-24T20:27:51+01:00"
     },
     {
-      "sha": "f4696918433cf61204638912e2beebe59db61e95",
-      "subject": "Merge branch 'dev' into fix/duplicate-init",
-      "author": "Marvin Polscheit",
-      "authoredAt": "2026-11-19T14:33:01Z"
-    },
-    {
-      "sha": "5587e4b35525e6d8bafc3c2fdd6297551f1ea8ae",
-      "subject": "Merge pull request #1781 from lolzivkovic/fix/duplicate-init",
-      "author": "Marvin Polscheit",
-      "authoredAt": "2026-11-19T14:33:23Z"
-    },
-    {
-      "sha": "1bbf79dfd3e98a4b7a6b7e36b880c838d993e637",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.78 [skip ci]",
+      "sha": "eee0331a746925430589948ceea6246ecda7f01e",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.87 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-19T14:33:34Z"
+      "authoredAt": "2026-11-24T19:28:02Z"
     },
     {
-      "sha": "295251b1515839c9ab1ec5667159a73887f7a71f",
-      "subject": "Merge branch 'dev' into refactor/apsmanager-clean-up",
-      "author": "Marvin Polscheit",
-      "authoredAt": "2026-11-19T14:52:13Z"
+      "sha": "bebec46fb53c1c88ee54662e093fe2979736b852",
+      "subject": "Fix 12/24h time formatting and unify date and time formatting (#1760)",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-24T22:53:13+01:00"
     },
     {
-      "sha": "b9fcb5434a15a51956a4446509a2f5d452dad60a",
-      "subject": "Merge pull request #1681 from lolzivkovic/refactor/apsmanager-clean-up",
-      "author": "Marvin Polscheit",
-      "authoredAt": "2026-11-19T18:39:23Z"
-    },
-    {
-      "sha": "d37fe347e0b0758510e58f9edb0bae14b8a3dc64",
-      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.79 [skip ci]",
+      "sha": "3b176e1bff08a5b918d1774b9afe3b98ecca8583",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.88 [skip ci]",
       "author": "github-actions[bot]",
-      "authoredAt": "2026-11-19T18:39:35Z"
+      "authoredAt": "2026-11-24T21:53:30Z"
     },
     {
-      "sha": "633836f5dc10e91f1f8da64287cbc83066f84445",
+      "sha": "9f8982fc1a8c3b540b6b6d288fd0c9f2034b57d3",
       "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
       "author": "Gordon Child",
-      "authoredAt": "2026-11-22T15:33:19-06:00"
+      "authoredAt": "2026-11-24T16:25:40-06:00"
     }
   ],
   "includedFiles": [
     {
       "status": "M",
+      "path": ".github/workflows/add_identifiers.yml"
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/create_certs.yml"
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit_tests.yml"
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/validate_secrets.yml"
+    },
+    {
+      "status": "M",
+      "path": "AlgorithmPackage/Package.swift"
+    },
+    {
+      "status": "M",
       "path": "Config.xcconfig"
     },
     {
-      "status": "A",
-      "path": "Model/Classes+Properties/ScheduledProfileSwitchStored+CoreDataClass.swift"
+      "status": "M",
+      "path": "LiveActivity/Views/LiveActivityView.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/WidgetItems/LiveActivityBGLabelWatchView.swift"
     },
     {
       "status": "A",
-      "path": "Model/Classes+Properties/ScheduledProfileSwitchStored+CoreDataProperties.swift"
+      "path": "LiveActivity/Views/WidgetItems/LiveActivityIOBLabelWatchView.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/WidgetItems/LiveActivityUpdatedLabelView.swift"
     },
     {
       "status": "D",
-      "path": "Model/Classes+Properties/StatsData+CoreDataClass.swift"
+      "path": "LiveActivity/WidgetBobble 2.swift"
+    },
+    {
+      "status": "R100",
+      "path": "Model/Classes+Properties/TDDStored+CoreDataClass.swift",
+      "previousPath": "TDDStored+CoreDataClass.swift"
+    },
+    {
+      "status": "R100",
+      "path": "Model/Classes+Properties/TDDStored+CoreDataProperties.swift",
+      "previousPath": "TDDStored+CoreDataProperties.swift"
     },
     {
       "status": "D",
-      "path": "Model/Classes+Properties/StatsData+CoreDataProperties.swift"
-    },
-    {
-      "status": "A",
-      "path": "Model/Classes+Properties/TherapyProfileEntryStored+CoreDataClass.swift"
-    },
-    {
-      "status": "A",
-      "path": "Model/Classes+Properties/TherapyProfileEntryStored+CoreDataProperties.swift"
-    },
-    {
-      "status": "A",
-      "path": "Model/Classes+Properties/TherapyProfileStored+CoreDataClass.swift"
-    },
-    {
-      "status": "A",
-      "path": "Model/Classes+Properties/TherapyProfileStored+CoreDataProperties.swift"
-    },
-    {
-      "status": "A",
-      "path": "Model/Classes+Properties/TherapyProfileSwitchStored+CoreDataClass.swift"
-    },
-    {
-      "status": "A",
-      "path": "Model/Classes+Properties/TherapyProfileSwitchStored+CoreDataProperties.swift"
+      "path": "Model/CoreDataActor.swift"
     },
     {
       "status": "M",
-      "path": "Model/Helper/NSPredicates.swift"
+      "path": "Model/Helper/OverrideStored+helper.swift"
+    },
+    {
+      "status": "D",
+      "path": "Model/NSModelObjectContextExecutor.swift"
     },
     {
       "status": "M",
-      "path": "Model/Helper/PumpEvent+helper.swift"
-    },
-    {
-      "status": "A",
-      "path": "Model/Helper/TherapyProfileStored+helper.swift"
-    },
-    {
-      "status": "M",
-      "path": "Model/TrioCoreDataPersistentContainer.xcdatamodeld/TrioCoreDataPersistentContainer.xcdatamodel/contents"
+      "path": "Trio Watch App Tests/Unit Tests.swift"
     },
     {
       "status": "M",
@@ -716,95 +829,115 @@
     },
     {
       "status": "M",
-      "path": "Trio/Sources/APS/APSManager.swift"
+      "path": "Trio.xcodeproj/xcshareddata/xcschemes/Trio Watch App.xcscheme"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/APS/DeviceDataManager.swift"
+      "path": "Trio.xcodeproj/xcshareddata/xcschemes/Trio Watch Complication Extension.xcscheme"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/APS/OpenAPS/Constants.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/APS/Storage/TherapyProfileStorage.swift"
+      "path": "Trio/Resources/Info.plist"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Application/TrioApp.swift"
+      "path": "Trio/Resources/InfoPlist.xcstrings"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Resources/en.lproj/infoPlist.strings"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Assemblies/ServiceAssembly.swift"
+      "path": "Trio/Sources/APS/OpenAPS/OpenAPS.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Assemblies/StorageAssembly.swift"
+      "path": "Trio/Sources/APS/Storage/OverrideStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/Bundle+Extensions.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/Formatters.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/String+Extensions.swift"
     },
     {
       "status": "M",
       "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
     },
     {
+      "status": "D",
+      "path": "Trio/Sources/Localizations/Main/el.lproj/Localizable.strings"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Localizations/Main/pt.lproj/Localizable.strings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Logger/DeviceLog/DeviceLogStore.swift"
+    },
+    {
       "status": "M",
       "path": "Trio/Sources/Models/CommandPayload.swift"
     },
     {
-      "status": "A",
-      "path": "Trio/Sources/Models/CompactTherapyProfile.swift"
-    },
-    {
-      "status": "D",
-      "path": "Trio/Sources/Models/Loops.swift"
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/AdjustmentsStateModel+Extensions/AdjustmentsStateModel+Helpers.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Models/NightscoutStatus.swift"
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/AddOverrideForm.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Models/NightscoutTreatment.swift"
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/AdjustmentsRootView+Overrides.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Models/RawFetchedProfile.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Models/ScheduledProfileSwitch.swift"
-    },
-    {
-      "status": "D",
-      "path": "Trio/Sources/Models/Statistics.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Models/TherapyProfile.swift"
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/EditOverrideForm.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalProfileEditor/BasalProfileEditorProvider.swift"
+      "path": "Trio/Sources/Modules/Adjustments/View/TempTargets/EditTempTargetForm.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalProfileEditor/BasalProfileEditorStateModel.swift"
+      "path": "Trio/Sources/Modules/AlarmWindows/View/AlarmWindowsRootView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/BasalProfileEditor/View/BasalProfileEditorRootView.swift"
+      "path": "Trio/Sources/Modules/Calibrations/View/CalibrationsChart.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/CGMSettings/CGMSettingsStateModel.swift"
+      "path": "Trio/Sources/Modules/Calibrations/View/CalibrationsRootView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/CarbRatioEditor/CarbRatioEditorStateModel.swift"
+      "path": "Trio/Sources/Modules/History/HistoryDeletionTarget.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/CarbRatioEditor/View/CarbRatioEditorRootView.swift"
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Adjustments.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Glucose.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Meals.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Treatments.swift"
     },
     {
       "status": "M",
@@ -812,203 +945,187 @@
     },
     {
       "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Chart/ChartElements/ChartSelectionRow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Chart/ChartLegendView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/LoopStatusHelpView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/LoopStatusView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+BottomControls.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+MealPanel.swift"
+    },
+    {
+      "status": "M",
       "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/ISFEditor/ISFEditorStateModel.swift"
+      "path": "Trio/Sources/Modules/LiveActivitySettings/View/LiveActivitySimpleWidgetConfiguration.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/ISFEditor/View/ISFEditorRootView.swift"
+      "path": "Trio/Sources/Modules/MealSettings/View/MealSettingsRootView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Onboarding/OnboardingStateModel+Nightscout.swift"
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/BasalProfileStepView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Onboarding/OnboardingStateModel.swift"
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/CarbRatioStepView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutImportStepView.swift"
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/GlucoseTargetStepView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Settings/SettingItems.swift"
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/InsulinSensitivityStepView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/Settings/View/Subviews/TherapySettingsView.swift"
+      "path": "Trio/Sources/Modules/Onboarding/View/TherapySettingEditorView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/Subviews/DevicesView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/Subviews/ReportProblemView.swift"
     },
     {
       "status": "M",
       "path": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift"
     },
     {
-      "status": "M",
-      "path": "Trio/Sources/Modules/TargetsEditor/TargetsEditorStateModel.swift"
+      "status": "D",
+      "path": "Trio/Sources/Modules/Stat/View/ChartsView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Modules/TargetsEditor/View/TargetsEditorRootView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/TherapyProfiles/TherapyProfilesDataFlow.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/TherapyProfiles/TherapyProfilesProvider.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/TherapyProfiles/TherapyProfilesStateModel.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/TherapyProfiles/View/ScheduledSwitchEditorView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/TherapyProfiles/View/TherapyProfileBanner.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/TherapyProfiles/View/TherapyProfileDetailView.swift"
-    },
-    {
-      "status": "A",
-      "path": "Trio/Sources/Modules/TherapyProfiles/View/TherapyProfilesRootView.swift"
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyDistributionChart.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Router/Screen.swift"
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyPercentileChart.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Alerts/AlertCatalogRegistry.swift"
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucosePercentileChart.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Alerts/AlertCatalogVendor.swift"
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Insulin/BolusStatsView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutAPI.swift"
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Insulin/TotalDailyDoseChart.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutManager.swift"
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Meal/MealStatsView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/Network/Nightscout/NightscoutUploadPipeline.swift"
+      "path": "Trio/Sources/Modules/Treatments/View/ForecastChart.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/RemoteControl/RemoteNotificationResponseManager.swift"
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl+Helpers.swift"
+      "path": "Trio/Sources/Services/AppVersionChecker/AppVersionChecker.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Calendar/CalendarManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactImageManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactPicture.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ReleaseNotes/ReleaseNotes.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl+Bolus.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Services/WatchManager/FLOW_DIAGRAM.md"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/Bolus/BolusIntentRequest.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/Carbs/CarbPresetIntentRequest.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/State/ListStateView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/TempPresets/ApplyTempPresetIntent.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Views/SnoozeAlertsSheetView.swift"
     },
     {
       "status": "A",
-      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl+Profile.swift"
+      "path": "TrioTests/AppVersionCheckerTests.swift"
+    },
+    {
+      "status": "D",
+      "path": "TrioTests/CGMSensorStateLogTests.swift"
     },
     {
       "status": "M",
-      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl.swift"
+      "path": "TrioTests/DurationFormattingTests.swift"
     },
     {
       "status": "A",
-      "path": "Trio/Sources/Services/TherapyProfiles/TherapyProfileManager.swift"
+      "path": "TrioTests/IOBFormattingTests.swift"
+    },
+    {
+      "status": "D",
+      "path": "TrioTests/NightscoutImportRoundTripTests.swift"
+    },
+    {
+      "status": "D",
+      "path": "TrioTests/SettingsExportTests.swift"
     },
     {
       "status": "A",
-      "path": "Trio/Sources/Services/TherapyProfiles/TherapyProfileValidator.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/AlertCatalogRegistryEntriesTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/BolusCalculatorTests/BolusCalculatorTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/BolusSafetyTests/BolusSafetyValidatorTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/CalibrationsTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/ContainerResolutionTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/CoreDataTests/CarbEntryMutationServiceTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/CoreDataTests/TestAssembly.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/CoreDataTests/TherapyProfileStorageTests.swift"
-    },
-    {
-      "status": "M",
-      "path": "TrioTests/PluginManagerTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/NightscoutProfileImportTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/ScheduledProfileSwitchTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileFixtures.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileManagerTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileModelTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileNightscoutTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileRemoteValuesTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileScheduledSwitchTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileTestSupport.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TherapyProfileValidatorTests.swift"
-    },
-    {
-      "status": "A",
-      "path": "TrioTests/TherapyProfileTests/TrioRemoteControlProfileTests.swift"
+      "path": "TrioTests/TimeFormattingTests.swift"
     }
   ]
 }

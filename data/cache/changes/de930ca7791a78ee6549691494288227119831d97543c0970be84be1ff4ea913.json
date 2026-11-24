@@ -1,0 +1,22 @@
+{
+  "inputHash": "c53dce2505d530d588af56a2f94b7f223530fbce96a4224e3cc2d71b2f9f6582",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1798",
+    "title": "Blacklist can target branch or commit SHA",
+    "changes": [
+      "Blacklist entries can now target a branch and commit SHA as well as a version.",
+      "When a matching blacklist entry includes one, the \"Update Required\" alert can show its optional message."
+    ],
+    "category": "alerting-and-safety",
+    "sourceIds": [
+      "pr:nightscout/Trio#1798",
+      "commit:0bdcde91936e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

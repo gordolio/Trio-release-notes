@@ -1,0 +1,22 @@
+{
+  "inputHash": "f0b8881c94c3e712ed0eecea93035700c9b3f4546b29f906fa331ac40ead5905",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1790",
+    "title": "Restore space in duration labels",
+    "changes": [
+      "Duration labels now include a space between number and unit (e.g. 90 min).",
+      "This appears in time spans and time-ago labels throughout the app."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1790",
+      "commit:c193a68cf4bc"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

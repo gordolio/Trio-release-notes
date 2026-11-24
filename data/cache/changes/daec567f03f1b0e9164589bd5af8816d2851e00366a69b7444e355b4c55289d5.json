@@ -1,0 +1,23 @@
+{
+  "inputHash": "cc7c03b3c3586562e16435d4144b224285251f70d468fb6595e52770e89b29de",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1731",
+    "title": "Consistent IOB display and rounding",
+    "changes": [
+      "IOB (insulin on board) now displays consistently with up to two decimals and halves rounded away from zero.",
+      "Small negative IOB values now show as 0 and VoiceOver/readouts use the word \"units\" instead of the letter \"U\"."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1731",
+      "commit:3ba9b0875157",
+      "diff:daec567f03f1"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

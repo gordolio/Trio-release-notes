@@ -1,0 +1,22 @@
+{
+  "inputHash": "18e5093a59d396e23e942b0a1995f2fb72ae8e18f66a576711a1b94a02e7943d",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1760",
+    "title": "Fix 12/24h time and date formatting",
+    "changes": [
+      "Times and dates now follow your 12/24h preference and are consistent. SMBs now show the off time range."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1760",
+      "commit:bebec46fb53c",
+      "diff:0be6e09ba93a"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

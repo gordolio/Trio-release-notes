@@ -1,0 +1,22 @@
+{
+  "inputHash": "aaccb3c8a2df51ae562a1c5af3518f3868a7b7f890ca7b8132b6157cdd791241",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1484",
+    "title": "Show IOB on Live Activity widget",
+    "changes": [
+      "The Live Activity widget now displays IOB (insulin on board) with its unit.",
+      "Numbers and labels now scale to fit different display sizes, including Apple Watch and CarPlay."
+    ],
+    "category": "interface-improvements",
+    "sourceIds": [
+      "pr:nightscout/Trio#1484",
+      "diff:14df1eea0c55"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

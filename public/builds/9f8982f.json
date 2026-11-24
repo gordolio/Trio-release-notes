@@ -1,0 +1,1131 @@
+{
+  "schemaVersion": "2",
+  "metadata": {
+    "sourceWorkflowRunId": 45500857259,
+    "sourceWorkflowRunUrl": "https://github.com/gordolio/Trio/actions/runs/45500857259",
+    "sourceBranch": "dev",
+    "previousBuiltSha": "633836f5dc10e91f1f8da64287cbc83066f84445",
+    "currentBuiltSha": "9f8982fc1a8c3b540b6b6d288fd0c9f2034b57d3",
+    "shortSha": "9f8982f",
+    "buildDate": "2026-11-24T22:55:00.000Z",
+    "generationDate": "2026-11-24T23:07:37.205Z",
+    "generatorVersion": "0.3.1",
+    "promptVersion": "7",
+    "model": "openai/gpt-5-mini"
+  },
+  "highlights": [
+    {
+      "changeId": "pr:nightscout/Trio#1484",
+      "title": "Show IOB on Live Activity widget",
+      "changes": [
+        "The Live Activity widget now displays IOB (insulin on board) with its unit.",
+        "Numbers and labels now scale to fit different display sizes, including Apple Watch and CarPlay."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1484",
+        "diff:14df1eea0c55"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1484"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1484",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1484: fix(widget): Make IOB info available",
+          "url": "https://github.com/nightscout/Trio/pull/1484"
+        },
+        {
+          "id": "diff:14df1eea0c55",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1484",
+          "url": "https://github.com/gordolio/Trio/compare/83bce206a434e05eb8031b48f8dbc6926ede49c8...60f35c622f4bbeb3bdd284d54aa9fd1044313ed9"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1731",
+      "title": "Consistent IOB display and rounding",
+      "changes": [
+        "IOB (insulin on board) now displays consistently with up to two decimals and halves rounded away from zero.",
+        "Small negative IOB values now show as 0 and VoiceOver/readouts use the word \"units\" instead of the letter \"U\"."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1731",
+        "commit:3ba9b0875157",
+        "diff:daec567f03f1"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1731"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1731",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1731: Fix IOB rounding and unify IOB formatting",
+          "url": "https://github.com/nightscout/Trio/pull/1731"
+        },
+        {
+          "id": "commit:3ba9b0875157",
+          "type": "commit",
+          "title": "Fix IOB rounding and unify IOB formatting (#1731)",
+          "url": "https://github.com/gordolio/Trio/commit/3ba9b0875157d2bf0d0863b5056aa407f94c1a5f"
+        },
+        {
+          "id": "diff:daec567f03f1",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1731",
+          "url": "https://github.com/gordolio/Trio/compare/563a93a54ed43670fba7360fd2c1da1eabb9845a...3ba9b0875157d2bf0d0863b5056aa407f94c1a5f"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1760",
+      "title": "Fix 12/24h time and date formatting",
+      "changes": [
+        "Times and dates now follow your 12/24h preference and are consistent. SMBs now show the off time range."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1760",
+        "commit:bebec46fb53c",
+        "diff:0be6e09ba93a"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1760"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1760",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1760: Fix 12/24h time formatting and unify date and time formatting",
+          "url": "https://github.com/nightscout/Trio/pull/1760"
+        },
+        {
+          "id": "commit:bebec46fb53c",
+          "type": "commit",
+          "title": "Fix 12/24h time formatting and unify date and time formatting (#1760)",
+          "url": "https://github.com/gordolio/Trio/commit/bebec46fb53c1c88ee54662e093fe2979736b852"
+        },
+        {
+          "id": "diff:0be6e09ba93a",
+          "type": "diff",
+          "title": "Diff for pr:nightscout/Trio#1760",
+          "url": "https://github.com/gordolio/Trio/compare/eee0331a746925430589948ceea6246ecda7f01e...bebec46fb53c1c88ee54662e093fe2979736b852"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1798",
+      "title": "Blacklist can target branch or commit SHA",
+      "changes": [
+        "Blacklist entries can now target a branch and commit SHA as well as a version.",
+        "When a matching blacklist entry includes one, the \"Update Required\" alert can show its optional message."
+      ],
+      "category": "alerting-and-safety",
+      "sourceIds": [
+        "pr:nightscout/Trio#1798",
+        "commit:0bdcde91936e"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1798"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1798",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1798: Let blacklist entries target a branch and commit SHA",
+          "url": "https://github.com/nightscout/Trio/pull/1798"
+        },
+        {
+          "id": "commit:0bdcde91936e",
+          "type": "commit",
+          "title": "Let blacklist entries target a branch and commit SHA (#1798)",
+          "url": "https://github.com/gordolio/Trio/commit/0bdcde91936e528ad4188de7b027eee5f7082e98"
+        }
+      ]
+    },
+    {
+      "changeId": "pr:nightscout/Trio#1790",
+      "title": "Restore space in duration labels",
+      "changes": [
+        "Duration labels now include a space between number and unit (e.g. 90 min).",
+        "This appears in time spans and time-ago labels throughout the app."
+      ],
+      "category": "interface-improvements",
+      "sourceIds": [
+        "pr:nightscout/Trio#1790",
+        "commit:c193a68cf4bc"
+      ],
+      "confidence": "high",
+      "humanReviewRequired": false,
+      "changeIds": [
+        "pr:nightscout/Trio#1790"
+      ],
+      "highlight": true,
+      "provenance": "upstream",
+      "sources": [
+        {
+          "id": "pr:nightscout/Trio#1790",
+          "type": "pull-request",
+          "title": "nightscout/Trio#1790: Restore space between number and unit in durations",
+          "url": "https://github.com/nightscout/Trio/pull/1790"
+        },
+        {
+          "id": "commit:c193a68cf4bc",
+          "type": "commit",
+          "title": "Restore space between number and unit in durations",
+          "url": "https://github.com/gordolio/Trio/commit/c193a68cf4bc33bbbe13a5da0b0ab75cb5aa1532"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "new-features",
+      "title": "New Features",
+      "items": []
+    },
+    {
+      "category": "fixes",
+      "title": "Fixes",
+      "items": []
+    },
+    {
+      "category": "algorithm-and-dosing",
+      "title": "Algorithm and Dosing Changes",
+      "items": []
+    },
+    {
+      "category": "pump-and-cgm",
+      "title": "Pump and CGM Changes",
+      "items": []
+    },
+    {
+      "category": "alerting-and-safety",
+      "title": "Alerting and Safety Changes",
+      "items": []
+    },
+    {
+      "category": "interface-improvements",
+      "title": "Interface Improvements",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1799",
+          "title": "Fix five typos in app text",
+          "changes": [
+            "Corrected spelling mistakes in five English strings shown in the app.",
+            "You will see the corrected spellings in various settings and explanatory text within the app."
+          ],
+          "category": "interface-improvements",
+          "sourceIds": [
+            "pr:nightscout/Trio#1799",
+            "commit:fbfc017243b9"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1799"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1799",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1799: Fix spelling in five English source strings the app shows",
+              "url": "https://github.com/nightscout/Trio/pull/1799"
+            },
+            {
+              "id": "commit:fbfc017243b9",
+              "type": "commit",
+              "title": "Fix spelling in the English source strings the app actually shows",
+              "url": "https://github.com/gordolio/Trio/commit/fbfc017243b91daa6e5736e1e79fe429668d73f3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "origin-only-customizations",
+      "title": "Origin-Only Customizations",
+      "items": []
+    },
+    {
+      "category": "internal-and-build-system",
+      "title": "Internal and Build-System Changes",
+      "items": [
+        {
+          "changeId": "pr:nightscout/Trio#1804",
+          "title": "Use Xcode 27 runners for macOS builds",
+          "changes": [
+            "Builds and unit tests now run on Xcode 27 macOS runners.",
+            "CI runs should start sooner and tests use the iPhone 17 iOS 27 simulator."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1804",
+            "diff:d9ce97765f4f"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1804"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1804",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1804: Run the macOS jobs and unit tests on the xcode-27 runners",
+              "url": "https://github.com/nightscout/Trio/pull/1804"
+            },
+            {
+              "id": "diff:d9ce97765f4f",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1804",
+              "url": "https://github.com/gordolio/Trio/compare/d37fe347e0b0758510e58f9edb0bae14b8a3dc64...dbc9044eb5ed0e55100dd08381afaadfbc8876d7"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1805",
+          "title": "Xcode project reorganized to folders",
+          "changes": [
+            "The Xcode project was reorganized to use folders and unused files were removed.",
+            "There should be no change to app functionality for users."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1805",
+            "diff:0b5859eb02c2"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1805"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1805",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1805: chore: migrate to xcode folder",
+              "url": "https://github.com/nightscout/Trio/pull/1805"
+            },
+            {
+              "id": "diff:0b5859eb02c2",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1805",
+              "url": "https://github.com/gordolio/Trio/compare/d37fe347e0b0758510e58f9edb0bae14b8a3dc64...3f1f6b4fa76d42883661c3c9944429e0c4bdc812"
+            }
+          ]
+        },
+        {
+          "changeId": "pr:nightscout/Trio#1807",
+          "title": "Restore missing logging shim to fix tests",
+          "changes": [
+            "No visible change in the Trio app.",
+            "Unit tests were fixed so developers can run the algorithm test suite again."
+          ],
+          "category": "internal-and-build-system",
+          "sourceIds": [
+            "pr:nightscout/Trio#1807",
+            "diff:27abb1dad59e"
+          ],
+          "confidence": "high",
+          "humanReviewRequired": false,
+          "changeIds": [
+            "pr:nightscout/Trio#1807"
+          ],
+          "highlight": false,
+          "provenance": "upstream",
+          "sources": [
+            {
+              "id": "pr:nightscout/Trio#1807",
+              "type": "pull-request",
+              "title": "nightscout/Trio#1807: fix: unit tests",
+              "url": "https://github.com/nightscout/Trio/pull/1807"
+            },
+            {
+              "id": "diff:27abb1dad59e",
+              "type": "diff",
+              "title": "Diff for pr:nightscout/Trio#1807",
+              "url": "https://github.com/gordolio/Trio/compare/d37fe347e0b0758510e58f9edb0bae14b8a3dc64...1b7d7c274c016b27c2212e7bc7a097aeffb1a7ce"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "known-concerns",
+      "title": "Known Concerns",
+      "items": []
+    }
+  ],
+  "maintenanceHotspots": [],
+  "includedPullRequests": [
+    {
+      "repository": "gordolio/Trio",
+      "number": 1484,
+      "title": "fix(widget): Make IOB info available",
+      "body": "This adds the IOB field to the display in the Live Activity widget and makes the numbers more fluid depending on the display size. This allows information to dynamically resize and be available both in CarPlay and an Apple Watch.",
+      "labels": [
+        "On Hold"
+      ],
+      "url": "https://github.com/nightscout/Trio/pull/1484",
+      "mergedAt": "2026-11-24T10:14:24Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1484,
+      "title": "fix(widget): Make IOB info available",
+      "body": "This adds the IOB field to the display in the Live Activity widget and makes the numbers more fluid depending on the display size. This allows information to dynamically resize and be available both in CarPlay and an Apple Watch.",
+      "labels": [
+        "On Hold"
+      ],
+      "url": "https://github.com/nightscout/Trio/pull/1484",
+      "mergedAt": "2026-11-24T10:14:24Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1790,
+      "title": "Restore space between number and unit in durations",
+      "body": "Fixes #1780\n\n#1743 switched duration labels to Apple's formatter with the narrow width,\nwhich dropped the space before the unit in English and German. The issue\nasked for it back, and the SI convention linked there is a good reason\nto follow.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1790",
+      "mergedAt": "2026-11-23T05:53:25Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1790,
+      "title": "Restore space between number and unit in durations",
+      "body": "Fixes #1780\n\n#1743 switched duration labels to Apple's formatter with the narrow width,\nwhich dropped the space before the unit in English and German. The issue\nasked for it back, and the SI convention linked there is a good reason\nto follow.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1790",
+      "mergedAt": "2026-11-23T05:53:25Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1799,
+      "title": "Fix spelling in five English source strings the app shows",
+      "body": "## What\nCorrects five misspelled English source strings that are visible in the app, and renames their keys in `Localizable.xcstrings` so the lookups still match:\n\n| Before | After |\n|---|---|\n| Savatzky-Golay | Savitzky-Golay |\n| the algothim's result | the algorithm's result |\n| typically be adressed | typically be addressed |\n| injesting … quanitity | ingesting … quantity |\n| Setup & Configuraton | Setup & Configuration |\n\n## Why\nThese are user-facing typos in the source language; translators copy them into other languages (several translations of the smoothing explanation currently say \"Savatzky\").\n\n## Notes\n- The existing translations of the five strings are carried over to the renamed keys in the catalog, so nothing is lost in the app. Crowdin will see the renamed keys as new source strings, so its stored translations for the old keys will need to be re-linked or re-approved there.\n- Translations themselves are not touched; those remain Crowdin's.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1799",
+      "mergedAt": "2026-11-24T10:20:22Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1799,
+      "title": "Fix spelling in five English source strings the app shows",
+      "body": "## What\nCorrects five misspelled English source strings that are visible in the app, and renames their keys in `Localizable.xcstrings` so the lookups still match:\n\n| Before | After |\n|---|---|\n| Savatzky-Golay | Savitzky-Golay |\n| the algothim's result | the algorithm's result |\n| typically be adressed | typically be addressed |\n| injesting … quanitity | ingesting … quantity |\n| Setup & Configuraton | Setup & Configuration |\n\n## Why\nThese are user-facing typos in the source language; translators copy them into other languages (several translations of the smoothing explanation currently say \"Savatzky\").\n\n## Notes\n- The existing translations of the five strings are carried over to the renamed keys in the catalog, so nothing is lost in the app. Crowdin will see the renamed keys as new source strings, so its stored translations for the old keys will need to be re-linked or re-approved there.\n- Translations themselves are not touched; those remain Crowdin's.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1799",
+      "mergedAt": "2026-11-24T10:20:22Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1804,
+      "title": "Run the macOS jobs and unit tests on the xcode-27 runners",
+      "body": "All macOS jobs, the browser build (Validate Secrets, Add Identifiers, Create Certificates, Build Trio) and the unit tests, now run on the xcode-27 runner image with Xcode 27.0 selected explicitly. Builds on macos-26 have been waiting a long time for a runner and some fail; Loop and LoopFollow have already moved to xcode-27. Built from this branch in my fork, with every macOS job getting a runner within seconds and the build finishing in 26 minutes: https://github.com/bjorkert/Trio/actions/runs/45029349440\n\nThe unit tests use the iPhone 17 simulator on iOS 27.0 and get new cache keys so nothing built with Xcode 26.2 is restored. The simulator boots while the app builds, since its first boot on the xcode-27 image takes several minutes and otherwise pushes the test run past the test runner timeout. The algorithm package excludes the string catalog, because SwiftPM in Xcode 27 generates string symbols for it and fails on keys that differ only in case or punctuation; the algorithm reads its strings from the main bundle. Unit tests passed twice in my fork on a branch where the tests run on push: https://github.com/bjorkert/Trio/actions/runs/45051149766\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1804",
+      "mergedAt": "2026-11-23T05:49:34Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1804,
+      "title": "Run the macOS jobs and unit tests on the xcode-27 runners",
+      "body": "All macOS jobs, the browser build (Validate Secrets, Add Identifiers, Create Certificates, Build Trio) and the unit tests, now run on the xcode-27 runner image with Xcode 27.0 selected explicitly. Builds on macos-26 have been waiting a long time for a runner and some fail; Loop and LoopFollow have already moved to xcode-27. Built from this branch in my fork, with every macOS job getting a runner within seconds and the build finishing in 26 minutes: https://github.com/bjorkert/Trio/actions/runs/45029349440\n\nThe unit tests use the iPhone 17 simulator on iOS 27.0 and get new cache keys so nothing built with Xcode 26.2 is restored. The simulator boots while the app builds, since its first boot on the xcode-27 image takes several minutes and otherwise pushes the test run past the test runner timeout. The algorithm package excludes the string catalog, because SwiftPM in Xcode 27 generates string symbols for it and fails on keys that differ only in case or punctuation; the algorithm reads its strings from the main bundle. Unit tests passed twice in my fork on a branch where the tests run on push: https://github.com/bjorkert/Trio/actions/runs/45051149766\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1804",
+      "mergedAt": "2026-11-23T05:49:34Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1805,
+      "title": "chore: migrate to xcode folder",
+      "body": "(re-open #1563)\r\n\r\nThis PR migrates Trio from Groups to Folders.\r\nAlso delete unused files in order to make the migration complete.\r\n\r\nTested both iOS app and Watch app before submitting PR\r\n\r\nBenefits of using Folders instead of Groups:\r\n\r\n- The project.pbxproj is much smaller now (6910 lines -> 1733 lines)\r\n  - Not all files and groups are defined in the file, the project structure is defined in your folder structure\r\n  - Less merge conflicts in this file or random line changes\r\n- If you delete a file in Xcode, you will also delete it in XCode\r\n  - This will prevent zombi code from existing\r\n\r\nAlso fixes #1800 ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1805",
+      "mergedAt": "2026-11-23T05:49:56Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1805,
+      "title": "chore: migrate to xcode folder",
+      "body": "(re-open #1563)\r\n\r\nThis PR migrates Trio from Groups to Folders.\r\nAlso delete unused files in order to make the migration complete.\r\n\r\nTested both iOS app and Watch app before submitting PR\r\n\r\nBenefits of using Folders instead of Groups:\r\n\r\n- The project.pbxproj is much smaller now (6910 lines -> 1733 lines)\r\n  - Not all files and groups are defined in the file, the project structure is defined in your folder structure\r\n  - Less merge conflicts in this file or random line changes\r\n- If you delete a file in Xcode, you will also delete it in XCode\r\n  - This will prevent zombi code from existing\r\n\r\nAlso fixes #1800 ",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1805",
+      "mergedAt": "2026-11-23T05:49:56Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1807,
+      "title": "fix: unit tests",
+      "body": "Because of #1805 units test are broken",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1807",
+      "mergedAt": "2026-11-23T13:52:06Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1807,
+      "title": "fix: unit tests",
+      "body": "Because of #1805 units test are broken",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1807",
+      "mergedAt": "2026-11-23T13:52:06Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1798,
+      "title": "Let blacklist entries target a branch and commit SHA",
+      "body": "Allow blacklisted-versions.json to carry optional\n`branch` and `sha` fields. An entry matches when its version matches\nand, if given, the build's branch and commit (prefix match, 7+ chars,\ncase-insensitive) from BuildDetails.plist also match.\n\nEarlier builds keep working: their decoder ignores unknown keys and\nmatches on `version` alone, so `version` stays required on every entry.\nThe cache is now also keyed on the commit SHA, and a malformed entry is\nskipped rather than discarding the whole list.\n\nAdds AppVersionCheckerTests, including a copy of the decoder from\nearlier builds run against the new format and the published JSON file.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1798",
+      "mergedAt": "2026-11-24T01:24:27Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1798,
+      "title": "Let blacklist entries target a branch and commit SHA",
+      "body": "Allow blacklisted-versions.json to carry optional\n`branch` and `sha` fields. An entry matches when its version matches\nand, if given, the build's branch and commit (prefix match, 7+ chars,\ncase-insensitive) from BuildDetails.plist also match.\n\nEarlier builds keep working: their decoder ignores unknown keys and\nmatches on `version` alone, so `version` stays required on every entry.\nThe cache is now also keyed on the commit SHA, and a malformed entry is\nskipped rather than discarding the whole list.\n\nAdds AppVersionCheckerTests, including a copy of the decoder from\nearlier builds run against the new format and the published JSON file.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1798",
+      "mergedAt": "2026-11-24T01:24:27Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1731,
+      "title": "Fix IOB rounding and unify IOB formatting",
+      "body": "Unify IOB formatting so insulin on board shows the same way on every screen while following the user's locale.\n\n- IOB slightly below zero, like -0.004, showed \"-0 U\", now it shows \"0 U\"\n- Halves round away from zero like glucose and percent, so 0.125 shows \"0.13\" instead of \"0.12\"\n- Contact image and calendar show up to two decimals, to be consistent with rest of IOB displays\n- VoiceOver reads the Home IOB unit as \"units\" instead of the letter \"U\"\n- Added tests for decimals, rounding and negative zero\n\nTranslation keys are unchanged.\n\nFor Live Activity consistency I will follow up in separate PR once I post other unifications for carbs/COB, TDD and durations.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1731",
+      "mergedAt": "2026-11-24T19:27:52Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1731,
+      "title": "Fix IOB rounding and unify IOB formatting",
+      "body": "Unify IOB formatting so insulin on board shows the same way on every screen while following the user's locale.\n\n- IOB slightly below zero, like -0.004, showed \"-0 U\", now it shows \"0 U\"\n- Halves round away from zero like glucose and percent, so 0.125 shows \"0.13\" instead of \"0.12\"\n- Contact image and calendar show up to two decimals, to be consistent with rest of IOB displays\n- VoiceOver reads the Home IOB unit as \"units\" instead of the letter \"U\"\n- Added tests for decimals, rounding and negative zero\n\nTranslation keys are unchanged.\n\nFor Live Activity consistency I will follow up in separate PR once I post other unifications for carbs/COB, TDD and durations.\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1731",
+      "mergedAt": "2026-11-24T19:27:52Z"
+    },
+    {
+      "repository": "gordolio/Trio",
+      "number": 1760,
+      "title": "Fix 12/24h time formatting and unify date and time formatting",
+      "body": "This fixes times not following the user's 12/24h setting. The manual 12/24h checks and the DateFormatters created in each screen are replaced with two shared styles, `.timeOfDay` and `.dateAndTime`.\r\n\r\n- 12h/24h was detected by looking for \"AM\"/\"PM\" in a formatted time, so 12h users in locales that don't use \"AM\"/\"PM\" for example \"pm\", got 24h times in the override SMB schedule\r\n- When the SMB schedule had the same start and end hour, it showed only \"SMBs Off\", so it looked like SMBs were off all day. But `DosingEngine` turns them off only for that hour, so now it shows it, for example \"SMBs Off 2:00 PM – 3:00 PM\"\r\n- Stats hour ranges were always 24h (\"23:00-24:00\"), now they follow the locale\r\n- Times use one format now, before some screens showed \"6:07\" and others \"06:07\"\r\n- Removed duplicate and unused date formatters\r\n- Numeric dates now show the full year\r\n- Added tests\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1760",
+      "mergedAt": "2026-11-24T21:53:14Z"
+    },
+    {
+      "repository": "nightscout/Trio",
+      "number": 1760,
+      "title": "Fix 12/24h time formatting and unify date and time formatting",
+      "body": "This fixes times not following the user's 12/24h setting. The manual 12/24h checks and the DateFormatters created in each screen are replaced with two shared styles, `.timeOfDay` and `.dateAndTime`.\r\n\r\n- 12h/24h was detected by looking for \"AM\"/\"PM\" in a formatted time, so 12h users in locales that don't use \"AM\"/\"PM\" for example \"pm\", got 24h times in the override SMB schedule\r\n- When the SMB schedule had the same start and end hour, it showed only \"SMBs Off\", so it looked like SMBs were off all day. But `DosingEngine` turns them off only for that hour, so now it shows it, for example \"SMBs Off 2:00 PM – 3:00 PM\"\r\n- Stats hour ranges were always 24h (\"23:00-24:00\"), now they follow the locale\r\n- Times use one format now, before some screens showed \"6:07\" and others \"06:07\"\r\n- Removed duplicate and unused date formatters\r\n- Numeric dates now show the full year\r\n- Added tests\r\n",
+      "labels": [],
+      "url": "https://github.com/nightscout/Trio/pull/1760",
+      "mergedAt": "2026-11-24T21:53:14Z"
+    }
+  ],
+  "includedCommits": [
+    {
+      "sha": "7b3ff22e438eb20c44360229466d73f607db8c8b",
+      "subject": "fix(widget): Make IOB info available",
+      "author": "Ryan Sherlock",
+      "authoredAt": "2026-02-26T09:34:11+01:00"
+    },
+    {
+      "sha": "ed3148e669b392f677639edd34454103e6e2892c",
+      "subject": "refactor(widget): Split watch IOB into its own label view",
+      "author": "Ryan Sherlock",
+      "authoredAt": "2026-09-20T14:52:47+02:00"
+    },
+    {
+      "sha": "c193a68cf4bc33bbbe13a5da0b0ab75cb5aa1532",
+      "subject": "Restore space between number and unit in durations",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-19T21:03:41+01:00"
+    },
+    {
+      "sha": "fbfc017243b91daa6e5736e1e79fe429668d73f3",
+      "subject": "Fix spelling in the English source strings the app actually shows",
+      "author": "Ramazan TUNCER",
+      "authoredAt": "2026-09-18T23:20:22+03:00"
+    },
+    {
+      "sha": "c4da92f5566827ecd8c0cb94a4295b460ca110b9",
+      "subject": "Run the macOS jobs of the browser build on the xcode-27 runners with Xcode 27.0",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-22T14:10:40+01:00"
+    },
+    {
+      "sha": "561a258e2497330d3f56227bfcd1ee4dcc1bc51b",
+      "subject": "Run the unit tests on the xcode-27 runners with Xcode 27.0",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-22T17:27:34+01:00"
+    },
+    {
+      "sha": "8e9beadb273c8c6a97e00e4f58dd42fc20cb0c69",
+      "subject": "Exclude the string catalog from the algorithm package",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-22T17:59:13+01:00"
+    },
+    {
+      "sha": "728b3bf86e49d65f41478eb0e524fc38242aae90",
+      "subject": "Boot the unit test simulator while the app builds",
+      "author": "Jonas Björkert",
+      "authoredAt": "2026-11-22T18:44:38+01:00"
+    },
+    {
+      "sha": "6cb9d3758d9a3874224330ad833be3870c8d3a94",
+      "subject": "chore: migrate to folders",
+      "author": "bastiaanv",
+      "authoredAt": "2026-11-22T21:26:13+01:00"
+    },
+    {
+      "sha": "dbc9044eb5ed0e55100dd08381afaadfbc8876d7",
+      "subject": "Merge pull request #1804 from bjorkert/ci/xcode-27-runners",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-22T22:49:34-07:00"
+    },
+    {
+      "sha": "d0ae19d70219d8018704cd82bf020f4849d1d907",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.80 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-23T05:49:44Z"
+    },
+    {
+      "sha": "3f1f6b4fa76d42883661c3c9944429e0c4bdc812",
+      "subject": "Merge pull request #1805 from bastiaanv/chore/migrate-folders",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-22T22:49:55-07:00"
+    },
+    {
+      "sha": "b51d6725109e746de769ae347c71b6c8912fc56a",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.81 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-23T05:50:09Z"
+    },
+    {
+      "sha": "1a7cb7f48174bcb54c1438f02add408e6005f2bd",
+      "subject": "Merge branch 'dev' into fix/source-string-spelling",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-22T22:52:48-07:00"
+    },
+    {
+      "sha": "ec48a159009c351b98ac96b5d73cc659f5895ae8",
+      "subject": "Merge pull request #1790 from lolzivkovic/fix/duration-spacing",
+      "author": "Deniz Cengiz",
+      "authoredAt": "2026-11-22T22:53:24-07:00"
+    },
+    {
+      "sha": "efe051ffabd25e50cc5207762b600bdd4ea11e7c",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.82 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-23T05:53:34Z"
+    },
+    {
+      "sha": "dff976ce666c744ffbb3c5cb4c29816f32f34420",
+      "subject": "fix: unit tests",
+      "author": "bastiaanverhaar",
+      "authoredAt": "2026-11-23T08:23:18+01:00"
+    },
+    {
+      "sha": "ef83053c4812c543c7bb7184ef20f26d362808e6",
+      "subject": "Merge branch 'dev' into chore/fix-unit",
+      "author": "Bastiaan Verhaar",
+      "authoredAt": "2026-11-23T08:24:32+01:00"
+    },
+    {
+      "sha": "86c17e4b3c51a978475624744c26ea80372979f7",
+      "subject": "fix: re-add missing Shim",
+      "author": "bastiaanverhaar",
+      "authoredAt": "2026-11-23T09:00:09+01:00"
+    },
+    {
+      "sha": "1b7d7c274c016b27c2212e7bc7a097aeffb1a7ce",
+      "subject": "Merge pull request #1807 from bastiaanv/chore/fix-unit",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-23T14:52:06+01:00"
+    },
+    {
+      "sha": "3e3f58eaa16003e56c968de846b8fca261ed897f",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.83 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-23T13:52:17Z"
+    },
+    {
+      "sha": "0bdcde91936e528ad4188de7b027eee5f7082e98",
+      "subject": "Let blacklist entries target a branch and commit SHA (#1798)",
+      "author": "James Woglom",
+      "authoredAt": "2026-11-23T20:24:26-05:00"
+    },
+    {
+      "sha": "cdc68ad66a20172fa9d097c069cec820815b8f4b",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.84 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T01:24:48Z"
+    },
+    {
+      "sha": "60f35c622f4bbeb3bdd284d54aa9fd1044313ed9",
+      "subject": "Merge pull request #1484 from SherlockInSpace-org/dev",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-24T11:14:22+01:00"
+    },
+    {
+      "sha": "d79c880412378cfad6a76873b4cd8de3d4b25341",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.85 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T10:14:35Z"
+    },
+    {
+      "sha": "ef562eaf8faf840c7363e427b4d8363727588409",
+      "subject": "Merge branch 'dev' into fix/source-string-spelling",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-24T11:19:41+01:00"
+    },
+    {
+      "sha": "5ec85606847e692187b889482295dae393eedc08",
+      "subject": "Merge pull request #1799 from zerloop/fix/source-string-spelling",
+      "author": "Magnus Reintz",
+      "authoredAt": "2026-11-24T11:20:21+01:00"
+    },
+    {
+      "sha": "563a93a54ed43670fba7360fd2c1da1eabb9845a",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.86 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T10:20:33Z"
+    },
+    {
+      "sha": "3ba9b0875157d2bf0d0863b5056aa407f94c1a5f",
+      "subject": "Fix IOB rounding and unify IOB formatting (#1731)",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-24T20:27:51+01:00"
+    },
+    {
+      "sha": "eee0331a746925430589948ceea6246ecda7f01e",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.87 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T19:28:02Z"
+    },
+    {
+      "sha": "bebec46fb53c1c88ee54662e093fe2979736b852",
+      "subject": "Fix 12/24h time formatting and unify date and time formatting (#1760)",
+      "author": "Luka Zivkovic",
+      "authoredAt": "2026-11-24T22:53:13+01:00"
+    },
+    {
+      "sha": "3b176e1bff08a5b918d1774b9afe3b98ecca8583",
+      "subject": "CI: Bump APP_DEV_VERSION to 1.0.2.88 [skip ci]",
+      "author": "github-actions[bot]",
+      "authoredAt": "2026-11-24T21:53:30Z"
+    },
+    {
+      "sha": "9f8982fc1a8c3b540b6b6d288fd0c9f2034b57d3",
+      "subject": "Merge remote-tracking branch 'upstream/dev' into dev",
+      "author": "Gordon Child",
+      "authoredAt": "2026-11-24T16:25:40-06:00"
+    }
+  ],
+  "includedFiles": [
+    {
+      "status": "M",
+      "path": ".github/workflows/add_identifiers.yml"
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/create_certs.yml"
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit_tests.yml"
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/validate_secrets.yml"
+    },
+    {
+      "status": "M",
+      "path": "AlgorithmPackage/Package.swift"
+    },
+    {
+      "status": "M",
+      "path": "Config.xcconfig"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/LiveActivityView.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/WidgetItems/LiveActivityBGLabelWatchView.swift"
+    },
+    {
+      "status": "A",
+      "path": "LiveActivity/Views/WidgetItems/LiveActivityIOBLabelWatchView.swift"
+    },
+    {
+      "status": "M",
+      "path": "LiveActivity/Views/WidgetItems/LiveActivityUpdatedLabelView.swift"
+    },
+    {
+      "status": "D",
+      "path": "LiveActivity/WidgetBobble 2.swift"
+    },
+    {
+      "status": "R100",
+      "path": "Model/Classes+Properties/TDDStored+CoreDataClass.swift",
+      "previousPath": "TDDStored+CoreDataClass.swift"
+    },
+    {
+      "status": "R100",
+      "path": "Model/Classes+Properties/TDDStored+CoreDataProperties.swift",
+      "previousPath": "TDDStored+CoreDataProperties.swift"
+    },
+    {
+      "status": "D",
+      "path": "Model/CoreDataActor.swift"
+    },
+    {
+      "status": "M",
+      "path": "Model/Helper/OverrideStored+helper.swift"
+    },
+    {
+      "status": "D",
+      "path": "Model/NSModelObjectContextExecutor.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio Watch App Tests/Unit Tests.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/project.pbxproj"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/xcshareddata/xcschemes/Trio Watch App.xcscheme"
+    },
+    {
+      "status": "M",
+      "path": "Trio.xcodeproj/xcshareddata/xcschemes/Trio Watch Complication Extension.xcscheme"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/Info.plist"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Resources/InfoPlist.xcstrings"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Resources/en.lproj/infoPlist.strings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/OpenAPS/OpenAPS.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/APS/Storage/OverrideStorage.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/Bundle+Extensions.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/Formatters.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Helpers/String+Extensions.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Localizations/Main/Localizable.xcstrings"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Localizations/Main/el.lproj/Localizable.strings"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Localizations/Main/pt.lproj/Localizable.strings"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Logger/DeviceLog/DeviceLogStore.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Models/CommandPayload.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/AdjustmentsStateModel+Extensions/AdjustmentsStateModel+Helpers.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/AddOverrideForm.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/AdjustmentsRootView+Overrides.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/Overrides/EditOverrideForm.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Adjustments/View/TempTargets/EditTempTargetForm.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/AlarmWindows/View/AlarmWindowsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Calibrations/View/CalibrationsChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Calibrations/View/CalibrationsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/HistoryDeletionTarget.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Adjustments.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Glucose.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Meals.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/History/View/HistoryRootView+Treatments.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/HomeStateModel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Chart/ChartElements/ChartSelectionRow.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Chart/ChartLegendView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/LoopStatusHelpView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/Header/LoopStatusView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+BottomControls.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView+MealPanel.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Home/View/HomeRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/LiveActivitySettings/View/LiveActivitySimpleWidgetConfiguration.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/MealSettings/View/MealSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/BasalProfileStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/CarbRatioStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/GlucoseTargetStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/OnboardingSteps/TherapySettings/InsulinSensitivityStepView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Onboarding/View/TherapySettingEditorView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/Subviews/DevicesView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Settings/View/Subviews/ReportProblemView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/SettingsExport/SettingsExportStateModel.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Modules/Stat/View/ChartsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyDistributionChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucoseDailyPercentileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Glucose/GlucosePercentileChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Insulin/BolusStatsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Insulin/TotalDailyDoseChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Stat/View/ViewElements/Meal/MealStatsView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/Treatments/View/ForecastChart.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/AppVersionChecker/AppVersionChecker.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/Calendar/CalendarManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactImageManager.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ContactImage/ContactPicture.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/ReleaseNotes/ReleaseNotes.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/RemoteControl/TrioRemoteControl+Bolus.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Services/WatchManager/AppleWatchManager.swift"
+    },
+    {
+      "status": "D",
+      "path": "Trio/Sources/Services/WatchManager/FLOW_DIAGRAM.md"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/Bolus/BolusIntentRequest.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/Carbs/CarbPresetIntentRequest.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/State/ListStateView.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Shortcuts/TempPresets/ApplyTempPresetIntent.swift"
+    },
+    {
+      "status": "M",
+      "path": "Trio/Sources/Views/SnoozeAlertsSheetView.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/AppVersionCheckerTests.swift"
+    },
+    {
+      "status": "D",
+      "path": "TrioTests/CGMSensorStateLogTests.swift"
+    },
+    {
+      "status": "M",
+      "path": "TrioTests/DurationFormattingTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/IOBFormattingTests.swift"
+    },
+    {
+      "status": "D",
+      "path": "TrioTests/NightscoutImportRoundTripTests.swift"
+    },
+    {
+      "status": "D",
+      "path": "TrioTests/SettingsExportTests.swift"
+    },
+    {
+      "status": "A",
+      "path": "TrioTests/TimeFormattingTests.swift"
+    }
+  ]
+}

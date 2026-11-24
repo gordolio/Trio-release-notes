@@ -1,0 +1,22 @@
+{
+  "inputHash": "45cdc138c16287ccf3850b0335a66136c65ea242725d75387280036deb558a0d",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1807",
+    "title": "Restore missing logging shim to fix tests",
+    "changes": [
+      "No visible change in the Trio app.",
+      "Unit tests were fixed so developers can run the algorithm test suite again."
+    ],
+    "category": "internal-and-build-system",
+    "sourceIds": [
+      "pr:nightscout/Trio#1807",
+      "diff:27abb1dad59e"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}
