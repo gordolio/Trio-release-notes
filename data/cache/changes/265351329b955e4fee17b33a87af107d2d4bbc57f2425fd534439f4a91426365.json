@@ -1,0 +1,22 @@
+{
+  "inputHash": "50718d5c1abc527d96a59f4ce38a401d1ce7f1727d7abbee2bff0ab2294190d1",
+  "promptVersion": "7",
+  "schemaVersion": "2",
+  "requestedModel": "openai/gpt-5-mini",
+  "responseModel": "openai/gpt-5-mini",
+  "summary": {
+    "changeId": "pr:nightscout/Trio#1810",
+    "title": "Updated remote control security and crash fix",
+    "changes": [
+      "Remote control encryption and push token signing now use CryptoKit.",
+      "Trio no longer crashes when it receives a malformed remote command."
+    ],
+    "category": "fixes",
+    "sourceIds": [
+      "pr:nightscout/Trio#1810",
+      "commit:7e1f3d41d0bc"
+    ],
+    "confidence": "high",
+    "humanReviewRequired": false
+  }
+}

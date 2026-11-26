@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trio Build 9f8982f</title>
+  <title>Trio Build 2609c72</title>
   <style>
     :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.5; }
     body { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
@@ -16,20 +16,12 @@
 </head>
 <body>
   <main>
-    <h1>Trio Build 9f8982f</h1>
-    <p>Built 2026-11-24T22:55:00.000Z from <code>633836f..9f8982f</code>.</p>
-    <section><h2>Highlights</h2><article><h3>Show IOB on Live Activity widget</h3><ul><li>The Live Activity widget now displays IOB (insulin on board) with its unit.</li><li>Numbers and labels now scale to fit different display sizes, including Apple Watch and CarPlay.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1484" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Consistent IOB display and rounding</h3><ul><li>IOB (insulin on board) now displays consistently with up to two decimals and halves rounded away from zero.</li><li>Small negative IOB values now show as 0 and VoiceOver/readouts use the word &quot;units&quot; instead of the letter &quot;U&quot;.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1731" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Fix 12/24h time and date formatting</h3><ul><li>Times and dates now follow your 12/24h preference and are consistent. SMBs now show the off time range.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1760" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Blacklist can target branch or commit SHA</h3><ul><li>Blacklist entries can now target a branch and commit SHA as well as a version.</li><li>When a matching blacklist entry includes one, the &quot;Update Required&quot; alert can show its optional message.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1798" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Restore space in duration labels</h3><ul><li>Duration labels now include a space between number and unit (e.g. 90 min).</li><li>This appears in time spans and time-ago labels throughout the app.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1790" rel="noreferrer">View source on GitHub</a></p></article></section>
-<section><h2>Interface Improvements</h2><article><h3>Fix five typos in app text</h3><ul><li>Corrected spelling mistakes in five English strings shown in the app.</li><li>You will see the corrected spellings in various settings and explanatory text within the app.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1799" rel="noreferrer">View source on GitHub</a></p></article></section>
-<section><h2>Internal and Build-System Changes</h2><article><h3>Use Xcode 27 runners for macOS builds</h3><ul><li>Builds and unit tests now run on Xcode 27 macOS runners.</li><li>CI runs should start sooner and tests use the iPhone 17 iOS 27 simulator.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1804" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Xcode project reorganized to folders</h3><ul><li>The Xcode project was reorganized to use folders and unused files were removed.</li><li>There should be no change to app functionality for users.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1805" rel="noreferrer">View source on GitHub</a></p></article>
-<article><h3>Restore missing logging shim to fix tests</h3><ul><li>No visible change in the Trio app.</li><li>Unit tests were fixed so developers can run the algorithm test suite again.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1807" rel="noreferrer">View source on GitHub</a></p></article></section>
+    <h1>Trio Build 2609c72</h1>
+    <p>Built 2026-11-26T23:29:51.000Z from <code>9f8982f..2609c72</code>.</p>
+    <section><h2>Highlights</h2><article><h3>Updated remote control security and crash fix</h3><ul><li>Remote control encryption and push token signing now use CryptoKit.</li><li>Trio no longer crashes when it receives a malformed remote command.</li></ul><p class="sources"><a href="https://github.com/nightscout/Trio/pull/1810" rel="noreferrer">View source on GitHub</a></p></article></section>
   </main>
   <footer>
-    <p><a href="https://github.com/gordolio/Trio/actions/runs/45500857259">Source workflow 45500857259</a></p>
+    <p><a href="https://github.com/gordolio/Trio/actions/runs/45908423494">Source workflow 45908423494</a></p>
   </footer>
 </body>
 </html>
